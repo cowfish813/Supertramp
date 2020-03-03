@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  email           :string           not null
+#  first_name      :string           not null
+#  last_name       :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  username        :string           not null
+#
 class User < ApplicationRecord
     attr_reader :password
 
@@ -41,4 +53,11 @@ class User < ApplicationRecord
     self.save
     self.session_token
   end
+  
+  has_many :listings,
+  foreign_key: :host_id
+
+  
 end
+
+

@@ -1,0 +1,35 @@
+# == Schema Information
+#
+# Table name: listings
+#
+#  id                  :bigint           not null, primary key
+#  cancellation_policy :string           not null
+#  capacity            :integer          not null
+#  checkin             :datetime
+#  checkout            :datetime
+#  country             :string           not null
+#  description         :text             not null
+#  lat                 :float
+#  lng                 :float
+#  minimum_nights      :integer          not null
+#  name                :string           not null
+#  on_arrival          :string           not null
+#  price               :integer          not null
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  host_id             :integer
+#
+# Indexes
+#
+#  index_listings_on_host_id  (host_id)
+#
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: {}
+# column: value
+#
+two: {}
+# column: value

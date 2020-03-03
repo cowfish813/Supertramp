@@ -5,14 +5,15 @@ class Api::SessionsController < ApplicationController
     if @user.nil?
       render json: ["session controller create error: user could not be authenticated"], status: 404
     else
-      login(@user)
+      login!(@user)
       render "api/users/show"
     end
   end
 
   def destroy
-    if logout
-      render {}
+    logout!
+    if logout!
+      render :new
     else
       render status: 404, json: ["there is no current user to logout"]
     end
