@@ -1,9 +1,12 @@
 import React from 'react'
 
 class ListingIndex extends React.Component {
-    componentDidMount() {
-        this.props.fetchListings()
+    constructor(props) {
+        super(props)
     }
+    // componentDidMount() {
+    //     this.props.fetchListings()
+    // }
 
     render () {
         return (
@@ -12,6 +15,7 @@ class ListingIndex extends React.Component {
                     <li>{listing.name}</li>
                     )} */}
                     <li>{this.props.listings}</li>
+                    
             </div>
         )
     }

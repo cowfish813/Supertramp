@@ -1,5 +1,6 @@
 //index/ all
 export const fetchListings = () => (
+
     $.ajax({
         url: '/api/listings',
         // error: (err) => console.log(err) //hmm...
