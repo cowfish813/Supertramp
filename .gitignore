@@ -9,6 +9,11 @@
 /.bundle.js.map
 /.node_modules/
 
+.byebug_history
+.DS_store
+npm-debug.log
+
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
