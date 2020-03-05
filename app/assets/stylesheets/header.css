@@ -1,0 +1,53 @@
+.home {
+    margin: 114px 0px 0px;
+}
+
+.homeCol {
+    max-width: 1080px;
+    height: 180px ;
+    padding: 0%;
+    display: flex;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: violet;
+}
+
+.homeTitle {
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+}
+.homeDesc {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+}
+
+.homeTitle h1{
+    
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 48px;
+    width: 100%;
+    display: inline;
+    
+    /* display: inline-flex; */
+}
+
+.homeDesc h2{
+    font-weight: normal;
+    flex-wrap: wrap;
+    font-size: 22.5px;
+    width: 55%;
+    
+}
+
+.superSearch {
+    width: 1060px;
+    height: 100px;
+    padding: 17px;
+    border: inset 1px;
+}

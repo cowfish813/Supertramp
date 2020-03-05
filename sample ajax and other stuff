@@ -5,3 +5,4 @@ $.ajax({ url:'/api/users', method:'POST', data:{ user: {username: 'Kakarot', pas
 location ajax calls
 $.ajax({ url:'/api/listings', method:'POST', data:{ listing: { cancellation_policy:'strict', capacity:5, country:'namek',description:'find the dragonballs', minimum_nights: 1, name:"super spaceship",on_arrival:"submit to freeza", price: 3, checkin: 5/5/2020, checkout: 5/9/20, lat:37.7544387 , lng:-122.4282146 }} })
 $.ajax({ url:'/api/listings', method:'POST', data:{ listing: { cancellation_policy:'strict', capacity:5, country:'namek',description:'find the dragonballs', minimum_nights: 1, name:"super spaceship",on_arrival:"submit to freeza", price: 3, checkin: 5/5/2020, checkout: 5/9/20, lat:20.7544387 , lng:-12.4282146 }} })
+

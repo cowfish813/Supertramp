@@ -1,0 +1,52 @@
+.modal-background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+.modal-child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* with gratitude to alex */
+.modal {
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0%;
+    /* width: 100%; Full width */
+    /* height: 100%; Full height */
+    /* overflow: auto; Enable scroll if needed */
+    /* background-color: rgb(0,0,0); /* Fallback color */
+    /* background-color: rgba(0,0,0,0.4); Black w/ opacity */ 
+}
+.modal-container {
+    position: fixed; /* Stay in place */
+}.hidden {
+    display: none;
+}.show {
+    display: block;
+}
+/* Modal Content */
+.modal-content {
+    top: -60px;
+    right: -50px;
+    position: absolute;
+    z-index: 1;
+    background-color: #FEFEFE;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 15vw;
+    background-color: #EFEFEF;
+    height: 100vh;
+    overflow-y: auto;
+}

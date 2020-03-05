@@ -2,6 +2,9 @@ import React from 'react'
 import SessionForm from './session_form'
 import { connect } from 'react-redux'
 import { signup } from '../../actions/session_actions'
+import { openModal, closeModal } from '../../actions/modal_actions/modal_actions'
+
+
 
 
 
@@ -13,7 +16,11 @@ const mSTP = (state, ownProps) => ({
 
 
 const mDTP = (dispatch) => ({
-    processForm: (user) => dispatch(signup(user))
+    processForm: (user) => dispatch(signup(user)),
+    otherForm: (
+        <button onClick={() => dispatch(openModal('signup'))}>Signup</button>
+    ),
+    closeModal: () => dispatch(closeModal())
 })
 
 export default connect(mSTP, mDTP)(SessionForm)

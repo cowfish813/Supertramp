@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux' //how will i know if i import something has curlies?
+import { combineReducers } from 'redux' 
 import usersReducer from './users_reducer'
 import listingsReducer from './listing_reducers/listings_reducer'
 

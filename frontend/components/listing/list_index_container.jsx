@@ -5,13 +5,11 @@ import React from 'react'
 
 
 const mSTP = (state, ownProps) => ({
-    listings: state.listings
+    listings: Object.values(state.entities.listings)
 })
 
 const mDTP = dispatch => ({
-    fetchListings: () => dispatch(fetchListings()),
-    fetchListing: (listingId) => dispatch(fetchListing(listingId)),
-
+    fetchListings: () => dispatch(fetchListings())
 })
 
 export default connect(mSTP, mDTP)(listIndex)
