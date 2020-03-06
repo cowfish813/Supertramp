@@ -36,50 +36,77 @@ class Session extends React.Component {
             route = "./signup"
             button = "Sign Up"
             return (
-                <div className="session-form">
-                    <li>{this.props.errors}</li>
-                    <form onSubmit={this.handleSubmit}>
-                        <Link className="button" to="route">{button}</Link>
-                        <h2>{this.props.formType}</h2>
-                        <label>Username:
-                            <input 
+                <div className="modal-signup">
+                    {/* <li>{this.props.errors}</li> */}
+                    <div className="modal-title">
+                        <p>Become a SuperTramper</p>
+                        <p className="modal-title-small">Discover the best camping near me</p>
+                    </div>
+                    <form onSubmit={this.handleSubmit} className="signup-body">
+                        {/* <Link className="button" to="route">{button}</Link> */}
+                        {/* <h2 >{this.props.formType}</h2> */}
+
+                        <div className="half_input">
+                            <input
+                            placeholder="First Name..."
+                            type="text"
+                            className="left_half_input"
+                            value={this.state.first_name}
+                            onChange={this.handleInput('first_name')}
+                            />
+
+                            <input
+                            placeholder="Last Name..."
+                            type="text"
+                            className="right_half_input"
+                            value={this.state.last_name}
+                            onChange={this.handleInput('last_name')}
+                            />
+                        </div>
+                            <input
+                            placeholder="Username..." 
+                            className="logging_input"
                             type="text"
                             value={this.state.username}
                             onChange={this.handleInput('username')}
                             />
-                        </label>
-                        <label>Email:
-                            <input 
+
+                            <input
+                            className="logging_input"
+                            placeholder="Email..."
                             type="text"
                             value={this.state.email}
                             onChange={this.handleInput('email')}
                             />
-                        </label>
-                        <label>Password:
+
                             <input 
+                            placeholder="Password..."
+                            className="logging_input"
                             type="password"
                             value={this.state.password}
                             onChange={this.handleInput('password')}
                             />
-                        </label>
 
-                        <label>First Name:
-                            <input
+                            <input 
+                            placeholder="Zip code..."
+                            className="logging_input"
                             type="text"
-                            value={this.state.first_name}
-                            onChange={this.handleInput('first_name')}
+                            // value={soon zipcode}
+                            onChange={this.handleInput('zipcode')}
                             />
-                        </label>
-                        <label>Last Name:
-                            <input
-                            type="text"
-                            value={this.state.last_name}
-                            onChange={this.handleInput('last_name')}
-                            />
-                        </label>
 
-                        <button>{this.props.formType}</button>
+
+
+                        <button className="loginButton">{this.props.formType}</button>
+                        <button className="demoButton">Demo User</button>
                     </form>
+                    <div className="login-footer">
+                        <div className="login-subfooter">
+                        <p>By signing up, I agree to SuperTramps terms and privacy policy</p>
+                        </div>
+                        <p>Not a SuperTramper? <Link>Sign in!</Link></p>
+                        {/* link to sign in */}
+                    </div>
                 </div>
             )
 
@@ -88,34 +115,41 @@ class Session extends React.Component {
 
         } else if (this.props.formType === "Login") {
             return (       
-                <div className="session-form">
-                    <li>{this.props.errors}</li>
-                    <form onSubmit={this.handleSubmit}>
-                        <Link className="button" to="route">{button}</Link>
-                        <h2>{this.props.formType}</h2>
-                        <label>Username:
+                <div className="modal-login">
+                    <div className="modal-title">
+                        <p>Welcome back!</p>
+
+                            <p className="modal-title-small">It's about time for another camping trip</p>
+
+                    </div>
+                    {/* <li>{this.props.errors}</li> */}
+                    <form onSubmit={this.handleSubmit} className="login-body">
+                        {/* <Link className="button" to="route">{button}</Link> */}
+                        {/* <h2>{this.props.formType}</h2> */}
+                        <div className="login-form">
                                 <input
+                                placeholder="Username..."
+                                className="logging_input Username"
                                 type="text"
                                 value={this.state.username}
                                 onChange={this.handleInput('username')}
-                            />
-                        </label>
-                        {/* <label>Email:
+                                />
                                 <input
-                                type="text"
-                                value={this.state.email}
-                                onChange={this.handleInput('email')}
-                            />
-                        </label> */}
-                        <label>Password:
-                                <input
+                                placeholder='Password...'
+                                className="logging_input"
                                 type="password"
                                 value={this.state.password}
                                 onChange={this.handleInput('password')}
-                            />
-                        </label>
-                        <button>{this.props.formType}</button>
+                                />
+                            <button className="loginButton">{this.props.formType}</button>
+                            <button className="demoButton">Demo User</button>
+                        </div>
+                            
                     </form>
+                    <div className="login-footer">
+                        <p>Not a SuperTramper? <Link>Sign up!</Link></p>
+                        {/* link to sign up */}
+                    </div>
                 </div>
             )
         };

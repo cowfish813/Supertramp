@@ -1,6 +1,7 @@
  .super-body {
      font-family: Arial, Helvetica, sans-serif;
      list-style: none;
+     overflow: scroll;
  }
 
  .superNav {
@@ -32,6 +33,12 @@
     display: flex;
     justify-content: space-between;
     align-self: center;    
+    
+}
+
+.navItem:hover {
+    cursor: pointer;
+
 }
 
 .signupButton {

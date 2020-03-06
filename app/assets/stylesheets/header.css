@@ -3,7 +3,7 @@
 }
 
 .homeCol {
-    max-width: 1080px;
+    width: 1080px;
     height: 180px ;
     padding: 0%;
     display: flex;
@@ -50,4 +50,10 @@
     height: 100px;
     padding: 17px;
     border: inset 1px;
+    margin: auto;
+    display: inline-block;
+    top: 53%;
+    position: absolute;
+    left: 8%;
+
 }

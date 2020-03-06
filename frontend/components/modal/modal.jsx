@@ -9,10 +9,10 @@ function Modal({ modal, closeModal}) {
 
     let component
     switch (modal) {
-        case 'login':
+        case 'Login':
             component = <LoginFormContainer />
             break;
-        case 'signup':
+        case 'Signup':
             component = <SignupFormContainer />
             break;
         default:
@@ -20,7 +20,7 @@ function Modal({ modal, closeModal}) {
     };
 
     return (
-        <div className="modal-background" onCLick={ closeModal }>
+        <div className="modal-background" onClick={ closeModal }>
             <div className="modal-child" onClick={e => e.stopPropagation()}>
                 { component } 
             </div>

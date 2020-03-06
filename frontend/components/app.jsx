@@ -9,28 +9,16 @@ import { Route, Switch, Link, HashRouter } from 'react-router-dom'
 import { AuthRoute }from '../util/route_util'
 import listIndexContainer from '../components/listing/list_index_container'
 import searchContainer from './search/search_container'
+import NavbarContainer from './navbar/navbar_container'
 
 
 const App = () => (
     <div className="super-body">
-        <div className="superNav">
-            <div className="nav-left">
-                <Link to="/" className="logo">SuperTramp logo goes here</Link> {/* use image AWS */}
-            </div>
 
-            <div className="nav-right">
-                <li className="navItem"><a>Near Me</a></li>
-                <li className="navItem"><a>Become a Host</a></li>
-                <li className="navItem"><a>About</a></li> {/* link to my linked in or transfer to bottom of page? */}
-                {/* possible div menu nested in super nav near nav right */}
-                <li className="navItem"><a>Log In</a></li> {/* another modal button*/}
-                <li className="navItem signupButton"><a>Sign up</a></li> {/* placeholder, possibly more div*/}
-                < Modal />
-            </div>
-
-        </div>
-
+        < NavbarContainer/>
+        < Modal />
         <header>
+            {/* banner component */}
             <div className="home">
                 <div className="homeCol">
                     <div className="homeTitle">
@@ -43,34 +31,30 @@ const App = () => (
                         Book unique camping experiences on 
                            <strong> Hella </strong>
                         campsites, cabins, parks, and public highways
+                        that don't belong to you
                         </h2>
                     </div>
                 </div>
-
+                        {/* search bar begins */}
                 <div className="superSearch">
                     <div className="searchBar"></div>
                     <div className="enterDate"></div>
                     <div className="dropdown"></div>
                     <div className="searchButton">Search</div>
-
                 </div>
-            {/* <Route exact path="/" component={searchContainer} /> */}
             </div>
-            {/* <GreetingContainer /> */}
+            {/* banner component ends */}
         </header>
             <div className="containerBanner"></div>
-            {/* <AuthRoute path="/login" component={LoginFormContainer} /> */}
-            {/* <AuthRoute path="/signup" component={SignupFormContainer} /> */}
+            <AuthRoute path="/login" component={LoginFormContainer} />
+            <AuthRoute path="/signup" component={SignupFormContainer} />
             
         
             <div className="tilesContainer">
                 <div className="tiles_tile">
 
                 </div>
-            </div>
-        
-        
-        <footer>{/*  linkedin, other projs, instagram? , notes about the site*/}</footer>
+            </div>   
     </div>
 );
 
