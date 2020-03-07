@@ -4,8 +4,17 @@ import {connect} from 'react-redux'
 import LoginFormContainer from '../session/login_form_container'
 import SignupFormContainer from '../session/signup_form_container'
 
-function Modal({ modal, closeModal}) {
+function Modal({ errors, modal, closeModal}) {
     if (!modal) return null
+
+    let errorModal = <div></div>
+    if (errors.length > 0) {
+        errorModal = (<div className="feedback-indicator">
+            {errors.map(error => {
+                return <li>{error}</li>
+            })}
+        </div>)
+    }
 
     let component
     switch (modal) {
@@ -20,16 +29,24 @@ function Modal({ modal, closeModal}) {
     };
 
     return (
-        <div className="modal-background" onClick={ closeModal }>
-            <div className="modal-child" onClick={e => e.stopPropagation()}>
-                { component } 
+        <div>
+            <div className="modal-background" onClick={ closeModal }>
+                <div className="modal-child" onClick={e => e.stopPropagation()}>
+                    { component } 
+                </div>
+
+                <div className="modal-child" >
+                { errorModal }
+                </div>
             </div>
+
         </div>
     );
 }
 
 const mSTP = state => ({
-    modal: state.ui.modal
+    modal: state.ui.modal,
+    errors: state.errors.session
 })
 
 const mDTP = dispatch => ({

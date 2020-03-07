@@ -1,0 +1,14 @@
+.feedback-indicator {
+    width: 202.77px;
+    min-height: 38px;
+    padding: 8px 14px 8px 34px;
+    font-size: 14.72px;
+    color: #b38b01;
+    background-color: #fef2d6;
+    position: fixed;
+    bottom: 3%;
+    left: 3%;
+    border-radius: 8px;
+    box-shadow: lightgray;
+    
+}

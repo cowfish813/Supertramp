@@ -3,6 +3,7 @@ class Api::SessionsController < ApplicationController
     @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
 
     if @user.nil?
+      # flash.now[:errors] = @user.full_messages
       render json: ["session controller create error: user could not be authenticated"], status: 404
     else
       login!(@user)
@@ -11,7 +12,7 @@ class Api::SessionsController < ApplicationController
   end
 
   def destroy
-    logout!
+
     if logout!
       render :new
     else

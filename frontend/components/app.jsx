@@ -1,22 +1,25 @@
-
 import React from 'react'
-import GreetingContainer from './greeting/greeting_container'
-import Modal from './modal/modal'
-
-import SignupFormContainer from './session/signup_form_container'
-import LoginFormContainer from './session/login_form_container'
 import { Route, Switch, Link, HashRouter } from 'react-router-dom'
+import Modal from './modal/modal'
 import { AuthRoute }from '../util/route_util'
+import NavbarContainer from './navbar/navbar_container'
+
+
+// incomplete
 import listIndexContainer from '../components/listing/list_index_container'
 import searchContainer from './search/search_container'
-import NavbarContainer from './navbar/navbar_container'
+
+// test list
+import GreetingContainer from './greeting/greeting_container'
+import Errors from './errors/errors'
+
 
 
 const App = () => (
     <div className="super-body">
-
         < NavbarContainer/>
         < Modal />
+
         <header>
             {/* banner component */}
             <div className="home">
@@ -46,8 +49,6 @@ const App = () => (
             {/* banner component ends */}
         </header>
             <div className="containerBanner"></div>
-            <AuthRoute path="/login" component={LoginFormContainer} />
-            <AuthRoute path="/signup" component={SignupFormContainer} />
             
         
             <div className="tilesContainer">
@@ -55,6 +56,10 @@ const App = () => (
 
                 </div>
             </div>   
+            {/* <Errors /> */}
+            {/* useless */}
+            {/* <AuthRoute path="/login" component={LoginFormContainer} /> */}
+            {/* <AuthRoute path="/signup" component={SignupFormContainer} /> */}
     </div>
 );
 

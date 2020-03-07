@@ -1,7 +1,6 @@
  .super-body {
      font-family: Arial, Helvetica, sans-serif;
      list-style: none;
-     overflow: scroll;
  }
 
  .superNav {
@@ -11,8 +10,6 @@
      height: 70px;
      top: 0;
      display: flex;
-     /* flex-direction: row; */
-     /* min-width: 894px; */
     }
     
     .nav-left {
@@ -38,7 +35,8 @@
 
 .navItem:hover {
     cursor: pointer;
-
+    border-bottom: 2px solid #40D9AC;
+    box-sizing: border-box;
 }
 
 .signupButton {
@@ -48,6 +46,5 @@
 .signupButton:hover {
     background: #40d9ac  ;
     color: white;
-
     transition: 0.6s;
 }

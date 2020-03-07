@@ -23,7 +23,7 @@
 }
 @keyframes signup-drop {
     0% {}
-    100% { transform: translateY(4%)}
+    100% { transform: translateY(3%)}
 }
 
 .login-body {
@@ -41,9 +41,9 @@
     margin: 0 auto;
 }
 
-.logging_input {
+/* .logging_input {
     margin-bottom: 5px;    
-}
+} */
 
 .loginButton {
     width: 300px;
@@ -127,7 +127,7 @@
     max-height: 66px;
     padding: 16px;
     border: solid 1px black;
-    font-size: 16px;
+    font-size: 18px;
     margin-right: 5px;
     font-weight: bolder;
 }
@@ -135,7 +135,7 @@
     width: 33.5%;
     max-height: 66px;
     padding: 16px;
-    font-size: 16px;
+    font-size: 18px;
     border: solid 1px black;
     margin-left: 5px;
     font-weight: bolder;

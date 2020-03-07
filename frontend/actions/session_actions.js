@@ -16,21 +16,27 @@ const logoutUser = () => ({
 const receiveErrors = (errors) => ({
   type: RECEIVE_ERRORS,
   errors
-}) //takes array
+}) 
 
 
 
-export const signup = user => dispatch => {
-  return ApiUtil.signup(user)
-  .then(user => dispatch(receiveUser(user)))
-}
+export const signup = user => dispatch => (
+  ApiUtil.signup(user)
+  .then(user => dispatch(receiveUser(user)),
+  err => (dispatch(receiveErrors(err.responseJSON))))
+)
 
-export const login = user => dispatch => {
-  return ApiUtil.login(user)
-  .then(user => dispatch(receiveUser(user)))
-}
 
-export const logout = (userId) => dispatch => {
-  return ApiUtil.logout(userId)
-  .then( () => dispatch(logoutUser(userId)))
-}
+export const login = user => dispatch => (
+   ApiUtil.login(user)
+  .then(user => dispatch(receiveUser(user)), 
+  err=>(dispatch(receiveErrors(err.responseJSON))))
+  // .fail(errors => dispatch(receiveErrors(errors)))
+)
+
+export const logout = (userId) => dispatch => (
+  ApiUtil.logout(userId)
+  .then( () => dispatch(logoutUser(userId)),
+  err => (dispatch(receiveErrors(err.responseJSON))))
+)
+
