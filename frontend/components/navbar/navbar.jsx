@@ -7,7 +7,7 @@ import { openModal } from '../../actions/modal_actions/modal_actions'
 class NavBar extends React.Component {
     constructor(props) {
         super(props)
-
+        this.state = this.props.currentUser
         this.handleClick= this.handleClick.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
@@ -19,6 +19,8 @@ class NavBar extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
+        this.setState()
+
 
     }
 

@@ -3,6 +3,7 @@ import * as ApiUtil from '../util/session_api_util'
 export const RECEIVE_USER = 'RECEIVE_USER'
 export const LOGOUT_USER = "LOGOUT_USER"
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS"
+export const REMOVE_ERRORS = 'REMOVE_EROORS'
 
 const receiveUser = (user) => ({
   type: RECEIVE_USER,
@@ -17,6 +18,11 @@ const receiveErrors = (errors) => ({
   type: RECEIVE_ERRORS,
   errors
 }) 
+
+const removeERRORs = () => ({
+  type: REMOVE_ERRORS,
+
+})
 
 
 
@@ -40,3 +46,4 @@ export const logout = (userId) => dispatch => (
   err => (dispatch(receiveErrors(err.responseJSON))))
 )
 
+export const clearErrors = () => dispatch(removeErrors())

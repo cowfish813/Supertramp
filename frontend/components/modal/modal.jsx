@@ -11,7 +11,7 @@ function Modal({ errors, modal, closeModal}) {
     if (errors.length > 0) {
         errorModal = (<div className="feedback-indicator">
             {errors.map(error => {
-                return <li>{error}</li>
+                return  <li>{error}</li>
             })}
         </div>)
     }
@@ -28,6 +28,8 @@ function Modal({ errors, modal, closeModal}) {
             return null
     };
 
+
+
     return (
         <div>
             <div className="modal-background" onClick={ closeModal }>
@@ -35,7 +37,7 @@ function Modal({ errors, modal, closeModal}) {
                     { component } 
                 </div>
 
-                <div className="modal-child" >
+                <div >
                 { errorModal }
                 </div>
             </div>
@@ -44,13 +46,17 @@ function Modal({ errors, modal, closeModal}) {
     );
 }
 
+
+
+
 const mSTP = state => ({
     modal: state.ui.modal,
     errors: state.errors.session
 })
 
 const mDTP = dispatch => ({
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+
 })
 
 export default connect(mSTP, mDTP)(Modal)
