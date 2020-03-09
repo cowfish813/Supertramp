@@ -22,13 +22,13 @@ import LoggedBar from './navbar/logged_in_nav_container'
 const App = () => (
     <div className="super-body">
         < Modal />
-        < NavbarContainer />
+        {/* < NavbarContainer /> */}
         {/* < LoggedBar /> */}
         < Route exact path="/" component={Homepage} />
         {/* < AuthRoute exact path="/" component={NavbarContainer} /> */}
         {/* < ProtectedRoute exact path ="/" component ={LoggedBar} /> */}
         {/* <AuthRoute exact path="/" component={Homepage} /> */}
-        {/* <AuthRoute exact path="/" component={NavbarContainer} /> */}
+        <AuthRoute exact path="/" component={NavbarContainer} />
         {/* <ProtectedRoute exact path="/" component={Homepage} /> */}
         {/* <ProtectedRoute exact path="/" component={NavbarContainer} /> */}
 

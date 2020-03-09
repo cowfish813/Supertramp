@@ -13,6 +13,14 @@ class NavBar extends React.Component {
         this.handleLogout = this.handleLogout.bind(this)
     }
 
+    handleClick(e) {
+        e.preventDefault()
+    }
+
+    handleSubmit(e) {
+        e.preventDefault()
+
+    }
 
 
     handleLogout(e) {

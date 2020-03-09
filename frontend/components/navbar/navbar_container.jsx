@@ -6,15 +6,12 @@ import {logout} from '../../actions/session_actions'
 import { withRouter } from 'react-router-dom'
 
 const mSTP = state => {
-    debugger
-    return(
-        {  
+    // debugger
+    return({  
         formType: 'login',
         // currentUser: state.entities.user,
         currentUser: state.entities.users[state.session.currentUser],
-        }
-
-    )
+        })
 }
 
 const mDTP = dispatch => ({
