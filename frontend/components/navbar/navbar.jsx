@@ -10,27 +10,14 @@ class NavBar extends React.Component {
         this.state = this.props.currentUser
         this.handleClick= this.handleClick.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleLogout = this.handleLogout.bind(this)
     }
 
 
-    handleClick(e) {
+
+    handleLogout(e) {
         e.preventDefault()
-    }
-
-    handleSubmit(e) {
-        e.preventDefault()
-        this.setState()
-
-
-    }
-
-    componentDidMount() {
-        debugger
-    }
-
-
-    componentDidUpdate() {
-        debugger
+        this.props.logout().then(()=> this.props.history.push("/"))
     }
 
     render() {
@@ -65,7 +52,7 @@ class NavBar extends React.Component {
                         <li className="navItem"><a>Trips</a></li>
                         <li className="navItem"><a>favorite....?</a></li>
                         <li className="navItem"><a>messages?</a></li> {/* link to my linked in or transfer to bottom of page? */}
-                        <li className="navItem" onClick={()=> this.props.logout()}><a>Log out</a></li> {/* link to my linked in or transfer to bottom of page? */}
+                        <li className="navItem" onClick={this.handleLogout}><a>Log out</a></li> {/* link to my linked in or transfer to bottom of page? */}
                     </div>
                 </div>
             )

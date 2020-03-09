@@ -23,9 +23,9 @@ const App = () => (
     <div className="super-body">
         < Modal />
         < NavbarContainer />
-        < LoggedBar />
+        {/* < LoggedBar /> */}
         < Route exact path="/" component={Homepage} />
-        < AuthRoute exact path="/" component={NavbarContainer} />
+        {/* < AuthRoute exact path="/" component={NavbarContainer} /> */}
         {/* < ProtectedRoute exact path ="/" component ={LoggedBar} /> */}
         {/* <AuthRoute exact path="/" component={Homepage} /> */}
         {/* <AuthRoute exact path="/" component={NavbarContainer} /> */}

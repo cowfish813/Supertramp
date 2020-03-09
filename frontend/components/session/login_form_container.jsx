@@ -3,6 +3,7 @@ import SessionForm from './session_form'
 import { connect } from 'react-redux'
 import { login, clearErrors, receiveErrors } from '../../actions/session_actions'
 import { openModal, closeModal } from '../../actions/modal_actions/modal_actions'
+import {withRouter} from 'react-router-dom'
 
 const mSTP = (state, ownProps) => ({
     errors: state.errors.session,
@@ -25,4 +26,4 @@ const mDTP = (dispatch) => ({
     
 })
 
-export default connect(mSTP, mDTP)(SessionForm)
+export default withRouter(connect(mSTP, mDTP)(SessionForm))

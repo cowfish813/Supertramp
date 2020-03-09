@@ -22,7 +22,6 @@ class Session extends React.Component {
     };
 
     handleSubmit(e) {
-        debugger
         e.preventDefault()
         const user = Object.assign({}, this.state)
         this.props.processForm(user)
@@ -35,7 +34,6 @@ class Session extends React.Component {
 
     
     handleDemoUser(e) {
-        debugger
         e.preventDefault()
             const demo = {
                 username: "nick",

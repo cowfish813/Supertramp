@@ -40,9 +40,9 @@ export const login = user => dispatch => (
   // .fail(errors => dispatch(receiveErrors(errors)))
 )
 
-export const logout = (userId) => dispatch => (
-  ApiUtil.logout(userId)
-  .then( () => dispatch(logoutUser(userId)),
+export const logout = () => dispatch => (
+  ApiUtil.logout()
+  .then( () => dispatch(logoutUser()),
   err => (dispatch(receiveErrors(err.responseJSON))))
 )
 

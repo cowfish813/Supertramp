@@ -23,12 +23,10 @@ class LoggedinNav extends React.Component {
     }
 
     componentDidMount() {
-        debugger
     }
 
 
     componentDidUpdate() {
-        debugger
     }
 
     render() {
@@ -49,7 +47,9 @@ class LoggedinNav extends React.Component {
                 </div>
             )
         } else {
-            <div>
+            return (
+
+                <div>
                 <div className="superNav">
                     <div className="nav-left">
                         <Link to="/" className="logo">SuperTramp logo goes here</Link> {/* use image AWS */}
@@ -67,6 +67,7 @@ class LoggedinNav extends React.Component {
                     </div>
                 </div> 
             </div>
+                )
         }
     }
 }
