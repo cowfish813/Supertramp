@@ -24,6 +24,15 @@ class NavBar extends React.Component {
 
     }
 
+    componentDidMount() {
+        debugger
+    }
+
+
+    componentDidUpdate() {
+        debugger
+    }
+
     render() {
         if (!(this.props.currentUser)) {
 

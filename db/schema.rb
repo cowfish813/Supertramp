@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_185418) do
+ActiveRecord::Schema.define(version: 2020_03_09_181711) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer "listing_id", null: false
+    t.integer "host_id", null: false
+    t.integer "user_id"
+    t.integer "capacity", null: false
+    t.datetime "check_in", null: false
+    t.datetime "check_out", null: false
+    t.index ["host_id"], name: "index_bookings_on_host_id"
+    t.index ["listing_id"], name: "index_bookings_on_listing_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
 
   create_table "listings", force: :cascade do |t|
     t.integer "host_id"
@@ -32,6 +44,18 @@ ActiveRecord::Schema.define(version: 2020_03_03_185418) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["host_id"], name: "index_listings_on_host_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "listing_id", null: false
+    t.string "title"
+    t.text "body"
+    t.boolean "recommended", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["listing_id"], name: "index_reviews_on_listing_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

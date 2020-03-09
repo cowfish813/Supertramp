@@ -6,6 +6,7 @@ import { clearErrors } from '../../actions/session_actions';
 class Session extends React.Component {
     constructor(props) {
         super(props)
+
         this.state = {
             username: '',
             password: '',
@@ -15,12 +16,13 @@ class Session extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleDemoUser = this.handleSubmit.bind(this)
+        this.handleDemoUser = this.handleDemoUser.bind(this)
         this.renderErrors = this.renderErrors.bind(this)
         // this.handleDemoUser = this.handleDemoUser.bind(this)
     };
 
     handleSubmit(e) {
+        debugger
         e.preventDefault()
         const user = Object.assign({}, this.state)
         this.props.processForm(user)
@@ -33,12 +35,14 @@ class Session extends React.Component {
 
     
     handleDemoUser(e) {
+        debugger
         e.preventDefault()
             const demo = {
                 username: "nick",
                 password: "123456",
             }
         this.props.demoUser(demo).then(this.props.closeModal())
+        this.props.history.push("/")
     }
 
     renderErrors() {
@@ -77,7 +81,6 @@ class Session extends React.Component {
                         <div className="modal-title">
                             <p>Become a SuperTramper</p>
                             <p className="modal-title-small">Discover the best camping near me</p>
-
                         </div>
                         <form onSubmit={this.handleSubmit} className="signup-body">
                             <div className="half_input">
@@ -131,9 +134,13 @@ class Session extends React.Component {
 
 
 
-                            <button className="loginButton" >{this.props.formType}</button>
-                            <button className="demoButton" onClick={() => this.handleDemoUser()}>Demo User</button>
+                            {/* <button className="loginButton" >{this.props.formType}</button> */}
+                            <input type="submit" className="loginButton" value={this.props.formType}/>
+
                         </form>
+                            <button className="demoButton" type="button" onClick={this.handleDemoUser}>Demo User</button>
+                        {/* <Link to= /> */}
+                        
                         <div className="login-footer">
                             <div className="login-subfooter">
                             <p>By signing up, I agree to SuperTramps terms and privacy policy</p>
@@ -172,11 +179,13 @@ class Session extends React.Component {
                                     value={this.state.password}
                                     onChange={this.handleInput('password')}
                                     />
-                                <button className="loginButton">{this.props.formType}</button>
-                                <button className="demoButton" onClick={() => this.handleDemoUser()}>Demo User</button>
+                                {/* <button className="loginButton" >{this.props.formType}</button> */}
+                                <input type="submit" className="loginButton" value={this.props.formType} />
                             </div>
+                                <button className="demoButton" type="button" onClick={this.handleDemoUser}>Demo User</button>
                                 
                         </form>
+                        
                         <div className="login-footer">
                             <p>Not a SuperTramper? <a className="modal_swap" onClick={() => this.props.openModal('Signup')}>Sign up!</a></p>
                             {/* link to sign up. change formType? */}

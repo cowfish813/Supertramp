@@ -20,7 +20,7 @@ class Homepage extends React.Component {
         const house = ["All Camping", "Camping", "Glamping", "RV", "Plot of Land"]
         return (
             <div className="">
-             < Navbar />
+             {/* < Navbar /> */}
                 <div className="home">
                     <div className="homeCol">
                         <div className="homeTitle">

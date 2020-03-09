@@ -40,6 +40,7 @@ function Modal({ errors, modal, closeModal}) {
                 <div >
                 { errorModal }
                 </div>
+                
             </div>
 
         </div>

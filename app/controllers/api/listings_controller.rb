@@ -1,5 +1,36 @@
 class Api::ListingsController < ApplicationController
 
+    def index
+        # @listings = Listing.all
+        listings = bounds ? Listing.in_bounds(bounds) : Listing.all
+
+
+        if params[:name]
+            listings = listings.where('name < ? ', params[:name])
+        end
+
+        # if params[:]
+
+        # end
+
+        if params[:cancellation_policy]
+            listings = listings.where('cancellation policy < ?', params[:cancellation_policy])
+        end
+
+        if params(:price)
+            listings = listings.where('price < ?', params[:price]) 
+        end
+
+        if params[:capacity]
+            listings = listings.where('capacity < ?', params[:capacity])
+        end
+
+        @listings = listings
+        render :index
+    end
+
+
+
     def new
         @listing = Listing.new
         render :new
@@ -19,15 +50,8 @@ class Api::ListingsController < ApplicationController
 
     def show
         @listing = Listing.find(params[:id])
-        # render 'api/listings/show' #DOES NOT EXIST YET.
     end
 
-    def index
-        #needs a search params
-        #else it is @listings = Listings.all
-
-        @listings = Listing.all
-    end
 
 
 private
@@ -37,5 +61,10 @@ private
         :name, :on_arrival, :price, :checkin, :checkout, :lat, :lng
         )
     end
+
+    def bounds
+        params[:bounds]
+    end
+
     
 end
