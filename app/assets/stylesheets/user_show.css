@@ -1,0 +1,26 @@
+.userBody {
+
+}
+
+/* left panel */
+.left_panel {
+    height: 663px;
+    padding: 0px 10px;
+}
+
+.bioPanel {
+    width: 280px;
+    height: 275px;
+    padding: 20px;
+    border: lightgray 1px solid;
+}
+.panelHeader {
+    width: 238;
+    height: 90px;
+    margin: 0px 0px 10px;
+}
+.right_header {
+    height: 90;
+    margin: 0px 0px 0px 10px;
+    
+}

@@ -1,6 +1,9 @@
  .super-body {
      font-family: Arial, Helvetica, sans-serif;
      list-style: none;
+     display: flex;
+     justify-content: space-around;
+     /* overflow: auto; */
  }
 
  .superNav {
@@ -10,6 +13,8 @@
      height: 70px;
      top: 0;
      display: flex;
+     z-index: 200;
+     background-color: #ffffff;
     }
     
     .nav-left {

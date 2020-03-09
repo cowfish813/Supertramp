@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { clearErrors } from '../../actions/session_actions';
 
 
 class Session extends React.Component {
@@ -16,7 +17,7 @@ class Session extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleDemoUser = this.handleSubmit.bind(this)
         this.renderErrors = this.renderErrors.bind(this)
-
+        // this.handleDemoUser = this.handleDemoUser.bind(this)
     };
 
     handleSubmit(e) {
@@ -26,19 +27,30 @@ class Session extends React.Component {
         .then(() => this.props.closeModal())
     };
 
+    componentDidMount() {
+        this.props.clearErrors()
+    }
+
+    
     handleDemoUser(e) {
         e.preventDefault()
-        return this.props.demoUser
+            const demo = {
+                username: "nick",
+                password: "123456",
+            }
+        this.props.demoUser(demo).then(this.props.closeModal())
     }
 
     renderErrors() {
         if (this.props.errors.length > 0) {
+            
             return (
                 <div className="feedback-indicator">
                     {this.props.errors.map( error => {
-                    return <li>{error}</li>
+                    <li>{error}</li>
                 })}
                 </div>
+                
             )
         } else {
             return null
@@ -119,14 +131,14 @@ class Session extends React.Component {
 
 
 
-                            <button className="loginButton">{this.props.formType}</button>
+                            <button className="loginButton" >{this.props.formType}</button>
                             <button className="demoButton" onClick={() => this.handleDemoUser()}>Demo User</button>
                         </form>
                         <div className="login-footer">
                             <div className="login-subfooter">
                             <p>By signing up, I agree to SuperTramps terms and privacy policy</p>
                             </div>
-                            <p>Not a SuperTramper? <Link>Sign in!</Link></p>
+                            <p>Not a SuperTramper? <a className="modal_swap" onClick={() => this.props.openModal('Login')}>Log In</a></p>
                             {/* link to sign in */}
                         </div>
                     </div>
@@ -166,7 +178,7 @@ class Session extends React.Component {
                                 
                         </form>
                         <div className="login-footer">
-                            <p>Not a SuperTramper? <Link>Sign up!</Link></p>
+                            <p>Not a SuperTramper? <a className="modal_swap" onClick={() => this.props.openModal('Signup')}>Sign up!</a></p>
                             {/* link to sign up. change formType? */}
                         </div>
                     </div>

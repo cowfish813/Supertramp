@@ -1,8 +1,10 @@
 import React from 'react'
 import SessionForm from './session_form'
 import { connect } from 'react-redux'
-import { signup } from '../../actions/session_actions'
 import { openModal, closeModal } from '../../actions/modal_actions/modal_actions'
+import { signup, clearErrors, receiveErrors } from '../../actions/session_actions'
+
+
 
 
 
@@ -21,7 +23,9 @@ const mDTP = (dispatch) => ({
     otherForm: (
         <button onClick={() => dispatch(openModal('signup'))}>Signup</button>
     ),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    openModal: (modal) => dispatch(openModal(modal)),
+    clearErrors: () => (dispatch(receiveErrors([])))
 })
 
 export default connect(mSTP, mDTP)(SessionForm)

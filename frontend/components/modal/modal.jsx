@@ -10,8 +10,8 @@ function Modal({ errors, modal, closeModal}) {
     let errorModal = <div></div>
     if (errors.length > 0) {
         errorModal = (<div className="feedback-indicator">
-            {errors.map(error => {
-                return  <li>{error}</li>
+            {errors.map((error, i) => {
+                return  <li key={i}>{error}</li>
             })}
         </div>)
     }

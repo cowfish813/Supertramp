@@ -14,12 +14,12 @@ const logoutUser = () => ({
   type: LOGOUT_USER
 })
 
-const receiveErrors = (errors) => ({
+export const receiveErrors = (errors) => ({
   type: RECEIVE_ERRORS,
   errors
 }) 
 
-const removeERRORs = () => ({
+const removeErrors = () => ({
   type: REMOVE_ERRORS,
 
 })

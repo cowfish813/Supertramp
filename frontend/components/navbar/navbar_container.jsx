@@ -18,4 +18,3 @@ const mDTP = dispatch => ({
 })
 
 export default connect(mSTP, mDTP)(NavBar)
-// should probably consider throwing null state...
