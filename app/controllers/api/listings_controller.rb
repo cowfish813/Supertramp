@@ -9,10 +9,6 @@ class Api::ListingsController < ApplicationController
             listings = listings.where('name < ? ', params[:name])
         end
 
-        # if params[:]
-
-        # end
-
         if params[:cancellation_policy]
             listings = listings.where('cancellation policy < ?', params[:cancellation_policy])
         end
@@ -56,10 +52,7 @@ class Api::ListingsController < ApplicationController
 
 private
     def listing_params
-        params.require(:listing).permit(:cancellation_policy, 
-        :capacity, :country, :description, :minimum_nights, 
-        :name, :on_arrival, :price, :checkin, :checkout, :lat, :lng
-        )
+        params.require(:listing).permit(:cancellation_policy, :capacity, :country, :description, :minimum_nights, :name, :on_arrival, :price, :checkin, :checkout, :lat, :lng)
     end
 
     def bounds

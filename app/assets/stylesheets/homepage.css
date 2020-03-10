@@ -192,7 +192,7 @@
     height: 896px;
     padding: 40px 0px;
     margin: 0px 213px;
-    background-color: hotpink;
+    /* background-color: hotpink; */
     display: flex;
     margin-top: 100px;
     /* justify-content: center; */
