@@ -6,7 +6,6 @@ import {logout} from '../../actions/session_actions'
 import { withRouter } from 'react-router-dom'
 
 const mSTP = state => {
-    // debugger
     return({  
         formType: 'login',
         // currentUser: state.entities.user,
