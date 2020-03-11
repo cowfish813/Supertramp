@@ -87,6 +87,7 @@ class ListingForm extends React.Component {
                         <label>Name
                             <input type="text" value={this.state.name} onChange={this.handleInput('Name')}/>
                         </label>
+                        <h2>adfgijdsfjgsldkjfgsl;dklksdf;lks;lfhskd</h2>
                         <label>Cancellation Policy
                             <input type="text" />
                         </label>
