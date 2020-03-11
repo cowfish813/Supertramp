@@ -52,6 +52,7 @@ class ListingForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
+        this.props.createListing()
         const formData = new FormData()
         formData.append('listing[name]'), this.state.name;
         formData.append('listing[photos]'), this.state.photos;
@@ -62,6 +63,18 @@ class ListingForm extends React.Component {
             contentType: false,
             processData: false,
         })
+    }
+
+    componentDidMount() {
+        // set the map to show SF
+        const mapOptions = {
+            // replace lat and lng with this.props stuff
+            center: { lat: 37.7758, lng: -122.435 }, // this is SF
+            zoom: 13
+        };
+
+        // wrap this.mapNode in a Google Map
+        this.map = new google.maps.Map(this.mapNode, mapOptions);
     }
 
 
@@ -93,7 +106,7 @@ class ListingForm extends React.Component {
                             <input type="number" min="0.01" step="0.01" value={this.state.price} onChange={this.handleInput('Price')}/>
                         </label>
 
-
+{/* lat/lng? */}
                         <label htmlFor="post-body">Body of Post</label>
                         <input type="text"
                             id="post-body"
@@ -104,6 +117,8 @@ class ListingForm extends React.Component {
                         <h3>Image preview </h3>
                         {preview}
                         <button>Make a new Listing!</button>
+{/* destructure it somehow for lat/lng */}
+                    <div className="map" ref={map => this.mapNode = map}> </div>
                     </form>
 
 
