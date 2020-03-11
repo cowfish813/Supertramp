@@ -7,3 +7,22 @@
 .ultraFont {
     font-size: 200px;
 }
+
+#map-container {
+    height: 500px;
+    width: 500px;
+    
+}
+
+
+img {
+  width: 400px;
+}
+
+label {
+  margin-right: 20px;
+}
+
+input {
+  margin-right: 20px;
+}

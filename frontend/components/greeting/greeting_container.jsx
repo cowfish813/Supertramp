@@ -5,6 +5,7 @@ import Greeting from './greeting'
 
 const mSTP = state => ({
     currentUser: state.entities.users[state.session.id]
+    listing: state.entities.listings[]
 }) //finds by session token
 
 const mDTP = dispatch => ({

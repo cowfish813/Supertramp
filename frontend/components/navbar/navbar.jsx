@@ -25,12 +25,12 @@ class NavBar extends React.Component {
 
     handleLogout(e) {
         e.preventDefault()
-        this.props.logout.then(()=> this.props.history.push("/"))
+        this.props.logout().then(()=> this.props.history.push("/"))
     }
 
     render() {
         if (!(this.props.currentUser)) {
-
+            
             return (
                 <div className="superNav">
                     <div className="nav-left">
@@ -58,8 +58,8 @@ class NavBar extends React.Component {
 
                     <div className="nav-right">
                         <li className="navItem"><a>Trips</a></li>
-                        <li className="navItem"><a>favorite....?</a></li>
-                        <li className="navItem"><a>messages?</a></li> {/* link to my linked in or transfer to bottom of page? */}
+                        <li className="navItem"><Link to=""></Link></li>
+                        <li className="navItem"><Link to="/users/:usersId">self</Link></li> {/* link to my linked in or transfer to bottom of page? */}
                         <li className="navItem" onClick={this.handleLogout}><a>Log out</a></li> {/* link to my linked in or transfer to bottom of page? */}
                     </div>
                 </div>

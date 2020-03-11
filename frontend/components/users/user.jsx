@@ -29,6 +29,15 @@ class User extends React.Component {
                     </div>
                 </div>
 
+                <div className="middleBody">
+                    <div className="bookings">
+                        
+                    </div>
+                    <div className="reviews">
+                        
+                    </div>
+                </div>
+
             </div>
         )
     }

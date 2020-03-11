@@ -6,7 +6,7 @@ import Navbar from '../navbar/navbar_container'
 class Homepage extends React.Component {
     constructor(props) {
         super(props)
-        this.props = {}
+        
         // prop must take in dates, type and search term prop for state
     }
 

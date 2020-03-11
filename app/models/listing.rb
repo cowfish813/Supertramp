@@ -30,7 +30,19 @@ class Listing < ApplicationRecord
     belongs_to :user,
     foreign_key: :host_id
 
-    # has_many :bookings
+    has_many :bookings,
+    foreign_key: :listing_id
+
+    # has_many :photos,
+    # foreign_key: :listing_id
+
+    has_many_attached :photos
+
+    def ensure_photo
+        unless self.photo.attached?
+            errors[:photo] << "Must have photo attachment"
+        end
+    end
 
 
     def self.in_bounds(bounds)

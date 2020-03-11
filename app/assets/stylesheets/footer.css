@@ -1,6 +1,43 @@
+/* .ultraFooter {
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 100%;
+} */
+
+.superFooter {
+    /* background: lightskyblue; */
+    font-size: 18px;
+     position: relative;
+     width: 100%;
+     height: 70px;
+     bottom: 0%;
+    padding-bottom: 300px;     
+    display: flex;
+     /* left: 0; */
+     /* position: relative; */
+     background-color: #ffffff;
+     /* border-top: pink 1px solid; */
+     justify-content: end;
+}
+
 .subFooter {
     background: #000000;
     padding: 24px 150px;
     height: 69px;
+    width: 100%;
+    display: flex;
+    color: white;
+    display: flex;
+    bottom: 0%;
+    /* box-sizing: border-box; */
+    /* margin: auto; */
+    /* justify-content: end; */
 }
 
+
+.messageContainer {
+    display: flex;
+    justify-content: center;
+
+}

@@ -10,6 +10,7 @@ const mSTP = state => {
         formType: 'login',
         // currentUser: state.entities.user,
         currentUser: state.entities.users[state.session.currentUser],
+        currentUserID: state.session.id
         })
 }
 

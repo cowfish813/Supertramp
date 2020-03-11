@@ -10,10 +10,21 @@ class Api::BookingsController < ApplicationController
 
     def create
         @booking = current_user.bookings.new(booking_params)
+
+        if @booking.save
+            render: show
+        else
+            render json: @booking.errors.full_messages, status: 422
+        end
     end
 
     def destroy
-
+         @booking = current_user.bookings.find(params[:id])
+        if @booking.destroy
+            render :show
+        else
+            render json: @booking.errors.full_messages, status: 422
+        end
     end
 
 

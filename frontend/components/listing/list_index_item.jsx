@@ -15,7 +15,7 @@ class IndexItem extends React.Component {
     render() {
         return (
             <div className="stuff">
-                    <h2 className="ultraFont">this is the stuff</h2>
+                    <h2 className="ultraFont">this is the listIndex</h2>
                 <p>{this.props.title}</p>
             </div>
         )
