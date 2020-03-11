@@ -6,6 +6,7 @@ class Api::BookingsController < ApplicationController
 
     def show
         @booking = Booking.find(params[:id]) 
+        render :show
     end
 
     def create
