@@ -8,7 +8,6 @@ import { requestUser } from '../../actions/user_actions'
 import { withRouter } from 'react-router-dom'
 
 const mSTP = (state, ownProps) => {
-    // debugger
     return ({
         errors: state.errors.session,
         user: state.entities.users[state.session.id]

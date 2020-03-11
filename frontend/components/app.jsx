@@ -29,11 +29,10 @@ const App = () => (
         < Modal />
         < NavbarContainer />
 
-        < Route exact path="/listings/create"  component={ListForm} />
+        < Route exact path="/create_listings/"  component={ListForm} />
         < Route exact path="/" component={Homepage} />
         < Route exact path="/listings/:listingsId" component={ListShow} />
         {/* < Route exact path="/listings/" component={list_index_item} /> */}
-        {/* < Route exact path="" component={} /> */}
         < ProtectedRoute exact path="/users/:usersId" component={UserShow} />
         < AuthRoute path="/login" component={LoginFormContainer} />
         < AuthRoute path="/signup" component={SignupFormContainer} />

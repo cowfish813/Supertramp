@@ -143,7 +143,7 @@
 }
 
 .bannerImg {
-    max-width: 80%;
+    max-width: 600px;
     height: auto;
     justify-content: center;
     margin: auto;
@@ -188,24 +188,28 @@
 
 
 .vagueLocationsContainer {
-    width: 1080px;
+    /* width: 1080px; */
     height: 896px;
     padding: 40px 0px;
     margin: 0px 213px;
     /* background-color: hotpink; */
     display: flex;
     margin-top: 100px;
+    flex-direction: column;
+    justify-content: space-evenly;
     /* justify-content: center; */
 }
 .vague_tile_list {
     display: flex;
     flex-wrap: wrap;
-    width: 1080px;
+    /* width: 1080px; */
     height: 364px;
-    justify-content: center;
+    justify-content: space-evenly;
     margin: 0px 0px 32px;
+
 }
 .vague_picture {
+    margin: 10px;
     display: flex;
     height: 364px;
     width: 350px;
@@ -213,7 +217,7 @@
     object-fit: cover;
     animation: unpop .8s ease forwards;
     background-color: lawngreen;
-    justify-content: space-between;
+    /* justify-content: space-around; */
 }
 .vague_picture:hover {
     cursor: pointer;

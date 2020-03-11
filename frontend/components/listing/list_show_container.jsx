@@ -5,10 +5,11 @@ import ListShow from './list_show'
 
 
 const mSTP = (state, ownProps) => {
-    // debugger
     return ({
         currentUser: state.entities.users[state.session.currentUser],
         listing: state.entities.listings
+        // [ownProps.match.params.id]
+        //  how to call specific listing?
     })
 }
 

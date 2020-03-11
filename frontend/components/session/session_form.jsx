@@ -26,6 +26,7 @@ class Session extends React.Component {
         const user = Object.assign({}, this.state)
         this.props.processForm(user)
         .then(() => this.props.closeModal())
+        
     };
 
     componentDidMount() {

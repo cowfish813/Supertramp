@@ -5,7 +5,6 @@ import ListForm from './listing_form'
 
 
 const mSTP = (state, ownProps) => {
-    // debugger
     return ({
         currentUser: state.entities.users[state.session.currentUser],
         listing: state.entities.listings[ownProps.match.params.id]
@@ -13,7 +12,7 @@ const mSTP = (state, ownProps) => {
 }
 
 const mDTP = dispatch => ({
-    fetchListing: (listing) => dispatch(fetchListing(listing)),
+    createListing: (listing) => dispatch(createListing(listing)),
 
 })
 

@@ -7,28 +7,35 @@ class ListingForm extends React.Component {
         this.state = {
             name: "",
             cancellation_policy: "", 
-            capacity:null,
+            capacity: "",
             country: "",
             description: "",
-            minimum_nights:null,
+            minimum_nights: "",
             on_arrival: "",
-            price:null,
-            checkin: null ,
-            checkout: null ,
-            lat: null,
-            lng: null,
+            price: "",
+            checkin:  "" ,
+            checkout:  "" ,
+            lat:  "",
+            lng:  "",
 
             photos: []
 
         }
         this.handleSubmit.bind(this)
         this.handleInput.bind(this)
+        this.handlepost.bind(this)
         this.handleFile.bind(this)
     }
 
-    handleInput(e) {
+
+    handlepost(e) {
         this.setState({name: e.currentTarget.value})
     }
+    handleInput(type) {
+        return e => {
+            this.setState({ [type]: e.currentTarget.value })
+        };
+    };
 
     handleFile(e) {
         const reader = new FileReader();
@@ -61,21 +68,44 @@ class ListingForm extends React.Component {
     render () {
         const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
         return (
-            <div>
-                <form onSubmit>
-                    <form onSubmit={this.handleSubmit}>
+            <div className="ListCreate" >
+
+                    <form onSubmit={this.handleSubmit} className="listform">
+                        <label>Name
+                            <input type="text" value={this.state.name} onChange={this.handleInput('Name')}/>
+                        </label>
+                        <label>Cancellation Policy
+                            <input type="text" />
+                        </label>
+                        <label>Capacity
+                            <input type="number" name="" id="" value={this.state.capacity} onChange={this.handleInput('Capacity')}/>
+                        </label>
+                        <label>Description
+                            <input type="text" value={this.state.description} onChange={this.handleInput('Description')}/>
+                        </label>
+                        <label>Min Nights
+                            <input type="number" name="" id="" value={this.state.minimum_nights} onChange={this.handleInput('Min Nights')}/>
+                        </label>
+                        <label>On Arrival
+                            <input type="text" value={this.state.on_arrival} onChange={this.handleInput('On Arrival')} />
+                        </label>
+                        <label>Price
+                            <input type="number" min="0.01" step="0.01" value={this.state.price} onChange={this.handleInput('Price')}/>
+                        </label>
+
+
                         <label htmlFor="post-body">Body of Post</label>
                         <input type="text"
                             id="post-body"
                             value={this.state.title}
-                            onChange={this.handleInput} />
+                            onChange={this.handlepost} />
                         <input type="file"
                             onChange={this.handleFile} />
                         <h3>Image preview </h3>
                         {preview}
-                        <button>Make a new Post!</button>
+                        <button>Make a new Listing!</button>
                     </form>
-                </form>
+
 
             </div>
         )

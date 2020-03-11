@@ -2,20 +2,26 @@
     height: 715px;
     padding: 15px 15px 0px;
     border: red 1px solid;
+    display: flex;
+}
+.list-show-photo{
+    object-position: center;
+    width: 100%;
+    height: auto;
+    // probably kill width and height a little bit
 }
 
 
 .widget-container {
     width: 360px;
     height: 351.78px;
-    justify-content: right;
-    position: relative;
+    display: flex;
     border: hotpink 1px solid;
-    // display: flex;
-    // flex: auto;
-    left: 130%;
     z-index: 5;
-    // position: sticky;
+    align-self: flex-end;;
+    // position: absolute;
+    // position: relative;
+    // flex: auto;
 }
 .wrapper {
     padding: 13px 10px;
@@ -59,6 +65,16 @@
 
 .show-listing {
     max-height: 7665px;
+    border: red 1px solid;
+    background-color: rebeccapurple;
+}
+
+
+.section-overview{
+    width: 700px;
+    height: 606px;
+    padding: 20px 0px 0px;
+    border: red 1px solid;
 
 }
 .row{
@@ -80,4 +96,39 @@
     font-size: 18px;
     color: #333333;
     border: red 1px solid;
+}
+
+.info-cards-wrapper {
+    width: 720px;
+    height: 360px;
+    margin: 0 10px;
+    border: red 1px solid;
+    // position: relative;
+    display: flex;
+}
+.info-cards {
+    width: 220px;
+    height: 340px;
+    margin: 0px 10px 20px;
+    padding: 15px 5px 15px 15px;
+    background: #ffffff;
+    border: red 1px solid;
+}
+
+.features-container {
+    width: 700px;
+    height: 542px;
+}
+
+.col_box {
+    height: 50px;
+    width: 70px;
+}
+
+.map {
+    margin: auto;
+    display: flex;
+  width: 80%;
+  height: 500px;
+  border: solid red 1px;
 }
