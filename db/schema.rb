@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_10_172225) do
+ActiveRecord::Schema.define(version: 2020_03_12_003001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,9 @@ ActiveRecord::Schema.define(version: 2020_03_10_172225) do
     t.integer "minimum_nights", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_url"
+    t.string "image_file"
+    t.string "photos", default: [], array: true
     t.index ["host_id"], name: "index_listings_on_host_id"
   end
 

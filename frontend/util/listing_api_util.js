@@ -20,22 +20,23 @@ export const deleteListing = (listingId) => (
     })
 )
 
-export const createListing = (listing) => (
-    $.ajax({
-        url: `api/listings/`,
-        method: 'POST',
-        data: {listing}
-    })
-)
-// export const createListing = (listForm) => (
+// export const createListing = (listing) => (
 //     $.ajax({
 //         url: `api/listings/`,
 //         method: 'POST',
-//         data: listForm,
-//         contentType: false,
-//         processData: false
+//         data: {listing}
 //     })
-// ) wat is content type and process data here???
+// )
+
+export const createListing = (listForm) => (
+    $.ajax({
+        url: `api/listings/`,
+        method: 'POST',
+        data: listForm,
+        contentType: false,
+        processData: false
+    })
+) 
 
 export const updateListing = (listingId) => (
     $.ajax({

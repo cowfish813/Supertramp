@@ -15,47 +15,67 @@ class ListingForm extends React.Component {
             price: "",
             checkin:  "" ,
             checkout:  "" ,
-            lat:  "",
-            lng:  "",
-
+            lat:  0,
+            lng:  0,
+            image_url: "",
+            image_file: null,
+            country:"yes",
             photos: []
-
+        
         }
-        this.handleSubmit.bind(this)
-        this.handleInput.bind(this)
-        this.handlepost.bind(this)
-        this.handleFile.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
+        //this.handleInput = this.handleInput.bind(this)
+        this.handlepost = this.handlepost.bind(this)
+        this.handleFile = this.handleFile.bind(this)
     }
 
 
     handlepost(e) {
+        event.preventDefault()
         this.setState({name: e.currentTarget.value})
     }
     handleInput(type) {
-        return e => {
-            this.setState({ [type]: e.currentTarget.value })
-        };
+        event.preventDefault()
+          return  event => {
+
+                this.setState({ [type]: event.currentTarget.value })
+            }
+
     };
 
     handleFile(e) {
         const reader = new FileReader();
         const file = e.currentTarget.files[0];
-        reader.onloadend = () =>
-            this.setState({ imageUrl: reader.result, imageFile: file });
-
+        reader.onloadend = () => {
+            this.setState({ image_url: reader.result, image_file: file });
+        }
         if (file) {
             reader.readAsDataURL(file);
-        } else {
-            this.setState({ imageUrl: "", imageFile: null });
         }
+        //  else {
+        //     this.setState({ imageUrl: "", imageFile: null });
+        // }
     }
 
     handleSubmit(e) {
         e.preventDefault()
-        this.props.createListing()
+        // this.props.createListing(this.state)
         const formData = new FormData()
-        formData.append('listing[name]'), this.state.name;
-        formData.append('listing[photos]'), this.state.photos;
+        formData.append('listing[name]', this.state.name);
+        formData.append('listing[cancellation_policy]', this.state.cancellation_policy);
+        formData.append('listing[capacity]', this.state.capacity);
+        formData.append('listing[description]', this.state.description);
+        formData.append('listing[minimum_nights]', this.state.minimum_nights);
+        formData.append('listing[on_arrival]', this.state.on_arrival);
+        formData.append('listing[price]', this.state.price);
+        formData.append('listing[checkin]', this.state.checkin);
+        formData.append('listing[checkout]', this.state.checkout);
+        formData.append('listing[lat]', this.state.lat);
+        formData.append('listing[lng]', this.state.lng);
+        formData.append('listing[country]', this.state.country);
+        formData.append('listing[image_url]', this.state.image_url);
+        formData.append('listing[image_file]', this.state.image_file);
+        formData.append('listing[photos]', this.state.photos);
         $.ajax({
             url: '/api/listings',
             method: 'POST',
@@ -85,41 +105,41 @@ class ListingForm extends React.Component {
 
                     <form onSubmit={this.handleSubmit} className="listform">
                         <label>Name
-                            <input type="text" value={this.state.name} onChange={this.handleInput('Name')}/>
+                            <input type="text" value={this.state.name} onChange={this.handleInput('name')}/>
                         </label>
-                        <h2>adfgijdsfjgsldkjfgsl;dklksdf;lks;lfhskd</h2>
                         <label>Cancellation Policy
-                            <input type="text" />
+                            <input type="text" onChange={this.handleInput('cancellation_policy')} />
                         </label>
                         <label>Capacity
-                            <input type="number" name="" id="" value={this.state.capacity} onChange={this.handleInput('Capacity')}/>
+                            <input type="number"  value={this.state.capacity} onChange={ this.handleInput('capacity')}/>
                         </label>
                         <label>Description
-                            <input type="text" value={this.state.description} onChange={this.handleInput('Description')}/>
+                            <input type="text" value={this.state.description} onChange={this.handleInput('description')}/>
                         </label>
                         <label>Min Nights
-                            <input type="number" name="" id="" value={this.state.minimum_nights} onChange={this.handleInput('Min Nights')}/>
+                            <input type="number"  value={this.state.minimum_nights} onChange={this.handleInput('minimum_nights')}/>
                         </label>
                         <label>On Arrival
-                            <input type="text" value={this.state.on_arrival} onChange={this.handleInput('On Arrival')} />
+                            <input type="text" value={this.state.on_arrival} onChange={this.handleInput('on_arrival')} />
                         </label>
                         <label>Price
-                            <input type="number" min="0.01" step="0.01" value={this.state.price} onChange={this.handleInput('Price')}/>
+                            <input type="number" min="0.01" step="0.01" value={this.state.price} onChange={this.handleInput('price')}/>
                         </label>
 
-{/* lat/lng? */}
+                        <div className="map" ref={map => this.mapNode = map}> </div>
+                            {/* lat/lng? */}
                         <label htmlFor="post-body">Body of Post</label>
                         <input type="text"
                             id="post-body"
-                            value={this.state.title}
+                            value={this.state.name}
                             onChange={this.handlepost} />
                         <input type="file"
-                            onChange={this.handleFile} />
-                        <h3>Image preview </h3>
-                        {preview}
+                            onChange={this.handleFile.bind(this)} 
+                            multiple
+                            />
+                        <h3 className="display_image">Image preview </h3>
+                            {preview}
                         <button>Make a new Listing!</button>
-{/* destructure it somehow for lat/lng */}
-                    <div className="map" ref={map => this.mapNode = map}> </div>
                     </form>
 
 

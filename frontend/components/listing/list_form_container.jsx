@@ -11,9 +11,10 @@ const mSTP = (state, ownProps) => {
     })
 }
 
-const mDTP = dispatch => ({
-    createListing: (listing) => dispatch(createListing(listing)),
-
-})
+const mDTP = dispatch => {
+    return ({
+        createListing: (listing) => dispatch(createListing(listing)),
+    })
+}
 
 export default connect(mSTP, mDTP)(ListForm)

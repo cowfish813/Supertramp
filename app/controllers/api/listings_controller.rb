@@ -36,13 +36,12 @@ class Api::ListingsController < ApplicationController
     end
 
     def create
+        # debugger
         @listing = Listing.new(listing_params)
-        @listing.host_id = current_user.id 
-        #link host id to current.user id on create only....unless nested...?
+        @listing.host_id = current_user.id         
         if @listing.save
-            # render 'api/listings/show' #DOES NOT EXIST YET. 
-            # RENDER WHEN IT DOES
-            render json: {message: "successful create"}
+            # render json: {message: "successful create"}
+            render :show
         else
             render json: @listing.errors.full_messages, status:404
         end
@@ -56,7 +55,7 @@ class Api::ListingsController < ApplicationController
 
 private
     def listing_params
-        params.require(:listing).permit(:cancellation_policy, :photos, :capacity, :country, :description, :minimum_nights, :name, :on_arrival, :price, :checkin, :checkout, :lat, :lng)
+        params.require(:listing).permit( :image_url, :image_file, :cancellation_policy, :capacity, :country, :description, :minimum_nights, :on_arrival, :price, :checkin, :checkout, :lat, :lng, :name, photos: [])
     end
 
     def bounds

@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'open-uri'
+# file = open('https://supertrampapp.?region=us-west-1.amazonaws.com/<some_file>.jpg')
 
 User.destroy_all
 Listing.destroy_all
