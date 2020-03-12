@@ -4,6 +4,9 @@
     /* height: 100%; */
     /* width: 100%; */
     bottom: 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 .superFooter {
@@ -18,6 +21,7 @@
      bottom: 0%;
      display: flex;
     background-color: #ffffff;    
+    text-align: center;
 }
 
 .subFooter {
@@ -31,7 +35,7 @@
     bottom: 0;
     justify-content: center;
     /* flex-shrink: ; */
-    flex: 1 0 auto;
+    text-align: center;
 }
 
 

@@ -1,9 +1,16 @@
 .userBody {
-
+    display: flex;
+    justify-content: left;
+    height: 7000px;
+    position: relative;
+    /* align-items: left; */
+    /* background-color: black; */
 }
 
 /* left panel */
 .left_panel {
+    display: flex;
+    justify-content: left;
     height: 663px;
     padding: 0px 10px;
 }

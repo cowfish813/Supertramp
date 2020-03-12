@@ -36,12 +36,11 @@ class Api::ListingsController < ApplicationController
     end
 
     def create
-        # debugger
         @listing = Listing.new(listing_params)
         @listing.host_id = current_user.id         
-        if @listing.save
-            # render json: {message: "successful create"}
-            render :show
+        if @listing.save!
+            render json: {message: "successful create"}
+            # render :show
         else
             render json: @listing.errors.full_messages, status:404
         end
@@ -55,7 +54,7 @@ class Api::ListingsController < ApplicationController
 
 private
     def listing_params
-        params.require(:listing).permit( :image_url, :image_file, :cancellation_policy, :capacity, :country, :description, :minimum_nights, :on_arrival, :price, :checkin, :checkout, :lat, :lng, :name, photos: [])
+        params.require(:listing).permit(:photo, :cancellation_policy, :capacity, :country, :description, :minimum_nights, :on_arrival, :price, :checkin, :checkout, :lat, :lng, :name)
     end
 
     def bounds

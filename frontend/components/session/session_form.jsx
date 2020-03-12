@@ -37,7 +37,7 @@ class Session extends React.Component {
     handleDemoUser(e) {
         e.preventDefault()
             const demo = {
-                username: "nick",
+                username: "demo",
                 password: "123456",
             }
         this.props.demoUser(demo).then(this.props.closeModal())
@@ -137,7 +137,10 @@ class Session extends React.Component {
                             <input type="submit" className="loginButton" value={this.props.formType}/>
 
                         </form>
+                        <div className="login-body">
                             <button className="demoButton" type="button" onClick={this.handleDemoUser}>Demo User</button>
+
+                        </div>
                         {/* <Link to= /> */}
                         
                         <div className="login-footer">
@@ -181,7 +184,10 @@ class Session extends React.Component {
                                 {/* <button className="loginButton" >{this.props.formType}</button> */}
                                 <input type="submit" className="loginButton" value={this.props.formType} />
                             </div>
+                                {/* <div className="login-body"> */}
+
                                 <button className="demoButton" type="button" onClick={this.handleDemoUser}>Demo User</button>
+                                {/* </div> */}
                                 
                         </form>
                         

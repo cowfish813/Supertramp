@@ -1,5 +1,11 @@
 .home {
     margin: 114px 0px 0px;
+    height: 280px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
 }
 
 .homeCol {
@@ -11,6 +17,7 @@
     left: 0;
     right: 0;
     flex-direction: column;
+    justify-content: center;
 }
 
 .homeTitle {
@@ -34,16 +41,27 @@
     
 }
 
+.searchWrapper {
+    min-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex: 0 0 80px; */
+}
+
 .superSearch {
     padding: 10px;
+    width: 1080px;
     height: 100px;
     padding: 17px;
     box-shadow: 0px 3px 7px lightgray;
-    margin: auto;
+    /* margin: 0 auto; */
     position: relative;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-content: center;
+    align-items: center;
+    
 
 }
 
@@ -51,21 +69,40 @@
     width: 559px;
     height: 63px;
     background: #ffffff;
-    padding: 6px 12px 6px 45px;
+    /* padding: 6px 12px 6px 45px; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    
 }
 .search {
     width: 100%;
+    height: 100%;
+    font-size: 20px;
+    
 }
 
+
+
 .datebox {
+    display: flex;
     height: 66px;
     width: 155px;
+    justify-content: space-around;
+    align-items: center;   
+}
+.date {
+    height: 80px%;
+    width: 100%;
+    font-size: 20px;
+    
 }
 .filterButton {
     width: 145px;
     height: 65px;
     padding: 7px 7px 9px;
-    margin: 0 0 0 10px;
+    /* margin: 0 0 0 10px; */
     background: #ffffff;
     font-size: 20px;
 }
@@ -74,8 +111,8 @@
 .dropdownMenu {
     position: relative;
     font-family: Arial, Helvetica, sans-serif;
-    /* height: 65px;
-    width: 180px; */
+    height: 65px;
+    width: 180px; 
 }
 .menuSelect select{
     display: none;
@@ -83,16 +120,26 @@
 .menuSelect {
     padding: 6px 7px 6px 10px;
     height: 65px;
-    width: 180px;
+    /* width: 180px; */
+    width: 300px
     background-color: #FFFFFF;
     margin: 2px 0 0;
     border-radius: 3px;
     background-color:  #FFFFFF;
-}
-.menuSelected:after {
-  position: absolute;
+    width: 100%;
+    max-width: 100%; 
+    box-sizing: border-box;
+    margin: 0;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    display: block;
 
 }
+/* .menuSelected:after {
+  position: absolute;
+
+} */
 
 .menuMenu:hover {
     /* cursor: pointer; */
@@ -123,7 +170,7 @@
     border: 3px solid #40d9ac ;
     font-size: 20px;
     font-weight: normal;
-
+    transition: 0.6s;
 }
 .searchButton:hover {
     background: #ffffff;
@@ -143,7 +190,7 @@
 }
 
 .bannerImg {
-    max-width: 600px;
+    max-width: 1080px;
     height: auto;
     justify-content: center;
     margin: auto;
@@ -158,7 +205,7 @@
 .tiles_tile {
     display: flex;
     flex-direction: row;
-    width: 350px;
+    /* width: 350px; */
     height: 635px;
     justify-content: center;
 }
@@ -224,4 +271,12 @@
     animation: pop .2s ease forwards;
     box-shadow: 0px 3px 4px  grey;
 }
+
+
+
+
+
+
+
+
 

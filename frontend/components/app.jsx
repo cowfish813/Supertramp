@@ -27,17 +27,18 @@ import list_index_item from './listing/list_index_item'
 const App = () => (
     <div className="super-body">
         < Modal />
-        < NavbarContainer />
-
-        < Route exact path="/create_listings/"  component={ListForm} />
+        < ProtectedRoute exact path="/create_listings/"  component={ListForm} />
         < Route exact path="/" component={Homepage} />
         < Route exact path="/listings/:listingsId" component={ListShow} />
+        < NavbarContainer />
         {/* < Route exact path="/listings/" component={list_index_item} /> */}
-        < ProtectedRoute exact path="/users/:usersId" component={UserShow} />
+
+        < ProtectedRoute exact path="/users/:userId" component={UserShow} />
+        < Switch>
         < AuthRoute path="/login" component={LoginFormContainer} />
         < AuthRoute path="/signup" component={SignupFormContainer} />
+        </Switch>
 
-        {/* < Route exact path="/" component={listIndexContainer} /> */}
         < Footer />
     </div>
 );

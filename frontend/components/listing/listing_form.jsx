@@ -17,10 +17,8 @@ class ListingForm extends React.Component {
             checkout:  "" ,
             lat:  0,
             lng:  0,
-            image_url: "",
-            image_file: null,
             country:"yes",
-            photos: []
+            photoFile: null
         
         }
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -37,21 +35,21 @@ class ListingForm extends React.Component {
     handleInput(type) {
         event.preventDefault()
           return  event => {
-
                 this.setState({ [type]: event.currentTarget.value })
             }
 
     };
 
     handleFile(e) {
-        const reader = new FileReader();
-        const file = e.currentTarget.files[0];
-        reader.onloadend = () => {
-            this.setState({ image_url: reader.result, image_file: file });
-        }
-        if (file) {
-            reader.readAsDataURL(file);
-        }
+        this.setState({photoFile: e.currentTarget.files[0]})  
+        // const reader = new FileReader();
+        // const file = e.currentTarget.files[0];
+        // reader.onloadend = () => {
+        //     this.setState({ imageUrl: reader.result, imageFile: file });
+        // }
+        // if (file) {
+        //     reader.readAsDataURL(file);
+        // }
         //  else {
         //     this.setState({ imageUrl: "", imageFile: null });
         // }
@@ -61,6 +59,7 @@ class ListingForm extends React.Component {
         e.preventDefault()
         // this.props.createListing(this.state)
         const formData = new FormData()
+        
         formData.append('listing[name]', this.state.name);
         formData.append('listing[cancellation_policy]', this.state.cancellation_policy);
         formData.append('listing[capacity]', this.state.capacity);
@@ -73,9 +72,8 @@ class ListingForm extends React.Component {
         formData.append('listing[lat]', this.state.lat);
         formData.append('listing[lng]', this.state.lng);
         formData.append('listing[country]', this.state.country);
-        formData.append('listing[image_url]', this.state.image_url);
-        formData.append('listing[image_file]', this.state.image_file);
-        formData.append('listing[photos]', this.state.photos);
+        formData.append('listing[photo]', this.state.photoFile);
+        // formData.append('listing[photos]', this.state.photoFile);
         $.ajax({
             url: '/api/listings',
             method: 'POST',
@@ -99,7 +97,7 @@ class ListingForm extends React.Component {
 
 
     render () {
-        const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
+        // const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
         return (
             <div className="ListCreate" >
 
@@ -129,16 +127,14 @@ class ListingForm extends React.Component {
                         <div className="map" ref={map => this.mapNode = map}> </div>
                             {/* lat/lng? */}
                         <label htmlFor="post-body">Body of Post</label>
-                        <input type="text"
+                        {/* <input type="text"
                             id="post-body"
                             value={this.state.name}
-                            onChange={this.handlepost} />
+                            onChange={this.handlepost} /> */}
                         <input type="file"
                             onChange={this.handleFile.bind(this)} 
                             multiple
                             />
-                        <h3 className="display_image">Image preview </h3>
-                            {preview}
                         <button>Make a new Listing!</button>
                     </form>
 

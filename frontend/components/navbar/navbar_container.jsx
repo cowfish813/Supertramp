@@ -8,9 +8,8 @@ import { withRouter } from 'react-router-dom'
 const mSTP = state => {
     return({  
         formType: 'login',
-        // currentUser: state.entities.user,
         currentUser: state.entities.users[state.session.currentUser],
-        currentUserID: state.session.id
+        ID: state.session.currentUser
         })
 }
 

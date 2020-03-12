@@ -9,14 +9,11 @@
 #  checkout            :datetime
 #  country             :string           not null
 #  description         :text             not null
-#  image_file          :string
-#  image_url           :string
 #  lat                 :float
 #  lng                 :float
 #  minimum_nights      :integer          not null
 #  name                :string           not null
 #  on_arrival          :string           not null
-#  photos              :string           default("{}"), is an Array
 #  price               :integer          not null
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null

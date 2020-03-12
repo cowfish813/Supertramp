@@ -9,9 +9,22 @@
     flex-direction: column;
     /* overflow-x: hidden !important; */
     max-width: 100% !important;
-    /* overflow-x: hidden; */
-     /* overflow-y: hidden; */
+    overflow-x: hidden;
+     overflow-y: hidden;
  }
+strong {
+    font-weight: bolder;
+}
+ a {
+     color: inherit;
+     text-decoration: inherit;
+ }
+
+.logo-pic {
+    width: 145px;
+    height: 24px;
+}
+
 
 
  .superNav {
@@ -26,16 +39,18 @@
     }
     
     .nav-left {
-        width: 60%;
+        width: 75%;
     }
     
 .nav-right {
     margin: 0 5px 0 0;
-    margin-right: 5%;
-    width: 40%;
+    margin-right: 1%;
+    width: 22%;
     display: flex;
+    float: right;
     /* justify-content: flex-end; */
     justify-content: space-between;
+    text-align: right;
 }
 
 .navItem {
