@@ -26,7 +26,7 @@ export const fetchListings = () => dispatch => {
 }
 export const fetchListing = (listingId) => dispatch => {
     return ApiUtil.fetchListing(listingId)
-    .then( (listings) => dispatch(receiveListing(listings)))
+    .then( (listing) => dispatch(receiveListing(listing)))
 }
 
 export const createListing = listing => dispatch =>  {

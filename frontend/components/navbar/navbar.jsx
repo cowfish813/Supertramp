@@ -49,6 +49,7 @@ class NavBar extends React.Component {
                     <div className="nav-right">
                         <li className="navItem"><a href="https://www.linkedin.com/in/nicholas-cheung-6a72999">Linkedin</a></li>
                         <li className="navItem"><a href="https://github.com/cowfish813">GitHub</a></li>
+                      <li className="navItem"><a href="https://www.instagram.com/probablynotnick/">Instagram</a></li>
                         <li className="navItem"><a onClick={() => this.props.openModal('Login')}>Log In</a></li> {/* another modal button*/}
                         <li className="navItem signupButton" onClick={this.handleClick}>
                             {/* <button onClick={() => this.props.openModal('Signup')}>Sign up</button> */}
@@ -66,7 +67,7 @@ class NavBar extends React.Component {
 
                     <div className="nav-right">
                         <li className="navItem"><a>Trips</a></li>
-                        <li className="navItem"><Link to={`users/${this.props.ID}`}>self</Link></li>
+                        <li className="navItem"><Link to={`users/${this.props.ID}`}>Self</Link></li>
                         <li className="navItem" onClick={this.handleLogout}><a>Log out</a></li> {/* link to my linked in or transfer to bottom of page? */}
                     </div>
                 </div>

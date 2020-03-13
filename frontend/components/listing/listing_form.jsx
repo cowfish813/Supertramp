@@ -126,7 +126,7 @@ class ListingForm extends React.Component {
 
                         <div className="map" ref={map => this.mapNode = map}> </div>
                             {/* lat/lng? */}
-                        <label htmlFor="post-body">Body of Post</label>
+                        {/* <label htmlFor="post-body">Body of Post</label> */}
                         {/* <input type="text"
                             id="post-body"
                             value={this.state.name}

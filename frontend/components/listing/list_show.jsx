@@ -2,12 +2,13 @@ import React from 'react';
 
 class ListShow extends React.Component {
     constructor(props) {
+        // debugger
         super(props)
-
-        this.state = this.props.listing
+        // this.state = this.props.list
     }
 
-      componentDidMount() {
+    componentDidMount() {
+          this.props.fetchListing(this.props.match.params.listingsId)
     // set the map to show SF
     const mapOptions = {
         // replace lat and lng with this.props stuff
@@ -17,9 +18,15 @@ class ListShow extends React.Component {
 
     // wrap this.mapNode in a Google Map
     this.map = new google.maps.Map(this.mapNode, mapOptions);
-  }
-    render () {
+    }
 
+    handleListing () {
+        this.props.fetchListing()
+    }
+
+
+    render () {
+        // debugger
         return (
             <div>
                 <div className="social_share_target">
@@ -27,7 +34,9 @@ class ListShow extends React.Component {
                         <div className="photo_square">
                             <div className="photo_title">
                             <h1>{this.props.name}</h1>
-                            <img className="list-show-photo" src="https://scontent-sjc3-1.xx.fbcdn.net/v/t31.0-8/17855640_10105438859618553_1862219686291433231_o.jpg?_nc_cat=102&_nc_sid=8024bb&_nc_ohc=U1_h6a7o6CgAX-BtgmW&_nc_ht=scontent-sjc3-1.xx&oh=97b66ead3b62704bba16c55dec9a9f20&oe=5E91FBB6" alt=""/>
+                                <img className="list-show-photo" src={this.props.list.photoUrls} alt=""/>
+                            
+                                {/* "https://scontent-sjc3-1.xx.fbcdn.net/v/t31.0-8/17855640_10105438859618553_1862219686291433231_o.jpg?_nc_cat=102&_nc_sid=8024bb&_nc_ohc=U1_h6a7o6CgAX-BtgmW&_nc_ht=scontent-sjc3-1.xx&oh=97b66ead3b62704bba16c55dec9a9f20&oe=5E91FBB6" */}
                             {/* img is placeholder */}
                             </div>
                         </div>
@@ -38,7 +47,7 @@ class ListShow extends React.Component {
                     <div className="wrapper">
                         <div className="price-wrapper">
                             <div className="price">
-                                    {this.state.price}
+                                    {this.props.list.price}
                             </div>
                         </div>
                     </div>
@@ -46,7 +55,7 @@ class ListShow extends React.Component {
                         <div className="col checkin">
                             <div className="label">
                                 Check in
-                                <input type="date" value="Select Date" className="col_box" />
+                                <input type="date" className="col_box" />
                             </div>
                         </div>
                         <div className="col checkout">
@@ -69,7 +78,7 @@ class ListShow extends React.Component {
                         
                     <div className="content-bottom">
                         <div className="details-container">
-                            <h1>{this.state.name}</h1>
+                            <h1>{this.props.name}</h1>
                         </div>
                     </div>
 
@@ -78,7 +87,7 @@ class ListShow extends React.Component {
                                 {/* pic profile */}
                             </div>
                             <div className="desc-wrapper">
-                                <p>{this.state.description}</p>
+                                <p>{this.props.description}</p>
                             </div>
                             <div className="info-cards-wrapper">
                                 <div className="info-cards"></div>
@@ -94,6 +103,12 @@ class ListShow extends React.Component {
             </div>
         ) 
 
+    }
+}
+
+ListShow.defaultProps = {
+    list: {photoUrls: "",
+    price: ""
     }
 }
 
