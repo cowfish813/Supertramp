@@ -62,7 +62,9 @@ class NavBar extends React.Component {
              (
                 <div className="superNav">
                     <div className="nav-left">
-                        <Link to="/" className="logo">User PF pic goes here</Link> {/* use image AWS */}
+                        <Link to="/" className="logo">
+                        <img className="logo-pic" src="https://djqvcbmmgpti5.cloudfront.net/assets/favicon/hipcamp-apple-icon-77c3a7c86c7373902fa3b80081c977e7c66ea40c2e535b1918a8c6299aac1abe.png" alt="" />
+                        </Link> {/* use image AWS */}
                     </div>
 
                     <div className="nav-right">
