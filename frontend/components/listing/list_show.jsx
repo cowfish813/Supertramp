@@ -3,16 +3,13 @@ import React from 'react';
 class ListShow extends React.Component {
     constructor(props) {
         // debugger
-        super(props)
-        // this.state = this.props.list
+        super(props)        
     }
 
     componentDidMount() {
-          this.props.fetchListing(this.props.match.params.listingsId)
-    // set the map to show SF
+    this.props.fetchListing(this.props.match.params.listingsId)
     const mapOptions = {
-        // replace lat and lng with this.props stuff
-      center: { lat: 37.7758, lng: -122.435 }, // this is SF
+      center: { lat: this.props.list.lat, lng: this.props.list.lng }, 
       zoom: 13
     };
 
@@ -28,14 +25,14 @@ class ListShow extends React.Component {
     render () {
         // debugger
         return (
-            <div>
+            <div className="show_body">
                 <div className="social_share_target">
                     <div className="carousel">
                         <div className="photo_square">
                             <div className="photo_title">
                             <h1>{this.props.name}</h1>
-                                <img className="list-show-photo" src={this.props.list.photoUrls} alt=""/>
-                            
+                                <img className="list-show-photo" src="https://scontent-sjc3-1.xx.fbcdn.net/v/t31.0-8/17855640_10105438859618553_1862219686291433231_o.jpg?_nc_cat=102&_nc_sid=8024bb&_nc_ohc=U1_h6a7o6CgAX-BtgmW&_nc_ht=scontent-sjc3-1.xx&oh=97b66ead3b62704bba16c55dec9a9f20&oe=5E91FBB6" alt=""/>
+                                {/* this.props.list.photoUrls */}
                                 {/* "https://scontent-sjc3-1.xx.fbcdn.net/v/t31.0-8/17855640_10105438859618553_1862219686291433231_o.jpg?_nc_cat=102&_nc_sid=8024bb&_nc_ohc=U1_h6a7o6CgAX-BtgmW&_nc_ht=scontent-sjc3-1.xx&oh=97b66ead3b62704bba16c55dec9a9f20&oe=5E91FBB6" */}
                             {/* img is placeholder */}
                             </div>
@@ -108,7 +105,9 @@ class ListShow extends React.Component {
 
 ListShow.defaultProps = {
     list: {photoUrls: "",
-    price: ""
+    price: "",
+    lat: "",
+    lng: ""
     }
 }
 
