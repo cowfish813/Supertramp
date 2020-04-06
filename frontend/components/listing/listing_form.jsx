@@ -42,17 +42,7 @@ class ListingForm extends React.Component {
 
     handleFile(e) {
         this.setState({photoFile: e.currentTarget.files[0]})  
-        // const reader = new FileReader();
-        // const file = e.currentTarget.files[0];
-        // reader.onloadend = () => {
-        //     this.setState({ imageUrl: reader.result, imageFile: file });
-        // }
-        // if (file) {
-        //     reader.readAsDataURL(file);
-        // }
-        //  else {
-        //     this.setState({ imageUrl: "", imageFile: null });
-        // }
+
     }
 
     handleSubmit(e) {
@@ -84,7 +74,7 @@ class ListingForm extends React.Component {
     }
 
     componentDidMount() {
-        // set the map to show SF
+
         const mapOptions = {
             // replace lat and lng with this.props stuff
             center: { lat: 37.7758, lng: -122.435 }, // this is SF
