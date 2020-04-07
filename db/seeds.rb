@@ -47,7 +47,7 @@ l1.photo.attach(io: f1, filename: '17545579_10105436252223793_116854081177676444
 
 
 l2 = Listing.create!(
-    name: 'Car on side of road',
+    name: 'Car',
     description: '5/9 overseas trips, nick lived this way because he was too tired to keep driving',
     on_arrival: 'key under 3rd wheel',
     cancellation_policy: 'yes',

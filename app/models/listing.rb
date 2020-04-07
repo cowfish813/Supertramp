@@ -24,7 +24,7 @@
 #  index_listings_on_host_id  (host_id)
 #
 class Listing < ApplicationRecord
-    validates :cancellation_policy, :capacity, :country, :description, :minimum_nights, :name, :on_arrival, :price, presence: true
+    validates :cancellation_policy, :capacity, :description, :minimum_nights, :name, :on_arrival, :price, presence: true
     # validating presence true for all
 
     belongs_to :user,

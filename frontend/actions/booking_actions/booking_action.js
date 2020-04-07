@@ -36,12 +36,12 @@ export const fetchBooking = booking => dispatch => {
         err => dispatch(receiveBookingErrors(err.responseJSON))
     )
 }
-export const fetchBookings = () => dispatch => {
-    return ApiUtil.fetchBookings().then(
-        bookings => dispatch(receiveBookings(bookings)),
-        err => dispatch(receiveBookingErrors(err.responseJSON))
-    )
-}
+// export const fetchBookings = () => dispatch => {
+//     return ApiUtil.fetchBookings().then(
+//         bookings => dispatch(receiveBookings(bookings)),
+//         err => dispatch(receiveBookingErrors(err.responseJSON))
+//     )
+// }
 export const deleteBooking = (bookingId) => dispatch => {
     return ApiUtil.deleteBooking(bookingId).then(
         bookings => dispatch(removeBooking(bookings)),

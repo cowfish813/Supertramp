@@ -13,9 +13,10 @@
 class User < ApplicationRecord
     attr_reader :password
 
-  validates :username, :email, presence: true, uniqueness: true
+  validates :username, presence: true, uniqueness: true
   validates :password_digest, :last_name, :first_name, :session_token, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP}
 
   # This allows us to run methods before running validations
   # In this case, we need to have a session_token when a user is first created
