@@ -13,8 +13,8 @@ class ListShow extends React.Component {
       zoom: 13
     };
 
-    // wrap this.mapNode in a Google Map
-    this.map = new google.maps.Map(this.mapNode, mapOptions);
+        // wrap this.mapNode in a Google Map
+        this.map = new google.maps.Map(this.mapNode, mapOptions);
     }
 
     handleListing () {

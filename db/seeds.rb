@@ -12,7 +12,7 @@ require 'open-uri'
 User.delete_all
 Listing.delete_all
 
-u1 = User.create!(
+u2 = User.create!(
     username: 'demo',
     password: '123456',
     email: 'demo@gmail.com',
@@ -20,8 +20,8 @@ u1 = User.create!(
     first_name: 'demo'
 )
 
-u2 = User.create!(
-    username: 'nick',
+u1 = User.create!(
+    username: 'master',
     password: '123456',
     email: 'Nick@gmail.com',
     last_name: 'C',
@@ -31,35 +31,37 @@ u2 = User.create!(
 
 l1 = Listing.create!(
     name: "Gates of Gondor", 
-    description: 'Gondor calls for aid',
+    description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
     on_arrival: 'call for aid',
     cancellation_policy: 'strict',
     capacity: 9,
     country: "Middle Earth",
-    minimum_nights: 12,
-    price: 9001,
-    lat: -44.478852,
-    lng: 168.995349,
+    minimum_nights: 2,
+    price: 75,
+    lat: -0.43202,
+    lng: 114.11910,
     host_id: u1.id
 )
-f1 = open('https://supertrampapp-ori.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+
+#disable open/photo.attach and it can seed....but still.
+f1 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
 l1.photo.attach(io: f1, filename: '17545579_10105436252223793_1168540811776764446_o.jpg' )
 
 
 l2 = Listing.create!(
     name: 'Car',
-    description: '5/9 overseas trips, nick lived this way because he was too tired to keep driving',
+    description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
     on_arrival: 'key under 3rd wheel',
     cancellation_policy: 'yes',
     capacity: 4,
     country: "murica",
     minimum_nights: 2,
     price: 3.50,
-    lat: 37.763698,
-    lng: -122.472876,
+    lat: -9.35439,
+    lng: 142.07621,
     host_id: u1.id
     )
-f2 = open('https://supertrampapp-ori.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f2 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
 l2.photo.attach(io: f2, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
 
 
@@ -67,34 +69,34 @@ l2.photo.attach(io: f2, filename: '17855640_10105438859618553_186221968629143323
 l3 = Listing.create!(
     name: 'Whiterun',
     on_arrival: 'Ask innkeeper for Jarl Balgrif',
-    description: 'Skyrim is a nice place',
+    description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
     cancellation_policy: 'Lenient',
     capacity: 3,
     country: "Tamriel",
     minimum_nights: 1,
     price: 200,
-    lat: 122.472876,
-    lng: -12.472876,
+    lat: -0.66823,
+    lng: 42.88067,
     host_id: u1.id
 )
-f3 = open('https://supertrampapp-ori.s3-us-west-1.amazonaws.com/28516642_10106468836212203_4628740970091386634_o.jpg')
-l3.photo.attach(io: f3, filename: '28516642_10106468836212203_4628740970091386634_o.jpg')
+f3 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+l3.photo.attach(io: f3, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
 
 l4 = Listing.create!(
     name: 'Wild place',
-    description: 'im running out of ideas ',
+    description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
     on_arrival: 'hike 12 miles',
     cancellation_policy: 'Lenient',
     capacity: 1,
     country: "murica",
     minimum_nights: 1,
     price: 50,
-    lat: 137.749073,
-    lng: -119.611150,
+    lat: -23.95554,
+    lng: 106.13058,
     host_id: u1.id
 )
 
-f4 = open('https://supertrampapp-ori.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f4 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
 l4.photo.attach(io: f4, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
 
 
@@ -102,34 +104,34 @@ l4.photo.attach(io: f4, filename: '28828057_10106502756296083_391709551483115630
 l5 = Listing.create!(
     name: 'Wild land',
     on_arrival: 'walk 500 miles',
-    description: 'and i would walk 500 more',
+    description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
     cancellation_policy: 'Proclaimers',
     capacity: 1,
     country: "murica",
     minimum_nights: 1,
     price: 500,
-    lat: 15.749073,
-    lng: -119.611150,
+    lat: -17.59325,
+    lng: 138.91744,
     host_id: u1.id
 )
 
-f5 = open('https://supertrampapp-ori.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f5 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
 l5.photo.attach(io: f5, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
 
 l6 = Listing.create!(
     name: 'Piano',
     on_arrival: 'walk 1000 miles more',
-    description: 'so i could just see you',
+    description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
     cancellation_policy: 'vanessa carlton',
     capacity: 2,
     country: "Hyrule",
     minimum_nights: 1,
     price: 1000,
-    lat: 37.749073,
-    lng: -119.611150,
+    lat: 40.50039,
+    lng: 29.22590,
     host_id: u1.id
 )
-f6 = open('https://supertrampapp-ori.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f6 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
 l6.photo.attach(io: f6, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
 
 

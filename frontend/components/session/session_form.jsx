@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom'
 import { clearErrors } from '../../actions/session_actions';
 
@@ -41,7 +41,7 @@ class Session extends React.Component {
                 password: "123456",
             }
         this.props.demoUser(demo).then(this.props.closeModal())
-        this.props.history.push("/")
+        this.props.history.push("/")//redirects user to "/"
     }
 
     renderErrors() {
