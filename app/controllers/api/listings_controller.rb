@@ -1,30 +1,7 @@
 class Api::ListingsController < ApplicationController
 
     def index
-        @listings = Listing.all
-
-        # listings = bounds ? Listing.in_bounds(bounds) : Listing.all
-
-        # if params[:name]
-        #     listings = listings.where('name < ? ', params[:name])
-        # end
-
-        # if params[:cancellation_policy]
-        #     listings = listings.where('cancellation policy < ?', params[:cancellation_policy])
-        # end
-
-        # if params(:price)
-        #     listings = listings.where('price < ?', params[:price]) 
-        # end
-
-        # if params[:capacity]
-        #     listings = listings.where('capacity < ?', params[:capacity])
-        # end
-        # if params[:photos]
-        #     listings = listings.where('photos < ?', params[:photos])
-        # end
-
-        # @listings = listings
+        @listings = bounds ? Listing.in_bounds(bounds) : Listing.all
         render :index
     end
 
@@ -37,7 +14,7 @@ class Api::ListingsController < ApplicationController
 
     def create
         @listing = Listing.new(listing_params)
-        @listing.host_id = current_user.id         
+        @listing.host_id = current_user.id         #dis/enable when create feature exists?
         if @listing.save!
             render json: {message: "successful create"}
             # render :show
