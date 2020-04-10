@@ -1,20 +1,24 @@
 import React from 'react';
 // import BookingForm from '../../bookings/booking_form_container'
 import { Link } from 'react-router-dom'
+import ListMap from '../list_map'
 
 
 class ListShow extends React.Component {
     constructor(props) {
-        // debugger
         super(props)        
     }
 
     componentDidMount() {
-    this.props.fetchListing(this.props.match.params.listingsId)
-    const mapOptions = {
-      center: { lat: this.props.list.lat, lng: this.props.list.lng }, 
-      zoom: 13
-    };
+        window.scrollTo(0, 0);
+        this.props.fetchListing(this.props.match.params.listingsId);
+
+        const mapOptions = {
+            center: { lat: this.props.list.lat, lng: this.props.list.lng },
+        //   center: { lat: 37.7758, lng: -122.435 },
+          zoom: 13,
+          mapTypeId: "terrain", //sets map to terrain type
+        };
 
         // wrap this.mapNode in a Google Map
         this.map = new google.maps.Map(this.mapNode, mapOptions);
@@ -29,7 +33,6 @@ class ListShow extends React.Component {
         return (
           <div className="show_body">
             <div className="social_share_target">
-              {/* <div className="carousel"> */}
               <div className="photo_square">
                 <div className="photo_title">
                   <h1>{this.props.name}</h1>
@@ -42,7 +45,6 @@ class ListShow extends React.Component {
                   {/* WOKRING. enable later when debugging list-show is complete */}
                 </div>
               </div>
-              {/* </div> */}
             </div>
 
             <div className="widget-container">
@@ -71,7 +73,7 @@ class ListShow extends React.Component {
                   </div>
                 </div>
               </div>
-                <button>Book Now</button>
+            <button>Book Now</button>
             </div>
 
             <div className="show-liting">
@@ -85,7 +87,7 @@ class ListShow extends React.Component {
                 <div className="row">
                   <div className="listed-by">{/* pic profile */}</div>
                   <div className="desc-wrapper">
-                    <p>{this.props.description}</p>
+                {this.props.description}
                   </div>
                   <div className="info-cards-wrapper">
                     <div className="info-cards"></div>
@@ -96,9 +98,8 @@ class ListShow extends React.Component {
               </div>
 
               <div className="feature-container"></div>
-              <div className="map" ref={(map) => (this.mapNode = map)}>
-                {" "}
-              </div>
+              <div className="map" ref={(map) => (this.mapNode = map)}></div>
+              {/* < ListMap /> */}
             </div>
           </div>
         ); 
@@ -114,6 +115,12 @@ ListShow.defaultProps = {
     name: "",
     description: "",
     }
+    //use this.state possibly
+    // convertl ocal props to local state
+    // if you submit some kind of review, you want new review to pop up on submit, update local state
+    // when you call this.setstate - react comp auto re-renders
+    // update database as well
+    // as you trigger setstate - submit data through dispatch - send it to ajax call - persist to databse
 }
 
 export default ListShow
