@@ -1,4 +1,6 @@
-json.extract! @listing, :cancellation_policy, :capacity, :country, :description, :minimum_nights, :name, :on_arrival, :price, :checkin, :checkout, :lat, :lng, :id
+json.extract! @listing, :cancellation_policy, :capacity, :country, 
+:description, :minimum_nights, :name, :on_arrival, :price, 
+:checkin, :checkout, :lat, :lng, :id
 json.photoUrls url_for(@listing.photo)
 # json.photoUrls @listing.photo.map { |file| url_for(file)}
 

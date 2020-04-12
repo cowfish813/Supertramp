@@ -1,22 +1,34 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
+import MarkerManager from '../../util/map_marker'
 
 class ListMap extends React.Component {
     constructor(props) {
         super(props)
     }
     componentDidMount() {
-        this.props.fetchListing()
+        window.scrollTo(0, 0); //scrolls to top
+        // this.props.fetchListing()
 
         const mapOptions = {
-            center: { lat: 37.7758, lng: -122.435 }, // this is SF
-            zoom: 13
+          //   center: { lat: 37.7758, lng: -122.435 }, // this is SF
+          center: { 
+              lat: this.props.list.lat, 
+              lng: this.props.list.lng 
+            },
+          zoom: 13,
+          mapTypeId: "terrain", //sets map to terrain type
         };
         
         
         // wrap this.mapNode in a Google Map
         this.map = new google.maps.Map(this.mapNode, mapOptions);
-        
+
+        let center = {
+            lat: this.props.listing.lat,
+            lng: this.props.listing.lng,
+        };
+
         const circle = new google.maps.Circle({
             strokeColor: '51D9AC',
             strokeOpacity: 0.8,

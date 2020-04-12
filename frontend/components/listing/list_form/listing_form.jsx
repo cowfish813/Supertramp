@@ -77,7 +77,7 @@ class ListingForm extends React.Component {
 
         const mapOptions = {
             // replace lat and lng with this.props stuff
-            center: { lat: 37.7758, lng: -122.435 }, // this is SF
+            // center: { lat: 37.7758, lng: -122.435 }, // this is SF
             zoom: 13
         };
 
