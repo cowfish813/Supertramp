@@ -8,23 +8,33 @@ import { withRouter }from 'react-router-dom'
 class ListShow extends React.Component {
     constructor(props) {
         super(props)    
-        this.state = {
 
+        this.state = {
+          photoUrls: this.props.list.photoUrls,
+          price: this.props.list.price,
+          lat: this.props.list.lat,
+          lng: this.props.list.lng,
+          name: this.props.list.name,
+          description: this.props.list.description,
         }
     }
 
-    componentDidUpdate() {
+    componentDidUpdate(nextState) {
       
+      console.log(nextState.list)
     }
+
+    // componentWillReceiveProps() {
+
+    // }
 
     componentDidMount() {
         window.scrollTo(0, 0);
         this.props.fetchListing(this.props.match.params.listingsId);
-        debugger
         const mapOptions = {
             center: { 
-                lat: this.props.list.lat, 
-                lng: this.props.list.lng 
+                lat: this.state.lat, 
+                lng: this.state.lng 
             },
         //   center: { lat: 37.7758, lng: -122.435 },
           zoom: 13,
@@ -123,8 +133,8 @@ ListShow.defaultProps = {
     list: {
     photoUrls: "",
     price: "",
-    lat: "",
-    lng: "",
+    // lat: "",
+    // lng: "",
     name: "",
     description: "",
     }
