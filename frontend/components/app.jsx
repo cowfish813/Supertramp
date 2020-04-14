@@ -21,6 +21,7 @@ import ListShow from './listing/list_show/list_show_container'
 // test list
 
 import list_index_item from './listing/list_index_item'
+import Booking from './bookings/booking_form_container'
 
 
 
@@ -28,6 +29,7 @@ const App = () => (
     <div className="super-body">
         < Modal />
         < ProtectedRoute exact path="/create_listings/"  component={ListForm} />
+        < Route exact path="/booking" component={Booking}/>
         < Route exact path="/" component={Homepage} />
         < Route exact path="/listings/:listingsId" component={ListShow} />
         < NavbarContainer />

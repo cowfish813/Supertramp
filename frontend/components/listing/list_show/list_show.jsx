@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import ListMap from '../list_map'
 import { withRouter }from 'react-router-dom'
-
+import BookingForm from '../../bookings/booking_form_container'
 
 class ListShow extends React.Component {
     constructor(props) {
@@ -57,50 +57,24 @@ class ListShow extends React.Component {
           <div className="show_body">
             <div className="social_share_target">
               <div className="photo_square">
-                    {this.props.name}
-                {/* <div className="photo_title"> */}
+                    
                   <img
                     className="list-show-photo"
-                  src="https://scontent-sjc3-1.xx.fbcdn.net/v/t31.0-8/28699040_10106495201840273_8915991695087874299_o.jpg?_nc_cat=105&_nc_sid=84a396&_nc_ohc=j1j01VT95TkAX-hqrTj&_nc_ht=scontent-sjc3-1.xx&oh=41affb2bd997c5367a6fc2edd82d3737&oe=5EB8A90E"
+                    src="https://scontent-sjc3-1.xx.fbcdn.net/v/t31.0-8/28699040_10106495201840273_8915991695087874299_o.jpg?_nc_cat=105&_nc_sid=84a396&_nc_ohc=j1j01VT95TkAX-hqrTj&_nc_ht=scontent-sjc3-1.xx&oh=41affb2bd997c5367a6fc2edd82d3737&oe=5EB8A90E"
                     alt=""
-                  />
+                    />
                   {/* <img className="list-show-photo" src={this.props.list.photoUrls}alt=""/> */}
                   {/* WOKRING. enable later when debugging list-show is complete */}
-                {/* </div> */}
+                <div className="photo_title">
+                  {this.props.name}
+                </div>
               </div>
             </div>
 
-            <div className="widget-container">
-              <div className="wrapper">
-                <div className="price-wrapper">
-                  <div className="price">{this.props.list.price}</div>
-        <div>{this.props.list.lat}</div>
-                </div>
-              </div>
-              <div className="dates-and-guest-content">
-                <div className="col checkin">
-                  <div className="label">
-                    Check in
-                    <input type="date" className="col_box" />
-                  </div>
-                </div>
-                <div className="col checkout">
-                  <div className="label">
-                    Check out
-                    <input type="date" name="" id="" className="col_box" />
-                  </div>
-                </div>
-                <div className="col capacity">
-                  <div className="label">
-                    Guests
-                    <input type="number" name="" id="" className="col_box" />
-                  </div>
-                </div>
-              </div>
-              <button>Book Now</button>
-            </div>
+            {/* < BookingForm/> */}
 
-            <div className="show-liting">
+            <div className="show-listing">
+              {this.props.description}
               <div className="section-overview">
                 <div className="content-bottom">
                   <div className="details-container">{this.props.name}</div>
@@ -108,9 +82,7 @@ class ListShow extends React.Component {
 
                 <div className="row">
                   <div className="listed-by">{/* pic profile */}</div>
-                  <div className="desc-wrapper">
-                    <div className="description">{this.props.description}</div>
-                  </div>
+                    <p className="description">{this.props.description}</p>
                   <div className="info-cards-wrapper">
                     <div className="info-cards"></div>
                     <div className="info-cards"></div>
@@ -120,9 +92,9 @@ class ListShow extends React.Component {
               </div>
 
               <div className="feature-container"></div>
-              <div className="map" ref={(map) => (this.mapNode = map)}></div>
               {/* < ListMap className= "map" /> */}
             </div>
+            <div className="map" ref={(map) => (this.mapNode = map)}></div>
           </div>
         ); 
 

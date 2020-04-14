@@ -8,7 +8,7 @@
 }
 .list-show-photo{
     object-position: center;
-    width: 70%;
+    width: 100%;
     height: auto;
     // probably kill width and height a little bit
 }
@@ -81,20 +81,23 @@
     margin: 0px -10px;
     border: black solid 1px;
 }
-.desc-wrapper {
-    width: 480px;
-    height: 190px;
-}
-.desc-wrapper p {
-    max-width: 480px;
-    min-width: auto;
-    height: auto;
-    min-height: 200px;
-    margin: 0px 0px 11px;
-    font-size: 18px;
-    color: #333333;
-    border: red 1px solid;
-}
+// .description {
+//     width: 480px;
+//     height: 190px;
+//     font-size: 18px;;
+//     color: black;
+//     background-color: red($color: #000000);
+// }
+// .desc-wrapper p {
+//     max-width: 480px;
+//     min-width: auto;
+//     height: auto;
+//     min-height: 200px;
+//     margin: 0px 0px 11px;
+//     font-size: 18px;
+//     color: #333333;
+//     border: red 1px solid;
+// }
 
 .info-cards-wrapper {
     width: 720px;
@@ -126,7 +129,7 @@
 .map {
     margin: auto;
     display: flex;
-  width: 80%;
+  width: 100%;
   height: 500px;
   border: solid red 1px;
 }
