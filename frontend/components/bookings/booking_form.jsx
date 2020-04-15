@@ -10,7 +10,7 @@ class BookingForm extends React.Component {
         this.state = {
             user_id: this.props.currentUserId,
             listingId: this.props.match.params.listingId,
-            listingName: this.props.listing.name,//INVESTIGATE STATE OF LISTING.
+            // listingName: this.props.listing.name,//INVESTIGATE STATE OF LISTING.
             check_in: null,
             check_out: null,
             capacity: 1
@@ -41,7 +41,7 @@ class BookingForm extends React.Component {
         const booking = {
             user_id: this.props.currentUserId,
             listingId: listingId,
-            listingName: this.props.listing.name,
+            // listingName: this.props.listing.name,
             check_in: this.state.check_in.format('YYY/MM/DD'),
             check_out: this.state.check_out.format('YYY/MM/DD'),
             capacity: 1
@@ -90,6 +90,6 @@ class BookingForm extends React.Component {
     }
 
 }
-export default withRouter(BookingForm)
+export default BookingForm
 
 

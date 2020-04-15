@@ -2,13 +2,15 @@
 #
 # Table name: bookings
 #
-#  id         :bigint           not null, primary key
-#  capacity   :integer          not null
-#  check_in   :datetime         not null
-#  check_out  :datetime         not null
-#  host_id    :integer          not null
-#  listing_id :integer          not null
-#  user_id    :integer
+#  id           :bigint           not null, primary key
+#  capacity     :integer          not null
+#  check_in     :datetime         not null
+#  check_out    :datetime         not null
+#  listing_name :string
+#  price        :integer
+#  host_id      :integer          not null
+#  listing_id   :integer          not null
+#  user_id      :integer
 #
 # Indexes
 #

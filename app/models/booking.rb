@@ -2,13 +2,15 @@
 #
 # Table name: bookings
 #
-#  id         :bigint           not null, primary key
-#  capacity   :integer          not null
-#  check_in   :datetime         not null
-#  check_out  :datetime         not null
-#  host_id    :integer          not null
-#  listing_id :integer          not null
-#  user_id    :integer
+#  id           :bigint           not null, primary key
+#  capacity     :integer          not null
+#  check_in     :datetime         not null
+#  check_out    :datetime         not null
+#  listing_name :string
+#  price        :integer
+#  host_id      :integer          not null
+#  listing_id   :integer          not null
+#  user_id      :integer
 #
 # Indexes
 #
@@ -17,7 +19,7 @@
 #  index_bookings_on_user_id     (user_id)
 #
 class Booking < ApplicationRecord
-    validates: :check_in, :check_out, :host_id, :listing_id, :capacity ,presence: true
+    validates :check_in, :check_out, :host_id, :listing_id, :capacity ,presence: true
 
     belongs_to :user,
     foreign_key: :user_id

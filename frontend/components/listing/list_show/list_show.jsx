@@ -71,7 +71,7 @@ class ListShow extends React.Component {
               </div>
             </div>
 
-            {/* < BookingForm/> */}
+            < BookingForm />
 
             <div className="show-listing">
               {this.props.description}

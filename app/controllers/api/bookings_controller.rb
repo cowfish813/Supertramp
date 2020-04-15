@@ -46,6 +46,9 @@ class Api::BookingsController < ApplicationController
 
     private
     def booking_params
-        params.require(:booking).permit(:check_in, :check_out, :listing_id, :price, :capacity)
+        params.require(:booking).permit(
+            :check_in, :check_out, :listing_id, :price, :capacity, 
+            :listing_name, :user_id, :host_id
+            )
     end
 end
