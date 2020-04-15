@@ -1,9 +1,9 @@
 import React from 'react';
-// import BookingForm from '../../bookings/booking_form_container'
 import { Link } from 'react-router-dom'
 import ListMap from '../list_map'
 import { withRouter }from 'react-router-dom'
-import BookingForm from '../../bookings/booking_form_container'
+import BookingForm from '../../bookings/booking_form'
+// import BookingForm from '../../bookings/booking_form_container'
 
 class ListShow extends React.Component {
     constructor(props) {
@@ -105,8 +105,8 @@ ListShow.defaultProps = {
     list: {
     photoUrls: "",
     price: "",
-    // lat: "",
-    // lng: "",
+    lat: "",
+    lng: "",
     name: "",
     description: "",
     }

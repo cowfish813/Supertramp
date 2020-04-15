@@ -4,13 +4,12 @@ import { openModal } from '../../actions/modal_actions/modal_actions';
 import { createBooking } from '../../actions/booking_actions/booking_action';
 
 const mstp = (state, ownProps) => {
-    // debugger
-    return {
-      currentUser: state.entities.users[state.session.currentUser],
-      list: state.entities.listings[ownProps.match.params.listingsId],
-      listings: state.entities.listings,
+    return ({
+    //   currentUser: state.entities.users[state.session.currentUser],
+    //   list: state.entities.listings[ownProps.match.params.listingsId],
+    //   listings: state.entities.listings,
       currentUserID: state.session.id
-    };
+    });
 }
 
 const mdtp = dispatch => ({
