@@ -5,9 +5,7 @@ import { createBooking } from '../../actions/booking_actions/booking_action';
 
 const mstp = (state, ownProps) => {
     return ({
-    //   currentUser: state.entities.users[state.session.currentUser],
-    //   list: state.entities.listings[ownProps.match.params.listingsId],
-    //   listings: state.entities.listings,
+      currentUser: state.entities.users[state.session.currentUser],
       currentUserID: state.session.id
     });
 }

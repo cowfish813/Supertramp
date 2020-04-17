@@ -59,7 +59,9 @@ class BookingForm extends React.Component {
           <div className="widget-container">
             <form className="wrapper" onSubmit={this.handleSubmit}>
               <div className="price-wrapper">
-                <div className="price">{this.props.list.price}</div>
+                <div className="price">
+                    {/* should price go here!!?? */}
+                </div>
               </div>
               <div className="dates-and-guest-content">
                 <div className="col checkin">
@@ -109,13 +111,13 @@ class BookingForm extends React.Component {
                   </div>
                 </div>
               </div>
-              <button className="booking-button">Book Now</button>
+              <button className="booking-button">Request to Book</button>
             </form>
           </div>
         );
     }
 
 }
-export default BookingForm
+export default withRouter(BookingForm)
 
 
