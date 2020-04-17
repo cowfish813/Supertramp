@@ -9,6 +9,6 @@ const entitiesReducer = combineReducers({
     listings: listingsReducer,
     bookings: bookingsReducer
 
-})
+});
 
 export default entitiesReducer;

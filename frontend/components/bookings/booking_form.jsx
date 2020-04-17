@@ -75,11 +75,11 @@ class BookingForm extends React.Component {
                       onFocusChange={({ focused }) =>
                         this.setState({ focusedStart: focused })
                       } // PropTypes.func.isRequired
-                      className="col_box" // PropTypes.string.isRequired,
+                      id="check_in" // PropTypes.string.isRequired,
                       verticalSpacing={0}
                       isDayHighlighted={(day) => this.highlighted(day)} //method written
                       numberOfMonths={1}
-                      daySize={36}
+                      daySize={50}
                       noBorder={true}
                     />
                     {/* <input type="date" className="col_box" /> */}
@@ -94,7 +94,7 @@ class BookingForm extends React.Component {
                       onDateChange={(date) => this.setState({ date })} // PropTypes.func.isRequired
                       focused={this.state.focused} // PropTypes.bool
                       onFocusChange={({ focused }) => this.setState({ focusedEnd: focused })} // PropTypes.func.isRequired
-                      className="col_box" // PropTypes.string.isRequired,
+                      id="check_out" // PropTypes.string.isRequired,
                       verticalSpacing={0}
                       isDayHighlighted={(day) => this.highlighted(day)} //method written
                       numberOfMonths={1}

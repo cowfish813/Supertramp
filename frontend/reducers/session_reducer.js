@@ -1,8 +1,8 @@
-import { RECEIVE_USER, LOGOUT_USER } from '../actions/session_actions'
+import { RECEIVE_USER, LOGOUT_USER } from '../actions/session_actions';
 
 const _defaultSession = {
     currentUser: null
-}
+};
 
 export default (state = _defaultSession, action) => {
     Object.freeze(state)
@@ -16,4 +16,4 @@ export default (state = _defaultSession, action) => {
         default:
             return state
     }
-}
+};
