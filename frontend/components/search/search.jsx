@@ -7,7 +7,9 @@ class Search extends React.Component {
         super(props)
     }
 
-    
+    componentDidMount() {
+        
+    }
 
 
     render () {
