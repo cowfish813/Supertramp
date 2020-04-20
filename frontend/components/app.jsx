@@ -29,8 +29,6 @@ import ListForm from './listing/list_form/list_form_container'
 const App = () => (
     <div className="super-body">
         < Modal />
-        {/* < ProtectedRoute exact path="/create_listings/"  component={ListForm} /> */} 
-                {/* future feature if logged in */}
         < Route exact path="/" component={Homepage} />
         < Route exact path="/listings/:listingsId" component={ListShow} />
         {/* < Route exact path ="/listings/index" component={listIndexContainer} /> */}
@@ -44,6 +42,10 @@ const App = () => (
         </Switch>
 
         < Footer />
+
+
+        {/* incomplete */}
+        < ProtectedRoute exact path="/create_listings/"  component={ListForm} /> 
     </div>
 );
 

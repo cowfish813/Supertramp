@@ -82,7 +82,7 @@ class ListShow extends React.Component {
 
               <div className="feature-container"></div>
             </div>
-              < ListMap className= "map" list={this.props.list} fetchListing={this.props.fetchListing} /> 
+              < ListMap className="map" listId={this.props.list.id} list={this.props.list} fetchListing={this.props.fetchListing} /> 
             {/* <div className="map" ref={(map) => (this.mapNode = map)}></div> */}
           </div>
         ); 
@@ -90,16 +90,19 @@ class ListShow extends React.Component {
     }
 }
 
-ListShow.defaultProps = {
-    list: {
-    // photoUrls: "",
-    // price: "",
-    // lat: "",
-    // lng: "",
-    // name: "",
-    // description: "",
-    }
-  }
+//no longer necessary, but i guess it's a nice backup? component did mount + fetch listing does better
+// ListShow.defaultProps = {
+//     list: {
+//     // photoUrls: "",
+//     // price: "",
+//     // lat: "",
+//     // lng: "",
+//     // name: "",
+//     // description: "",
+//     }
+//   }
+
+
   //use this.state possibly
   // convertl ocal props to local state
   // if you submit some kind of review, you want new review to pop up on submit, update local state
