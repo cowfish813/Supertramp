@@ -4,7 +4,6 @@ import {withRouter} from 'react-router-dom'
 class IndexItem extends React.Component {
     constructor(props) {
         super(props);
-        this.handleClick - this.handleClick.bind(this)
     }
 
     handleClick() {
@@ -14,9 +13,8 @@ class IndexItem extends React.Component {
 
     render() {
         return (
-            <div className="stuff">
-                    <h2 className="ultraFont">this is the listIndex</h2>
-                <p>{this.props.title}</p>
+            <div>
+
             </div>
         )
     }
