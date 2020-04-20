@@ -30,28 +30,27 @@ class ListShow extends React.Component {
     componentDidMount() {
         window.scrollTo(0, 0);
         this.props.fetchListing(this.props.match.params.listingsId);
-        const mapOptions = {
-            center: { 
-                lat: this.state.lat, 
-                lng: this.state.lng 
-            },
-        //   center: { lat: 37.7758, lng: -122.435 },
-          zoom: 13,
-          mapTypeId: "terrain", //sets map to terrain type
-        };
+        // const mapOptions = {
+        //     center: { 
+        //         lat: this.state.lat, 
+        //         lng: this.state.lng 
+        //     },
+        // //   center: { lat: 37.7758, lng: -122.435 },
+        //   zoom: 13,
+        //   mapTypeId: "terrain", //sets map to terrain type
+        // };
 
-        // wrap this.mapNode in a Google Map
-        this.map = new google.maps.Map(this.mapNode, mapOptions);
-
-
+        // // wrap this.mapNode in a Google Map
+        // this.map = new google.maps.Map(this.mapNode, mapOptions);
     }
 
-    handleListing () {
-        this.props.fetchListing()
-    }
+    // handleListing () {
+    //     this.props.fetchListing()
+    // }
 
 
     render () {
+      // debugger
         return (
           <div className="show_body">
             <div className="social_share_target">
@@ -63,7 +62,10 @@ class ListShow extends React.Component {
               </div>
             </div>
 
-            < BookingForm listing_name={this.props.list.name} />
+            < BookingForm
+             listing_name={this.props.list.name} 
+                  // this necessary? cant seem to re-trigger error
+             />
 
               {this.props.description}
             <div className="show-listing">
@@ -95,11 +97,11 @@ class ListShow extends React.Component {
 
 ListShow.defaultProps = {
     list: {
-    photoUrls: "",
+    // photoUrls: "",
     price: "",
     // lat: "",
     // lng: "",
-    name: "",
+    // name: "",
     description: "",
     }
   }
