@@ -44,11 +44,6 @@ class ListShow extends React.Component {
         // this.map = new google.maps.Map(this.mapNode, mapOptions);
     }
 
-    // handleListing () {
-    //     this.props.fetchListing()
-    // }
-
-
     render () {
       // debugger
         return (
@@ -98,11 +93,11 @@ class ListShow extends React.Component {
 ListShow.defaultProps = {
     list: {
     // photoUrls: "",
-    price: "",
+    // price: "",
     // lat: "",
     // lng: "",
     // name: "",
-    description: "",
+    // description: "",
     }
   }
   //use this.state possibly
