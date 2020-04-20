@@ -11,11 +11,11 @@ class ListMap extends React.Component {
         // this.props.fetchListing()
 
         const mapOptions = {
-            center: { lat: 37.7758, lng: -122.435 }, 
-        //   center: { 
-        //       lat: this.props.list.lat, 
-        //       lng: this.props.list.lng 
-        //     },
+            // center: { lat: 37.7758, lng: -122.435 }, 
+          center: { 
+              lat: this.props.listing.lat, 
+              lng: this.props.listing.lng 
+            },
           zoom: 13,
           mapTypeId: "terrain", //sets map to terrain type
         };
@@ -25,8 +25,8 @@ class ListMap extends React.Component {
         this.map = new google.maps.Map(this.mapNode, mapOptions);
 
         // let center = {
-        //     lat: this.props.listing.lat,
-        //     lng: this.props.listing.lng,
+        //     lat: this.props.list.lat,
+        //     lng: this.props.list.lng,
         // };
 
         // const circle = new google.maps.Circle({

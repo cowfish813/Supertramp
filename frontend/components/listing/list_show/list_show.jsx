@@ -59,14 +59,14 @@ class ListShow extends React.Component {
                 <img className="list-show-photo" src="https://scontent-sjc3-1.xx.fbcdn.net/v/t31.0-8/28699040_10106495201840273_8915991695087874299_o.jpg?_nc_cat=105&_nc_sid=84a396&_nc_ohc=j1j01VT95TkAX-hqrTj&_nc_ht=scontent-sjc3-1.xx&oh=41affb2bd997c5367a6fc2edd82d3737&oe=5EB8A90E" alt=""/>
                 {/* <img className="list-show-photo" src={this.props.list.photoUrls}alt=""/> */}
                 {/* WOKRING. enable later when debugging list-show is complete */}
-                <div className="photo_title">{this.props.name}</div>
+                <div className="photo_title">{this.props.list.name}</div>
               </div>
             </div>
 
-            < BookingForm />
+            < BookingForm listing_name={this.props.list.name} />
 
-            <div className="show-listing">
               {this.props.description}
+            <div className="show-listing">
               <div className="section-overview">
                 <div className="content-bottom">
                   <div className="details-container">{this.props.name}</div>
@@ -85,8 +85,8 @@ class ListShow extends React.Component {
 
               <div className="feature-container"></div>
             </div>
-              {/* < ListMap className= "map" /> lol this works but what i need doesn't, neat. */}
-            <div className="map" ref={(map) => (this.mapNode = map)}></div>
+              < ListMap className= "map" list={this.props.list} fetchListing={this.props.fetchListing} /> 
+            {/* <div className="map" ref={(map) => (this.mapNode = map)}></div> */}
           </div>
         ); 
 
@@ -97,8 +97,8 @@ ListShow.defaultProps = {
     list: {
     photoUrls: "",
     price: "",
-    lat: "",
-    lng: "",
+    // lat: "",
+    // lng: "",
     name: "",
     description: "",
     }

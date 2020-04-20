@@ -4,7 +4,7 @@ import { openModal } from '../../actions/modal_actions/modal_actions';
 import { createBooking } from '../../actions/booking_actions/booking_action';
 
 const mstp = (state, ownProps) => {
-  debugger
+  
     return ({
       currentUser: state.entities.users[state.session.currentUser],
       currentUserID: state.session.id

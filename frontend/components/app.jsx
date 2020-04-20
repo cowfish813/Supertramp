@@ -10,7 +10,7 @@ import Homepage from './splash/homepage_container'
 
 
 // incomplete
-import listIndexContainer from './listing/list_index/list_index_container'
+// import listIndexContainer from './listing/list_index/list_index_container'
 import searchContainer from './search/search_container'
 import list_index_item from './listing/list_index/list_index_item'
 
@@ -29,10 +29,11 @@ import ListForm from './listing/list_form/list_form_container'
 const App = () => (
     <div className="super-body">
         < Modal />
-        {/* < ProtectedRoute exact path="/create_listings/"  component={ListForm} /> */}
+        {/* < ProtectedRoute exact path="/create_listings/"  component={ListForm} /> */} 
+                {/* future feature if logged in */}
         < Route exact path="/" component={Homepage} />
         < Route exact path="/listings/:listingsId" component={ListShow} />
-        < Route exact path ="/listings/index" component={listIndexContainer} />
+        {/* < Route exact path ="/listings/index" component={listIndexContainer} /> */}
         < NavbarContainer />
         {/* < Route exact path="/listings/" component={list_index_item} /> */}
 
