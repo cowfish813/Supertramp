@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 import ListMap from '../list_map'
 import { withRouter }from 'react-router-dom'
 import BookingForm from '../../bookings/booking_form_container'
@@ -8,20 +7,19 @@ class ListShow extends React.Component {
     constructor(props) {
         super(props)    
 
-        this.state = {
-          photoUrls: this.props.list.photoUrls,
-          price: this.props.list.price,
-          lat: this.props.list.lat,
-          lng: this.props.list.lng,
-          name: this.props.list.name,
-          description: this.props.list.description,
-        }
+        // this.state = {
+        //   photoUrls: this.props.list.photoUrls,
+        //   price: this.props.list.price,
+        //   lat: this.props.list.lat,
+        //   lng: this.props.list.lng,
+        //   name: this.props.list.name,
+        //   description: this.props.list.description,
+        // }
     }
 
-    componentDidUpdate(nextState) {
-      
-      console.log(nextState.list)
-    }
+    // componentDidUpdate(nextState) {
+    //   console.log(nextState.list)
+    // }
 
     // componentWillReceiveProps() {
 
@@ -30,6 +28,8 @@ class ListShow extends React.Component {
     componentDidMount() {
         window.scrollTo(0, 0);
         this.props.fetchListing(this.props.match.params.listingsId);
+
+
         // const mapOptions = {
         //     center: { 
         //         lat: this.state.lat, 
@@ -46,6 +46,8 @@ class ListShow extends React.Component {
 
     render () {
       // debugger
+      // console.log(this.props)
+
         return (
           <div className="show_body">
             <div className="social_share_target">
@@ -58,8 +60,9 @@ class ListShow extends React.Component {
             </div>
 
             < BookingForm
-             listing_name={this.props.list.name} 
-                  // this necessary? cant seem to re-trigger error
+             listing_name={this.props.list.name}
+             listingId={this.props.list.id} 
+             host_id={this.props.list.host_id}
              />
 
               {this.props.description}
@@ -90,17 +93,18 @@ class ListShow extends React.Component {
     }
 }
 
-//no longer necessary, but i guess it's a nice backup? component did mount + fetch listing does better
-// ListShow.defaultProps = {
-//     list: {
-//     // photoUrls: "",
-//     // price: "",
-//     // lat: "",
-//     // lng: "",
-//     // name: "",
-//     // description: "",
-//     }
-//   }
+
+//bugs out without it, why?
+ListShow.defaultProps = {
+    list: {
+    // photoUrls: "",
+    // price: "",
+    // lat: "",
+    // lng: "",
+    // name: "",
+    // description: "",
+    }
+  }
 
 
   //use this.state possibly
