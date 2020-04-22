@@ -7,11 +7,18 @@ class BookingItem extends React.Component {
 
     };
 
+    handleClick() {
+        this.props.deleteBooking(this.props.booking.id)
+        //WRITE/FEED this info into user-show page
+    };
+
     
     render () {
 
         return (
-            <div></div>
+            <div>
+                
+            </div>
         )
     };
 

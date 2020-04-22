@@ -41,21 +41,22 @@ class ListMap extends React.Component {
     // };
 
     componentDidUpdate() {
-        console.log("try")
+        window.scrollTo(0, 0);
         // if (!this.props.list.lng) {
         //     this.props.fetchListing(this.props.listId)
         // }
 
         const mapOptions = {
-            // center: { lat: 37.7758, lng: -122.435 }, 
             center: {
                 lat: this.props.list.lat,
                 lng: this.props.list.lng
             },
             zoom: 13,
-            mapTypeId: "terrain", //sets map to terrain type
+            mapTypeId: "terrain",
         };
+
         this.map = new google.maps.Map(this.mapNode, mapOptions);
+
         let center = {
             lat: this.props.list.lat,
             lng: this.props.list.lng,
@@ -75,8 +76,13 @@ class ListMap extends React.Component {
     
 
     render () {
-            return (<div className="map" id="mapNode" ref={(map) => (this.mapNode = map)}></div>);
-    };
+        return (
+        <div 
+        className="map" 
+        id="mapNode" 
+        ref={(map) => (this.mapNode = map)}
+        />
+    )};
 };
 
 export default withRouter(ListMap);

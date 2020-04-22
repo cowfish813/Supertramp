@@ -6,15 +6,6 @@ import BookingForm from '../../bookings/booking_form_container'
 class ListShow extends React.Component {
     constructor(props) {
         super(props)    
-
-        // this.state = {
-        //   photoUrls: this.props.list.photoUrls,
-        //   price: this.props.list.price,
-        //   lat: this.props.list.lat,
-        //   lng: this.props.list.lng,
-        //   name: this.props.list.name,
-        //   description: this.props.list.description,
-        // }
     }
 
     // componentDidUpdate(nextState) {
@@ -28,26 +19,9 @@ class ListShow extends React.Component {
     componentDidMount() {
         window.scrollTo(0, 0);
         this.props.fetchListing(this.props.match.params.listingsId);
-
-
-        // const mapOptions = {
-        //     center: { 
-        //         lat: this.state.lat, 
-        //         lng: this.state.lng 
-        //     },
-        // //   center: { lat: 37.7758, lng: -122.435 },
-        //   zoom: 13,
-        //   mapTypeId: "terrain", //sets map to terrain type
-        // };
-
-        // // wrap this.mapNode in a Google Map
-        // this.map = new google.maps.Map(this.mapNode, mapOptions);
     }
 
     render () {
-      // debugger
-      // console.log(this.props)
-
         return (
           <div className="show_body">
             <div className="social_share_target">
@@ -85,8 +59,8 @@ class ListShow extends React.Component {
 
               <div className="feature-container"></div>
             </div>
-              < ListMap className="map" listId={this.props.list.id} list={this.props.list} fetchListing={this.props.fetchListing} /> 
-            {/* <div className="map" ref={(map) => (this.mapNode = map)}></div> */}
+              {/* < ListMap className="map" listId={this.props.list.id} list={this.props.list} fetchListing={this.props.fetchListing} />  */}
+              {/* ENABLE when listshow is done */}
           </div>
         ); 
 
@@ -105,13 +79,5 @@ ListShow.defaultProps = {
     // description: "",
     }
   }
-
-
-  //use this.state possibly
-  // convertl ocal props to local state
-  // if you submit some kind of review, you want new review to pop up on submit, update local state
-  // when you call this.setstate - react comp auto re-renders
-  // update database as well
-  // as you trigger setstate - submit data through dispatch - send it to ajax call - persist to databse
 
 export default withRouter(ListShow)
