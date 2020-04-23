@@ -8,17 +8,19 @@ class ListShow extends React.Component {
         super(props)    
     }
 
-    // componentDidUpdate(nextState) {
-    //   console.log(nextState.list)
-    // }
-
-    // componentWillReceiveProps() {
-
-    // }
-
     componentDidMount() {
         window.scrollTo(0, 0);
         this.props.fetchListing(this.props.match.params.listingsId);
+    }
+
+    componentDidUpdate() {
+      // this.state = {
+      //   name: this.props.list.name,
+      //   description: this.props.list.description,
+      //   price: this.props.list.price
+      // }
+
+      //possibly replace default props
     }
 
     render () {
@@ -34,17 +36,17 @@ class ListShow extends React.Component {
             </div>
 
             < BookingForm
-             listing_name={this.props.list.name}
-             listingId={this.props.list.id} 
-             host_id={this.props.list.host_id}
+              list={this.props.list}
+              listing_name={this.props.list.name}
+              host_id={this.props.list.host_id}
+              fetchListing={this.props.fetchListing}
              />
 
-              {this.props.description}
             <div className="show-listing">
               <div className="section-overview">
                 <div className="content-bottom">
-                  <div className="details-container">{this.props.name}</div>
-                  <p className="description">{this.props.description}</p>
+                  <div className="details-container"></div>
+                  <p className="description">{this.props.list.description}</p>
                 </div>
 
                 <div className="row">

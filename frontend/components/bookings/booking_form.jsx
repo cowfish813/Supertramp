@@ -5,13 +5,15 @@ import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 import { SingleDatePicker } from "react-dates";
 
+
 class BookingForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             user_id: this.props.currentUserId,
-            listingId: this.props.match.params.listingId,
-            listingName: this.props.listing_name,//INVESTIGATE STATE OF LISTING.
+            listingId: this.props.list.id,
+            listingName: this.props.list.name,
+            price: this.props.list.price,
             check_in: null,
             check_out: null,
             capacity: 1,
@@ -21,13 +23,25 @@ class BookingForm extends React.Component {
         this.highlighted = this.highlighted.bind(this);
         this.handleCapacity = this.handleCapacity.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handlePrice = this.handlePrice.bind(this);
+    };
+
+    handlePrice() {
+      let num = this.handleCapacity()
+        this.setState({
+          price: ( num * this.props.list.price )
+      });
+      return this.state.price
+    };
+
+    handleCapacity() {
+      let num = document.getElementById("capacity");
+      return num
     }
 
-    handleCapacity(num) {
-        this.setState({
-            capacity: num
-        });
-    };
+    componentDidUpdate() {
+
+    }
 
     highlighted(day) {
         return day.isSame(this.state.check_in)
@@ -35,24 +49,31 @@ class BookingForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        // debugger
 
         if(!(this.props.currentUser)) { //check currentuser
             this.props.openModal('Login')
         } else if(!(this.state.check_in) || !(this.state.check_out)) {
-            return 'Booking Error'
-        };
-        const booking = {
-            user_id: this.props.currentUserId,
-            listingId: listingId,
-            listingName: this.props.listing_name,
-            check_in: this.state.check_in.format('YYY/MM/DD'),
-            check_out: this.state.check_out.format('YYY/MM/DD'),
-            capacity: 1
+            // return 'Booking Error'
+            console.log("booking error")
+        } else {
+
+          const booking = {
+              user_id: this.props.currentUserId,
+              listingId: this.props.list.id,
+              listingName: this.props.list.name,
+              check_in: this.state.check_in.format('YYY/MM/DD'),
+              check_out: this.state.check_out.format('YYY/MM/DD'),
+              capacity: 1
+          }
+          this.props.createBooking(booking)
+              .then(this.props.history.push(`./users/${this.props.currentUser.id}`)); //reroutes to user show page
         }
-        this.props.createBooking(booking)
-            .then(this.props.history.push(`./users/${this.props.currentUser}`)); //reroutes to user show page
     };
 
+    componentDidUpdate() {
+
+    }
 
     render () {
         return (
@@ -60,7 +81,8 @@ class BookingForm extends React.Component {
             <form className="wrapper" onSubmit={this.handleSubmit}>
               <div className="price-wrapper">
                 <div className="price">
-                    {/* should price go here!!?? */}
+                  {this.state.price}
+                  {`$${this.props.list.price}`}
                 </div>
               </div>
               <div className="dates-and-guest-content">
@@ -70,16 +92,14 @@ class BookingForm extends React.Component {
                     <SingleDatePicker
                       placeholder="Check In"
                       date={this.state.check_in} // momentPropTypes.momentObj or null
-                      onDateChange={(date) => this.setState({ date })} // PropTypes.func.isRequired
-                      focused={this.state.focused} // PropTypes.bool
-                      onFocusChange={({ focused }) =>
-                        this.setState({ focusedStart: focused })
-                      } // PropTypes.func.isRequired
-                      id="check_in" // PropTypes.string.isRequired,
+                      onDateChange={(date) => this.setState({ check_in: date })} // PropTypes.func.isRequired
+                      focused={this.state.focusedStart} // PropTypes.bool
+                      onFocusChange={({ focused }) => this.setState({ focusedStart: focused })} // PropTypes.func.isRequired
+                      id="start" // PropTypes.string.isRequired,
                       verticalSpacing={0}
                       isDayHighlighted={(day) => this.highlighted(day)} //method written
                       numberOfMonths={1}
-                      daySize={50}
+                      daySize={36}
                       noBorder={true}
                     />
                     {/* <input type="date" className="col_box" /> */}
@@ -91,12 +111,12 @@ class BookingForm extends React.Component {
                     <SingleDatePicker
                       placeholder="Check In"
                       date={this.state.check_out} // momentPropTypes.momentObj or null
-                      onDateChange={(date) => this.setState({ date })} // PropTypes.func.isRequired
-                      focused={this.state.focused} // PropTypes.bool
+                      onDateChange={(date) => this.setState({ check_out: date })} // PropTypes.func.isRequired
+                      focused={this.state.focusedEnd} // PropTypes.bool
                       onFocusChange={({ focused }) => this.setState({ focusedEnd: focused })} // PropTypes.func.isRequired
-                      id="check_out" // PropTypes.string.isRequired,
+                      id="end" // PropTypes.string.isRequired,
                       verticalSpacing={0}
-                      isDayHighlighted={(day) => this.highlighted(day)} //method written
+                      isDayHighlighted={(day) => this.highlighted(day)}
                       numberOfMonths={1}
                       daySize={36}
                       noBorder={true}
@@ -107,7 +127,17 @@ class BookingForm extends React.Component {
                 <div className="col capacity">
                   <div className="label">
                     Guests
-                    <input type="number" name="" id="" className="col_box" />
+                      <input 
+                      type="number" 
+                      name="capacity" 
+                      className="col_box" 
+                      placeholder="1" 
+                      // value ="1"
+                      id="capacity" 
+                      min="1" 
+                      max={this.props.list.capacity} 
+                      onChange={this.handlePrice}
+                      />
                   </div>
                 </div>
               </div>
