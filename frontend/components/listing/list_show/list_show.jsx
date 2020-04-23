@@ -3,6 +3,7 @@ import ListMap from '../list_map'
 import { withRouter }from 'react-router-dom'
 import BookingForm from '../../bookings/booking_form_container'
 
+
 class ListShow extends React.Component {
     constructor(props) {
         super(props)    
@@ -11,16 +12,6 @@ class ListShow extends React.Component {
     componentDidMount() {
         window.scrollTo(0, 0);
         this.props.fetchListing(this.props.match.params.listingsId);
-    }
-
-    componentDidUpdate() {
-      // this.state = {
-      //   name: this.props.list.name,
-      //   description: this.props.list.description,
-      //   price: this.props.list.price
-      // }
-
-      //possibly replace default props
     }
 
     render () {

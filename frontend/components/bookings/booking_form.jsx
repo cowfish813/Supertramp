@@ -12,36 +12,35 @@ class BookingForm extends React.Component {
         this.state = {
             user_id: this.props.currentUserId,
             listingId: this.props.list.id,
-            listingName: this.props.list.name,
+            listing_name: this.props.list.name,
             price: this.props.list.price,
             check_in: null,
             check_out: null,
-            capacity: 1,
+            capacity: "",
             focusedStart: null,
             focusedEnd: null,
         }
         this.highlighted = this.highlighted.bind(this);
-        this.handleCapacity = this.handleCapacity.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handlePrice = this.handlePrice.bind(this);
+        // this.handleCapacity = this.handleCapacity.bind(this);
+        // this.handlePrice = this.handlePrice.bind(this);
     };
 
-    handlePrice() {
-      let num = this.handleCapacity()
-        this.setState({
-          price: ( num * this.props.list.price )
-      });
-      return this.state.price
-    };
+    // handlePrice() {
+    //   let num = this.state.capacity
+    //     this.setState({
+    //       price: ( num * this.props.list.price )
+    //   });
+    //   return this.state.price
+    // };
 
-    handleCapacity() {
-      let num = document.getElementById("capacity");
-      return num
-    }
-
-    componentDidUpdate() {
-
-    }
+    // handleCapacity(event) {
+    //   // debugger
+    //   this.setState({
+    //     capacity: event.target.value
+    //   })
+    //   return this.state.capacity
+    // }
 
     highlighted(day) {
         return day.isSame(this.state.check_in)
@@ -54,26 +53,22 @@ class BookingForm extends React.Component {
         if(!(this.props.currentUser)) { //check currentuser
             this.props.openModal('Login')
         } else if(!(this.state.check_in) || !(this.state.check_out)) {
-            // return 'Booking Error'
             console.log("booking error")
         } else {
-
           const booking = {
-              user_id: this.props.currentUserId,
+              check_in: this.state.check_in.format('YYYY/MM/DD'),
+              check_out: this.state.check_out.format('YYYY/MM/DD'),
               listingId: this.props.list.id,
-              listingName: this.props.list.name,
-              check_in: this.state.check_in.format('YYY/MM/DD'),
-              check_out: this.state.check_out.format('YYY/MM/DD'),
-              capacity: 1
+              capacity: 1,
+              user_id: this.props.currentUserId,
+              host_id: this.props.list.host_id,
+              listing_name: this.props.list.name,
+              price: 5
           }
           this.props.createBooking(booking)
               .then(this.props.history.push(`./users/${this.props.currentUser.id}`)); //reroutes to user show page
         }
     };
-
-    componentDidUpdate() {
-
-    }
 
     render () {
         return (
@@ -81,8 +76,9 @@ class BookingForm extends React.Component {
             <form className="wrapper" onSubmit={this.handleSubmit}>
               <div className="price-wrapper">
                 <div className="price">
-                  {this.state.price}
+                  {/* {this.state.price} */}
                   {`$${this.props.list.price}`}
+                  <p>per night</p>
                 </div>
               </div>
               <div className="dates-and-guest-content">
@@ -90,7 +86,7 @@ class BookingForm extends React.Component {
                   <div className="label">
                     Check in
                     <SingleDatePicker
-                      placeholder="Check In"
+                      placeholder="Select Start"
                       date={this.state.check_in} // momentPropTypes.momentObj or null
                       onDateChange={(date) => this.setState({ check_in: date })} // PropTypes.func.isRequired
                       focused={this.state.focusedStart} // PropTypes.bool
@@ -102,14 +98,13 @@ class BookingForm extends React.Component {
                       daySize={36}
                       noBorder={true}
                     />
-                    {/* <input type="date" className="col_box" /> */}
                   </div>
                 </div>
                 <div className="col checkout">
                   <div className="label">
                     Check out
                     <SingleDatePicker
-                      placeholder="Check In"
+                      placeholder="Select End"
                       date={this.state.check_out} // momentPropTypes.momentObj or null
                       onDateChange={(date) => this.setState({ check_out: date })} // PropTypes.func.isRequired
                       focused={this.state.focusedEnd} // PropTypes.bool
@@ -121,7 +116,6 @@ class BookingForm extends React.Component {
                       daySize={36}
                       noBorder={true}
                     />
-                    {/* <input type="date" name="" id="" className="col_box" /> */}
                   </div>
                 </div>
                 <div className="col capacity">
@@ -132,11 +126,11 @@ class BookingForm extends React.Component {
                       name="capacity" 
                       className="col_box" 
                       placeholder="1" 
-                      // value ="1"
+                      value ={this.state.capacity}
                       id="capacity" 
                       min="1" 
                       max={this.props.list.capacity} 
-                      onChange={this.handlePrice}
+                      onChange={this.handleCapacity}
                       />
                   </div>
                 </div>
@@ -149,5 +143,3 @@ class BookingForm extends React.Component {
 
 }
 export default withRouter(BookingForm)
-
-

@@ -1,8 +1,9 @@
-import React, {component} from 'react'
-import modal from '../modal/modal'
-import { Link } from 'react-router-dom'
-import { openModal } from '../../actions/modal_actions/modal_actions'
-import user from '../users/user_container'
+import React, {component} from 'react';
+import { Link } from 'react-router-dom';
+
+// import modal from '../modal/modal'
+// import { openModal } from '../../actions/modal_actions/modal_actions'
+// import user from '../users/user_container'
 
 
 
@@ -10,20 +11,21 @@ class NavBar extends React.Component {
     constructor(props) {
         super(props)
         this.state = this.props.currentUser
-        this.handleClick= this.handleClick.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
         this.handleLogout = this.handleLogout.bind(this)
-        this.handleRender = this.handleRender.bind(this)
+
+        // this.handleClick= this.handleClick.bind(this)
+        // this.handleSubmit = this.handleSubmit.bind(this)
+        // this.handleRender = this.handleRender.bind(this)
     }
 
-    handleClick(e) {
-        e.preventDefault()
-    }
+    // handleClick(e) {
+    //     e.preventDefault()
+    // }
 
-    handleSubmit(e) {
-        e.preventDefault()
+    // handleSubmit(e) {
+    //     e.preventDefault()
 
-    }
+    // }
 
 
     handleLogout(e) {
@@ -31,9 +33,9 @@ class NavBar extends React.Component {
         this.props.logout().then(()=> this.props.history.push("/"))
     }
 
-    handleRender() {
+    // handleRender() {
         
-    }
+    // }
 
     render() {
       let content =  (this.props.currentUser === undefined) ? 
@@ -51,7 +53,7 @@ class NavBar extends React.Component {
                         <li className="navItem"><a href="https://github.com/cowfish813">GitHub</a></li>
                       <li className="navItem"><a href="https://www.instagram.com/probablynotnick/">Instagram</a></li>
                         <li className="navItem"><a onClick={() => this.props.openModal('Login')}>Log In</a></li> {/* another modal button*/}
-                        <li className="navItem signupButton" onClick={this.handleClick}>
+                        <li className="navItem signupButton">
                             {/* <button onClick={() => this.props.openModal('Signup')}>Sign up</button> */}
                             <a onClick={() => this.props.openModal('Signup')}>Sign up</a>
                         </li>
