@@ -66,6 +66,7 @@ class User < ApplicationRecord
   
   has_many :bookings,
   foreign_key: :user_id
+
   
 end
 

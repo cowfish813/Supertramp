@@ -11,10 +11,12 @@
     "css-loader": "^3.5.2",
     "dotenv": "^8.2.0",
     "google-map-react": "^1.1.7",
+    "moment": "^2.24.0",
     "query-string": "^6.12.1",
-    "react": "^16.13.0",
+    "react": "^16.13.1",
+    "react-addons-shallow-compare": "^15.6.2",
     "react-dates": "^21.8.0",
-    "react-dom": "^16.13.0",
+    "react-dom": "^16.13.1",
     "react-hook-form": "^5.0.1",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
@@ -46,5 +48,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {}
+  "devDependencies": {
+    "@iconify/icons-simple-icons": "^1.0.29",
+    "@iconify/react": "^1.1.3"
+  }
 }

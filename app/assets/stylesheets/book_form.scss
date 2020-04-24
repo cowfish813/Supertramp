@@ -1,0 +1,81 @@
+.widget-container {
+    width: 30vw;
+    height: 351.78px;
+    display: flex;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    border: 1px solid #ebebeb;
+    z-index: 2;
+    justify-content: center;
+    // align-items: center;
+}
+.wrapper {
+    // padding: 13px 10px;
+    // width: 317px;
+    // height: 76px;
+    // border: 1px solid purple;
+
+}
+
+.price-wrapper {
+    font-size: 1.75em;
+    width: 3em;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // border: solid 1px green;
+}
+.price {
+    display: flex;
+    flex-direction: row;
+}
+.price p {
+    margin: .15em;
+    color: #757575;
+    font-size: .75em;
+}
+.dates-and-guest-content {
+    display: flex;
+    flex-direction: row;
+    width: 319px;
+    height: 69.39;
+    padding: 0px 10px;
+    background-color: #ffffff;
+    border: 1px solid #ebebeb;
+}
+    
+.col {
+    border: 1px solid #ebebeb;    padding: 10px;
+    // width: 114.11px;
+    width: 200px;
+    height: 69.39px;
+}
+
+
+.label {
+    color: #333333;
+    padding: 0px 0px 5.4px;
+    font-size: 18px;
+    height: 23.39px;
+    width: 93.11px;
+}
+
+.booking-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #40d9ac;
+    color: #ffffff;
+    width: 85%;
+    padding: 10px 20px;
+    margin: auto;
+    border: solid 3px #40d9ac;
+    cursor: pointer;
+    transition: .4s;
+
+}
+.booking-button:hover {
+    background: #ffffff;
+    color: #40d9ac;
+    transition: .4s;
+}

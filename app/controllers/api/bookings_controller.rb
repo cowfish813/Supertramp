@@ -1,7 +1,5 @@
 class Api::BookingsController < ApplicationController
     def index
-        # @bookings = Booking.all
-        # render :index
         if params[:userId]
             @bookings = User.find(params[:userId]).bookings
         else
@@ -16,7 +14,8 @@ class Api::BookingsController < ApplicationController
     end
 
     def create
-        @booking = current_user.bookings.new(booking_params)
+        # debugger
+        @booking = current_user.Booking.new(booking_params)
 
         if @booking.save
             render :show
@@ -46,9 +45,6 @@ class Api::BookingsController < ApplicationController
 
     private
     def booking_params
-        params.require(:booking).permit(
-            :check_in, :check_out, :listing_id, :price, :capacity, 
-            :listing_name, :user_id, :host_id
-            )
+        params.require(:booking).permit(:check_in, :check_out, :listing_id, :price, :capacity, :listing_name, :user_id)
     end
 end
