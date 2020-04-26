@@ -1,5 +1,5 @@
 .widget-container {
-    width: 30vw;
+    width: 380px;
     height: 351.78px;
     display: flex;
     box-shadow: 0 1px 5px rgba(0,0,0,0.05);
@@ -9,16 +9,17 @@
     // align-items: center;
 }
 .wrapper {
-    // padding: 13px 10px;
-    // width: 317px;
-    // height: 76px;
+    padding: 13px 10px;
+    width: 317px;
+    height: 76px;
     // border: 1px solid purple;
-
+    align-items: center;
+    justify-content: center;
+//wraps price
 }
 
 .price-wrapper {
     font-size: 1.75em;
-    width: 3em;
     height: 5vh;
     display: flex;
     align-items: center;
@@ -28,9 +29,12 @@
 .price {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 .price p {
-    margin: .15em;
+    // margin-left: 10rem;
+    margin: .15em; 
     color: #757575;
     font-size: .75em;
 }
