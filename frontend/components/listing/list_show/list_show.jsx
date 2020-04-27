@@ -25,13 +25,16 @@ class ListShow extends React.Component {
                 <div className="photo_title">{this.props.list.name}</div>
               </div>
             </div>
+            <div className="booking-comp">
 
             < BookingForm
               list={this.props.list}
               listing_name={this.props.list.name}
               host_id={this.props.list.host_id}
               fetchListing={this.props.fetchListing}
-             />
+              className="booking-comp"
+              />
+            </div>
 
             <div className="show-listing">
               <div className="section-overview">

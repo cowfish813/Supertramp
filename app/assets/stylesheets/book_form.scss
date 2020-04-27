@@ -1,6 +1,12 @@
+.booking-comp {
+    display: flex;
+    justify-content: CENTER;//flex end?
+    align-items: center;
+}
+
 .widget-container {
     width: 380px;
-    height: 351.78px;
+    height: 352px;
     display: flex;
     box-shadow: 0 1px 5px rgba(0,0,0,0.05);
     border: 1px solid #ebebeb;
@@ -34,13 +40,15 @@
 }
 .price p {
     // margin-left: 10rem;
-    margin: .15em; 
-    color: #757575;
+    // margin: .15em; 
+    // color: #757575;
     font-size: .75em;
 }
 .dates-and-guest-content {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     width: 319px;
     height: 69.39;
     padding: 0px 10px;
@@ -49,7 +57,8 @@
 }
     
 .col {
-    border: 1px solid #ebebeb;    padding: 10px;
+    // border: 1px solid #ebebeb;    
+    padding: 10px;
     // width: 114.11px;
     width: 200px;
     height: 69.39px;
