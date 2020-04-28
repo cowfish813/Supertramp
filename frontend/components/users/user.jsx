@@ -25,8 +25,6 @@ class User extends React.Component {
 
                             </div>
                             <div className="right_header">
-
-                                afdgadsfgsdfgsdfgsdf
                                 <h2 className="userName">{this.props.user.first_name}</h2>
                             </div>
                         </div>
