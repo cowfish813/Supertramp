@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 import { SingleDatePicker } from "react-dates";
+// import "../../../app/assets/stylesheets/book_form.scss"; //rewrites react css
 
 
 class BookingForm extends React.Component {
@@ -97,6 +98,7 @@ class BookingForm extends React.Component {
                       numberOfMonths={1}
                       daySize={36}
                       noBorder={true}
+                      hideKeyboardShortcutsPanel={true}
                     />
                   </div>
                 </div>
@@ -115,6 +117,7 @@ class BookingForm extends React.Component {
                       numberOfMonths={1}
                       daySize={36}
                       noBorder={true}
+                      hideKeyboardShortcutsPanel={true}
                     />
                   </div>
                 </div>

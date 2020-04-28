@@ -1,4 +1,6 @@
 import React from 'react'
+import BookingItem from '../bookings/booking_item'
+
 
 
 class User extends React.Component {
@@ -14,7 +16,7 @@ class User extends React.Component {
         return (
             <div className="userBody">
 
-                <h2>come back later for more. maybe</h2>
+                come back later for more. maybe
                 {/* left user panel */}
                 <div className="left_panel">
                     <div className="bioPanel">
@@ -23,6 +25,8 @@ class User extends React.Component {
 
                             </div>
                             <div className="right_header">
+
+                                afdgadsfgsdfgsdfgsdf
                                 <h2 className="userName">{this.props.user.first_name}</h2>
                             </div>
                         </div>
