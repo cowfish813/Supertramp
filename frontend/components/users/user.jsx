@@ -9,7 +9,9 @@ class User extends React.Component {
     }
 
 
-
+    handleClick() {
+        this.props.deleteBooking(this.props.booking.id)
+    }
 
 
     render () {
@@ -33,10 +35,10 @@ class User extends React.Component {
 
                 <div className="middleBody">
                     <div className="bookings">
-                        
+                        <BookingItem />
                     </div>
                     <div className="reviews">
-                        
+                        {/* bonus feature. will eventually be review item index */}
                     </div>
                 </div>
 
