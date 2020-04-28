@@ -1,10 +1,12 @@
 .userBody {
+
     display: flex;
     justify-content: left;
-    height: 7000px;
-    position: relative;
+    margin: 500px;
+    // height: 7000px;
     /* align-items: left; */
-    /* background-color: black; */
+    // background-color: black; 
+    // margin: 4000px;
 }
 
 /* left panel */
@@ -13,6 +15,7 @@
     justify-content: left;
     height: 663px;
     padding: 0px 10px;
+    border: red 1px solid;
 }
 
 .bioPanel {
@@ -29,5 +32,6 @@
 .right_header {
     height: 90;
     margin: 0px 0px 0px 10px;
+    background: red;
     
 }

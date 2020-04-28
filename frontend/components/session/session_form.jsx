@@ -41,7 +41,7 @@ class Session extends React.Component {
                 password: "123456",
             }
         this.props.demoUser(demo).then(this.props.closeModal())
-        this.props.history.push("/")//redirects user to "/"
+        // this.props.history.push("/")//redirects user to "/"
     }
 
     renderErrors() {

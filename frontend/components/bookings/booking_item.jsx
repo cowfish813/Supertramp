@@ -15,8 +15,13 @@ class BookingItem extends React.Component {
     render () {
 
         return (
-            <div>
-                
+            <div className="booking_item_box">
+                <div className="booking_item">
+                    <div className="booking_list_name"></div>
+                    <div className="booking_start"></div>
+                    <div className="booking_end"></div>
+                    <button onClick={this.handleClick}>Cancel</button>
+                </div>
             </div>
         )
     };

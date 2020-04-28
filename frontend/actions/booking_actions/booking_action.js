@@ -9,10 +9,14 @@ export const receiveBookings = bookings => ({
     type: RECEIVE_BOOKINGS,
     bookings
 })
-export const receiveBooking = booking => ({
-    type: RECEIVE_BOOKING,
-    booking
-})
+
+export const receiveBooking = booking => {
+    // debugger
+    return (
+        {type: RECEIVE_BOOKING,
+        booking}
+    )
+}
 
 export const removeBooking = (booking) => ({
     type: REMOVE_BOOKING,
@@ -25,8 +29,12 @@ export const receiveBookingErrors = errors => ({
 
 
 export const createBooking = booking => dispatch => {
+    console.log("outside", booking)
     return ApiUtil.createBooking(booking).then(
-        booking => dispatch(receiveBooking(booking)),
+        
+        booking => {
+            console.log("inside",booking)
+            dispatch(receiveBooking(booking))},
         err => dispatch(receiveBookingErrors(err.responseJSON))
     )
 }

@@ -1,12 +1,29 @@
 .booking-comp {
     display: flex;
-    justify-content: CENTER;//flex end?
-    align-items: center;
+    position: absolute;
+    top: 680px;
+    right: 185px;
+    background: white;
+}
+
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;  
+}
+
+:-ms-input-placeholder {  
+   text-align: center; 
 }
 
 .widget-container {
-    width: 380px;
-    height: 352px;
+    height: 260px;
     display: flex;
     box-shadow: 0 1px 5px rgba(0,0,0,0.05);
     border: 1px solid #ebebeb;
@@ -15,17 +32,18 @@
     // align-items: center;
 }
 .wrapper {
-    padding: 13px 10px;
-    width: 317px;
+    // padding: 13px 10px;
+    // width: 100%;
+    // width: 317px;
     height: 76px;
     // border: 1px solid purple;
     align-items: center;
     justify-content: center;
-//wraps price
 }
 
 .price-wrapper {
     font-size: 1.75em;
+    // width: 100%;
     height: 5vh;
     display: flex;
     align-items: center;
@@ -39,29 +57,56 @@
     justify-content: center;
 }
 .price p {
-    // margin-left: 10rem;
+    margin-left: .5rem;
     // margin: .15em; 
-    // color: #757575;
+    color: #757575;
     font-size: .75em;
 }
 .dates-and-guest-content {
     display: flex;
-    flex-direction: row;
+    // flex-direction: row;
+    height: 69.39;
+    // padding: 0px 10px;
+    background-color: #ffffff;
     align-items: center;
     justify-content: center;
-    width: 319px;
-    height: 69.39;
-    padding: 0px 10px;
-    background-color: #ffffff;
-    border: 1px solid #ebebeb;
+        // border: 1px solid #ebebeb;
+
 }
     
 .col {
-    // border: 1px solid #ebebeb;    
     padding: 10px;
-    // width: 114.11px;
-    width: 200px;
-    height: 69.39px;
+    // width: 319px;
+    height: 70px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    border: 1px solid #ebebeb;
+    // border-right: red 1px solid;
+    // justify-content: center;
+}
+
+
+//react dates
+.SingleDatePickerInput {
+    width: 100%;
+    border: 1px solid #ebebeb;
+    margin-top: .3em;
+
+}
+.DateInput.DateInput_1{
+    width: 70%;
+}
+#start.DateInput_input_1 {
+    font-size: 10px;
+    // width: 100%;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+}
+#end.DateInput_input_1 {
+    font-size: 10px;
+    // width: 100%
 }
 
 
@@ -71,6 +116,11 @@
     font-size: 18px;
     height: 23.39px;
     width: 93.11px;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    
 }
 
 .booking-button {
@@ -85,6 +135,7 @@
     border: solid 3px #40d9ac;
     cursor: pointer;
     transition: .4s;
+    margin-top: 10%;
 
 }
 .booking-button:hover {

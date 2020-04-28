@@ -4,7 +4,7 @@ import ListShow from './list_show';
 import { withRouter } from 'react-router-dom';
 
 const mSTP = (state, ownProps) => {
-    // debugger
+    // 
     return ({
         currentUser: state.entities.users[state.session.currentUser],
         list: state.entities.listings[ownProps.match.params.listingsId],
