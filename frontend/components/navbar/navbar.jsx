@@ -71,7 +71,7 @@ class NavBar extends React.Component {
 
                     <div className="nav-right">
                         <li className="navItem"><a>Trips</a></li>
-                        <li className="navItem"><Link to={`users/${this.props.ID}`}>Self</Link></li>
+                        <li className="navItem"><Link to={`/users/${this.props.ID}`}>Self</Link></li>
                         <li className="navItem" onClick={this.handleLogout}><a>Log out</a></li> {/* link to my linked in or transfer to bottom of page? */}
                     </div>
                 </div>

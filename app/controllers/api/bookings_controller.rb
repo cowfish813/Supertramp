@@ -17,7 +17,7 @@ class Api::BookingsController < ApplicationController
         
         @booking = Booking.new(booking_params)
         @booking.user_id = current_user.id
-
+        
         # debugger
         if @booking.save
             render :show

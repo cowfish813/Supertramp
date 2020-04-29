@@ -67,7 +67,7 @@ class BookingForm extends React.Component {
               price: 5
           }
           this.props.createBooking(booking)
-              .then(this.props.history.push(`./users/${this.props.currentUser.id}`)); //reroutes to user show page
+              // .then(this.props.history.push(`/users/${this.props.currentUser.id}`)); //reroutes to user show page
         }
     };
 
@@ -127,10 +127,10 @@ class BookingForm extends React.Component {
                       <input 
                       type="number" 
                       name="capacity" 
-                      className="col_box" 
+                      className="SingleDatePickerInput" 
                       placeholder="1" 
                       value ={this.state.capacity}
-                      id="capacity" 
+                      id="capacity_input" 
                       min="1" 
                       max={this.props.list.capacity} 
                       onChange={this.handleCapacity}

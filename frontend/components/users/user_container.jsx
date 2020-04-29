@@ -7,12 +7,18 @@ import { withRouter } from 'react-router-dom';
 import {fetchBooking, deleteBooking, fetchBookings} from '../../actions/booking_actions/booking_action';
 
 const mSTP = (state, ownProps) => {
-    // debugger
+    // debugger;
+    // let bookings = [];
+
+    // if (state.entities) {
+    //     bookings = Object.values(state.entites.bookings);
+    // }
+
     return ({
         // errors: state.errors.session,
         user: state.entities.users[ownProps.match.params.userId],
-        bookings: Object.values(state.entites.bookings)
-        // bookings: state.entities.bookings
+        // bookings
+        bookings: state.entities.bookings
 
     });
 }
