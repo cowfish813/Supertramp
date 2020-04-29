@@ -10,6 +10,7 @@ class Api::BookingsController < ApplicationController
 
     def show
         @booking = Booking.find(params[:id]) 
+        # debugger
         render :show
     end
 
@@ -18,8 +19,8 @@ class Api::BookingsController < ApplicationController
         @booking = Booking.new(booking_params)
         @booking.user_id = current_user.id
         
-        # debugger
         if @booking.save
+            # debugger
             render :show
         else
             render json: @booking.errors.full_messages, status: 422

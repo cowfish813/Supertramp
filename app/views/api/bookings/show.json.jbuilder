@@ -9,5 +9,8 @@
 # json.capacity @booking.capacity
 
 json.set! @booking.id  do 
-    json.extract! @booking, :listing_id, :user_id, :listing_name, :check_in, :check_out, :price, :host_id, :capacity
+    # debugger
+    json.extract! @booking, :listing_id, :user_id, 
+    :listing_name, :check_in, :check_out, :price, 
+    :host_id, :capacity, :id
 end

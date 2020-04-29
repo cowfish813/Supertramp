@@ -1,10 +1,12 @@
 .ultraFooter {
     display: flex;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    position: relative;
+    // bottom: -10000px;
+    // justify-content: space-between;
+    // text-align: center;
+    // position: relative;
+    // align-self: flex-end;
+    padding-bottom: 2.5rem;
+    // align-items: space;
 }
 
 .superFooter {
@@ -20,6 +22,9 @@
      display: flex;
     background-color: #ffffff;    
     text-align: center;
+    align-self: flex-end;
+    padding-bottom: 2.5rem;
+
 }
 
 .subFooter {

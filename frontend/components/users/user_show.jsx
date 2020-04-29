@@ -10,18 +10,18 @@ class User extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     };
 
-    // componentDidMount () {
-    //     // this.props.fetchBookings(this.props.match.params.userId)
-    // }
+    componentDidMount () {
+        this.props.fetchBookings(this.props.match.params.userId)
+    }
 
     // componentDidUpdate() {
     //     this.props.fetchBookings(this.props.match.params.userId)
     // }
  
 
-    handleClick() {
-        // this.props.deleteBooking(this.props.booking.id)
-    };
+    // handleClick() {
+    //     this.props.deleteBooking(this.props.booking.id)
+    // };
 
 
     render () {
@@ -49,13 +49,13 @@ class User extends React.Component {
 
                 <div className="middleBody">
                     <div className="bookings">
-                        {/* {this.props.bookings.map(booking => (
+                        {this.props.bookings.map(booking => (
                             <BookingItem 
                             deleteBooking={ this.props.deleteBooking }
                             booking={ booking }
                             key={ booking.id }
                             />
-                        ))} */}
+                        ))}
                     </div>
                     <div className="reviews-comp">
                         {/* bonus feature. will eventually be review item index */}

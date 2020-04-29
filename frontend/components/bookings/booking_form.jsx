@@ -67,7 +67,7 @@ class BookingForm extends React.Component {
               price: 5
           }
           this.props.createBooking(booking)
-              // .then(this.props.history.push(`/users/${this.props.currentUser.id}`)); //reroutes to user show page
+              .then(this.props.history.push(`/users/${this.props.currentUser.id}`)); //reroutes to user show page
         }
     };
 
