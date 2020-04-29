@@ -39,21 +39,23 @@ class ListShow extends React.Component {
               <div className="section-overview">
                 <div className="content-bottom">
                   <div className="details-container"></div>
-                  <p className="description">{this.props.list.description}</p>
+                  Summary:
+                  <p className="description"> {this.props.list.description}</p>
+                  <div className="onboarding">{}</div>
                 </div>
 
+              </div>
                 <div className="row">
                   <div className="listed-by">{/* pic profile */}</div>
                   <div className="info-cards-wrapper">
-                    <div className="info-cards"></div>
-                    <div className="info-cards"></div>
+                    <div className="info-cards">Activities</div>
+                    <div className="info-cards">Amenities</div>
                     <div className="info-cards"></div>
                   </div>
                 </div>
-              </div>
 
-              <div className="feature-container"></div>
             </div>
+              {/* <div className="feature-container"></div> */}
               {/* < ListMap className="map" listId={this.props.list.id} list={this.props.list} fetchListing={this.props.fetchListing} />  */}
               {/* ENABLE when listshow is done */}
           </div>

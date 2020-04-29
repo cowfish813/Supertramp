@@ -54,28 +54,32 @@
 .description {
     width: 480px;
     height: 190px;
-    font-size: 18px;;
+    font-size: 18px;
     color: black;
-    background-color: red($color: #000000);
 }
 .desc-wrapper p {
     max-width: 480px;
     min-width: auto;
     height: auto;
     min-height: 200px;
-    margin: 0px 0px 11px;
+    // margin: 0px 0px 11px;
     font-size: 18px;
     color: #333333;
     border: red 1px solid;
 }
+.onboarding {
+    border: solid 1px black;
+}
+
+
 
 .info-cards-wrapper {
     width: 720px;
     height: 360px;
-    margin: 0 10px;
+    // margin: 0 10px;
     border: red 1px solid;
-    // position: relative;
     display: flex;
+    // position: absolute;
 }
 .info-cards {
     width: 220px;
@@ -91,10 +95,10 @@
     height: 542px;
 }
 
-.col_box {
-    height: 50px;
-    width: 70px;
-}
+// .col_box {
+//     height: 50px;
+//     width: 70px;
+// }
 
 .map {
     margin: auto;

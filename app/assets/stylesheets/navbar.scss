@@ -12,6 +12,7 @@
     // max-width: 100% !important;
     // overflow-x: hidden;
     //  overflow-y: hidden;
+    // overflow-anchor: auto;
  }
 strong {
     font-weight: bolder;
@@ -29,6 +30,8 @@ strong {
 
 
  .superNav {
+         overflow-anchor: auto;
+
     //  font-size: 18px;
      font-size: 1.15em;
      position: fixed;

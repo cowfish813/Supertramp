@@ -1,17 +1,15 @@
 .ultraFooter {
     display: flex;
-    /* position: relative; */
-    /* height: 100%; */
-    /* width: 100%; */
     bottom: 0;
     display: flex;
     justify-content: center;
     text-align: center;
+    position: relative;
 }
 
 .superFooter {
-    /* background: lightskyblue; */
-    min-height: 100%;
+    // background: lightskyblue;
+    // min-height: 100%;
     /* margin-bottom: -50px; */
     font-size: 18px;
     margin-top: auto;
@@ -29,10 +27,10 @@
     padding: 24px 150px;
     height: 69px;
     width: 100%;
-    display: flex;
     color: white;
-    margin: auto;
+    // margin: auto;
     bottom: 0;
+    display: flex;
     justify-content: center;
     /* flex-shrink: ; */
     text-align: center;
