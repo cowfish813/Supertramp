@@ -10,10 +10,10 @@ export default (state = _defaultSession, action) => {
     switch (action.type) {
         case RECEIVE_USER:
             newState = {currentUser: action.user.id}
-            return newState
+            return newState;
         case LOGOUT_USER:
             return _defaultSession
         default:
-            return state
+            return state;
     }
 };

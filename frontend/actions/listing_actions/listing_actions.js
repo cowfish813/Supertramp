@@ -1,7 +1,7 @@
 import * as ApiUtil from '../../util/listing_api_util'
 
 
-export const RECEIVE_LISTING = 'RECEIVE_LISTING'
+export const RECEIVE_LISTING = "RECEIVE_LISTING";
 export const RECEIVE_LISTINGS = 'RECEIVE_LISTINGS'
 export const REMOVE_LISTING = 'REMOVE_LISTING'
 

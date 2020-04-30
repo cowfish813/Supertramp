@@ -12,7 +12,9 @@ class User extends React.Component {
     };
 
     componentDidMount () { //first fetch
+        window.scrollTo(0, 0);
         this.props.fetchBookings(this.props.match.params.userId);
+        this.props.fetchListings(this.props.match.params.userId);
     };
 
     componentDidUpdate() { 
@@ -61,6 +63,7 @@ class User extends React.Component {
                             key={ booking.id }
                             current_user={ this.props.user.id }
                             bookings={ this.props.bookings }
+                            listings ={ this.props.listings }
                             />
                         ))}
                     </div>

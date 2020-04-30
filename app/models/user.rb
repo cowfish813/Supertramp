@@ -62,7 +62,8 @@ class User < ApplicationRecord
   foreign_key: :user_id,
   class_name: :Review
 
-  has_many_attached :photos
+  # has_many_attached :photos
+  has_one_attached :photo
   
   has_many :bookings,
   foreign_key: :user_id,

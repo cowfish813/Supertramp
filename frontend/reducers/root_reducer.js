@@ -3,7 +3,6 @@ import errorsReducer from './errors_reducer';
 import entitiesReducer from './entities_reducer';
 import sessionReducer from './session_reducer';
 import uiReducer from './ui_reducer';
-// import bookingsReducer from './bookings/bookings_reducer';
 
 
 const rootReducer = combineReducers({
@@ -11,6 +10,6 @@ const rootReducer = combineReducers({
     session: sessionReducer,
     errors: errorsReducer,
     ui: uiReducer
-})
+});
 
-export default rootReducer
+export default rootReducer;
