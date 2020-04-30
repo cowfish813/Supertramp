@@ -56,7 +56,7 @@ class ListShow extends React.Component {
 
             </div>
               {/* <div className="feature-container"></div> */}
-              {/* < ListMap className="map" listId={this.props.list.id} list={this.props.list} fetchListing={this.props.fetchListing} />  */}
+              < ListMap className="map" listId={this.props.list.id} list={this.props.list} fetchListing={this.props.fetchListing} /> 
               {/* ENABLE when listshow is done */}
           </div>
         ); 

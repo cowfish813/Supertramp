@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 
 class BookingItem extends React.Component {
     constructor(props) {
@@ -9,13 +8,14 @@ class BookingItem extends React.Component {
     };
 
     handleClick() {
-        this.props.deleteBooking(this.props.booking.id)
+        debugger
+        this.props.deleteBooking(this.props.match.params.bookingsId)
             // window.location.reload(false);
     };
 
     componentDidMount () {
-        
-    }
+
+    };
 
     
     render () {
@@ -26,7 +26,7 @@ class BookingItem extends React.Component {
                     <div className="booking_list_name"></div>
                     <div className="booking_start"></div>
                     <div className="booking_end"></div>
-                    <button onClick={this.handleClick}>Cancel</button>
+                    <button onClick={this.handleClick} >Cancel</button>
                 </div>
             </div>
         )
@@ -34,5 +34,5 @@ class BookingItem extends React.Component {
     };
 };
 
-export default withRouter(BookingItem);
+export default BookingItem;
 

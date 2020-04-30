@@ -1,14 +1,12 @@
 import React from 'react';
-import BookingItem from '../bookings/booking_index_item';
+import BookingItem from '../bookings/booking_index_item_container';
+// import BookingItem from '../bookings/booking_index_item;
 
 
 
 class User extends React.Component {
     constructor(props) {
         super(props)
-
-
-        let count = this.props.bookings.length
         
         // this.handleClick = this.handleClick.bind(this);
     };
@@ -56,10 +54,10 @@ class User extends React.Component {
                     <div className="bookings">
                         {this.props.bookings.map(booking => (
                             <BookingItem 
-                            deleteBooking={ this.props.deleteBooking }
-                            booking={ booking }
-                            key={ booking.id }
-                            current_user={ this.props.user.id }
+                            // deleteBooking={ this.props.deleteBooking }
+                            // booking={ booking }
+                            // key={ booking.id }
+                            // current_user={ this.props.user.id }
                             />
                         ))}
                     </div>
