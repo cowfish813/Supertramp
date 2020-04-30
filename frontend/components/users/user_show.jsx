@@ -1,5 +1,5 @@
-import React from 'react'
-import BookingItem from '../bookings/booking_item'
+import React from 'react';
+import BookingItem from '../bookings/booking_index_item';
 
 
 
@@ -7,12 +7,12 @@ class User extends React.Component {
     constructor(props) {
         super(props)
 
-        this.handleClick = this.handleClick.bind(this);
+        // this.handleClick = this.handleClick.bind(this);
     };
 
     componentDidMount () {
-        this.props.fetchBookings(this.props.match.params.userId)
-    }
+        this.props.fetchBookings(this.props.match.params.userId);
+    };
 
     // componentDidUpdate() {
     //     this.props.fetchBookings(this.props.match.params.userId)
@@ -26,7 +26,9 @@ class User extends React.Component {
 
     render () {
         // if (Object.getOwnPropertyNames(this.props.bookings).length < 1) {
-        //     return null
+        //     return (
+        //         <div></div>
+        //     )
         // }
 
         return (
@@ -54,6 +56,7 @@ class User extends React.Component {
                             deleteBooking={ this.props.deleteBooking }
                             booking={ booking }
                             key={ booking.id }
+                            current_user={ this.props.user.id }
                             />
                         ))}
                     </div>
@@ -67,4 +70,4 @@ class User extends React.Component {
 };
 
 
-export default User
+export default User;

@@ -49,7 +49,6 @@ class BookingForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // debugger
 
         if(!(this.props.currentUser)) { //check currentuser
             this.props.openModal('Login')

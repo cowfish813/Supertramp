@@ -2,14 +2,14 @@ export const fetchBookings = () => (
     $.ajax({
         url: '/api/bookings',
     })
-)
+);
 
 export const fetchBooking = (bookingId) => (
     $.ajax({
         url: `/api/bookings/${bookingId}`,
         data: { userId: userId }
     })
-)
+);
 
 export const createBooking = booking => (
     $.ajax({
@@ -17,11 +17,11 @@ export const createBooking = booking => (
         method: 'POST',
         data: {booking}
     })
-)
-
+);
+// debugger
 export const deleteBooking = bookingId => (
     $.ajax({
         url: `/api/bookings/${bookingId}`,
-        method: DELETE
+        method: 'DELETE'
     })
-)
+);

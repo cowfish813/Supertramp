@@ -1,4 +1,7 @@
 class Api::BookingsController < ApplicationController
+
+    before_action :require_logged_in
+
     def index
         if params[:userId]
             @bookings = User.find(params[:userId]).bookings
@@ -10,7 +13,6 @@ class Api::BookingsController < ApplicationController
 
     def show
         @booking = Booking.find(params[:id]) 
-        # debugger
         render :show
     end
 
@@ -20,7 +22,6 @@ class Api::BookingsController < ApplicationController
         @booking.user_id = current_user.id
         
         if @booking.save
-            # debugger
             render :show
         else
             render json: @booking.errors.full_messages, status: 422
@@ -37,10 +38,11 @@ class Api::BookingsController < ApplicationController
     end
 
     def destroy
-         @booking = current_user.bookings.find(params[:id])
-        if @booking.destroy
+        @booking = Booking.find(params[:id])
+        if @booking.destroy && current_user.id == booking.user_id
             render :show
         else
+            # debugger
             render json: @booking.errors.full_messages, status: 422
         end
     end
@@ -48,6 +50,6 @@ class Api::BookingsController < ApplicationController
 
     private
     def booking_params
-        params.require(:booking).permit(:check_in, :check_out, :listing_id, :price, :capacity, :listing_name, :user_id, :host_id)
+        params.require(:booking).permit(:check_in, :check_out, :listing_id, :price, :capacity, :listing_name, :user_id, :host_id, :id)
     end
 end

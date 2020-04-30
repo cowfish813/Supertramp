@@ -5,7 +5,6 @@ import { deleteBooking, fetchBookings } from '../../actions/booking_actions/book
 
 const mSTP = (state, ownProps) => {
     let bookings = [];
-
     if (state.entities) {
         bookings = Object.values(state.entities.bookings);
     }

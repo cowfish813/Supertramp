@@ -11,7 +11,6 @@ export const receiveBookings = bookings => ({
 });
 
 export const receiveBooking = booking => {
-    debugger
     return (
         {type: RECEIVE_BOOKING,
         booking}
@@ -37,7 +36,6 @@ export const createBooking = booking => dispatch => {
     )
 };
 // export const createBooking = (booking) => (dispatch) => {
-//     debugger
 //     return (
 //     ApiUtil.createBooking(booking)    
 //         .then( res => dispatch(receiveBooking(res)))
@@ -58,8 +56,9 @@ export const fetchBookings = () => dispatch => {
     )
 };
 export const deleteBooking = (bookingId) => dispatch => {
+    debugger
     return ApiUtil.deleteBooking(bookingId).then(
-        bookings => dispatch(removeBooking(bookings)),
+        booking => dispatch(removeBooking(booking)),
         err => dispatch(receiveBookingErrors(err.responseJSON))
     )
 };
