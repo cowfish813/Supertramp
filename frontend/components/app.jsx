@@ -12,12 +12,13 @@ import Footer from './navbar/footer' //could add a little more
 import searchContainer from './search/search_container'
 import list_index_item from './listing/list_index/list_index_item'
 
-import UserShow from './users/user_container'
+import UserShow from './users/user_show_container'
 import ListShow from './listing/list_show/list_show_container'
 
 //bonus
 // aws connected, can upload...but model is technically incomplete
 import ListForm from './listing/list_form/list_form_container'
+//reviews
 
 const App = () => (
     <div className="super-body">

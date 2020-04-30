@@ -9,7 +9,7 @@ const mstp = (state, ownProps) => {
     // debugger
     return ({
         currentUser: state.entities.users[state.session.currentUser],
-        booking: state.entities.bookings,
+        // booking: state.entities.bookings,
         listing: state.entities.listings
     });
 };

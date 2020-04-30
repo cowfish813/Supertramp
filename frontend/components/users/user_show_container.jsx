@@ -10,8 +10,8 @@ const mSTP = (state, ownProps) => {
     }
     return ({
         user: state.entities.users[ownProps.match.params.userId],
-        listing: state.entities.listings,
-        bookings
+        listings: state.entities.listings,
+        bookings,
     });
 };
 

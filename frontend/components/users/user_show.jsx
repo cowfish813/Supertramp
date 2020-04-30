@@ -1,6 +1,6 @@
 import React from 'react';
 import BookingItem from '../bookings/booking_index_item_container';
-// import BookingItem from '../bookings/booking_index_item;
+// import BookingItem from '../bookings/booking_index_item';
 
 
 
@@ -26,11 +26,13 @@ class User extends React.Component {
 
 
     render () {
-        // if (Object.getOwnPropertyNames(this.props.bookings).length < 1) {
-        //     return (
-        //         <div></div>
-        //     )
-        // }
+        if ((this.props.bookings).length < 1) {
+            return (
+                <div></div>
+            )
+        } else {
+
+        
 
         return (
             <div className="userBody">
@@ -54,10 +56,11 @@ class User extends React.Component {
                     <div className="bookings">
                         {this.props.bookings.map(booking => (
                             <BookingItem 
-                            // deleteBooking={ this.props.deleteBooking }
-                            // booking={ booking }
-                            // key={ booking.id }
-                            // current_user={ this.props.user.id }
+                            deleteBooking={ this.props.deleteBooking }
+                            booking={ booking }
+                            key={ booking.id }
+                            current_user={ this.props.user.id }
+                            bookings={ this.props.bookings }
                             />
                         ))}
                     </div>
@@ -68,6 +71,7 @@ class User extends React.Component {
 
             </div>
     )};
+}
 };
 
 
