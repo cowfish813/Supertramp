@@ -7,16 +7,19 @@ class User extends React.Component {
     constructor(props) {
         super(props)
 
+
+        let count = this.props.bookings.length
+        
         // this.handleClick = this.handleClick.bind(this);
     };
 
-    componentDidMount () {
+    componentDidMount () { //first fetch
         this.props.fetchBookings(this.props.match.params.userId);
     };
 
-    // componentDidUpdate() {
-    //     this.props.fetchBookings(this.props.match.params.userId)
-    // }
+    componentDidUpdate() { 
+
+    };
  
 
     // handleClick() {
@@ -40,7 +43,7 @@ class User extends React.Component {
                         {this.props.user.first_name}
                         <div className="panelHeader">
                             <div className="left_avatar">
-
+                                <img src="https://supertramp-mast.s3-us-west-1.amazonaws.com/24-248366_profile-clipart-generic-user-generic-profile-picture-gender.png" alt=""/>
                             </div>
                             <div className="right_header">
                                 <h2 className="userName">{this.props.user.first_name}</h2>

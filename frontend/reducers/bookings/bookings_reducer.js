@@ -13,7 +13,6 @@ const bookingsReducer = (state = {}, action) => {
         case RECEIVE_BOOKINGS:
             return action.bookings;
         case REMOVE_BOOKING:
-            debugger
             delete nextState[action.bookingId];
             return nextState;
         case RECEIVE_USER:

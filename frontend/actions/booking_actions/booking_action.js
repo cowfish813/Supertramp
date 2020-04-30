@@ -56,7 +56,6 @@ export const fetchBookings = () => dispatch => {
     )
 };
 export const deleteBooking = (bookingId) => dispatch => {
-    debugger
     return ApiUtil.deleteBooking(bookingId).then(
         booking => dispatch(removeBooking(booking)),
         err => dispatch(receiveBookingErrors(err.responseJSON))

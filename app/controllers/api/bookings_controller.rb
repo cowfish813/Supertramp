@@ -39,7 +39,7 @@ class Api::BookingsController < ApplicationController
 
     def destroy
         @booking = Booking.find(params[:id])
-        if @booking.destroy && current_user.id == booking.user_id
+        if @booking.destroy && current_user.id == @booking.user_id
             render :show
         else
             # debugger

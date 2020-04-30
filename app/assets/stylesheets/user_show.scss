@@ -2,11 +2,12 @@
 
     display: flex;
     justify-content: left;
-    margin: 500px;
+    margin-top: 10vh;
+    // margin: 500px;
     // height: 7000px;
     /* align-items: left; */
     // background-color: black; 
-    // margin: 4000px;
+    border-top: black solid 10px;
 }
 
 /* left panel */
@@ -34,4 +35,12 @@
     margin: 0px 0px 0px 10px;
     background: red;
     
+}
+.left_avatar {
+    background-color: white;
+    background: white;
+}
+.left_avatar img {
+    width: 7vw;
+    height: auto;
 }
