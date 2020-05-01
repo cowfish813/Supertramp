@@ -7,7 +7,7 @@ class IndexItem extends React.Component {
     }
 
     handleClick() {
-        const listId = this.props.listing.id
+        // const listId = this.props.listing.id
         this.props.history.push(`/listings/${listingId}`);
     }
 

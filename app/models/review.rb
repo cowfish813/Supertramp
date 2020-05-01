@@ -17,8 +17,8 @@
 #  index_reviews_on_user_id     (user_id)
 #
 class Review < ApplicationRecord
-    belongs_to :listing,
-    foreign_key: :listing_id
+    belongs_to :listing
+    # foreign_key: :listing_id
 
     belongs_to :author,
     foreign_key: :user_id,
