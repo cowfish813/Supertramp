@@ -14,7 +14,7 @@ class IndexItem extends React.Component {
     render() {
         return (
             <div>
-
+                    stuff
             </div>
         )
     }

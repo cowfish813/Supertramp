@@ -6,7 +6,7 @@ const LocationReducer = (state = {}, action) => {
         case RECEIVE_LOCATION:
             return Object.assign({}, action.geoLocation);
         case RESET_LOCATION:
-            
+            return {}
         default:
             return state;
     }

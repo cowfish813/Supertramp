@@ -8,9 +8,9 @@ import NavbarContainer from './navbar/navbar_container'
 import Homepage from './splash/homepage_container'
 import Footer from './navbar/footer' //could add a little more
 // incomplete
-// import listIndexContainer from './listing/list_index/list_index_container'
+import listIndexContainer from './listing/list_index/list_index_container'
 import searchContainer from './search/search_container'
-import list_index_item from './listing/list_index/list_index_item'
+// import list_index_item from './listing/list_index/list_index_item'
 
 import UserShow from './users/user_show_container'
 import ListShow from './listing/list_show/list_show_container'
@@ -25,7 +25,7 @@ const App = () => (
         < Modal />
         < Route exact path="/" component={Homepage} />
         < Route exact path="/listings/:listingsId" component={ListShow} />
-        {/* < Route exact path ="/listings/index" component={listIndexContainer} /> */}
+        < Route exact path ="/index" component={listIndexContainer} />
         {/* < Route exact path="/listings/" component={list_index_item} /> */}
         < NavbarContainer />
 
