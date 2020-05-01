@@ -26,7 +26,6 @@ const App = () => (
         < Route exact path="/" component={Homepage} />
         < Route exact path="/listings/:listingsId" component={ListShow} />
         < Route exact path ="/index" component={listIndexContainer} />
-        {/* < Route exact path="/listings/" component={list_index_item} /> */}
         < NavbarContainer />
 
         < ProtectedRoute exact path="/users/:userId" component={UserShow} />
