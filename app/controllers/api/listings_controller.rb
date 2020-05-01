@@ -3,13 +3,13 @@ class Api::ListingsController < ApplicationController
     def index
         @listings = bounds ? Listing.in_bounds(bounds) : Listing.all
 
-        if params[:price]
-            @listings = @listings.where('price < ?', price)
-        end
+        # if params[:price]
+        #     @listings = @listings.where('price < ?', price)
+        # end
 
-        if params[:capacity]
-            @listings = @listings.where('capacity < ?', capacity)
-        end
+        # if params[:capacity]
+        #     @listings = @listings.where('capacity < ?', capacity)
+        # end
 
         render :index
     end
@@ -48,7 +48,7 @@ private
         params[:bounds]
     end
 
-    if capacity
+    def capacity
         params[:capacity]
     end
 

@@ -4,9 +4,9 @@ class Api::BookingsController < ApplicationController
 
     def index
         if params[:userId]
-            @bookings = User.find(params[:userId]).bookings
+            @bookings = User.find(params[:userId]).bookings.includes(:listing)
         else
-            @bookings = Booking.all
+            @bookings = Booking.includes(:listing).all
         end
         render :index
     end
