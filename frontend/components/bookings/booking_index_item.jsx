@@ -1,34 +1,19 @@
 import React from 'react';
 import { withRouter } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 
 class BookingItem extends React.Component {
     constructor(props) {
         super(props);
 
-
-
         this.handleClick = this.handleClick.bind(this);
-        this.handlePrice = this.handlePrice.bind(this)
     };
 
     handleClick() {
         this.props.deleteBooking(this.props.booking.id)
             // window.location.reload(false); //reloads after delete. prefer re-render
-
     };
-
-    componentDidUpdate () {
-
-    };
-    // componentDidMount() {
-    //     this.props.fetchBookings()
-    // };
-    handlePrice() {
-        let num
-        num = this.props.booking.price
-        return num
-    }
     
     render () {
 
@@ -40,14 +25,29 @@ class BookingItem extends React.Component {
         if (this.props.current_user === this.props.booking.user_id) {
             return (
             <div className="booking_item_box">
+                <div className="booking_img_container">
+                    <Link to={`/listings/${this.props.booking.listing_id}`}>
                     <div className="booking_list_name">{this.props.booking.listing_name}</div>
-                    <img src={this.props.booking.photoUrls} alt=""/>
-                <div className="booking_item_container">
-                    <div className="bookings_item booking_start">Check-In: {checkin}</div>
-                    <div className="bookings_item booking_end">Check-Out: {checkout}</div>
-                    <div className="bookings_item">Number of Guests: {this.props.booking.capacity}</div>
-                    <div className="bookings_item">Total Price: {this.handlePrice()}</div>
-                    <button onClick={this.handleClick}>Cancel</button>
+                    <img className="booking_img" src={this.props.booking.photoUrls} alt=""/>
+                    </Link>
+                </div>
+                <div className="booking_item_content">
+                    <div className="bookings_item booking_start">
+                        <strong> Check-In: </strong>
+                        {checkin}</div>
+                    <div className="bookings_item booking_end">
+                        <strong> Check-Out: </strong>
+                        {checkout}</div>
+                    <div className="bookings_item">
+                        <strong> Number of Guests: </strong>
+                        {this.props.booking.capacity}</div>
+                    <div className="bookings_item">
+                        <strong>Total Price: </strong>
+                        ${this.props.booking.price}</div>
+                    <div className="bookings_item_cancel">
+
+                    <button onClick={this.handleClick} className="bookingCancel">Cancel</button>
+                    </div>
                 </div>
             </div>
             );

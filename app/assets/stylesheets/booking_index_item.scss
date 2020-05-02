@@ -1,0 +1,58 @@
+.bookings {
+    // border: lightgray 1px solid;
+    // display: flex;
+    // flex-direction: row;
+}
+
+.booking_item_box {
+    padding: 2rem;
+    border: lightgray 1px solid;
+    display: flex;
+    margin: 2rem;
+    // padding: 4rem;
+    // flex-direction: column;
+}
+.booking_list_name {
+    padding-bottom: .5rem;
+}
+.booking_img_container {
+    font-size: 2rem;
+}
+
+.booking_img {
+    width: 25vw;
+    // max-height: 20vh;
+    height: auto;
+}
+
+.booking_item_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 2rem;
+}
+
+.bookings_item strong {
+    // display: flex;
+    // justify-content: space-around;
+    font-weight: bold;
+}
+.bookings_item_cancel {
+    display: flex;
+    justify-content: center;
+}
+
+
+.bookingCancel {
+    border: solid 2px #40d9ac;
+    background: #ffffff;
+    transition: .4s;
+    width: 10vw;
+    height: 5vh;
+    color: #40d9ac;
+}
+.bookingCancel:hover {
+    background: #40d9ac;
+    transition: .4s;
+    color: #ffffff;
+}
