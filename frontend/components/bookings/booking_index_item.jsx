@@ -86,5 +86,5 @@ class BookingItem extends React.Component {
     };
 };
 
-export default BookingItem;
+export default withRouter(BookingItem);
 

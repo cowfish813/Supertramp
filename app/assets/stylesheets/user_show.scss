@@ -1,43 +1,47 @@
 .userBody {
     display: flex;
     justify-content: left;
-    margin-top: 9.5vh;
-    // margin: 500px;
-    // height: 7000px;
-    /* align-items: left; */
-    // background-color: black; 
-    // border-top: black solid 10px;
+    margin-top: 11vh;
 }
 
 /* left panel */
 .left_panel {
     display: flex;
     justify-content: left;
-    height: 663px;
-    padding: 0px 10px;
+    // height: 30vh;
+    // padding: 0px 1rem;
     // border: red 1px solid;
 }
 
 .bioPanel {
-    width: 280px;
-    height: 275px;
-    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    // margin: 10rem;
+    width: 20vw;
+    height: 27vh;
+    padding: 2rem;
     border: lightgray 1px solid;
 }
 .panelHeader {
-    width: 238;
-    height: 90px;
+    // width: 20vw;
+    height: 10vh;
     margin: 0px 0px 10px;
 }
-.right_header {
-    height: 90;
-    margin: 0px 0px 0px 10px;
-    background: red;
-    
+.right_header > h2 {
+    // height: 90;
+    // margin: 0px 0px 0px 10px;
+    // background: red;
+    margin: .5rem;
+
 }
 .left_avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: white;
     background: white;
+    padding: 1rem;
 }
 .left_avatar img {
     width: 7vw;
