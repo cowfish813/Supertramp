@@ -7,13 +7,40 @@ class BookingItem extends React.Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            count: document.querySelectorAll("#booking_item").length
+        }
         this.handleClick = this.handleClick.bind(this);
+        // console.log(this.state)
+        // console.log(document.querySelector("#booking_item").length)
     };
 
     handleClick() {
         this.props.deleteBooking(this.props.booking.id)
             // window.location.reload(false); //reloads after delete. prefer re-render
     };
+
+    componentDidMount() {
+        this.setState({
+            count: document.querySelectorAll("#booking_item").length
+        }) //obtain count
+    }
+    
+    componentDidUpdate() {
+        // if (this.state.count -= 1 ) {
+        // }
+        // if (!(this.state.count)) {
+
+        // }
+        // console.log(this.state.count)
+        // console.log(document.querySelectorAll("#booking_item").length)
+        
+        // if (this.state.count-- === count: document.querySelectorAll("#booking_item").length){
+        //     this.setState({
+        //         count: document.querySelectorAll("#booking_item").length
+        //     })
+        // }
+    }
     
     render () {
 
@@ -24,7 +51,7 @@ class BookingItem extends React.Component {
 
         if (this.props.current_user === this.props.booking.user_id) {
             return (
-            <div className="booking_item_box">
+            <div className="booking_item_box" id="booking_item">
                 <div className="booking_img_container">
                     <Link to={`/listings/${this.props.booking.listing_id}`}>
                     <div className="booking_list_name">{this.props.booking.listing_name}</div>

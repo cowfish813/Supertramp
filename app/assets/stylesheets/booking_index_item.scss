@@ -5,11 +5,11 @@
 }
 
 .booking_item_box {
-    padding: 2rem;
-    border: lightgray 1px solid;
+    padding: 1.5rem;
+    border-bottom: lightgray 1px solid;
     display: flex;
-    margin: 2rem;
-    // padding: 4rem;
+    margin: 1rem;
+    // padding: 2rem;
     // flex-direction: column;
 }
 .booking_list_name {
@@ -20,7 +20,8 @@
 }
 
 .booking_img {
-    width: 25vw;
+    box-shadow: .6rem .8rem 1rem lightgrey;
+    width: 20vw;
     // max-height: 20vh;
     height: auto;
 }
@@ -47,8 +48,8 @@
     border: solid 2px #40d9ac;
     background: #ffffff;
     transition: .4s;
-    width: 10vw;
-    height: 5vh;
+    width: 8vw;
+    height: 3vh;
     color: #40d9ac;
 }
 .bookingCancel:hover {

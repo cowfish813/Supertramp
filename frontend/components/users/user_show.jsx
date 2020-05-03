@@ -1,14 +1,14 @@
 import React from 'react';
-import BookingItem from '../bookings/booking_index_item_container';
-// import BookingItem from '../bookings/booking_index_item';
-
-
+// import BookingItem from '../bookings/booking_index_item_container';
+import BookingItem from '../bookings/booking_index_item';
 
 class User extends React.Component {
     constructor(props) {
         super(props)
-        
-        // this.handleClick = this.handleClick.bind(this);
+
+        // this.state = {
+        //     count: document.querySelectorAll("#BookingItemId").length
+        // }
     };
 
     componentDidMount () { //first fetch
@@ -17,15 +17,16 @@ class User extends React.Component {
         this.props.fetchListings(this.props.match.params.userId);
     };
 
-    componentDidUpdate() { 
-
-    };
- 
-
-    // handleClick() {
-    //     this.props.deleteBooking(this.props.booking.id)
+    // componentDidMount() {
+    //     this.setState({
+    //         count: document.querySelectorAll("#BookingItemId").length
+    //     })
+    // }
+    // componentDidUpdate() { 
+    //     if (!(this.props.bookings)) {
+    //         this.props.bookings
+    //     }
     // };
-
 
     render () {
         if ((this.props.bookings).length < 1) {
@@ -42,7 +43,7 @@ class User extends React.Component {
                 {/* left user panel */}
                 <div className="left_panel">
                     <div className="bioPanel">
-                        {this.props.user.first_name}
+                        {this.props.user.first_name + " " + this.props.user.last_name}
                         <div className="panelHeader">
                             <div className="left_avatar">
                                 <img src="https://supertramp-mast.s3-us-west-1.amazonaws.com/24-248366_profile-clipart-generic-user-generic-profile-picture-gender.png" alt=""/>
@@ -64,6 +65,7 @@ class User extends React.Component {
                             current_user={ this.props.user.id }
                             bookings={ this.props.bookings }
                             listings ={ this.props.listings }
+                            id="BookingItemId"
                             />
                         ))}
                     </div>

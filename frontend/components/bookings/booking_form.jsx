@@ -17,31 +17,27 @@ class BookingForm extends React.Component {
             price: this.props.list.price,
             check_in: null,
             check_out: null,
-            capacity: 1,
+            capacity: null,
             focusedStart: null,
             focusedEnd: null,
         }
         this.highlighted = this.highlighted.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        // this.handleCapacity = this.handleCapacity.bind(this);
-        // this.handlePrice = this.handlePrice.bind(this);
+        this.handleCapacity = this.handleCapacity.bind(this);
+        this.handlePrice = this.handlePrice.bind(this);
     };
 
-    // handlePrice() {
-    //   let num = this.state.capacity
-    //     this.setState({
-    //       price: ( num * this.props.list.price )
-    //   });
-    //   return this.state.price
-    // };
+    handlePrice() {
+      if (this.state.capacity) {
+        // something about price over a few days
+      }
+    };
 
-    // handleCapacity(event) {
-    //   // debugger
-    //   this.setState({
-    //     capacity: event.target.value
-    //   })
-    //   return this.state.capacity
-    // }
+    handleCapacity(event) {
+      this.setState({
+        capacity: event.currentTarget.value
+      })
+    }
 
     highlighted(day) {
         return day.isSame(this.state.check_in)
@@ -59,7 +55,7 @@ class BookingForm extends React.Component {
               check_in: this.state.check_in.format('YYYY/MM/DD'),
               check_out: this.state.check_out.format('YYYY/MM/DD'),
               listing_id: this.props.list.id,
-              capacity: 1,
+              capacity: this.state.capacity,
               user_id: this.props.currentUserId,
               host_id: this.props.list.host_id,
               listing_name: this.props.list.name,
