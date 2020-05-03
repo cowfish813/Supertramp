@@ -20,10 +20,10 @@ class User extends React.Component {
     // componentDidMount() {
     //     const node = document.getElementById("index")
     // }
-    componentDidUpdate() { 
+    // componentDidUpdate() { 
         // let count = document.querySelectorAll("#BookingItemId").length
         // console.log(count)
-    };
+    // };
 
     render () {
         if ((this.props.bookings).length < 1) {
@@ -48,6 +48,7 @@ class User extends React.Component {
                             <div className="right_header">
                                 <h2 className="userName_show">Username: {this.props.user.username}</h2>
                                 <h2 className="email_show">Email: {this.props.user.email}</h2>
+                                {/* <button onClick={open modal?}>Update User Info</button> */}
                             </div>
                         </div>
                     </div>

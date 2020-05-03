@@ -14,6 +14,12 @@ class ListShow extends React.Component {
         this.props.fetchListing(this.props.match.params.listingsId);
     }
 
+    componentDidUpdate() {
+      if (!(this.props.list)) {
+        this.props.fetchListing(this.props.match.params.listingsId);
+      }
+    }
+
     render () {
         return (
           <div className="show_body">
