@@ -6,11 +6,10 @@
 
 /* left panel */
 .left_panel {
-    display: flex;
-    justify-content: left;
-    // height: 30vh;
-    // padding: 0px 1rem;
-    // border: red 1px solid;
+    position: fixed;
+    left: 5rem;
+    // display: flex; //useless unless top 2 are disabled
+    // justify-content: left;
 }
 
 .bioPanel {
@@ -29,11 +28,7 @@
     margin: 0px 0px 10px;
 }
 .right_header > h2 {
-    // height: 90;
-    // margin: 0px 0px 0px 10px;
-    // background: red;
     margin: .5rem;
-
 }
 .left_avatar {
     display: flex;

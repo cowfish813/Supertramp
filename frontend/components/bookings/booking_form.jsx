@@ -10,6 +10,8 @@ import { SingleDatePicker } from "react-dates";
 class BookingForm extends React.Component {
     constructor(props) {
         super(props);
+
+        console.log(Date.now)
         this.state = {
             user_id: this.props.currentUserId,
             listing_id: this.props.list.id,
@@ -17,7 +19,7 @@ class BookingForm extends React.Component {
             price: this.props.list.price,
             check_in: null,
             check_out: null,
-            capacity: null,
+            capacity: "",
             focusedStart: null,
             focusedEnd: null,
         }
@@ -28,9 +30,8 @@ class BookingForm extends React.Component {
     };
 
     handlePrice() {
-      if (this.state.capacity) {
-        // something about price over a few days
-      }
+      //number of days * price
+      
     };
 
     handleCapacity(event) {
