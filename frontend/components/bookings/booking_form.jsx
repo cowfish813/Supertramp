@@ -11,7 +11,7 @@ class BookingForm extends React.Component {
     constructor(props) {
         super(props);
 
-        console.log(Date.now)
+        // console.log(Date.now)
         this.state = {
             user_id: this.props.currentUserId,
             listing_id: this.props.list.id,
@@ -50,7 +50,7 @@ class BookingForm extends React.Component {
         if(!(this.props.currentUser)) { //check currentuser
             this.props.openModal('Login')
         } else if(!(this.state.check_in) || !(this.state.check_out)) {
-            console.log("booking error")
+            // console.log("booking error")
         } else {
           const booking = {
               check_in: this.state.check_in.format('YYYY/MM/DD'),

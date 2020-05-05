@@ -27,10 +27,8 @@ export const receiveBookingErrors = errors => ({
 
 
 export const createBooking = booking => dispatch => {
-    console.log("outside", booking)
     return ApiUtil.createBooking(booking).then(    
         booking => {
-            console.log("inside", booking)
             dispatch(receiveBooking(booking))},
         err => dispatch(receiveBookingErrors(err.responseJSON))
     )
