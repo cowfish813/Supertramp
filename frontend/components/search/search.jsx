@@ -17,18 +17,15 @@ class Search extends React.Component {
         
     };
 
-    handleSubmit() {
+    handleSubmit(e) {
+        e.preventDefault();
 
     };
 
     render () {
-        // let house = null
-        // if (!(house)) {
-        //     return <div></div>
-        // }
 
         return (
-            <form className="searchWrapper" onSubmit={this.handleSubmit}>
+            <form className="searchWrapper searchIndex" onSubmit={this.handleSubmit}>
                 <div className="superSearch">
 
                     <div className="searchBar">
@@ -55,4 +52,4 @@ class Search extends React.Component {
     }
 };
 
-export default withRouter(Search);
+export default Search;

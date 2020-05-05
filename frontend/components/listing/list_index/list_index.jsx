@@ -9,16 +9,29 @@ class ListingIndex extends React.Component {
     };
 
     render () {
+
+        if (!(this.props.listings.length)) {
+            return (
+            <div className="list-index">
+                <SearchBar />
+
+                <div className="no-result">Nothing matches this description...</div>
+            </div>
+            )
+        }
+
+
         return (
             <div className= "list-index" >
                 <SearchBar />
-                <div>
-
+                <div className="list_index_items">
                     {this.props.listings.map( listing => 
                         <ListIndexItem 
                         listing={listing}
                         key={listing.id}
                         />
+
+                        
                         )}
                 </div>
             </div>

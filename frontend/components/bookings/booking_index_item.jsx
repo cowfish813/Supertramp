@@ -17,6 +17,8 @@ class BookingItem extends React.Component {
 
     handleClick() {
         this.props.deleteBooking(this.props.booking.id)
+            //.then(fetchbookings) 
+            // .then(setState) *for local
             // window.location.reload(false); //reloads after delete. prefer re-render
     };
 
