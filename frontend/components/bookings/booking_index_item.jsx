@@ -8,7 +8,7 @@ class BookingItem extends React.Component {
         super(props);
 
         this.state = {
-            count: document.querySelectorAll("#booking_item").length
+            
         }
         this.handleClick = this.handleClick.bind(this);
         // console.log(this.state)

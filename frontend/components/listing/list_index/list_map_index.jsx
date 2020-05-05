@@ -54,7 +54,7 @@ class ListMapIndex extends React.Component {
     render() {
         return (
             <div
-                className="mapIndex"
+                className="map"
                 id="mapNodeIndex"
                 ref={(map) => (this.mapNode = map)}
             />

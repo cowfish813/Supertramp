@@ -50,7 +50,7 @@ class NavBar extends React.Component {
                         <li className="navItem"><a href="https://www.instagram.com/probablynotnick/">Instagram</a></li>
                         <li className="navItem"><a onClick={() => this.props.openModal('Login')}>Log In</a></li> {/* another modal button*/}
                         <li className="navItem signupButton">
-                        {/* <button onClick={() => this.props.openModal('Signup')}>Sign up</button> */}
+                            {/* <button onClick={() => this.props.openModal('Signup')}>Sign up</button> */}
                         <a onClick={() => this.props.openModal('Signup')}>Sign up</a>
                         </li>
                     </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import ListIndexItem from './list_index_item';
 import SearchBar from '../../search/search_container';
-import mapIndex from './list_map_index';
+import mapIndex from './list_map_index_container';
 
 class ListingIndex extends React.Component {
     constructor(props) {
@@ -23,7 +23,7 @@ class ListingIndex extends React.Component {
 
         return (
             <div className= "list-index" >
-                <SearchBar />
+                {/* <SearchBar /> */}
                 <div className="list_index_items">
                     {this.props.listings.map( listing => 
                         <ListIndexItem 
@@ -31,7 +31,7 @@ class ListingIndex extends React.Component {
                         key={listing.id}
                         />
 
-                        
+
                         )}
                 </div>
             </div>
