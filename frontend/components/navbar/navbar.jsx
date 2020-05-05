@@ -33,10 +33,6 @@ class NavBar extends React.Component {
         this.props.logout().then(()=> this.props.history.push("/"))
     }
 
-    // handleRender() {
-        
-    // }
-
     render() {
       let content =  (this.props.currentUser === undefined) ? 
             
@@ -51,11 +47,11 @@ class NavBar extends React.Component {
                     <div className="nav-right">
                         <li className="navItem"><a href="https://www.linkedin.com/in/nicholas-cheung-6a72999">Linkedin</a></li>
                         <li className="navItem"><a href="https://github.com/cowfish813">GitHub</a></li>
-                      <li className="navItem"><a href="https://www.instagram.com/probablynotnick/">Instagram</a></li>
+                        <li className="navItem"><a href="https://www.instagram.com/probablynotnick/">Instagram</a></li>
                         <li className="navItem"><a onClick={() => this.props.openModal('Login')}>Log In</a></li> {/* another modal button*/}
                         <li className="navItem signupButton">
-                            {/* <button onClick={() => this.props.openModal('Signup')}>Sign up</button> */}
-                            <a onClick={() => this.props.openModal('Signup')}>Sign up</a>
+                        {/* <button onClick={() => this.props.openModal('Signup')}>Sign up</button> */}
+                        <a onClick={() => this.props.openModal('Signup')}>Sign up</a>
                         </li>
                     </div>
                 </div>
@@ -70,7 +66,9 @@ class NavBar extends React.Component {
                     </div>
 
                     <div className="nav-right">
-                        <li className="navItem"><a>Trips</a></li>
+                        <li className="navItem"><a href="https://www.linkedin.com/in/nicholas-cheung-6a72999">Linkedin</a></li>
+                        <li className="navItem"><a href="https://github.com/cowfish813">GitHub</a></li>
+                        <li className="navItem"><a href="https://www.instagram.com/probablynotnick/">Instagram</a></li>
                         <li className="navItem"><Link to={`/users/${this.props.ID}`}>Self</Link></li>
                         <li className="navItem" onClick={this.handleLogout}><a>Log out</a></li> {/* link to my linked in or transfer to bottom of page? */}
                     </div>

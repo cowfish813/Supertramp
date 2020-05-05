@@ -119,7 +119,7 @@ f5 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_101074207
 l5.photo.attach(io: f5, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
 
 l6 = Listing.create!(
-    name: 'Hyrule Castle '
+    name: 'Hyrule Castle ',
     on_arrival: 'walk 1000 miles more',
     description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
     cancellation_policy: 'vanessa carlton',
