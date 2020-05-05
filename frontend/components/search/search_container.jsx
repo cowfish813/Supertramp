@@ -1,6 +1,6 @@
-import { receiveLocation } from '../../actions/map_action'
-import { connect } from 'react-redux'
-import Search from './search'
+import { receiveLocation } from '../../actions/map_action';
+import { connect } from 'react-redux';
+import Search from './search';
 
 
 // const mSTP = (state, ownProps) => ({

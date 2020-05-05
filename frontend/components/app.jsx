@@ -1,23 +1,20 @@
-import React from 'react'
-import { Route, Switch, Link, HashRouter } from 'react-router-dom'
-import Modal from './modal/modal'
-import { AuthRoute, ProtectedRoute }from '../util/route_util'
-import LoginFormContainer from './session/login_form_container'
-import SignupFormContainer from './session/signup_form_container'
-import NavbarContainer from './navbar/navbar_container'
-import UserShow from './users/user_show_container'
-import Footer from './navbar/footer' //could add a little more
+import React from 'react';
+import { Route, Switch, Link, HashRouter } from 'react-router-dom';
+import Modal from './modal/modal';
+import { AuthRoute, ProtectedRoute }from '../util/route_util';
+import LoginFormContainer from './session/login_form_container';
+import SignupFormContainer from './session/signup_form_container';
+import NavbarContainer from './navbar/navbar_container';
+import UserShow from './users/user_show_container';
+import Footer from './navbar/footer' //could add a little more work
 // incomplete
-import listIndexContainer from './listing/list_index/list_index_container'
-import searchContainer from './search/search_container'
-// import list_index_item from './listing/list_index/list_index_item'
-
-import Homepage from './splash/homepage_container'
-import ListShow from './listing/list_show/list_show_container'
+import listIndexContainer from './listing/list_index/list_index_container';
+import Homepage from './splash/homepage_container';
+import ListShow from './listing/list_show/list_show_container';
 
 //bonus
 // aws connected, can upload...but model is technically incomplete
-import ListForm from './listing/list_form/list_form_container'
+import ListForm from './listing/list_form/list_form_container';
 //reviews
 
 const App = () => (
@@ -27,7 +24,6 @@ const App = () => (
         < Route exact path="/listings/:listingsId" component={ListShow} />
         < Route exact path ="/index" component={listIndexContainer} />
         < NavbarContainer />
-
         < ProtectedRoute exact path="/users/:userId" component={UserShow} />
         < Switch>
         < AuthRoute path="/login" component={LoginFormContainer} />
@@ -39,4 +35,4 @@ const App = () => (
     </div>
 );
 
-export default App
+export default App;

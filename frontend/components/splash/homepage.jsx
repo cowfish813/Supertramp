@@ -1,6 +1,5 @@
-import React from 'react'
-import Navbar from '../navbar/navbar_container'
-// import banner from '../../../app/assets/images/banner'
+import React from 'react';
+import SearchBar from '../search/search_container';
 
 
 class Homepage extends React.Component {
@@ -17,10 +16,9 @@ class Homepage extends React.Component {
 
     render() {
 
-        const house = ["All Camping", "Camping", "Glamping", "RV", "Plot of Land"]
+        // let house = ["All Camping", "Camping", "Glamping", "RV", "Plot of Land"]
         return (
             <div className="">
-             {/* < Navbar /> */}
                 <div className="home">
                     <div className="homeCol">
                         <div className="homeTitle">
@@ -38,29 +36,8 @@ class Homepage extends React.Component {
                         </div>
                     </div>
                     {/* search bar begins */}
-                    <form className="searchWrapper">
-                        <div className="superSearch">
+                    < SearchBar />
 
-                            <div className="searchBar">
-                                <input className="search" type="search" placeholder="Search..." />
-                            </div>
-                            <div className="datebox">
-                                <div className="filterButton">
-                                    {/* future modal */}
-                                        <input className="date"  type="date"/>
-                                </div>
-                            </div>
-
-                            <div className="dropdownMenu">
-                                <select className="menuSelect"> 
-                                    {house.map( (tent,i) => 
-                                        <option className="menuSelected" key={i} value={i}>{tent}</option>
-                                        )}
-                                </select>
-                            </div>
-                            <button className="searchButton">Search</button>
-                        </div>
-                    </form>
                 </div>
                     {/* search bar ends */}
 

@@ -44,9 +44,10 @@ class ListShow extends React.Component {
             <div className="show-listing">
               <div className="section-overview">
                 <img className="hostpic" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/24-248366_profile-clipart-generic-user-generic-profile-picture-gender.png" alt="" />
-                <h1>Summary:</h1>
-                <p className="description"> {this.props.list.description}</p>
+                <div className="host_by">Hosted By{}</div>
                 <div className="details-container">
+                  <h1>Summary:</h1>
+                  <p className="description"> {this.props.list.description}</p>
                   <div className="detail_list onArrival"></div>
                   <div className="detail_list minNights"></div>
                 </div>
@@ -60,6 +61,10 @@ class ListShow extends React.Component {
                     <div className="info-cards"></div>
                   </div>
                 </div> */}
+
+              <div className="reviews_container">
+                {/* review index item */}
+              </div>
 
             </div>
               {/* <div className="feature-container"></div> */}

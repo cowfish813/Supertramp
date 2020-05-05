@@ -1,5 +1,5 @@
-import React from 'react'
-import {withRouter} from 'react-router-dom'
+import React from 'react';
+import {withRouter} from 'react-router-dom';
 
 class IndexItem extends React.Component {
     constructor(props) {
@@ -13,11 +13,11 @@ class IndexItem extends React.Component {
 
     render() {
         return (
-            <div>
-                    stuff
+            <div className="index_container">
+                    
             </div>
         )
-    }
-}
+    };
+};
 
-export default withRouter(IndexItem)
+export default withRouter(IndexItem);

@@ -38,7 +38,7 @@ class ListMapIndex extends React.Component {
             center: center,
             radius: 1800
         });
-    }
+    };
 
 
     render() {
