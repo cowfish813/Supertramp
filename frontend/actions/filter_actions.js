@@ -20,15 +20,15 @@ export const removeAllFilters = () => ({
 
 export const updateFilter = data => (dispatch, getState) => {
     dispatch(changeFilter(data));
-    return fetchListings(getState().ui.filters)(dispatch)
+    return fetchListings(getState().ui.filter)(dispatch)
 };
 
 export const removeOneFilter = filter => (dispatch, getState) => {
     dispatch(removeFilter(filter));
-    return fetchListings(getState().ui.filters)(dispatch);
+    return fetchListings(getState().ui.filter)(dispatch);
 };
 
 export const removeFilters = () => (dispatch, getState) => {
     dispatch(removeAllFilters());
-    return fetchListings(getState().ui.filters)(dispatch);
+    return fetchListings(getState().ui.filter)(dispatch);
 };

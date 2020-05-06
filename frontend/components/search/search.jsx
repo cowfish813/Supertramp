@@ -7,19 +7,39 @@ class Search extends React.Component {
         super(props)
 
     this.state = {
-
+        location: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleInput = this.handleInput.bind(this);
     };
 
-    componentDidMount() {
-        
+    handleInput(e) {
+        this.setState({
+            location: e.target.value
+        })
     };
 
     handleSubmit(e) {
         e.preventDefault();
+        this.props.recieveLocation(this.state);
+        this.props.history.push('/listings');
+    };
 
+    componentDidMount() {
+        let input = document.getElementById('splash_search');
+        let autocomplete = new google.maps.places.Autocomplete(input);
+
+        // let location;
+        // let that = this;
+
+        // autocomplete.addListener('place_changed', () => {
+        //     let address = autocomplete.getPlace().formatted_address;
+        //     location = address ? address : autocomplete.getPlace().name
+        //     that.setState({
+        //         location: location
+        //     })
+        // });
     };
 
     render () {
@@ -29,7 +49,14 @@ class Search extends React.Component {
                 <div className="superSearch">
 
                     <div className="searchBar">
-                        <input className="search" type="search" placeholder="Search..." />
+                        <input 
+                        id="splash_search" 
+                        className="search" 
+                        type="search" 
+                        placeholder="Search..." 
+                        value={this.state.location}
+                        onChange={this.handleInput}
+                        />
                     </div>
                     <div className="datebox">
                         <div className="filterButton">
@@ -49,7 +76,7 @@ class Search extends React.Component {
                 </div>
             </form>
         ) 
-    }
+    };
 };
 
 export default Search;

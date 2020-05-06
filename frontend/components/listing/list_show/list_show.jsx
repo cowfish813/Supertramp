@@ -1,5 +1,5 @@
 import React from 'react';
-import ListMap from '../list_map'
+import ListMap from './list_map'
 import { withRouter }from 'react-router-dom'
 import BookingForm from '../../bookings/booking_form_container'
 

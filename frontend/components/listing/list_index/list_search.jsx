@@ -1,6 +1,6 @@
-import react from 'react'
-import listIndex from './list_index'
-import listMapIndex from './list_map_index'
+import React from 'react'
+import listIndex from './list_index_container'
+import listMapIndex from './list_map_index_container'
 
 class ListSearch extends React.Component {
     constructor(props) {
@@ -8,7 +8,20 @@ class ListSearch extends React.Component {
 
         this.state = this.props.filters
 
-        
+    }
 
+    
+
+
+    render () {
+        return (
+            <div>
+                < listIndex />
+
+                <listMapIndex />
+            </div>
+        )
     }
 };
+
+export default ListSearch
