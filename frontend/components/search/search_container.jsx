@@ -11,4 +11,4 @@ const mDTP = dispatch => ({
     receiveLocation: (location) => dispatch(receiveLocation(location))
 });
 
-export default connect(null, mDTP)(Search);
+export default withRouter(connect(null, mDTP)(Search));

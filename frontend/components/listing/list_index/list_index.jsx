@@ -13,8 +13,7 @@ class ListingIndex extends React.Component {
         if (!(this.props.listings.length)) {
             return (
             <div className="list-index">
-                <SearchBar />
-
+                
                 <div className="no-result">Nothing matches this description...</div>
             </div>
             )

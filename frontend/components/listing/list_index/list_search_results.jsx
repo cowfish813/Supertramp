@@ -18,9 +18,9 @@ class ListSearch extends React.Component {
         return (
             <div>
                 < SearchBar />
-                {/* < listIndex /> */}
+                < listIndex />
 
-                {/* <listMapIndex /> */}
+                < listMapIndex />
             </div>
         )
     }

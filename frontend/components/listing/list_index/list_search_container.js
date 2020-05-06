@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { updateFilter, removeFilter, removeAllFilters } from '../../../actions/filter_actions';
-import { resetLocation } from '../../../actions/map_action';
-import ListSearch from './list_search';
+import { resetLocation, receiveLocation } from '../../../actions/map_action';
+import ListSearch from './list_search_results';
 
 const mstp = (state) => ({
     listings: Object.values(state.entities.listings),
@@ -13,7 +13,8 @@ const mdtp = (dispatch) => ({
     updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
     removeFilter: (filter) => dispatch(removeFilter(filter)),
     removeAllFilters: () => dispatch(removeAllFilters()),
-    resetLocation: () => dispatch(resetLocation())
+    resetLocation: () => dispatch(resetLocation()),
+    receiveLocation: (location) => dispatch(receiveLocation(location))
 });
 
 export default connect(mstp, mdtp)(ListSearch);

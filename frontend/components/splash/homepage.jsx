@@ -35,11 +35,8 @@ class Homepage extends React.Component {
                         </h2>
                         </div>
                     </div>
-                    {/* search bar begins */}
                     < SearchBar />
-
                 </div>
-                    {/* search bar ends */}
 
                     {/* tags/index searches begin */}
                 <div className="containerBanner">
