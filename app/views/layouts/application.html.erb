@@ -7,7 +7,7 @@
 
 <%#disable this other key directly below this line eventually%>
     <script src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials[:PLACES_API_KEY] %>&libraries=places" async defer data-turbolinks-eval="false"></script>
-    <%=javascript_include_tag "https://maps.googleapis.com/maps/api/js?key="%>
+    <%#javascript_include_tag "https://maps.googleapis.com/maps/api/js?key="%>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= favicon_link_tag 'favicon.ico' %>
