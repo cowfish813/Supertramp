@@ -9,7 +9,7 @@ const FilterReducer = (state = defaultFilter, action) => {
     switch (action.type) {
         case UPDATE_FILTER:
             //[aciton.filter] instead of bounds?
-            return Object.assign({}, state, {bounds: action.value});
+            return Object.assign({}, state, {bounds: action.data});
         case REMOVE_FILTER:
             const newState = Object.assign({}, state)
             delete newState[action.filter]

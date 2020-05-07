@@ -15,6 +15,7 @@ class ListMapIndex extends React.Component {
     constructor(props) {
         super(props)
 
+        
     };
 
 
@@ -26,8 +27,10 @@ class ListMapIndex extends React.Component {
         this.MarkerManager.updateMarkers(this.props.listings);
     };
 
-    componentDidUpdate() {
-        
+    componentDidUpdate(prevProps) {
+        if (prevProps.listings !== this.props.listings) {
+            this.MarkerManager.updateMarkers(this.props.listings);
+        }
     }
 
     registerListeners() {
@@ -37,9 +40,8 @@ class ListMapIndex extends React.Component {
                 northEast: { lat: north, lng: east },
                 southWest: { lat: south, lng: west }
             };
-            this.props.updateFilter('bounds', bounds);
+            this.props.updateFilter(bounds);
         });
-
     }
 
     handleMarkerClick(listing) {

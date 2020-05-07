@@ -10,7 +10,7 @@ const mstp = (state) => ({
 });
  
 const mdtp = (dispatch) => ({
-    updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
+    updateFilter: (bounds) => dispatch(updateFilter(bounds)),
     removeFilter: (filter) => dispatch(removeFilter(filter)),
     removeAllFilters: () => dispatch(removeAllFilters()),
     resetLocation: () => dispatch(resetLocation()),

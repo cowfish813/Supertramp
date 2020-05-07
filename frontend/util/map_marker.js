@@ -9,11 +9,10 @@ class MarkerManager  {
 
     updateMarkers(listings) {
         const listingsObj = {};
-        debugger
         listings.forEach(listing => listingsObj[listing.id] = listing);
 
         listings
-            .filter(listing => listingsObj[listing.id])
+            .filter(listing => !this.markers[listing.id])
             .forEach(newListing => this.createMarkerFromListing(newListing, this.handleClick));
 
         Object.keys(this.markers)
@@ -22,8 +21,10 @@ class MarkerManager  {
     }
 
     createMarkerFromListing(listing) {
+        
+        const position = new google.maps.LatLng( listing.lat, listing.lng);
         const marker = new google.maps.Marker({
-            position: { lat: listing.lat, lng: listing.lng },
+            position,
             map: this.map,
             listingId: listing.id
         });

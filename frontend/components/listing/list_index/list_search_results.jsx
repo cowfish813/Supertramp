@@ -23,8 +23,13 @@ class ListSearchResults extends React.Component {
                     < SearchBar />
                 </div>
                 <div className="search_results">
-                    < ListIndex />
-                    < ListMapIndex />
+                    < ListIndex 
+
+                    />
+                    < ListMapIndex 
+                    updateFilter={this.props.updateFilter}
+                    listings={this.props.listings}
+                    />
 
                 </div>
             </div>
