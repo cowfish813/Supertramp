@@ -1,61 +1,56 @@
 import React from 'react';
+import MarkerManager from '../../../util/map_marker'
 import { withRouter } from 'react-router-dom';
+
+const mapOptions = {
+    center: {
+        lat: 40.494087,
+        lng: 29.211901
+    },
+    zoom: 13,
+    mapTypeId: "terrain",
+};
 
 class ListMapIndex extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-            location: ""
-        }
-
-        this.handleSubmit = this.handleSubmit.bind(this)
     };
 
-    handleSubmit(e) {
-        e.preventDefault();
+
+    componentDidMount() {
+        window.scrollTo(0, 0);
+        this.map = new google.maps.Map(this.mapNode, mapOptions);
+        this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
+        this.registerListeners();
+        this.MarkerManager.updateMarkers(this.props.listings);
     };
 
     componentDidUpdate() {
-        window.scrollTo(0, 0);
-        // // if (!this.props.list.lng) {
-        // //     this.props.fetchListing(this.props.listId)
-        // // }
+        
+    }
 
-        // const mapOptions = {
-        //     center: {
-        //         lat: this.props.list.lat,
-        //         lng: this.props.list.lng
-        //     },
-        //     zoom: 13,
-        //     mapTypeId: "terrain",
-        // };
+    registerListeners() {
+        google.maps.event.addListener(this.map, 'idle', () => {
+            const {north, south, east, west } = this.map.getBounds().toJSON();
+            const bounds = {
+                northEast: { lat: north, lng: east },
+                southWest: { lat: south, lng: west }
+            };
+            this.props.updateFilter('bounds', bounds);
+        });
 
-        // this.map = new google.maps.Map(this.mapNode, mapOptions);
+    }
 
-        // let center = {
-        //     lat: this.props.list.lat,
-        //     lng: this.props.list.lng,
-        // };
-
-        // const circle = new google.maps.Circle({
-        //     strokeColor: '51D9AC',
-        //     strokeOpacity: 0.8,
-        //     strokeWeight: 2,
-        //     fillColor: "#71DBB4",
-        //     fillOpacity: 0.35,
-        //     map: this.map,
-        //     center: center,
-        //     radius: 1800
-        // });
-    };
-
+    handleMarkerClick(listing) {
+        this.props.history.push(`/listings/${listing.id}`);
+    }
 
     render() {
         return (
             <div
-                className="map"
-                id="mapNodeIndex"
+                className="mapIndex"
+                id="mapNode"
                 ref={(map) => (this.mapNode = map)}
             />
         )

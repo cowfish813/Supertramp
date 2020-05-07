@@ -8,19 +8,19 @@ import { Link } from 'react-router-dom';
 class IndexItem extends React.Component {
     constructor(props) {
         super(props);
-    }
+    };
 
     handleClick() {
-        // const listId = this.props.listing.id
-        this.props.history.push(`/listings/${listingId}`);
-    }
+        const listId = this.props.listing.id;
+        this.props.history.push(`/listings/${listId}`);
+    };
 
     render() {
         return (
             <div className="index_container">
-                <div className="index_photo">
+                <div className="index_box">
                     <Link to={`/listings/${this.props.listing.id}`}>
-                        <img src={this.props.listing.photoUrls} alt=""/>
+                        <img className="indexPhotos" src={this.props.listing.photoUrls} alt=""/>
                     </Link>
                 </div>
                 <div className="listing_index_desc">

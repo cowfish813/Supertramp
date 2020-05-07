@@ -6,8 +6,7 @@ class Homepage extends React.Component {
     constructor(props) {
         super(props)
         
-        // prop must take in dates, type and search term prop for state
-    }
+    };
 
 
 
@@ -76,7 +75,7 @@ class Homepage extends React.Component {
                 {/* links to etc. */}
             </div>
         )
-    }
-}
+    };
+};
 
-export default Homepage
+export default Homepage;

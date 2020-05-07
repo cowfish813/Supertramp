@@ -1,4 +1,6 @@
-class MarkerManager {
+import React from 'react'
+
+class MarkerManager  {
     constructor(map, handleClick) {
         this.map = map;
         this.handleClick = handleClick;
@@ -7,6 +9,7 @@ class MarkerManager {
 
     updateMarkers(listings) {
         const listingsObj = {};
+        debugger
         listings.forEach(listing => listingsObj[listing.id] = listing);
 
         listings
@@ -26,6 +29,10 @@ class MarkerManager {
         });
         marker.addListener('click', () => this.handleClick(listing));
         this.markers[marker.listingId] = marker;
+
+        // marker.addListener('mouseover', () => {
+
+        // })
     }
 
     removeMarker(marker) {
@@ -34,4 +41,4 @@ class MarkerManager {
     }
 }
 
-export default MarkerManager
+export default MarkerManager;

@@ -8,12 +8,22 @@ class ListingIndex extends React.Component {
         super(props)
     };
 
+
+    componentDidMount() {
+        this.props.fetchListings()
+    }
+
+    componentDidUpdate() {
+        // this.props.fetchListings()
+    }
+
+
+
     render () {
 
         if (!(this.props.listings.length)) {
             return (
             <div className="list-index">
-                
                 <div className="no-result">Nothing matches this description...</div>
             </div>
             )
@@ -29,8 +39,6 @@ class ListingIndex extends React.Component {
                         listing={listing}
                         key={listing.id}
                         />
-
-
                         )}
                 </div>
             </div>

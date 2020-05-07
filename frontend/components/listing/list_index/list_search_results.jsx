@@ -1,9 +1,9 @@
 import React from 'react'
-import listIndex from './list_index_container'
-import listMapIndex from './list_map_index_container'
+import ListIndex from './list_index_container'
+import ListMapIndex from './list_map_index_container'
 import SearchBar from '../../search/search_container'
 
-class ListSearch extends React.Component {
+class ListSearchResults extends React.Component {
     constructor(props) {
         super(props)
 
@@ -11,19 +11,25 @@ class ListSearch extends React.Component {
 
     }
 
-    
+    componentDidMount() {
+        // this.props.fetchListings()
+    }
 
 
     render () {
         return (
             <div>
-                < SearchBar />
-                < listIndex />
+                <div className="">
+                    < SearchBar />
+                </div>
+                <div className="search_results">
+                    < ListIndex />
+                    < ListMapIndex />
 
-                < listMapIndex />
+                </div>
             </div>
         )
     }
 };
 
-export default ListSearch
+export default ListSearchResults

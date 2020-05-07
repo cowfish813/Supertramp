@@ -1,7 +1,35 @@
+.search_results {
+    display: flex;
+    flex-direction: row;
+}
 .list-index {
     min-height: 40vh;
+    margin-right: 5vw;
 }
 
-.searchIndex {
+.search_results {
     margin-top: 10vh;
+
+}
+.list_index_items {
+    margin-top: 5vh;
+}
+.index_container {
+    border-bottom: darkgray solid 1px;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: row;
+    width: 20%;
+    height: auto; 
+}
+.indexPhotos {
+    width: 20vw;
+    height: auto;
+}
+
+.mapIndex {
+    // right: 0%;
+    border: darkblue solid 5px;
+    width: 40vw;
+    height: 100vh;
 }
