@@ -1,6 +1,6 @@
 import React from 'react'
 import ListIndex from './list_index_container'
-import ListMapIndex from './list_map_index_container'
+import ListMapIndex from './list_map_index'
 import SearchBar from '../../search/search_container'
 
 class ListSearchResults extends React.Component {
@@ -8,12 +8,8 @@ class ListSearchResults extends React.Component {
         super(props)
 
         this.state = this.props.filters
-
     }
 
-    componentDidMount() {
-        // this.props.fetchListings()
-    }
 
 
     render () {
@@ -24,7 +20,7 @@ class ListSearchResults extends React.Component {
                 </div>
                 <div className="search_results">
                     < ListIndex 
-
+                        // listings={this.props.listings}
                     />
                     < ListMapIndex 
                     updateFilter={this.props.updateFilter}

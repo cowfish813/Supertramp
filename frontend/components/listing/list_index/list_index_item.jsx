@@ -32,4 +32,4 @@ class IndexItem extends React.Component {
     };
 };
 
-export default IndexItem;
+export default withRouter(IndexItem);
