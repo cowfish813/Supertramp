@@ -59,4 +59,4 @@ class ListMapIndex extends React.Component {
     };
 };
 
-export default ListMapIndex;
+export default withRouter(ListMapIndex);
