@@ -10,37 +10,99 @@
 .list-show-photo{
     object-position: center;
     // width: 100%;
-    // height: auto;
-    width: 70vw;
+    // height: 1200px;
+    width: 1100px;
     margin-right: 20px;
 }
 .photo_title {
+    margin-top: 2rem;
     font-size: 3rem;
     font-weight: bolder;
     // border-bottom: solid 1px ;
 }
 
 
-
-
 .show-listing {
-    margin-top: 20rem;
+    margin-top: 5rem;
     border-top: lightgrey solid 1px;
-    // border: red 1px solid;
+    display: flex;
+    flex-direction: column;
 }
-
 
 .section-overview{
     display: flex;
     width: auto;
-    height: 50vh;
+    object-position: center;
+    height: 30vh;
     padding: 20px 0px 0px;
     // border: red 1px solid;
 }
 .hostpic {
-    width: 9vw;
-    height: 9vh;
+    width: 3vw;
+    height: 5vw;
+    margin-right: 3rem;
+    // height: 9vh;
 }
+.host_by {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5rem;
+    width: 10vw;
+}
+.host_name {
+    display: flex;
+    justify-content: space-between;
+    // align-items: right;
+
+}
+
+.details-container {
+    margin-left: 20rem;
+    // border-top: lightgrey solid 1px;
+}
+
+.detail_list {
+    border-top: lightgrey solid 1px;
+    display: flex;
+    flex-direction: row;
+}
+.details_title {
+    margin-top: 3rem;
+    font-weight: bolder;
+    margin-right: 15rem;
+}
+.details_text {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 15vh;
+    margin-right: 10vw;
+}
+.details_text div{
+    margin: .5rem;
+}
+.details_text strong{
+    font-weight: bolder;
+}
+.img_Detail {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5rem;
+    text-align: left;
+}
+#img_offset {
+    margin-right: 14rem;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 .description {
@@ -100,7 +162,8 @@
 // }
 
 .map {
-    margin: auto;
+    // margin: auto;
+    margin-top: 10%;
     display: flex;
   width: 100%;
   height: 500px;

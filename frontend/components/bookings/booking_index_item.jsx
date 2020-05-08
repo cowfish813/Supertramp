@@ -13,7 +13,8 @@ class BookingItem extends React.Component {
         
     };
 
-    handleClick() {
+    handleClick(e) {
+        e.preventDefault()
         this.props.deleteBooking(this.props.booking.id)
             //.then(fetchbookings) 
             // .then(setState) *for local
@@ -28,11 +29,11 @@ class BookingItem extends React.Component {
     }
     
     componentDidUpdate() {
-        if (this.state.count > document.querySelectorAll("#booking_item").length) {
-            this.setState({
-                count: document.querySelectorAll("#booking_item").length,
-            }); 
-        }
+        // if (this.state.count > document.querySelectorAll("#booking_item").length) {
+        //     this.setState({
+        //         count: document.querySelectorAll("#booking_item").length,
+        //     }); 
+        // }
     }
     
     render () {
