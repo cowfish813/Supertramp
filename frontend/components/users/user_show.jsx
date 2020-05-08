@@ -17,14 +17,6 @@ class User extends React.Component {
         this.props.fetchListings(this.props.match.params.userId);
     };
 
-    // componentDidMount() {
-    //     const node = document.getElementById("index")
-    // }
-    // componentDidUpdate() { 
-        // let count = document.querySelectorAll("#BookingItemId").length
-        // console.log(count)
-    // };
-
     render () {
         if ((this.props.bookings).length < 1) {
             return (
@@ -103,6 +95,7 @@ class User extends React.Component {
                             current_user={ this.props.user.id }
                             bookings={ this.props.bookings }
                             listings ={ this.props.listings }
+                            fetchBookings={this.props.fetchBookings()}
                             />
                         ))}
                     </div>

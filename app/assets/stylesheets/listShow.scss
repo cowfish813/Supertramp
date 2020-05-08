@@ -2,7 +2,6 @@
     flex-direction: column;
     display: flex;
 }
-
 .social_share_target{
     // height: 20%;
     // padding: 15px 15px 0px;
@@ -15,11 +14,10 @@
     width: 70vw;
     margin-right: 20px;
 }
-
 .photo_title {
     font-size: 3rem;
     font-weight: bolder;
-    border-bottom: solid 1px ;
+    // border-bottom: solid 1px ;
 }
 
 
@@ -44,12 +42,7 @@
     height: 9vh;
 }
 
-.row{
-    width: 720px;
-    height: 190px;
-    margin: 0px -10px;
-    // border: black solid 1px;
-}
+
 .description {
     width: 480px;
     height: 190px;
@@ -72,9 +65,19 @@
 .details-container {
     display: flex;
 }
+.features-container {
+    width: 700px;
+    // height: 542px;
+}
 
 
 
+.row{
+    width: 720px;
+    height: 190px;
+    margin: 0px -10px;
+    // border: black solid 1px;
+}
 .info-cards-wrapper {
     width: 720px;
     // height: 360px;
@@ -91,12 +94,6 @@
     background: #ffffff;
     border: red 1px solid;
 }
-
-.features-container {
-    width: 700px;
-    // height: 542px;
-}
-
 // .col_box {
 //     height: 50px;
 //     width: 70px;

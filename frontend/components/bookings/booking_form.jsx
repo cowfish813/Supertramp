@@ -135,17 +135,23 @@ class BookingForm extends React.Component {
                 <div className="col capacity">
                   <div className="label">
                     Guests
-                    <input
-                      type="number"
-                      name="capacity"
-                      className="SingleDatePickerInput"
-                      placeholder="1"
-                      value={this.state.capacity}
-                      id="capacity_input"
-                      min="1"
-                      max={this.props.list.capacity}
-                      onChange={this.handleCapacity}
-                    />
+                    <div className="SingleDatePicker SingleDatePicker_1">
+                      <div className="SingleDatePickerInput SingleDatePickerInput_1">
+                        <div className="DateInput DateInput_1">
+                          <input
+                            type="number"
+                            name="capacity"
+                            className="DateInput_input DateInput_input_1"
+                            placeholder="1"
+                            value={this.state.capacity}
+                            id="capacity_input"
+                            min="1"
+                            max={this.props.list.capacity}
+                            onChange={this.handleCapacity}
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
