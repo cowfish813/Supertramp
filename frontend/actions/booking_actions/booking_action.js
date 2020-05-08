@@ -47,12 +47,12 @@ export const fetchBooking = booking => dispatch => {
     )
 };
 
-export const fetchBookings = () => dispatch => {
-    return ApiUtil.fetchBookings().then(
-        bookings => dispatch(receiveBookings(bookings)),
-        err => dispatch(receiveBookingErrors(err.responseJSON))
-    )
-};
+export const fetchBookings = (userId) => (dispatch) => {
+         return ApiUtil.fetchBookings(userId).then(
+           (bookings) => dispatch(receiveBookings(bookings)),
+           (err) => dispatch(receiveBookingErrors(err.responseJSON))
+         );
+       };
 export const deleteBooking = (bookingId) => dispatch => {
     return ApiUtil.deleteBooking(bookingId).then(
         booking => dispatch(removeBooking(booking)),

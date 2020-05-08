@@ -6,11 +6,6 @@ import { fetchListings } from '../../actions/listing_actions/listing_actions';
 import { openModal } from '../../actions/modal_actions/modal_actions';
 
 const mSTP = (state, ownProps) => {
-    // let bookings = [];
-    // if (state.entities) {
-    //     bookings = Object.values(state.entities.bookings);
-    // }
-    // debugger
     return {
       user: state.entities.users[ownProps.match.params.userId],
       listings: Object.values(state.entities.listings),
@@ -20,7 +15,7 @@ const mSTP = (state, ownProps) => {
 
 const mdtp = dispatch => ({
     requestUser: (user) => dispatch(requestUser(user)),
-    fetchBookings: () => dispatch(fetchBookings()),
+    fetchBookings: (userId) => dispatch(fetchBookings(userId)),
     fetchListings: () => dispatch(fetchListings()),
     openModal: () => dispatch(openModal()),
     deleteBooking: (bookingId) => dispatch(deleteBooking(bookingId))

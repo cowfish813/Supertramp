@@ -29,8 +29,7 @@ class Homepage extends React.Component {
                             <h2>
                                 Book unique camping experiences on
                            <strong> Hella </strong>
-                                campsites, cabins, parks, and public highways
-                                that don't belong to you
+                                campsites, cabins, parks, and road sides!
                         </h2>
                         </div>
                     </div>
@@ -42,6 +41,9 @@ class Homepage extends React.Component {
                     <img src="https://hipcamp-res.cloudinary.com/image/upload/c_thumb,w_1080/v1498456730/campground-photos/yene977lfve4yhhnokuh.jpg" alt="bannerbar"
                     className="bannerImg"
                     />
+                    <div className="banner_message">
+                        <span className="">Explore a Dozen Locations!</span>
+                    </div>
                                     
                 </div>
 

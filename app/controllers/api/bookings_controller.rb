@@ -3,8 +3,9 @@ class Api::BookingsController < ApplicationController
     before_action :require_logged_in
 
     def index
-        if params[:userId]
-            @bookings = User.find(params[:userId]).bookings.includes(:listing)
+        # debugger
+        if booking_params[:user_id]
+            @bookings = User.find(booking_params[:user_id]).bookings.includes(:listing)
         else
             @bookings = Booking.includes(:listing).all
         end

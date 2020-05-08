@@ -1,13 +1,14 @@
-export const fetchBookings = () => (
-    $.ajax({
-        url: '/api/bookings',
-    })
-);
+export const fetchBookings = (user_id) =>{
+       return  $.ajax({
+           url: "/api/bookings",
+           data: {booking: {user_id: user_id}}
+           })};
+        
 
 export const fetchBooking = (bookingId) => (
     $.ajax({
         url: `/api/bookings/${bookingId}`,
-        data: { userId: userId }
+        data: { user_id: user_id }
     })
 );
 

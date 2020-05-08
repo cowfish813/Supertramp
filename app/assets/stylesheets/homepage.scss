@@ -13,15 +13,12 @@
     height: 180px ;
     padding: 0%;
     display: flex;
-    margin: auto;
-    left: 0;
-    right: 0;
     flex-direction: column;
     justify-content: center;
 }
 
 .homeTitle {
-    justify-content: space-around;
+
 }
 .homeDesc {
 
@@ -29,30 +26,29 @@
 
 .homeTitle h1{
     font-weight: bold;
-    font-size: 48px;
-    width: 100%;
+    font-size: 3rem;
     display: inline;
+    
 }
 
 .homeDesc h2{
     font-weight: normal;
-    font-size: 22.5px;
+    font-size: 1.5rem;
     width: 55%;
     
 }
 
 .searchWrapper {
-    min-width: 400px;
+    // min-width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* flex: 0 0 80px; */
 }
 
 .superSearch {
-    padding: 10px;
-    width: 1080px;
-    height: 100px;
+    padding: 1.5rem;
+    width: 55vw;
+    height: 9vh;
     padding: 17px;
     box-shadow: 0px 3px 7px lightgray;
     /* margin: 0 auto; */
@@ -84,7 +80,7 @@
 }
 
 
-
+//seach bar filters
 .datebox {
     display: flex;
     height: 66px;
@@ -188,6 +184,7 @@
     margin-bottom: 81px;
 }
 
+
 .bannerImg {
     max-width: 1080px;
     height: auto;
@@ -195,6 +192,16 @@
     margin: auto;
 }
 
+.banner_message {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    height: 20vh;
+    background-color: black;
+    position: absolute;
+    opacity: .4;
+    color: white;
+}
 
 .tilesContainer {
     display: flex;

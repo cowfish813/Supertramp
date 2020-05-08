@@ -6,9 +6,20 @@ class User extends React.Component {
     constructor(props) {
         super(props)
 
-        // this.state = {
+        this.state = {
+            //index of bookings in state
+            //bookings alreadyt fetched, call setstate and puit them on local state
+            //write method in this comp that sets stat on 
+                //take in argument a booking to be removed
+                //remove booking from state
+                //setstate on remaining bookings
+                //..bind(this) in constructor
+                    //.pass entire function as a prop to booking item
+                    //so when it is deleted, that function runs it
+
+
         //     count: document.querySelectorAll("#BookingItemId").length
-        // }
+        }
     };
 
     componentDidMount () { //first fetch
@@ -16,6 +27,8 @@ class User extends React.Component {
         this.props.fetchBookings(this.props.match.params.userId);
         this.props.fetchListings(this.props.match.params.userId);
     };
+
+
 
     render () {
         if ((this.props.bookings).length < 1) {
@@ -95,7 +108,7 @@ class User extends React.Component {
                             current_user={ this.props.user.id }
                             bookings={ this.props.bookings }
                             listings ={ this.props.listings }
-                            fetchBookings={this.props.fetchBookings()}
+                            fetchBookings={this.props.fetchBookings}
                             />
                         ))}
                     </div>

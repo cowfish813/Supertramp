@@ -27,14 +27,16 @@ class BookingForm extends React.Component {
         this.handlePrice = this.handlePrice.bind(this);
     };
 
-    handlePrice(e) {
-        e.preventDefault();
-        const mseconds = Date.parse(this.state.check_out) - Date.parse(this.state.check_in);
+    handlePrice(date) {
+
+        const mseconds = Date.parse(date) - Date.parse(this.state.check_in);
         const days = mseconds / (1000 * 60 * 60 * 24) * this.props.list.price
         this.setState({
-          price: days
+          price: days,
+          check_out: date
         })
-        debugger
+
+
     };
 
     handleCapacity(event) {
@@ -49,16 +51,12 @@ class BookingForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // const mseconds = Date.parse(this.state.check_out) - Date.parse(this.state.check_in);
-        // const days = mseconds / (1000 * 60 * 60 * 24) * this.props.list.price
-        // this.setState({
-        //   price: days
-        // })
-
         if(!(this.props.currentUser)) { //check currentuser
             this.props.openModal('Login')
         } else if(this.state.price <= 0) {
-            
+            this.setState({
+              price: null
+            })
         } else {  
           const booking = {
               check_in: this.state.check_in.format('YYYY/MM/DD'),
@@ -114,9 +112,9 @@ class BookingForm extends React.Component {
                     <SingleDatePicker
                       placeholder="Select End"
                       date={this.state.check_out} // momentPropTypes.momentObj or null
-                      onDateChange={(date) =>
-                        this.setState({ check_out: date })
-                      } // PropTypes.func.isRequired
+                      // onDateChange={(date) =>
+                      //   this.setState({ check_out: date })
+                      // } // PropTypes.func.isRequired
                       focused={this.state.focusedEnd} // PropTypes.bool
                       onFocusChange={({ focused }) =>
                         this.setState({ focusedEnd: focused })
@@ -128,7 +126,7 @@ class BookingForm extends React.Component {
                       daySize={36}
                       noBorder={true}
                       hideKeyboardShortcutsPanel={true}
-                      // onChange={this.handlePrice}
+                      onDateChange={date => this.handlePrice(date)}
                     />
                   </div>
                 </div>
