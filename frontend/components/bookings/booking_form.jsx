@@ -10,8 +10,6 @@ import { SingleDatePicker } from "react-dates";
 class BookingForm extends React.Component {
     constructor(props) {
         super(props);
-
-        // console.log(Date.now)
         this.state = {
             user_id: this.props.currentUserId,
             listing_id: this.props.list.id,
@@ -19,7 +17,7 @@ class BookingForm extends React.Component {
             price: this.props.list.price,
             check_in: null,
             check_out: null,
-            capacity: "",
+            capacity: 1,
             focusedStart: null,
             focusedEnd: null,
         }
@@ -29,9 +27,14 @@ class BookingForm extends React.Component {
         this.handlePrice = this.handlePrice.bind(this);
     };
 
-    handlePrice() {
-      //number of days * price
-      
+    handlePrice(e) {
+        e.preventDefault();
+        const mseconds = Date.parse(this.state.check_out) - Date.parse(this.state.check_in);
+        const days = mseconds / (1000 * 60 * 60 * 24) * this.props.list.price
+        this.setState({
+          price: days
+        })
+        debugger
     };
 
     handleCapacity(event) {
@@ -46,24 +49,29 @@ class BookingForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        // const mseconds = Date.parse(this.state.check_out) - Date.parse(this.state.check_in);
+        // const days = mseconds / (1000 * 60 * 60 * 24) * this.props.list.price
+        // this.setState({
+        //   price: days
+        // })
 
         if(!(this.props.currentUser)) { //check currentuser
             this.props.openModal('Login')
-        } else if(!(this.state.check_in) || !(this.state.check_out)) {
-            // console.log("booking error")
-        } else {
+        } else if(this.state.price <= 0) {
+            
+        } else {  
           const booking = {
               check_in: this.state.check_in.format('YYYY/MM/DD'),
               check_out: this.state.check_out.format('YYYY/MM/DD'),
               listing_id: this.props.list.id,
               capacity: this.state.capacity,
-              user_id: this.props.currentUserId,
+              user_id: this.props.currentUser.id,
               host_id: this.props.list.host_id,
               listing_name: this.props.list.name,
-              price: 5
+              price: this.state.price
           }
           this.props.createBooking(booking)
-              .then(this.props.history.push(`/users/${this.props.currentUser.id}`)); //reroutes to user show page
+              .then(this.props.history.push(`/users/${this.props.currentUser.id}`));
         }
     };
 
@@ -87,10 +95,12 @@ class BookingForm extends React.Component {
                       date={this.state.check_in} // momentPropTypes.momentObj or null
                       onDateChange={(date) => this.setState({ check_in: date })} // PropTypes.func.isRequired
                       focused={this.state.focusedStart} // PropTypes.bool
-                      onFocusChange={({ focused }) => this.setState({ focusedStart: focused })} // PropTypes.func.isRequired
+                      onFocusChange={({ focused }) =>
+                        this.setState({ focusedStart: focused })
+                      } // PropTypes.func.isRequired
                       id="start" // PropTypes.string.isRequired,
                       verticalSpacing={0}
-                      isDayHighlighted={(day) => this.highlighted(day)} //method written
+                      isDayHighlighted={(day) => this.highlighted(day)}
                       numberOfMonths={1}
                       daySize={36}
                       noBorder={true}
@@ -104,9 +114,13 @@ class BookingForm extends React.Component {
                     <SingleDatePicker
                       placeholder="Select End"
                       date={this.state.check_out} // momentPropTypes.momentObj or null
-                      onDateChange={(date) => this.setState({ check_out: date })} // PropTypes.func.isRequired
+                      onDateChange={(date) =>
+                        this.setState({ check_out: date })
+                      } // PropTypes.func.isRequired
                       focused={this.state.focusedEnd} // PropTypes.bool
-                      onFocusChange={({ focused }) => this.setState({ focusedEnd: focused })} // PropTypes.func.isRequired
+                      onFocusChange={({ focused }) =>
+                        this.setState({ focusedEnd: focused })
+                      } // PropTypes.func.isRequired
                       id="end" // PropTypes.string.isRequired,
                       verticalSpacing={0}
                       isDayHighlighted={(day) => this.highlighted(day)}
@@ -114,23 +128,24 @@ class BookingForm extends React.Component {
                       daySize={36}
                       noBorder={true}
                       hideKeyboardShortcutsPanel={true}
+                      // onChange={this.handlePrice}
                     />
                   </div>
                 </div>
                 <div className="col capacity">
                   <div className="label">
                     Guests
-                      <input 
-                      type="number" 
-                      name="capacity" 
-                      className="SingleDatePickerInput" 
-                      placeholder="1" 
-                      value ={this.state.capacity}
-                      id="capacity_input" 
-                      min="1" 
-                      max={this.props.list.capacity} 
+                    <input
+                      type="number"
+                      name="capacity"
+                      className="SingleDatePickerInput"
+                      placeholder="1"
+                      value={this.state.capacity}
+                      id="capacity_input"
+                      min="1"
+                      max={this.props.list.capacity}
                       onChange={this.handleCapacity}
-                      />
+                    />
                   </div>
                 </div>
               </div>

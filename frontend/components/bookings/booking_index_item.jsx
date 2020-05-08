@@ -2,17 +2,15 @@ import React from 'react';
 import { withRouter } from "react-router-dom";
 import { Link } from 'react-router-dom';
 
-
 class BookingItem extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            
-        }
+          count: document.querySelectorAll("#booking_item").length,
+        };
         this.handleClick = this.handleClick.bind(this);
-        // console.log(this.state)
-        // console.log(document.querySelector("#booking_item").length)
+        
     };
 
     handleClick() {
@@ -23,25 +21,18 @@ class BookingItem extends React.Component {
     };
 
     componentDidMount() {
-        this.setState({
-            count: document.querySelectorAll("#booking_item").length
-        }) //obtain count
+        // this.setState({
+        //     count: document.querySelectorAll("#booking_item").length
+        // }) 
+        
     }
     
     componentDidUpdate() {
-        // if (this.state.count -= 1 ) {
-        // }
-        // if (!(this.state.count)) {
-
-        // }
-        // console.log(this.state.count)
-        // console.log(document.querySelectorAll("#booking_item").length)
-        
-        // if (this.state.count-- === count: document.querySelectorAll("#booking_item").length){
-        //     this.setState({
-        //         count: document.querySelectorAll("#booking_item").length
-        //     })
-        // }
+        if (this.state.count > document.querySelectorAll("#booking_item").length) {
+            this.setState({
+                count: document.querySelectorAll("#booking_item").length,
+            }); 
+        }
     }
     
     render () {

@@ -12,12 +12,6 @@ const mapOptions = {
 };
 
 class ListMapIndex extends React.Component {
-    constructor(props) {
-        super(props)
-
-        
-    };
-
 
     componentDidMount() {
         window.scrollTo(0, 0);
@@ -27,9 +21,24 @@ class ListMapIndex extends React.Component {
         this.MarkerManager.updateMarkers(this.props.listings);
     };
 
+    getLocation() {
+        const geoCode = new google.maps.Geocoder();
+
+        geoCode.geocode({ address: this.props.location }), (res, status) => {
+            if (status === 'OK') {
+                this.map.setCenter(res[0].geometry.location)
+            }
+        };
+    }
+
     componentDidUpdate(prevProps) {
         if (prevProps.listings !== this.props.listings) {
             this.MarkerManager.updateMarkers(this.props.listings);
+        }
+
+        if (this.props.location) {
+            this.getLocation();
+            // this.props.resetLocation();
         }
     }
 
@@ -47,6 +56,9 @@ class ListMapIndex extends React.Component {
     handleMarkerClick(listing) {
         this.props.history.push(`/listings/${listing.id}`);
     }
+
+
+    
 
     render() {
         return (

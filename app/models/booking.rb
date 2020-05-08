@@ -19,7 +19,7 @@
 #  index_bookings_on_user_id     (user_id)
 #
 class Booking < ApplicationRecord
-    # validates :check_in, :check_out,:listing_id, :user_id, :capacity ,presence: true
+    validates :check_in, :check_out, :listing_id, :user_id, :capacity ,presence: true
 
     belongs_to :user
     # foreign_key: :user_id

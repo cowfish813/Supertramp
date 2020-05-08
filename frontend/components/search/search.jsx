@@ -28,19 +28,19 @@ class Search extends React.Component {
     }
 
     componentDidMount() {
-        let input = document.getElementById('splash_search');
-        let autocomplete = new google.maps.places.Autocomplete(input);
+        // let input = document.getElementById('splash_search');
+        // let autocomplete = new google.maps.places.Autocomplete(input);
 
-        let location;
-        let that = this;
+        // let location;
+        // let that = this;
 
-        autocomplete.addListener('place_changed', () => {
-            let address = autocomplete.getPlace().formatted_address;
-            location = address ? address : autocomplete.getPlace().name
-            that.setState({
-                location: location
-            })
-        });
+        // autocomplete.addListener('place_changed', () => {
+        //     let address = autocomplete.getPlace().formatted_address;
+        //     location = address ? address : autocomplete.getPlace().name
+        //     that.setState({
+        //         location: autocomplete.getPlace().name
+        //     })
+        // });
     }
 
     render () {

@@ -25,9 +25,8 @@ class ListShow extends React.Component {
           <div className="show_body">
             <div className="social_share_target">
               <div className="photo_square">
-                <img className="list-show-photo" src="https://scontent-sjc3-1.xx.fbcdn.net/v/t31.0-8/28699040_10106495201840273_8915991695087874299_o.jpg?_nc_cat=105&_nc_sid=84a396&_nc_ohc=j1j01VT95TkAX-hqrTj&_nc_ht=scontent-sjc3-1.xx&oh=41affb2bd997c5367a6fc2edd82d3737&oe=5EB8A90E" alt=""/>
-                {/* <img className="list-show-photo" src={this.props.list.photoUrls}alt=""/> */}
-                {/* WOKRING. enable later when debugging list-show is complete */}
+                {/* <img className="list-show-photo" src="https://scontent-sjc3-1.xx.fbcdn.net/v/t31.0-8/28699040_10106495201840273_8915991695087874299_o.jpg?_nc_cat=105&_nc_sid=84a396&_nc_ohc=j1j01VT95TkAX-hqrTj&_nc_ht=scontent-sjc3-1.xx&oh=41affb2bd997c5367a6fc2edd82d3737&oe=5EB8A90E" alt=""/> */}
+                <img className="list-show-photo" src={this.props.list.photoUrls}alt=""/>
                 <div className="photo_title">{this.props.list.name}</div>
               </div>
             </div>

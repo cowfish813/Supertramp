@@ -25,6 +25,8 @@ class ListSearchResults extends React.Component {
                     < ListMapIndex 
                     updateFilter={this.props.updateFilter}
                     listings={this.props.listings}
+                    location={this.props.location}
+                    resetLocation={this.props.resetLocation}
                     />
 
                 </div>
