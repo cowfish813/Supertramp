@@ -13,14 +13,19 @@
 }
 .list_index_items {
     margin-top: 5vh;
+
 }
 .index_container {
-    border-bottom: darkgray solid 1px;
-    margin-top: 5vh;
+    margin-top: 3vh;
     display: flex;
-    flex-direction: row;
-    width: 20%;
+    // flex-direction: row;
+    width: 110%;
     height: auto; 
+    border-bottom: darkgray solid 1px;
+
+}
+.index_box {
+    margin-bottom: 3vh;
 }
 .indexPhotos {
     width: 20vw;
