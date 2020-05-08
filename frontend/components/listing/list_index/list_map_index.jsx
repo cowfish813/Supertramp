@@ -22,13 +22,12 @@ class ListMapIndex extends React.Component {
     };
 
     getLocation() {
-        const geoCode = new google.maps.Geocoder();
-
-        geoCode.geocode({ address: this.props.location }), (res, status) => {
-            if (status === 'OK') {
-                this.map.setCenter(res[0].geometry.location)
-            }
-        };
+        // const geoCode = new google.maps.Geocoder();
+        // geoCode.geocode({ address: this.props.location }), (res, status) => {
+        //     if (status === 'OK') {
+        //         this.map.setCenter(res[0].geometry.location)
+        //     }
+        // };
     }
 
     componentDidUpdate(prevProps) {
@@ -36,10 +35,10 @@ class ListMapIndex extends React.Component {
             this.MarkerManager.updateMarkers(this.props.listings);
         }
 
-        if (this.props.location) {
-            this.getLocation();
-            // this.props.resetLocation();
-        }
+        // if (this.props.location) {
+        //     this.getLocation();
+        //     // this.props.resetLocation();
+        // }
     }
 
     registerListeners() {

@@ -1,6 +1,7 @@
 .search_results {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 .list-index {
     min-height: 40vh;
@@ -21,7 +22,7 @@
     // flex-direction: row;
     width: 110%;
     height: auto; 
-    border-bottom: darkgray solid 1px;
+    border: gray solid 1px;
 
 }
 .index_box {
@@ -37,4 +38,8 @@
     border: darkblue solid 5px;
     width: 40vw;
     height: 100vh;
+}
+.listing_index_desc {
+    display: flex;
+    align-items: center;
 }

@@ -23,9 +23,11 @@ class IndexItem extends React.Component {
                         <img className="indexPhotos" src={this.props.listing.photoUrls} alt=""/>
                     </Link>
                 </div>
+                <div>
                 <div className="listing_index_desc">
                     <h1>{this.props.listing.name}</h1>
-                    <div className="listing_index_price">${this.props.listing.price}/day</div>
+                </div>
+                <div className="listing_index_price">${this.props.listing.price}/day</div>
                 </div>
             </div>
         )
