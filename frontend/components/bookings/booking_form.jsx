@@ -47,7 +47,7 @@ class BookingForm extends React.Component {
 
     highlighted(day) {
         return day.isSame(this.state.check_in)
-    };
+    }
 
     handleSubmit(e) {
         e.preventDefault();

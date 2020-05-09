@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import Autocomplete from "react-google-autocomplete";
 // import PlacesAudtocomplete from 'react-places-autocomplete';
 
 
@@ -8,7 +9,9 @@ class Search extends React.Component {
         super(props)
 
     this.state = {
-        location: ""
+        location: "",
+        lat: "",
+        lng:""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,24 +26,38 @@ class Search extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        // debugger
         this.props.receiveLocation(this.state);
-        this.props.history.push('/listings');
+        this.props.history.push({
+           pathname: '/listings',
+           search: '?query=abc',
+           state: this.state
+        });
     }
 
     componentDidMount() {
-        // let input = document.getElementById('splash_search');
-        // let autocomplete = new google.maps.places.Autocomplete(input);
+        let input = document.getElementById('splash_search');
+        let autocomplete = new google.maps.places.Autocomplete(input);
 
-        // let location;
-        // let that = this;
+        let location;
+        let that = this;
 
-        // autocomplete.addListener('place_changed', () => {
-        //     let address = autocomplete.getPlace().formatted_address;
-        //     location = address ? address : autocomplete.getPlace().name
-        //     that.setState({
-        //         location: autocomplete.getPlace().name
-        //     })
-        // });
+        //
+        autocomplete.addListener('place_changed', () => {
+            let address = autocomplete.getPlace().formatted_address;
+            let place = autocomplete.getPlace();
+
+            let lat = place.geometry.location.lat();
+            let lng = place.geometry.location.lng();
+            location = address ? address : autocomplete.getPlace().name;
+            that.setState({
+                location: autocomplete.getPlace().name,
+                lat: lat,
+                lng: lng
+            });
+        });
+
+        
     }
 
     render () {

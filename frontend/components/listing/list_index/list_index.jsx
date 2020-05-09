@@ -18,7 +18,6 @@ class ListingIndex extends React.Component {
 
         return (
             <div className= "list-index" >
-                {/* <SearchBar /> */}
                 <div className="list_index_items">
                     {this.props.listings.map( listing => 
                         <ListIndexItem 

@@ -22,6 +22,8 @@ class User extends React.Component {
         }
     };
 
+    
+
     componentDidMount () { //first fetch
         window.scrollTo(0, 0);
         this.props.fetchBookings(this.props.match.params.userId);

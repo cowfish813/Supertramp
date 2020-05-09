@@ -26,3 +26,11 @@ export const deleteBooking = bookingId => (
         method: 'DELETE'
     })
 );
+
+export const updateBooking = (booking) => {
+    return $.ajax({
+        url: `/api/bookings${booking.id}`,
+        method: 'PATCH',
+        data: { booking }
+    })
+}

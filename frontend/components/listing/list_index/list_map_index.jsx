@@ -1,6 +1,7 @@
 import React from 'react';
 import MarkerManager from '../../../util/map_marker'
 import { withRouter } from 'react-router-dom';
+import ReactDOMServer from "react-dom";
 
 const mapOptions = {
     center: {
@@ -12,8 +13,23 @@ const mapOptions = {
 };
 
 class ListMapIndex extends React.Component {
+    constructor(props) {
+        super(props)
+
+
+    }
 
     componentDidMount() {
+        // debugger
+        // const mapOptions = {
+        //   center: {
+        //     lat: this.props.lat,
+        //     lng: this.props.lng,
+        //   },
+        //   zoom: 13,
+        //   mapTypeId: "terrain",
+        // };
+        
         window.scrollTo(0, 0);
         this.map = new google.maps.Map(this.mapNode, mapOptions);
         this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
@@ -34,7 +50,7 @@ class ListMapIndex extends React.Component {
         if (prevProps.listings !== this.props.listings) {
             this.MarkerManager.updateMarkers(this.props.listings);
         }
-
+ 
         // if (this.props.location) {
         //     this.getLocation();
         //     // this.props.resetLocation();

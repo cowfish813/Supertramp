@@ -11,7 +11,8 @@ import Footer from './navbar/footer' //could add a little more work
 // import listIndexContainer from './listing/list_index/list_index_container';
 import Homepage from './splash/homepage_container';
 import ListShow from './listing/list_show/list_show_container';
-import ListSearch from './listing/list_index/list_search_results_container'
+import ListSearchResults from './listing/list_index/list_search_results_container';
+import UserUpdate from './users/user_update_container';
 //bonus
 // aws connected, can upload...but model is technically incomplete
 import ListForm from './listing/list_form/list_form_container';
@@ -23,9 +24,10 @@ const App = () => (
         < Route exact path="/" component={Homepage} />
         < Route exact path="/listings/:listingsId" component={ListShow} />
         {/* < Route exact path ="/index" component={listIndexContainer} /> */}
-        < Route exact path ="/listings" component={ListSearch} />
+        < Route exact path ="/listings" component={ListSearchResults} />
         < NavbarContainer />
         < ProtectedRoute exact path="/users/:userId" component={UserShow} />
+        < ProtectedRoute exact path="/users/:userId/update" component={UserUpdate} />
         < Switch>
         < AuthRoute path="/login" component={LoginFormContainer} />
         < AuthRoute path="/signup" component={SignupFormContainer} />

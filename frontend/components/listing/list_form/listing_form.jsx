@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom'
 class ListingForm extends React.Component {
     constructor(props) {
         super(props)
+
         this.state = {
             name: "",
             cancellation_policy: "", 
@@ -29,16 +30,16 @@ class ListingForm extends React.Component {
 
 
     handlepost(e) {
-        event.preventDefault()
+        // event.preventDefault()
         this.setState({name: e.currentTarget.value})
     }
+
     handleInput(type) {
         event.preventDefault()
           return  event => {
                 this.setState({ [type]: event.currentTarget.value })
             }
-
-    };
+    }
 
     handleFile(e) {
         this.setState({photoFile: e.currentTarget.files[0]})  

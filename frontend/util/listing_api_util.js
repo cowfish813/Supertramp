@@ -5,20 +5,20 @@ export const fetchListings = (listings) => (
         url: '/api/listings',
         listings
     })
-)
+);
 
 export const fetchListing = (listingId) => (
     $.ajax({
         url: `api/listings/${listingId}`
     })
-)
+);
 
 export const deleteListing = (listingId) => (
     $.ajax({
         url: `api/listings/${listingId}`,
         method: 'DELETE'
     })
-)
+);
 
 // export const createListing = (listing) => (
 //     $.ajax({
@@ -36,7 +36,7 @@ export const createListing = (listForm) => (
         contentType: false,
         processData: false
     })
-) 
+);
 
 export const updateListing = (listingId) => (
     $.ajax({
@@ -44,7 +44,7 @@ export const updateListing = (listingId) => (
         method: 'PATCH',
         data: {listingId}
     })
-)
+);
 
 export const createReview = review => (
     $.ajax({
@@ -52,4 +52,25 @@ export const createReview = review => (
         method: 'POST',
         data: { review }
     })
-)
+);
+
+export const updateReview = review => (
+    $.ajax({
+        url: `api/reviews/${review.id}`,
+        method: 'PATCH',
+        data: { review }
+    })
+);
+
+export const deleteReview = reviewId => (
+    $.ajax({
+        url: `api/reviews/${reviewId}`,
+        method: 'DELETE'
+    })
+);
+
+export const fetchReviews = () => (
+    $.ajax({
+        url: `api/reviews`
+    })
+);

@@ -5,12 +5,12 @@ import { fetchListings } from '../../../actions/listing_actions/listing_actions'
 
 
 const mSTP = (state, ownProps) => ({
-    listings: Object.values(state.entities.listings),
+    // listingss: Object.values(state.entities.listings),
 });
 
 const mDTP = dispatch => ({
     // updateFilter: (bounds) => dispatch(updateFilter(bounds))
-    fetchListings: () => dispatch(fetchListings())
+    // fetchListingss: () => dispatch(fetchListings())
 });
 
 export default connect(mSTP, mDTP)(listIndex);
