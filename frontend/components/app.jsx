@@ -24,7 +24,7 @@ const App = () => (
         < Route exact path="/" component={Homepage} />
         < Route exact path="/listings/:listingsId" component={ListShow} />
         {/* < Route exact path ="/index" component={listIndexContainer} /> */}
-        < Route exact path ="/listings" component={ListSearchResults} />
+        < Route exact path ="/search/:query" component={ListSearchResults} />
         < NavbarContainer />
         < ProtectedRoute exact path="/users/:userId" component={UserShow} />
         < ProtectedRoute exact path="/users/:userId/update" component={UserUpdate} />

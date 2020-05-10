@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Autocomplete from "react-google-autocomplete";
+
 // import PlacesAudtocomplete from 'react-places-autocomplete';
 
 
@@ -26,12 +27,11 @@ class Search extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // debugger
+        // console.log(this.state)
         this.props.receiveLocation(this.state);
         this.props.history.push({
-           pathname: '/listings',
-           search: '?query=abc',
-           state: this.state
+            pathname: `/search/${this.state.lat},${this.state.lng}`,
+            state: this.state
         });
     }
 
@@ -97,4 +97,4 @@ class Search extends React.Component {
     }
 };
 
-export default Search;
+export default withRouter(Search);
