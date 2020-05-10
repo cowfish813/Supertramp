@@ -19,8 +19,27 @@ class Api::UsersController < ApplicationController
       end
     end
 
+    def edit
+      @user = User.find(params[:id])
+      render :edit
+    end
+
     def update
-      
+      @user = User.find(params[:id])
+      if @user.update(user_params)
+        render :show
+      else
+        render json: @user.errors.full_messages, status: 422
+      end
+    end
+
+    def destroy
+      @user = User.find(params[:id])
+      if @user.destroy
+        #something something homepage...
+      else
+        render plain: "you can not kill the unkillable"
+      end
     end
 
 

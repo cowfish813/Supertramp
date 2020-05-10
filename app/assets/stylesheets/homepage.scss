@@ -1,16 +1,17 @@
 .home {
-    margin: 114px 0px 0px;
-    height: 280px;
+    // margin: 114px 0px 0px;
+    // height: 280px;
+    // margin: 15vh;
+    margin-top: 15vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
 }
 
 .homeCol {
-    width: 1080px;
-    height: 180px ;
+    width: 57vw;
+    height: 20vh;
     padding: 0%;
     display: flex;
     flex-direction: column;
@@ -18,10 +19,10 @@
 }
 
 .homeTitle {
-
+margin-bottom: 2.5vh;
 }
 .homeDesc {
-
+// margin-right: ;
 }
 
 .homeTitle h1{
@@ -157,20 +158,24 @@
 
 
 .searchButton {
-    padding: 0px 5px;
-    width: 110px;
-    height: 65px;
+    // padding: 0px 80px;
+    width: 8vw;
+    height: 5.5vh;
     color: #ffffff;
     background: #40d9ac;   
     border: 3px solid #40d9ac ;
-    font-size: 20px;
+    font-size: 1.5rem;
     font-weight: normal;
-    transition: 0.6s;
+    transition: 0.5s;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .searchButton:hover {
     background: #ffffff;
     color: #40d9ac;
-    transition: 0.6s;
+    transition: 0.5s;
     cursor: pointer;
 }
 
@@ -181,14 +186,19 @@
 .containerBanner {
     margin-top: 6%;
     display: flex;
-    margin-bottom: 81px;
+    margin-bottom: 10vh;
+    // margin-bottom: 81px;
+    display: flex;
+    align-items: center;
+    height: 50%;
 }
 
 
 .bannerImg {
-    max-width: 1080px;
-    height: auto;
-    justify-content: center;
+    // max-width: 1080px;
+    height: 50%;
+    display: flex;
+    // justify-content: center;
     margin: auto;
 }
 
@@ -199,8 +209,18 @@
     height: 20vh;
     background-color: black;
     position: absolute;
-    opacity: .4;
+    opacity: .9;
     color: white;
+    display: flex;
+    // justify-content: center;
+    left: 28rem;
+    // padding: 10rem;
+}
+.banner_font{
+    font-size: 3rem;
+    opacity: 100;
+    color: white;
+    margin: 2rem;
 }
 
 .tilesContainer {
@@ -212,16 +232,16 @@
     display: flex;
     flex-direction: row;
     /* width: 350px; */
-    height: 635px;
+    // height: 635px;
     justify-content: center;
 }
 .poppingRectangle {
     display: flex;
     height: 635px;
     width: 350px;
-    text-indent: -50%;
+    // text-indent: -50%;
     margin: 10px;
-    margin-top: 20px;
+    // margin-top: 20px;
     object-fit: cover;
     animation: unpop .8s ease forwards;
 }
@@ -242,9 +262,9 @@
 
 .vagueLocationsContainer {
     // width: 1080px; 
-    height: 896px;
-    padding: 40px 0px;
-    margin: 0px 213px;
+    // height: 896px;
+    // padding: 40px 0px;
+    // margin: 0px 213px;
     display: flex;
     margin-top: 100px;
     flex-direction: column;
@@ -254,7 +274,7 @@
 .vague_tile_list {
     display: flex;
     flex-wrap: wrap;
-    min-width: 1110px; 
+    // min-width: 1110px; 
     height: 364px;
     justify-content: space-evenly;
     margin: 0px 0px 32px;
@@ -264,6 +284,7 @@
     margin: 10px;
     height: 364px;
     width: 350px;
+
     background: #ebebeb;
     object-fit: cover;
     animation: unpop .8s ease forwards;
