@@ -19,7 +19,7 @@ class Homepage extends React.Component {
     }
 
     handleInput() {
-        window.scrollTo(0, 1500)
+        window.scrollTo(0, 1300)
     }
 
     render() {
@@ -47,12 +47,13 @@ class Homepage extends React.Component {
                     className="bannerImg"
                     />
                     <div className="banner_message">
-                        {/* <div> */}
-                            <span className="banner_font">Explore a Dozen Locations!</span>
+                        <div >
+                                <span className="banner_font">Explore a Dozen Locations!</span>
+                            {/* <span className="banner_font">Locations!</span> */}
+                        </div>
                             <span className="banner_sub_message">Run a search or scroll down below</span>
                             <span className="banner_sub_message">and start exploring!</span>
 
-                        {/* </div> */}
                         <div className="intro_button_container">
                             <button onClick={this.handleInput} className="intro_button">I'm feeling Lucky!</button>
                         </div>

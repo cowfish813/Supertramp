@@ -76,20 +76,20 @@ class Search extends React.Component {
                         onChange={this.handleInput}
                         />
                     </div>
-                    <div className="datebox">
-                        <div className="filterButton">
+                    {/* <div className="datebox"> */}
+                        {/* <div className="filterButton"> */}
                             {/* future modal */}
                             {/* <input className="date" type="date" /> */}
-                        </div>
-                    </div>
+                        {/* </div> */}
+                    {/* </div> */}
 
-                    <div className="dropdownMenu">
+                    {/* <div className="dropdownMenu"> */}
                         {/* <select className="menuSelect">
                             {house.map((tent, i) =>
                                 <option className="menuSelected" key={i} value={i}>{tent}</option>
                             )}
                         </select> */}
-                    </div>
+                    {/* </div> */}
                     <button className="searchButton">Search</button>
                 </div>
             </form>
