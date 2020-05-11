@@ -71,7 +71,7 @@ class Search extends React.Component {
                         id="splash_search" 
                         className="search" 
                         type="search" 
-                        placeholder="Search..." 
+                        placeholder="Start Tramping!" 
                         value={this.state.location}
                         onChange={this.handleInput}
                         />
