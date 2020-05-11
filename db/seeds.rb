@@ -38,18 +38,18 @@ l1 = Listing.create!(
     country: "Middle Earth",
     minimum_nights: 2,
     price: 75,
-    lat: -0.43202,
-    lng: 114.11910,
+    lat: 37.740587,
+    lng: -119.598207,
     host_id: u1.id
 )
 
 #disable open/photo.attach and it can seed....but still.
-f1 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
-l1.photo.attach(io: f1, filename: '17545579_10105436252223793_1168540811776764446_o.jpg' )
+f1 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+l1.photo.attach(io: f1, filename: '57056162_10107436356788213_4281326518522609664_o.jpg' )
 
 
 l2 = Listing.create!(
-    name: 'Car',
+    name: 'Wild tent',
     description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
     on_arrival: 'key under 3rd wheel',
     cancellation_policy: 'yes',
@@ -57,12 +57,12 @@ l2 = Listing.create!(
     country: "murica",
     minimum_nights: 2,
     price: 3.50,
-    lat: -9.35439,
-    lng: 142.07621,
+    lat: 37.7489428,
+    lng: -119.5862533,
     host_id: u1.id
     )
-f2 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
-l2.photo.attach(io: f2, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+f2 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l2.photo.attach(io: f2, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
 
 
 
@@ -75,12 +75,12 @@ l3 = Listing.create!(
     country: "Tamriel",
     minimum_nights: 1,
     price: 200,
-    lat: -0.66823,
-    lng: 42.88067,
+    lat: 37.746723,
+    lng: -119.6007142
     host_id: u1.id
 )
-f3 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
-l3.photo.attach(io: f3, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+f3 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/55937490_10107418126272313_2116183051628183552_n.jpg')
+l3.photo.attach(io: f3, filename: '55937490_10107418126272313_2116183051628183552_n.jpg')
 
 l4 = Listing.create!(
     name: 'Wild place',
@@ -91,13 +91,13 @@ l4 = Listing.create!(
     country: "murica",
     minimum_nights: 1,
     price: 50,
-    lat: -23.95554,
-    lng: 106.13058,
+    lat: 38.624601,
+    lng: -106.280383,
     host_id: u1.id
 )
 
-f4 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
-l4.photo.attach(io: f4, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+f4 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+l4.photo.attach(io: f4, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
 
 
 
@@ -115,8 +115,8 @@ l5 = Listing.create!(
     host_id: u1.id
 )
 
-f5 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
-l5.photo.attach(io: f5, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+f5 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+l5.photo.attach(io: f5, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
 
 l6 = Listing.create!(
     name: 'Hyrule Castle ',
@@ -131,8 +131,8 @@ l6 = Listing.create!(
     lng: 29.22590,
     host_id: u1.id
 )
-f6 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
-l6.photo.attach(io: f6, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
+f6 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+l6.photo.attach(io: f6, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
 
 
 

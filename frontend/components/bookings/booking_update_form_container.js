@@ -1,7 +1,7 @@
 import BookingUpdateForm from './booking_update_form'
 import { connect } from "react-redux";
 import { openModal, closeModal } from "../../actions/modal_actions/modal_actions";
-import { createBooking,  } from "../../actions/booking_actions/booking_action";
+import { createBooking } from "../../actions/booking_actions/booking_action";
 
 
 // const mstp = (state, ownProps) => {
