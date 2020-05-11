@@ -14,11 +14,12 @@ import ReactDOMServer from "react-dom";
 
 class ListMapIndex extends React.Component {
     constructor(props) {
+        debugger
         super(props)
 
         this.state = {
-          lat: this.props.place.state.lat,
-          lng: this.props.place.state.lng,
+          lat: this.props.location.state.lat,
+          lng: this.props.location.state.lng,
         };
 
         this.mapOptions = {
@@ -67,20 +68,23 @@ class ListMapIndex extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
+        debugger
         this.setState({
           lat: nextProps.location.state.lat,
           lng: nextProps.location.state.lng,
+        }, () => {
+            this.mapOptions = {
+                center: {
+                    lat: this.state.lat,
+                    lng: this.state.lng
+                },
+                zoom: 13,
+                mapTypeId: "terrain",
+            };
+            this.map = new google.maps.Map(this.mapNode, this.mapOptions);
         });
 
-        this.mapOptions = {
-        center: {
-            lat: this.state.lat,
-            lng: this.state.lng
-        },
-        zoom: 13,
-        mapTypeId: "terrain",
-        };
-        this.map = new google.maps.Map(this.mapNode, this.mapOptions);
+
 
     }
 

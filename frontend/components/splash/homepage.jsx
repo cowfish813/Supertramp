@@ -7,11 +7,6 @@ class Homepage extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-
-        }
-
-        // this.handleInput = this.handleInput.bind(this)
     }
 
     componentDidMount() {
@@ -19,7 +14,8 @@ class Homepage extends React.Component {
     }
 
     handleInput() {
-        window.scrollTo(0, 1300)
+        window.scrollTo({
+            left: 0, top: 1450, behavior: 'smooth'})
     }
 
     render() {
@@ -61,9 +57,9 @@ class Homepage extends React.Component {
                 </div>
                 <div className="tilesContainer">
                     <div className="tiles_tile">
-                        <Link to="/search/,"><img className="poppingRectangle" src="https://hipcamp-res.cloudinary.com/images/c_thumb,f_auto,q_60,h_953/v1513711999/campground-photos/jxhpqyakfthq93t8on4x/mudita-camel-s-yurt-camels-and-a-yurt-animal-camel.jpg" alt=""/></Link>
-                        <Link><img className="poppingRectangle" src="https://hipcamp-res.cloudinary.com/images/c_thumb,f_auto,q_60,h_546/v1494284717/campground-photos/cy19txhitis6xwltkdhu/ardor-wood-farm-glamping-glen-forest-people-dog.jpg" alt=""/></Link>
-                        <Link><img className="poppingRectangle" src="https://hipcamp-res.cloudinary.com/images/c_thumb,f_auto,q_60,h_953/v1572899400/campground-photos/hamwjtqwsdqffioglcvq/tiny-house-in-happy-valley-tiny-house-glamping-mountains.jpg" alt=""/></Link>
+                        <Link to="/"><img className="poppingRectangle" src="https://hipcamp-res.cloudinary.com/images/c_thumb,f_auto,q_60,h_953/v1513711999/campground-photos/jxhpqyakfthq93t8on4x/mudita-camel-s-yurt-camels-and-a-yurt-animal-camel.jpg" alt=""/></Link>
+                        <Link to="/"><img className="poppingRectangle" src="https://hipcamp-res.cloudinary.com/images/c_thumb,f_auto,q_60,h_546/v1494284717/campground-photos/cy19txhitis6xwltkdhu/ardor-wood-farm-glamping-glen-forest-people-dog.jpg" alt=""/></Link>
+                        <Link to="/"><img className="poppingRectangle" src="https://hipcamp-res.cloudinary.com/images/c_thumb,f_auto,q_60,h_953/v1572899400/campground-photos/hamwjtqwsdqffioglcvq/tiny-house-in-happy-valley-tiny-house-glamping-mountains.jpg" alt=""/></Link>
 
                     </div>
                 </div>

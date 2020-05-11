@@ -1,6 +1,6 @@
 import React from 'react';
-// import BookingItem from '../bookings/booking_index_item_container';
 import BookingItem from '../bookings/booking_index_item';
+// import BookingItem from '../bookings/booking_index_item_container';
 
 class User extends React.Component {
     constructor(props) {

@@ -4,8 +4,11 @@
     flex-wrap: wrap;
 }
 .list-index {
-    min-height: 40vh;
+    width: 100vw;
+    min-height: 10vh;
+    max-height: 50vh;
     margin-right: 5vw;
+    overflow-y: scroll;
 }
 
 .search_results {

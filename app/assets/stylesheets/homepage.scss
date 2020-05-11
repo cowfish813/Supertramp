@@ -1,7 +1,4 @@
 .home {
-    // margin: 114px 0px 0px;
-    // height: 280px;
-    // margin: 15vh;
     margin-top: 15vh;
     width: 100%;
     display: flex;
@@ -22,7 +19,6 @@
 margin-bottom: 2.5vh;
 }
 .homeDesc {
-// margin-right: ;
 }
 
 .homeTitle h1{
@@ -44,12 +40,13 @@ margin-bottom: 2.5vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 5vh;
 }
 
 .superSearch {
     padding: 1.5rem;
     width: 55vw;
-    height: 9vh;
+    height: 6vh;
     padding: 17px;
     box-shadow: 0px 3px 7px lightgray;
     /* margin: 0 auto; */
@@ -127,33 +124,33 @@ margin-bottom: 2.5vh;
 // }
 
 
-.dropdownMenu {
-    position: relative;
-    font-family: Arial, Helvetica, sans-serif;
-    height: 65px;
-    width: 180px; 
-}
-.menuSelect select{
-    display: none;
-}
-.menuSelect {
-    padding: 6px 7px 6px 10px;
-    height: 65px;
-    /* width: 180px; */
-    width: 300px;
-    background-color: #FFFFFF;
-    margin: 2px 0 0;
-    border-radius: 3px;
-    width: 100%;
-    max-width: 100%; 
-    box-sizing: border-box;
-    margin: 0;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    display: block;
+// .dropdownMenu {
+//     position: relative;
+//     font-family: Arial, Helvetica, sans-serif;
+//     height: 65px;
+//     width: 180px; 
+// }
+// .menuSelect select{
+//     display: none;
+// }
+// .menuSelect {
+//     padding: 6px 7px 6px 10px;
+//     height: 65px;
+//     /* width: 180px; */
+//     width: 300px;
+//     background-color: #FFFFFF;
+//     margin: 2px 0 0;
+//     border-radius: 3px;
+//     width: 100%;
+//     max-width: 100%; 
+//     box-sizing: border-box;
+//     margin: 0;
+//     -moz-appearance: none;
+//     -webkit-appearance: none;
+//     appearance: none;
+//     display: block;
 
-}
+// }
 
 
 /* .menuSelected:after {
@@ -204,7 +201,7 @@ margin-bottom: 2.5vh;
     flex-direction: column;
     // width: 30%;
     // height: 35vh;
-    width: 30%;
+    width: 32%;
     height: 40%;
     background-color: black;
     position: absolute;
