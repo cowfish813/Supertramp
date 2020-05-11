@@ -6,7 +6,20 @@ import { withRouter } from 'react-router-dom';
 class Homepage extends React.Component {
     constructor(props) {
         super(props)
-        
+
+        this.state = {
+
+        }
+
+        // this.handleInput = this.handleInput.bind(this)
+    }
+
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
+
+    handleInput() {
+        window.scrollTo(0, 1500)
     }
 
     render() {
@@ -29,21 +42,25 @@ class Homepage extends React.Component {
                     </div>
                     < SearchBar />
                 </div>
-
-                    {/* tags/index searches begin */}
                 <div className="containerBanner">
                     <img src="https://hipcamp-res.cloudinary.com/image/upload/c_thumb,w_1080/v1498456730/campground-photos/yene977lfve4yhhnokuh.jpg" alt="bannerbar"
                     className="bannerImg"
                     />
                     <div className="banner_message">
-                        <span className="banner_font">Explore a Dozen Locations!</span>
-                        <span className=""></span>
+                        {/* <div> */}
+                            <span className="banner_font">Explore a Dozen Locations!</span>
+                            <span className="banner_sub_message">Run a search or scroll down below</span>
+                            <span className="banner_sub_message">and start exploring!</span>
+
+                        {/* </div> */}
+                        <div className="intro_button_container">
+                            <button onClick={this.handleInput} className="intro_button">I'm feeling Lucky!</button>
+                        </div>
                     </div>                  
                 </div>
-
                 <div className="tilesContainer">
                     <div className="tiles_tile">
-                        <Link><img className="poppingRectangle" src="https://hipcamp-res.cloudinary.com/images/c_thumb,f_auto,q_60,h_953/v1513711999/campground-photos/jxhpqyakfthq93t8on4x/mudita-camel-s-yurt-camels-and-a-yurt-animal-camel.jpg" alt=""/></Link>
+                        <Link to="/search/,"><img className="poppingRectangle" src="https://hipcamp-res.cloudinary.com/images/c_thumb,f_auto,q_60,h_953/v1513711999/campground-photos/jxhpqyakfthq93t8on4x/mudita-camel-s-yurt-camels-and-a-yurt-animal-camel.jpg" alt=""/></Link>
                         <Link><img className="poppingRectangle" src="https://hipcamp-res.cloudinary.com/images/c_thumb,f_auto,q_60,h_546/v1494284717/campground-photos/cy19txhitis6xwltkdhu/ardor-wood-farm-glamping-glen-forest-people-dog.jpg" alt=""/></Link>
                         <Link><img className="poppingRectangle" src="https://hipcamp-res.cloudinary.com/images/c_thumb,f_auto,q_60,h_953/v1572899400/campground-photos/hamwjtqwsdqffioglcvq/tiny-house-in-happy-valley-tiny-house-glamping-mountains.jpg" alt=""/></Link>
 

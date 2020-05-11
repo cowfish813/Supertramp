@@ -190,30 +190,33 @@ margin-bottom: 2.5vh;
     // margin-bottom: 81px;
     display: flex;
     align-items: center;
-    height: 50%;
+    // height: 50%;
+    height: 0%;
+    width: 0%;
+    padding: 0%;
 }
 
 
 .bannerImg {
     // max-width: 1080px;
-    height: 50%;
+    // height: 50%;
     display: flex;
     // justify-content: center;
-    margin: auto;
+    // margin: auto;
 }
 
 .banner_message {
     display: flex;
     flex-direction: column;
-    width: 30vw;
-    height: 20vh;
+    width: 20vw;
+    height: 40vh;
     background-color: black;
     position: absolute;
     opacity: .9;
     color: white;
     display: flex;
     // justify-content: center;
-    left: 28rem;
+    left: 35rem;
     // padding: 10rem;
 }
 .banner_font{
@@ -221,6 +224,27 @@ margin-bottom: 2.5vh;
     opacity: 100;
     color: white;
     margin: 2rem;
+}
+.banner_sub_message{
+    font-size: 1.5rem;
+    color: white;
+    margin-top: .5rem;
+    flex-wrap: wrap;
+    margin-left: 5rem;
+}
+.intro_button_container {
+    margin-top: 10%;
+    left: 10%;
+    margin-left: 30%;
+}
+.intro_button {
+    border-radius: 5px;
+    color: #484848;
+    background-color: white;
+    width: 8vw;
+    height: 5vh;
+    font-weight: bolder;
+    // top: 50000rem;
 }
 
 .tilesContainer {
@@ -266,7 +290,7 @@ margin-bottom: 2.5vh;
     // padding: 40px 0px;
     // margin: 0px 213px;
     display: flex;
-    margin-top: 100px;
+    margin-top: 12vh;
     flex-direction: column;
     justify-content: space-evenly;
     /* justify-content: center; */
@@ -289,6 +313,7 @@ margin-bottom: 2.5vh;
     object-fit: cover;
     animation: unpop .8s ease forwards;
     background-color: lawngreen;
+    margin-bottom: 5vh;
 }
 .vague_picture:hover {
     cursor: pointer;
