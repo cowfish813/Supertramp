@@ -6,17 +6,14 @@ import ListSearch from './list_search_results';
 const mstp = (state, ownProps) => {
     let mapLocation;
     if (state.ui.mapLocation.lat) {
-        // debugger
         mapLocation = state.ui.mapLocation;
     } else {
         let [lat, lng] = ownProps.match.params.query.split(",");
         lat = parseFloat(lat)
         lng = parseFloat(lng)
-        // debugger
         mapLocation = {
             lat,
             lng,
-            // location: ownProps.location.state.location
         }
     };
     return ({

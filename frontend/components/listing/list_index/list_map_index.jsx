@@ -31,6 +31,17 @@ class ListMapIndex extends React.Component {
 
     componentDidMount() {
         window.scrollTo(0, 0);
+        debugger
+        this.mapOptions = {
+            center: {
+                lat: this.state.lat,
+                lng: this.state.lng
+            },
+            zoom: 13,
+            mapTypeId: "terrain",
+        };
+    //this.map = undefined D:
+
         this.map = new google.maps.Map(this.mapNode, this.mapOptions);
         this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
         this.registerListeners();
@@ -52,11 +63,12 @@ class ListMapIndex extends React.Component {
                 zoom: 13,
                 mapTypeId: "terrain",
             };
-            this.map = new google.maps.Map(this.mapNode, this.mapOptions);
+            // this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
+            // this.registerListeners();
+            // this.MarkerManager.updateMarkers(this.props.listings);
         });
-
-
-
+        debugger
+        this.map = new google.maps.Map(this.mapNode, this.mapOptions);
     }
 
     componentDidUpdate(prevProps) {
@@ -66,7 +78,6 @@ class ListMapIndex extends React.Component {
     }
 
     registerListeners() {
-        
         google.maps.event.addListener(this.map, 'idle', () => {
             const {north, south, east, west } = this.map.getBounds().toJSON();
             const bounds = {

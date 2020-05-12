@@ -4,11 +4,14 @@
     flex-wrap: wrap;
 }
 .list-index {
-    width: 100vw;
+    width: 45vw;
     min-height: 10vh;
-    max-height: 50vh;
+    max-height: 100vh;
     margin-right: 5vw;
     overflow-y: scroll;
+        display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .search_results {
@@ -16,6 +19,8 @@
 
 }
 .list_index_items {
+
+    width: 20vw;
     margin-top: 5vh;
 
 }
@@ -25,7 +30,8 @@
     // flex-direction: row;
     width: 110%;
     height: auto; 
-    border: gray solid 1px;
+    border: lightgray solid 1px;
+    box-shadow: .2rem .6rem 1rem lightgrey;
 
 }
 .index_box {
@@ -37,9 +43,9 @@
 }
 
 .mapIndex {
-    // right: 0%;
-    border: darkblue solid 5px;
-    width: 40vw;
+    right: 0%;
+    // border: darkblue solid 5px;
+    width: 48vw;
     height: 100vh;
 }
 .listing_index_desc {
