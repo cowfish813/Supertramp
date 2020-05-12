@@ -74,6 +74,7 @@ class Session extends React.Component {
         if (this.props.formType === "Signup") {
             route = "./signup"
             button = "Sign Up"
+            
             return (
                 <div className="modal-superbody">
                     <div className="modal-signup">
@@ -135,20 +136,15 @@ class Session extends React.Component {
 
                             {/* <button className="loginButton" >{this.props.formType}</button> */}
                             <input type="submit" className="loginButton" value={this.props.formType}/>
-
                         </form>
                         <div className="login-body">
                             <button className="demoButton" type="button" onClick={this.handleDemoUser}>Demo User</button>
-
-                        </div>
-                        {/* <Link to= /> */}
-                        
+                        </div>                       
                         <div className="login-footer">
                             <div className="login-subfooter">
                             <p>By signing up, I agree to SuperTramps terms and privacy policy</p>
                             </div>
                             <p>Not a SuperTramper? <a className="modal_swap" onClick={() => this.props.openModal('Login')}>Log In</a></p>
-                            {/* link to sign in */}
                         </div>
                     </div>
                 </div>

@@ -189,7 +189,7 @@ margin-bottom: 2.5vh;
 
 .bannerImg {
     // max-width: 1080px;
-    // height: 50%;
+    height: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -197,11 +197,12 @@ margin-bottom: 2.5vh;
 }
 
 .banner_message {
+    // padding-left: 20px;
     display: flex;
     flex-direction: column;
     // width: 30%;
     // height: 35vh;
-    width: 32%;
+    width: 25%;
     height: 40%;
     background-color: black;
     position: absolute;
@@ -210,7 +211,7 @@ margin-bottom: 2.5vh;
     display: flex;
     justify-content: center;
     // left: 35rem;
-    margin-left: 4%;
+    margin-left: 8%;
 }
 .banner_font{
     flex-wrap: wrap;

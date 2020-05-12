@@ -10,7 +10,7 @@ const mSTP = (state, ownProps) => ({
 
 const mDTP = dispatch => ({
     // updateFilter: (bounds) => dispatch(updateFilter(bounds))
-    // fetchListingss: () => dispatch(fetchListings())
+    // fetchListings: () => dispatch(fetchListings())
 });
 
 export default connect(mSTP, mDTP)(listIndex);

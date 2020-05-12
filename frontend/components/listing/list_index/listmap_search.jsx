@@ -1,18 +1,18 @@
-import React from 'react'
-import { withRouter} from 'react-router-dom'
+// import React from 'react'
+// import { withRouter} from 'react-router-dom'
 
-class ListMapSearch extends React.Component {
-    constructor(props) {
-        super(props)
+// class ListMapSearch extends React.Component {
+//     constructor(props) {
+//         super(props)
 
-        this.state = {
-            location: ""
-        }
-    }
+//         this.state = {
+//             location: ""
+//         }
+//     }
 
     
 
 
-}
+// }
 
-export default ListMapSearch
+// export default ListMapSearch

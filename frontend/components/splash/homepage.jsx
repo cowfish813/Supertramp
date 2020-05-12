@@ -7,6 +7,9 @@ class Homepage extends React.Component {
     constructor(props) {
         super(props)
 
+        this.handleTile3 = this.handleTile3.bind(this)
+        this.handleTile2 = this.handleTile2.bind(this)
+        this.handleTile1 = this.handleTile1.bind(this)
     }
 
     componentDidMount() {
@@ -16,6 +19,36 @@ class Homepage extends React.Component {
     handleInput() {
         window.scrollTo({
             left: 0, top: 1450, behavior: 'smooth'})
+    }
+
+    handleTile3(e) {
+        e.preventDefault();
+        this.props.history.push({
+            pathname: `/search/37.8032783,-119.5393594`,
+            state: { lat: 37.8032783,
+                lng: -119.5393594
+            }
+        });       
+    }
+
+    handleTile2(e) {
+        e.preventDefault();
+        this.props.history.push({
+            pathname: `/search/37.8032783,-119.5393594`,
+            state: { lat: 37.8032783,
+                lng: -119.5393594
+            }
+        });       
+    }
+    
+    handleTile1(e) {
+        e.preventDefault();
+        this.props.history.push({
+            pathname: `/search/37.8032783,-119.5393594`,
+            state: { lat: 37.8032783,
+                lng: -119.5393594
+            }
+        });       
     }
 
     render() {
@@ -57,9 +90,9 @@ class Homepage extends React.Component {
                 </div>
                 <div className="tilesContainer">
                     <div className="tiles_tile">
-                        <Link to="/"><img className="poppingRectangle" src="https://hipcamp-res.cloudinary.com/images/c_thumb,f_auto,q_60,h_953/v1513711999/campground-photos/jxhpqyakfthq93t8on4x/mudita-camel-s-yurt-camels-and-a-yurt-animal-camel.jpg" alt=""/></Link>
-                        <Link to="/"><img className="poppingRectangle" src="https://hipcamp-res.cloudinary.com/images/c_thumb,f_auto,q_60,h_546/v1494284717/campground-photos/cy19txhitis6xwltkdhu/ardor-wood-farm-glamping-glen-forest-people-dog.jpg" alt=""/></Link>
-                        <Link to="/"><img className="poppingRectangle" src="https://hipcamp-res.cloudinary.com/images/c_thumb,f_auto,q_60,h_953/v1572899400/campground-photos/hamwjtqwsdqffioglcvq/tiny-house-in-happy-valley-tiny-house-glamping-mountains.jpg" alt=""/></Link>
+                        <img onClick={this.handleTile1} className="poppingRectangle" src="https://hipcamp-res.cloudinary.com/images/c_thumb,f_auto,q_60,h_953/v1513711999/campground-photos/jxhpqyakfthq93t8on4x/mudita-camel-s-yurt-camels-and-a-yurt-animal-camel.jpg" alt=""/>
+                        <img onClick={this.handleTile2} className="poppingRectangle" src="https://hipcamp-res.cloudinary.com/images/c_thumb,f_auto,q_60,h_546/v1494284717/campground-photos/cy19txhitis6xwltkdhu/ardor-wood-farm-glamping-glen-forest-people-dog.jpg" alt=""/>
+                        <img onClick={this.handleTile3} className="poppingRectangle" src="https://hipcamp-res.cloudinary.com/images/c_thumb,f_auto,q_60,h_953/v1572899400/campground-photos/hamwjtqwsdqffioglcvq/tiny-house-in-happy-valley-tiny-house-glamping-mountains.jpg" alt=""/>
 
                     </div>
                 </div>

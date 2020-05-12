@@ -4,23 +4,26 @@ import { resetLocation, receiveLocation } from '../../../actions/map_action';
 import ListSearch from './list_search_results';
 
 const mstp = (state, ownProps) => {
-    debugger
-    let location;
-    if (state.ui.location) {
-        location = state.ui.location;
+    let mapLocation;
+    if (state.ui.mapLocation.lat) {
+        // debugger
+        mapLocation = state.ui.mapLocation;
     } else {
         let [lat, lng] = ownProps.match.params.query.split(",");
-        location = {
+        lat = parseFloat(lat)
+        lng = parseFloat(lng)
+        // debugger
+        mapLocation = {
             lat,
             lng,
             // location: ownProps.location.state.location
         }
     };
     return ({
-    listings: Object.values(state.entities.listings),
-    location,
-    filters: state.ui.filter
-})
+        listings: Object.values(state.entities.listings),
+        mapLocation,
+        filters: state.ui.filter
+    })
 };
  
 const mdtp = (dispatch) => ({

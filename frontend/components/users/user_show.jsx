@@ -25,11 +25,10 @@ class User extends React.Component {
     
 
     componentDidMount () { //first fetch
+        debugger;
         window.scrollTo(0, 0);
         this.props.fetchBookings(this.props.match.params.userId);
         this.props.fetchListings(this.props.match.params.userId);
-        // console.log(this.props.fetchListings(this.props.match.params.userId))
-        // debugger
     };
 
 

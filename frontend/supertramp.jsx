@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from './components/root'
 
-//debugging for fetch listings
+// debugging for fetch listings
 import {fetchListings} from './actions/listing_actions/listing_actions'
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -23,10 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         store = configureStore()
     }
-    window.dispatch = store.dispatch;
-    window.getState = store.getState;
-    window.fetchListings = fetchListings;
-
-    
+    // window.dispatch = store.dispatch;
+    // window.getState = store.getState;
+    // window.fetchListings = fetchListings;
     ReactDOM.render(<Root store={store} />, root);
 });

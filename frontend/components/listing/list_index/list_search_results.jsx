@@ -32,7 +32,7 @@ class ListSearchResults extends React.Component {
               <ListMapIndex
                 updateFilter={this.props.updateFilter}
                 listings={this.props.listings}
-                location={this.props.location}
+                mapLocation={this.props.mapLocation}
                 resetLocation={this.props.resetLocation}
 
               />

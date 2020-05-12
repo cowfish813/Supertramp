@@ -10,7 +10,7 @@ class Search extends React.Component {
         super(props)
 
     this.state = {
-        location: "",
+        mapLocation: "",
         lat: "",
         lng:""
     };
@@ -21,7 +21,7 @@ class Search extends React.Component {
 
     handleInput(e) {
         this.setState({
-            location: e.target.value
+            mapLocation: e.target.value
         });
     }
 
@@ -39,7 +39,7 @@ class Search extends React.Component {
         let input = document.getElementById('splash_search');
         let autocomplete = new google.maps.places.Autocomplete(input);
 
-        let location;
+        let mapLocation;
         let that = this;
 
         //
@@ -49,9 +49,9 @@ class Search extends React.Component {
 
             let lat = place.geometry.location.lat();
             let lng = place.geometry.location.lng();
-            location = address ? address : autocomplete.getPlace().name;
+            mapLocation = address ? address : autocomplete.getPlace().name;
             that.setState({
-                location: autocomplete.getPlace().name,
+                mapLocation: autocomplete.getPlace().name,
                 lat: lat,
                 lng: lng
             });
@@ -72,7 +72,7 @@ class Search extends React.Component {
                         className="search" 
                         type="search" 
                         placeholder="Start Tramping!" 
-                        value={this.state.location}
+                        value={this.state.mapLocation}
                         onChange={this.handleInput}
                         />
                     </div>
