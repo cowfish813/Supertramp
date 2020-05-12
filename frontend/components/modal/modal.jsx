@@ -27,6 +27,7 @@ function Modal({ errors, modal, closeModal}) {
             break;
         case 'Booking':
             component = <BookingUpdateForm />
+            break;
         default:
             return null
     };

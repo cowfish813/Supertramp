@@ -26,10 +26,10 @@ export const receiveBookingErrors = errors => ({
     errors
 });
 
-export const updateBooking = (booking) => ({
-    type: UPDATE_BOOKING,
-    booking
-});
+// export const updateBooking = (booking) => ({
+//     type: UPDATE_BOOKING,
+//     booking
+// });
 
 
 export const createBooking = booking => dispatch => {
@@ -69,7 +69,7 @@ export const deleteBooking = (bookingId) => dispatch => {
 export const patchBooking = (booking) => dispatch => {
     debugger
     return ApiUtil.updateBooking(booking).then(
-        booking => dispatch(updateBooking(booking)),
+        booking => dispatch(receiveBooking(booking)),
         err => dispatch(receiveBookingErrors(err.responseJson))
     )
 };
