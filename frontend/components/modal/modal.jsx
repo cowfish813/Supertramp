@@ -3,7 +3,7 @@ import {closeModal} from '../../actions/modal_actions/modal_actions'
 import {connect} from 'react-redux'
 import LoginFormContainer from '../session/login_form_container'
 import SignupFormContainer from '../session/signup_form_container'
-import BookingUpdateForm from '../bookings/booking_update_form'
+import BookingUpdateForm from '../bookings/booking_update_form_container'
 
 function Modal({ errors, modal, closeModal}) {
     if (!modal) return null
@@ -25,8 +25,8 @@ function Modal({ errors, modal, closeModal}) {
         case 'Signup':
             component = <SignupFormContainer />
             break;
-        // case 'Booking':
-        //     component = <BookingUpdateForm />
+        case 'Booking':
+            component = <BookingUpdateForm />
         default:
             return null
     };

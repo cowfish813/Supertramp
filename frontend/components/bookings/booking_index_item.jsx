@@ -9,9 +9,11 @@ class BookingItem extends React.Component {
         this.state = {
           count: document.querySelectorAll("#booking_item").length,
         };
-        this.handleClick = this.handleClick.bind(this);
         
-    };
+        this.handleClick = this.handleClick.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        
+    }
 
     handleClick(e) {
         e.preventDefault()
@@ -19,7 +21,11 @@ class BookingItem extends React.Component {
             //.then(fetchbookings) 
             // .then(setState) *for local
             // window.location.reload(false); //reloads after delete. prefer re-render
-    };
+    }
+
+    handleChange() {
+        this.props.openModal('Booking')
+    }
 
     componentDidMount() {
         // this.setState({
@@ -68,6 +74,8 @@ class BookingItem extends React.Component {
                     <div className="bookings_item_cancel">
 
                     <button onClick={this.handleClick} className="bookingCancel">Cancel</button>
+                    {/* <button onClick={this.handleChange} className="bookingChange">Change Booking</button> */}
+                    <button onClick={() => this.props.openModal('Booking')} className="bookingChange">Change Booking</button>
                     </div>
                 </div>
             </div>
@@ -77,7 +85,7 @@ class BookingItem extends React.Component {
                 null
             );
         }
-    };
+    }
 };
 
 export default withRouter(BookingItem);

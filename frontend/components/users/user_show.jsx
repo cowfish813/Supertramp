@@ -28,6 +28,8 @@ class User extends React.Component {
         window.scrollTo(0, 0);
         this.props.fetchBookings(this.props.match.params.userId);
         this.props.fetchListings(this.props.match.params.userId);
+        // console.log(this.props.fetchListings(this.props.match.params.userId))
+        // debugger
     };
 
 
@@ -111,6 +113,7 @@ class User extends React.Component {
                             bookings={ this.props.bookings }
                             listings ={ this.props.listings }
                             fetchBookings={this.props.fetchBookings}
+                            openModal={this.props.openModal}
                             />
                         ))}
                     </div>

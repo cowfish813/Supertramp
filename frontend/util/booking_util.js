@@ -28,9 +28,10 @@ export const deleteBooking = bookingId => (
 );
 
 export const updateBooking = (booking) => {
+    debugger
     return $.ajax({
         url: `/api/bookings${booking.id}`,
         method: 'PATCH',
         data: { booking }
     })
-}
+};

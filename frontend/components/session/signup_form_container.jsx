@@ -15,7 +15,6 @@ const mSTP = (state, ownProps) => ({
     errors: state.errors.session,
     formType: "Signup",
     user: state.entities.user,
-
 })
 
 
