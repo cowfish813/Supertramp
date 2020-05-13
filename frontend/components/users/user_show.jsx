@@ -5,8 +5,8 @@ import BookingItem from '../bookings/booking_index_item';
 class User extends React.Component {
     constructor(props) {
         super(props)
-
         this.state = {
+            count: this.props.bookings.length
             //index of bookings in state
             //bookings alreadyt fetched, call setstate and puit them on local state
             //write method in this comp that sets stat on 
@@ -24,12 +24,19 @@ class User extends React.Component {
 
     
 
-    componentDidMount () { //first fetch
-        debugger;
+    componentDidMount () {
         window.scrollTo(0, 0);
         this.props.fetchBookings(this.props.match.params.userId);
-        this.props.fetchListings(this.props.match.params.userId);
-    };
+        this.props.fetchListings(this.props.match.params.userId); //eliminates new booking photo error
+        this.setState({
+            count: this.props.bookings.length
+        });
+    }
+
+    componentWillReceiveProps(nextProps) {
+        debugger
+
+    }
 
 
 
@@ -113,6 +120,7 @@ class User extends React.Component {
                             listings ={ this.props.listings }
                             fetchBookings={this.props.fetchBookings}
                             openModal={this.props.openModal}
+                            count={this.state.count}
                             />
                         ))}
                     </div>

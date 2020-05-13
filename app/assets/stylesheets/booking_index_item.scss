@@ -60,3 +60,18 @@
     transition: .4s;
     color: #ffffff;
 }
+
+.usershowbutton {
+    margin-left: 3vw;
+}
+
+.bookingChange {
+    border: solid 1px black;
+    color: white;
+    background-color: black;
+}
+.bookingChange:hover {
+    border: solid 1px black;
+    color: black;
+    background-color: white;
+}

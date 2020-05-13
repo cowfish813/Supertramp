@@ -6,11 +6,12 @@ import { fetchListings } from '../../actions/listing_actions/listing_actions';
 import { openModal } from '../../actions/modal_actions/modal_actions';
 
 const mSTP = (state, ownProps) => {
+  // debugger
     return {
       user: state.entities.users[ownProps.match.params.userId],
-      listings: Object.values(state.entities.listings),
-      bookings: Object.values(state.entities.bookings)
-    };
+      bookings: Object.values(state.entities.bookings),
+      // listings: Object.values(state.entities.listings),
+    }
 };
 
 const mdtp = dispatch => ({

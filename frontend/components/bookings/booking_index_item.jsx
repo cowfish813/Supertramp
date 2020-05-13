@@ -7,7 +7,7 @@ class BookingItem extends React.Component {
         super(props);
 
         this.state = {
-          count: document.querySelectorAll("#booking_item").length,
+          count: this.props.count
         };
         
         this.handleClick = this.handleClick.bind(this);
@@ -17,7 +17,10 @@ class BookingItem extends React.Component {
 
     handleClick(e) {
         e.preventDefault()
-        this.props.deleteBooking(this.props.booking.id)
+        this.props.deleteBooking(this.props.booking.id).then(this.props.fetchBookings())
+        // this.props.fetchBookings()
+
+
             //.then(fetchbookings) 
             // .then(setState) *for local
             // window.location.reload(false); //reloads after delete. prefer re-render
@@ -27,24 +30,23 @@ class BookingItem extends React.Component {
         this.props.openModal('Booking')
     }
 
-    componentDidMount() {
+    componentWillReceiveProps(nextProps) {
+        debugger
+        // nextprops.booking isn't the one to be removed??
+        // const arr = nextProps.bookings.filter = booking => (booking.id !== nextProps.booking.id)
+        // const arrlength = arr.length
         // this.setState({
-        //     count: document.querySelectorAll("#booking_item").length
-        // }) 
-        
+        //     count: arrlength
+        // });
     }
     
     componentDidUpdate() {
-        // if (this.state.count > document.querySelectorAll("#booking_item").length) {
-        //     this.setState({
-        //         count: document.querySelectorAll("#booking_item").length,
-        //     }); 
-        // }
+
     }
-    
+
+
+
     render () {
-
-
         const checkin = new Date(this.props.booking.check_in).toDateString()
         const checkout = new Date(this.props.booking.check_out).toDateString()
 
@@ -73,9 +75,9 @@ class BookingItem extends React.Component {
                         ${this.props.booking.price}</div>
                     <div className="bookings_item_cancel">
 
-                    <button onClick={this.handleClick} className="bookingCancel">Cancel</button>
+                    <button onClick={this.handleClick} className="bookingCancel usershowbutton">Cancel</button>
                     {/* <button onClick={this.handleChange} className="bookingChange">Change Booking</button> */}
-                    <button onClick={() => this.props.openModal('Booking')} className="bookingChange">Change Booking</button>
+                            <button onClick={() => this.props.openModal('Booking')} className="bookingChange usershowbutton">Change Booking</button>
                     </div>
                 </div>
             </div>
