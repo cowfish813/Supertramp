@@ -34,7 +34,7 @@ class User extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        debugger
+        // debugger
 
     }
 

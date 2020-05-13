@@ -43,8 +43,8 @@ const deleteReview = (review) => ({
     reviewId: review.id
 });
 
-export const fetchListings = () => dispatch => {
-    return ApiUtil.fetchListings()
+export const fetchListings = (filter) => dispatch => {
+    return ApiUtil.fetchListings(filter)
     .then( (listings) => dispatch(receiveListings(listings)))
 }
 export const fetchListing = (listingId) => dispatch => {

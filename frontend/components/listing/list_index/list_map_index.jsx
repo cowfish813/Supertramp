@@ -31,7 +31,7 @@ class ListMapIndex extends React.Component {
 
     componentDidMount() {
         window.scrollTo(0, 0);
-        debugger
+        // debugger
         this.mapOptions = {
             center: {
                 lat: this.state.lat,
@@ -50,25 +50,26 @@ class ListMapIndex extends React.Component {
 
 
     componentWillReceiveProps(nextProps) {
-        
-        this.setState({
-          lat: nextProps.mapLocation.lat,
-          lng: nextProps.mapLocation.lng,
-        }, () => {
-            this.mapOptions = {
-                center: {
-                    lat: this.state.lat,
-                    lng: this.state.lng
-                },
-                zoom: 13,
-                mapTypeId: "terrain",
-            };
-            // this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
-            // this.registerListeners();
-            // this.MarkerManager.updateMarkers(this.props.listings);
-        });
-        debugger
-        this.map = new google.maps.Map(this.mapNode, this.mapOptions);
+        if (nextProps.mapLocation.lat !== this.props.mapLocation.lat || nextProps.mapLocation.lng !== this.props.mapLocation.lng ) {
+            // debugger
+            this.setState({
+              lat: nextProps.mapLocation.lat,
+              lng: nextProps.mapLocation.lng,
+            }, () => {
+                this.mapOptions = {
+                    center: {
+                        lat: this.state.lat,
+                        lng: this.state.lng
+                    },
+                    zoom: 13,
+                    mapTypeId: "terrain",
+                };
+                this.map = new google.maps.Map(this.mapNode, this.mapOptions);
+                this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
+                this.registerListeners();
+                this.MarkerManager.updateMarkers(this.props.listings);
+            });
+        }
     }
 
     componentDidUpdate(prevProps) {

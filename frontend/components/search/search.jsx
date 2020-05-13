@@ -35,6 +35,7 @@ class Search extends React.Component {
         //         lng: 119.5383
         //     })
         // }
+        // debugger
         this.props.history.push({
             pathname: `/search/${this.state.lat},${this.state.lng}`,
             state: this.state
@@ -48,7 +49,6 @@ class Search extends React.Component {
         let mapLocation;
         let that = this;
 
-        //
         autocomplete.addListener('place_changed', () => {
             let address = autocomplete.getPlace().formatted_address;
             let place = autocomplete.getPlace();

@@ -31,7 +31,7 @@ class BookingItem extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        debugger
+        // debugger
         // nextprops.booking isn't the one to be removed??
         // const arr = nextProps.bookings.filter = booking => (booking.id !== nextProps.booking.id)
         // const arrlength = arr.length

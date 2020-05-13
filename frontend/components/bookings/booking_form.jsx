@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 import { SingleDatePicker } from "react-dates";
+import moment from 'moment'
 // import "../../../app/assets/stylesheets/book_form.scss"; //rewrites react css
 
 
@@ -28,25 +29,22 @@ class BookingForm extends React.Component {
     };
 
     handlePrice(date) {
-
         const mseconds = Date.parse(date) - Date.parse(this.state.check_in);
         const days = mseconds / (1000 * 60 * 60 * 24) * this.props.list.price
         this.setState({
           price: days,
           check_out: date
-        })
-
-
-    };
+        });
+    }
 
     handleCapacity(event) {
       this.setState({
         capacity: event.currentTarget.value
-      })
+      });
     }
 
     highlighted(day) {
-        return day.isSame(this.state.check_in)
+        return day.isSame(this.state.check_in);
     }
 
     handleSubmit(e) {
@@ -67,7 +65,7 @@ class BookingForm extends React.Component {
               host_id: this.props.list.host_id,
               listing_name: this.props.list.name,
               price: this.state.price
-          }
+          };
           this.props.createBooking(booking)
               .then(this.props.history.push(`/users/${this.props.currentUser.id}`));
         }
@@ -103,6 +101,8 @@ class BookingForm extends React.Component {
                       daySize={36}
                       noBorder={true}
                       hideKeyboardShortcutsPanel={true}
+                      displayFormat={moment.locale('en')} //keeps things english
+
                     />
                   </div>
                 </div>
@@ -127,6 +127,7 @@ class BookingForm extends React.Component {
                       noBorder={true}
                       hideKeyboardShortcutsPanel={true}
                       onDateChange={date => this.handlePrice(date)}
+
                     />
                   </div>
                 </div>

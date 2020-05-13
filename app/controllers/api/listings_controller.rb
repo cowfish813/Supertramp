@@ -2,7 +2,7 @@ class Api::ListingsController < ApplicationController
 
     def index
         @listings = bounds ? Listing.in_bounds(bounds) : Listing.all
-
+        # debugger
         # if params[:price]
         #     @listings = @listings.where('price < ?', price)
         # end
