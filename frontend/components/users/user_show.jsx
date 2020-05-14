@@ -8,6 +8,7 @@ class User extends React.Component {
         // debugger
         this.state = {
             count: this.props.bookings.length
+            
             //index of bookings in state
             //bookings alreadyt fetched, call setstate and puit them on local state
             //write method in this comp that sets stat on 

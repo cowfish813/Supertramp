@@ -2,13 +2,13 @@ import React from 'react';
 import { withRouter } from "react-router-dom";
 import { Link } from 'react-router-dom';
 
-class BookingItem extends React.Component {
+class BookingIndexItem extends React.Component {
     constructor(props) {
         super(props);
-        // debugger
         this.state = {
-          count: this.props.count
+            bookings: this.props.bookings
         };
+        // debugger
         
         this.handleClick = this.handleClick.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -17,6 +17,12 @@ class BookingItem extends React.Component {
 
     handleClick(e) {
         e.preventDefault()
+        // debugger
+        console.log(this.state)
+        this.setState({
+            bookings: this.state.bookings.filter( (booking => booking.id !== this.props.booking.id))
+        })
+        console.log(this.state)
         this.props.deleteBooking(this.props.booking.id)
         // .then(this.props.fetchBookings())
         // this.props.fetchBookings()
@@ -33,12 +39,9 @@ class BookingItem extends React.Component {
         window.scrollTo(0, 0);
         this.props.fetchBookings(this.props.match.params.userId);
         this.props.fetchListings(this.props.match.params.userId); //eliminates new booking photo error
-        this.setState({
-            count: this.props.bookings.length
-        });
     }
 
-    componentWillReceiveProps(nextProps) {
+    componentWillReceiveProps(prevProps, nextProps) {
         // debugger
         // nextprops.booking isn't the one to be removed??
         // const arr = nextProps.bookings.filter = booking => (booking.id !== nextProps.booking.id)
@@ -49,7 +52,9 @@ class BookingItem extends React.Component {
     }
     
     componentDidUpdate(prevProps, nextProps) {
-
+        // console.log(prevProps, "bii")
+        // console.log(nextProps, "bii")
+        // debugger
     }
 
 
@@ -83,9 +88,9 @@ class BookingItem extends React.Component {
                         ${this.props.booking.price}</div>
                     <div className="bookings_item_cancel">
 
-                    <button onClick={this.handleClick} className="bookingCancel usershowbutton">Cancel</button>
+                        <button onClick={this.handleClick} className="bookingCancel usershowbutton">Cancel</button>
                     {/* <button onClick={this.handleChange} className="bookingChange">Change Booking</button> */}
-                            <button onClick={() => this.props.openModal('Booking')} className="bookingChange usershowbutton">Change Booking</button>
+                        <button onClick={() => this.props.openModal('Booking')} className="bookingChange usershowbutton">Change Booking</button>
                     </div>
                 </div>
             </div>
@@ -98,5 +103,5 @@ class BookingItem extends React.Component {
     }
 };
 
-export default withRouter(BookingItem);
+export default withRouter(BookingIndexItem);
 

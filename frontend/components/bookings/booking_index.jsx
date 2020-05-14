@@ -6,8 +6,26 @@ class BookingIndex extends React.Component {
     constructor(props) {
         super(props)
 
+        this.state = {
+            bookings: this.props.bookings
+        }
         // debugger
     }
+
+    componentDidMount() {
+        // debugger
+        this.setState({
+            bookings: this.props.booking
+        })
+    }
+
+    componentWillReceiveProps(prevProps, nextProps) {
+        // debugger
+        this.setState({
+            bookings: prevProps.booking
+        })
+    }
+
 
     render(){
         return (
@@ -18,10 +36,11 @@ class BookingIndex extends React.Component {
                             booking={booking}
                             key={booking.id}
                             current_user={this.props.user.id}
-                            bookings={this.props.bookings}
+                            // bookings={this.props.bookings}
                             listings={this.props.listings}
                             fetchBookings={this.props.fetchBookings}
                             fetchListings={this.props.fetchListings}
+                            bookings={this.state.bookings}
                         />
                     ))}
                 </div>
