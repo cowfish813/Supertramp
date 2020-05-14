@@ -24,10 +24,10 @@ class IndexItem extends React.Component {
                     </Link>
                 </div>
                 <div>
-                <div className="listing_index_desc">
-                    <h1>{this.props.listing.name}</h1>
-                </div>
-                <div className="listing_index_price">${this.props.listing.price}/day</div>
+                    <div className="listing_index_desc">
+                        <div className="list_index_name">{this.props.listing.name}</div>
+                        <div className="listing_index_price">${this.props.listing.price}/day</div>
+                    </div>
                 </div>
             </div>
         )

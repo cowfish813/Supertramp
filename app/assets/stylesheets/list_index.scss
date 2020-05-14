@@ -1,35 +1,33 @@
 .search_results {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
+    margin-top: 3vh;
+    margin: 5rem;
 }
 .list-index {
-    width: 45vw;
+    width: 50vw;
     min-height: 10vh;
     max-height: 100vh;
-    margin-right: 5vw;
     overflow-y: scroll;
-        display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    display: flex;
 }
 
-.search_results {
-    margin-top: 10vh;
 
-}
+
 .list_index_items {
-
-    width: 20vw;
-    margin-top: 5vh;
+    display: flex;
+    flex-wrap: wrap;
+    // width: 20vw;
+    // margin-top: 5vh;
 
 }
 .index_container {
     margin-top: 3vh;
+    margin: 1rem;
     display: flex;
-    // flex-direction: row;
-    width: 110%;
-    height: auto; 
+    flex-direction: column;
+    height: 37%;
     border: lightgray solid 1px;
     box-shadow: .2rem .6rem 1rem lightgrey;
 
@@ -50,5 +48,20 @@
 }
 .listing_index_desc {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.list_index_name{
+    font-size: 2rem;
+    margin-left: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.listing_index_price {
+    margin-right: 2rem;
+    font-size: 1rem;
+    display: flex;
+    // justify-content: flex-end;
+    align-self: flex-end;
 }
