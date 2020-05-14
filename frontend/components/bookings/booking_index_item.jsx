@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 class BookingItem extends React.Component {
     constructor(props) {
         super(props);
-
+        // debugger
         this.state = {
           count: this.props.count
         };
@@ -17,10 +17,9 @@ class BookingItem extends React.Component {
 
     handleClick(e) {
         e.preventDefault()
-        this.props.deleteBooking(this.props.booking.id).then(this.props.fetchBookings())
-        this.props.fetchBookings()
-
-
+        this.props.deleteBooking(this.props.booking.id)
+        // .then(this.props.fetchBookings())
+        // this.props.fetchBookings()
             //.then(fetchbookings) 
             // .then(setState) *for local
             // window.location.reload(false); //reloads after delete. prefer re-render
@@ -28,6 +27,15 @@ class BookingItem extends React.Component {
 
     handleChange() {
         this.props.openModal('Booking')
+    }
+
+    componentDidMount() {
+        window.scrollTo(0, 0);
+        this.props.fetchBookings(this.props.match.params.userId);
+        this.props.fetchListings(this.props.match.params.userId); //eliminates new booking photo error
+        this.setState({
+            count: this.props.bookings.length
+        });
     }
 
     componentWillReceiveProps(nextProps) {

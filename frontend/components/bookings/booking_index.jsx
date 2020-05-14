@@ -1,16 +1,18 @@
 import React from 'react';
-import BookingIndexItem from '../bookings/booking_index_item';
+import BookingIndexItem from './booking_index_item'
 
 
 class BookingIndex extends React.Component {
     constructor(props) {
         super(props)
+
+        // debugger
     }
 
     render(){
         return (
                 <div className="bookings">
-                    {this.props.bookings.map((booking, index) => (
+                    {this.props.bookings.map((booking) => (
                         <BookingIndexItem
                             deleteBooking={this.props.deleteBooking}
                             booking={booking}
@@ -19,6 +21,7 @@ class BookingIndex extends React.Component {
                             bookings={this.props.bookings}
                             listings={this.props.listings}
                             fetchBookings={this.props.fetchBookings}
+                            fetchListings={this.props.fetchListings}
                         />
                     ))}
                 </div>

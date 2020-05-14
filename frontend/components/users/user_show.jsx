@@ -1,11 +1,11 @@
 import React from 'react';
-import BookingItem from '../bookings/booking_index_item';
-// import BookingItem from '../bookings/booking_index_item_container';
+// import BookingItem from '../bookings/booking_index_item';
+import BookingItem from '../bookings/booking_index_container';
 
 class User extends React.Component {
     constructor(props) {
         super(props)
-        debugger
+        // debugger
         this.state = {
             count: this.props.bookings.length
             //index of bookings in state
@@ -17,8 +17,6 @@ class User extends React.Component {
                 //..bind(this) in constructor
                     //.pass entire function as a prop to booking item
                     //so when it is deleted, that function runs it
-
-
         //     count: document.querySelectorAll("#BookingItemId").length
         }
     }; 
@@ -34,7 +32,7 @@ class User extends React.Component {
         });
     }
 
-    componentWillReceiveProps(nextProps) {
+    componentWillReceiveProps(prevProps, nextProps) {
         // debugger
 
     }
@@ -94,7 +92,10 @@ class User extends React.Component {
                 </div>
 
                 <div className="middleBody">
-                    <div className="bookings">
+                    <BookingItem 
+                    user={this.props.user}
+                    />
+                    {/* <div className="bookings">
                         {this.props.bookings.map((booking, index) => (
                             <BookingItem 
                             deleteBooking={ this.props.deleteBooking }
@@ -108,7 +109,7 @@ class User extends React.Component {
                             count={this.state.count}
                             />
                         ))}
-                    </div>
+                    </div> */}
                     <div className="reviews-comp">
                         {/* bonus feature. will eventually be review item index */}
                     </div>
