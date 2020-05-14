@@ -137,10 +137,10 @@ l6.photo.attach(io: f6, filename: '56312133_10107420712439613_248936565180674867
 
 # give new names/etc
 l7 = Listing.create!(
-    name: 'Skyrim',
+    name: 'Sovengarde',
     on_arrival: 'walk 1000 miles more',
     description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-    cancellation_policy: 'vanessa carlton',
+    cancellation_policy: 'Defeat Alduin',
     capacity: 2,
     country: "Hyrule",
     minimum_nights: 1,

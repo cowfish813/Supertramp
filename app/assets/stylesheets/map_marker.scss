@@ -6,8 +6,6 @@
 .infoPic {
     width: 10vw;
     height: 15vh;
-    // height: 100%;
-    // width: 100%;
     object-fit: contain;
 }
 
@@ -21,8 +19,10 @@
     font-weight: bolder;
     font-size: 20px;
     margin-bottom: 1rem;
+    margin-left: 1rem;
 }
 
 .infoDetailPrice {
     font-size: 15px;
+    margin-left: 3rem;
 }

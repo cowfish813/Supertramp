@@ -16,7 +16,7 @@ class IndexItem extends React.Component {
     };
 
     render() {
-        return (
+        return ( 
             <div className="index_container">
                 <div className="index_box">
                     <Link to={`/listings/${this.props.listing.id}`}>

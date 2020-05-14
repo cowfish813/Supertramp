@@ -5,6 +5,8 @@ import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 import { SingleDatePicker } from "react-dates";
 import moment from 'moment'
+import DefaultTheme from 'react-dates/lib/theme/DefaultTheme';
+import "moment/locale/en-gb"
 // import "../../../app/assets/stylesheets/book_form.scss"; //rewrites react css
 
 
@@ -87,13 +89,12 @@ class BookingForm extends React.Component {
                   <div className="label">
                     Check in
                     <SingleDatePicker
+                      displayFormat={() => ("MM/DD/YYYY")} 
                       placeholder="Select Start"
                       date={this.state.check_in} // momentPropTypes.momentObj or null
                       onDateChange={(date) => this.setState({ check_in: date })} // PropTypes.func.isRequired
                       focused={this.state.focusedStart} // PropTypes.bool
-                      onFocusChange={({ focused }) =>
-                        this.setState({ focusedStart: focused })
-                      } // PropTypes.func.isRequired
+                      onFocusChange={ ({ focused }) => this.setState({ focusedStart: focused }) } // PropTypes.func.isRequired
                       id="start" // PropTypes.string.isRequired,
                       verticalSpacing={0}
                       isDayHighlighted={(day) => this.highlighted(day)}
@@ -101,24 +102,19 @@ class BookingForm extends React.Component {
                       daySize={36}
                       noBorder={true}
                       hideKeyboardShortcutsPanel={true}
-                      displayFormat={moment.locale('en')} //keeps things english
-
                     />
                   </div>
                 </div>
                 <div className="col checkout">
                   <div className="label">
                     Check out
-                    <SingleDatePicker
+                    <SingleDatePicker locale="en-gb"
+                      displayFormat={() => ("MM/DD/YYYY")}
                       placeholder="Select End"
                       date={this.state.check_out} // momentPropTypes.momentObj or null
-                      // onDateChange={(date) =>
-                      //   this.setState({ check_out: date })
-                      // } // PropTypes.func.isRequired
+                      onDateChange={(date) => this.setState({ check_out: date })} // PropTypes.func.isRequired
                       focused={this.state.focusedEnd} // PropTypes.bool
-                      onFocusChange={({ focused }) =>
-                        this.setState({ focusedEnd: focused })
-                      } // PropTypes.func.isRequired
+                      onFocusChange={({ focused }) => this.setState({ focusedEnd: focused }) } // PropTypes.func.isRequired
                       id="end" // PropTypes.string.isRequired,
                       verticalSpacing={0}
                       isDayHighlighted={(day) => this.highlighted(day)}
@@ -127,7 +123,6 @@ class BookingForm extends React.Component {
                       noBorder={true}
                       hideKeyboardShortcutsPanel={true}
                       onDateChange={date => this.handlePrice(date)}
-
                     />
                   </div>
                 </div>
