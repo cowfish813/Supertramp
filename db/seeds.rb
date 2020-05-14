@@ -135,7 +135,21 @@ f6 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_101074207
 l6.photo.attach(io: f6, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
 
 
-
-
+# give new names/etc
+l7 = Listing.create!(
+    name: 'Skyrim',
+    on_arrival: 'walk 1000 miles more',
+    description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+    cancellation_policy: 'vanessa carlton',
+    capacity: 2,
+    country: "Hyrule",
+    minimum_nights: 1,
+    price: 1000,
+    lat: 40.50039,
+    lng: 29.22590,
+    host_id: u1.id
+)
+f7 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+l7.photo.attach(io: f7, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
 
 

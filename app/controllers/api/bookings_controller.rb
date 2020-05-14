@@ -3,7 +3,6 @@ class Api::BookingsController < ApplicationController
     before_action :require_logged_in
 
     def index
-        # debugger
         if booking_params[:user_id]
             @bookings = User.find(booking_params[:user_id]).bookings.includes(:listing)
         else
@@ -30,7 +29,7 @@ class Api::BookingsController < ApplicationController
     end
 
     def update
-        # debugger
+        debugger
         @booking = Booking.find(params[:id])
         if @booking.update(booking_params)
             render :show
@@ -44,7 +43,6 @@ class Api::BookingsController < ApplicationController
         if @booking.destroy && current_user.id == @booking.user_id
             render :show
         else
-            # debugger
             render json: @booking.errors.full_messages, status: 422
         end
     end

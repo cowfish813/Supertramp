@@ -31,7 +31,6 @@ class ListMapIndex extends React.Component {
 
     componentDidMount() {
         window.scrollTo(0, 0);
-        // debugger
         this.mapOptions = {
             center: {
                 lat: this.state.lat,
@@ -51,7 +50,6 @@ class ListMapIndex extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.mapLocation.lat !== this.props.mapLocation.lat || nextProps.mapLocation.lng !== this.props.mapLocation.lng ) {
-            // debugger
             this.setState({
               lat: nextProps.mapLocation.lat,
               lng: nextProps.mapLocation.lng,

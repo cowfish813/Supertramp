@@ -18,7 +18,7 @@ class BookingItem extends React.Component {
     handleClick(e) {
         e.preventDefault()
         this.props.deleteBooking(this.props.booking.id).then(this.props.fetchBookings())
-        // this.props.fetchBookings()
+        this.props.fetchBookings()
 
 
             //.then(fetchbookings) 
@@ -40,7 +40,7 @@ class BookingItem extends React.Component {
         // });
     }
     
-    componentDidUpdate() {
+    componentDidUpdate(prevProps, nextProps) {
 
     }
 

@@ -5,6 +5,7 @@ import BookingItem from '../bookings/booking_index_item';
 class User extends React.Component {
     constructor(props) {
         super(props)
+        debugger
         this.state = {
             count: this.props.bookings.length
             //index of bookings in state
@@ -44,8 +45,6 @@ class User extends React.Component {
         if ((this.props.bookings).length < 1) {
             return (
                 <div className="userBody">
-
-                    {/* left user panel */}
                     <div className="left_panel">
                         <div className="bioPanel">
                             {this.props.user.first_name + " " + this.props.user.last_name}
@@ -63,7 +62,6 @@ class User extends React.Component {
                     </div>
 
                     <div className="middleBody">
-                        {/* 2 more divs, trips counts and review counts */}
                         <div className="bookings">
                         </div>
                         <div className="reviews-comp">
@@ -79,8 +77,6 @@ class User extends React.Component {
 
         return (
             <div className="userBody">
-
-                {/* left user panel */}
                 <div className="left_panel">
                     <div className="bioPanel">
                         {this.props.user.first_name + " " + this.props.user.last_name}
@@ -98,7 +94,6 @@ class User extends React.Component {
                 </div>
 
                 <div className="middleBody">
-                    {/* 2 more divs, trips counts and review counts */}
                     <div className="bookings">
                         {this.props.bookings.map((booking, index) => (
                             <BookingItem 

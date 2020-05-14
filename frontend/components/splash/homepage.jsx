@@ -22,6 +22,7 @@ class Homepage extends React.Component {
     }
 
     handleTile3(e) {
+        //yosemite
         e.preventDefault();
         this.props.history.push({
             pathname: `/search/37.8032783,-119.5393594`,
@@ -32,6 +33,7 @@ class Homepage extends React.Component {
     }
 
     handleTile2(e) {
+        //
         e.preventDefault();
         this.props.history.push({
             pathname: `/search/37.8032783,-119.5393594`,
@@ -42,6 +44,7 @@ class Homepage extends React.Component {
     }
     
     handleTile1(e) {
+        //
         e.preventDefault();
         this.props.history.push({
             pathname: `/search/37.8032783,-119.5393594`,

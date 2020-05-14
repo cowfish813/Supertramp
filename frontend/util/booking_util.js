@@ -19,7 +19,6 @@ export const createBooking = booking => (
         data: {booking}
     })
 );
-// debugger
 export const deleteBooking = bookingId => (
     $.ajax({
         url: `/api/bookings/${bookingId}`,

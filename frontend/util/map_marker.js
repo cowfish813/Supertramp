@@ -1,5 +1,5 @@
 import React from 'react'
-// import ReactDOMServer from "react-dom/server";
+import ReactDOMServer from "react-dom/server";
 
 // const mapIcon = new google.maps.MarkerImage(
 //   "https://supertramp-mast.s3-us-west-1.amazonaws.com/hipcamp%2Bgoogle%2Bmap%2Bmarker.png",
@@ -30,12 +30,15 @@ class MarkerManager  {
     }
 
     createMarkerFromListing(listing) {
-
         const infoBoxDetail = (
             <div id="infoBox">
-                <img src={listing.photoUrls}></img>
-                <div id="infoDetail">{listing.name}</div>
-                <div id="infoDetail">{listing.price}</div>
+                <div className="">
+                    <img className="infoPic" src={listing.photoUrls}></img>
+                </div>
+                <div className="infoDetails">
+                    <div className="infoDetailName">{listing.name}</div>
+                    <div className="infoDetailPrice">${listing.price}/day</div>
+                </div>
             </div>
         )
 
@@ -44,6 +47,7 @@ class MarkerManager  {
         })
         
         const position = new google.maps.LatLng( listing.lat, listing.lng);
+
         const marker = new google.maps.Marker({
             position,
             map: this.map,
@@ -53,9 +57,15 @@ class MarkerManager  {
         marker.addListener('click', () => this.handleClick(listing));
         this.markers[marker.listingId] = marker;
 
-        // marker.addListener('mouseover', () => {
-        //     const info = ReactDomServer.renderToString(infoWindowContent)
-        // })
+        marker.addListener('mouseover', () => {
+            const info = ReactDOMServer.renderToString(infoBoxDetail)
+            infoBox.setContent(info)
+            infoBox.open(this.map, marker)
+        })
+
+        marker.addListener('mouseout', () => {
+            infoBox.close();
+        })
     }
 
     removeMarker(marker) {

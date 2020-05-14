@@ -1,0 +1,28 @@
+#infoBox {
+    display: flex;
+    padding: .5rem;
+}
+
+.infoPic {
+    width: 10vw;
+    height: 15vh;
+    // height: 100%;
+    // width: 100%;
+    object-fit: contain;
+}
+
+.infoDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.infoDetailName {
+    font-weight: bolder;
+    font-size: 20px;
+    margin-bottom: 1rem;
+}
+
+.infoDetailPrice {
+    font-size: 15px;
+}
