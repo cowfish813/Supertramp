@@ -30,7 +30,6 @@ class BookingIndexItem extends React.Component {
 
     handleClick(e) {
         e.preventDefault()
-        debugger
         this.props.deleteBooking(this.props.booking.id)
         this.props.deleteItemComponent(this.props.booking.id)
         // .then(this.props.fetchBookings())

@@ -14,12 +14,15 @@ class BookingIndex extends React.Component {
     }
 
     deleteItemComponent(id) {
+        console.log(this.state, "before")
         let that = this;
         this.setState(() => {
         return {
             bookings: that.state.bookings.filter((booking => booking.id !== id))
         }}
         );
+
+        console.log(this.state, "after")
     }
 
     componentDidMount() {
