@@ -11,6 +11,7 @@ require 'open-uri'
 
 User.delete_all
 Listing.delete_all
+Booking.delete_all
 
 u2 = User.create!(
     username: 'demo',

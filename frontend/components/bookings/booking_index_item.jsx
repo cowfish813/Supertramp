@@ -5,38 +5,23 @@ import { Link } from 'react-router-dom';
 class BookingIndexItem extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            bookings: this.props.bookings
-        };
         
         this.handleClick = this.handleClick.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        // this.deleteItemComponent = this.deleteItemComponent.bind(this)
-
     }
-
-    // deleteItemComponent(id) {
-    //     let that = this
-    //     this.setState((prevState, props) => {
-    //         // debugger
-    //         console.log(prevProps, "pp")
-    //         console.log(props, "p")
-    //     return {
-    //         bookings: that.state.bookings.filter((booking => booking.id !== id))
-    //     }}
-    //     )
-    //     console.log(this.state, "after bi")
-    // }
 
     handleClick(e) {
         e.preventDefault()
+        // debugger
         this.props.deleteBooking(this.props.booking.id)
-        this.props.deleteItemComponent(this.props.booking.id)
+        .then(()=> this.props.deleteItemComponent(this.props.booking.id))
+
+
+
         // .then(this.props.fetchBookings())
         // this.props.fetchBookings()
             //.then(fetchbookings) 
             // .then(setState) *for local
-            // window.location.reload(false); //reloads after delete. prefer re-render
     }
 
     handleChange() {
@@ -97,7 +82,7 @@ class BookingIndexItem extends React.Component {
 
                         <button onClick={this.handleClick} className="bookingCancel usershowbutton">Cancel</button>
                     {/* <button onClick={this.handleChange} className="bookingChange">Change Booking</button> */}
-                        <button onClick={() => this.props.openModal('Booking')} className="bookingChange usershowbutton">Change Booking</button>
+                        {/* <button onClick={() => this.props.openModal('Booking')} className="bookingChange usershowbutton">Change Booking</button> */}
                     </div>
                 </div>
             </div>
