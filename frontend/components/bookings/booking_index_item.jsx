@@ -8,21 +8,30 @@ class BookingIndexItem extends React.Component {
         this.state = {
             bookings: this.props.bookings
         };
-        // debugger
         
         this.handleClick = this.handleClick.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        
+        this.deleteItemComponent = this.deleteItemComponent.bind(this)
+
+    }
+
+    deleteItemComponent(id) {
+        debugger
+        console.log(this.state, "before bi")
+        let that = this
+        console.log(that, "that")
+        this.setState((prevState, props) => {
+            debugger
+        return {
+            bookings: that.state.bookings.filter((booking => booking.id !== id))
+        }}
+        )
+        console.log(this.state, "after bi")
     }
 
     handleClick(e) {
         e.preventDefault()
-        // debugger
-        console.log(this.state)
-        this.setState({
-            bookings: this.state.bookings.filter( (booking => booking.id !== this.props.booking.id))
-        })
-        console.log(this.state)
+        this.deleteItemComponent(this.props.booking.id)
         this.props.deleteBooking(this.props.booking.id)
         // .then(this.props.fetchBookings())
         // this.props.fetchBookings()
@@ -37,8 +46,8 @@ class BookingIndexItem extends React.Component {
 
     componentDidMount() {
         window.scrollTo(0, 0);
-        this.props.fetchBookings(this.props.match.params.userId);
-        this.props.fetchListings(this.props.match.params.userId); //eliminates new booking photo error
+        // this.props.fetchBookings(this.props.match.params.userId);
+        // this.props.fetchListings(this.props.match.params.userId); //eliminates new booking photo error
     }
 
     componentWillReceiveProps(prevProps, nextProps) {

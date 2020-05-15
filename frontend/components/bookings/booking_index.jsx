@@ -9,21 +9,31 @@ class BookingIndex extends React.Component {
         this.state = {
             bookings: this.props.bookings
         }
-        // debugger
+
+        // this.deleteItemComponent = this.deleteItemComponent.bind(this)
     }
+
+    // deleteItemComponent(id) {
+
+    //     console.log(this.state, "before bi")
+    //     this.setState({
+    //         bookings: this.state.bookings.filter((booking => booking.id !== id))
+    //     })
+    //     console.log(this.state, "after bi")
+    // }
 
     componentDidMount() {
         // debugger
         this.setState({
-            bookings: this.props.booking
+            bookings: this.props.bookings
         })
     }
 
     componentWillReceiveProps(prevProps, nextProps) {
         // debugger
-        this.setState({
-            bookings: prevProps.booking
-        })
+        // this.setState({
+        //     bookings: prevProps.booking
+        // })
     }
 
 
@@ -41,6 +51,7 @@ class BookingIndex extends React.Component {
                             fetchBookings={this.props.fetchBookings}
                             fetchListings={this.props.fetchListings}
                             bookings={this.state.bookings}
+                            // deleteItemComponent={this.deleteItemComponent}
                         />
                     ))}
                 </div>

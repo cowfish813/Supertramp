@@ -8,12 +8,12 @@ class User extends React.Component {
         // debugger
         this.state = {
             count: this.props.bookings.length
-            
+
             //index of bookings in state
             //bookings alreadyt fetched, call setstate and puit them on local state
             //write method in this comp that sets stat on 
                 //take in argument a booking to be removed
-                //remove booking from state
+                //remove booking from state //i can do that from the window but not on my code...
                 //setstate on remaining bookings
                 //..bind(this) in constructor
                     //.pass entire function as a prop to booking item
@@ -28,9 +28,9 @@ class User extends React.Component {
         window.scrollTo(0, 0);
         this.props.fetchBookings(this.props.match.params.userId);
         this.props.fetchListings(this.props.match.params.userId); //eliminates new booking photo error
-        this.setState({
-            count: this.props.bookings.length
-        });
+        // this.setState({
+        //     count: this.props.bookings
+        // });
     }
 
     componentWillReceiveProps(prevProps, nextProps) {
