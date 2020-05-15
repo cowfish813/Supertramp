@@ -11,28 +11,28 @@ class BookingIndexItem extends React.Component {
         
         this.handleClick = this.handleClick.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        this.deleteItemComponent = this.deleteItemComponent.bind(this)
+        // this.deleteItemComponent = this.deleteItemComponent.bind(this)
 
     }
 
-    deleteItemComponent(id) {
-        debugger
-        console.log(this.state, "before bi")
-        let that = this
-        console.log(that, "that")
-        this.setState((prevState, props) => {
-            debugger
-        return {
-            bookings: that.state.bookings.filter((booking => booking.id !== id))
-        }}
-        )
-        console.log(this.state, "after bi")
-    }
+    // deleteItemComponent(id) {
+    //     let that = this
+    //     this.setState((prevState, props) => {
+    //         // debugger
+    //         console.log(prevProps, "pp")
+    //         console.log(props, "p")
+    //     return {
+    //         bookings: that.state.bookings.filter((booking => booking.id !== id))
+    //     }}
+    //     )
+    //     console.log(this.state, "after bi")
+    // }
 
     handleClick(e) {
         e.preventDefault()
-        this.deleteItemComponent(this.props.booking.id)
+        debugger
         this.props.deleteBooking(this.props.booking.id)
+        this.props.deleteItemComponent(this.props.booking.id)
         // .then(this.props.fetchBookings())
         // this.props.fetchBookings()
             //.then(fetchbookings) 
@@ -46,8 +46,7 @@ class BookingIndexItem extends React.Component {
 
     componentDidMount() {
         window.scrollTo(0, 0);
-        // this.props.fetchBookings(this.props.match.params.userId);
-        // this.props.fetchListings(this.props.match.params.userId); //eliminates new booking photo error
+
     }
 
     componentWillReceiveProps(prevProps, nextProps) {

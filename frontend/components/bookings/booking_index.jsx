@@ -1,5 +1,5 @@
 import React from 'react';
-import BookingIndexItem from './booking_index_item'
+import BookingIndexItem from './booking_index_item';
 
 
 class BookingIndex extends React.Component {
@@ -10,17 +10,17 @@ class BookingIndex extends React.Component {
             bookings: this.props.bookings
         }
 
-        // this.deleteItemComponent = this.deleteItemComponent.bind(this)
+        this.deleteItemComponent = this.deleteItemComponent.bind(this);
     }
 
-    // deleteItemComponent(id) {
-
-    //     console.log(this.state, "before bi")
-    //     this.setState({
-    //         bookings: this.state.bookings.filter((booking => booking.id !== id))
-    //     })
-    //     console.log(this.state, "after bi")
-    // }
+    deleteItemComponent(id) {
+        let that = this;
+        this.setState(() => {
+        return {
+            bookings: that.state.bookings.filter((booking => booking.id !== id))
+        }}
+        );
+    }
 
     componentDidMount() {
         // debugger
@@ -51,7 +51,7 @@ class BookingIndex extends React.Component {
                             fetchBookings={this.props.fetchBookings}
                             fetchListings={this.props.fetchListings}
                             bookings={this.state.bookings}
-                            // deleteItemComponent={this.deleteItemComponent}
+                            deleteItemComponent={this.deleteItemComponent}
                         />
                     ))}
                 </div>
