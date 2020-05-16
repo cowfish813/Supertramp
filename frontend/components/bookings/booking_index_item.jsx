@@ -12,12 +12,13 @@ class BookingIndexItem extends React.Component {
 
     handleClick(e) {
         e.preventDefault()
-        // debugger
         this.props.deleteBooking(this.props.booking.id)
         .then(()=> this.props.deleteItemComponent(this.props.booking.id))
 
+        // this.props.deleteItemComponent(this.props.booking.id)
+        // .then(()=> this.props.deleteBooking(this.props.booking.id))
 
-
+        
         // .then(this.props.fetchBookings())
         // this.props.fetchBookings()
             //.then(fetchbookings) 
@@ -82,7 +83,7 @@ class BookingIndexItem extends React.Component {
 
                         <button onClick={this.handleClick} className="bookingCancel usershowbutton">Cancel</button>
                     {/* <button onClick={this.handleChange} className="bookingChange">Change Booking</button> */}
-                        {/* <button onClick={() => this.props.openModal('Booking')} className="bookingChange usershowbutton">Change Booking</button> */}
+                        <button onClick={() => this.props.openModal('Booking')} className="bookingChange usershowbutton">Change Booking</button>
                     </div>
                 </div>
             </div>

@@ -96,21 +96,6 @@ class User extends React.Component {
                     <BookingItem 
                     user={this.props.user}
                     />
-                    {/* <div className="bookings">
-                        {this.props.bookings.map((booking, index) => (
-                            <BookingItem 
-                            deleteBooking={ this.props.deleteBooking }
-                            booking={ booking }
-                            key={ booking.id }
-                            current_user={ this.props.user.id }
-                            bookings={ this.props.bookings }
-                            listings ={ this.props.listings }
-                            fetchBookings={this.props.fetchBookings}
-                            openModal={this.props.openModal}
-                            count={this.state.count}
-                            />
-                        ))}
-                    </div> */}
                     <div className="reviews-comp">
                         {/* bonus feature. will eventually be review item index */}
                     </div>

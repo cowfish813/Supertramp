@@ -10,8 +10,7 @@ class BookingIndex extends React.Component {
         this.state = {
             bookings: this.props.bookings
         }
-        // debugger
-        console.log(this.state)
+
         this.deleteItemComponent = this.deleteItemComponent.bind(this);
     }
 
