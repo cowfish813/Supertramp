@@ -96,6 +96,7 @@ class User extends React.Component {
                     <BookingItem 
                     user={this.props.user}
                     />
+
                     <div className="reviews-comp">
                         {/* bonus feature. will eventually be review item index */}
                     </div>

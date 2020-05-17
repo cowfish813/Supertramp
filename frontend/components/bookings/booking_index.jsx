@@ -15,22 +15,22 @@ class BookingIndex extends React.Component {
     }
 
     deleteItemComponent(id) {
-        console.log(this.state, "before")
-        const updatedbooking = this.state.bookings.filter((booking => booking.id !== id))
-        debugger
+        // console.log(this.state, "before")
+        const updatedbooking = this.state.bookings.filter((booking => booking.id !== id));
+        // debugger
         this.setState({
             bookings: updatedbooking
-            })
+            });
 
-        console.log(this.state, "after")
+        // console.log(this.state, "after")
     }
 
     componentDidMount() {
         // debugger
         // console.log(this.state)
-        // this.setState({
-        //     bookings: this.props.bookings
-        // })
+        this.setState({
+            bookings: this.props.bookings
+        })
     }
 
 

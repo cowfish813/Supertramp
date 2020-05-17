@@ -5,9 +5,11 @@ import { patchBooking } from "../../actions/booking_actions/booking_action";
 
 
 const mstp = (state, ownProps) => {
+  debugger
   return ({
     currentUser: state.entities.users[state.session.currentUser],
-    booking: state.entities.bookings[ownProps.match.params.bookingId]
+    booking: state.entities.bookings[ownProps.match.params.bookingId],
+    list: state.entities.listings[ownProps.match.params.listingId]
   });
 };
 
