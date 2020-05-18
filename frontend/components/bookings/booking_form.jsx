@@ -32,7 +32,7 @@ class BookingForm extends React.Component {
 
     handlePrice(date) {
         const mseconds = Date.parse(date) - Date.parse(this.state.check_in);
-        const days = mseconds / (1000 * 60 * 60 * 24) * this.props.list.price
+        const days = mseconds / (1000 * 60 * 60 * 24) * this.props.list.price;
         this.setState({
           price: days,
           check_out: date

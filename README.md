@@ -42,13 +42,21 @@ Google Maps
 
 React Dates
 * Easy to use calender entries
-
+`````````````````````````````````
+    handlePrice(date) {
+        const mseconds = Date.parse(date) - Date.parse(this.state.check_in);
+        const days = mseconds / (1000 * 60 * 60 * 24) * this.props.list.price;
+        this.setState({
+          price: days
+        });
+    }
+`````````````````````````````````
 ![Calendar entries](https://supertramp-mast.s3-us-west-1.amazonaws.com/reactdates+calendar.png)
 
 
 Future Direction
 ---------
-* style and design all other pages
+* Full CRUD operations on Reviews feature
 * Users can message host
 *sanitized quesrs to avoid injection attacks
 
