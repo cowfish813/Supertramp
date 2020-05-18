@@ -3,7 +3,7 @@
 SuperTramp is a HipCamp clone web app that allows users to rent out various available locations and share their experiences
 
 
-##Technologies
+Technologies
 --------------
 * Ruby on Rails
 * React and Redux
@@ -13,20 +13,20 @@ SuperTramp is a HipCamp clone web app that allows users to rent out various avai
 * HTML/5
 * CSS3/SCSS
 
-##Features
+Features
 --------------
-###User Authentication
+User Authentication
 User Auth was created using BCrypt on rails backend
 * User can Sign Up/Sign In/ Sign Out
 * Users may Demo the application
 * Certain features are available specifically to User including reservations and reviews.
 
-###Animations
+Animations
 * Error messages temporarily display before sliding off screen
 * Sign In/Sign Up Modals slide into place
 
 
-##Future Direction
+Future Direction
 ---------
 * Search functionality
 * Add additional images to AWS for 1 listing
