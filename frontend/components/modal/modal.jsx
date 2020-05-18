@@ -26,11 +26,17 @@ function Modal({ errors, modal, closeModal}) {
             component = <SignupFormContainer />
             break;
         case 'Booking':
-            component = <BookingUpdateForm />
+            component = <BookingUpdateForm 
+            
+                        />
+
             break;
         default:
             return null
     };
+    //currently passing in a string that opens up forms
+    //find a way to pass in listing ID
+    //
 
 
 

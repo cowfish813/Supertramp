@@ -14,9 +14,6 @@ class BookingUpdateForm extends React.Component {
     super(props);
 
     this.state = {
-      user_id: null,
-      listing_id: null,
-      listing_name: null,
       price: null,
       check_in: null,
       check_out: null,
@@ -31,13 +28,14 @@ class BookingUpdateForm extends React.Component {
     this.handlePrice = this.handlePrice.bind(this);
   }
 
-  handlePrice(e) {
-    e.preventDefault();
+  handlePrice(date) {
+    
     const mseconds =
       Date.parse(this.state.check_out) - Date.parse(this.state.check_in);
     const days = (mseconds / (1000 * 60 * 60 * 24)) * this.props.list.price;
     this.setState({
       price: days,
+      check_out: date
     });
   }
 
@@ -59,23 +57,97 @@ class BookingUpdateForm extends React.Component {
       const booking = {
         check_in: this.state.check_in.format("YYYY/MM/DD"),
         check_out: this.state.check_out.format("YYYY/MM/DD"),
-        listing_id: this.props.list.id,
         capacity: this.state.capacity,
-        user_id: this.props.currentUser.id,
-        host_id: this.props.list.host_id,
-        listing_name: this.props.list.name,
         price: this.state.price,
       };
       this.props
-        .createBooking(booking)
+        .patchBooking(booking)
         .then(this.props.history.push(`/users/${this.props.currentUser.id}`));
     }
   }
 
   render() {
+    const listprice = this.props.list ? this.props.list.price : ""
+    const capacity = this.props.list ? this.props.list.capacity : ""
+
     return (
       <div className="widget-update-container">
-            TESTING
+        <div className="widget-container">
+          <form className="wrapper" onSubmit={this.handleSubmit}>
+            <div className="price-wrapper">
+              <div className="price">
+                ${listprice}
+                <p>per night</p>
+              </div>
+            </div>
+            <div className="dates-and-guest-content">
+              <div className="col checkin">
+                <div className="label">
+                  Check in
+                    <SingleDatePicker
+                    displayFormat={() => ("MM/DD/YYYY")}
+                    placeholder="Select Start"
+                    date={this.state.check_in} // momentPropTypes.momentObj or null
+                    onDateChange={(date) => this.setState({ check_in: date })} // PropTypes.func.isRequired
+                    focused={this.state.focusedStart} // PropTypes.bool
+                    onFocusChange={({ focused }) => this.setState({ focusedStart: focused })} // PropTypes.func.isRequired
+                    id="start" // PropTypes.string.isRequired,
+                    verticalSpacing={0}
+                    isDayHighlighted={(day) => this.highlighted(day)}
+                    numberOfMonths={1}
+                    daySize={36}
+                    noBorder={true}
+                    hideKeyboardShortcutsPanel={true}
+                  />
+                </div>
+              </div>
+              <div className="col checkout">
+                <div className="label">
+                  Check out
+                    <SingleDatePicker locale="en-gb"
+                    displayFormat={() => ("MM/DD/YYYY")}
+                    placeholder="Select End"
+                    date={this.state.check_out} // momentPropTypes.momentObj or null
+                    onDateChange={(date) => this.setState({ check_out: date })} // PropTypes.func.isRequired
+                    focused={this.state.focusedEnd} // PropTypes.bool
+                    onFocusChange={({ focused }) => this.setState({ focusedEnd: focused })} // PropTypes.func.isRequired
+                    id="end" // PropTypes.string.isRequired,
+                    verticalSpacing={0}
+                    isDayHighlighted={(day) => this.highlighted(day)}
+                    numberOfMonths={1}
+                    daySize={36}
+                    noBorder={true}
+                    hideKeyboardShortcutsPanel={true}
+                    onDateChange={date => this.handlePrice(date)}
+                  />
+                </div>
+              </div>
+              <div className="col capacity">
+                <div className="label">
+                  Guests
+                    <div className="SingleDatePicker SingleDatePicker_1">
+                    <div className="SingleDatePickerInput SingleDatePickerInput_1">
+                      <div className="DateInput DateInput_1">
+                        <input
+                          type="number"
+                          name="capacity"
+                          className="DateInput_input DateInput_input_1"
+                          placeholder="1"
+                          value={this.state.capacity}
+                          id="capacity_input"
+                          min="1"
+                          max={capacity}
+                          onChange={this.handleCapacity}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button className="booking-button">Request to Book</button>
+          </form>
+        </div>
       </div>
     );
   }

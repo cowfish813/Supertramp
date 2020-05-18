@@ -15,14 +15,11 @@ class BookingIndex extends React.Component {
     }
 
     deleteItemComponent(id) {
-        // console.log(this.state, "before")
-        const updatedbooking = this.state.bookings.filter((booking => booking.id !== id));
-        // debugger
+        const updatedbooking = 
+            this.state.bookings.filter((booking => booking.id !== id));
         this.setState({
             bookings: updatedbooking
             });
-
-        // console.log(this.state, "after")
     }
 
     componentDidMount() {
@@ -38,10 +35,9 @@ class BookingIndex extends React.Component {
         if ((this.props.bookings).length < 1) {
             return <div>Get outside!</div>
         } else {
-
             return (
                     <div className="bookings">
-                        {this.props.bookings.map((booking, i) => (
+                        {this.state.bookings.map((booking, i) => (
                             <BookingIndexItem
                                 deleteBooking={this.props.deleteBooking}
                                 booking={booking}
@@ -50,6 +46,7 @@ class BookingIndex extends React.Component {
                                 listings={this.props.listings}
                                 bookings={this.state.bookings}
                                 deleteItemComponent={this.deleteItemComponent}
+                                openModal={this.props.openModal}
                                 // bookings={this.props.bookings}
                                 // fetchBookings={this.props.fetchBookings}
                                 // fetchListings={this.props.fetchListings}

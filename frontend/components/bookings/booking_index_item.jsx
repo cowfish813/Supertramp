@@ -14,15 +14,6 @@ class BookingIndexItem extends React.Component {
         e.preventDefault()
         this.props.deleteBooking(this.props.booking.id)
         .then(()=> this.props.deleteItemComponent(this.props.booking.id))
-
-        // this.props.deleteItemComponent(this.props.booking.id)
-        // .then(()=> this.props.deleteBooking(this.props.booking.id))
-
-        
-        // .then(this.props.fetchBookings())
-        // this.props.fetchBookings()
-            //.then(fetchbookings) 
-            // .then(setState) *for local
     }
 
     handleChange() {
@@ -49,6 +40,7 @@ class BookingIndexItem extends React.Component {
         // console.log(nextProps, "bii")
         // debugger
     }
+
 
 
 
@@ -82,7 +74,6 @@ class BookingIndexItem extends React.Component {
                     <div className="bookings_item_cancel">
 
                         <button onClick={this.handleClick} className="bookingCancel usershowbutton">Cancel</button>
-                    {/* <button onClick={this.handleChange} className="bookingChange">Change Booking</button> */}
                         <button onClick={() => this.props.openModal('Booking')} className="bookingChange usershowbutton">Change Booking</button>
                     </div>
                 </div>

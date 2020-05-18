@@ -2,6 +2,7 @@ import BookingUpdateForm from './booking_update_form'
 import { connect } from "react-redux";
 import { openModal, closeModal } from "../../actions/modal_actions/modal_actions";
 import { patchBooking } from "../../actions/booking_actions/booking_action";
+import { withRouter } from "react-router-dom";
 
 
 const mstp = (state, ownProps) => {
@@ -9,7 +10,7 @@ const mstp = (state, ownProps) => {
   return ({
     currentUser: state.entities.users[state.session.currentUser],
     booking: state.entities.bookings[ownProps.match.params.bookingId],
-    list: state.entities.listings[ownProps.match.params.listingId]
+    list: state.entities.listings[]
   });
 };
 
@@ -19,4 +20,4 @@ const mdtp = (dispatch) => ({
   patchBooking: (booking) => dispatch(patchBooking(booking))
 });
 
-export default connect(mstp, mdtp)(BookingUpdateForm);
+export default withRouter(connect(mstp, mdtp)(BookingUpdateForm));

@@ -94,6 +94,9 @@ User Auth was created using BCrypt on rails backend
     }
 `````````````````````````````````
 
+
+
+
 ### Future Direction
 ---------
 * Full CRUD operations on Reviews feature
