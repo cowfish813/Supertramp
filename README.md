@@ -76,12 +76,12 @@ User Auth was created using BCrypt on rails backend
 
 ![list desc hover](https://supertramp-mast.s3-us-west-1.amazonaws.com/map+hover.png)
 
-## React Dates
+## Dates
 * Easy to use calender entries
 
 ![Calendar entries](https://supertramp-mast.s3-us-west-1.amazonaws.com/reactdates+calendar.png)
 
-* Custom Algorithm allows for component to calculate total price due
+* Custom Algorithm allows for component to calculate total price due and pass information to Rails backend
 `````````````````````````````````
     handlePrice(date) {
         const mseconds = Date.parse(date) - Date.parse(this.state.check_in);
