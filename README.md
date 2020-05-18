@@ -23,11 +23,12 @@ User Auth was created using BCrypt on rails backend
 * Certain features are available specifically to User including reservations and reviews.
 
 ## Animations
-* Error messages temporarily display before sliding off screen
 * Sign In/Sign Up Modals slide into place
 ![Login](https://supertramp-mast.s3-us-west-1.amazonaws.com/login+animation.gif)
 
 ![Signup](https://supertramp-mast.s3-us-west-1.amazonaws.com/signup+animation.gif)
+
+* Predetermined List tiles move upon mouse hover
 
 ## Google Places Autocomplete
 * Completes partial or completed search terms
@@ -95,7 +96,8 @@ User Auth was created using BCrypt on rails backend
 ---------
 * Full CRUD operations on Reviews feature
 * Users can message host
-*sanitized quesrs to avoid injection attacks
+* Users can Host Listings
+* additional filtering options on search results page
 
 
 
