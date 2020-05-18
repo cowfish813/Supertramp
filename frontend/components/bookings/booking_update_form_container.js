@@ -6,11 +6,10 @@ import { withRouter } from "react-router-dom";
 
 
 const mstp = (state, ownProps) => {
-  debugger
   return ({
     currentUser: state.entities.users[state.session.currentUser],
     booking: state.entities.bookings[ownProps.match.params.bookingId],
-    list: state.entities.listings[]
+    // list: state.entities.listings[]
   });
 };
 

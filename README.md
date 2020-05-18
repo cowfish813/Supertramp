@@ -38,7 +38,7 @@ User Auth was created using BCrypt on rails backend
 
 ![long bar](https://supertramp-mast.s3-us-west-1.amazonaws.com/full+search+bar.png)
 
-* Passes props to next component on customized URLs
+* Passes props to next component on unique URLs
 ``````````````````````
     handleSubmit(e) {
         e.preventDefault();

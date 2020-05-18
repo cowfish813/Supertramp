@@ -25,25 +25,6 @@ class BookingIndexItem extends React.Component {
 
     }
 
-    componentWillReceiveProps(prevProps, nextProps) {
-        // debugger
-        // nextprops.booking isn't the one to be removed??
-        // const arr = nextProps.bookings.filter = booking => (booking.id !== nextProps.booking.id)
-        // const arrlength = arr.length
-        // this.setState({
-        //     count: arrlength
-        // });
-    }
-    
-    componentDidUpdate(prevProps, nextProps) {
-        // console.log(prevProps, "bii")
-        // console.log(nextProps, "bii")
-        // debugger
-    }
-
-
-
-
     render () {
         const checkin = new Date(this.props.booking.check_in).toDateString()
         const checkout = new Date(this.props.booking.check_out).toDateString()

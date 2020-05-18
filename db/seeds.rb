@@ -31,7 +31,7 @@ u1 = User.create!(
 
 
 l1 = Listing.create!(
-    name: "Tamriel", 
+    name: "Gondor", 
     description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
     on_arrival: 'call for aid',
     cancellation_policy: 'strict',
@@ -52,7 +52,7 @@ l1.photo.attach(io: f1, filename: '57056162_10107436356788213_428132651852260966
 l2 = Listing.create!(
     name: 'Wild tent',
     description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-    on_arrival: 'key under 3rd wheel',
+    on_arrival: 'jump into tent shortly',
     cancellation_policy: 'yes',
     capacity: 4,
     country: "murica",
@@ -86,7 +86,7 @@ l3.photo.attach(io: f3, filename: '55937490_10107418126272313_211618305162818355
 l4 = Listing.create!(
     name: 'Wild place',
     description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-    on_arrival: 'hike 12 miles',
+    on_arrival: 'hike 2 miles',
     cancellation_policy: 'Lenient',
     capacity: 1,
     country: "murica",
@@ -136,10 +136,9 @@ f6 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_101074207
 l6.photo.attach(io: f6, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
 
 
-# give new names/etc
 l7 = Listing.create!(
     name: 'Sovengarde',
-    on_arrival: 'walk 1000 miles more',
+    on_arrival: 'Battle Alduin',
     description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
     cancellation_policy: 'Defeat Alduin',
     capacity: 2,
@@ -156,7 +155,7 @@ l7.photo.attach(io: f7, filename: '56312133_10107420712439613_248936565180674867
 
 l8 = Listing.create!(
     name: 'Utapau',
-    on_arrival: 'walk 500 miles',
+    on_arrival: 'Find General Grievous, end the Clone Wars',
     description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
     cancellation_policy: 'Proclaimers',
     capacity: 1,
@@ -173,7 +172,7 @@ l8.photo.attach(io: f8, filename: '28828057_10106502756296083_391709551483115630
 
 l9 = Listing.create!(
     name: 'Mustafar',
-    on_arrival: 'walk 500 miles',
+    on_arrival: 'bring water',
     description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
     cancellation_policy: 'Proclaimers',
     capacity: 1,
@@ -185,14 +184,14 @@ l9 = Listing.create!(
     host_id: u1.id
 )
 
-f9 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
-l9.photo.attach(io: f9, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+f9 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n4')
+l9.photo.attach(io: f9, filename: 'n4')
 
 
 l10 = Listing.create!(
     name: 'Naboo',
     description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-    on_arrival: 'hike 12 miles',
+    on_arrival: 'speak Gungan and enter',
     cancellation_policy: 'Lenient',
     capacity: 1,
     country: "murica",
@@ -203,13 +202,13 @@ l10 = Listing.create!(
     host_id: u1.id
 )
 
-f10 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
-l10.photo.attach(io: f10, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+f10 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n3')
+l10.photo.attach(io: f10, filename: 'n3')
 
 l11 = Listing.create!(
     name: 'Kamino',
     description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-    on_arrival: 'key under 3rd wheel',
+    on_arrival: 'Good Soldiers follow Orders',
     cancellation_policy: 'yes',
     capacity: 4,
     country: "murica",
@@ -219,12 +218,12 @@ l11 = Listing.create!(
     lng: 85.390785,
     host_id: u1.id
     )
-f11 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
-l11.photo.attach(io: f11, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+f11 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n2')
+l11.photo.attach(io: f11, filename: 'n2')
 
 l12 = Listing.create!(
     name: 'Whiterun',
-    on_arrival: 'Ask innkeeper for Jarl Balgrif',
+    on_arrival: 'enter main gate',
     description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
     cancellation_policy: 'Lenient',
     capacity: 3,
@@ -235,5 +234,5 @@ l12 = Listing.create!(
     lng: 85.277814
     host_id: u1.id
 )
-f12 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/55937490_10107418126272313_2116183051628183552_n.jpg')
-l12.photo.attach(io: f12, filename: '55937490_10107418126272313_2116183051628183552_n.jpg')
+f12 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
+l12.photo.attach(io: f12, filename: 'n1.jpg')
