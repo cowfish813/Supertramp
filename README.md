@@ -9,7 +9,8 @@ Technologies
 * React and Redux
 * PostgreSQL
 * AWS
-* Google Maps API
+* Google Maps
+* Google Places Autocomplete
 * HTML/5
 * CSS3/SCSS
 
@@ -29,14 +30,21 @@ Animations
 ![Signup](https://supertramp-mast.s3-us-west-1.amazonaws.com/signup+animation.gif)
 
 Google Places Autocomplete
-
+* Completes partial or completed search terms
 ![short bar](https://supertramp-mast.s3-us-west-1.amazonaws.com/Google+places+ac.png)
 
 ![long bar](https://supertramp-mast.s3-us-west-1.amazonaws.com/full+search+bar.png)
 
 Google Maps
+* A short description, via mouse hover, on each map Marker
 
 ![list desc hover](https://supertramp-mast.s3-us-west-1.amazonaws.com/map+hover.png)
+
+React Dates
+* Easy to use calender entries
+
+![Calendar entries](https://supertramp-mast.s3-us-west-1.amazonaws.com/reactdates+calendar.png)
+
 
 Future Direction
 ---------
