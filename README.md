@@ -42,6 +42,10 @@ Google Maps
 
 React Dates
 * Easy to use calender entries
+
+![Calendar entries](https://supertramp-mast.s3-us-west-1.amazonaws.com/reactdates+calendar.png)
+
+* Custom Algorithm allows for component to calculate total price due
 `````````````````````````````````
     handlePrice(date) {
         const mseconds = Date.parse(date) - Date.parse(this.state.check_in);
@@ -51,8 +55,6 @@ React Dates
         });
     }
 `````````````````````````````````
-![Calendar entries](https://supertramp-mast.s3-us-west-1.amazonaws.com/reactdates+calendar.png)
-
 
 Future Direction
 ---------
