@@ -48,7 +48,6 @@ class Search extends React.Component {
 
         let mapLocation;
         let that = this;
-
         autocomplete.addListener('place_changed', () => {
             let address = autocomplete.getPlace().formatted_address;
             let place = autocomplete.getPlace();
@@ -61,9 +60,7 @@ class Search extends React.Component {
                 lat: lat,
                 lng: lng
             });
-        });
-
-        
+        });   
     }
 
     render () {

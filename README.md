@@ -35,6 +35,41 @@ Google Places Autocomplete
 
 ![long bar](https://supertramp-mast.s3-us-west-1.amazonaws.com/full+search+bar.png)
 
+* Passes props to next component on customized URLs
+``````````````````````
+    handleSubmit(e) {
+        e.preventDefault();
+
+        this.props.receiveLocation(this.state);
+        this.props.history.push({
+            pathname: `/search/${this.state.lat},${this.state.lng}`,
+            state: this.state
+        });
+    }
+
+    componentDidMount() {
+        let input = document.getElementById('splash_search');
+        let autocomplete = new google.maps.places.Autocomplete(input);
+
+        let mapLocation;
+        let that = this;
+        autocomplete.addListener('place_changed', () => {
+            let address = autocomplete.getPlace().formatted_address;
+            let place = autocomplete.getPlace();
+
+            let lat = place.geometry.location.lat();
+            let lng = place.geometry.location.lng();
+            mapLocation = address ? address : autocomplete.getPlace().name;
+            that.setState({
+                mapLocation: autocomplete.getPlace().name,
+                lat: lat,
+                lng: lng
+            });
+        });   
+    }
+``````````````````````
+
+
 Google Maps
 * A short description, via mouse hover, on each map Marker
 
