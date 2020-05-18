@@ -47,9 +47,6 @@ class BookingIndex extends React.Component {
                                 bookings={this.state.bookings}
                                 deleteItemComponent={this.deleteItemComponent}
                                 openModal={this.props.openModal}
-                                // bookings={this.props.bookings}
-                                // fetchBookings={this.props.fetchBookings}
-                                // fetchListings={this.props.fetchListings}
                             />
                         ))}
                     </div>

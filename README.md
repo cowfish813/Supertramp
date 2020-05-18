@@ -3,6 +3,7 @@
 SuperTramp is a HipCamp clone web app that allows users to rent out various available locations and share their experiences
 
 [Live Link](https://supertrampapp.herokuapp.com/)
+![Intro](https://supertramp-mast.s3-us-west-1.amazonaws.com/intro.png)
 
 Technologies
 --------------
