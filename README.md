@@ -25,13 +25,17 @@ Animations
 * Error messages temporarily display before sliding off screen
 * Sign In/Sign Up Modals slide into place
 ![Login](https://supertramp-mast.s3-us-west-1.amazonaws.com/login+animation.gif)
+
 ![Signup](https://supertramp-mast.s3-us-west-1.amazonaws.com/signup+animation.gif)
 
 Google Places Autocomplete
+
 ![short bar](https://supertramp-mast.s3-us-west-1.amazonaws.com/Google+places+ac.png)
+
 ![long bar](https://supertramp-mast.s3-us-west-1.amazonaws.com/full+search+bar.png)
 
 Google Maps
+
 ![list desc hover](https://supertramp-mast.s3-us-west-1.amazonaws.com/map+hover.png)
 
 Future Direction
