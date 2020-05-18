@@ -14,9 +14,9 @@ Technologies
 * HTML/5
 * CSS3/SCSS
 
-## Features
+### Features
 --------------
-User Authentication
+## User Authentication
 User Auth was created using BCrypt on rails backend
 * User can Sign Up/Sign In/ Sign Out
 * Users may Demo the application
@@ -91,7 +91,7 @@ User Auth was created using BCrypt on rails backend
     }
 `````````````````````````````````
 
-## Future Direction
+### Future Direction
 ---------
 * Full CRUD operations on Reviews feature
 * Users can message host
