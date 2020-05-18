@@ -14,7 +14,7 @@ Technologies
 * HTML/5
 * CSS3/SCSS
 
-Features
+## Features
 --------------
 User Authentication
 User Auth was created using BCrypt on rails backend
@@ -22,14 +22,14 @@ User Auth was created using BCrypt on rails backend
 * Users may Demo the application
 * Certain features are available specifically to User including reservations and reviews.
 
-Animations
+## Animations
 * Error messages temporarily display before sliding off screen
 * Sign In/Sign Up Modals slide into place
 ![Login](https://supertramp-mast.s3-us-west-1.amazonaws.com/login+animation.gif)
 
 ![Signup](https://supertramp-mast.s3-us-west-1.amazonaws.com/signup+animation.gif)
 
-Google Places Autocomplete
+## Google Places Autocomplete
 * Completes partial or completed search terms
 ![short bar](https://supertramp-mast.s3-us-west-1.amazonaws.com/Google+places+ac.png)
 
@@ -70,12 +70,12 @@ Google Places Autocomplete
 ``````````````````````
 
 
-Google Maps
+## Google Maps
 * A short description, via mouse hover, on each map Marker
 
 ![list desc hover](https://supertramp-mast.s3-us-west-1.amazonaws.com/map+hover.png)
 
-React Dates
+## React Dates
 * Easy to use calender entries
 
 ![Calendar entries](https://supertramp-mast.s3-us-west-1.amazonaws.com/reactdates+calendar.png)
@@ -91,7 +91,7 @@ React Dates
     }
 `````````````````````````````````
 
-Future Direction
+## Future Direction
 ---------
 * Full CRUD operations on Reviews feature
 * Users can message host
