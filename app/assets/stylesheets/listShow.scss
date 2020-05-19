@@ -39,9 +39,10 @@
     // border: red 1px solid;
 }
 .hostpic {
-    width: 3vw;
-    height: 5vw;
+    width: auto;
+    max-height: 5vw;
     margin-right: 3rem;
+
     // height: 9vh;
 }
 .host_by {
