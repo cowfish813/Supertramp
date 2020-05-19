@@ -18,7 +18,7 @@ function Modal({ errors, modal, closeModal}) {
     }
 
     let component
-    switch (modal) {
+    switch (modal) { //modal.formType
         case 'Login':
             component = <LoginFormContainer />
             break;
@@ -44,13 +44,10 @@ function Modal({ errors, modal, closeModal}) {
                 <div className="modal-child" onClick={e => e.stopPropagation()}>
                     { component } 
                 </div>
-
                 <div >
                 { errorModal }
                 </div>
-                
             </div>
-
         </div>
     );
 }

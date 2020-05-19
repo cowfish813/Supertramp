@@ -66,7 +66,7 @@ class Search extends React.Component {
     render () {
 
         return (
-            <form className="searchWrapper searchIndex" onSubmit={this.handleSubmit}>
+            <form className="searchWrapper searchIndex" onSubmit={this.handleSubmit} autocomplete="on">
                 <div className="superSearch">
 
                     <div className="searchBar">

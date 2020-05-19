@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import { clearErrors } from '../../actions/session_actions';
+
 
 
 class Session extends React.Component {

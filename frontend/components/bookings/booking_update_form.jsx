@@ -144,7 +144,7 @@ class BookingUpdateForm extends React.Component {
                 </div>
               </div>
             </div>
-            <button className="booking-button">Request to Book</button>
+            <button className="booking-button">Update Booking</button>
           </form>
         </div>
       </div>
