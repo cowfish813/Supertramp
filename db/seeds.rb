@@ -29,6 +29,22 @@ u1 = User.create!(
     first_name: 'Nick'
 )
 
+u3 = User.create!(
+    username: 'Test',
+    password: '123456',
+    email: 'test@gmail.com',
+    last_name: 'Case',
+    first_name: 'Test'
+)
+
+u4 = User.create!(
+    username: 'Rex',
+    password: '123456',
+    email: 'rex@gmail.com',
+    last_name: 'Fett',
+    first_name: 'Rex'
+)
+
 
 l1 = Listing.create!(
     name: "Gondor", 
@@ -216,7 +232,7 @@ l11 = Listing.create!(
     price: 3.50,
     lat: 28.104445,
     lng: 85.390785,
-    host_id: u1.id
+    host_id: u4.id
     )
 f11 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n2')
 l11.photo.attach(io: f11, filename: 'n2')
@@ -232,7 +248,7 @@ l12 = Listing.create!(
     price: 200,
     lat: 28.063869,
     lng: 85.277814
-    host_id: u1.id
+    host_id: u4.id
 )
 f12 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
 l12.photo.attach(io: f12, filename: 'n1.jpg')

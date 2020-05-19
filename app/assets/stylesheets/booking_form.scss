@@ -1,9 +1,7 @@
 .booking-comp {
-    display: flex;
+    // display: flex;
     position: absolute;
-    // top: 680px;
-    // right: 185px;
-    top: 35rem;
+    top: 32rem;
     right: 20%;
     background: white;
 }
@@ -25,13 +23,14 @@
 }
 
 .widget-container {
+    background-color: white;
     height: 260px;
-    display: flex;
     box-shadow: 0 1px 5px rgba(0,0,0,0.05);
     border: 1px solid #ebebeb;
     z-index: 2;
+    display: flex;
     justify-content: center;
-    // align-items: center;
+
 }
 .wrapper {
     height: 76px;
