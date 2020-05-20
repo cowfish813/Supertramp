@@ -28,7 +28,6 @@ strong {
 
  .superNav {
     overflow-anchor: auto;
-    //  font-size: 18px;
      font-size: 1.15em;
      position: fixed;
      width: 100%;
@@ -40,26 +39,23 @@ strong {
     }
     
     .nav-left {
-        width: 70%;
+        width: 50%;
     }
     
 .nav-right {
-    margin: 0 5px 0 0;
+    margin-top: 1rem;
     margin-right: 1%;
-    width: 30%;
+    width: 50%;
     display: flex;
-    float: right;
-    /* justify-content: flex-end; */
-    justify-content: space-between;
-    text-align: right;
+    justify-content: flex-end; 
 }
 
 .navItem {
-    padding: 6px;
+    padding: 1rem;
+    margin-left: 2rem;
     display: flex;
     justify-content: space-between;
     align-self: center;    
-    
 }
 
 .navItem:hover {
