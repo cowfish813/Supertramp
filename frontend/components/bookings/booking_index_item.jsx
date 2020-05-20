@@ -25,7 +25,7 @@ class BookingIndexItem extends React.Component {
         window.scrollTo(0, 0);
     }
 
-    handleModal(e) {
+    handleModal(bookingId, listId) {
         this.props.openModal('Booking')
         
     }
@@ -60,7 +60,7 @@ class BookingIndexItem extends React.Component {
                     <div className="bookings_item_cancel">
 
                         <button onClick={this.handleClick} className="bookingCancel usershowbutton">Cancel</button>
-                        <button onClick={this.handleModal} className="bookingChange usershowbutton">Change Booking</button>
+                            <button onClick={() => this.handleModal(this.props.booking, this.props.booking.listing_id)} className="bookingChange usershowbutton">Change Booking</button>
                     </div>
                 </div>
             </div>

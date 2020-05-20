@@ -12,7 +12,7 @@ import "moment/locale/it";
 class BookingUpdateForm extends React.Component {
   constructor(props) {
     super(props);
-
+    // debugger
     this.state = {
       price: null,
       check_in: null,
