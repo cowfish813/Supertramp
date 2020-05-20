@@ -195,8 +195,8 @@ l9 = Listing.create!(
     country: "murica",
     minimum_nights: 1,
     price: 500,
-    lat: 28.341334,
-    lng: 84.316477,
+    lat: 29.283921,
+    lng: 41.657576,
     host_id: u1.id
 )
 

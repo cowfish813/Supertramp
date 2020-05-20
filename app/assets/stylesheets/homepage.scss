@@ -282,35 +282,33 @@ margin-bottom: 2.5vh;
 
 
 .vagueLocationsContainer {
-    // width: 1080px; 
-    // height: 896px;
-    // padding: 40px 0px;
-    // margin: 0px 213px;
     display: flex;
     margin-top: 12vh;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    margin-bottom: 5rem;
     /* justify-content: center; */
 }
 .vague_tile_list {
     display: flex;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
+    // justify-content: space-evenly;
+    
     // min-width: 1110px; 
-    height: 364px;
-    justify-content: space-evenly;
-    margin: 0px 0px 32px;
+    // height: 364px;
+    // margin: 0px 0px 32px;
 
 }
 .vague_picture {
-    margin: 10px;
     height: 364px;
     width: 350px;
-
+    margin: .8rem;
     background: #ebebeb;
     object-fit: cover;
     animation: unpop .8s ease forwards;
     background-color: lawngreen;
-    margin-bottom: 5vh;
+    // margin: 10px;
+    // margin-bottom: 5vh;
 }
 .vague_picture:hover {
     cursor: pointer;

@@ -18,7 +18,7 @@ function Modal({ errors, modal, closeModal}) {
     }
 
     let component
-    switch (modal) { //modal.formType
+    switch (modal) { 
         case 'Login':
             component = <LoginFormContainer />
             break;

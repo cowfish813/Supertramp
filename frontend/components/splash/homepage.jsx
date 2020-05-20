@@ -22,29 +22,31 @@ class Homepage extends React.Component {
     }
 
     handleTile3(e) {
-        //yosemite
+        //desert
         e.preventDefault();
         this.props.history.push({
             pathname: `/search/37.8032783,-119.5393594`,
-            state: { lat: 37.8032783,
-                lng: -119.5393594
+            state: { 
+                lat: 29.283921,
+                lng: 41.657576
             }
         });       
     }
 
     handleTile2(e) {
-        //
+        //japan
         e.preventDefault();
         this.props.history.push({
             pathname: `/search/37.8032783,-119.5393594`,
-            state: { lat: 37.8032783,
-                lng: -119.5393594
+            state: { 
+                lat: 34.910977,
+                lng: 137.250385
             }
         });       
     }
     
     handleTile1(e) {
-        //
+        //yosemite
         e.preventDefault();
         this.props.history.push({
             pathname: `/search/37.8032783,-119.5393594`,
@@ -100,6 +102,7 @@ class Homepage extends React.Component {
                     </div>
                 </div>
                 {/* <p>destination getaways.</p> */}
+
                 <div className="vagueLocationsContainer">
                     <div className="vague_tile_list">
                         <Link to="/listings/1"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg" alt="" /></Link>
