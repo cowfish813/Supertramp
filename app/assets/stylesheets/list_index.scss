@@ -1,3 +1,7 @@
+.list_search_result {
+    width: 99vw;
+}
+
 .search_results {
     display: flex;
     flex-direction: row;
@@ -18,6 +22,7 @@
 .list_index_items {
     display: flex;
     flex-wrap: wrap;
+    margin-left: 5rem;
     // width: 20vw;
     // margin-top: 5vh;
 
@@ -27,16 +32,19 @@
     margin: 1rem;
     display: flex;
     flex-direction: column;
-    height: 37%;
+    height: 29%;
+    width: 40%;
     border: lightgray solid 1px;
     box-shadow: .2rem .6rem 1rem lightgrey;
 
 }
 .index_box {
     margin-bottom: 3vh;
+    overflow: hidden;
 }
 .indexPhotos {
-    width: 20vw;
+    object-fit: fill;
+    width: 100%;
     height: auto;
 }
 

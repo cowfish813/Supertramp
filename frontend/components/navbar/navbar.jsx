@@ -1,10 +1,6 @@
 import React, {component} from 'react';
 import { Link } from 'react-router-dom';
 
-// import modal from '../modal/modal'
-// import { openModal } from '../../actions/modal_actions/modal_actions'
-// import user from '../users/user_container'
-
 
 
 class NavBar extends React.Component {
@@ -13,20 +9,7 @@ class NavBar extends React.Component {
         this.state = this.props.currentUser
         this.handleLogout = this.handleLogout.bind(this)
 
-        // this.handleClick= this.handleClick.bind(this)
-        // this.handleSubmit = this.handleSubmit.bind(this)
-        // this.handleRender = this.handleRender.bind(this)
     }
-
-    // handleClick(e) {
-    //     e.preventDefault()
-    // }
-
-    // handleSubmit(e) {
-    //     e.preventDefault()
-
-    // }
-
 
     handleLogout(e) {
         e.preventDefault()
@@ -48,9 +31,8 @@ class NavBar extends React.Component {
                         <li className="navItem"><a target="_blank" href="https://www.linkedin.com/in/nicholas-cheung-6a72999">Linkedin</a></li>
                         <li className="navItem"><a target="_blank" href="https://github.com/cowfish813">GitHub</a></li>
                         <li className="navItem"><a target="_blank" href="https://www.instagram.com/probablynotnick/">Instagram</a></li>
-                        <li className="navItem"><a onClick={() => this.props.openModal('Login')}>Log In</a></li> {/* another modal button*/}
+                        <li className="navItem"><a onClick={() => this.props.openModal('Login')}>Log In</a></li> 
                         <li className="navItem signupButton">
-                            {/* <button onClick={() => this.props.openModal('Signup')}>Sign up</button> */}
                         <a onClick={() => this.props.openModal('Signup')}>Sign up</a>
                         </li>
                     </div>
@@ -70,7 +52,7 @@ class NavBar extends React.Component {
                         <li className="navItem"><a target="_blank" href="https://github.com/cowfish813">GitHub</a></li>
                         <li className="navItem"><a target="_blank" href="https://www.instagram.com/probablynotnick/">Instagram</a></li>
                         <li className="navItem"><Link to={`/users/${this.props.ID}`}>Self</Link></li>
-                        <li className="navItem" onClick={this.handleLogout}><a>Log out</a></li> {/* link to my linked in or transfer to bottom of page? */}
+                        <li className="navItem" onClick={this.handleLogout}><a>Log out</a></li> 
                     </div>
                 </div>
             )

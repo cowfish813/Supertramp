@@ -20,7 +20,7 @@ class ListSearchResults extends React.Component {
 
     render () {
         return (
-          <div>
+          <div className="list_search_result">
             <div className="">
               <SearchBar />
             </div>
@@ -38,7 +38,7 @@ class ListSearchResults extends React.Component {
               />
             </div>
           </div>
-        );
+        )
     }
 };
 
