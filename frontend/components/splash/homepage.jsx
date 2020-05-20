@@ -85,8 +85,8 @@ class Homepage extends React.Component {
                                 <span className="banner_font">Explore a Dozen Locations!</span>
                             {/* <span className="banner_font">Locations!</span> */}
                         </div>
-                            <span className="banner_sub_message">Run a search or scroll down below</span>
-                            <span className="banner_sub_message">and start exploring!</span>
+                        <span className="banner_sub_message">Run a search or scroll down below and start exploring!</span>
+                            {/* <span className="banner_sub_message">and start exploring!</span> */}
 
                         <div className="intro_button_container">
                             <button onClick={this.handleInput} className="intro_button">I'm feeling Lucky!</button>

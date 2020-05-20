@@ -184,6 +184,7 @@ margin-bottom: 2.5vh;
     margin-bottom: 10vh;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 
@@ -233,9 +234,12 @@ margin-bottom: 2.5vh;
 }
 .intro_button_container {
     margin-top: 10%;
-    left: 10%;
-    margin-left: 30%;
+    // left: 10%;
+    // margin-left: 30%;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .intro_button {
     border-radius: 5px;
