@@ -93,7 +93,7 @@ l3 = Listing.create!(
     minimum_nights: 1,
     price: 200,
     lat: 37.746723,
-    lng: -119.6007142
+    lng: -119.6007142,
     host_id: u1.id
 )
 f3 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/55937490_10107418126272313_2116183051628183552_n.jpg')
@@ -172,8 +172,8 @@ l7.photo.attach(io: f7, filename: '56312133_10107420712439613_248936565180674867
 l8 = Listing.create!(
     name: 'Utapau',
     on_arrival: 'Find General Grievous, end the Clone Wars',
-    description: ' a remote and rocky planet in the Outer Rim Territories Utapau system that was filled with enormous sinkholes. Its native inhabitants were the Pauans and the Utai, while tribes of Amani also immigrated to the world. It was the location of the Battle of Utapau during the Clone Wars. ',
-    cancellation_policy: 'Proclaimers',
+    description: 'a remote and rocky planet in the Outer Rim Territories Utapau system that was filled with enormous sinkholes. Its native inhabitants were the Pauans and the Utai, while tribes of Amani also immigrated to the world. It was the location of the Battle of Utapau during the Clone Wars. ',
+    cancellation_policy: 'Generous',
     capacity: 1,
     country: "murica",
     minimum_nights: 1,
@@ -186,10 +186,11 @@ l8 = Listing.create!(
 f8 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
 l8.photo.attach(io: f8, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
 
+
 l9 = Listing.create!(
     name: 'Mustafar',
     on_arrival: 'bring water',
-    description: '"Mustafar is not like other plances. It is unique. Deep beneath its surface rests a locus for the Dark side of the Force."',
+    description: 'Mustafar is not like other plances. It is unique. Deep beneath its surface rests a locus for the Dark side of the Force.',
     cancellation_policy: 'Strict',
     capacity: 1,
     country: "murica",
@@ -200,8 +201,8 @@ l9 = Listing.create!(
     host_id: u1.id
 )
 
-f9 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n4')
-l9.photo.attach(io: f9, filename: 'n4')
+f9 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n4.jpg')
+l9.photo.attach(io: f9, filename: 'n4.jpg')
 
 
 l10 = Listing.create!(
@@ -218,8 +219,8 @@ l10 = Listing.create!(
     host_id: u1.id
 )
 
-f10 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n3')
-l10.photo.attach(io: f10, filename: 'n3')
+f10 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n3.jpg')
+l10.photo.attach(io: f10, filename: 'n3.jpg')
 
 l11 = Listing.create!(
     name: 'Kamino',
@@ -234,8 +235,8 @@ l11 = Listing.create!(
     lng: 85.390785,
     host_id: u4.id
     )
-f11 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n2')
-l11.photo.attach(io: f11, filename: 'n2')
+f11 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n2.jpg')
+l11.photo.attach(io: f11, filename: 'n2.jpg')
 
 l12 = Listing.create!(
     name: 'Felucia',
@@ -247,7 +248,7 @@ l12 = Listing.create!(
     minimum_nights: 1,
     price: 200,
     lat: 28.063869,
-    lng: 85.277814
+    lng: 85.277814,
     host_id: u4.id
 )
 f12 = open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')

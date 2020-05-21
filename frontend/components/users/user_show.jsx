@@ -33,11 +33,6 @@ class User extends React.Component {
         // });
     }
 
-    componentWillReceiveProps(prevProps, nextProps) {
-        // debugger
-
-    }
-
 
 
     render () {
@@ -95,6 +90,7 @@ class User extends React.Component {
                 <div className="middleBody">
                     <BookingItem 
                     user={this.props.user}
+                    fetchListings={this.props.fetchListings}
                     />
 
                     <div className="reviews-comp">

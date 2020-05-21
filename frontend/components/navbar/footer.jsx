@@ -6,7 +6,6 @@ import { connect } from 'react-redux'
 
 class Footer extends React.Component {
 
-// debugger - can i have an emoji here? or is that a picture right?
     render () {
         return (
             // <div className="ultraFooter">

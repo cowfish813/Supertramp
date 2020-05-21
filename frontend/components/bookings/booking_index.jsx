@@ -24,7 +24,9 @@ class BookingIndex extends React.Component {
 
     componentDidMount() {
         // debugger
-        // console.log(this.state)
+        this.props.fetchBookings(this.props.match.params.userId);
+        this.props.fetchListings(this.props.match.params.userId);
+
         this.setState({
             bookings: this.props.bookings
         })
@@ -47,6 +49,8 @@ class BookingIndex extends React.Component {
                                 bookings={this.state.bookings}
                                 deleteItemComponent={this.deleteItemComponent}
                                 openModal={this.props.openModal}
+                                fetchBookings={this.props.fetchBookings}
+                                fetchListings={this.props.fetchListings}
                             />
                         ))}
                     </div>

@@ -18,7 +18,6 @@ function Modal({ errors, modal, closeModal }) {
     }
 
     let component
-    // debugger
     switch (modal.modal) { 
         case 'Login':
             component = <LoginFormContainer />

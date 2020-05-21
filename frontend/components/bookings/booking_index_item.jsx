@@ -11,12 +11,11 @@ class BookingIndexItem extends React.Component {
             check_in: this.props.booking.check_in,
             price: this.props.booking.price,
             capacity: this.props.booking.capacity,
-
         }
         
         this.handleClick = this.handleClick.bind(this);
         this.handleModal = this.handleModal.bind(this);
-        this.bookingDidUpdate = this.bookingDidUpdate.bind(this)
+        this.bookingDidUpdate = this.bookingDidUpdate.bind(this);
     }
 
     handleClick(e) {
@@ -27,7 +26,8 @@ class BookingIndexItem extends React.Component {
 
 
     componentDidMount() {
-        window.scrollTo(0, 0);
+        this.props.fetchBookings(this.props.match.params.userId);
+        this.props.fetchListings(this.props.match.params.userId);
     }
 
     handleModal(bookingId, renderFxn) {
@@ -35,38 +35,17 @@ class BookingIndexItem extends React.Component {
     }
 
     bookingDidUpdate(newState) {
-        // debugger
-        // if (newState.check_in.toDateString() !== this.state.check_in) {
-        //     this.setState({
-        //         check_in: newState.check_in
-        //     });
-        // } 
-        // else if (newState.check_out.toDateString() !== this.state.check_out) {
-        //     this.setState ({
-        //         check_out: newState.check_out
-        //     });
-        // }
-        // else if (newState.price !== this.state.price) {
-        //     this.setState({
-        //         price: newState.price
-        //     });
-        // }
-        // else if (newState.capacity !== this.state.capacity) {
-        //     this.setState({
-        //         capacity: newState.capacity
-        //     });
-        // }
         this.setState({
             check_in: newState.check_in,
             check_out: newState.check_out,
             price: newState.price,
             capacity: newState.capacity
-        })
+        });
     }
 
     render () {
-        let checkin = new Date(this.state.check_in).toDateString()
-        let checkout = new Date(this.state.check_out).toDateString()
+        let checkin = new Date(this.state.check_in).toDateString();
+        let checkout = new Date(this.state.check_out).toDateString();
 
 
         if (this.props.current_user === this.props.booking.user_id) {

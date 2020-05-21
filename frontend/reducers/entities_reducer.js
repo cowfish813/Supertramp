@@ -5,7 +5,6 @@ import bookingsReducer from './bookings/bookings_reducer';
 
 
 
-// console.log("bookings reducer", bookingsReducer)
 const entitiesReducer = combineReducers({
     bookings: bookingsReducer,
     users: usersReducer,

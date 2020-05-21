@@ -27,7 +27,6 @@ class Search extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // console.log(this.state)
         this.props.receiveLocation(this.state);
         // if (this.state.lat == "" || this.state.lng == "") {
         //     this.setState({
@@ -35,7 +34,6 @@ class Search extends React.Component {
         //         lng: 119.5383
         //     })
         // }
-        // debugger
         this.props.history.push({
             pathname: `/search/${this.state.lat},${this.state.lng}`,
             state: this.state

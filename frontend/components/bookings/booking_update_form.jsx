@@ -43,7 +43,6 @@ class BookingUpdateForm extends React.Component {
       price: days,
       check_out: date
     });
-    // debugger
   }
 
   handleCapacity(event) {
@@ -73,17 +72,16 @@ class BookingUpdateForm extends React.Component {
         listing_name: this.props.listings[this.props.booking.listing_id].name,
         user_id: this.props.booking.user_id,
       };
-      // debugger
+
       this.props.patchBooking(booking)
       .then(() => this.props.closeModal())
       .then(() => this.props.fxn(booking))
-      // .then(this.props.history.push(`/users/${this.props.currentUser}`));
     }
   }
 
   render() {
-    const listprice = this.props.listings[this.props.booking.listing_id] ? this.props.listings[this.props.booking.listing_id].price : ""
-    const capacity = this.props.listings[this.props.booking.listing_id] ? this.props.listings[this.props.booking.listing_id].capacity : ""
+    let listprice = this.props.listings[this.props.booking.listing_id] ? this.props.listings[this.props.booking.listing_id].price : ""
+    let capacity = this.props.listings[this.props.booking.listing_id] ? this.props.listings[this.props.booking.listing_id].capacity : ""
 
     return (
       <div className="widget-update-container">

@@ -21,7 +21,6 @@ class ListMap extends React.Component {
 
     //     // const mapRef = this.refs.map;
     //     this.mapNode = document.getElementById("mapNode")
-    //     console.log("map node", this.mapNode)
     //     this.map = new google.maps.Map(this.mapNode, mapOptions);
     //     let center = {
     //         lat: this.props.list.lat,
