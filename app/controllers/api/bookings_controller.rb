@@ -28,6 +28,7 @@ class Api::BookingsController < ApplicationController
         end
     end
 
+
     def update
         debugger
         @booking = Booking.find(params[:id])

@@ -1,23 +1,24 @@
-import React from 'react';
+import React from "react";
 import { withRouter } from "react-router-dom";
-
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 import { SingleDatePicker } from "react-dates";
-
-import DayPickerInput from "react-day-picker/DayPickerInput";
-import { formatDate, parseDate } from "react-day-picker/moment";
-import "moment/locale/it";
+import moment from 'moment'
+import DefaultTheme from 'react-dates/lib/theme/DefaultTheme';
+import "moment/locale/en-gb"
 
 class BookingUpdateForm extends React.Component {
   constructor(props) {
     super(props);
-    // debugger
+
     this.state = {
-      price: null,
+      price: this.props.listings[this.props.booking.listing_id].price,
       check_in: null,
       check_out: null,
-      capacity: null,
+      capacity: this.props.listings[this.props.booking.listing_id].capacity,
+      id: this.props.booking.id,
+      listing_name: this.props.listings[this.props.booking.listing_id].name,
+      user_id: this.props.booking.user_id,
       focusedStart: null,
       focusedEnd: null,
     };
@@ -28,14 +29,21 @@ class BookingUpdateForm extends React.Component {
     this.handlePrice = this.handlePrice.bind(this);
   }
 
+  componentDidMount() {
+    this.setState({
+      price: this.props.listings[this.props.booking.listing_id].price,
+    });
+  }
+
   handlePrice(date) {
     const mseconds =
-      Date.parse(this.state.check_out) - Date.parse(this.state.check_in);
-    const days = (mseconds / (1000 * 60 * 60 * 24)) * this.props.list.price;
+      Date.parse(date) - Date.parse(this.state.check_in);
+    const days = (mseconds / (1000 * 60 * 60 * 24)) * this.props.listings[this.props.booking.listing_id].price;
     this.setState({
       price: days,
       check_out: date
     });
+    // debugger
   }
 
   handleCapacity(event) {
@@ -58,16 +66,19 @@ class BookingUpdateForm extends React.Component {
         check_out: this.state.check_out.format("YYYY/MM/DD"),
         capacity: this.state.capacity,
         price: this.state.price,
+        id: this.props.booking.id,
+        listing_name: this.props.listings[this.props.booking.listing_id].name,
+        user_id: this.props.booking.user_id,
       };
-      this.props
-        .patchBooking(booking)
-        .then(this.props.history.push(`/users/${this.props.currentUser.id}`));
+
+      this.props.patchBooking(booking)
+        // .then(this.props.history.push(`/users/${this.props.currentUser.id}`));
     }
   }
 
   render() {
-    const listprice = this.props.list ? this.props.list.price : ""
-    const capacity = this.props.list ? this.props.list.capacity : ""
+    const listprice = this.props.listings[this.props.booking.listing_id] ? this.props.listings[this.props.booking.listing_id].price : ""
+    const capacity = this.props.listings[this.props.booking.listing_id] ? this.props.listings[this.props.booking.listing_id].capacity : ""
 
     return (
       <div className="widget-update-container">

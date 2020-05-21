@@ -5,7 +5,7 @@ import LoginFormContainer from '../session/login_form_container'
 import SignupFormContainer from '../session/signup_form_container'
 import BookingUpdateForm from '../bookings/booking_update_form_container'
 
-function Modal({ errors, modal, closeModal}) {
+function Modal({ errors, modal, closeModal }) {
     if (!modal) return null
 
     let errorModal = <div></div>
@@ -18,7 +18,8 @@ function Modal({ errors, modal, closeModal}) {
     }
 
     let component
-    switch (modal) { 
+    // debugger
+    switch (modal.modal) { 
         case 'Login':
             component = <LoginFormContainer />
             break;
@@ -26,7 +27,10 @@ function Modal({ errors, modal, closeModal}) {
             component = <SignupFormContainer />
             break;
         case 'Booking':
-            component = <BookingUpdateForm  />
+            component = <BookingUpdateForm  
+            booking={modal.data}
+            // listId={this.props.booking.listing_id}
+            />
 
             break;
         default:

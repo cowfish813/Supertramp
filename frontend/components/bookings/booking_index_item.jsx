@@ -7,27 +7,22 @@ class BookingIndexItem extends React.Component {
         super(props);
         
         this.handleClick = this.handleClick.bind(this);
-        this.handleChange = this.handleChange.bind(this);
         this.handleModal = this.handleModal.bind(this);
     }
 
     handleClick(e) {
         e.preventDefault()
         this.props.deleteBooking(this.props.booking.id)
-        .then(()=> this.props.deleteItemComponent(this.props.booking.id))
+        .then(()=> this.props.deleteItemComponent(this.props.booking.id));
     }
 
-    handleChange() {
-        this.props.openModal('Booking')
-    }
 
     componentDidMount() {
         window.scrollTo(0, 0);
     }
 
     handleModal(bookingId, listId) {
-        this.props.openModal('Booking')
-        
+        this.props.openModal('Booking', bookingId);
     }
 
     render () {
@@ -60,7 +55,7 @@ class BookingIndexItem extends React.Component {
                     <div className="bookings_item_cancel">
 
                         <button onClick={this.handleClick} className="bookingCancel usershowbutton">Cancel</button>
-                            <button onClick={() => this.handleModal(this.props.booking, this.props.booking.listing_id)} className="bookingChange usershowbutton">Change Booking</button>
+                        <button onClick={() => this.handleModal(this.props.booking, this.props.booking.listing_id)} className="bookingChange usershowbutton">Change Booking</button>
                     </div>
                 </div>
             </div>
@@ -68,8 +63,8 @@ class BookingIndexItem extends React.Component {
         } else {
             return(
                 null
-            );
-        }
+            )
+        };
     }
 };
 

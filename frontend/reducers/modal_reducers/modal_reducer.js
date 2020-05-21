@@ -4,7 +4,7 @@ const modalReducer = (state = {}, action) => {
     Object.freeze(state)
     switch (action.type) {
         case OPEN_MODAL:
-            return action.modal
+            return action
         case CLOSE_MODAL:
             return null
         default:

@@ -17,7 +17,7 @@ const mdtp = dispatch => ({
     requestUser: (user) => dispatch(requestUser(user)),
     fetchBookings: (userId) => dispatch(fetchBookings(userId)),
     fetchListings: () => dispatch(fetchListings()),
-    openModal: (modal) => dispatch(openModal(modal)),
+    openModal: (modal, data) => dispatch(openModal(modal, data)),
     deleteBooking: (bookingId) => dispatch(deleteBooking(bookingId))
 });
 
