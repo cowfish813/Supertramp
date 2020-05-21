@@ -67,7 +67,6 @@ export const deleteBooking = (bookingId) => dispatch => {
 };
 
 export const patchBooking = (booking) => dispatch => {
-    debugger
     return ApiUtil.updateBooking(booking).then(
         booking => dispatch(receiveBooking(booking)),
         err => dispatch(receiveBookingErrors(err.responseJson))

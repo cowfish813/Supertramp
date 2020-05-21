@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 class BookingIndexItem extends React.Component {
     constructor(props) {
         super(props);
+
+        
         
         this.handleClick = this.handleClick.bind(this);
         this.handleModal = this.handleModal.bind(this);
