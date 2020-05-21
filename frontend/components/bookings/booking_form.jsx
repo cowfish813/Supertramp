@@ -14,6 +14,7 @@ class BookingForm extends React.Component {
         super(props);
         this.state = {
             user_id: this.props.currentUserId,
+            host_id: this.props.host_id,
             listing_id: this.props.list.id,
             listing_name: this.props.list.name,
             price: this.props.list.price,

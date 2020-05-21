@@ -60,6 +60,9 @@ class BookingUpdateForm extends React.Component {
     e.preventDefault();
 
     if (this.state.price <= 0) {
+      this.setState({
+        price: null
+      })
     } else {
       const booking = {
         check_in: this.state.check_in.format("YYYY/MM/DD"),
@@ -70,9 +73,11 @@ class BookingUpdateForm extends React.Component {
         listing_name: this.props.listings[this.props.booking.listing_id].name,
         user_id: this.props.booking.user_id,
       };
-
+      // debugger
       this.props.patchBooking(booking)
-        // .then(this.props.history.push(`/users/${this.props.currentUser.id}`));
+      .then(() => this.props.closeModal())
+      .then(() => this.props.fxn(booking))
+      // .then(this.props.history.push(`/users/${this.props.currentUser}`));
     }
   }
 
@@ -147,7 +152,7 @@ class BookingUpdateForm extends React.Component {
                           id="capacity_input"
                           min="1"
                           max={capacity}
-                          onChange={this.handleCapacity}
+                          onChange={() => this.handleCapacity}
                         />
                       </div>
                     </div>

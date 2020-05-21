@@ -6,11 +6,17 @@ class BookingIndexItem extends React.Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            check_out: this.props.booking.check_out,
+            check_in: this.props.booking.check_in,
+            price: this.props.booking.price,
+            capacity: this.props.booking.capacity,
 
+        }
         
         this.handleClick = this.handleClick.bind(this);
         this.handleModal = this.handleModal.bind(this);
-        this.bookingDidUpdate = this.bookingDidUpdate.bind(this);
+        this.bookingDidUpdate = this.bookingDidUpdate.bind(this)
     }
 
     handleClick(e) {
@@ -24,22 +30,43 @@ class BookingIndexItem extends React.Component {
         window.scrollTo(0, 0);
     }
 
-    handleModal(bookingId) {
-        this.props.openModal('Booking', bookingId);
-        //re-render. 
+    handleModal(bookingId, renderFxn) {
+        this.props.openModal('Booking', bookingId, renderFxn)
+    }
+
+    bookingDidUpdate(newState) {
+        // debugger
+        // if (newState.check_in.toDateString() !== this.state.check_in) {
+        //     this.setState({
+        //         check_in: newState.check_in
+        //     });
+        // } 
+        // else if (newState.check_out.toDateString() !== this.state.check_out) {
+        //     this.setState ({
+        //         check_out: newState.check_out
+        //     });
+        // }
+        // else if (newState.price !== this.state.price) {
+        //     this.setState({
+        //         price: newState.price
+        //     });
+        // }
+        // else if (newState.capacity !== this.state.capacity) {
+        //     this.setState({
+        //         capacity: newState.capacity
+        //     });
+        // }
         this.setState({
-            
+            check_in: newState.check_in,
+            check_out: newState.check_out,
+            price: newState.price,
+            capacity: newState.capacity
         })
     }
 
-    bookingDidUpdate() {
-        // (this.props.booking)
-
-    }
-
     render () {
-        const checkin = new Date(this.props.booking.check_in).toDateString()
-        const checkout = new Date(this.props.booking.check_out).toDateString()
+        let checkin = new Date(this.state.check_in).toDateString()
+        let checkout = new Date(this.state.check_out).toDateString()
 
 
         if (this.props.current_user === this.props.booking.user_id) {
@@ -60,14 +87,14 @@ class BookingIndexItem extends React.Component {
                         {checkout}</div>
                     <div className="bookings_item">
                         <strong> Number of Guests: </strong>
-                        {this.props.booking.capacity}</div>
+                        {this.state.capacity}</div>
                     <div className="bookings_item">
                         <strong>Total Price: </strong>
-                        ${this.props.booking.price}</div>
+                        ${this.state.price}</div>
                     <div className="bookings_item_cancel">
 
                         <button onClick={this.handleClick} className="bookingCancel usershowbutton">Cancel</button>
-                        <button onClick={() => this.handleModal(this.props.booking)} className="bookingChange usershowbutton">Change Booking</button>
+                        <button onClick={() => this.handleModal(this.props.booking, this.bookingDidUpdate)} className="bookingChange usershowbutton">Change Booking</button>
                     </div>
                 </div>
             </div>

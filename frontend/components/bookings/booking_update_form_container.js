@@ -8,10 +8,10 @@ import { withRouter } from "react-router-dom";
 const mstp = (state, ownProps) => {
   return ({
     // currentUser: state.entities.users[state.session.currentUser],
-    listings: state.entities.listings
-    // booking: state.entities.bookings[ownProps.match.params.bookingId],
+    listings: state.entities.listings,
+    bookings: state.entities.bookings,
   });
-};11
+}
 
 const mdtp = (dispatch) => ({
   // openModal: (modal) => dispatch(openModal(modal)),
