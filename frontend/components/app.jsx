@@ -6,14 +6,16 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import NavbarContainer from './navbar/navbar_container';
 import UserShow from './users/user_show_container';
-import Footer from './navbar/footer' //could add a little more work
-// incomplete
+import Footer from './navbar/footer' 
 import Homepage from './splash/homepage_container';
 import ListShow from './listing/list_show/list_show_container';
 import ListSearchResults from './listing/list_index/list_search_results_container';
 import UserUpdate from './users/user_update_container';
+import NoContent from './no_content';
+
+
 //bonus
-// aws connected, can upload...but model is incomplete
+// aws connected, can upload...but component/model is incomplete
 import ListForm from './listing/list_form/list_form_container';
 //reviews
 
@@ -27,6 +29,7 @@ const App = () => (
         < ProtectedRoute exact path="/users/:userId" component={UserShow} />
         < ProtectedRoute exact path="/users/:userId/update" component={UserUpdate} />
         < Switch>
+        < Route component={NoContent} />
         < AuthRoute path="/login" component={LoginFormContainer} />
         < AuthRoute path="/signup" component={SignupFormContainer} />
         </Switch>

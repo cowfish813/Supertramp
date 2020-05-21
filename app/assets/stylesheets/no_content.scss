@@ -1,0 +1,18 @@
+.nonContent {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.nonContent h1 {
+    font-size: 20em;
+}
+
+.nonContent h2 {
+    font-size: 3em;
+}
+
+.nonContent div {
+    font-size: 1em;
+}
