@@ -29,7 +29,7 @@ function Modal({ errors, modal, closeModal }) {
         case 'Booking':
             component = <BookingUpdateForm  
             booking={modal.data}
-            // listId={this.props.booking.listing_id}
+            
             />
 
             break;

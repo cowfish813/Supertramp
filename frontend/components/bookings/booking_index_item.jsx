@@ -6,10 +6,11 @@ class BookingIndexItem extends React.Component {
     constructor(props) {
         super(props);
 
-        
+
         
         this.handleClick = this.handleClick.bind(this);
         this.handleModal = this.handleModal.bind(this);
+        this.bookingDidUpdate = this.bookingDidUpdate.bind(this);
     }
 
     handleClick(e) {
@@ -23,8 +24,17 @@ class BookingIndexItem extends React.Component {
         window.scrollTo(0, 0);
     }
 
-    handleModal(bookingId, listId) {
+    handleModal(bookingId) {
         this.props.openModal('Booking', bookingId);
+        //re-render. 
+        this.setState({
+            
+        })
+    }
+
+    bookingDidUpdate() {
+        // (this.props.booking)
+
     }
 
     render () {
@@ -57,7 +67,7 @@ class BookingIndexItem extends React.Component {
                     <div className="bookings_item_cancel">
 
                         <button onClick={this.handleClick} className="bookingCancel usershowbutton">Cancel</button>
-                        <button onClick={() => this.handleModal(this.props.booking, this.props.booking.listing_id)} className="bookingChange usershowbutton">Change Booking</button>
+                        <button onClick={() => this.handleModal(this.props.booking)} className="bookingChange usershowbutton">Change Booking</button>
                     </div>
                 </div>
             </div>
