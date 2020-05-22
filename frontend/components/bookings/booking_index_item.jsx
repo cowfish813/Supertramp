@@ -13,6 +13,8 @@ class BookingIndexItem extends React.Component {
             capacity: this.props.booking.capacity,
         }
         
+
+        // debugger
         this.handleClick = this.handleClick.bind(this);
         this.handleModal = this.handleModal.bind(this);
         this.bookingDidUpdate = this.bookingDidUpdate.bind(this);

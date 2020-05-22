@@ -17,23 +17,23 @@ class BookingIndex extends React.Component {
     deleteItemComponent(id) {
         const updatedbooking = 
             this.state.bookings.filter((booking => booking.id !== id));
+
         this.setState({
             bookings: updatedbooking
             });
     }
 
     componentDidMount() {
-        // debugger
-        // this.props.fetchBookings(this.props.match.params.userId);
-        // this.props.fetchListings(this.props.match.params.userId);
 
         this.setState({
             bookings: this.props.bookings
         })
+
     }
 
 
     render(){
+
         if ((this.props.bookings).length < 1) {
             return <div>Get outside!</div>
         } else {
@@ -55,7 +55,7 @@ class BookingIndex extends React.Component {
                         ))}
                     </div>
             )
-        }
+        };
     }
 }
 

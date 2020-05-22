@@ -16,6 +16,7 @@ class User extends React.Component {
     componentDidMount () {
         window.scrollTo(0, 0);
         this.props.fetchBookings(this.props.match.params.userId);
+        this.props.fetchListings(this.props.match.params.userId);
     }
 
     static getDerivedStateFromProps(nextProps, prevProps) {

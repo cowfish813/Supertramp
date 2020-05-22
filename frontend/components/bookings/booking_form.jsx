@@ -7,25 +7,23 @@ import moment from 'moment';
 import DefaultTheme from 'react-dates/lib/theme/DefaultTheme';
 import "moment/locale/en-gb";
 // import "../../../app/assets/stylesheets/book_form.scss"; //rewrites react css
-
-
 class BookingForm extends React.Component {
     constructor(props) {
         super(props);
-
+      
         this.state = {
             user_id: this.props.currentUserId,
             host_id: this.props.host_id,
             listing_id: this.props.list.id,
-            listing_name: this.props.list.name,
             price: this.props.list.price,
+            capacity: 1,
+            listing_name: this.props.list.name,
             check_in: null,
             check_out: null,
-            capacity: 1,
             focusedStart: null,
             focusedEnd: null,
         }
-        
+
         this.highlighted = this.highlighted.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCapacity = this.handleCapacity.bind(this);
@@ -53,6 +51,7 @@ class BookingForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        
         if (!(this.props.currentUser)) { 
             this.props.openModal('Login');
         } else if (this.state.price <= 0) {
@@ -61,8 +60,8 @@ class BookingForm extends React.Component {
             });
         } else {  
           const booking = {
-              check_in: this.state.check_in.format('YYYY/MM/DD'),
-              check_out: this.state.check_out.format('YYYY/MM/DD'),
+              check_in: this.state.check_in.format("YYYY/MM/DD"),
+              check_out: this.state.check_out.format("YYYY/MM/DD"),
               listing_id: this.props.list.id,
               capacity: this.state.capacity,
               user_id: this.props.currentUser.id,
