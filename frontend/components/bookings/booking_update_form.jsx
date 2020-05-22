@@ -12,13 +12,15 @@ class BookingUpdateForm extends React.Component {
     super(props);
 
     this.state = {
+      user_id: this.props.booking.user_id,
+      host_id: this.props.host_id,
+      listing_id: this.props.list.id,
       price: this.props.listings[this.props.booking.listing_id].price,
+      capacity: this.props.listings[this.props.booking.listing_id].capacity,
+      listing_name: this.props.listings[this.props.booking.listing_id].name,
       check_in: null,
       check_out: null,
-      capacity: this.props.listings[this.props.booking.listing_id].capacity,
       id: this.props.booking.id,
-      listing_name: this.props.listings[this.props.booking.listing_id].name,
-      user_id: this.props.booking.user_id,
       focusedStart: null,
       focusedEnd: null,
     };
@@ -36,9 +38,9 @@ class BookingUpdateForm extends React.Component {
   }
 
   handlePrice(date) {
-    const mseconds =
+    let mseconds =
       Date.parse(date) - Date.parse(this.state.check_in);
-    const days = (mseconds / (1000 * 60 * 60 * 24)) * this.props.listings[this.props.booking.listing_id].price;
+    let days = (mseconds / (1000 * 60 * 60 * 24)) * this.props.listings[this.props.booking.listing_id].price;
     this.setState({
       price: days,
       check_out: date

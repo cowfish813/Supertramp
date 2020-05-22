@@ -3,15 +3,16 @@ import { withRouter } from "react-router-dom";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 import { SingleDatePicker } from "react-dates";
-import moment from 'moment'
+import moment from 'moment';
 import DefaultTheme from 'react-dates/lib/theme/DefaultTheme';
-import "moment/locale/en-gb"
+import "moment/locale/en-gb";
 // import "../../../app/assets/stylesheets/book_form.scss"; //rewrites react css
 
 
 class BookingForm extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = {
             user_id: this.props.currentUserId,
             host_id: this.props.host_id,
@@ -24,6 +25,7 @@ class BookingForm extends React.Component {
             focusedStart: null,
             focusedEnd: null,
         }
+        
         this.highlighted = this.highlighted.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCapacity = this.handleCapacity.bind(this);
@@ -31,8 +33,8 @@ class BookingForm extends React.Component {
     };
 
     handlePrice(date) {
-        const mseconds = Date.parse(date) - Date.parse(this.state.check_in);
-        const days = mseconds / (1000 * 60 * 60 * 24) * this.props.list.price;
+        let mseconds = Date.parse(date) - Date.parse(this.state.check_in);
+        let days = mseconds / (1000 * 60 * 60 * 24) * this.props.list.price;
         this.setState({
           price: days,
           check_out: date
@@ -51,12 +53,12 @@ class BookingForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        if(!(this.props.currentUser)) { 
-            this.props.openModal('Login')
-        } else if(this.state.price <= 0) {
+        if (!(this.props.currentUser)) { 
+            this.props.openModal('Login');
+        } else if (this.state.price <= 0) {
             this.setState({
               price: null
-            })
+            });
         } else {  
           const booking = {
               check_in: this.state.check_in.format('YYYY/MM/DD'),
@@ -70,8 +72,7 @@ class BookingForm extends React.Component {
           };
           this.props.createBooking(booking)
               .then(() => (this.props.history.push(`/users/${this.props.currentUser.id}`)));
-        }
-      // this.props.history.push(`/users/${this.props.currentUser.id}`)
+        };
     }
 
     render () {
@@ -155,6 +156,6 @@ class BookingForm extends React.Component {
           </div>
         );
     }
-
 }
-export default withRouter(BookingForm)
+
+export default withRouter(BookingForm);
