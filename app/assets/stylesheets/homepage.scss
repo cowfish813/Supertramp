@@ -78,8 +78,9 @@ margin-bottom: 2.5vh;
 }
 .searchButton {
     // padding: 0px 80px;
+    margin-left: 1rem;
     width: 8vw;
-    height: 5.5vh;
+    height: 63px;
     color: #ffffff;
     background: #40d9ac;   
     border: 3px solid #40d9ac ;
@@ -288,22 +289,23 @@ margin-bottom: 2.5vh;
 
 
 .vagueLocationsContainer {
-    display: flex;
     margin-top: 12vh;
-    flex-direction: column;
-    justify-content: space-between;
     margin-bottom: 5rem;
-    /* justify-content: center; */
+    // justify-content: space-between;
+    // justify-content: center; 
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 .vague_tile_list {
+    max-width: 50vw;
     display: flex;
-    // flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: center;
     // justify-content: space-evenly;
-    
     // min-width: 1110px; 
     // height: 364px;
     // margin: 0px 0px 32px;
-
 }
 .vague_picture {
     height: 364px;
