@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 class BookingIndexItem extends React.Component {
     constructor(props) {
         super(props);
+        debugger
 
         this.state = {
             check_out: this.props.booking.check_out,
@@ -26,8 +27,8 @@ class BookingIndexItem extends React.Component {
 
 
     componentDidMount() {
-        this.props.fetchBookings(this.props.match.params.userId);
-        this.props.fetchListings(this.props.match.params.userId);
+        // this.props.fetchBookings(this.props.match.params.userId);
+        // this.props.fetchListings(this.props.match.params.userId);
     }
 
     handleModal(bookingId, renderFxn) {
