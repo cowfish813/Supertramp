@@ -253,22 +253,22 @@ margin-bottom: 2.5vh;
 
 .tilesContainer {
     display: flex;
-    position: relative;
     justify-content: center;
+    flex-wrap: wrap;
+    // position: relative;
 }
 .tiles_tile {
     display: flex;
     flex-direction: row;
-    /* width: 350px; */
-    // height: 635px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .poppingRectangle {
     display: flex;
     height: 635px;
     width: 350px;
     // text-indent: -50%;
-    margin: 10px;
+    margin: .7rem;
     // margin-top: 20px;
     object-fit: cover;
     animation: unpop .8s ease forwards;
@@ -310,7 +310,7 @@ margin-bottom: 2.5vh;
 .vague_picture {
     height: 364px;
     width: 350px;
-    margin: .8rem;
+    margin: .7rem;
     background: #ebebeb;
     object-fit: cover;
     animation: unpop .8s ease forwards;
