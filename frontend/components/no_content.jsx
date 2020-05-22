@@ -9,6 +9,10 @@ class NoContent extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
     handleClick() {
         this.props.history.goBack();
     }
