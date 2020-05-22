@@ -1,4 +1,4 @@
-  import React from "react";
+import React from "react";
 import { withRouter } from "react-router-dom";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
@@ -51,7 +51,7 @@ class BookingForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        if(!(this.props.currentUser)) { //check currentuser
+        if(!(this.props.currentUser)) { 
             this.props.openModal('Login')
         } else if(this.state.price <= 0) {
             this.setState({
@@ -69,9 +69,10 @@ class BookingForm extends React.Component {
               price: this.state.price
           };
           this.props.createBooking(booking)
-              .then(this.props.history.push(`/users/${this.props.currentUser.id}`));
+              .then(() => (this.props.history.push(`/users/${this.props.currentUser.id}`)));
         }
-    };
+      // this.props.history.push(`/users/${this.props.currentUser.id}`)
+    }
 
     render () {
         return (

@@ -5,16 +5,10 @@ import BookingItem from '../bookings/booking_index_container';
 class User extends React.Component {
     constructor(props) {
         super(props)
-            //index of bookings in state
-            //bookings alreadyt fetched, call setstate and puit them on local state
-            //write method in this comp that sets stat on 
-                //take in argument a booking to be removed
-                //remove booking from state //i can do that from the window but not on my code...
-                //setstate on remaining bookings
-                //..bind(this) in constructor
-                    //.pass entire function as a prop to booking item
-                    //so when it is deleted, that function runs it
-        //     count: document.querySelectorAll("#BookingItemId").length
+
+        this.state = {
+            bookings: {}
+        };
     }; 
 
     
@@ -24,8 +18,16 @@ class User extends React.Component {
         this.props.fetchBookings(this.props.match.params.userId);
     }
 
+    static getDerivedStateFromProps(nextProps, prevProps) {
+        if (nextProps.bookings !== prevProps.bookings) {
+            return { bookings: nextProps.bookings }
+        } else {
+            return null
+        };
+    }
+
     render () {
-        if ((this.props.bookings).length < 1) {
+        if ((this.state.bookings).length < 1) {
             return (
                 <div className="userBody">
                     <div className="left_panel">
@@ -88,9 +90,9 @@ class User extends React.Component {
                 </div>
 
             </div>
-    )};
+        )};
+    }
 }
-};
 
 
 export default User;
