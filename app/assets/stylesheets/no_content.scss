@@ -1,6 +1,7 @@
 .nonContent {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
     height: 100vh;
 }
@@ -15,6 +16,10 @@
 
 .nonContent .goBack {
     font-size: 1em;
+}
+.noContentPic {
+    object-fit: contain;
+    margin: 2rem;
 }
 
 .goBack {
