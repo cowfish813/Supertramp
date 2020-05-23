@@ -181,6 +181,8 @@ margin-bottom: 2.5vh;
 }
 
 .containerBanner {
+    height: 70vh;
+    object-fit: stretch;
     margin-top: 10vh;
     margin-bottom: 10vh;
     display: flex;
@@ -191,7 +193,7 @@ margin-bottom: 2.5vh;
 
 .bannerImg {
     // max-width: 1080px;
-    height: 50%;
+    // height: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -267,9 +269,7 @@ margin-bottom: 2.5vh;
     display: flex;
     height: 635px;
     width: 350px;
-    // text-indent: -50%;
     margin: .7rem;
-    // margin-top: 20px;
     object-fit: cover;
     animation: unpop .8s ease forwards;
 }
@@ -287,18 +287,16 @@ margin-bottom: 2.5vh;
     100% { transform: translateY(1%)}
 }
 
-
 .vagueLocationsContainer {
     margin-top: 12vh;
     margin-bottom: 5rem;
-    // justify-content: space-between;
-    // justify-content: center; 
     display: flex;
     align-items: center;
     flex-direction: column;
+    // width: 1100px;
 }
 .vague_tile_list {
-    max-width: 90vw;
+    // max-width: 90vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
