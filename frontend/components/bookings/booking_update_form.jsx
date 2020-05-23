@@ -11,8 +11,6 @@ class BookingUpdateForm extends React.Component {
   constructor(props) {
     super(props);
 
-    debugger
-    
     this.state = {
       price: this.props.listings[this.props.booking.listing_id].price,
       check_in: null,
@@ -63,7 +61,8 @@ class BookingUpdateForm extends React.Component {
     if (this.state.price <= 0) {
       this.setState({
         price: null
-      })
+      });
+      
     } else {
       const booking = {
         check_in: this.state.check_in.format("YYYY/MM/DD"),

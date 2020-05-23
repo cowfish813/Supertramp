@@ -10,7 +10,7 @@ import "moment/locale/en-gb";
 class BookingForm extends React.Component {
     constructor(props) {
         super(props);
-      
+
         this.state = {
             user_id: this.props.currentUserId,
             host_id: this.props.host_id,
@@ -31,8 +31,8 @@ class BookingForm extends React.Component {
     };
 
     handlePrice(date) {
-        let mseconds = Date.parse(date) - Date.parse(this.state.check_in);
-        let days = mseconds / (1000 * 60 * 60 * 24) * this.props.list.price;
+        const mseconds = Date.parse(date) - Date.parse(this.state.check_in);
+        const days = mseconds / (1000 * 60 * 60 * 24) * this.props.list.price;
         this.setState({
           price: days,
           check_out: date
@@ -54,16 +54,18 @@ class BookingForm extends React.Component {
         
         if (!(this.props.currentUser)) { 
             this.props.openModal('Login');
+
         } else if (this.state.price <= 0) {
             this.setState({
               price: null
             });
+
         } else {  
           const booking = {
               check_in: this.state.check_in.format("YYYY/MM/DD"),
               check_out: this.state.check_out.format("YYYY/MM/DD"),
-              listing_id: this.props.list.id,
               capacity: this.state.capacity,
+              listing_id: this.props.list.id,
               user_id: this.props.currentUser.id,
               host_id: this.props.list.host_id,
               listing_name: this.props.list.name,
@@ -80,7 +82,6 @@ class BookingForm extends React.Component {
             <form className="wrapper" onSubmit={this.handleSubmit}>
               <div className="price-wrapper">
                 <div className="price">
-                  {/* {this.state.price} */}
                   {`$${this.props.list.price}`}
                   <p>per night</p>
                 </div>
@@ -90,7 +91,7 @@ class BookingForm extends React.Component {
                   <div className="label">
                     Check in
                     <SingleDatePicker
-                      displayFormat={() => ("MM/DD/YYYY")} 
+                      displayFormat={"YYYY/MM/DD"} 
                       placeholder="Select Start"
                       date={this.state.check_in} // momentPropTypes.momentObj or null
                       onDateChange={(date) => this.setState({ check_in: date })} // PropTypes.func.isRequired
@@ -110,7 +111,7 @@ class BookingForm extends React.Component {
                   <div className="label">
                     Check out
                     <SingleDatePicker locale="en-gb"
-                      displayFormat={() => ("MM/DD/YYYY")}
+                      displayFormat={"YYYY/MM/DD"}
                       placeholder="Select End"
                       date={this.state.check_out} // momentPropTypes.momentObj or null
                       onDateChange={(date) => this.setState({ check_out: date })} // PropTypes.func.isRequired
@@ -142,7 +143,7 @@ class BookingForm extends React.Component {
                             id="capacity_input"
                             min="1"
                             max={this.props.list.capacity}
-                            onChange={this.handleCapacity}
+                            onChange={() => this.handleCapacity}
                           />
                         </div>
                       </div>

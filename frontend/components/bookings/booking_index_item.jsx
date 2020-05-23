@@ -1,11 +1,12 @@
 import React from 'react';
 import { withRouter } from "react-router-dom";
 import { Link } from 'react-router-dom';
+import moment from 'moment';
 
 class BookingIndexItem extends React.Component {
     constructor(props) {
         super(props);
-
+        debugger
         this.state = {
             check_out: this.props.booking.check_out,
             check_in: this.props.booking.check_in,
@@ -13,8 +14,6 @@ class BookingIndexItem extends React.Component {
             capacity: this.props.booking.capacity,
         }
         
-
-        // debugger
         this.handleClick = this.handleClick.bind(this);
         this.handleModal = this.handleModal.bind(this);
         this.bookingDidUpdate = this.bookingDidUpdate.bind(this);
@@ -28,6 +27,7 @@ class BookingIndexItem extends React.Component {
 
 
     componentDidMount() {
+        //maybe don't do it...
         // this.props.fetchBookings(this.props.match.params.userId);
         // this.props.fetchListings(this.props.match.params.userId);
     }
@@ -46,8 +46,8 @@ class BookingIndexItem extends React.Component {
     }
 
     render () {
-        let checkin = new Date(this.state.check_in).toDateString();
-        let checkout = new Date(this.state.check_out).toDateString();
+        let checkin = new Date(this.state.check_in).toGMTString();
+        let checkout = new Date(this.state.check_out).toGMTString();
 
 
         if (this.props.current_user === this.props.booking.user_id) {
