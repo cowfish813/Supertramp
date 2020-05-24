@@ -1,3 +1,9 @@
+.superHomePage {
+    max-width: 1150px;
+    min-width: 20px;
+    // min-width: 10%;
+}
+
 .home {
     margin-top: 15vh;
     width: 100%;
@@ -181,23 +187,24 @@ margin-bottom: 2.5vh;
 }
 
 .containerBanner {
-    height: 70vh;
+    // height: 70vh;
     object-fit: stretch;
     margin-top: 10vh;
     margin-bottom: 10vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     overflow: hidden;
 }
 
 
 .bannerImg {
-    // max-width: 1080px;
-    // height: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    width: 55vw;
+    height: auto;
+    // margin: auto;
 }
 
 .banner_message {
@@ -264,11 +271,15 @@ margin-bottom: 2.5vh;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    width: 90vw;
 }
 .poppingRectangle {
     display: flex;
     height: 635px;
-    width: 350px;
+    // width: 350px;
+    // max-width: 22rem;
+    min-width: 10vw;
+    max-width: 30.5%;
     margin: .7rem;
     object-fit: cover;
     animation: unpop .8s ease forwards;
@@ -292,27 +303,29 @@ margin-bottom: 2.5vh;
     margin-bottom: 5rem;
     display: flex;
     align-items: center;
-    flex-direction: column;
+    // flex-direction: column;
+    // width: 80%;
     // width: 1100px;
+    
 }
 .vague_tile_list {
-    // max-width: 90vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     // justify-content: space-evenly;
-    // min-width: 1110px; 
-    // height: 364px;
-    // margin: 0px 0px 32px;
+    // max-width: 90vw;
+
 }
 .vague_picture {
     height: 364px;
-    width: 350px;
+    // min-width: 300px;
+    // max-width: 350px;
+    max-width: 22rem;
     margin: .7rem;
     background: #ebebeb;
     object-fit: cover;
     animation: unpop .8s ease forwards;
-    background-color: lawngreen;
+    // background-color: lawngreen;
     // margin: 10px;
     // margin-bottom: 5vh;
 }

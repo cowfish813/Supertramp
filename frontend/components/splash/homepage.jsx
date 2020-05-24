@@ -58,7 +58,7 @@ class Homepage extends React.Component {
 
     render() {
         return (
-            <div className="">
+            <div className="superHomePage">
                 <div className="home">
                     <div className="homeCol">
                         <div className="homeTitle">
