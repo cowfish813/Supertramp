@@ -32,8 +32,8 @@
     margin: 1rem;
     display: flex;
     flex-direction: column;
-    height: 29%;
-    width: 40%;
+    height: 32%;
+    width: 43%;
     border: lightgray solid 1px;
     box-shadow: .2rem .6rem 1rem lightgrey;
 
@@ -43,9 +43,10 @@
     overflow: hidden;
 }
 .indexPhotos {
+
     object-fit: fill;
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 .mapIndex {
@@ -61,9 +62,9 @@
 }
 
 .list_index_name{
-    font-size: 2rem;
+    // font-size: 2rem;
     margin-left: 2rem;
-    font-size: 2rem;
+    font-size: 140%;
     font-weight: bold;
 }
 .listing_index_price {
