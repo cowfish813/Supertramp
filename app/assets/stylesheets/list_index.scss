@@ -41,6 +41,7 @@
 .index_box {
     margin-bottom: 3vh;
     overflow: hidden;
+    height: 70%;
 }
 .indexPhotos {
 
@@ -66,10 +67,11 @@
     margin-left: 2rem;
     font-size: 140%;
     font-weight: bold;
+    margin-right: 1.5rem;
 }
 .listing_index_price {
     margin-right: 2rem;
-    font-size: 1rem;
+    font-size: 90%;
     display: flex;
     // justify-content: flex-end;
     align-self: flex-end;
