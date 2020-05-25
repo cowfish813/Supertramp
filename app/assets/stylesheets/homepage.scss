@@ -1,7 +1,9 @@
 .superHomePage {
-    max-width: 1150px;
-    min-width: 20px;
-    // min-width: 10%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .home {
@@ -187,44 +189,44 @@ margin-bottom: 2.5vh;
 }
 
 .containerBanner {
-    // height: 70vh;
     object-fit: stretch;
     margin-top: 10vh;
     margin-bottom: 10vh;
+    // width: 85%;
     display: flex;
-    align-items: center;
+    // overflow: hidden;
     justify-content: center;
-    overflow: hidden;
+    // justify-content: left;
+    // align-items: center;
 }
-
-
 .bannerImg {
+    overflow: hidden;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 55vw;
+    width: 80%;
+    // max-width: 85%;
     height: auto;
     // margin: auto;
 }
-
 .banner_message {
-    // padding-left: 20px;
     display: flex;
     flex-direction: column;
-    // width: 30%;
-    // height: 35vh;
-    width: 25%;
-    height: 40%;
+    // width: 350px;
+    min-width: 200px;
+    width: 20%;
+    // height: 450px;
+    height: 42%;
     background-color: black;
     position: absolute;
     opacity: .9;
     color: white;
     display: flex;
     justify-content: center;
-    // left: 35rem;
-    margin-left: 8%;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding: 3rem;
+    // margin-right: 200%;
+    // margin-right: 500%;
+    // right: 1000px;
+    right: 49%;
+    top: 63%;
 }
 .banner_font{
     flex-wrap: wrap;
@@ -279,7 +281,7 @@ margin-bottom: 2.5vh;
     // width: 350px;
     // max-width: 22rem;
     min-width: 10vw;
-    max-width: 30.5%;
+    max-width: 28%;
     margin: .7rem;
     object-fit: cover;
     animation: unpop .8s ease forwards;

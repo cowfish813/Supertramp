@@ -59,6 +59,7 @@ class Homepage extends React.Component {
     render() {
         return (
             <div className="superHomePage">
+
                 <div className="home">
                     <div className="homeCol">
                         <div className="homeTitle">
@@ -76,9 +77,11 @@ class Homepage extends React.Component {
                     </div>
                     < SearchBar />
                 </div>
+
                 <div className="containerBanner">
                     <img src="https://hipcamp-res.cloudinary.com/image/upload/c_thumb,w_1080/v1498456730/campground-photos/yene977lfve4yhhnokuh.jpg" alt="bannerbar"
                     className="bannerImg"
+                    id="bannerImg"
                     />
                     <div className="banner_message">
                         <div >
@@ -93,6 +96,7 @@ class Homepage extends React.Component {
                         </div>
                     </div>                  
                 </div>
+
                 <div className="tilesContainer">
                     <div className="tiles_tile">
                         <img onClick={this.handleTile1} className="poppingRectangle" src="https://hipcamp-res.cloudinary.com/images/c_thumb,f_auto,q_60,h_953/v1513711999/campground-photos/jxhpqyakfthq93t8on4x/mudita-camel-s-yurt-camels-and-a-yurt-animal-camel.jpg" alt=""/>
