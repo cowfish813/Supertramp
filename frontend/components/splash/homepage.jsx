@@ -7,18 +7,23 @@ class Homepage extends React.Component {
     constructor(props) {
         super(props)
 
-        this.handleTile3 = this.handleTile3.bind(this)
-        this.handleTile2 = this.handleTile2.bind(this)
-        this.handleTile1 = this.handleTile1.bind(this)
+        this.handleTile3 = this.handleTile3.bind(this);
+        this.handleTile2 = this.handleTile2.bind(this);
+        this.handleTile1 = this.handleTile1.bind(this);
     }
 
     componentDidMount() {
-        window.scrollTo(0, 0)
+        debugger
+        window.scrollTo(0, 0);
+        this.props.fetchListings();
     }
 
     handleInput() {
         window.scrollTo({
-            left: 0, top: 1450, behavior: 'smooth'})
+            left: 0, 
+            top: 1450, 
+            behavior: 'smooth'
+        });
     }
 
     handleTile3(e) {
