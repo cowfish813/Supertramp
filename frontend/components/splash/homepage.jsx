@@ -15,7 +15,7 @@ class Homepage extends React.Component {
     componentDidMount() {
         debugger
         window.scrollTo(0, 0);
-        this.props.fetchListings();
+        // this.props.fetchListings();
     }
 
     handleInput() {
