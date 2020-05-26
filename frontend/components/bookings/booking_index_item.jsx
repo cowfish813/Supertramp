@@ -6,7 +6,6 @@ import moment from 'moment';
 class BookingIndexItem extends React.Component {
     constructor(props) {
         super(props);
-        debugger
         this.state = {
             check_out: this.props.booking.check_out,
             check_in: this.props.booking.check_in,

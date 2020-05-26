@@ -15,6 +15,8 @@ class ListSearchResults extends React.Component {
     componentDidMount(e) {
         window.scrollTo(0, 0)
         this.props.updateFilter(e)
+        window.location.reload(false); //maybe remove
+
     }
 
 
