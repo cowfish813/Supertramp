@@ -72,7 +72,7 @@ class Search extends React.Component {
                         id="splash_search" 
                         className="search" 
                         type="search" 
-                        placeholder="Start with somewhere like Yosemite!..." 
+                        placeholder="Start with somewhere like Yosemite Valley!" 
                         value={this.state.mapLocation}
                         onChange={this.handleInput}
                         />
