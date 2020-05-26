@@ -28,7 +28,7 @@ class Homepage extends React.Component {
         //desert
         e.preventDefault();
         this.props.history.push({
-            pathname: `/search/37.8032783,-119.5393594`,
+            pathname: `/search/29.283921,41.657576`,
             state: { 
                 lat: 29.283921,
                 lng: 41.657576
@@ -40,7 +40,7 @@ class Homepage extends React.Component {
         //japan
         e.preventDefault();
         this.props.history.push({
-            pathname: `/search/37.8032783,-119.5393594`,
+            pathname: `/search/34.910977,137.250385`,
             state: { 
                 lat: 34.910977,
                 lng: 137.250385
@@ -53,7 +53,8 @@ class Homepage extends React.Component {
         e.preventDefault();
         this.props.history.push({
             pathname: `/search/37.8032783,-119.5393594`,
-            state: { lat: 37.8032783,
+            state: { 
+                lat: 37.8032783,
                 lng: -119.5393594
             }
         });       
