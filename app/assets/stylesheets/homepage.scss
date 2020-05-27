@@ -279,8 +279,8 @@ margin-bottom: 2.5vh;
 .poppingRectangle {
     display: flex;
     height: 635px;
-    width: 28%;
-    // width: 350px;
+    // width: 28%;
+    width: 364px;
     // max-width: 22rem;
     // min-width: 10vw;
     // max-width: 28%;
@@ -299,7 +299,7 @@ margin-bottom: 2.5vh;
 }
 @keyframes unpop {
     0% {}
-    100% { transform: translateY(1%)}
+    100% { transform: translateY(1.2%)}
 }
 
 .vagueLocationsContainer {
@@ -317,7 +317,7 @@ margin-bottom: 2.5vh;
     // width: 100%;
     max-width: 1140px;
     column-width: 60rem;
-     -webkit-column-width: 60rem;
+    -webkit-column-width: 60rem;
     -moz-column-width: 60rem;
         //  column-count: 3;
     
