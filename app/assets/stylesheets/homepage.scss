@@ -279,10 +279,11 @@ margin-bottom: 2.5vh;
 .poppingRectangle {
     display: flex;
     height: 635px;
+    width: 28%;
     // width: 350px;
     // max-width: 22rem;
-    min-width: 10vw;
-    max-width: 28%;
+    // min-width: 10vw;
+    // max-width: 28%;
     margin: .7rem;
     object-fit: cover;
     animation: unpop .8s ease forwards;
@@ -313,12 +314,15 @@ margin-bottom: 2.5vh;
     
 }
 .vague_tile_list {
-    // column-width: 50rem;
-    position: relative;
+    // width: 100%;
+    max-width: 1140px;
+    column-width: 60rem;
+     -webkit-column-width: 60rem;
+    -moz-column-width: 60rem;
+        //  column-count: 3;
     
 }
 .vague_picture {
-    position: absolute;
     height: 364px;
     // min-width: 300px;
     // max-width: 350px;
