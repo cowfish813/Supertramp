@@ -313,17 +313,12 @@ margin-bottom: 2.5vh;
     
 }
 .vague_tile_list {
-    column-width: 80rem;
-    // left: 50%;
-    // right: 50%;
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: center;
-    // flex-wrap: wrap;
-    // width: 80vw;
-
+    // column-width: 50rem;
+    position: relative;
+    
 }
 .vague_picture {
+    position: absolute;
     height: 364px;
     // min-width: 300px;
     // max-width: 350px;
