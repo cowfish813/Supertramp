@@ -13,7 +13,9 @@ class Homepage extends React.Component {
     }
 
     componentDidMount() {
+        debugger
         window.scrollTo(0, 0);
+        this.props.fetchListings();
     }
 
     handleInput() {
@@ -36,7 +38,7 @@ class Homepage extends React.Component {
         });       
     }
 
-    handleTile2(e) {
+    handleTile2(e) {     
         //japan
         e.preventDefault();
         this.props.history.push({
@@ -53,8 +55,7 @@ class Homepage extends React.Component {
         e.preventDefault();
         this.props.history.push({
             pathname: `/search/37.8032783,-119.5393594`,
-            state: { 
-                lat: 37.8032783,
+            state: { lat: 37.8032783,
                 lng: -119.5393594
             }
         });       
@@ -74,7 +75,7 @@ class Homepage extends React.Component {
                         <div className="homeDesc">
                             <h2>
                                 Book unique camping experiences on
-                                <strong> Some </strong>
+                                <strong> Hella </strong>
                                 campsites, cabins, parks, and road sides!
                             </h2>
                         </div>

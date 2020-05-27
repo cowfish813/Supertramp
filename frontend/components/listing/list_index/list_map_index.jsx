@@ -30,6 +30,8 @@ class ListMapIndex extends React.Component {
     }
 
     componentDidMount() {
+        // window.location.reload(false); //maybe remove
+
         window.scrollTo(0, 0);
         this.mapOptions = {
             center: {
