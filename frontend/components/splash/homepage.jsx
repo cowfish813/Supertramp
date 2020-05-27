@@ -13,7 +13,6 @@ class Homepage extends React.Component {
     }
 
     componentDidMount() {
-        debugger
         window.scrollTo(0, 0);
         this.props.fetchListings();
     }
@@ -116,6 +115,10 @@ class Homepage extends React.Component {
                         <Link to="/listings/7"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg" alt=""/> </Link>
                         <Link to="/listings/8"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg" alt=""/> </Link>
                         <Link to="/listings/9"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/55937490_10107418126272313_2116183051628183552_n.jpg" alt=""/> </Link>
+                    </div>
+
+                    <div className="vague_tile_list">
+
                         <Link to="/listings/10"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg" alt=""/> </Link>
                         <Link to="/listings/11"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg" alt=""/> </Link>
                         <Link to="/listings/12"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg" alt=""/> </Link>

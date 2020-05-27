@@ -308,19 +308,27 @@ margin-bottom: 2.5vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    // flex-direction: column;
+
+    // max-width: 80vw;
+    flex-direction: column;
     // width: 80%;
     // width: 1100px;
     
 }
 .vague_tile_list {
-    max-width: 1140px;
-    column-width: 100rem;
-    -webkit-column-width: 100rem;
-    -moz-column-width: 100rem;
-    // width: 100%;
-        //  column-count: 3;
-    
+    // max-width: 90vw;
+    // width: 60%;
+    // max-width: 90%;
+
+    // column-width: 100rem;
+    // -webkit-column-width: 100rem;
+    // -moz-column-width: 100rem;
+    // max-width: 1140px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .vague_picture {
     height: 364px;
