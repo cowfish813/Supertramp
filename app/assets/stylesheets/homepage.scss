@@ -306,22 +306,21 @@ margin-bottom: 2.5vh;
     margin-bottom: 5rem;
     display: flex;
     align-items: center;
+    justify-content: center;
     // flex-direction: column;
     // width: 80%;
     // width: 1100px;
     
 }
 .vague_tile_list {
+    column-width: 80rem;
+    // left: 50%;
+    // right: 50%;
     // display: flex;
-    // flex-wrap: wrap;
+    // flex-direction: row;
     // justify-content: center;
-    // justify-content: space-evenly;
-    // max-width: 90vw;
-        display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 80vw;
+    // flex-wrap: wrap;
+    // width: 80vw;
 
 }
 .vague_picture {
@@ -333,9 +332,6 @@ margin-bottom: 2.5vh;
     background: #ebebeb;
     object-fit: cover;
     animation: unpop .8s ease forwards;
-    // background-color: lawngreen;
-    // margin: 10px;
-    // margin-bottom: 5vh;
 }
 .vague_picture:hover {
     cursor: pointer;
