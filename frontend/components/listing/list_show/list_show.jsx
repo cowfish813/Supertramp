@@ -2,6 +2,8 @@ import React from 'react';
 import ListMap from './list_map'
 import { withRouter }from 'react-router-dom'
 import BookingForm from '../../bookings/booking_form_container'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {  } from '@fortawesome/free-brands-svg-icons';
 
 
 class ListShow extends React.Component {
@@ -30,10 +32,10 @@ class ListShow extends React.Component {
                   src={this.props.list.photoUrls}
                   alt=""
                 />
-                <div className="photo_title">{this.props.list.name}</div>
               </div>
+              <div className="photo_title">{this.props.list.name}</div>
             </div>
-
+          
             <div className="booking-comp">
               <BookingForm
                 list={this.props.list}
@@ -49,7 +51,9 @@ class ListShow extends React.Component {
                   className="hostpic"
                   src="https://supertramp-mast.s3-us-west-1.amazonaws.com/24-248366_profile-clipart-generic-user-generic-profile-picture-gender.png"
                   alt=""
+                  
                 />
+                
                 <div className="host_by">
                   Hosted By:
                   <div className="host_name">Nick C.</div>
@@ -59,8 +63,8 @@ class ListShow extends React.Component {
                   <p className="description"> {this.props.list.description}</p>
                 </div>
               </div>
-              <div className="detail_list onArrival">
-                <div className="details_title">Details</div>
+              <div className="detail_list">
+                <div className="details_title onArrival">Details</div>
                 <div className="details_text">
                   <div>
                     <strong>Check in: </strong> After 2PM{" "}

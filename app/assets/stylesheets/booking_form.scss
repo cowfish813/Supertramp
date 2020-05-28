@@ -1,33 +1,40 @@
 .booking-comp {
-    // display: flex;
-    position: absolute;
-    top: 32rem;
-    right: 20%;
-    background: white;
+    position: sticky;
+    top: 100px;
+    width: 95%;
+    display: flex;
+    justify-content: flex-end;
+
+    // border: lime solid 1px;
 }
 
-::-webkit-input-placeholder {
-   text-align: center;
-}
+// ::-webkit-input-placeholder {
+//    text-align: center;
+// }
 
-:-moz-placeholder { /* Firefox 18- */
-   text-align: center;  
-}
+// :-moz-placeholder { /* Firefox 18- */
+//    text-align: center;  
+// }
 
-::-moz-placeholder {  /* Firefox 19+ */
-   text-align: center;  
-}
+// ::-moz-placeholder {  /* Firefox 19+ */
+//    text-align: center;  
+// }
 
-:-ms-input-placeholder {  
-   text-align: center; 
-}
+// :-ms-input-placeholder {  
+//    text-align: center; 
+// }
 
 .widget-container {
+        position: sticky;
+
+    // left: 4000px;
+    // width: fit-content;
+    height: fit-content;
     background-color: white;
     height: 260px;
     box-shadow: 0 1px 5px rgba(0,0,0,0.05);
     border: 1px solid #ebebeb;
-    z-index: 2;
+    z-index: 9001;
     display: flex;
     justify-content: center;
 

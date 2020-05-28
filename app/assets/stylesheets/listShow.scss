@@ -1,11 +1,13 @@
 .show_body {
-    flex-direction: column;
     display: flex;
+    flex-direction: column;
+    width: 100vw;
 }
 .social_share_target{
-    // height: 20%;
-    // padding: 15px 15px 0px;
     display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
 }
 .list-show-photo{
     object-position: center;
@@ -23,17 +25,21 @@
 
 
 .show-listing {
-    margin-top: 5rem;
+    // margin-top: 5rem;
     border-top: lightgrey solid 1px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-right: 5%;
+    width: 70vw;
 }
 
 .section-overview{
     display: flex;
-    width: auto;
+    width: 80vw;
+    justify-content: center;
     object-position: center;
-    height: 30vh;
+    height: 23vh;
     padding: 20px 0px 0px;
     margin-bottom: 5vh;
     // border: red 1px solid;
@@ -59,22 +65,34 @@
 }
 
 .details-container {
-    margin-left: 20rem;
+    // margin-left: 20rem;
     // border-top: lightgrey solid 1px;
 }
 
+.onArrival {
+    margin-left: 9rem;
+    margin-bottom: 20%;
+
+}
+
 .detail_list {
+    
+    width: 70vw;
     border-top: lightgrey solid 1px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 .details_title {
     margin-top: 3rem;
     font-weight: bolder;
-    margin-right: 15rem;
+    margin-right: 7rem;
+    // display: flex;
+    // justif
 }
 .details_text {
-    margin-top: 2.5rem;
+    margin-top: 4rem;
     display: flex;
     flex-direction: column;
     height: 15vh;
@@ -93,7 +111,7 @@
     text-align: left;
 }
 #img_offset {
-    margin-right: 14rem;
+    margin-right: 6rem;
 }
 
 
@@ -121,7 +139,7 @@
     // margin: 0px 0px 11px;
     font-size: 18px;
     color: #333333;
-    border: red 1px solid;
+    // border: red 1px solid;
 }
 // .onboarding {
 //     border: solid 1px lightgrey;
@@ -146,7 +164,7 @@
     width: 720px;
     // height: 360px;
     // margin: 0 10px;
-    border: red 1px solid;
+    // border: red 1px solid;
     display: flex;
     // position: absolute;
 }

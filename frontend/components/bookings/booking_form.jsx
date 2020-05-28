@@ -51,7 +51,6 @@ class BookingForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        
         if (!(this.props.currentUser)) { 
             this.props.openModal('Login');
 
@@ -61,9 +60,10 @@ class BookingForm extends React.Component {
             });
 
         } else {  
+          
           const booking = {
-              check_in: this.state.check_in.format("YYYY/MM/DD"),
-              check_out: this.state.check_out.format("YYYY/MM/DD"),
+              check_in: this.state.check_in.format("MM-DD-YYYY"),
+              check_out: this.state.check_out.format("MM-DD-YYYY"),
               capacity: this.state.capacity,
               listing_id: this.props.list.id,
               user_id: this.props.currentUser.id,
@@ -71,6 +71,7 @@ class BookingForm extends React.Component {
               listing_name: this.props.list.name,
               price: this.state.price
           };
+          debugger
           this.props.createBooking(booking)
               .then(() => (this.props.history.push(`/users/${this.props.currentUser.id}`)));
         };
@@ -91,7 +92,7 @@ class BookingForm extends React.Component {
                   <div className="label">
                     Check in
                     <SingleDatePicker
-                      displayFormat={"YYYY/MM/DD"} 
+                      // displayFormat={"YYYY/MM/DD"} 
                       placeholder="Select Start"
                       date={this.state.check_in} // momentPropTypes.momentObj or null
                       onDateChange={(date) => this.setState({ check_in: date })} // PropTypes.func.isRequired
@@ -111,7 +112,7 @@ class BookingForm extends React.Component {
                   <div className="label">
                     Check out
                     <SingleDatePicker locale="en-gb"
-                      displayFormat={"YYYY/MM/DD"}
+                      // displayFormat={"YYYY/MM/DD"}
                       placeholder="Select End"
                       date={this.state.check_out} // momentPropTypes.momentObj or null
                       onDateChange={(date) => this.setState({ check_out: date })} // PropTypes.func.isRequired

@@ -32,7 +32,7 @@ class Listing < ApplicationRecord
     has_many :bookings,
     foreign_key: :listing_id
 
-    # has_many_attached :photos
+    has_many_attached :photos
     has_one_attached :photo
 
     # def ensure_photo

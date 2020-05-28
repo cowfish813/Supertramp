@@ -9,7 +9,7 @@
 }
 
 .home {
-    margin-top: 15vh;
+    // margin-top: 8vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -26,7 +26,7 @@
 }
 
 .homeTitle {
-margin-bottom: 2.5vh;
+// margin-bottom: 2.5vh;
 }
 .homeDesc {
 }
@@ -50,15 +50,15 @@ margin-bottom: 2.5vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 11vh;
+    // margin-top: 8vh;
 }
 
 .superSearch {
     padding: 1.5rem;
-    width: 58vw;
-    height: 6vh;
-    padding: 17px;
-    box-shadow: 0px 3px 7px lightgray;
+    width: 60vw;
+    height: 5vh;
+    padding: 1rem;
+    box-shadow: 0px 3px 6px lightgray;
     /* margin: 0 auto; */
     position: relative;
     display: flex;
