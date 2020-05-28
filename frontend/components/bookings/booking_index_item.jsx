@@ -47,6 +47,9 @@ class BookingIndexItem extends React.Component {
     render () {
         let checkin = new Date(this.state.check_in).toGMTString();
         let checkout = new Date(this.state.check_out).toGMTString();
+        // debugger
+        // checkin = checkin.slice(" 00:00:00 GMT").join("")
+        // checkout = checkout.slice(" 00:00:00 GMT").join("")
 
 
         if (this.props.current_user === this.props.booking.user_id) {

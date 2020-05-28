@@ -27,7 +27,7 @@ class Api::ListingsController < ApplicationController
 
     def create
         @listing = Listing.new(listing_params)
-        @listing.host_id = current_user.id         #dis/enable when create feature exists?
+        @listing.host_id = current_user.id
         if @listing.save!
             render json: {message: "successful create"}
             # render :show
