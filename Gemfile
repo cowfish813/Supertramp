@@ -44,7 +44,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'pry-rails'
   # gem 'figaro'
-
+  gem 'font-awesome-sass', '~> 4.4.0'
 end
 
 group :development do

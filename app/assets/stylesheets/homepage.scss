@@ -1,3 +1,5 @@
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+
 .superHomePage {
 
     display: flex;
@@ -68,22 +70,23 @@ margin-bottom: 2.5vh;
 }
 
 .searchBar {
-    // width: 559px;
-    // height: 63px;
     background: #ffffff;
-    /* padding: 6px 12px 6px 45px; */
     display: flex;
-    // justify-content: space-between;
-    align-items: center;
-
-    
+    align-items: center;    
+}
+.fasearch { 
+  position: absolute;
+  left: 3.5%;
+//   top: 10px;
+//   left: 10px;
 }
 .search {
+    padding: 0 5.5%;
     width: 45vw;
     height: 59px;
     font-size: 2rem;
-    
 }
+
 .searchButton {
     // padding: 0px 80px;
     margin-left: 1rem;

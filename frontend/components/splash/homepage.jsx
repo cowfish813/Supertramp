@@ -54,7 +54,8 @@ class Homepage extends React.Component {
         e.preventDefault();
         this.props.history.push({
             pathname: `/search/37.8032783,-119.5393594`,
-            state: { lat: 37.8032783,
+            state: { 
+                lat: 37.8032783,
                 lng: -119.5393594
             }
         });       

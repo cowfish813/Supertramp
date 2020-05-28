@@ -1,18 +1,20 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Autocomplete from "react-google-autocomplete";
+// import PlacesAutocomplete from 'react-places-autocomplete';
 
-// import PlacesAudtocomplete from 'react-places-autocomplete';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 
 class Search extends React.Component {
     constructor(props) {
         super(props)
-
+        // debugger
     this.state = {
         mapLocation: "",
-        lat: "",
-        lng:""
+        lat: 37.8651,
+        lng: 119.5383
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -68,6 +70,7 @@ class Search extends React.Component {
                 <div className="superSearch">
 
                     <div className="searchBar">
+                        <span className="fasearch"><FontAwesomeIcon icon={faSearch} /></span>
                         <input 
                         id="splash_search" 
                         className="search" 
