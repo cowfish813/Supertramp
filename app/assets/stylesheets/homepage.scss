@@ -62,17 +62,19 @@ margin-bottom: 2.5vh;
     /* margin: 0 auto; */
     position: relative;
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     align-content: center;
     align-items: center;
+    flex-direction: row;
     
 
 }
-
 .searchBar {
+    
     background: #ffffff;
     display: flex;
-    align-items: center;    
+    align-items: center;
+    // flex-direction: row;  
 }
 .fasearch { 
   position: absolute;
@@ -84,7 +86,7 @@ margin-bottom: 2.5vh;
     padding: 0 5.5%;
     width: 45vw;
     height: 59px;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .searchButton {
