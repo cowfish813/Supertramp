@@ -32,9 +32,11 @@ class NavBar extends React.Component {
                         <li className="navItem"><a target="_blank" href="https://github.com/cowfish813">GitHub</a></li>
                         <li className="navItem"><a target="_blank" href="https://www.instagram.com/probablynotnick/">Instagram</a></li>
                         <li className="navItem"><a onClick={() => this.props.openModal('Login')}>Log In</a></li> 
-                        <li className="navItem signupButton">
+                        <button className="navItem signupButton" onClick={() => this.props.openModal('Signup')}>Sign Up</button>
+
+                        {/* <li className="navItem signupButton">
                         <a onClick={() => this.props.openModal('Signup')}>Sign up</a>
-                        </li>
+                        </li> */}
                     </div>
                 </div>
             )
@@ -52,7 +54,8 @@ class NavBar extends React.Component {
                         <li className="navItem"><a target="_blank" href="https://github.com/cowfish813">GitHub</a></li>
                         <li className="navItem"><a target="_blank" href="https://www.instagram.com/probablynotnick/">Instagram</a></li>
                         <li className="navItem"><Link to={`/users/${this.props.ID}`}>Self</Link></li>
-                        <li className="navItem" onClick={this.handleLogout}><a>Log out</a></li> 
+                        <button className="navItem" onClick={this.handleLogout}>Log Out</button>
+                        {/* <li className="navItem" onClick={this.handleLogout}><a>Log out</a></li>  */}
                     </div>
                 </div>
             )

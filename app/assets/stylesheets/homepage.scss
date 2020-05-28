@@ -91,7 +91,7 @@ margin-bottom: 2.5vh;
     height: 63px;
     color: #ffffff;
     background: #40d9ac;   
-    border: 3px solid #40d9ac ;
+    border: 3px solid #40d9ac;
     font-size: 1.5rem;
     font-weight: normal;
     transition: 0.5s;
@@ -201,9 +201,9 @@ margin-bottom: 2.5vh;
     // align-items: center;
 }
 .bannerImg {
-    overflow: hidden;
+    // overflow: hidden;
     display: flex;
-    width: 90%;
+    width: 83%;
     // max-width: 85%;
     height: auto;
     // margin: auto;
@@ -211,44 +211,41 @@ margin-bottom: 2.5vh;
 .banner_message {
     display: flex;
     flex-direction: column;
-    // width: 350px;
     min-width: 200px;
     width: 12%;
-    // height: 450px;
-    height: 325px;
-    background-color: black;
-    // position: relative;
+    height: 225px;
+    background-color: #333333;
     position: absolute;
-    // opacity: .9;
     color: white;
     display: flex;
     justify-content: flex-start;
     padding: 3rem;
-    right: 60%;
-    // right: 50em;
-
-    top: 15%;
+    right: 55%;
+    top: 20%;
 }
 .banner_font{
     flex-wrap: wrap;
     display: flex;
     // margin-left: 10%;
-    margin-bottom: 10%;
-    font-size: 250%;
+    // margin-bottom: 10%;
+    width: 112%;
+    font-size: 175%;
     opacity: 100;
     color: white;
+    margin-bottom: 10%;
 }
 .banner_sub_message{
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: white;
     margin-top: .5rem;
     flex-wrap: wrap;
     margin-left: 15%;
+    margin-bottom: 10%;
+
 }
 .intro_button_container {
     margin-top: 10%;
-    // left: 10%;
-    // margin-left: 30%;
+    // margin-bottom: 10%;
     overflow: hidden;
     display: flex;
     justify-content: center;

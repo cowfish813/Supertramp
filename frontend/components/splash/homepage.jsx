@@ -89,7 +89,7 @@ class Homepage extends React.Component {
                     />
                     <div className="banner_message">
                         <div >
-                                <span className="banner_font">Explore a Dozen Locations!</span>
+                                <span className="banner_font">Explore Dozens of Locations!</span>
                             {/* <span className="banner_font">Locations!</span> */}
                         </div>
                         <span className="banner_sub_message">Run a search or scroll down below and start exploring!</span>
