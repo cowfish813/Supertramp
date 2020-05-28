@@ -50,19 +50,19 @@ margin-bottom: 2.5vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 5vh;
+    margin-top: 11vh;
 }
 
 .superSearch {
     padding: 1.5rem;
-    width: 55vw;
+    width: 58vw;
     height: 6vh;
     padding: 17px;
     box-shadow: 0px 3px 7px lightgray;
     /* margin: 0 auto; */
     position: relative;
     display: flex;
-    // justify-content: space-between;
+    justify-content: space-around;
     align-content: center;
     align-items: center;
     flex-direction: row;
@@ -78,12 +78,12 @@ margin-bottom: 2.5vh;
 }
 .fasearch { 
   position: absolute;
-  left: 3.5%;
+  left: 4.5%;
 //   top: 10px;
 //   left: 10px;
 }
 .search {
-    padding: 0 5.5%;
+    padding: 0 6%;
     width: 45vw;
     height: 59px;
     font-size: 1.5rem;

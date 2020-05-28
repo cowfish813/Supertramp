@@ -80,8 +80,8 @@ class Homepage extends React.Component {
                             </h2>
                         </div>
                     </div>
-                    < SearchBar />
                 </div>
+                    < SearchBar />
 
                 <div className="containerBanner">
                     <img src="https://hipcamp-res.cloudinary.com/image/upload/c_thumb,w_1080/v1498456730/campground-photos/yene977lfve4yhhnokuh.jpg" alt="bannerbar"
