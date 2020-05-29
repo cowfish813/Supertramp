@@ -47,13 +47,7 @@ class ListShow extends React.Component {
 
             <div className="show-listing">
               <div className="section-overview">
-                <img
-                  className="hostpic"
-                  src="https://supertramp-mast.s3-us-west-1.amazonaws.com/24-248366_profile-clipart-generic-user-generic-profile-picture-gender.png"
-                  alt=""
-                  
-                />
-                
+                <img className="hostpic" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/24-248366_profile-clipart-generic-user-generic-profile-picture-gender.png" alt="" />
                 <div className="host_by">
                   Hosted By:
                   <div className="host_name">Nick C.</div>
@@ -61,6 +55,10 @@ class ListShow extends React.Component {
 
                 <div className="details-container">
                   <p className="description"> {this.props.list.description}</p>
+                </div>
+
+                <div className="">
+
                 </div>
               </div>
               <div className="detail_list">
