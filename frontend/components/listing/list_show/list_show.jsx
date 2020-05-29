@@ -61,9 +61,27 @@ class ListShow extends React.Component {
                 </div>
 
                 <div className="area_essentials_ammenities">
-                  <div className="camp_area_list"></div>
-                  <div className="essentials_list"></div>
-                  <div className="amenities_list"></div>
+                  <div className="camp_area_list condition_list">
+                    <div className="aea_title">Camp Area</div>
+                    <div className="aea_info">
+                      <img className="aea_conditions" src="" alt=""/>
+                    </div>
+                    <div className="aea_info">
+                      <img className="aea_conditions" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/tent2.png" alt="" />
+                    </div>
+                    <div className="aea_info">
+                      <img className="aea_conditions" src="" alt="" />
+                    </div>
+                  </div>
+                  <div className="essentials_list condition_list">
+                    <div className="title">Essentials</div>
+                    <img className="aea_conditions" src="" alt=""/>
+                    <img className="aea_conditions" src="" alt=""/>
+                  </div>
+                  <div className="amenities_list condition_list">
+                    <div className="title">Ammenities</div>
+                    <img className="aea_conditions" src="" alt="" />
+                  </div>
 
                 </div>
               </div>

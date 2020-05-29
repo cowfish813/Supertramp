@@ -81,23 +81,36 @@
     // border-top: lightgrey solid 1px;
 }
 .area_essentials_ammenities {
-    width: 80vw;
+    width: 59vw;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    // align-items: center;
     border: lime 1px solid;
+    margin-right: 20%;
 }
-.camp_area_list {
+.condition_list {
+    margin-right: 20%;
+    height: 20vh;
+    width: 10vw;
+    display: flex;
+    // align-items: center;
+    // justify-content: center;
+    border: 1px red solid;
+    flex-direction: column;
+}
+.aea_title {
 
 }
-.essentials_list {
-
+.aea_info {
+    display: flex;
+    flex-direction: row;
 }
-.amenities_list {
-    
+.aea_conditions {
+    object-fit: cover;
+    height: 10%;
 }
-
 
 
 .onArrival {
