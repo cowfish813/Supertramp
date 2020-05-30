@@ -26,7 +26,7 @@ User Auth was created using BCrypt on rails backend
 
 ## Animations
 * Sign In/Sign Up Modals slide into place
-![Login](https://supertramp-mast.s3-us-west-1.amazonaws.com/login+animation.gif)
+<!-- ![Login](https://supertramp-mast.s3-us-west-1.amazonaws.com/login+animation.gif) -->
 
 ![Signup](https://supertramp-mast.s3-us-west-1.amazonaws.com/signup+animation.gif)
 
