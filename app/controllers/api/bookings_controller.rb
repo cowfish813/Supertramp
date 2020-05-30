@@ -19,7 +19,7 @@ class Api::BookingsController < ApplicationController
     def create
         @booking = Booking.new(booking_params)
         @booking.user_id = current_user.id
-        # debugger
+        debugger
         if @booking.save
             render :show
         else

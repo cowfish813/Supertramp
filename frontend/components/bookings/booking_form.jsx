@@ -92,7 +92,7 @@ class BookingForm extends React.Component {
                   <div className="label">
                     Check in
                     <SingleDatePicker
-                      // displayFormat={"YYYY/MM/DD"} 
+                      displayFormat={"MM/DD/YYYY"} 
                       placeholder="Select Start"
                       date={this.state.check_in} // momentPropTypes.momentObj or null
                       onDateChange={(date) => this.setState({ check_in: date })} // PropTypes.func.isRequired
@@ -112,7 +112,7 @@ class BookingForm extends React.Component {
                   <div className="label">
                     Check out
                     <SingleDatePicker locale="en-gb"
-                      // displayFormat={"YYYY/MM/DD"}
+                      displayFormat={"MM/DD/YYYY"}
                       placeholder="Select End"
                       date={this.state.check_out} // momentPropTypes.momentObj or null
                       onDateChange={(date) => this.setState({ check_out: date })} // PropTypes.func.isRequired

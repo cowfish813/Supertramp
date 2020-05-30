@@ -63,30 +63,43 @@ class ListShow extends React.Component {
                 <div className="area_essentials_ammenities">
                   <div className="camp_area_list condition_list">
                     <div className="aea_title">Camp Area</div>
-                    <div className="aea_info">
+                    {/* <div className="aea_info">
                       <img className="aea_conditions" src="" alt=""/>
-                    </div>
+                    </div> */}
                     <div className="aea_info">
                       <img className="aea_conditions" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/tent2.png" alt="" />
+                      <p>Bring your own Tent</p>
                     </div>
                     <div className="aea_info">
                       <img className="aea_conditions" src="" alt="" />
                     </div>
                   </div>
                   <div className="essentials_list condition_list">
-                    <div className="title">Essentials</div>
-                    <img className="aea_conditions" src="" alt=""/>
-                    <img className="aea_conditions" src="" alt=""/>
+                    <div className="aea_title">Essentials</div>                  
+                    <div className="aea_info">
+                      <img className="aea_conditions" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/toilet.png" alt="" />
+                      <p>Available</p>
+                    </div>
+                    <div className="aea_info">
+                      <img className="aea_conditions" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/bonfire.png" alt="" />
+                      <p>Available</p>
+                    </div>
                   </div>
                   <div className="amenities_list condition_list">
-                    <div className="title">Ammenities</div>
+                    <div className="aea_title">Ammenities</div>
+                    <div className="aea_info">
+                      <img className="aea_conditions" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/water.png" alt="" />
+                      <p>Potable Water</p>
+                    </div>
+
+
                     <img className="aea_conditions" src="" alt="" />
                   </div>
 
                 </div>
               </div>
-              <div className="detail_list">
-                <div className="details_title onArrival">Details</div>
+              <div className="detail_list" id="details_sum_list">
+                <div className="details_sum onArrival ">Details</div>
                 <div className="details_text">
                   <div>
                     <strong>Check in: </strong> After 2PM{" "}
@@ -136,19 +149,8 @@ class ListShow extends React.Component {
                 </div>
               </div>
 
-              {/* <div className="row">
-                  <div className="listed-by">
-                  </div>
-                  <div className="info-cards-wrapper">
-                    <div className="info-cards">Activities</div>
-                    <div className="info-cards">Amenities</div>
-                    <div className="info-cards"></div>
-                  </div>
-                </div> */}
-
               <div className="reviews_container">{/* review index item */}</div>
             </div>
-            {/* <div className="feature-container"></div> */}
             <ListMap
               className="map"
               listId={this.props.list.id}

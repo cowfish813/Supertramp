@@ -36,7 +36,7 @@ User Auth was created using BCrypt on rails backend
 * Completes partial or completed search terms
 ![short bar](https://supertramp-mast.s3-us-west-1.amazonaws.com/Google+places+ac.png)
 
-![long bar](https://supertramp-mast.s3-us-west-1.amazonaws.com/full+search+bar.png)
+<!-- ![long bar](https://supertramp-mast.s3-us-west-1.amazonaws.com/full+search+bar.png) -->
 
 * Passes props to next component on unique URLs
 ``````````````````````

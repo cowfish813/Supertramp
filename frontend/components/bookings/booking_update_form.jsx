@@ -65,15 +65,15 @@ class BookingUpdateForm extends React.Component {
       
     } else {
       const booking = {
-        check_in: this.state.check_in.format("YYYY/MM/DD"),
-        check_out: this.state.check_out.format("YYYY/MM/DD"),
+        check_in: this.state.check_in.format("MM/DD/YYYY"),
+        check_out: this.state.check_out.format("MM/DD/YYYY"),
         capacity: this.state.capacity,
         price: this.state.price,
         id: this.props.booking.id,
         listing_name: this.props.listings[this.props.booking.listing_id].name,
         user_id: this.props.booking.user_id,
       };
-
+      debugger
       this.props.patchBooking(booking)
       .then(() => this.props.closeModal())
       .then(() => this.props.fxn(booking))
