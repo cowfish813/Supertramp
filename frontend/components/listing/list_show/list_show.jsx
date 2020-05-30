@@ -112,7 +112,7 @@ class ListShow extends React.Component {
                 </div>
               </div>
               <div className="detail_list" id="details_sum_list">
-                <div className="details_sum onArrival ">Details</div>
+                <div className="details_text" className="detail_sum_list">Details</div>
                 <div className="details_text">
                   <div>
                     <strong>Check in: </strong> After 2PM{" "}
@@ -131,10 +131,10 @@ class ListShow extends React.Component {
                     <strong>On Arrival: </strong> {this.props.list.on_arrival}{" "}
                   </div>
                   <div>
-                    <strong>Minimum nights </strong> 1 night
+                    <strong>Minimum nights: </strong> 1 night
                   </div>
                   <div>
-                    <strong> Weekend discount </strong> None{" "}
+                    <strong> Weekend discount: </strong> None{" "}
                   </div>
                 </div>
               </div>
