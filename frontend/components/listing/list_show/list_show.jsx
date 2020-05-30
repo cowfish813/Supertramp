@@ -71,7 +71,8 @@ class ListShow extends React.Component {
                       <p>Bring your own Tent</p>
                     </div>
                     <div className="aea_info">
-                      <img className="aea_conditions" src="" alt="" />
+                      <img className="aea_conditions" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/parking1-512.png" alt="" />
+                      <p>Parking at or near listing</p>
                     </div>
                   </div>
                   <div className="essentials_list condition_list">
@@ -82,7 +83,7 @@ class ListShow extends React.Component {
                     </div>
                     <div className="aea_info">
                       <img className="aea_conditions" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/bonfire.png" alt="" />
-                      <p>Available</p>
+                      <p>Allowed</p>
                     </div>
                   </div>
                   <div className="amenities_list condition_list">
@@ -90,6 +91,18 @@ class ListShow extends React.Component {
                     <div className="aea_info">
                       <img className="aea_conditions" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/water.png" alt="" />
                       <p>Potable Water</p>
+                    </div>
+                    <div className="aea_info">
+                      <img className="aea_conditions" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/5593_-_No_Wifi-512.png" alt="" />
+                      <p>No WiFi</p>
+                    </div>
+                    <div className="aea_info">
+                      <img className="aea_conditions" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/nowater.png" alt="" />
+                      <p>No Showers</p>
+                    </div>
+                    <div className="aea_info">
+                      <img className="aea_conditions" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/pacout.png" alt="" />
+                      <p>Pack out Waste</p>
                     </div>
 
 
