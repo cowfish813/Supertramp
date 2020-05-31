@@ -2,8 +2,8 @@
     // border: lightgray 1px solid;
     // display: flex;
     // flex-direction: row;
-    margin-left: 20%;
-    margin-top: 10%;
+    margin-left: 25%;
+    margin-top: 5%;
     width: 60vw;
 }
 
@@ -52,7 +52,7 @@
     background: #ffffff;
     transition: .4s;
     width: 8vw;
-    height: 3vh;
+    // height: 3vh;
     color: #40d9ac;
 }
 .bookingCancel:hover {
@@ -66,6 +66,7 @@
 }
 
 .bookingChange {
+    white-space: nowrap;
     border: solid 1px black;
     color: white;
     background-color: black;

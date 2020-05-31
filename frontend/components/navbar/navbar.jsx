@@ -6,8 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin, faAngellist } from '@fortawesome/free-brands-svg-icons';
 
 
-
-
 class NavBar extends React.Component {
     constructor(props) {
         super(props)
