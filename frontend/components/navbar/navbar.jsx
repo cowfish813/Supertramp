@@ -21,7 +21,7 @@ class NavBar extends React.Component {
 
     render() {
         let searchInput = < NavSearch />
-        // debugger
+        debugger
             //remove on homepage AND search result index
         // if (location.pathname === "/"){ //|| location.pathname === "/search") {
         //     searchInput = null
