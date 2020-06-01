@@ -62,8 +62,8 @@ class BookingForm extends React.Component {
         } else {  
           
           const booking = {
-              check_in: this.state.check_in.format("MM-DD-YYYY"),
-              check_out: this.state.check_out.format("MM-DD-YYYY"),
+              check_in: this.state.check_in.format("DD-MM-YYYY"),
+              check_out: this.state.check_out.format("DD-MM-YYYY"),
               capacity: this.state.capacity,
               listing_id: this.props.list.id,
               user_id: this.props.currentUser.id,
