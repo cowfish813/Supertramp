@@ -35,7 +35,8 @@ class ListShow extends React.Component {
               </div>
               <div className="photo_title">{this.props.list.name}</div>
             </div>
-          
+
+              {/* <div className="absolute_booking"> */}
             <div className="booking-comp">
               <BookingForm
                 list={this.props.list}
@@ -44,7 +45,8 @@ class ListShow extends React.Component {
                 fetchListing={this.props.fetchListing}
               />
             </div>
-
+            {/* </div> */}
+            
             <div className="show-listing">
               <div className="section-overview">
 

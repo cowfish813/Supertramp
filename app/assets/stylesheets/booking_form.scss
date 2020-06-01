@@ -1,11 +1,11 @@
 .booking-comp {
     position: sticky;
-    top: 100px;
+    top: 1rem;
     width: 95%;
     display: flex;
     justify-content: flex-end;
-
-    // border: lime solid 1px;
+    object-position: right;
+    // bottom: 9000px;
 }
 
 // ::-webkit-input-placeholder {
@@ -25,10 +25,8 @@
 // }
 
 .widget-container {
-        position: sticky;
-
-    // left: 4000px;
-    // width: fit-content;
+    position: absolute;
+    margin-bottom: 45%;
     height: fit-content;
     background-color: white;
     height: 260px;
@@ -37,7 +35,7 @@
     z-index: 9001;
     display: flex;
     justify-content: center;
-
+    bottom: -45rem;
 }
 .wrapper {
     height: 76px;

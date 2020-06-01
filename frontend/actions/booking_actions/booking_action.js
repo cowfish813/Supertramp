@@ -6,12 +6,12 @@ export const REMOVE_BOOKING = 'REMOVE_BOOKING';
 export const RECEIVE_BOOKING_ERRORS = 'RECEIVE_BOOKING_ERRORS';
 export const UPDATE_BOOKING = 'UPDATE_BOOKING';
 
-export const receiveBookings = bookings => ({
+export const receiveBookings = (bookings) => ({
     type: RECEIVE_BOOKINGS,
     bookings
 });
 
-export const receiveBooking = booking => {
+export const receiveBooking = (booking) => {
     return (
         {type: RECEIVE_BOOKING,
         booking}

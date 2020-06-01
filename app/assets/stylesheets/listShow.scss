@@ -29,13 +29,14 @@
     margin-top: 2rem;
     font-size: 2.6rem;
     font-weight: bolder;
+    margin-bottom: 2rem;
     // border-bottom: solid 1px ;
 }
 
 
 .show-listing {
     // margin-top: 5rem;
-    border-top: lightgrey solid 1px;
+    // border-top: lightgrey solid 1px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -278,8 +279,12 @@
 
 .map {
     // margin: auto;
-    margin-top: 10%;
+    margin-top: 15%;
     display: flex;
-  width: 100%;
-  height: 500px;
+    width: 100%;
+    height: 31.25rem;
 }
+
+
+
+
