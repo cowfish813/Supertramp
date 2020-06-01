@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { receiveLocation } from '../../actions/map_action';
 import React from 'react';
-import Autocomplete from "react-google-autocomplete";
+import autoComplete from "react-google-autocomplete";
 import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -61,17 +61,15 @@ class NavSearch extends React.Component {
     render() {
         return (
             <form className="NavSearchContainer" onSubmit={this.handleSubmit}>
-                {/* <div className=""> */}
-                    <span className="nav-fa-search"><FontAwesomeIcon icon={faSearch} /></span>
-                    <input type="search"
-                    id="nav-Search"
-                    className="navSearch"
-                    value={this.state.mapLocation}
-                    onChange={this.handleInput}
-                    placeholder="Lets start with Yosemite Valley!"
-                    />
-                    <button type="submit" className="navSearchBtn"></button>
-                {/* </div> */}
+                <span className="nav-fa-search"><FontAwesomeIcon icon={faSearch} /></span>
+                <input type="search"
+                id="nav-Search"
+                className="navSearch"
+                value={this.state.mapLocation}
+                onChange={this.handleInput}
+                placeholder="Lets start with Yosemite Valley!"
+                />
+                <button type="submit" className="navSearchBtn"></button>
             </form>
         )
     }

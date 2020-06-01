@@ -17,6 +17,8 @@ class Api::BookingsController < ApplicationController
     end
 
     def create
+        
+
         @booking = Booking.new(booking_params)
         @booking.user_id = current_user.id
         debugger
@@ -49,6 +51,6 @@ class Api::BookingsController < ApplicationController
 
     private
     def booking_params
-        params.require(:booking).permit(:check_in, :check_out, :listing_id, :price, :capacity, :listing_name, :user_id, :host_id, :id)
+        params.require(:booking).permit(:check_in, :check_out, :listing_id, :price, :capacity, :listing_name, :user_id, :host_id)
     end
 end

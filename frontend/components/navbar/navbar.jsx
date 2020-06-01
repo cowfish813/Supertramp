@@ -21,11 +21,16 @@ class NavBar extends React.Component {
 
     render() {
         let searchInput = < NavSearch />
-        debugger
-            //remove on homepage AND search result index
-        // if (location.pathname === "/"){ //|| location.pathname === "/search") {
+        
+        // if (document.getElementById("splash_search")) {
         //     searchInput = null
-        // };
+        // }
+            //remove on homepage AND search result index
+
+        if (location.hash === "#/" || location.hash.includes("search")){ //|| location.pathname === "/search") {
+            searchInput = null
+        };
+
 
         let content =  (this.props.currentUser === undefined) ? 
             (
