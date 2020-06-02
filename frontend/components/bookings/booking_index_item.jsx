@@ -25,11 +25,11 @@ class BookingIndexItem extends React.Component {
     }
 
 
-    componentDidMount() {
-        //maybe don't do it...
-        // this.props.fetchBookings(this.props.match.params.userId);
-        // this.props.fetchListings(this.props.match.params.userId);
-    }
+    // componentDidMount() {
+    //     //maybe don't do it...
+    //     // this.props.fetchBookings(this.props.match.params.userId);
+    //     // this.props.fetchListings(this.props.match.params.userId);
+    // }
 
     handleModal(bookingId, renderFxn) {
         this.props.openModal('Booking', bookingId, renderFxn)
