@@ -71,7 +71,7 @@ class BookingForm extends React.Component {
               listing_name: this.props.list.name,
               price: this.state.price
           };
-          debugger
+          
           this.props.createBooking(booking)
               .then(() => (this.props.history.push(`/users/${this.props.currentUser.id}`)));
         };

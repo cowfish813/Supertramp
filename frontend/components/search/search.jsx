@@ -10,7 +10,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 class Search extends React.Component {
     constructor(props) {
         super(props)
-        // debugger
+        
     this.state = {
         mapLocation: "",
         lat: 37.8651,

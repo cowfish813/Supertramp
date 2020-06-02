@@ -73,7 +73,6 @@ class BookingUpdateForm extends React.Component {
         listing_name: this.props.listings[this.props.booking.listing_id].name,
         user_id: this.props.booking.user_id,
       };
-      debugger
       this.props.patchBooking(booking)
       .then(() => this.props.closeModal())
       .then(() => this.props.fxn(booking))
