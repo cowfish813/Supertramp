@@ -1,29 +1,28 @@
 .ultraFooter {
-    margin-top: .21vh;
+    margin-top: 10rem;
     display: flex;
 
 }
 
 .superFooter {
-
+    // margin-top: 20rem;
     font-size: 1rem;
-    // margin-top: auto;
-     /* position: fixed; */
      width: 100%;
-     height: .4vh;
+     height: .5vh;
      bottom: 0%;
      display: flex;
     background-color: #ffffff;    
     text-align: center;
     align-self: flex-end;
-    padding-bottom: 2.5rem;
+    // padding-bottom: 2.5rem;
+    // padding-top: 2.5rem;
 
 }
 
 .subFooter {
     background: #000000;
-    padding: 24px 150px;
-    height: 30px;
+    padding: 1.5rem 9.375rem;
+    height: 1.875;
     width: 100%;
     color: white;
     // margin: auto;
@@ -41,5 +40,5 @@
     justify-content: center;
     flex-direction: column;
     flex-shrink: 0;
-    margin-bottom: 5px;
+    margin-bottom: .3125rem;
 }

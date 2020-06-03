@@ -1,11 +1,15 @@
 .booking-comp {
     position: sticky;
+    position: -webkit-sticky;
     width: 95%;
     display: flex;
     justify-content: flex-end;
     object-position: right;
     top: 15rem;
+    // height: -400rem;
+    // height: 80%;
 }
+
 
 // ::-webkit-input-placeholder {
 //    text-align: center;
@@ -25,7 +29,8 @@
 
 .widget-container {
     position: absolute;
-    height: fit-content;
+    // height: fit-content;
+    // height: 80%;
     background-color: white;
     height: 14rem;
     box-shadow: 0 1px 5px rgba(0,0,0,0.05);
@@ -33,11 +38,10 @@
     z-index: 9001;
     display: flex;
     justify-content: center;
-    bottom: -14rem;
-    margin-bottom: 18rem;
-    margin-top: 10rem;
-    //
-    // margin-bottom: 58%;
+    // bottom: -13rem;
+    margin-top: -15rem;
+    margin-bottom: 20rem;
+
 }
 .wrapper {
     height: 76px;
