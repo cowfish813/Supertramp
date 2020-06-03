@@ -1,7 +1,6 @@
 import {RECEIVE_BOOKINGS, RECEIVE_BOOKING, REMOVE_BOOKING, UPDATE_BOOKING} from '../../actions/booking_actions/booking_action';
 import {RECEIVE_USER} from '../../actions/user_actions';
 import { RECEIVE_LISTING } from '../../actions/listing_actions/listing_actions';
-// import {RECEIVE_BOOKING} from '../../actions/booking_actions/booking_action'
 
 const bookingsReducer = (state = {}, action) => {
     Object.freeze(state);

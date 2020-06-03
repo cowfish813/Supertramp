@@ -30,9 +30,10 @@ class Listing < ApplicationRecord
     foreign_key: :host_id
 
     has_many :bookings,
-    foreign_key: :listing_id
+    foreign_key: :listing_id,
+    dependent: :destroy
 
-    has_many_attached :photos
+    # has_many_attached :photos
     has_one_attached :photo
 
     # def ensure_photo
@@ -50,7 +51,8 @@ class Listing < ApplicationRecord
     end
 
     has_many :reviews,
-    foreign_key: :listing_id
+    foreign_key: :listing_id,
+    dependent: :destroy
 
     
 
