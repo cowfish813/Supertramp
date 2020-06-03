@@ -16,7 +16,7 @@
 }
 .list-show-photo{
     object-position: center;
-    width: 60rem;
+    width: 50rem;
 }
 .photo_title {
     margin-top: 2rem;
@@ -80,17 +80,14 @@
     // border-top: lightgrey solid 1px;
 }
 .area_essentials_ammenities {
-    // width: 59vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
-    // align-items: center;
-    // border: lime 1px solid;
     flex-wrap: wrap;
-    width: 49vw;
     margin-left: 17%;
     margin-bottom: 10%;
+    max-width: 43rem;
 }
 .condition_list {
     height: 21.25rem;

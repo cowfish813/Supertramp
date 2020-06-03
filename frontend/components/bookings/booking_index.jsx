@@ -11,17 +11,17 @@ class BookingIndex extends React.Component {
             bookings: this.props.bookings
         };
 
-        this.deleteItemComponent = this.deleteItemComponent.bind(this);
+        // this.deleteItemComponent = this.deleteItemComponent.bind(this);
     }
 
-    deleteItemComponent(id) {
-        const updatedbooking = 
-            this.state.bookings.filter((booking => booking.id !== id));
+    // deleteItemComponent(id) {
+    //     const updatedbooking = 
+    //         this.state.bookings.filter((booking => booking.id !== id));
 
-        this.setState({
-            bookings: updatedbooking
-            });
-    }
+    //     this.setState({
+    //         bookings: updatedbooking
+    //         });
+    // }
 
     componentDidMount() {
 
@@ -29,6 +29,14 @@ class BookingIndex extends React.Component {
             bookings: this.props.bookings
         })
 
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.bookings !== prevProps.bookings) {
+            this.setState({
+                bookings: this.props.bookings
+            });
+        };
     }
 
 

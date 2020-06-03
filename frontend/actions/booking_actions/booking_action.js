@@ -17,9 +17,9 @@ export const receiveBooking = (booking) => {
         booking}
 )};
 
-export const removeBooking = (booking) => ({
+export const removeBooking = (bookingId) => ({
     type: REMOVE_BOOKING,
-    booking: booking.id
+    bookingId
 });
 export const receiveBookingErrors = errors => ({
     type: RECEIVE_BOOKING_ERRORS,
@@ -61,7 +61,7 @@ export const fetchBookings = (userId) => (dispatch) => {
        };
 export const deleteBooking = (bookingId) => dispatch => {
     return ApiUtil.deleteBooking(bookingId).then(
-        booking => dispatch(removeBooking(booking)),
+        () => dispatch(removeBooking(bookingId)),
         err => dispatch(receiveBookingErrors(err.responseJSON))
     )
 };
