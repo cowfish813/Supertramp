@@ -22,6 +22,7 @@ class BookingForm extends React.Component {
             check_out: null,
             focusedStart: null,
             focusedEnd: null,
+            errors: ""
         }
 
         this.highlighted = this.highlighted.bind(this);
@@ -29,6 +30,19 @@ class BookingForm extends React.Component {
         this.handleCapacity = this.handleCapacity.bind(this);
         this.handlePrice = this.handlePrice.bind(this);
     };
+
+    // componentDidMount() {
+    //   this.setState({
+    //     errors: this.props.errors
+    //   })
+    // }
+    componentDidUpdate() {
+        if (this.state.errors !== this.props.errors[0]) {
+          this.setState({
+            errors: this.props.errors[0]
+          });
+      }
+    }
 
     handlePrice(date) {
         const mseconds = Date.parse(date) - Date.parse(this.state.check_in);
@@ -78,6 +92,12 @@ class BookingForm extends React.Component {
     }
 
     render () {
+      let BookingError = null
+      if (this.state.errors) {
+        BookingError = this.state.errors
+      };
+      
+
         return (
           <div className="widget-container">
             <form className="wrapper" onSubmit={this.handleSubmit}>
@@ -85,6 +105,7 @@ class BookingForm extends React.Component {
                 <div className="price">
                   {`$${this.props.list.price}`}
                   <p>per night</p>
+                  <span className="booking_errors">{BookingError}</span>
                 </div>
               </div>
               <div className="dates-and-guest-content">

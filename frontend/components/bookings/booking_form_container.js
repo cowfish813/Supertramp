@@ -6,7 +6,7 @@ import { createBooking } from '../../actions/booking_actions/booking_action';
 const mstp = (state, ownProps) => {
     return ({
       currentUser: state.entities.users[state.session.currentUser],
-      allBookings: state.entities.bookings //maybe?
+      errors: state.errors.bookings
     });
 };
 

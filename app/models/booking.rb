@@ -56,7 +56,7 @@ class Booking < ApplicationRecord
         is_overlapping = other_bookings.any? do |booking|
             self.check_in <= booking.check_out && booking.check_in <= self.check_out
         end
-        errors.add(:booking, "not available") if is_overlapping
+        errors.add(:booking, "error, you already booked!") if is_overlapping
     end
 
     # def validate_list_capacity

@@ -66,6 +66,7 @@
     // margin: .15em; 
     color: #757575;
     font-size: .75em;
+    margin-right: 2rem;
 }
 .dates-and-guest-content {
     display: flex;
@@ -158,4 +159,9 @@
     background: #ffffff;
     color: #40d9ac;
     transition: .4s;
+}
+
+.booking_errors {
+    color: red;
+    font-size: .6rem;
 }
