@@ -59,6 +59,11 @@ class Booking < ApplicationRecord
         errors.add(:booking, "error, you already booked!") if is_overlapping
     end
 
+    # def validate_other_booking_overlap
+
+    #     errors.add(:booking, "error, you already booked!") if is_overlapping      
+    # end
+
     # def validate_list_capacity
     #     other_bookings = Booking.where("listing_id = ?", self.listing_id)
     #     is_full = other_bookings.any? do |booking|
