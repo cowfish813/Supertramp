@@ -49,18 +49,19 @@ class Booking < ApplicationRecord
     # end
 
     def period
-        :check_in..:check_out
+        :check_in...:check_out
     end
 
 
     def validate_other_booking_overlap
         #prevents others from booking when booked
-        # other_bookings = Booking.where("user_id = ? OR listing_id = ?", self.user_id, self.listing_id)
+        other_bookings = Booking.where("user_id = ? OR listing_id = ?", self.user_id, self.listing_id)
 
         #prevents self from double booking
-        other_bookings = Booking.where("user_id = ?", self.user_id)
+        # other_bookings = Booking.where("user_id = ?", self.user_id)
+
         is_overlapping = other_bookings.any? do |booking|
-            self.check_in <= booking.check_out && booking.check_in <= self.check_out
+            self.check_in < booking.check_out && booking.check_in < self.check_out
         end
         errors.add(:booking, "error, you already booked!") if is_overlapping
     end
