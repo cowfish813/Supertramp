@@ -21,15 +21,9 @@
 #
 class Booking < ApplicationRecord
     # status = %w(PENDING APPROVED DENIED)
-
-
     validates :check_in, :check_out, :listing_id, :user_id, :capacity ,presence: true
     validate :validate_other_booking_overlap
-
     # validates :status, inclusion: {in: STATUS}
-    # validate :does_not_overlap_approved_request
-
-    # validate :validate_list_capacity
 
 
 
@@ -43,18 +37,13 @@ class Booking < ApplicationRecord
     foreign_key: :user_id,
     class_name: :User
 
-
-    # def overlapped_booking
-    #     listing = Listing.find_by(id: self.listing_id)
-    # end
-
     def period
         :check_in...:check_out
     end
 
 
     def validate_other_booking_overlap
-        #prevents others from booking when booked
+        #prevents OTHERS from booking when booked
         other_bookings = Booking.where("user_id = ? OR listing_id = ?", self.user_id, self.listing_id)
 
         #prevents self from double booking
