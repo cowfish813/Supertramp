@@ -33,7 +33,7 @@ class BookingForm extends React.Component {
 
     componentDidMount() {
       // debugger
-      this.props.removeBookingErrors()
+      this.props.removeBookingErrors([])
     }
 
     componentDidUpdate() {
