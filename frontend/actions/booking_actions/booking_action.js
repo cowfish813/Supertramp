@@ -5,6 +5,7 @@ export const RECEIVE_BOOKING = 'RECEIVE_BOOKING';
 export const REMOVE_BOOKING = 'REMOVE_BOOKING';
 export const RECEIVE_BOOKING_ERRORS = 'RECEIVE_BOOKING_ERRORS';
 export const UPDATE_BOOKING = 'UPDATE_BOOKING';
+export const REMOVE_BOOKING_ERRORS = 'REMOVE_BOOKING_ERRORS'
 
 export const receiveBookings = (bookings) => ({
     type: RECEIVE_BOOKINGS,
@@ -21,10 +22,18 @@ export const removeBooking = (bookingId) => ({
     type: REMOVE_BOOKING,
     bookingId
 });
+
 export const receiveBookingErrors = errors => ({
     type: RECEIVE_BOOKING_ERRORS,
     errors
 });
+
+export const removeBookingErrors = () => ({
+    type: REMOVE_BOOKING_ERRORS
+});
+
+
+
 
 // export const updateBooking = (booking) => ({
 //     type: UPDATE_BOOKING,
@@ -72,3 +81,7 @@ export const patchBooking = (booking) => dispatch => {
         err => dispatch(receiveBookingErrors(err.responseJson))
     )
 };
+
+// export const clearBookingErrors = () => {
+//     dispatch(removeBookingErrors())
+// };

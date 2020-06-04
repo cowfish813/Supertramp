@@ -1,7 +1,7 @@
 import BookingForm from './booking_form';
 import { connect } from 'react-redux';
 import { openModal } from '../../actions/modal_actions/modal_actions';
-import { createBooking } from '../../actions/booking_actions/booking_action';
+import { createBooking, removeBookingErrors } from '../../actions/booking_actions/booking_action';
 
 const mstp = (state, ownProps) => {
     return ({
@@ -12,7 +12,8 @@ const mstp = (state, ownProps) => {
 
 const mdtp = dispatch => ({
     openModal: modal => dispatch(openModal(modal)),
-    createBooking: booking => dispatch(createBooking(booking))
+    createBooking: booking => dispatch(createBooking(booking)),
+    removeBookingErrors: () => dispatch(removeBookingErrors)
 });
 
 export default connect(mstp, mdtp)(BookingForm);

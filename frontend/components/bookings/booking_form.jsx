@@ -31,17 +31,17 @@ class BookingForm extends React.Component {
         this.handlePrice = this.handlePrice.bind(this);
     };
 
-    // componentDidMount() {
-    //   this.setState({
-    //     errors: this.props.errors
-    //   })
-    // }
+    componentDidMount() {
+      // debugger
+      this.props.removeBookingErrors()
+    }
+
     componentDidUpdate() {
-        if (this.state.errors !== this.props.errors[0]) {
-          this.setState({
-            errors: this.props.errors[0]
-          });
-      }
+      if (this.state.errors !== this.props.errors[0]) {
+        this.setState({
+          errors: this.props.errors[0]
+        });
+      };
     }
 
     handlePrice(date) {

@@ -51,7 +51,7 @@ class BookingIndex extends React.Component {
                             <BookingIndexItem
                                 deleteBooking={this.props.deleteBooking}
                                 booking={booking}
-                                key={i}
+                                key={booking.id}
                                 current_user={this.props.user.id}
                                 listings={this.props.listings}
                                 bookings={this.state.bookings}
