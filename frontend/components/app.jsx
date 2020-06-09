@@ -34,7 +34,6 @@ const App = () => (
             < Route path="" component={NoContent} />
         </Switch>
         < Footer />
-        {/* bonus/incomplete */}
         < ProtectedRoute exact path="/create_listings/"  component={ListForm} /> 
     </div>
 );
