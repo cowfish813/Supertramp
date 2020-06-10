@@ -13,7 +13,6 @@ import ListSearchResults from './listing/list_index/list_search_results_containe
 import NoContent from './no_content';
 
 
-//bonus
 // aws connected, can upload...but component/model is incomplete
 import UserUpdate from './users/user_update_container';
 import ListForm from './listing/list_form/list_form_container';
