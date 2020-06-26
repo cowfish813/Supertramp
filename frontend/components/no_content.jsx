@@ -12,7 +12,7 @@ const NoContent = (props) => {
             <h2>Whoops! This is a little embarassing.</h2>
             <h2>Looks like we got lost on the trail.</h2>
             <img className="noContentPic" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/70508342_403917306911081_545636708322902016_n.gif" alt="" />
-            {/* <button className="goBack" onClick={this.handleClick}>Take me back!</button> */}
+            <button className="goBack" onClick={this.handleClick}>Take me back!</button>
         </div>
     )
 };
