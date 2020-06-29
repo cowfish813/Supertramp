@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import { withRouter } from "react-router-dom";
 
 const NoContent = (props) => {
@@ -16,9 +16,10 @@ const NoContent = (props) => {
 
 function handleClick(props) {
     props.history.goBack();
-}
+};
 
-export default NoContent
+export default withRouter(NoContent);
+
 
 // class NoContent extends React.Component {
 //     constructor(props) {
@@ -48,5 +49,4 @@ export default NoContent
 //     }
 // }
 
-// export default withRouter(NoContent)
 
