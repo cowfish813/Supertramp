@@ -44,7 +44,7 @@ class Api::ReviewsController < ApplicationController
     private
 
     def review_params
-        params.require(:review).permit(:body, :recommended, :title)
+        params.require(:review).permit(:body, :recommended, :title, )
     end
 
 end
