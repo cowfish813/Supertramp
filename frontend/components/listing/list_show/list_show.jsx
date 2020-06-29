@@ -2,6 +2,8 @@ import React from 'react';
 import ListMap from './list_map'
 import { withRouter }from 'react-router-dom'
 import BookingForm from '../../bookings/booking_form_container'
+// import ReviewIndex from '../../reviews/review_index'
+import ReviewForm from '../../reviews/reviews_form'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {  } from '@fortawesome/free-brands-svg-icons';
 
@@ -165,6 +167,9 @@ class ListShow extends React.Component {
                 </div>
 
                 <div className="reviews_container">{/* review index item */}</div>
+                <div className="reviews_container">{/* review form */}
+                  < ReviewForm/>
+                </div>
               </div>
             </div>
             <ListMap

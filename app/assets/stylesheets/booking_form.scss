@@ -44,7 +44,7 @@
 
 }
 .wrapper {
-    height: 76px;
+    height: 5.75rem;
     align-items: center;
     justify-content: center;
 }
@@ -75,20 +75,17 @@
 }
 .dates-and-guest-content {
     display: flex;
-    // flex-direction: row;
-    // height: 69.39;
-    // padding: 0px 10px;
     background-color: #ffffff;
     align-items: center;
     justify-content: center;
-        // border: 1px solid #ebebeb;
+    // border: 1px solid #ebebeb;
 
 }
     
 .col {
-    padding: 10px;
+    padding: .625rem;
     // width: 319px;
-    height: 70px;
+    height: 4.375rem;
     display: flex;
     justify-content: space-evenly;
     align-items: stretch;

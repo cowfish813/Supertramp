@@ -1,10 +1,11 @@
-import React, {state, setstate} from React;
+import React, {state, setstate} from "react";
 import { withRouter } from "react-router-dom"
 
 const ReviewForm = (props) => {
 
+
     return (
-        <form onSubmit={() => handleSubmit(props)}>
+        <form >
             <div>
 
             </div>
@@ -13,6 +14,8 @@ const ReviewForm = (props) => {
 
 };
 
-function handleSubmit(props)
+function handleSubmit() {
+
+}
 
 export default ReviewForm;
