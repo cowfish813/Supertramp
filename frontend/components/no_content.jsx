@@ -20,6 +20,8 @@ function handleClick(props) {
 
 export default withRouter(NoContent);
 
+//probably not needed anymore, there appears to be no issue.
+//maybe locate the actual image instead of what i have now?
 
 // class NoContent extends React.Component {
 //     constructor(props) {
