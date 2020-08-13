@@ -15,7 +15,7 @@ class Footer extends React.Component {
                         <div className="messageContainer">
                             SuperTramp is created with hours of blood, swearing, and the hope for a New Dawn
                         </div>
-                            <div className="subMessage">All pictures were shot by yours truly</div> 
+                            <div className="subMessage">All pictures in each Listing were shot by yours truly</div> 
                     </div>
                 </div>
             // </div>
