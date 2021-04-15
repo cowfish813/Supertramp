@@ -1,12 +1,12 @@
-import React from 'react'
-import {closeModal} from '../../actions/modal_actions/modal_actions'
-import {connect} from 'react-redux'
-import LoginFormContainer from '../session/login_form_container'
-import SignupFormContainer from '../session/signup_form_container'
-import BookingUpdateForm from '../bookings/booking_update_form_container'
+import React from 'react';
+import {closeModal} from '../../actions/modal_actions/modal_actions';
+import {connect} from 'react-redux';
+import LoginFormContainer from '../session/login_form_container';
+import SignupFormContainer from '../session/signup_form_container';
+import BookingUpdateForm from '../bookings/booking_update_form_container';
 
 function Modal({ errors, modal, closeModal }) {
-    if (!modal) return null
+    if (!modal) return null;
 
     let errorModal = <div></div>
     if (errors.length > 0) {
@@ -15,9 +15,9 @@ function Modal({ errors, modal, closeModal }) {
                 return  <li key={i}>{error}</li>
             })}
         </div>)
-    }
+    };
 
-    let component
+    let component;
     switch (modal.modal) { 
         case 'Login':
             component = <LoginFormContainer />

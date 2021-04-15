@@ -42,7 +42,7 @@ class Listing < ApplicationRecord
     #     end
     # end
 
-
+#in_bounds ===> rails method
     def self.in_bounds(bounds)
         self.where("lat < ?", bounds[:northEast][:lat])
         .where("lat > ?", bounds[:southWest][:lat])
