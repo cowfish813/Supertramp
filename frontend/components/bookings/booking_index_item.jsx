@@ -21,15 +21,8 @@ class BookingIndexItem extends React.Component {
     handleClick(e) {
         e.preventDefault()
         this.props.deleteBooking(this.props.booking.id)
-        // .then(()=> this.props.deleteItemComponent(this.props.booking.id));
     }
 
-
-    // componentDidMount() {
-    //     //maybe don't do it...
-    //     // this.props.fetchBookings(this.props.match.params.userId);
-    //     // this.props.fetchListings(this.props.match.params.userId);
-    // }
 
     handleModal(bookingId, renderFxn) {
         this.props.openModal('Booking', bookingId, renderFxn)

@@ -1,6 +1,6 @@
 import BookingUpdateForm from './booking_update_form'
 import { connect } from "react-redux";
-import { openModal, closeModal } from "../../actions/modal_actions/modal_actions";
+import { closeModal } from "../../actions/modal_actions/modal_actions";
 import { patchBooking } from "../../actions/booking_actions/booking_action";
 import { withRouter } from "react-router-dom";
 
@@ -14,7 +14,6 @@ const mstp = (state, ownProps) => {
 }
 
 const mdtp = (dispatch) => ({
-  // openModal: (modal) => dispatch(openModal(modal)),
   closeModal: () => dispatch(closeModal()),
   patchBooking: (booking) => dispatch(patchBooking(booking))
 });
