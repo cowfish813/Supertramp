@@ -80,6 +80,8 @@ test:
 #
 production:
   <<: *default
-  database: supertrampapp_production
-  username: supertrampapp
-  password: <%= ENV['SUPERTRAMPAPP_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+
+  # database: appname_production
+  # username: appname
+  # password: <%= ENV['APPNAME_DATABASE_PASSWORD'] %>
