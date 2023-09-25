@@ -10,7 +10,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/react-fontawesome": "^0.1.9",
-    "aws-sdk": "^2.638.0",
+    "aws-sdk": "^2.814.0",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.5.2",
     "dotenv": "^8.2.0",
