@@ -2,7 +2,7 @@
   "name": "SuperTrampapp",
   "private": true,
   "dependencies": {
-    "@babel/core": "^7.8.7",
+    "@babel/core": "^7.23.0",
     "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
     "@babel/runtime": "^7.9.2",
