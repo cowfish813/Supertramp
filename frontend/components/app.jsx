@@ -14,7 +14,6 @@ import NoContent from './no_content';
 
 import UserUpdate from './users/user_update_container';
 import ListForm from './listing/list_form/list_form_container';
-//reviews
 
 const App = () => (
     <div className="super-body">
