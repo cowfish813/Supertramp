@@ -12,8 +12,6 @@ import ListShow from './listing/list_show/list_show_container';
 import ListSearchResults from './listing/list_index/list_search_results_container';
 import NoContent from './no_content';
 
-
-// aws connected, can upload...but component/model is incomplete
 import UserUpdate from './users/user_update_container';
 import ListForm from './listing/list_form/list_form_container';
 //reviews
