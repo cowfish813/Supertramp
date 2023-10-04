@@ -45,7 +45,3 @@ git_sample.md
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
-<<<<<<< HEAD
-=======
-app/assets/builds
->>>>>>> 7861a4a (rails update)
