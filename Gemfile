@@ -8,7 +8,6 @@ gem 'rails', '7.0.1'
 # 5.2 - 6 upgrades
 gem "webpacker"
 
-
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -39,6 +38,8 @@ gem "aws-sdk-s3"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
