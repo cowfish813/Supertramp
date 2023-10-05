@@ -109,8 +109,6 @@ class ListShow extends React.Component {
                         <p>Pack out Waste</p>
                       </div>
 
-
-                      <img className="aea_conditions" src="" alt="" />
                     </div>
 
                   </div>
