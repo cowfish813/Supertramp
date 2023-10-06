@@ -249,3 +249,175 @@ l12 = Listing.create!(
 )
 f12 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
 l12.photo.attach(io: f12, filename: 'n1.jpg')
+
+
+l13 = Listing.create!(
+  name: 'Rivendell Retreat',
+  on_arrival: 'check in at the reception desk',
+  description: 'Nestled in the lush valleys of Rivendell, this retreat offers a peaceful sanctuary. Stay in cozy elven lodges or treehouses. Explore enchanted forests, meditate by the river, and indulge in elven feasts. All ages welcome!',
+  cancellation_policy: 'Moderate',
+  capacity: 4,
+  country: "Middle-earth",
+  minimum_nights: 2,
+  price: 300,
+  lat: 45.326789,
+  lng: -73.438967,
+  host_id: u3.id
+)
+
+f13 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
+l13.photo.attach(io: f13, filename: 'photo.jpg')
+
+l14 = Listing.create!(
+  name: 'Aurora Glamping',
+  on_arrival: 'check in at the reception tent',
+  description: 'Experience the magic of the Northern Lights in comfort. Stay in luxurious transparent igloos, watch the Aurora Borealis, and enjoy hot cocoa by the fire. Guided tours and husky sledding available!',
+  cancellation_policy: 'Strict',
+  capacity: 2,
+  country: "Narnia",
+  minimum_nights: 3,
+  price: 500,
+  lat: 63.446827,
+  lng: 27.855110,
+  host_id: u1.id
+)
+
+f14 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
+l14.photo.attach(io: f14, filename: 'photo14.jpg')
+
+l15 = Listing.create!(
+  name: 'Atlantis Underwater Retreat',
+  on_arrival: 'take the underwater elevator',
+  description: 'Dive into the ocean\'s depths and stay in an underwater haven. Witness marine life up close, sleep surrounded by colorful fish, and enjoy subaquatic adventures. Suitable for divers and ocean enthusiasts!',
+  cancellation_policy: 'Flexible',
+  capacity: 2,
+  country: "Atlantis",
+  minimum_nights: 4,
+  price: 800,
+  lat: -32.716264,
+  lng: -62.382932,
+  host_id: u2.id
+)
+
+f15 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
+l15.photo.attach(io: f15, filename: 'photo15.jpg')
+
+
+l16 = Listing.create!(
+  name: 'Mystic Forest Treehouse',
+  on_arrival: 'follow the lantern-lit path',
+  description: 'Escape to the heart of an ancient forest and sleep among the treetops. Cozy treehouses offer serenity and enchanting views. Explore the forest, stargaze, and reconnect with nature.',
+  cancellation_policy: 'Moderate',
+  capacity: 2,
+  country: "Eldoria",
+  minimum_nights: 2,
+  price: 350,
+  lat: 42.643076,
+  lng: -73.785877,
+  host_id: u2.id
+)
+
+f16 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
+l16.photo.attach(io: f16, filename: 'photo16.jpg')
+
+l17 = Listing.create!(
+  name: 'Skyline Penthouse Retreat',
+  on_arrival: 'take the private elevator to the top',
+  description: 'Indulge in luxury at a stunning penthouse with breathtaking city views. Enjoy modern amenities, a private pool, and rooftop parties. Ideal for city explorers and those seeking luxury.',
+  cancellation_policy: 'Strict',
+  capacity: 6,
+  country: "Metropolis",
+  minimum_nights: 1,
+  price: 1200,
+  lat: 40.712776,
+  lng: -74.005974,
+  host_id: u3.id
+)
+
+f17 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
+l17.photo.attach(io: f17, filename: 'photo17.jpg')
+
+l19 = Listing.create!(
+  name: 'Enchanted Castle Retreat',
+  on_arrival: 'announce yourself at the grand gate',
+  description: 'Live like royalty in a magical castle surrounded by beautiful gardens. Enjoy lavish banquets, ballroom dances, and guided tours of the castle. Perfect for fairy tale enthusiasts!',
+  cancellation_policy: 'Moderate',
+  capacity: 8,
+  country: "Fantasia",
+  minimum_nights: 2,
+  price: 700,
+  lat: 51.5074,
+  lng: -0.1278,
+  host_id: u4.id
+)
+
+f19 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
+l19.photo.attach(io: f19, filename: 'photo19.jpg')
+
+l20 = Listing.create!(
+  name: 'Serenity Cabin by the Lake',
+  on_arrival: 'find the cabin by the water\'s edge',
+  description: 'Escape the hustle and bustle in a cozy cabin by a tranquil lake. Enjoy fishing, kayaking, and bonfires by the lake. Perfect for nature lovers seeking peace and quiet.',
+  cancellation_policy: 'Flexible',
+  capacity: 4,
+  country: "Avalon",
+  minimum_nights: 2,
+  price: 250,
+  lat: 35.6895,
+  lng: 139.6917,
+  host_id: u1.id
+)
+
+f20 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
+l20.photo.attach(io: f20, filename: 'photo20.jpg')
+
+l21 = Listing.create!(
+  name: 'Galactic Space Station Adventure',
+  on_arrival: 'prepare for launch at the spaceport',
+  description: 'Embark on a journey to space and live aboard a space station. Experience simulated spacewalks, enjoy space-themed meals, and stargaze from the observation deck. Ideal for space enthusiasts!',
+  cancellation_policy: 'Strict',
+  capacity: 2,
+  country: "Galaxy X",
+  minimum_nights: 5,
+  price: 1500,
+  lat: -23.5505,
+  lng: -46.6333,
+  host_id: u2.id
+)
+
+f21 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
+l21.photo.attach(io: f21, filename: 'photo21.jpg')
+
+l22 = Listing.create!(
+  name: 'Tropical Beach Bungalow',
+  on_arrival: 'check in at the beachfront reception',
+  description: 'Unwind in a private bungalow nestled on a tropical beach. Relax by the ocean, indulge in water sports, and watch stunning sunsets. Ideal for beach lovers and relaxation seekers.',
+  cancellation_policy: 'Moderate',
+  capacity: 2,
+  country: "Paradisia",
+  minimum_nights: 3,
+  price: 400,
+  lat: -8.7832,
+  lng: -55.4915,
+  host_id: u4.id
+)
+
+f22 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
+l22.photo.attach(io: f22, filename: 'photo22.jpg')
+
+l23 = Listing.create!(
+  name: 'Arctic Wilderness Lodge',
+  on_arrival: 'bundle up and check in at the lodge',
+  description: 'Immerse yourself in the Arctic wilderness in a cozy lodge. Witness the Northern Lights, go snowmobiling, and experience dog sledding adventures. Perfect for winter enthusiasts!',
+  cancellation_policy: 'Lenient',
+  capacity: 6,
+  country: "Arctica",
+  minimum_nights: 4,
+  price: 600,
+  lat: 64.2008,
+  lng: -149.4937,
+  host_id: u1.id
+)
+
+f23 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
+l23.photo.attach(io: f23, filename: 'photo23.jpg')
