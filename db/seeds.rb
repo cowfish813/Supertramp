@@ -58,7 +58,7 @@ l1 = Listing.create!(
     lng: -119.598207,
     host_id: u1.id
 )
-f1 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f1 = URI.open('https://supertramp-pro.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
 l1.photo.attach(io: f1, filename: '57056162_10107436356788213_4281326518522609664_o.jpg' )
 
 l2 = Listing.create!(
@@ -74,7 +74,7 @@ l2 = Listing.create!(
     lng: -119.5862533,
     host_id: u1.id
     )
-f2 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+f2 = URI.open('https://supertramp-pro.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
 l2.photo.attach(io: f2, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
 
 
@@ -92,7 +92,7 @@ l3 = Listing.create!(
     lng: -119.6007142,
     host_id: u1.id
 )
-f3 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/55937490_10107418126272313_2116183051628183552_n.jpg')
+f3 = URI.open('https://supertramp-pro.s3-us-west-1.amazonaws.com/55937490_10107418126272313_2116183051628183552_n.jpg')
 l3.photo.attach(io: f3, filename: '55937490_10107418126272313_2116183051628183552_n.jpg')
 
 l4 = Listing.create!(
@@ -109,7 +109,7 @@ l4 = Listing.create!(
     host_id: u1.id
 )
 
-f4 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f4 = URI.open('https://supertramp-pro.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
 l4.photo.attach(io: f4, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
 
 
@@ -128,7 +128,7 @@ l5 = Listing.create!(
     host_id: u1.id
 )
 
-f5 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f5 = URI.open('https://supertramp-pro.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
 l5.photo.attach(io: f5, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
 
 l6 = Listing.create!(
@@ -144,7 +144,7 @@ l6 = Listing.create!(
     lng: 29.22590,
     host_id: u1.id
 )
-f6 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f6 = URI.open('https://supertramp-pro.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
 l6.photo.attach(io: f6, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
 
 
@@ -161,7 +161,7 @@ l7 = Listing.create!(
     lng: 30.882080,
     host_id: u1.id
 )
-f7 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f7 = URI.open('https://supertramp-pro.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
 l7.photo.attach(io: f7, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
 
 
@@ -179,7 +179,7 @@ l8 = Listing.create!(
     host_id: u1.id
 )
 
-f8 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f8 = URI.open('https://supertramp-pro.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
 l8.photo.attach(io: f8, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
 
 
@@ -197,7 +197,7 @@ l9 = Listing.create!(
     host_id: u1.id
 )
 
-f9 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n4.jpg')
+f9 = URI.open('https://supertramp-pro.s3-us-west-1.amazonaws.com/n4.jpg')
 l9.photo.attach(io: f9, filename: 'n4.jpg')
 
 
@@ -215,7 +215,7 @@ l10 = Listing.create!(
     host_id: u1.id
 )
 
-f10 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n3.jpg')
+f10 = URI.open('https://supertramp-pro.s3-us-west-1.amazonaws.com/n3.jpg')
 l10.photo.attach(io: f10, filename: 'n3.jpg')
 
 l11 = Listing.create!(
@@ -231,7 +231,7 @@ l11 = Listing.create!(
     lng: 85.390785,
     host_id: u4.id
     )
-f11 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n2.jpg')
+f11 = URI.open('https://supertramp-pro.s3-us-west-1.amazonaws.com/n2.jpg')
 l11.photo.attach(io: f11, filename: 'n2.jpg')
 
 l12 = Listing.create!(
@@ -247,5 +247,5 @@ l12 = Listing.create!(
     lng: 85.277814,
     host_id: u4.id
 )
-f12 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
+f12 = URI.open('https://supertramp-pro.s3-us-west-1.amazonaws.com/n1.jpg')
 l12.photo.attach(io: f12, filename: 'n1.jpg')
