@@ -9,25 +9,25 @@ local:
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
 #   service: S3
-#   access_key_id: <%= Rails.application.credentials.dig(:aws, :access_key_id) %>
-#   secret_access_key: <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
+#   access_key_id: <%= Rails.application.credentials.dig(:aws, aws, :access_key_id) %>
+#   secret_access_key: <%= Rails.application.credentials.dig(:aws, aws, :secret_access_key) %>
 #   region: us-east-1
 #   bucket: your_own_bucket
 amazon_dev:
   service: S3
-  access_key_id: <%= Rails.application.credentials.aws[:access_key_id] %>
+  access_key_id: <%= Rails.application.credentials.dig(:aws, :access_key_id) %>
   secret_access_key:
-    <%= Rails.application.credentials.aws[:secret_access_key] %>
-  region: <%= Rails.application.credentials.aws[:region] %>
-  bucket: <%= Rails.application.credentials.aws[:dev][:bucket] %>
+    <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
+  region: <%= Rails.application.credentials.dig(:aws, :region) %>
+  bucket: <%= Rails.application.credentials.dig(:aws, :dev][:bucket) %>
 
 amazon_prod:
   service: S3
-  access_key_id: <%= Rails.application.credentials.aws[:access_key_id] %>
+  access_key_id: <%= Rails.application.credentials.dig(:aws, :access_key_id) %>
   secret_access_key:
-    <%= Rails.application.credentials.aws[:secret_access_key] %>
-  region: <%= Rails.application.credentials.aws[:region] %>
-  bucket: <%= Rails.application.credentials.aws[:prod][:bucket] %>
+    <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
+  region: <%= Rails.application.credentials.dig(:aws, :region) %>
+  bucket: <%= Rails.application.credentials.dig(:aws, :prod][:bucket) %>
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:
@@ -40,7 +40,7 @@ amazon_prod:
 # microsoft:
 #   service: AzureStorage
 #   storage_account_name: your_account_name
-#   storage_access_key: <%= Rails.application.credentials.dig(:azure_storage, :storage_access_key) %>
+#   storage_access_key: <%= Rails.application.credentials.dig(:aws, azure_storage, :storage_access_key) %>
 #   container: your_container_name
 
 # mirror:
@@ -49,16 +49,16 @@ amazon_prod:
 #   mirrors: [ amazon, google, microsoft ]
 amazon_dev:
   service: S3
-  access_key_id: <%= Rails.application.credentials.aws[:access_key_id] %>
+  access_key_id: <%= Rails.application.credentials.dig(:aws, :access_key_id) %>
   secret_access_key:
-    <%= Rails.application.credentials.aws[:secret_access_key] %>
-  region: <%= Rails.application.credentials.aws[:region] %>
-  bucket: <%= Rails.application.credentials.aws[:dev][:bucket] %>
+    <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
+  region: <%= Rails.application.credentials.dig(:aws, :region) %>
+  bucket: <%= Rails.application.credentials.dig(:aws, :dev, :bucket) %>
 
 amazon_prod:
   service: S3
-  access_key_id: <%= Rails.application.credentials.aws[:access_key_id] %>
+  access_key_id: <%= Rails.application.credentials.dig(:aws, :access_key_id) %>
   secret_access_key:
-    <%= Rails.application.credentials.aws[:secret_access_key] %>
-  region: <%= Rails.application.credentials.aws[:region] %>
-  bucket: <%= Rails.application.credentials.aws[:prod][:bucket] %>
+    <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
+  region: <%= Rails.application.credentials.dig(:aws, :region) %>
+  bucket: <%= Rails.application.credentials.dig(:aws, :prod, :bucket) %>
