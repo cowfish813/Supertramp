@@ -16,6 +16,16 @@
     <meta property="og:description" content="Camp near or in your favorite parks, where available, anywhere around the world!" />
     <meta property="og:url" content="https://supertrampapp.herokuapp.com/"/>
     
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKGVWK9V85"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-RKGVWK9V85');
+    </script>
+
   </head>
   <body>
     <%= yield %>
