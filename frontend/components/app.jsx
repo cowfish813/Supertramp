@@ -27,10 +27,10 @@ const App = () => (
             < Route exact path ="/search/:query" component={ListSearchResults} />
             < AuthRoute path="/login" component={LoginFormContainer} />
             < AuthRoute path="/signup" component={SignupFormContainer} />
+            < ProtectedRoute exact path="/create_listings/"  component={ListForm} /> 
             < Route path="" component={NoContent} />
         </Switch>
         < Footer />
-        < ProtectedRoute exact path="/create_listings/"  component={ListForm} /> 
     </div>
 );
 
