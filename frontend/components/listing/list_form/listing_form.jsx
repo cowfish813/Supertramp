@@ -65,6 +65,7 @@ class ListingForm extends React.Component {
         formData.append('listing[country]', this.state.country);
         formData.append('listing[photo]', this.state.photoFile);
         // formData.append('listing[photos]', this.state.photoFile);
+        console.log(formData, 'helllo');
         $.ajax({
             url: '/api/listings',
             method: 'POST',
@@ -75,10 +76,17 @@ class ListingForm extends React.Component {
     }
 
     componentDidMount() {
+        let initialLocation = { lat: 37.7758, lng: -122.435 } // this is SF
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            });
+        }
 
         const mapOptions = {
             // replace lat and lng with this.props stuff
-            // center: { lat: 37.7758, lng: -122.435 }, // this is SF
+            // center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
             zoom: 13
         };
 
