@@ -32,7 +32,6 @@ class BookingForm extends React.Component {
     };
 
     componentDidMount() {
-      // debugger
       this.props.removeBookingErrors([])
     }
 
@@ -97,7 +96,6 @@ class BookingForm extends React.Component {
         BookingError = this.state.errors
       };
       
-
         return (
           <div className="widget-container">
             <form className="wrapper" onSubmit={this.handleSubmit}>
@@ -136,7 +134,6 @@ class BookingForm extends React.Component {
                       displayFormat={"MM/DD/YYYY"}
                       placeholder="Select End"
                       date={this.state.check_out} // momentPropTypes.momentObj or null
-                      onDateChange={(date) => this.setState({ check_out: date })} // PropTypes.func.isRequired
                       focused={this.state.focusedEnd} // PropTypes.bool
                       onFocusChange={({ focused }) => this.setState({ focusedEnd: focused }) } // PropTypes.func.isRequired
                       id="end" // PropTypes.string.isRequired,
@@ -161,7 +158,6 @@ class BookingForm extends React.Component {
                             name="capacity"
                             className="DateInput_input DateInput_input_1"
                             placeholder="1"
-                            value={this.state.capacity}
                             id="capacity_input"
                             min="1"
                             max={this.props.list.capacity}
