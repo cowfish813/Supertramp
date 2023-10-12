@@ -113,8 +113,8 @@ class ListShow extends React.Component {
 
                   </div>
                 </div>
-                <div className="detail_list" id="details_sum_list">
-                  <div className="details_text" className="detail_sum_list">Details</div>
+                <div className="detail_list">
+                  <div className=" details_title">Details</div>
                   <div className="details_text">
                     <div>
                       <strong>Check in: </strong> After 2PM{" "}
