@@ -6,7 +6,7 @@ import { SingleDatePicker } from "react-dates";
 import moment from 'moment';
 import DefaultTheme from 'react-dates/lib/theme/DefaultTheme';
 import "moment/locale/en-gb";
-// import "../../../app/assets/stylesheets/book_form.scss"; //rewrites react css
+
 class BookingForm extends React.Component {
     constructor(props) {
         super(props);
