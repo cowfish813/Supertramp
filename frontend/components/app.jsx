@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, Link, HashRouter } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Modal from './modal/modal';
 import { AuthRoute, ProtectedRoute }from '../util/route_util';
 import LoginFormContainer from './session/login_form_container';

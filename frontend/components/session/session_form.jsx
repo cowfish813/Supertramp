@@ -1,7 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-
-
 
 class Session extends React.Component {
     constructor(props) {
@@ -149,9 +146,6 @@ class Session extends React.Component {
                     </div>
                 </div>
             )
-
-
-
 
         } else if (this.props.formType === "Login") {
             return (   
