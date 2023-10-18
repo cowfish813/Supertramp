@@ -129,9 +129,6 @@ class Session extends React.Component {
                                 onChange={this.handleInput('zipcode')}
                                 />
 
-
-
-                            {/* <button className="loginButton" >{this.props.formType}</button> */}
                             <input type="submit" className="loginButton" value={this.props.formType}/>
                         </form>
                         <div className="login-body">
