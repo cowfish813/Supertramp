@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faGithub, faLinkedin, faAngellist } from '@fortawesome/free-brands-svg-icons';
 
-
 class IndexItem extends React.Component {
     constructor(props) {
         super(props);
