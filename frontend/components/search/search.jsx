@@ -11,14 +11,14 @@ class Search extends React.Component {
     constructor(props) {
         super(props)
         
-    this.state = {
-        mapLocation: "",
-        lat: 37.8651,
-        lng: 119.5383
-    };
+        this.state = {
+            mapLocation: "",
+            lat: 37.8651,
+            lng: 119.5383
+        };
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleInput = this.handleInput.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleInput = this.handleInput.bind(this);
     }
 
     handleInput(e) {
@@ -30,12 +30,6 @@ class Search extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.receiveLocation(this.state);
-        // if (this.state.lat == "" || this.state.lng == "") {
-        //     this.setState({
-        //         lat: 37.8651,
-        //         lng: 119.5383
-        //     })
-        // }
         this.props.history.push({
             pathname: `/search/${this.state.lat},${this.state.lng}`,
             state: this.state
