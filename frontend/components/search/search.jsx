@@ -1,8 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Autocomplete from "react-google-autocomplete";
-// import PlacesAutocomplete from 'react-places-autocomplete';
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
@@ -64,30 +62,18 @@ class Search extends React.Component {
                 <div className="superSearch">
 
                     <div className="searchBar">
-                        <span className="fasearch"><FontAwesomeIcon icon={faSearch} /></span>
+                        <span className="fasearch">
+                            <FontAwesomeIcon icon={faSearch} />
+                        </span>
                         <input 
-                        id="splash_search" 
-                        className="search" 
-                        type="search" 
-                        placeholder="Start with somewhere like Yosemite Valley!" 
-                        value={this.state.mapLocation}
-                        onChange={this.handleInput}
+                            id="splash_search" 
+                            className="search" 
+                            type="search" 
+                            placeholder="Start with somewhere like Yosemite Valley!" 
+                            value={this.state.mapLocation}
+                            onChange={this.handleInput}
                         />
                     </div>
-                    {/* <div className="datebox"> */}
-                        {/* <div className="filterButton"> */}
-                            {/* future modal */}
-                            {/* <input className="date" type="date" /> */}
-                        {/* </div> */}
-                    {/* </div> */}
-
-                    {/* <div className="dropdownMenu"> */}
-                        {/* <select className="menuSelect">
-                            {house.map((tent, i) =>
-                                <option className="menuSelected" key={i} value={i}>{tent}</option>
-                            )}
-                        </select> */}
-                    {/* </div> */}
                     <button className="searchButton">Search</button>
                 </div>
             </form>

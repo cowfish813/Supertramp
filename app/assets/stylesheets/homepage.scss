@@ -70,23 +70,32 @@
 
 }
 .searchBar {
-    
+    border: black 1px solid;
     background: #ffffff;
     display: flex;
     align-items: center;
-    // flex-direction: row;  
+    height: 44px
+
 }
+
+.searchBar:hover {
+    cursor: pointer;
+}
+
 .fasearch { 
-  position: absolute;
-  left: 2rem;
-//   top: 10px;
-//   left: 10px;
+    left: 20rem;
+    display: flex;
+    justify-content: center;
+    // width: 50px;
+    margin: 1rem;
+    border-radius: .3rem;
 }
+
 .search {
-    padding: 0 3.3rem;
     width: 42vw;
     height: 2.5rem;
     font-size: 1.5rem;
+    border: 0;
 }
 
 .searchButton {
@@ -103,6 +112,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: .3rem;
 }
 .searchButton:hover {
     background: #ffffff;
