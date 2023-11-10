@@ -25,7 +25,7 @@ module.exports = {
           path.resolve(__dirname, './frontend'),
           path.resolve(__dirname, './node_modules'),
         ],
-        use: ["style-loader", "css-loader", "postcss-loader"],
+        use: ["style-loader", "css-loader"],
       },
     ],
   },
