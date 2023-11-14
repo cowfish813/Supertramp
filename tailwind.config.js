@@ -2,7 +2,8 @@
 
 module.exports = {
   content: [
-    "./frontend/components/**/*.{js,jsx,ts,tsx}",
+    "./frontend/components/**/*.{js,jsx,ts,tsx,html}",
+    "./node_modules/react-dates/**/*"
   ],
   theme: {
     extend: {},
