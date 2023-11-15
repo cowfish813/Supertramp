@@ -68,7 +68,7 @@ class Homepage extends React.Component {
                 <div className="home">
                     <div className="homeCol">
                         <div className="homeTitle">
-                            <h1 className='text-white underline'>
+                            <h1 className=''>
                                 Find yourself outside.
                             </h1>
                         </div>
