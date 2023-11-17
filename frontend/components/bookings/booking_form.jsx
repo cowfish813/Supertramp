@@ -107,52 +107,59 @@ class BookingForm extends React.Component {
                 </div>
               </div>
               <div className="dates-and-guest-content">
+
                 <div className="col checkin">
-                  <div className="label">
-                    Check in
-                    <SingleDatePicker
-                      displayFormat={"MM/DD/YYYY"} 
-                      placeholder="Select Start"
-                      date={this.state.check_in} // momentPropTypes.momentObj or null
-                      onDateChange={(date) => this.setState({ check_in: date })} // PropTypes.func.isRequired
-                      focused={this.state.focusedStart} // PropTypes.bool
-                      onFocusChange={ ({ focused }) => this.setState({ focusedStart: focused }) } // PropTypes.func.isRequired
-                      id="start" // PropTypes.string.isRequired,
-                      verticalSpacing={0}
-                      isDayHighlighted={(day) => this.highlighted(day)}
-                      numberOfMonths={1}
-                      daySize={36}
-                      noBorder={true}
-                      hideKeyboardShortcutsPanel={true}
-                    />
+                  <div className="w-24 flex flex-col items-center">
+                    Check In
+                    <div className="col_border w-11/12">
+                      <SingleDatePicker
+                        displayFormat={"MM/DD/YYYY"} 
+                        placeholder="Select Start"
+                        date={this.state.check_in} // momentPropTypes.momentObj or null
+                        onDateChange={(date) => this.setState({ check_in: date })} // PropTypes.func.isRequired
+                        focused={this.state.focusedStart} // PropTypes.bool
+                        onFocusChange={ ({ focused }) => this.setState({ focusedStart: focused }) } // PropTypes.func.isRequired
+                        id="start" // PropTypes.string.isRequired,
+                        verticalSpacing={0}
+                        isDayHighlighted={(day) => this.highlighted(day)}
+                        numberOfMonths={1}
+                        daySize={36}
+                        noBorder={true}
+                        hideKeyboardShortcutsPanel={true}
+                      />
+                    </div>
                   </div>
                 </div>
-                <div className="col checkout">
-                  <div className="label">
-                    Check out
-                    <SingleDatePicker locale="en-gb"
-                      displayFormat={"MM/DD/YYYY"}
-                      placeholder="Select End"
-                      date={this.state.check_out} // momentPropTypes.momentObj or null
-                      focused={this.state.focusedEnd} // PropTypes.bool
-                      onFocusChange={({ focused }) => this.setState({ focusedEnd: focused }) } // PropTypes.func.isRequired
-                      id="end" // PropTypes.string.isRequired,
-                      verticalSpacing={0}
-                      isDayHighlighted={(day) => this.highlighted(day)}
-                      numberOfMonths={1}
-                      daySize={36}
-                      noBorder={true}
-                      hideKeyboardShortcutsPanel={true}
-                      onDateChange={date => this.handlePrice(date)}
-                    />
+
+                <div className="col ">
+                  <div className="w-24 flex flex-col items-center">
+                    Check Out
+                    <div id="" className="col_border w-11/12">
+                      <SingleDatePicker locale="en-gb"
+                        displayFormat={"MM/DD/YYYY"}
+                        placeholder="Select End"
+                        date={this.state.check_out} // momentPropTypes.momentObj or null
+                        focused={this.state.focusedEnd} // PropTypes.bool
+                        onFocusChange={({ focused }) => this.setState({ focusedEnd: focused }) } // PropTypes.func.isRequired
+                        id="end" // PropTypes.string.isRequired,
+                        verticalSpacing={0}
+                        isDayHighlighted={(day) => this.highlighted(day)}
+                        numberOfMonths={1}
+                        daySize={36}
+                        noBorder={true}
+                        hideKeyboardShortcutsPanel={true}
+                        onDateChange={date => this.handlePrice(date)}
+                      />
+                    </div>
                   </div>
                 </div>
-                <div className="col capacity">
-                  <div className="label">
+
+                <div className="col">
+                  <div className="w-24 flex flex-col items-center">
                     Guests
-                    <div className="SingleDatePicker SingleDatePicker_1">
-                      <div className="SingleDatePickerInput SingleDatePickerInput_1">
-                        <div className="DateInput DateInput_1">
+                    {/* <div className="SingleDatePicker SingleDatePicker_1"> */}
+                      {/* <div className="SingleDatePickerInput SingleDatePickerInput_1"> */}
+                        <div className="col_border ">
                           <input
                             type="number"
                             name="capacity"
@@ -164,10 +171,11 @@ class BookingForm extends React.Component {
                             onChange={() => this.handleCapacity}
                           />
                         </div>
-                      </div>
-                    </div>
+                      {/* </div> */}
+                    {/* </div> */}
                   </div>
                 </div>
+                
               </div>
               <button className="booking-button">Request to Book</button>
             </form>
