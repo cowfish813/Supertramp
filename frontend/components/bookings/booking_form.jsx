@@ -109,9 +109,9 @@ class BookingForm extends React.Component {
               <div className="dates-and-guest-content">
 
                 <div className="col checkin">
-                  <div className="w-24 flex flex-col items-center">
+                  <div className="w-36 flex flex-col items-center">
                     Check In
-                    <div className="col_border w-11/12">
+                    <div className="col_border">
                       <SingleDatePicker
                         displayFormat={"MM/DD/YYYY"} 
                         placeholder="Select Start"
@@ -132,9 +132,9 @@ class BookingForm extends React.Component {
                 </div>
 
                 <div className="col ">
-                  <div className="w-24 flex flex-col items-center">
+                  <div className="w-36 flex flex-col items-center">
                     Check Out
-                    <div id="" className="col_border w-11/12">
+                    <div id="" className="col_border">
                       <SingleDatePicker locale="en-gb"
                         displayFormat={"MM/DD/YYYY"}
                         placeholder="Select End"

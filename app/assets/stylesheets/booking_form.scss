@@ -59,7 +59,16 @@
     align-items: center;
     justify-content: center;
     // border: 1px solid #ebebeb;
+}
+input::placeholder {
+    text-align: center;
+}
 
+#end {
+    box-sizing: border-box;
+}
+#start {
+    box-sizing: border-box;
 }
 
 .col {
