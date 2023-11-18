@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { withRouter, useHistory } from 'react-router-dom';
-import Autocomplete from "react-google-autocomplete";
+import AutoComplete from "react-google-autocomplete";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
@@ -35,9 +35,8 @@ const Search = (props) => {
 
     useEffect(() => {
         const input = document.getElementById('splash_search');
-        console.log(input);
         const autocomplete = new google.maps.places.Autocomplete(input);
-        // const autocomplete = new google.maps.places.Autocomplete(mapLocation);
+            //attaches autocomplete to elementID
 
         autocomplete.addListener('place_changed', () => {
             let address = autocomplete.getPlace().formatted_address;
@@ -45,10 +44,9 @@ const Search = (props) => {
             
             let lat = place.geometry.location.lat();
             let lng = place.geometry.location.lng();
-            const location = address ? address : autocomplete.getPlace().name;
-            console.log(address, location);
-            
-            setMapLocation(location);
+            const ele = address ? address : autocomplete.getPlace().name;
+
+            setMapLocation(ele);
             setMapLat(lat);
             setMapLng(lng);
 
@@ -63,6 +61,11 @@ const Search = (props) => {
                     <span className="fasearch">
                         <FontAwesomeIcon icon={faSearch} />
                     </span>
+                    {/* <div id="splash_search" className="Search"><AutoComplete 
+                            onPlaceSelected={(place) => {console.log(place)}}
+
+                        /></div> */}
+
                     <input 
                         id="splash_search" 
                         className="search"
@@ -72,6 +75,8 @@ const Search = (props) => {
                         onChange={handleInput}
                         autocomplete="on"
                     />
+
+
                 </div>
                 <button className="searchButton" onClick={handleSubmit}>Search</button>
             </div>
