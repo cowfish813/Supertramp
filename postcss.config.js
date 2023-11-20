@@ -1,12 +1,21 @@
+
+const { join } = require('path');
+const tailwindcss = require('tailwindcss');
+
+// module.exports = {
+//   plugins: {
+//     tailwindcss: {
+//       // config: join(__dirname, 'tailwind.config.js'),
+//     },
+//     autoprefixer: {},
+//   },
+// };
+
 module.exports = {
-  plugins: [
-    require('postcss-import'),
-    require('postcss-flexbugs-fixes'),
-    require('postcss-preset-env')({
-      autoprefixer: {
-        flexbox: 'no-2009'
-      },
-      stage: 3
-    })
-  ]
-}
+  plugins:[
+    require('autoprefixer'),
+    'postcss-preset-env',
+    tailwindcss,
+    // require('postcss-preset-env')
+  ],
+};

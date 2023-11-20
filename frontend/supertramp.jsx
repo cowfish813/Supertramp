@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from './components/root'
 
+import './application.css';
 import {fetchListings} from './actions/listing_actions/listing_actions'
 
 document.addEventListener("DOMContentLoaded", () => {
