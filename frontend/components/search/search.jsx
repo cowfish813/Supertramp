@@ -16,7 +16,6 @@ const Search = (props) => {
 
     const handleInput = (e) => {
         e.preventDefault();
-
         setMapLocation(e.target.value);
     }
 
@@ -43,7 +42,6 @@ const Search = (props) => {
         res.addListener('place_changed', async () => {
             const address = await res.getPlace().formatted_address;
             const place = await res.getPlace();
-            
             const lat = await place.geometry.location.lat();
             const lng = await place.geometry.location.lng();
             const mapRes = address ? address : place.name;
@@ -51,7 +49,6 @@ const Search = (props) => {
             setMapLocation(mapRes);
             setMapLat(lat);
             setMapLng(lng);
-
         });
     }, []);
 
