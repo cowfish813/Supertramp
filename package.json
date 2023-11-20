@@ -67,8 +67,8 @@
     "build": "webpack postcss"
   },
   "engines": {
-    "node": ">=12.5.0",
-    "npm": ">=6.9.0"
+    "node": "16.13.2",
+    "npm": "8.1.2"
   },
   "keywords": [],
   "author": "",
