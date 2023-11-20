@@ -46,9 +46,9 @@ const Search = (props) => {
             
             const lat = await place.geometry.location.lat();
             const lng = await place.geometry.location.lng();
-            const ele = await address ? address : place.name;
+            const mapRes = address ? address : place.name;
 
-            setMapLocation(ele);
+            setMapLocation(mapRes);
             setMapLat(lat);
             setMapLng(lng);
 
