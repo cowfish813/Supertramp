@@ -1,23 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { withRouter, useHistory } from 'react-router-dom';
 import AutoComplete from "react-google-autocomplete";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const Search = (props) => {
+    const inputRef = useRef();
     const [mapLocation, setMapLocation] = useState("");
-    const [mapLat, setMapLat] = useState(37.8651);
-    const [mapLng, setMapLng] = useState(119.5383);
+    const [mapLat, setMapLat] = useState(37.74557009999999);
+    const [mapLng, setMapLng] = useState(-119.5936038);
     const history = useHistory();
+
+    useEffect(() => {
+        inputRef.current.focus();
+    }, [])
+
+    // useEffect(() => {
+        
+    // }, [mapLocation])
+    
 
     const handleInput = (e) => {
         e.preventDefault();
+
         setMapLocation(e.target.value);
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("hello");
 
         const state = {
             mapLocation,
@@ -34,24 +44,25 @@ const Search = (props) => {
     }
 
     useEffect(() => {
-        const input = document.getElementById('splash_search');
-        const autocomplete = new google.maps.places.Autocomplete(input);
+        // const input = document.getElementById('splash_search');
+        const res = new google.maps.places.Autocomplete(inputRef.current);
             //attaches autocomplete to elementID
+        res.addListener('place_changed', () => {
+            debugger;
 
-        autocomplete.addListener('place_changed', () => {
-            let address = autocomplete.getPlace().formatted_address;
-            let place = autocomplete.getPlace();
+            let address = res.getPlace().formatted_address;
+            let place = res.getPlace();
             
             let lat = place.geometry.location.lat();
             let lng = place.geometry.location.lng();
-            const ele = address ? address : autocomplete.getPlace().name;
+            const ele = address ? address : res.getPlace().name;
 
             setMapLocation(ele);
             setMapLat(lat);
             setMapLng(lng);
 
         });
-    }, [mapLocation]);
+    }, []);
 
     return (
         <form className="w-9/12 flex content-center justify-center" autocomplete="on">
@@ -71,7 +82,10 @@ const Search = (props) => {
                         className="search"
                         type="search" 
                         placeholder="Start with somewhere like Yosemite Valley!" 
+                        ref={inputRef}
                         // value={mapLocation}
+                        // onKeyDown={handleInput}
+                        // onKeyUp={handleInput}
                         onChange={handleInput}
                         autocomplete="on"
                     />
