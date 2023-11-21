@@ -6,10 +6,6 @@ class ListingIndex extends React.Component {
         super(props)
     };
 
-    // componentDidMount(){
-    //     window.location.reload(false);
-    // }
-
     render () {
         if (this.props.listings.length === 0) {
             return (
@@ -18,7 +14,6 @@ class ListingIndex extends React.Component {
             </div>
             )
         }
-
 
         return (
             <div className= "list-index" >

@@ -21,7 +21,19 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        include:[ 
+          path.resolve(__dirname, './frontend'),
+          path.resolve(__dirname, './node_modules'),
+        ],
+        use: ["style-loader", 
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 1
+            }
+          },
+          "postcss-loader"
+        ],
       },
     ],
   },

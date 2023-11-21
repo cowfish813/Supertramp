@@ -25,11 +25,7 @@ class IndexItem extends React.Component {
                 <div>
                     <div className="listing_index_desc">
                         <div className="list_index_name">{this.props.listing.name}</div>
-                        <div className="listing_index_price margin_left2">From 
-                            <div className="bold">
-                                ${this.props.listing.price}
-                            </div>/day
-                        </div>
+                        <div className="listing_index_price">${this.props.listing.price}/day</div>
                     </div>
                 </div>
             </div>
