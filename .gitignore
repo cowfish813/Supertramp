@@ -46,3 +46,4 @@ git_sample.md
 yarn-debug.log*
 .yarn-integrity
 app/assets/javascripts/bundle.js
+yarn.lock
