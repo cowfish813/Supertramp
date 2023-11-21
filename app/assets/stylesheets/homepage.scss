@@ -44,7 +44,12 @@
     width: 55%;
     
 }
-
+.form_search {
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
 .searchWrapper {
     // min-width: 400px;
     display: flex;
