@@ -38,7 +38,6 @@
     "react-google-autocomplete": "^2.7.3",
     "react-google-maps": "^7.3.0",
     "react-hook-form": "^7.46.2",
-    "react-places-autocomplete": "^7.3.0",
     "react-redux": "^8.1.2",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",

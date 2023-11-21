@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { receiveLocation } from '../../actions/map_action';
 import React from 'react';
-import autoComplete from "react-google-autocomplete";
 import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
