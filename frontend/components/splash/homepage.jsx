@@ -103,6 +103,7 @@ class Homepage extends React.Component {
                 </div>
 
                 <div className="tilesContainer">
+                    <h1 className="title_listing">Check Out These Areas!</h1>
                     <div className="tiles_tile">
                         <img onClick={this.handleTile1} className="poppingRectangle" src="https://hipcamp-res.cloudinary.com/images/c_thumb,f_auto,q_60,h_953/v1513711999/campground-photos/jxhpqyakfthq93t8on4x/mudita-camel-s-yurt-camels-and-a-yurt-animal-camel.jpg" alt=""/>
                         <img onClick={this.handleTile2} className="poppingRectangle" src="https://hipcamp-res.cloudinary.com/images/c_thumb,f_auto,q_60,h_546/v1494284717/campground-photos/cy19txhitis6xwltkdhu/ardor-wood-farm-glamping-glen-forest-people-dog.jpg" alt=""/>
@@ -112,6 +113,7 @@ class Homepage extends React.Component {
                 {/* <p>destination getaways.</p> */}
 
                 <div className="vagueLocationsContainer">
+                    <h1 className="title_listing">Our top listings</h1>
                     <div className="vague_tile_list">
                         <Link to="/listings/46"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg" alt=""/> </Link>
                         <Link to="/listings/47"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg" alt=""/> </Link>
