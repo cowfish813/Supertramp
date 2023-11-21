@@ -1,84 +1,81 @@
-import React from 'react';
-import { withRouter } from 'react-router-dom';
-import Autocomplete from "react-google-autocomplete";
+import React, { useEffect, useState, useRef } from 'react';
+import { withRouter, useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
+const Search = (props) => {
+    const inputRef = useRef();
+    const [mapLocation, setMapLocation] = useState("");
+    const [mapLat, setMapLat] = useState(37.74557009999999);
+    const [mapLng, setMapLng] = useState(-119.5936038);
+    const history = useHistory();
 
-class Search extends React.Component {
-    constructor(props) {
-        super(props)
-        
-        this.state = {
-            mapLocation: "",
-            lat: 37.8651,
-            lng: 119.5383
-        };
+    useEffect(() => {
+        inputRef.current.focus();
+    }, [])
 
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleInput = this.handleInput.bind(this);
-    }
-
-    handleInput(e) {
-        this.setState({
-            mapLocation: e.target.value
-        });
-    }
-
-    handleSubmit(e) {
+    const handleInput = (e) => {
         e.preventDefault();
-        this.props.receiveLocation(this.state);
-        this.props.history.push({
-            pathname: `/search/${this.state.lat},${this.state.lng}`,
-            state: this.state
+        setMapLocation(e.target.value);
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const state = {
+            mapLocation,
+            lat: mapLat,
+            lng: mapLng
+        }
+
+        props.receiveLocation(state);
+        
+        history.push({
+            pathname: `/search/${mapLat},${mapLng}`,
+            state
         });
     }
 
-    componentDidMount() {
-        let input = document.getElementById('splash_search');
-        let autocomplete = new google.maps.places.Autocomplete(input);
+    useEffect(() => {
+        const res = new google.maps.places.Autocomplete(inputRef.current);
+            //attaches autocomplete to elementID
+        res.addListener('place_changed', async () => {
+            const address = await res.getPlace().formatted_address;
+            const place = await res.getPlace();
+            const lat = await place.geometry.location.lat();
+            const lng = await place.geometry.location.lng();
+            const mapRes = address ? address : place.name;
 
-        let mapLocation;
-        let that = this;
-        autocomplete.addListener('place_changed', () => {
-            let address = autocomplete.getPlace().formatted_address;
-            let place = autocomplete.getPlace();
+            setMapLocation(mapRes);
+            setMapLat(lat);
+            setMapLng(lng);
+        });
+    }, []);
 
-            let lat = place.geometry.location.lat();
-            let lng = place.geometry.location.lng();
-            mapLocation = address ? address : autocomplete.getPlace().name;
-            that.setState({
-                mapLocation: autocomplete.getPlace().name,
-                lat: lat,
-                lng: lng
-            });
-        });   
-    }
+    return (
+        <form className="w-9/12 flex content-center justify-center" autocomplete="on">
+            <div className="superSearch">
 
-    render () {
+                <div className="searchBar">
+                    <span className="fasearch">
+                        <FontAwesomeIcon icon={faSearch} />
+                    </span>
 
-        return (
-            <form className="searchWrapper searchIndex" onSubmit={this.handleSubmit} autocomplete="on">
-                <div className="superSearch">
+                    <input 
+                        id="splash_search" 
+                        className="search"
+                        type="search" 
+                        placeholder="Start with somewhere like Yosemite Valley!" 
+                        ref={inputRef}
+                        onChange={handleInput}
+                        autocomplete="on"
+                    />
 
-                    <div className="searchBar">
-                        <span className="fasearch">
-                            <FontAwesomeIcon icon={faSearch} />
-                        </span>
-                        <input 
-                            id="splash_search" 
-                            className="search" 
-                            type="search" 
-                            placeholder="Start with somewhere like Yosemite Valley!" 
-                            value={this.state.mapLocation}
-                            onChange={this.handleInput}
-                        />
-                    </div>
-                    <button className="searchButton">Search</button>
                 </div>
-            </form>
-        ) 
-    }
+                <button className="searchButton" onClick={handleSubmit}>Search</button>
+            </div>
+        </form>
+    ) 
 };
 
 export default withRouter(Search);

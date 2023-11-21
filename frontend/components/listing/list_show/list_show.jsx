@@ -7,7 +7,6 @@ import ReviewForm from '../../reviews/reviews_form'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {  } from '@fortawesome/free-brands-svg-icons';
 
-
 class ListShow extends React.Component {
     constructor(props) {
         super(props)    
