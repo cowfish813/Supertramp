@@ -45,3 +45,4 @@ git_sample.md
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+app/assets/javascripts/bundle.js
