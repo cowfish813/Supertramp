@@ -21,9 +21,9 @@ class Footer extends React.Component {
     }
 }
 
-const mSTP = state => ({
+// const mSTP = state => ({
     
-})
+// })
 
 export default connect(null)(Footer)
 
