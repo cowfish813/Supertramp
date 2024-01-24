@@ -27,12 +27,14 @@
 }
 
 .index_container {
-    margin-top: 3vh;
+    // margin-top: 3vh;
     margin: 1rem;
     display: flex;
     flex-direction: column;
-    height: 32%;
-    width: 43%;
+    // height: 32%;
+    // width: 43%;
+    height: 400px;
+    width: 300px;
     border: lightgray solid 1px;
     box-shadow: .2rem .6rem 1rem lightgrey;
 
