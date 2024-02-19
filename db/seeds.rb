@@ -421,3 +421,111 @@ l23 = Listing.create!(
 
 f23 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
 l23.photo.attach(io: f23, filename: 'photo23.jpg')
+
+l24 = Listing.create!(
+  name: 'Yosemite Valley Retreat',
+  on_arrival: 'Check in at our cozy retreat nestled in the heart of Yosemite Valley.',
+  description: 'Escape to the tranquility of Yosemite Valley in our charming retreat. Enjoy breathtaking views of iconic landmarks such as El Capitan and Half Dome. Hike through ancient sequoia groves, explore cascading waterfalls, and spot diverse wildlife.',
+  cancellation_policy: 'Moderate',
+  capacity: 4,
+  country: 'United States',
+  minimum_nights: 2,
+  price: 300,
+  lat: 37.7456,
+  lng: -119.5936,
+  host_id: u1.id
+)
+
+f24 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
+l24.photo.attach(io: f24, filename: 'photo24.jpg')
+
+
+
+l25 = Listing.create!(
+  name: 'Sierra Cabin Oasis',
+  on_arrival: 'Arrive at our rustic cabin oasis and immerse yourself in the tranquility of the Sierra Nevada mountains.',
+  description: 'Experience the ultimate mountain getaway in our charming cabin oasis. Nestled amidst towering pine trees, our cabin offers a peaceful retreat with stunning views of Yosemite Valley. Enjoy hiking, rock climbing, and wildlife spotting during the day, and cozy up by the fireplace under the starry night sky.',
+  cancellation_policy: 'Flexible',
+  capacity: 5,
+  country: 'United States',
+  minimum_nights: 3,
+  price: 250,
+  lat: 37.7338,
+  lng: -119.5664,
+  host_id: u1.id
+)
+
+f25 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
+l25.photo.attach(io: f25, filename: 'photo25.jpg')
+
+
+l26 = Listing.create!(
+  name: 'Yosemite Meadow Lodge',
+  on_arrival: 'Check in at our charming lodge nestled in the picturesque Yosemite meadows.',
+  description: 'Experience the beauty of Yosemite National Park from our cozy lodge in the meadows. Surrounded by wildflowers and majestic peaks, our lodge offers a peaceful retreat with access to hiking trails, fishing streams, and star-gazing opportunities. Unwind in nature and create unforgettable memories with your loved ones.',
+  cancellation_policy: 'Moderate',
+  capacity: 6,
+  country: 'United States',
+  minimum_nights: 2,
+  price: 350,
+  lat: 37.7272,
+  lng: -119.5886,
+  host_id: u1.id
+)
+
+f26 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
+l26.photo.attach(io: f26, filename: 'photo26.jpg')
+
+
+l27 = Listing.create!(
+  name: 'El Capitan Hideaway',
+  on_arrival: 'Discover our secluded hideaway nestled beneath the iconic El Capitan.',
+  description: 'Escape the hustle and bustle of everyday life and retreat to our hidden gem beneath El Capitan. Our cozy cabin offers a peaceful sanctuary with breathtaking views of the granite cliffs. Explore nearby hiking trails, picnic by the Merced River, and witness stunning sunsets over the valley. Experience the magic of Yosemite in comfort and style.',
+  cancellation_policy: 'Strict',
+  capacity: 4,
+  country: 'United States',
+  minimum_nights: 4,
+  price: 400,
+  lat: 37.7322,
+  lng: -119.6372,
+  host_id: u1.id
+)
+
+f27 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
+l27.photo.attach(io: f27, filename: 'photo27.jpg')
+
+
+l28 = Listing.create!(
+  name: 'Half Dome Haven',
+  on_arrival: 'Arrive at our tranquil haven beneath the towering Half Dome.',
+  description: 'Experience the awe-inspiring beauty of Half Dome from our peaceful haven in Yosemite Valley. Our comfortable cabin offers panoramic views of the granite monolith and easy access to hiking trails, rock climbing routes, and scenic viewpoints. Relax on the deck, soak in the beauty of nature, and create lasting memories with family and friends.',
+  cancellation_policy: 'Flexible',
+  capacity: 3,
+  country: 'United States',
+  minimum_nights: 2,
+  price: 280,
+  lat: 37.7320,
+  lng: -119.5589,
+  host_id: u1.id
+)
+
+f28 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
+l28.photo.attach(io: f28, filename: 'photo28.jpg')
+
+
+l29 = Listing.create!(
+  name: 'Yosemite Falls Retreat',
+  on_arrival: 'Check in at our charming retreat overlooking the majestic Yosemite Falls.',
+  description: 'Indulge in the beauty of Yosemite National Park from our idyllic retreat near Yosemite Falls. Wake up to the soothing sounds of cascading water and enjoy panoramic views of the valley from your private balcony. Explore nearby hiking trails, marvel at the beauty of the falls, and unwind in the serenity of nature. Your perfect Yosemite getaway awaits!',
+  cancellation_policy: 'Moderate',
+  capacity: 2,
+  country: 'United States',
+  minimum_nights: 2,
+  price: 320,
+  lat: 37.7555,
+  lng: -119.5974,
+  host_id: u1.id
+)
+
+f29 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
+l29.photo.attach(io: f29, filename: 'photo29.jpg')
