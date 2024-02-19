@@ -10,14 +10,47 @@ const Search = (props) => {
     const [mapLng, setMapLng] = useState();
     const history = useHistory();
 
-    useEffect(() => {
-        inputRef.current.focus();
-    }, [])
+    // useEffect(() => {
+    //     inputRef.current.focus();
+    // }, [])
 
-    const handleInput = async (e) => {
+    const handleInput = (e) => {
         e.preventDefault();
         setMapLocation(e.target.value);
-        const res = await (new google.maps.places.Autocomplete(inputRef.current));
+        // const res = (new google.maps.places.Autocomplete(inputRef.current));
+        // res.addListener('place_changed', async () => {
+        //     const address = await res.getPlace().formatted_address;
+        //     const place = await res.getPlace();
+        //     const lat = await place.geometry.location.lat();
+        //     const lng = await place.geometry.location.lng();
+        //     const mapRes = address ? address : place.name;
+        //     setMapLocation(mapRes);
+        //     setMapLat(lat);
+        //     setMapLng(lng);
+        // });
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (mapLat && mapLng) {
+            const state = {
+                mapLocation,
+                lat: mapLat,
+                lng: mapLng
+            }
+            props.receiveLocation(state);
+            
+            history.push({
+                pathname: `/search/${mapLat},${mapLng}`,
+                state
+            })
+        } else {
+            console.log("hello")
+        }
+    }
+
+    useEffect(() => {
+        const res = (new google.maps.places.Autocomplete(inputRef.current));
         res.addListener('place_changed', async () => {
             const address = await res.getPlace().formatted_address;
             const place = await res.getPlace();
@@ -28,23 +61,8 @@ const Search = (props) => {
             setMapLat(lat);
             setMapLng(lng);
         });
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        const state = {
-            mapLocation,
-            lat: mapLat,
-            lng: mapLng
-        }
-        props.receiveLocation(state);
-        
-        history.push({
-            pathname: `/search/${mapLat},${mapLng}`,
-            // state
-        });
-    }
+    }, [])
+    
 
     return (
         <form className="form_search" autocomplete="on">
@@ -73,3 +91,8 @@ const Search = (props) => {
 };
 
 export default withRouter(Search);
+
+//on the intial page load, i can push enter to search
+    //result is undefined. how do i rememedy this? set up an if? 
+    //maybe it's the map that doesnt load...
+// after that, on listing index page, i have to push enter twice?
