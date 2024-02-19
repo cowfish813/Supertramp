@@ -7,8 +7,6 @@ const Search = (props) => {
     const inputRef = useRef(); //sets focus on search bar
     const [mapLocation, setMapLocation] = useState("");
     const [mapLat, setMapLat] = useState();
-    // const [mapLat, setMapLat] = useState(37.74557009999999);
-    // const [mapLng, setMapLng] = useState(-119.5936038);
     const [mapLng, setMapLng] = useState();
     const history = useHistory();
 
@@ -16,11 +14,10 @@ const Search = (props) => {
         inputRef.current.focus();
     }, [])
 
-    const handleInput = (e) => {
+    const handleInput = async (e) => {
         e.preventDefault();
         setMapLocation(e.target.value);
-
-        const res = (new google.maps.places.Autocomplete(inputRef.current));
+        const res = await (new google.maps.places.Autocomplete(inputRef.current));
         res.addListener('place_changed', async () => {
             const address = await res.getPlace().formatted_address;
             const place = await res.getPlace();
@@ -48,26 +45,6 @@ const Search = (props) => {
             // state
         });
     }
-
-    useEffect(() => {
-        // const res = new google.maps.places.Autocomplete(inputRef.current);
-        // console.log(res, mapLat, mapLng);
-        
-        //     //attaches autocomplete to elementID
-        // res.addListener('place_changed', async () => {
-        //     const address = await res.getPlace().formatted_address;
-        //     const place = await res.getPlace();
-        //     const lat = await place.geometry.location.lat();
-        //     const lng = await place.geometry.location.lng();
-        //     const mapRes = address ? address : place.name;
-
-            
-        //     setMapLocation(mapRes);
-        //     setMapLat(lat);
-        //     setMapLng(lng);
-        //     console.log(lat, lng);
-        // });
-    }, []);
 
     return (
         <form className="form_search" autocomplete="on">
