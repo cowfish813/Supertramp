@@ -14,7 +14,6 @@ const Search = (props) => {
 
     useEffect(() => {
         inputRef.current.focus();
-        console.log(mapLat, mapLng)
     }, [])
 
     const handleInput = (e) => {
@@ -51,7 +50,7 @@ const Search = (props) => {
     }
 
     useEffect(() => {
-        const res = new google.maps.places.Autocomplete(inputRef.current);
+        // const res = new google.maps.places.Autocomplete(inputRef.current);
         // console.log(res, mapLat, mapLng);
         
         //     //attaches autocomplete to elementID
