@@ -13,7 +13,7 @@
 .list-index {
     width: 50vw;
     min-height: 10vh;
-    max-height: 100vh;
+    // max-height: 100vh;
     overflow-y: auto;
     display: flex;
 }
@@ -31,8 +31,6 @@
     margin: 1rem;
     display: flex;
     flex-direction: column;
-    // height: 32%;
-    // width: 43%;
     height: 400px;
     width: 300px;
     border: lightgray solid 1px;
@@ -82,4 +80,3 @@
     font-weight: bold;
     margin-left: .3rem;
 }
-
