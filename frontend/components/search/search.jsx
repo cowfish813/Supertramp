@@ -4,19 +4,34 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const Search = (props) => {
-    const inputRef = useRef();
+    const inputRef = useRef(); //sets focus on search bar
     const [mapLocation, setMapLocation] = useState("");
-    const [mapLat, setMapLat] = useState(37.74557009999999);
-    const [mapLng, setMapLng] = useState(-119.5936038);
+    const [mapLat, setMapLat] = useState();
+    // const [mapLat, setMapLat] = useState(37.74557009999999);
+    // const [mapLng, setMapLng] = useState(-119.5936038);
+    const [mapLng, setMapLng] = useState();
     const history = useHistory();
 
     useEffect(() => {
         inputRef.current.focus();
+        console.log(mapLat, mapLng)
     }, [])
 
     const handleInput = (e) => {
         e.preventDefault();
         setMapLocation(e.target.value);
+
+        const res = (new google.maps.places.Autocomplete(inputRef.current));
+        res.addListener('place_changed', async () => {
+            const address = await res.getPlace().formatted_address;
+            const place = await res.getPlace();
+            const lat = await place.geometry.location.lat();
+            const lng = await place.geometry.location.lng();
+            const mapRes = address ? address : place.name;
+            setMapLocation(mapRes);
+            setMapLat(lat);
+            setMapLng(lng);
+        });
     }
 
     const handleSubmit = (e) => {
@@ -27,29 +42,32 @@ const Search = (props) => {
             lat: mapLat,
             lng: mapLng
         }
-
         props.receiveLocation(state);
         
         history.push({
             pathname: `/search/${mapLat},${mapLng}`,
-            state
+            // state
         });
     }
 
     useEffect(() => {
         const res = new google.maps.places.Autocomplete(inputRef.current);
-            //attaches autocomplete to elementID
-        res.addListener('place_changed', async () => {
-            const address = await res.getPlace().formatted_address;
-            const place = await res.getPlace();
-            const lat = await place.geometry.location.lat();
-            const lng = await place.geometry.location.lng();
-            const mapRes = address ? address : place.name;
+        // console.log(res, mapLat, mapLng);
+        
+        //     //attaches autocomplete to elementID
+        // res.addListener('place_changed', async () => {
+        //     const address = await res.getPlace().formatted_address;
+        //     const place = await res.getPlace();
+        //     const lat = await place.geometry.location.lat();
+        //     const lng = await place.geometry.location.lng();
+        //     const mapRes = address ? address : place.name;
 
-            setMapLocation(mapRes);
-            setMapLat(lat);
-            setMapLng(lng);
-        });
+            
+        //     setMapLocation(mapRes);
+        //     setMapLat(lat);
+        //     setMapLng(lng);
+        //     console.log(lat, lng);
+        // });
     }, []);
 
     return (
