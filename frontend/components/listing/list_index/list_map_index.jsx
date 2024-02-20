@@ -3,7 +3,6 @@ import MarkerManager from '../../../util/map_marker';
 import { withRouter } from 'react-router-dom';
 import ReactDOMServer from "react-dom";
 
-
 class ListMapIndex extends React.Component {
     constructor(props) {
         super(props)
@@ -30,7 +29,6 @@ class ListMapIndex extends React.Component {
     }
 
     componentDidMount() {
-        // window.location.reload(false); //maybe remove
 
         window.scrollTo(0, 0);
         this.mapOptions = {
@@ -41,7 +39,6 @@ class ListMapIndex extends React.Component {
             zoom: 13,
             mapTypeId: "terrain",
         };
-    //this.map = undefined D:
 
         this.map = new google.maps.Map(this.mapNode, this.mapOptions);
         this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
@@ -53,8 +50,8 @@ class ListMapIndex extends React.Component {
     componentWillReceiveProps(nextProps) {
         if (nextProps.mapLocation.lat !== this.props.mapLocation.lat || nextProps.mapLocation.lng !== this.props.mapLocation.lng ) {
             this.setState({
-              lat: nextProps.mapLocation.lat,
-              lng: nextProps.mapLocation.lng,
+                lat: nextProps.mapLocation.lat,
+                lng: nextProps.mapLocation.lng,
             }, () => {
                 this.mapOptions = {
                     center: {
@@ -92,9 +89,6 @@ class ListMapIndex extends React.Component {
     handleMarkerClick(listing) {
         this.props.history.push(`/listings/${listing.id}`);
     }
-
-
-    
 
     render() {
         return (
