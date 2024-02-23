@@ -1,6 +1,4 @@
-import React from 'react';
-import React, { useState, useEffect } from 'react';
-
+// import React from 'react';
 // class Session extends React.Component {
 //     constructor(props) {
 //         super(props)
@@ -190,6 +188,8 @@ import React, { useState, useEffect } from 'react';
 //     };
 // };
 
+
+import React, { useState, useEffect } from 'react';
 const Session = ({ formType, processForm, closeModal, clearErrors, demoUser, errors, openModal }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
