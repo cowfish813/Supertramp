@@ -212,19 +212,19 @@ const Session = ({ formType, processForm, closeModal, clearErrors, demoUser, err
         demoUser(demo).then(closeModal());
     };
 
-    const renderErrors = () => {
-        if (errors.length > 0) {
-            return (
-                <div className="feedback-indicator">
-                    {errors.map((error, index) => (
-                        <li key={index}>{error}</li>
-                    ))}
-                </div>
-            );
-        } else {
-            return null;
-        }
-    };
+    // const renderErrors = () => {
+    //     if (errors.length > 0) {
+    //         return (
+    //             <div className="feedback-indicator">
+    //                 {errors.map((error, index) => (
+    //                     <li key={index}>{error}</li>
+    //                 ))}
+    //             </div>
+    //         );
+    //     } else {
+    //         return null;
+    //     }
+    // };
 
     useEffect(() => {
         clearErrors();
@@ -336,4 +336,4 @@ const Session = ({ formType, processForm, closeModal, clearErrors, demoUser, err
     );
 };
 
-export default Session
+export default Session;
