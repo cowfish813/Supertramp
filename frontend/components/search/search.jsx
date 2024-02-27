@@ -17,17 +17,6 @@ const Search = (props) => {
     const handleInput = (e) => {
         e.preventDefault();
         setMapLocation(e.target.value);
-        // const res = (new google.maps.places.Autocomplete(inputRef.current));
-        // res.addListener('place_changed', async () => {
-        //     const address = await res.getPlace().formatted_address;
-        //     const place = await res.getPlace();
-        //     const lat = await place.geometry.location.lat();
-        //     const lng = await place.geometry.location.lng();
-        //     const mapRes = address ? address : place.name;
-        //     setMapLocation(mapRes);
-        //     setMapLat(lat);
-        //     setMapLng(lng);
-        // });
     }
 
     const handleSubmit = (e) => {
@@ -45,6 +34,7 @@ const Search = (props) => {
                 state
             })
         } else {
+            //so this is preventing search form initiating at all...
             console.log("hello")
         }
     }
@@ -60,7 +50,9 @@ const Search = (props) => {
             setMapLocation(mapRes);
             setMapLat(lat);
             setMapLng(lng);
-        });
+        }); //adds a listener on page load to reference point i designated.
+//can i add a different type of listener at the same time that defaults a search?
+
     }, [])
     
 
