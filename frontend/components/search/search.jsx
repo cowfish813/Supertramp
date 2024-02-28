@@ -36,23 +36,23 @@ const Search = (props) => {
         } else {
             //so this is preventing search form initiating at all...
             //search somehow incomplete because there was no selection for lat/lng to go to BE
+            window.alert("No details available for input: '" + inputRef.current.value + ", select dropdown items'");
+        //     const displaySuggestions = function (predictions, status) {
+        //         if (status != google.maps.places.PlacesServiceStatus.OK || !predictions) {
+        //             alert(status);
+        //             return;
+        //         } else {
+        //             console.log("ok")
+        //         }
 
-            const displaySuggestions = function (predictions, status) {
-                if (status != google.maps.places.PlacesServiceStatus.OK || !predictions) {
-                    alert(status);
-                    return;
-                } else {
-                    console.log("ok")
-                }
+        //         predictions.forEach((prediction) => {
+        //             console.log("display", prediction)
+        //             debugger
+        //         });
+        //     };
 
-                predictions.forEach((prediction) => {
-                    console.log("display", prediction)
-                    debugger
-                });
-            };
-
-            const service = new google.maps.places.AutocompleteService();
-            service.getQueryPredictions({ input: inputRef.current.value }, displaySuggestions);
+        //     const service = new google.maps.places.AutocompleteService();
+        //     service.getQueryPredictions({ input: inputRef.current.value }, displaySuggestions);
         }
     }
 
