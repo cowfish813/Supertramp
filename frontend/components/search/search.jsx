@@ -17,17 +17,6 @@ const Search = (props) => {
     const handleInput = (e) => {
         e.preventDefault();
         setMapLocation(e.target.value);
-        // const res = (new google.maps.places.Autocomplete(inputRef.current));
-        // res.addListener('place_changed', async () => {
-        //     const address = await res.getPlace().formatted_address;
-        //     const place = await res.getPlace();
-        //     const lat = await place.geometry.location.lat();
-        //     const lng = await place.geometry.location.lng();
-        //     const mapRes = address ? address : place.name;
-        //     setMapLocation(mapRes);
-        //     setMapLat(lat);
-        //     setMapLng(lng);
-        // });
     }
 
     const handleSubmit = (e) => {
@@ -45,7 +34,25 @@ const Search = (props) => {
                 state
             })
         } else {
-            console.log("hello")
+            //so this is preventing search form initiating at all...
+            //search somehow incomplete because there was no selection for lat/lng to go to BE
+            window.alert("No details available for input: '" + inputRef.current.value + ", select dropdown items'");
+        //     const displaySuggestions = function (predictions, status) {
+        //         if (status != google.maps.places.PlacesServiceStatus.OK || !predictions) {
+        //             alert(status);
+        //             return;
+        //         } else {
+        //             console.log("ok")
+        //         }
+
+        //         predictions.forEach((prediction) => {
+        //             console.log("display", prediction)
+        //             debugger
+        //         });
+        //     };
+
+        //     const service = new google.maps.places.AutocompleteService();
+        //     service.getQueryPredictions({ input: inputRef.current.value }, displaySuggestions);
         }
     }
 
@@ -60,7 +67,10 @@ const Search = (props) => {
             setMapLocation(mapRes);
             setMapLat(lat);
             setMapLng(lng);
-        });
+        }); //adds a listener on page load to reference point i designated.
+
+//can i add a different type of listener at the same time that defaults a search?
+
     }, [])
     
 
