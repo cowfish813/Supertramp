@@ -35,7 +35,24 @@ const Search = (props) => {
             })
         } else {
             //so this is preventing search form initiating at all...
-            console.log("hello")
+            //search somehow incomplete because there was no selection for lat/lng to go to BE
+
+            const displaySuggestions = function (predictions, status) {
+                if (status != google.maps.places.PlacesServiceStatus.OK || !predictions) {
+                    alert(status);
+                    return;
+                } else {
+                    console.log("ok")
+                }
+
+                predictions.forEach((prediction) => {
+                    console.log("display", prediction)
+                    debugger
+                });
+            };
+
+            const service = new google.maps.places.AutocompleteService();
+            service.getQueryPredictions({ input: inputRef.current.value }, displaySuggestions);
         }
     }
 
@@ -51,6 +68,7 @@ const Search = (props) => {
             setMapLat(lat);
             setMapLng(lng);
         }); //adds a listener on page load to reference point i designated.
+
 //can i add a different type of listener at the same time that defaults a search?
 
     }, [])
