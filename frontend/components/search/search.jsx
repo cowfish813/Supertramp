@@ -36,7 +36,6 @@ const Search = (props) => {
         } else {
             //so this is preventing search form initiating at all...
             //search somehow incomplete because there was no selection for lat/lng to go to BE
-            window.alert("No details available for input: '" + inputRef.current.value + ", select dropdown items'");
         //     const displaySuggestions = function (predictions, status) {
         //         if (status != google.maps.places.PlacesServiceStatus.OK || !predictions) {
         //             alert(status);
