@@ -10,9 +10,20 @@ const Search = (props) => {
     const [mapLng, setMapLng] = useState();
     const history = useHistory();
 
-    // useEffect(() => {
-    //     inputRef.current.focus();
-    // }, [])
+    useEffect(() => {
+        inputRef.current.focus();
+    }, [])
+
+    
+    const simulateArrowDown = () => {
+        const event = new KeyboardEvent('keydown', { keyCode: 40 });
+        inputRef.current.dispatchEvent(event);
+    };
+
+    const simulateEnter = () => {
+        const event = new KeyboardEvent('keydown', { keyCode: 13 });  
+        inputRef.current.dispatchEvent(event);
+    }
 
     const handleInput = (e) => {
         e.preventDefault();
@@ -21,6 +32,7 @@ const Search = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
         if (mapLat && mapLng) {
             const state = {
                 mapLocation,
@@ -34,28 +46,13 @@ const Search = (props) => {
                 state
             })
         } else {
-            //so this is preventing search form initiating at all...
-            //search somehow incomplete because there was no selection for lat/lng to go to BE
-        //     const displaySuggestions = function (predictions, status) {
-        //         if (status != google.maps.places.PlacesServiceStatus.OK || !predictions) {
-        //             alert(status);
-        //             return;
-        //         } else {
-        //             console.log("ok")
-        //         }
-
-        //         predictions.forEach((prediction) => {
-        //             console.log("display", prediction)
-        //             debugger
-        //         });
-        //     };
-
-        //     const service = new google.maps.places.AutocompleteService();
-        //     service.getQueryPredictions({ input: inputRef.current.value }, displaySuggestions);
+            simulateArrowDown()
+            simulateEnter()
+            simulateEnter()            
         }
     }
 
-    useEffect(() => {
+    const autoCompletePlace = () => {
         const res = (new google.maps.places.Autocomplete(inputRef.current));
         res.addListener('place_changed', async () => {
             const address = await res.getPlace().formatted_address;
@@ -66,10 +63,11 @@ const Search = (props) => {
             setMapLocation(mapRes);
             setMapLat(lat);
             setMapLng(lng);
-        }); //adds a listener on page load to reference point i designated.
+        });
+    }
 
-//can i add a different type of listener at the same time that defaults a search?
-
+    useEffect(() => {
+        autoCompletePlace();
     }, [])
     
 
