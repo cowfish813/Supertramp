@@ -48,7 +48,6 @@ const Search = (props) => {
         } else {
             simulateArrowDown()
             simulateEnter()
-            simulateEnter()    
 // how can this be cleaner? im basically using a keyboard to assign lat/lng        
         }
     }
