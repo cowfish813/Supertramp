@@ -30,26 +30,32 @@ const Search = (props) => {
         setMapLocation(e.target.value);
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (mapLat && mapLng) {
-            const state = {
-                mapLocation,
-                lat: mapLat,
-                lng: mapLng
-            }
-            props.receiveLocation(state);
-            
-            history.push({
-                pathname: `/search/${mapLat},${mapLng}`,
-                state
-            })
-        } else {
+        if (!mapLat && !mapLng) {
             simulateArrowDown()
             simulateEnter()
 // how can this be cleaner? im basically using a keyboard to assign lat/lng        
+    //lat/lng assigned from search bar
+            //assigned after enter key but nothing if i pushed to state
         }
+        autoCompletePlace()
+            // does not trigger
+
+        const state = {
+            mapLocation,
+            lat: mapLat,
+            lng: mapLng
+        }
+        props.receiveLocation(state);
+        
+        history.push({
+            pathname: `/search/${mapLat},${mapLng}`,
+            state
+        })
+
+
     }
 
     const autoCompletePlace = () => {
