@@ -11,7 +11,7 @@ const Search = (props) => {
     const history = useHistory();
 
     useEffect(() => {
-        inputRef.current.focus();
+        // inputRef.current.focus();
     }, [])
 
     const handleInput = (e) => {
@@ -22,17 +22,6 @@ const Search = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-//         if (!mapLat && !mapLng) {
-//             sb()
-//             // simulateArrowDown()
-//             // simulateEnter()
-// // how can this be cleaner? im basically using a keyboard to assign lat/lng        
-//     //lat/lng assigned from search bar
-//             //assigned after enter key but nothing if i pushed to state
-//         }
-        // autoCompletePlace()
-            // does not trigger
-        // sb();
         const state = {
             mapLocation,
             lat: mapLat,
@@ -45,29 +34,6 @@ const Search = (props) => {
             state
         })
     }
-
-    const autoCompletePlace = () => {
-        const res = (new google.maps.places.Autocomplete(inputRef.current));
-        res.addListener('place_changed', async () => {
-            const address = await res.getPlace().formatted_address;
-            const place = await res.getPlace();
-            const lat = await place.geometry.location.lat();
-            const lng = await place.geometry.location.lng();
-            const mapRes = address ? address : place.name;
-            // if (lat && lng && mapRes) {
-            setMapLocation(mapRes);
-            setMapLat(lat);
-            setMapLng(lng);
-            // }
-        });
-
-        
-    }
-
-    // useEffect(() => {
-    //     autoCompletePlace();
-    // }, [])
-    
 
     const sb = () => {
         const searchBox = new google.maps.places.SearchBox(inputRef.current);
@@ -85,6 +51,7 @@ const Search = (props) => {
             setMapLng(lng);
         })
     }
+
     useEffect(() => {
         sb()
     }, [])
@@ -105,7 +72,7 @@ const Search = (props) => {
                         placeholder="Start with somewhere like Yosemite Valley!" 
                         ref={inputRef}
                         onChange={handleInput}
-                        autocomplete="on"
+                        // autocomplete="on"
                     />
 
                 </div>
