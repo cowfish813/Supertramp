@@ -34,28 +34,27 @@ const Search = (props) => {
         e.preventDefault();
 
         if (!mapLat && !mapLng) {
-            simulateArrowDown()
-            simulateEnter()
+            sb()
+            // simulateArrowDown()
+            // simulateEnter()
 // how can this be cleaner? im basically using a keyboard to assign lat/lng        
     //lat/lng assigned from search bar
             //assigned after enter key but nothing if i pushed to state
         }
-        autoCompletePlace()
+        // autoCompletePlace()
             // does not trigger
-
-        const state = {
-            mapLocation,
-            lat: mapLat,
-            lng: mapLng
-        }
-        props.receiveLocation(state);
+        sb();
+        // const state = {
+        //     mapLocation,
+        //     lat: mapLat,
+        //     lng: mapLng
+        // }
+        // props.receiveLocation(state);
         
-        history.push({
-            pathname: `/search/${mapLat},${mapLng}`,
-            state
-        })
-
-
+        // history.push({
+        //     pathname: `/search/${mapLat},${mapLng}`,
+        //     state
+        // })
     }
 
     const autoCompletePlace = () => {
@@ -70,12 +69,26 @@ const Search = (props) => {
             setMapLat(lat);
             setMapLng(lng);
         });
+
+        
     }
 
-    useEffect(() => {
-        autoCompletePlace();
-    }, [])
+    // useEffect(() => {
+    //     autoCompletePlace();
+    // }, [])
     
+
+    const sb = () => {
+        const searchBox = new google.maps.places.SearchBox(inputRef.current);
+        searchBox.addListener("places_changed", () => {
+        const places = searchBox.getPlaces();
+
+            debugger;
+        })
+    }
+    useEffect(() => {
+        sb()
+    }, [])
 
     return (
         <form className="form_search" autocomplete="on">
