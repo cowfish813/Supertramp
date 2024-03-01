@@ -30,31 +30,31 @@ const Search = (props) => {
         setMapLocation(e.target.value);
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (!mapLat && !mapLng) {
-            sb()
-            // simulateArrowDown()
-            // simulateEnter()
-// how can this be cleaner? im basically using a keyboard to assign lat/lng        
-    //lat/lng assigned from search bar
-            //assigned after enter key but nothing if i pushed to state
-        }
+//         if (!mapLat && !mapLng) {
+//             sb()
+//             // simulateArrowDown()
+//             // simulateEnter()
+// // how can this be cleaner? im basically using a keyboard to assign lat/lng        
+//     //lat/lng assigned from search bar
+//             //assigned after enter key but nothing if i pushed to state
+//         }
         // autoCompletePlace()
             // does not trigger
-        sb();
-        // const state = {
-        //     mapLocation,
-        //     lat: mapLat,
-        //     lng: mapLng
-        // }
-        // props.receiveLocation(state);
+        // sb();
+        const state = {
+            mapLocation,
+            lat: mapLat,
+            lng: mapLng
+        }
+        props.receiveLocation(state);
         
-        // history.push({
-        //     pathname: `/search/${mapLat},${mapLng}`,
-        //     state
-        // })
+        history.push({
+            pathname: `/search/${mapLat},${mapLng}`,
+            state
+        })
     }
 
     const autoCompletePlace = () => {
@@ -65,9 +65,11 @@ const Search = (props) => {
             const lat = await place.geometry.location.lat();
             const lng = await place.geometry.location.lng();
             const mapRes = address ? address : place.name;
+            // if (lat && lng && mapRes) {
             setMapLocation(mapRes);
             setMapLat(lat);
             setMapLng(lng);
+            // }
         });
 
         
@@ -80,10 +82,18 @@ const Search = (props) => {
 
     const sb = () => {
         const searchBox = new google.maps.places.SearchBox(inputRef.current);
-        searchBox.addListener("places_changed", () => {
-        const places = searchBox.getPlaces();
-
-            debugger;
+        searchBox.addListener("places_changed", async () => {
+            const places = await searchBox.getPlaces();
+            const place = await searchBox.getPlaces()[0];
+            // debugger;
+            // const address = place.formatted_address
+            const lat = await place.geometry.location.lat();
+            const lng = await place.geometry.location.lng();
+            // const mapRes = address ? address : place.name;
+            debugger
+            // setMapLocation(mapRes);
+            setMapLat(lat);
+            setMapLng(lng);
         })
     }
     useEffect(() => {
