@@ -14,17 +14,6 @@ const Search = (props) => {
         inputRef.current.focus();
     }, [])
 
-    
-    const simulateArrowDown = () => {
-        const event = new KeyboardEvent('keydown', { keyCode: 40 });
-        inputRef.current.dispatchEvent(event);
-    };
-
-    const simulateEnter = () => {
-        const event = new KeyboardEvent('keydown', { keyCode: 13 });  
-        inputRef.current.dispatchEvent(event);
-    }
-
     const handleInput = (e) => {
         e.preventDefault();
         setMapLocation(e.target.value);
