@@ -91,11 +91,8 @@ class Homepage extends React.Component {
                     <div className="banner_message">
                         <div >
                                 <span className="banner_font">Explore Dozens of Locations!</span>
-                            {/* <span className="banner_font">Locations!</span> */}
                         </div>
                         <span className="banner_sub_message">Run a search or scroll down below and start exploring!</span>
-                            {/* <span className="banner_sub_message">and start exploring!</span> */}
-
                         <div className="intro_button_container">
                             <button onClick={this.handleInput} className="intro_button">I'm feeling Lucky!</button>
                         </div>
@@ -110,8 +107,7 @@ class Homepage extends React.Component {
                         <img onClick={this.handleTile3} className="poppingRectangle" src="https://hipcamp-res.cloudinary.com/images/c_thumb,f_auto,q_60,h_953/v1572899400/campground-photos/hamwjtqwsdqffioglcvq/tiny-house-in-happy-valley-tiny-house-glamping-mountains.jpg" alt=""/>
                     </div>
                 </div>
-                {/* <p>destination getaways.</p> */}
-
+                
                 <div className="vagueLocationsContainer">
                     <h1 className="title_listing">Our top listings</h1>
                     <div className="vague_tile_list">
