@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { withRouter, useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faLocationDot, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const Search = (props) => {
     const inputRef = useRef(); //sets focus on search bar
@@ -77,7 +77,7 @@ const Search = (props) => {
 
                 <div className="searchBar">
                     <span className="fasearch">
-                        <FontAwesomeIcon icon={faSearch} />
+                        <FontAwesomeIcon icon={faLocationDot} />
                     </span>
 
                     <input 
@@ -91,7 +91,11 @@ const Search = (props) => {
                     />
 
                 </div>
-                <button className="searchButton" onClick={handleSubmit}>Search</button>
+                
+                <button className="searchButton" onClick={handleSubmit}>
+                    {/* <FontAwesomeIcon icon={faSearch} /> */}
+                    Search
+                </button>
             </div>
         </form>
     ) 

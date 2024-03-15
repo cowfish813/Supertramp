@@ -84,7 +84,7 @@ class Homepage extends React.Component {
                     < SearchBar />
 
                 <div className="containerBanner">
-                    <img src="https://hipcamp-res.cloudinary.com/image/upload/c_thumb,w_1080/v1498456730/campground-photos/yene977lfve4yhhnokuh.jpg" alt="bannerbar"
+                    <img src="https://hipcamp-res.cloudinary.com/f_auto,c_limit,w_1120,q_auto/campground-photos/gyqfoddi8knyfberfznf.jpg" alt="bannerbar"
                     className="bannerImg"
                     id="bannerImg"
                     />
