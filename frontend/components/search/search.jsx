@@ -93,8 +93,8 @@ const Search = (props) => {
                 </div>
                 
                 <button className="searchButton" onClick={handleSubmit}>
-                    {/* <FontAwesomeIcon icon={faSearch} /> */}
-                    Search
+                    <FontAwesomeIcon icon={faSearch} />
+                    <p className='margin-left-5'>Search</p>
                 </button>
             </div>
         </form>
