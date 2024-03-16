@@ -11,6 +11,10 @@
     margin-left: 5px;
 }
 
+.margin-right-15 {
+    margin-right: 24px;
+}
+
 .home {
     // margin-top: 8vh;
     width: 100%;
@@ -18,6 +22,21 @@
     flex-direction: column;
     align-items: center;
 }
+
+
+.sp_div {
+    // height:480px;
+    // width: 395px;
+    border-radius: 8px;
+    padding: 20px 30px;
+}
+
+.sp_img {
+    height: 330px;
+    width: 260px;
+    margin-bottom: 30px;
+}
+
 
 .homeCol {
     width: 57vw;
@@ -131,6 +150,25 @@
 
 .container_container_banner {
 }
+
+.green_background {
+    background: #E6F0D9;
+}
+.learn_more:hover {
+    color: white;
+    background: #0F3806;
+    cursor: pointer;
+}
+.learn_more {
+    color: #0F3806;
+    background: #E6F0D9;
+    border: 1px solid #0F3806;
+    // padding: 46px 350px;
+    width: 350px;
+    height: 46px;
+    border-radius: 50px;
+}
+
 
 .containerBanner {
     position: relative; //very necessary
@@ -259,6 +297,10 @@
     flex-direction: column;
 }
 
+.align_center {
+    align-items: center;
+    justify-content: center;
+}
 
 .vagueLocationsContainer {
     margin-top: 12vh;

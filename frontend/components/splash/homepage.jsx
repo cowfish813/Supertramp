@@ -123,6 +123,29 @@ class Homepage extends React.Component {
                         <Link to="/listings/52"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg" alt=""/> </Link>
                     </div>
                 </div>
+
+                <div className="vagueLocationsContainer"> 
+                    <h1 className="">Safety Partners</h1>
+                    <div className='flex'>
+
+                        <div className='margin-right-15 sp_div green_background flex flex-col'>
+                            <img className='sp_img' src="https://hipcamp-res.cloudinary.com/f_auto,c_limit,w_384,q_auto/internal/recreate_responsibly_text.png"></img>
+                            <a href='https://www.recreateresponsibly.org/' className='flex align_center learn_more'>Learn More</a>
+                        </div>
+
+                        <div className='margin-right-15 sp_div green_background flex flex-col'>
+                            <img className='sp_img' src="https://hipcamp-res.cloudinary.com/f_auto,c_limit,w_384,q_auto/internal/leave_no_trace_text.png"></img>
+                            <a href="https://lnt.org/why/7-principles/" className='flex align_center learn_more'>Learn More</a>
+                        </div>
+
+                        {/* <div > NWS INTEGRATION 
+                            <img src="https://hipcamp-res.cloudinary.com/f_auto,c_limit,w_384,q_auto/internal/national_weather_service_text.png"></img>
+                            <a href="" className='learn_more'>Learn More</a>
+                        </div> */}
+                    </div>
+
+                    
+                </div>
             </div>
         )
     }
