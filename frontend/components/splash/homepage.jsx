@@ -124,10 +124,9 @@ class Homepage extends React.Component {
                     </div>
                 </div>
 
-                <div className="vagueLocationsContainer"> 
-                    <h1 className="">Safety Partners</h1>
+                <div className=""> 
+                    <h3 className="sp_header">Safety Partners</h3>
                     <div className='flex'>
-
                         <div className='margin-right-15 sp_div green_background flex flex-col'>
                             <img className='sp_img' src="https://hipcamp-res.cloudinary.com/f_auto,c_limit,w_384,q_auto/internal/recreate_responsibly_text.png"></img>
                             <a href='https://www.recreateresponsibly.org/' className='flex align_center learn_more'>Learn More</a>
@@ -138,13 +137,17 @@ class Homepage extends React.Component {
                             <a href="https://lnt.org/why/7-principles/" className='flex align_center learn_more'>Learn More</a>
                         </div>
 
-                        {/* <div > NWS INTEGRATION 
-                            <img src="https://hipcamp-res.cloudinary.com/f_auto,c_limit,w_384,q_auto/internal/national_weather_service_text.png"></img>
-                            <a href="" className='learn_more'>Learn More</a>
-                        </div> */}
-                    </div>
+                        <div className='margin-right-15 sp_div green_background flex flex-col'>
+                            {/* <img className='sp_img' src="https://hipcamp-res.cloudinary.com/f_auto,c_limit,w_384,q_auto/internal/national_weather_service_text.png"></img> */}
+                            <div className='sp_img'>
+                                <img src="./Users/nickcheung/Desktop/projects/supertrampapp/frontend/components/splash/protect-our-winters-vector-logo.svg"></img>
+                                <h1 className="sp_header">Protect Our Winters</h1>
+                                <p>We help passionate outdoor people protect the places and experiences they love from climate change.</p>
+                            </div>
+                            <a href="" className='flex align_center learn_more'>Learn More</a>
+                        </div>
 
-                    
+                    </div>
                 </div>
             </div>
         )
