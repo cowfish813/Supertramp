@@ -138,13 +138,12 @@ class Homepage extends React.Component {
                         </div>
 
                         <div className='margin-right-15 sp_div green_background flex flex-col'>
-                            {/* <img className='sp_img' src="https://hipcamp-res.cloudinary.com/f_auto,c_limit,w_384,q_auto/internal/national_weather_service_text.png"></img> */}
                             <div className='sp_img'>
-                                <img src="./Users/nickcheung/Desktop/projects/supertrampapp/frontend/components/splash/protect-our-winters-vector-logo.svg"></img>
+                                <img className='pow' src="https://raw.githubusercontent.com/cowfish813/Supertramp/splash/app/assets/images/protect-our-winters-vector-logo-cropped.svg"></img>
                                 <h1 className="sp_header">Protect Our Winters</h1>
-                                <p>We help passionate outdoor people protect the places and experiences they love from climate change.</p>
+                                <p className='flex flex-wrap'>We help passionate outdoor people protect the places and experiences they love from climate change.</p>
                             </div>
-                            <a href="" className='flex align_center learn_more'>Learn More</a>
+                            <a href="https://protectourwinters.org/about-pow/" className='flex align_center learn_more'>Learn More</a>
                         </div>
 
                     </div>
