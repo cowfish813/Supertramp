@@ -38,15 +38,9 @@ const Search = (props) => {
     const sb = () => {
         const searchBox = new google.maps.places.SearchBox(inputRef.current);
         searchBox.addListener("places_changed", async () => {
-            // const places = await searchBox.getPlaces();
-            const place = await searchBox.getPlaces()[0];
-            // debugger;
-            // const address = place.formatted_address
-            const lat = await place.geometry.location.lat();
-            const lng = await place.geometry.location.lng();
-            // const mapRes = address ? address : place.name;
-            // debugger
-            // setMapLocation(mapRes);
+            const place = searchBox.getPlaces()[0];
+            const lat = place.geometry.location.lat();
+            const lng = place.geometry.location.lng();
             setMapLat(lat);
             setMapLng(lng);
         })
