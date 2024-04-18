@@ -19,17 +19,18 @@ const Search = (props) => {
         setMapLocation(e.target.value);
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        await sb();
 
-        const state = {
+        const state = await {
             mapLocation,
             lat: mapLat,
             lng: mapLng
         }
-        props.receiveLocation(state);
+        await props.receiveLocation(state);
         
-        history.push({
+        await history.push({
             pathname: `/search/${mapLat},${mapLng}`,
             state
         })
@@ -41,8 +42,16 @@ const Search = (props) => {
             const place = searchBox.getPlaces()[0];
             const lat = place.geometry.location.lat();
             const lng = place.geometry.location.lng();
-            setMapLat(lat);
-            setMapLng(lng);
+            await setMapLat(lat);
+            await setMapLng(lng);
+
+            if (!lat || !lng) {
+                const service = new google.maps.places.AutocompleteService();
+                debugger;
+                service.getQueryPredictions({ input: inputRef.current.value }, (predictions, status) => {
+                    console.log(predictions);
+                });
+            }
         })
     }
 
@@ -51,7 +60,7 @@ const Search = (props) => {
     }, [])
 
     return (
-        <form className="form_search" autocomplete="on">
+        <form className="form_search" autocomplete="on" onSubmit={handleSubmit}>
             <div className="superSearch">
 
                 <div className="searchBar">
