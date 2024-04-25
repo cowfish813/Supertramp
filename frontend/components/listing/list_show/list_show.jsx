@@ -1,10 +1,29 @@
-import React, { useEffect } from 'react';
+import React, {useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import BookingForm from '../../bookings/booking_form_container';
 import ReviewForm from '../../reviews/reviews_form';
 import ListMap from './list_map';
+import ListCarousel from './list_photo_carousel';
+import Spinner from './Spinner@1x-1.0s-200px-200px.svg'
+// import Spinner from './Spinner@1x-1.0s-200px-200pxstatic.svg'
+// import Spinner from './Spinner@1x-1.0s-200px-200px.html'
+// import Spinner from 'https://loading.io/asset/736150'
 
 const ListShow = ({ match, fetchListing, list }) => {
+  // const [loading, setLoading] = useState(<></>);
+  const [loading, setLoading] = useState(<img src={Spinner} alt=""/>);
+  
+
+  const carousel = () => {
+    return (
+      <img className="list-show-photo" src={list.photoUrls} alt="" />
+    )
+  }
+
+  useEffect(() => {
+    if (list.photoUrls) setLoading(carousel);
+  },[list.photoUrls])
+
   useEffect(() => {
     window.scrollTo(0, 0);
     fetchListing(match.params.listingsId);
@@ -20,7 +39,7 @@ const ListShow = ({ match, fetchListing, list }) => {
     <div className="show_body">
       <div className="social_share_target">
         <div className="photo_square">
-          <img className="list-show-photo" src={list.photoUrls} alt="" />
+          {loading}
         </div>
         <div className="photo_title">{list.name}</div>
       </div>
