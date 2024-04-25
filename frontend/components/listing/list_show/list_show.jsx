@@ -4,11 +4,12 @@ import BookingForm from '../../bookings/booking_form_container';
 import ReviewForm from '../../reviews/reviews_form';
 import ListMap from './list_map';
 import ListCarousel from './list_photo_carousel';
-import Spinner from './Spinner@1x-1.0s-200px-200px.jsx'
+// import Spinner from './Spinner@1x-1.0s-200px-200px.svg'
 
 const ListShow = ({ match, fetchListing, list }) => {
-  // const [loading, setLoading] = useState(<></>);
-  const [loading, setLoading] = useState(<img src={Spinner} alt=""/>);
+  const [loading, setLoading] = useState(<div className="list-show-photo"/>);
+  // const [loading, setLoading] = useState(<img className="carousel flex center" src={Spinner} alt=""/>);
+  // const [loading, setLoading] = useState(Spinner);
   
 
   const carousel = () => {
