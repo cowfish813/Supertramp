@@ -33,8 +33,8 @@ class Listing < ApplicationRecord
     foreign_key: :listing_id,
     dependent: :destroy
 
-    # has_many_attached :photos
-    has_one_attached :photo
+    has_many_attached :photos
+    # has_one_attached :photo
 
     # def ensure_photo
     #     unless self.photo.attached?

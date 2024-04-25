@@ -42,7 +42,7 @@ class Api::ListingsController < ApplicationController
 
 private
     def listing_params
-        params.require(:listing).permit(:photo, :cancellation_policy, :capacity, :country, :description, :minimum_nights, :on_arrival, :price, :checkin, :checkout, :lat, :lng, :name)
+        params.require(:listing).permit(:photos, :cancellation_policy, :capacity, :country, :description, :minimum_nights, :on_arrival, :price, :checkin, :checkout, :lat, :lng, :name)
     end
 
     def bounds
