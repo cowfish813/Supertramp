@@ -4,10 +4,7 @@ import BookingForm from '../../bookings/booking_form_container';
 import ReviewForm from '../../reviews/reviews_form';
 import ListMap from './list_map';
 import ListCarousel from './list_photo_carousel';
-import Spinner from './Spinner@1x-1.0s-200px-200px.svg'
-// import Spinner from './Spinner@1x-1.0s-200px-200pxstatic.svg'
-// import Spinner from './Spinner@1x-1.0s-200px-200px.html'
-// import Spinner from 'https://loading.io/asset/736150'
+import Spinner from './Spinner@1x-1.0s-200px-200px.jsx'
 
 const ListShow = ({ match, fetchListing, list }) => {
   // const [loading, setLoading] = useState(<></>);
@@ -16,7 +13,7 @@ const ListShow = ({ match, fetchListing, list }) => {
 
   const carousel = () => {
     return (
-      <img className="list-show-photo" src={list.photoUrls} alt="" />
+      <img className="list-show-photo" src={list.photoUrls[2]} alt="" />
     )
   }
 
