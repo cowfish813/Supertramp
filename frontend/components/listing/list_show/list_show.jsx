@@ -16,12 +16,31 @@ const ListShow = ({ match, fetchListing, list }) => {
 
 
   const carousel = () => {
+    const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+    slidesToSlide: 3 // optional, default to 1.
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 3,
+    slidesToSlide: 2 // optional, default to 1.
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 3,
+    slidesToSlide: 1 // optional, default to 1.
+  }
+};
     // list.photoUrls
     return (
       // <></>
-      <Carousel >
+      <Carousel
+      // responsive={responsive} 
+      >
         {list.photoUrls.map((photo) =>         
-          <WithStyles className="carousel_height" src={photo} alt="" />
+          <div className="carousel_height" src={photo} key={photo} alt="" />
         )}
       </Carousel>
     )
