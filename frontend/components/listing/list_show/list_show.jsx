@@ -10,60 +10,61 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
 const ListShow = ({ match, fetchListing, list }) => {
-  const [loading, setLoading] = useState(<div className=""/>);
+  // const [loading, setLoading] = useState(<div className=""/>);
   // const [loading, setLoading] = useState(<img className="carousel flex center" src={Spinner} alt=""/>);
   // const [loading, setLoading] = useState(Spinner);
 
 
-  const carousel = () => {
-    const responsive = {
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3,
-    slidesToSlide: 3 // optional, default to 1.
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 3,
-    slidesToSlide: 2 // optional, default to 1.
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 3,
-    slidesToSlide: 1 // optional, default to 1.
-  }
-};
-    // list.photoUrls
-    return (
-      // <></>
-      <Carousel
-      responsive={responsive} 
-      >
-        {list.photoUrls ? list.photoUrls.map((photo) => <img className="carousel_height" src={photo} key={photo} alt=""/>): <>notworking</>  }
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+      slidesToSlide: 3 // optional, default to 1.
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 3,
+      slidesToSlide: 2 // optional, default to 1.
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 3,
+      slidesToSlide: 1 // optional, default to 1.
+    }
+  };
 
-      </Carousel>
-    )
-  }
+  // const carousel = () => {
+  //   // list.photoUrls
+  //   return (
+  //     // <></>
+  //     <Carousel
+  //     responsive={responsive} 
+  //     >
+  //       {list.photoUrls ? list.photoUrls.map((photo) => <img className="carousel_height" src={photo} key={photo} alt=""/>): <>notworking</>  }
 
-  useEffect(() => {
-    // console.log(list)
-  }, [])
+  //     </Carousel>
+  //   )
+  // }
+
+  // useEffect(() => {
+  //   // console.log(list)
+  // }, [])
   
 
-  useEffect(() => {
-    if (list.photoUrls) setLoading(carousel);
-  },[list.photoUrls])
+  // useEffect(() => {
+  //   if (list.photoUrls) setLoading(carousel);
+  // },[list.photoUrls])
 
   useEffect(() => {
     window.scrollTo(0, 0);
     fetchListing(match.params.listingsId);
-  }, [fetchListing, match.params.listingsId]);
+  }, [fetchListing]);
 
-  useEffect(() => {
-    if (!list) {
-      fetchListing(match.params.listingsId);
-    }
-  }, [list, fetchListing, match.params.listingsId]);
+  // useEffect(() => {
+  //   if (!list) {
+  //     fetchListing(match.params.listingsId);
+  //   }
+  // }, [list, fetchListing, match.params.listingsId]);
 
   return (
     <div className="show_body">
@@ -71,7 +72,12 @@ const ListShow = ({ match, fetchListing, list }) => {
         <div className="photo_square">
           {/* {loading} */}
           {list.photoUrls ? list.photoUrls.map((photo) => <img className="carousel_height" src={photo} key={photo} alt=""/>): <>notworking</>  }
+                <Carousel
+          responsive={responsive} 
+          >
+        {list.photoUrls ? list.photoUrls.map((photo) => <img className="carousel_height" src={photo} key={photo} alt=""/>): <>notworking</>  }
 
+        </Carousel>
         </div>
         <div className="photo_title">{list.name}</div>
       </div>
