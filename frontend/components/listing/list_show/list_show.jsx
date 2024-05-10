@@ -37,14 +37,18 @@ const ListShow = ({ match, fetchListing, list }) => {
     return (
       // <></>
       <Carousel
-      // responsive={responsive} 
+      responsive={responsive} 
       >
-        {list.photoUrls.map((photo) =>         
-          <div className="carousel_height" src={photo} key={photo} alt="" />
-        )}
+        {list.photoUrls ? list.photoUrls.map((photo) => <img className="carousel_height" src={photo} key={photo} alt=""/>): <>notworking</>  }
+
       </Carousel>
     )
   }
+
+  useEffect(() => {
+    // console.log(list)
+  }, [])
+  
 
   useEffect(() => {
     if (list.photoUrls) setLoading(carousel);
@@ -65,7 +69,9 @@ const ListShow = ({ match, fetchListing, list }) => {
     <div className="show_body">
       <div className="social_share_target">
         <div className="photo_square">
-          {loading}
+          {/* {loading} */}
+          {list.photoUrls ? list.photoUrls.map((photo) => <img className="carousel_height" src={photo} key={photo} alt=""/>): <>notworking</>  }
+
         </div>
         <div className="photo_title">{list.name}</div>
       </div>
