@@ -14,7 +14,6 @@
     "@rails/webpacker": "5.4.4",
     "aws-sdk": "^2.1467.0",
     "babel-loader": "8.0.4",
-    "css-loader": "^5.2.7",
     "dotenv": "^16.3.1",
     "google-map-react": "^2.2.1",
     "moment": "^2.29.4",
@@ -40,9 +39,9 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.2",
     "slick-carousel": "^1.8.1",
-    "style-loader": "2.0.0",
-    "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.12"
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
@@ -57,8 +56,8 @@
     "postinstall": "webpack"
   },
   "engines": {
-    "node": "16.13.2",
-    "npm": "8.1.2"
+    "node": ">=16.13.2",
+    "npm": ">=8.1.2"
   },
   "keywords": [],
   "author": "",
@@ -66,6 +65,9 @@
   "devDependencies": {
     "@iconify/icons-simple-icons": "^1.2.70",
     "@iconify/react": "^4.1.1",
-    "webpack-dev-server": "^3"
+    "css-loader": "^7.1.1",
+    "less": "^3.13.1",
+    "less-loader": "^8.1.1",
+    "style-loader": "^4.0.0"
   }
 }

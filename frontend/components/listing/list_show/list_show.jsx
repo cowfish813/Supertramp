@@ -9,11 +9,10 @@ import ListMap from './list_map';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
-const ListShow = ({ match, fetchListing, list }) => {
-  // const [loading, setLoading] = useState(<div className=""/>);
-  // const [loading, setLoading] = useState(<img className="carousel flex center" src={Spinner} alt=""/>);
-  // const [loading, setLoading] = useState(Spinner);
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 
+const ListShow = ({ match, fetchListing, list }) => {
 
   const responsive = {
     desktop: {
@@ -33,28 +32,6 @@ const ListShow = ({ match, fetchListing, list }) => {
     }
   };
 
-  // const carousel = () => {
-  //   // list.photoUrls
-  //   return (
-  //     // <></>
-  //     <Carousel
-  //     responsive={responsive} 
-  //     >
-  //       {list.photoUrls ? list.photoUrls.map((photo) => <img className="carousel_height" src={photo} key={photo} alt=""/>): <>notworking</>  }
-
-  //     </Carousel>
-  //   )
-  // }
-
-  // useEffect(() => {
-  //   // console.log(list)
-  // }, [])
-  
-
-  // useEffect(() => {
-  //   if (list.photoUrls) setLoading(carousel);
-  // },[list.photoUrls])
-
   useEffect(() => {
     window.scrollTo(0, 0);
     fetchListing(match.params.listingsId);
@@ -70,12 +47,12 @@ const ListShow = ({ match, fetchListing, list }) => {
     <div className="show_body">
       <div className="social_share_target">
         <div className="photo_square">
-          {/* {loading} */}
-          {list.photoUrls ? list.photoUrls.map((photo) => <img className="carousel_height" src={photo} key={photo} alt=""/>): <>notworking</>  }
-                <Carousel
-          responsive={responsive} 
+          
+          {/* {list.photoUrls ? list.photoUrls.map((photo) => <img className="carousel_height" src={photo} key={photo} alt=""/>): <>notworking</>  } */}
+          <Carousel
+            responsive={responsive} 
           >
-        {list.photoUrls ? list.photoUrls.map((photo) => <img className="carousel_height" src={photo} key={photo} alt=""/>): <>notworking</>  }
+            {list.photoUrls ? list.photoUrls.map((photo) => <img className="carousel_height" src={photo} key={photo} alt=""/>): <>notworking</>  }
 
         </Carousel>
         </div>
