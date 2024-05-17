@@ -48,7 +48,7 @@ const ListShow = ({ match, fetchListing, list }) => {
       <div className="social_share_target">
         <div className="photo_square">
           
-          {/* {list.photoUrls ? list.photoUrls.map((photo) => <img className="carousel_height" src={photo} key={photo} alt=""/>): <>notworking</>  } */}
+          {list.photoUrls ? list.photoUrls.map((photo) => <img className="carousel_height" src={photo} key={photo} alt=""/>): <>notworking</>  }
           <Carousel
             responsive={responsive} 
           >
