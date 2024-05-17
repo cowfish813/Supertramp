@@ -6,31 +6,15 @@ import ListMap from './list_map';
 // import Carousel from 'react-bootstrap/Carousel';
 // import ListCarousel from './list_photo_carousel';
 // import Spinner from './Spinner@1x-1.0s-200px-200px.svg'
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+// import Carousel from 'react-multi-carousel';
+// import 'react-multi-carousel/lib/styles.css';
 
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 
 const ListShow = ({ match, fetchListing, list }) => {
 
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-      slidesToSlide: 3 // optional, default to 1.
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 3,
-      slidesToSlide: 2 // optional, default to 1.
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 3,
-      slidesToSlide: 1 // optional, default to 1.
-    }
-  };
+
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -48,13 +32,15 @@ const ListShow = ({ match, fetchListing, list }) => {
       <div className="social_share_target">
         <div className="photo_square">
           
-          {list.photoUrls ? list.photoUrls.map((photo) => <img className="carousel_height" src={photo} key={photo} alt=""/>): <>notworking</>  }
-          <Carousel
+          {/* {list.photoUrls ? list.photoUrls.map((photo) => <img className="carousel_height" src={photo} key={photo} alt=""/>): <>notworking</>  } */}
+          {/* <Carousel
             responsive={responsive} 
           >
             {list.photoUrls ? list.photoUrls.map((photo) => <img className="carousel_height" src={photo} key={photo} alt=""/>): <>notworking</>  }
 
-        </Carousel>
+        </Carousel> */}
+
+
         </div>
         <div className="photo_title">{list.name}</div>
       </div>
