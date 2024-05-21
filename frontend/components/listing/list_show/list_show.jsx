@@ -14,10 +14,12 @@ import ListMap from './list_map';
 
 
 // Styles must use direct files imports
-import 'swiper/swiper.scss'; // core Swiper
-import 'swiper/modules/navigation.scss'; // Navigation module
-import 'swiper/modules/pagination.scss'; // Pagination module
+// import 'swiper/swiper.scss'; // core Swiper
+// import 'swiper/modules/navigation.scss'; // Navigation module
+// import 'swiper/modules/pagination.scss'; // Pagination module
 
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 const ListShow = ({ match, fetchListing, list }) => {
 
@@ -40,12 +42,13 @@ const ListShow = ({ match, fetchListing, list }) => {
         <div className="photo_square">
           
           {/* {list.photoUrls ? list.photoUrls.map((photo) => <img className="carousel_height" src={photo} key={photo} alt=""/>): <>notworking</>  } */}
-          {/* <Carousel
-            responsive={responsive} 
-          >
-            {list.photoUrls ? list.photoUrls.map((photo) => <img className="carousel_height" src={photo} key={photo} alt=""/>): <>notworking</>  }
-
-        </Carousel> */}
+          <Carousel
+            centerMode={true}
+            infiniteLoop={true}
+            showThumbs={false}
+            >
+            {list.photoUrls ? list.photoUrls.map((photo) => <img className="width100 carousel_height" src={photo} key={photo} alt=""/>): <>notworking</>  }
+          </Carousel>
 
 
         </div>
