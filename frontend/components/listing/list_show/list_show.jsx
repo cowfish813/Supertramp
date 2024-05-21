@@ -12,6 +12,13 @@ import ListMap from './list_map';
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 
+
+// Styles must use direct files imports
+import 'swiper/swiper.scss'; // core Swiper
+import 'swiper/modules/navigation.scss'; // Navigation module
+import 'swiper/modules/pagination.scss'; // Pagination module
+
+
 const ListShow = ({ match, fetchListing, list }) => {
 
 
