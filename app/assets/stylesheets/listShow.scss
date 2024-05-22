@@ -8,21 +8,28 @@
     flex-direction: column;
     align-items: center;
 }
-.photo_square {
+.photo_container {
     display: flex;
     justify-content: center;
     align-items: center;
+    max-height: 600px;
+
 }
+
 .list-show-photo{
     object-position: center;
     width: 50rem;
 }
 
-.carousel_height {
-    height: 600px;
+.photo-container {
+    height: 300px;
 }
-.width100 {
-    width: 50%;
+
+.carousel_item {
+    max-height: 600px;
+    object-fit: cover;
+    display: block;
+    aspect-ratio: 16/9;
 }
 
 .photo_title {

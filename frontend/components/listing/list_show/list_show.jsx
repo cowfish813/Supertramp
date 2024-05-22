@@ -30,26 +30,21 @@ const ListShow = ({ match, fetchListing, list }) => {
     fetchListing(match.params.listingsId);
   }, [fetchListing]);
 
-  // useEffect(() => {
-  //   if (!list) {
-  //     fetchListing(match.params.listingsId);
-  //   }
-  // }, [list, fetchListing, match.params.listingsId]);
-
   return (
     <div className="show_body">
       <div className="social_share_target">
-        <div className="photo_square">
+        <div className="photo_container">
           
-          {/* {list.photoUrls ? list.photoUrls.map((photo) => <img className="carousel_height" src={photo} key={photo} alt=""/>): <>notworking</>  } */}
           <Carousel
             centerMode={true}
             infiniteLoop={true}
             showThumbs={false}
+            centerSlidePercentage={50}
             >
-            {list.photoUrls ? list.photoUrls.map((photo) => <img className="width100 carousel_height" src={photo} key={photo} alt=""/>): <>notworking</>  }
+            {list.photoUrls ? list.photoUrls.map((photo) => 
+              <img className="carousel_item" src={photo} key={photo} alt=""/>
+              ): <>notworking</>  }
           </Carousel>
-
 
         </div>
         <div className="photo_title">{list.name}</div>
