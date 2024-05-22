@@ -1,30 +1,12 @@
-import React, {useState, useEffect } from 'react';
+import React, {useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import BookingForm from '../../bookings/booking_form_container';
 import ReviewForm from '../../reviews/reviews_form';
 import ListMap from './list_map';
-// import Carousel from 'react-bootstrap/Carousel';
-// import ListCarousel from './list_photo_carousel';
-// import Spinner from './Spinner@1x-1.0s-200px-200px.svg'
-// import Carousel from 'react-multi-carousel';
-// import 'react-multi-carousel/lib/styles.css';
-
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-
-
-// Styles must use direct files imports
-// import 'swiper/swiper.scss'; // core Swiper
-// import 'swiper/modules/navigation.scss'; // Navigation module
-// import 'swiper/modules/pagination.scss'; // Pagination module
-
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
 const ListShow = ({ match, fetchListing, list }) => {
-
-
-
   useEffect(() => {
     window.scrollTo(0, 0);
     fetchListing(match.params.listingsId);
@@ -181,7 +163,7 @@ const ListShow = ({ match, fetchListing, list }) => {
               {/* review form */}
               <ReviewForm />
             </div>
-            {/* Rest of your JSX code */}
+
           </div>
         </div>
         <ListMap className="map" listId={list.id} list={list} fetchListing={fetchListing} />
