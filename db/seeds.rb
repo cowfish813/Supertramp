@@ -59,27 +59,34 @@ l1 = Listing.create!(
     host_id: u1.id
 )
 f1 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
-l1.photos.attach(io: f1, filename: '57056162_10107436356788213_4281326518522609664_o.jpg' )
-
-# l2 = Listing.create!(
-#     name: 'Wild tent',
-#     description: 'Located next to the spot where the original settlers chose to build their new life, Richardson Creek Campsite is ideally located under trees just a short walk to the river. Fire pit, picnic table, pit outhouse, potable water (100 yards away by barn) make your stay more enjoyable. Come spend a weekend under the trees and relaxing creek-side! ',
-#     on_arrival: 'free to enter tent',
-#     cancellation_policy: 'yes',
-#     capacity: 4,
-#     country: "murica",
-#     minimum_nights: 2,
-#     price: 3.50,
-#     lat: 37.7489428,
-#     lng: -119.5862533,
-#     host_id: u1.id
-#     )
 f2 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
-# l2.photos.attach(io: f2, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
-
-# l2.photos.attach(io: f1, filename: '57056162_10107436356788213_4281326518522609664_o.jpg' )
-
+f3 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/55937490_10107418126272313_2116183051628183552_n.jpg')
+l1.photos.attach(io: f1, filename: '57056162_10107436356788213_4281326518522609664_o.jpg' )
 l1.photos.attach(io: f2, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l1.photos.attach(io: f3, filename: '55937490_10107418126272313_2116183051628183552_n.jpg')
+
+l2 = Listing.create!(
+    name: 'Wild tent',
+    description: 'Located next to the spot where the original settlers chose to build their new life, Richardson Creek Campsite is ideally located under trees just a short walk to the river. Fire pit, picnic table, pit outhouse, potable water (100 yards away by barn) make your stay more enjoyable. Come spend a weekend under the trees and relaxing creek-side! ',
+    on_arrival: 'free to enter tent',
+    cancellation_policy: 'yes',
+    capacity: 4,
+    country: "murica",
+    minimum_nights: 2,
+    price: 3.50,
+    lat: 37.7489428,
+    lng: -119.5862533,
+    host_id: u1.id
+    )
+
+f22 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+f21 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f23 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/55937490_10107418126272313_2116183051628183552_n.jpg')
+l2.photos.attach(io: f21, filename: '57056162_10107436356788213_4281326518522609664_o.jpg' )
+l2.photos.attach(io: f22, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l2.photos.attach(io: f23, filename: '55937490_10107418126272313_2116183051628183552_n.jpg')
+
+
 
 # l3 = Listing.create!(
 #     name: 'Whiterun',
@@ -94,13 +101,12 @@ l1.photos.attach(io: f2, filename: '17545579_10105436252223793_11685408117767644
 #     lng: -119.6007142,
 #     host_id: u1.id
 # )
-f3 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/55937490_10107418126272313_2116183051628183552_n.jpg')
+
 # l3.photos.attach(io: f3, filename: '55937490_10107418126272313_2116183051628183552_n.jpg')
 
 # l3.photos.attach(io: f2, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
 # l3.photos.attach(io: f1, filename: '57056162_10107436356788213_4281326518522609664_o.jpg' )
 
-l1.photos.attach(io: f3, filename: '55937490_10107418126272313_2116183051628183552_n.jpg')
 # l2.photos.attach(io: f3, filename: '55937490_10107418126272313_2116183051628183552_n.jpg')
 
 
