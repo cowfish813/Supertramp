@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from './components/root'
-
+import { createRoot } from 'react-dom/client'; // Import createRoot
 import {fetchListings} from './actions/listing_actions/listing_actions'
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -23,5 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
         store = configureStore()
     }
 
-    ReactDOM.render(<Root store={store} />, root);
+    const rootInstance = createRoot(root); // Create root instance
+    rootInstance.render(<Root store={store} />); // Render app using root
 });
