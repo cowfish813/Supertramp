@@ -6,6 +6,12 @@ json.extract! @listing, :cancellation_policy, :capacity, :country,
 # json.photoUrls url_for(@listing.photos.first)
 json.photoUrls @listing.photos.map { |file| url_for(file)}
 
+json.host do
+  json.id @host.id
+  json.name @host.first_name
+  json.email @host.last_name
+  json.email @host.email
+end
 
 # @listing.reviews.includes(:user).each do |review|
 #     json.reviews do
