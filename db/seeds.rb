@@ -845,7 +845,7 @@ l32 = Listing.create!(
     price: 450,
     lat: 28.000000,
     lng: 15.000000,
-    host_id: u5.id
+    host_id: u4.id
 )
 
 f12_1 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
@@ -858,3 +858,81 @@ l32.photos.attach(io: f12_2, filename: '56312133_10107420712439613_2489365651806
 l32.photos.attach(io: f12_3, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
 l32.photos.attach(io: f12_4, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
 l32.photos.attach(io: f12_5, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+
+l33 = Listing.create!(
+    name: 'Asgard',
+    on_arrival: 'Witness the majesty of the Bifrost and the Hall of Valhalla',
+    description: 'Asgard, the realm of the gods, is a place of incredible beauty and power. It is home to the Aesir, including Odin and Thor. Visitors can explore the grandeur of the Hall of Valhalla and experience the wonders of the Bifrost bridge.',
+    cancellation_policy: 'None',
+    capacity: 15,
+    country: "Midgard",
+    minimum_nights: 1,
+    price: 1200,
+    lat: 35.6895,
+    lng: 139.6917,
+    host_id: u2.id
+)
+
+f13_1 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f13_2 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f13_3 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f13_4 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f13_5 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+
+l33.photos.attach(io: f13_1, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l33.photos.attach(io: f13_2, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l33.photos.attach(io: f13_3, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l33.photos.attach(io: f13_4, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
+l33.photos.attach(io: f13_5, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+
+l34 = Listing.create!(
+    name: 'Rivendell',
+    on_arrival: 'Meet Elrond and enjoy the tranquility of the Last Homely House',
+    description: 'Rivendell, the hidden valley of the Elves, is a sanctuary of peace and learning. It is ruled by Elrond and serves as a safe haven for travelers. The beauty of its waterfalls and the serenity of its environment make it a perfect retreat.',
+    cancellation_policy: 'Flexible',
+    capacity: 10,
+    country: "Middle-earth",
+    minimum_nights: 2,
+    price: 800,
+    lat: 45.0000,
+    lng: 169.0000,
+    host_id: u3.id
+)
+
+f14_1 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f14_2 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f14_3 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f14_4 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f14_5 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+
+l34.photos.attach(io: f14_1, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l34.photos.attach(io: f14_2, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l34.photos.attach(io: f14_3, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l34.photos.attach(io: f14_4, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
+l34.photos.attach(io: f14_5, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+
+l35 = Listing.create!(
+    name: 'Hogwarts',
+    on_arrival: 'Join the sorting ceremony and explore the castle',
+    description: 'Hogwarts School of Witchcraft and Wizardry is a magical castle filled with secrets, enchantments, and history. Students and visitors can explore the Great Hall, the Forbidden Forest, and numerous hidden passages. The castle is a place of learning, magic, and wonder.',
+    cancellation_policy: 'No Muggles',
+    capacity: 50,
+    country: "Scotland",
+    minimum_nights: 1,
+    price: 1500,
+    lat: 56.4907,
+    lng: -4.2026,
+    host_id: u4.id
+)
+
+f15_1 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f15_2 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f15_3 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f15_4 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f15_5 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+
+l35.photos.attach(io: f15_1, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l35.photos.attach(io: f15_2, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l35.photos.attach(io: f15_3, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l35.photos.attach(io: f15_4, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
+l35.photos.attach(io: f15_5, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
