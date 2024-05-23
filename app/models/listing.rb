@@ -34,7 +34,6 @@ class Listing < ApplicationRecord
     dependent: :destroy
 
     has_many_attached :photos
-    # has_one_attached :photo
 
     # def ensure_photo
     #     unless self.photo.attached?
