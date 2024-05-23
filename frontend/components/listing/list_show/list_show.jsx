@@ -1,4 +1,4 @@
-import React, {useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import BookingForm from '../../bookings/booking_form_container';
 import ReviewForm from '../../reviews/reviews_form';
@@ -7,11 +7,16 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
 const ListShow = ({ match, fetchListing, list }) => {
+  // const [hostName, setHostName] = useState("");
+  // const [hostEmail, setEmail] = useState("");
+
   useEffect(() => {
     window.scrollTo(0, 0);
     fetchListing(match.params.listingsId);
-  }, [fetchListing]);
-
+    // setHostName(list.host.name);
+    // setEmail(list.host.email);
+  }, []);
+  
   return (
     <div className="show_body">
       <div className="social_share_target">
@@ -52,7 +57,8 @@ const ListShow = ({ match, fetchListing, list }) => {
               />
               <div className="host_by">
                 Hosted By:
-                <div className="host_name">Nick C.</div>
+                <div className="host_name">{list.host.firstName} {list.host.lastName}</div>
+                {/* <div className="host_name">Email: <a href={"mailto:" + list.host.email}>{list.host.email}</a></div> */}
               </div>
 
               <div className="details-container">
@@ -174,7 +180,8 @@ const ListShow = ({ match, fetchListing, list }) => {
 
 ListShow.defaultProps = {
   list: {
-    // Add default properties here if needed
+    host: {},
+    photoUrls : []
   },
 };
 

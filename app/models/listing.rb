@@ -27,6 +27,7 @@ class Listing < ApplicationRecord
     validates :cancellation_policy, :capacity, :description, :minimum_nights, :name, :on_arrival, :price, presence: true
 
     belongs_to :host,
+    class_name: :User,
     foreign_key: :host_id
 
     has_many :bookings,

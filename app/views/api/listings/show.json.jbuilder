@@ -8,8 +8,8 @@ json.photoUrls @listing.photos.map { |file| url_for(file)}
 
 json.host do
   json.id @host.id
-  json.name @host.first_name
-  json.email @host.last_name
+  json.firstName @host.first_name
+  json.lastName @host.last_name
   json.email @host.email
 end
 
