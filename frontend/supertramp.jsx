@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import configureStore from "./store/store";
+import configStore from "./store/store";
 import Root from './components/root'
 import { createRoot } from 'react-dom/client'; // Import createRoot
 import {fetchListings} from './actions/listing_actions/listing_actions'
@@ -16,11 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             session: { currentUser: window.currentUser.id }
         }
-        store = configureStore(preloadedState);
+        store = configStore(preloadedState);
         
         delete window.currentUser;
     } else {
-        store = configureStore()
+        store = configStore()
     }
 
     const rootInstance = createRoot(root); // Create root instance
