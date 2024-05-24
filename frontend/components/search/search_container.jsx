@@ -1,14 +1,24 @@
-import { connect } from 'react-redux';
-import Search from './search';
-import { withRouter } from 'react-router-dom';
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import { receiveLocation } from '../../actions/map_action';
+import Search from './search';
+import { useHistory } from 'react-router-dom';
 
-// const mSTP = (state, ownProps) => ({
-//     listings: Object.values(state.entities.listings)
-// })
+const SearchContainer = (props) => {
+    const dispatch = useDispatch();
+    const history = useHistory();
 
-const mDTP = dispatch => ({
-    receiveLocation: (location) => dispatch(receiveLocation(location))
-});
+    const handleReceiveLocation = (location) => {
+        dispatch(receiveLocation(location));
+    };
 
-export default withRouter(connect(null, mDTP)(Search));
+    return (
+        <Search 
+        receiveLocation={handleReceiveLocation}
+        history={history} 
+        {...props}
+        />
+    );
+};
+
+export default SearchContainer;
