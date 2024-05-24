@@ -1,12 +1,10 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-// import "react-dates/initialize";
-// import "react-dates/lib/css/_datepicker.css";
-// import { SingleDatePicker } from "react-dates";
-// import moment from 'moment';
-// import DefaultTheme from 'react-dates/lib/theme/DefaultTheme';
-// import "moment/locale/en-gb";
 
+// import moment from 'moment';
+// import "moment/locale/en-gb";
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 class BookingForm extends React.Component {
     constructor(props) {
         super(props);
@@ -29,6 +27,8 @@ class BookingForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCapacity = this.handleCapacity.bind(this);
         this.handlePrice = this.handlePrice.bind(this);
+
+        this.onMouseClick = this.onMouseClick.bind(this)
     };
 
     componentDidMount() {
@@ -66,14 +66,9 @@ class BookingForm extends React.Component {
         e.preventDefault();
         if (!(this.props.currentUser)) { 
             this.props.openModal('Login');
-
         } else if (this.state.price <= 0) {
-            this.setState({
-              price: null
-            });
-
+            this.setState({ price: null });
         } else {  
-          
           const booking = {
               check_in: this.state.check_in.format("YYYY-MM-DD"),
               check_out: this.state.check_out.format("YYYY-MM-DD"),
@@ -110,6 +105,14 @@ class BookingForm extends React.Component {
                 <div className="col checkin">
                   <div className="label">
                     Check in
+                    {/* {this.onMouseClick} */}
+                    {/* <div id="start" onClick={this.onMouseClick}>start</div> */}
+                    <Calendar 
+                        onChange={({ date }) => this.setState({ check_in: date }) } 
+                        value={new Date()} 
+                        view="month"
+                      />
+
                     {/* <SingleDatePicker
                       displayFormat={"MM/DD/YYYY"} 
                       placeholder="Select Start"
