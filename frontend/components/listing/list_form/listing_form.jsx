@@ -65,7 +65,6 @@ class ListingForm extends React.Component {
         formData.append('listing[country]', this.state.country);
         formData.append('listing[photo]', this.state.photoFile);
         // formData.append('listing[photos]', this.state.photoFile);
-        console.log(formData, 'helllo');
         $.ajax({
             url: '/api/listings',
             method: 'POST',

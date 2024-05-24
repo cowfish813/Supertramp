@@ -57,7 +57,7 @@ const ListShow = ({ match, fetchListing, list }) => {
               />
               <div className="host_by">
                 Hosted By:
-                <div className="host_name">{list.host.firstName} {list.host.lastName}</div>
+                <div className="host_name">{list.host.firstName ? list.host.firstName : ""} {list.host.lastName ? list.host.lastName : ""}</div>
                 {/* <div className="host_name">Email: <a href={"mailto:" + list.host.email}>{list.host.email}</a></div> */}
               </div>
 
