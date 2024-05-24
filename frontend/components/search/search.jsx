@@ -87,7 +87,7 @@ const Search = (props) => {
                         placeholder="Start with somewhere like Yosemite Valley!" 
                         ref={inputRef}
                         onChange={handleInput}
-                        autocomplete="on"
+                        autoComplete="country-name"
                     />
 
                 </div>
@@ -102,8 +102,3 @@ const Search = (props) => {
 };
 
 export default withRouter(Search);
-
-//on the intial page load, i can push enter to search
-    //result is undefined. how do i rememedy this? set up an if? 
-    //maybe it's the map that doesnt load...
-// after that, on listing index page, i have to push enter twice?
