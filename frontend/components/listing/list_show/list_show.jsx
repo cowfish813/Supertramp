@@ -6,14 +6,11 @@ import ListMap from './list_map';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
-const ListShow = ({ match, fetchListing, list }) => {
-  // const [hostName, setHostName] = useState("");
-  // const [hostEmail, setEmail] = useState("");
+const ListShow = ({ match, fetchListing, list = {photoUrls: [],host: {}} }) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
     fetchListing(match.params.listingsId);
-
   }, []);
   
   return (
@@ -25,11 +22,11 @@ const ListShow = ({ match, fetchListing, list }) => {
             centerMode={true}
             infiniteLoop={true}
             showThumbs={false}
-            centerSlidePercentage={50}
+            centerSlidePercentage={45}
             >
-            {list.photoUrls ? list.photoUrls.map((photo) => 
+            {list.photoUrls.map((photo) => 
               <img className="carousel_item" src={photo} key={photo} alt=""/>
-              ): <>notworking</>  }
+              )}
           </Carousel>
 
         </div>
@@ -56,7 +53,7 @@ const ListShow = ({ match, fetchListing, list }) => {
               />
               <div className="host_by">
                 Hosted By:
-                <div className="host_name">{list.host.firstName ? list.host.firstName : ""} {list.host.lastName ? list.host.lastName : ""}</div>
+                <div className="host_name">{list.host.firstName} {list.host.lastName}</div>
                 {/* <div className="host_name">Email: <a href={"mailto:" + list.host.email}>{list.host.email}</a></div> */}
               </div>
 
@@ -175,15 +172,6 @@ const ListShow = ({ match, fetchListing, list }) => {
       </div>
     </div>
   );
-};
-
-ListShow.defaultProps = {
-  list: {
-    host: {firstName: "",
-      lastName : ""
-    },
-    photoUrls : []
-  },
 };
 
 export default withRouter(ListShow);

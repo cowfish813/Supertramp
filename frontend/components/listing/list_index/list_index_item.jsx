@@ -18,7 +18,7 @@ class IndexItem extends React.Component {
 
                 <div className="index_box">
                     <Link to={`/listings/${this.props.listing.id}`}>
-                        <img className="indexPhotos" src={this.props.listing.photoUrls} alt=""/>
+                        <img className="indexPhotos" src={this.props.listing.photoUrls[0]} alt=""/>
                     </Link>
                 </div>
 
