@@ -1,11 +1,11 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import "react-dates/initialize";
-import "react-dates/lib/css/_datepicker.css";
-import { SingleDatePicker } from "react-dates";
-import moment from 'moment'
-import DefaultTheme from 'react-dates/lib/theme/DefaultTheme';
-import "moment/locale/en-gb"
+// import "react-dates/initialize";
+// import "react-dates/lib/css/_datepicker.css";
+// import { SingleDatePicker } from "react-dates";
+// import moment from 'moment'
+// import DefaultTheme from 'react-dates/lib/theme/DefaultTheme';
+// import "moment/locale/en-gb"
 
 class BookingUpdateForm extends React.Component {
   constructor(props) {
@@ -97,7 +97,7 @@ class BookingUpdateForm extends React.Component {
               <div className="col checkin">
                 <div className="label">
                   Check in
-                    <SingleDatePicker
+                    {/* <SingleDatePicker
                     displayFormat={() => ("MM/DD/YYYY")}
                     placeholder="Select Start"
                     date={this.state.check_in} // momentPropTypes.momentObj or null
@@ -111,13 +111,13 @@ class BookingUpdateForm extends React.Component {
                     daySize={36}
                     noBorder={true}
                     hideKeyboardShortcutsPanel={true}
-                  />
+                  /> */}
                 </div>
               </div>
               <div className="col checkout">
                 <div className="label">
                   Check out
-                    <SingleDatePicker locale="en-gb"
+                    {/* <SingleDatePicker locale="en-gb"
                     displayFormat={() => ("MM/DD/YYYY")}
                     placeholder="Select End"
                     date={this.state.check_out} // momentPropTypes.momentObj or null
@@ -132,7 +132,7 @@ class BookingUpdateForm extends React.Component {
                     noBorder={true}
                     hideKeyboardShortcutsPanel={true}
                     onDateChange={date => this.handlePrice(date)}
-                  />
+                  /> */}
                 </div>
               </div>
               <div className="col capacity">
