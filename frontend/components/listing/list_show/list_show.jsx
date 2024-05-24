@@ -13,8 +13,7 @@ const ListShow = ({ match, fetchListing, list }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     fetchListing(match.params.listingsId);
-    // setHostName(list.host.name);
-    // setEmail(list.host.email);
+
   }, []);
   
   return (
@@ -180,7 +179,9 @@ const ListShow = ({ match, fetchListing, list }) => {
 
 ListShow.defaultProps = {
   list: {
-    host: {},
+    host: {firstName: "",
+      lastName : ""
+    },
     photoUrls : []
   },
 };
