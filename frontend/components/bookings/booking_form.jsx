@@ -18,17 +18,18 @@ class BookingForm extends React.Component {
             listing_name: this.props.list.name,
             check_in: null,
             check_out: null,
-            focusedStart: null,
-            focusedEnd: null,
-            errors: ""
+            focusedStart: false,
+            focusedEnd: false,
+            errors: "",
+
         }
 
         this.highlighted = this.highlighted.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCapacity = this.handleCapacity.bind(this);
         this.handlePrice = this.handlePrice.bind(this);
+        this.handleModal = this.handleModal.bind(this);
 
-        this.onMouseClick = this.onMouseClick.bind(this)
     };
 
     componentDidMount() {
@@ -85,6 +86,15 @@ class BookingForm extends React.Component {
         };
     }
 
+    handleModal(e) {
+      e.preventDefault();
+      // this.setState({ focusedStart: true })
+      console.log("oof")
+      const dialog = document.getElementById('startCal')
+      dialog.showModal();
+    }
+
+
     render () {
       let BookingError = null
       if (this.state.errors) {
@@ -103,15 +113,15 @@ class BookingForm extends React.Component {
               </div>
               <div className="dates-and-guest-content">
                 <div className="col checkin">
-                  <div className="label">
+                  <div className="label" onClick={this.handleModal}>
                     Check in
-                    {/* {this.onMouseClick} */}
-                    {/* <div id="start" onClick={this.onMouseClick}>start</div> */}
-                    <Calendar 
-                        onChange={({ date }) => this.setState({ check_in: date }) } 
-                        value={new Date()} 
-                        view="month"
-                      />
+                    <dialog id="startCal" >
+                      <Calendar 
+                          onChange={({ date }) => this.setState({ check_in: date }) } 
+                          value={new Date()} 
+                          view="month"
+                        />
+                    </dialog>
 
                     {/* <SingleDatePicker
                       displayFormat={"MM/DD/YYYY"} 
