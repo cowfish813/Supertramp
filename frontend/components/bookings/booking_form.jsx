@@ -112,8 +112,8 @@ class BookingForm extends React.Component {
                 </div>
               </div>
               <div className="dates-and-guest-content">
-                <div className="col checkin">
-                  <div className="label" onClick={this.handleModal}>
+                <div className="col checkin" onClick={this.handleModal}>
+                  <div className="label" >
                     Check in
                     <dialog id="startCal" >
                       <Calendar 
@@ -122,6 +122,7 @@ class BookingForm extends React.Component {
                           view="month"
                         /> 
                         {/* how  to disable dialog? hjow to enable? */}
+                        {/* enable is janky */}
                     </dialog>
 
                     {/* <SingleDatePicker
