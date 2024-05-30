@@ -1,10 +1,12 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faCalendar } from "@fortawesome/free-solid-svg-icons";
 
-// import moment from 'moment';
-// import "moment/locale/en-gb";
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 class BookingForm extends React.Component {
     constructor(props) {
         super(props);
@@ -16,8 +18,8 @@ class BookingForm extends React.Component {
             price: this.props.list.price,
             capacity: 1,
             listing_name: this.props.list.name,
-            check_in: null,
-            check_out: null,
+            check_in: new Date(),
+            check_out: new Date(),
             focusedStart: false,
             focusedEnd: false,
             errors: "",
@@ -28,7 +30,7 @@ class BookingForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCapacity = this.handleCapacity.bind(this);
         this.handlePrice = this.handlePrice.bind(this);
-        this.handleModal = this.handleModal.bind(this);
+        this.handleCheckIn = this.handleCheckIn.bind(this);
 
     };
 
@@ -62,6 +64,14 @@ class BookingForm extends React.Component {
     highlighted(day) {
         return day.isSame(this.state.check_in);
     }
+    
+    handleCheckIn (dates) {
+      const [start, end] = dates;
+      this.setState({ check_in: start });
+      this.setState({ check_out: end });
+
+      console.log("worked?", this.state, start, end)
+    }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -86,13 +96,10 @@ class BookingForm extends React.Component {
         };
     }
 
-    handleModal(e) {
-      e.preventDefault();
-      // this.setState({ focusedStart: true })
-      console.log("oof")
-      const dialog = document.getElementById('startCal')
-      dialog.showModal();
-    }
+    // handleModal(e) {
+    //   const dialog = document.getElementById('startCal')
+    //   // dialog.showModal();
+    // }
 
 
     render () {
@@ -112,18 +119,24 @@ class BookingForm extends React.Component {
                 </div>
               </div>
               <div className="dates-and-guest-content">
-                <div className="col checkin" onClick={this.handleModal}>
-                  <div className="label" >
-                    Check in
-                    <dialog id="startCal" >
-                      <Calendar 
-                          onChange={({ date }) => this.setState({ check_in: date }) } 
-                          value={new Date()} 
-                          view="month"
+                <div className="col checkin" >
+                  <div className="label " >
+                    <p className="flex-col-center">Add dates</p>
+                    {/* {this.state.check_in} */}
+                    {/* <dialog id="startCal" className=""> */}
+                      <DatePicker 
+                          showIcon
+                          selected={this.state.check_in} 
+                          onChange={this.handleCheckIn}
+                          startDate={this.state.check_in}
+                          endDate={this.state.check_out}
+                          selectsRange
+                          inline
                         /> 
                         {/* how  to disable dialog? hjow to enable? */}
-                        {/* enable is janky */}
-                    </dialog>
+                        {/*  */}
+                        {/* enable makes modal pop up in the middle. must pop up at parent div */}
+                    {/* </dialog> */}
 
                     {/* <SingleDatePicker
                       displayFormat={"MM/DD/YYYY"} 
@@ -142,9 +155,9 @@ class BookingForm extends React.Component {
                     /> */}
                   </div>
                 </div>
-                <div className="col checkout">
+                {/* <div className="col checkout">
                   <div className="label">
-                    Check out
+                    Check out */}
                     {/* <SingleDatePicker locale="en-gb"
                       displayFormat={"MM/DD/YYYY"}
                       placeholder="Select End"
@@ -160,11 +173,12 @@ class BookingForm extends React.Component {
                       hideKeyboardShortcutsPanel={true}
                       onDateChange={date => this.handlePrice(date)}
                     /> */}
-                  </div>
-                </div>
+                  {/* </div>
+                </div> */}
+
                 <div className="col capacity">
                   <div className="label">
-                    Guests
+                    Add guests
                     <div className="SingleDatePicker SingleDatePicker_1">
                       <div className="SingleDatePickerInput SingleDatePickerInput_1">
                         <div className="DateInput DateInput_1">

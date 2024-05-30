@@ -99,6 +99,11 @@
     
 }
 
+.flex-col-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .label {
     color: #333333;
@@ -106,11 +111,7 @@
     font-size: 18px;
     height: 23.39px;
     width: 93.11px;
-    display: flex;
-    flex-direction: column;
-    // justify-content: center;
-    align-items: center;
-    
+
 }
 
 .booking-button {
@@ -137,4 +138,16 @@
 .booking_errors {
     color: red;
     font-size: .6rem;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative
+}
+
+.fixed {
+    position: fixed;
 }
