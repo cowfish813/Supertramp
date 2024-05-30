@@ -96,12 +96,6 @@ class BookingForm extends React.Component {
         };
     }
 
-    // handleModal(e) {
-    //   const dialog = document.getElementById('startCal')
-    //   // dialog.showModal();
-    // }
-
-
     render () {
       let BookingError = null
       if (this.state.errors) {
@@ -122,8 +116,6 @@ class BookingForm extends React.Component {
                 <div className="col checkin" >
                   <div className="label " >
                     <p className="flex-col-center">Add dates</p>
-                    {/* {this.state.check_in} */}
-                    {/* <dialog id="startCal" className=""> */}
                       <DatePicker 
                           showIcon
                           selected={this.state.check_in} 
@@ -133,48 +125,9 @@ class BookingForm extends React.Component {
                           selectsRange
                           inline
                         /> 
-                        {/* how  to disable dialog? hjow to enable? */}
-                        {/*  */}
-                        {/* enable makes modal pop up in the middle. must pop up at parent div */}
-                    {/* </dialog> */}
-
-                    {/* <SingleDatePicker
-                      displayFormat={"MM/DD/YYYY"} 
-                      placeholder="Select Start"
-                      date={this.state.check_in} // momentPropTypes.momentObj or null
-                      onDateChange={(date) => this.setState({ check_in: date })} // PropTypes.func.isRequired
-                      focused={this.state.focusedStart} // PropTypes.bool
-                      onFocusChange={ ({ focused }) => this.setState({ focusedStart: focused }) } // PropTypes.func.isRequired
-                      id="start" // PropTypes.string.isRequired,
-                      verticalSpacing={0}
-                      isDayHighlighted={(day) => this.highlighted(day)}
-                      numberOfMonths={1}
-                      daySize={36}
-                      noBorder={true}
-                      hideKeyboardShortcutsPanel={true}
-                    /> */}
+                        
                   </div>
                 </div>
-                {/* <div className="col checkout">
-                  <div className="label">
-                    Check out */}
-                    {/* <SingleDatePicker locale="en-gb"
-                      displayFormat={"MM/DD/YYYY"}
-                      placeholder="Select End"
-                      date={this.state.check_out} // momentPropTypes.momentObj or null
-                      focused={this.state.focusedEnd} // PropTypes.bool
-                      onFocusChange={({ focused }) => this.setState({ focusedEnd: focused }) } // PropTypes.func.isRequired
-                      id="end" // PropTypes.string.isRequired,
-                      verticalSpacing={0}
-                      isDayHighlighted={(day) => this.highlighted(day)}
-                      numberOfMonths={1}
-                      daySize={36}
-                      noBorder={true}
-                      hideKeyboardShortcutsPanel={true}
-                      onDateChange={date => this.handlePrice(date)}
-                    /> */}
-                  {/* </div>
-                </div> */}
 
                 <div className="col capacity">
                   <div className="label">
