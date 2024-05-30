@@ -120,7 +120,8 @@ class BookingForm extends React.Component {
                           onChange={({ date }) => this.setState({ check_in: date }) } 
                           value={new Date()} 
                           view="month"
-                        />
+                        /> 
+                        {/* how  to disable dialog? hjow to enable? */}
                     </dialog>
 
                     {/* <SingleDatePicker
