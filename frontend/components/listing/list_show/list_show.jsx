@@ -176,4 +176,11 @@ const ListShow = ({ match, fetchListing, list = {photoUrls: [],host: {}} }) => {
 
 export default withRouter(ListShow);
 
-//might need default props. undefined reading firstName
+ListShow.defaultProps = {
+  list: {
+    host: {firstName: "",
+      lastName : ""
+    },
+    photoUrls : []
+  },
+};
