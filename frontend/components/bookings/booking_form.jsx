@@ -122,7 +122,8 @@ class BookingForm extends React.Component {
                           startDate={this.state.check_in}
                           endDate={this.state.check_out}
                           selectsRange
-                          inline
+                          // openToDate = {new Date()}
+                          monthsShown={2}
                         /> 
                         
                   </div>
