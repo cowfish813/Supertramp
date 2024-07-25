@@ -13,22 +13,28 @@
 .widget-container {
     position: absolute;
     background-color: white;
-    height: 14rem;
+    height: 503px;
+    width: 23vw;
+    max-width: 392px;
     box-shadow: 0 1px 5px rgba(0,0,0,0.05);
     border: 1px solid #ebebeb;
-    z-index: 9001;
+    z-index: 90001;
     display: flex;
     justify-content: center;
     margin-top: -15rem;
     margin-bottom: 20rem;
-
+    border-radius: 10%;
+    // padding: 8px 24px 24px;
 }
-.wrapper {
-    height: 5.75rem;
-    align-items: center;
-    justify-content: center;
+.booking-label {
+    width: 300px;
 }
-
+.h100 {
+    height: 100%;
+}
+.w100 {
+    width: 100%;
+}
 .price-wrapper {
     margin-left: 1.5rem;
     font-size: 1.25rem;
@@ -54,6 +60,17 @@
     background-color: #ffffff;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+.booking-border {
+    border: 1px solid #ebebeb;
+}
+.booking-border-top{
+    border-top: 1px solid #ebebeb;
+}
+.booking-border-bot {
+    border-bottom: 1px solid #ebebeb;;
 }
     
 .col {
@@ -62,7 +79,12 @@
     display: flex;
     justify-content: space-evenly;
     align-items: stretch;
-    border: 1px solid #ebebeb;
+    flex-direction: column;
+    // width: 100%;
+}
+
+.datePicker {
+    border: solid red 3px;
 }
 
 .capacityHeight{
