@@ -2,7 +2,6 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faCalendar } from "@fortawesome/free-solid-svg-icons";
-
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -119,7 +118,7 @@ class BookingForm extends React.Component {
                         
                   {/* </div> */}
                       <DatePicker
-                          // wrapperClassName="datePicker calw"
+                          wrapperClassName=""
                           // calendarClassName=""
                           // dayClassName="green-background"
                           showIcon
@@ -131,7 +130,6 @@ class BookingForm extends React.Component {
                           // openToDate = {new Date()}
                           monthsShown={2}
                         /> 
-                        
                 </div>
 
                 {/* <div className="col capacity"> */}
