@@ -118,7 +118,7 @@ class BookingForm extends React.Component {
                         
                   {/* </div> */}
                       <DatePicker
-                          wrapperClassName=""
+                          // wrapperClassName=""
                           // calendarClassName=""
                           // dayClassName="green-background"
                           showIcon
