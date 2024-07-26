@@ -103,7 +103,7 @@ class BookingForm extends React.Component {
       
         return (
           <div className="widget-container">
-            <form className="w100" onSubmit={this.handleSubmit}>
+            <form className="w100 flex flex-col" onSubmit={this.handleSubmit}>
               <div className="price-wrapper  booking-border-bot">
                 <div className="price">
                   {`$${this.props.list.price}`}
@@ -113,13 +113,15 @@ class BookingForm extends React.Component {
               </div>
 
               <div className="dates-and-guest-content booking-border-bot">
-                <div className="col " >
+                <div className="col booking-border margin7" >
                   {/* <div className="label booking-label" > */}
                     <p className="flex-col-center">Add dates</p>
                         
                   {/* </div> */}
                       <DatePicker
-                          // wrapperClassName="datePicker"
+                          // wrapperClassName="datePicker calw"
+                          // calendarClassName=""
+                          // dayClassName="green-background"
                           showIcon
                           selected={this.state.check_in} 
                           onChange={this.handleCheckIn}
@@ -133,7 +135,7 @@ class BookingForm extends React.Component {
                 </div>
 
                 {/* <div className="col capacity"> */}
-                  <div className="label">
+                  <div className="label booking-border ">
                     <p>Add guests
 </p>
                     {/* <div className="SingleDatePicker SingleDatePicker_1">
@@ -142,7 +144,7 @@ class BookingForm extends React.Component {
                           <input
                             type="number"
                             name="capacity"
-                            className="DateInput_input DateInput_input_1"
+                            // className="DateInput_input DateInput_input_1"
                             placeholder="1"
                             id="capacity_input"
                             min="1"

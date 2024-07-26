@@ -6,7 +6,7 @@ import ListMap from './list_map';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
-const ListShow = ({ match, fetchListing, list = {photoUrls: [],host: {}} }) => {
+const ListShow = ({ match, fetchListing, list = {photoUrls: [],host: {firstName:"",lastName:""}} }) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -176,11 +176,11 @@ const ListShow = ({ match, fetchListing, list = {photoUrls: [],host: {}} }) => {
 
 export default withRouter(ListShow);
 
-ListShow.defaultProps = {
-  list: {
-    host: {firstName: "",
-      lastName : ""
-    },
-    photoUrls : []
-  },
-};
+// ListShow.defaultProps = {
+//   list: {
+//     host: {firstName: "",
+//       lastName : ""
+//     },
+//     photoUrls : []
+//   },
+// };
