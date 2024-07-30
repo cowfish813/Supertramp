@@ -77,8 +77,8 @@ class BookingForm extends React.Component {
             this.setState({ price: null });
         } else {  
           const booking = {
-              check_in: this.state.check_in,
-              check_out: this.state.check_out,
+              check_in: this.state.check_in.format("YYYY-MM-DD"),
+              check_out: this.state.check_out.format("YYYY-MM-DD"),
               capacity: this.state.capacity,
               listing_id: this.props.list.id,
               user_id: this.props.currentUser.id,
@@ -86,7 +86,7 @@ class BookingForm extends React.Component {
               listing_name: this.props.list.name,
               price: this.state.price
           };
-          console.log("click");
+          
           this.props.createBooking(booking)
               .then(() => (this.props.history.push(`/users/${this.props.currentUser.id}`)))
         };
