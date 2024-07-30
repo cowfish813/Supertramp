@@ -67,8 +67,6 @@ class BookingForm extends React.Component {
       const [start, end] = dates;
       this.setState({ check_in: start });
       this.setState({ check_out: end });
-
-      console.log("worked?", this.state, start, end)
     }
 
     handleSubmit(e) {
