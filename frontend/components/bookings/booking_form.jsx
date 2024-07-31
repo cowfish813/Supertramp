@@ -101,7 +101,7 @@ class BookingForm extends React.Component {
         return (
           <div className="widget-container">
             <form className="w100 flex flex-col" onSubmit={this.handleSubmit}>
-              <div className="price-wrapper  booking-border-bot">
+              <div className="price-wrapper booking-border-bot">
                 <div className="price">
                   {`$${this.props.list.price}`}
                   <p>per night</p>
@@ -110,47 +110,36 @@ class BookingForm extends React.Component {
               </div>
 
               <div className="dates-and-guest-content booking-border-bot">
+                
                 <div className="col booking-border margin7" >
-                  {/* <div className="label booking-label" > */}
                     <p className="flex-col-center">Add dates</p>
-                        
-                  {/* </div> */}
-                      <DatePicker
-                          // wrapperClassName=""
-                          // calendarClassName=""
-                          // dayClassName="green-background"
-                          showIcon
-                          selected={this.state.check_in} 
-                          onChange={this.handleCheckIn}
-                          startDate={this.state.check_in}
-                          endDate={this.state.check_out}
-                          selectsRange
-                          // openToDate = {new Date()}
-                          monthsShown={2}
-                        /> 
+                    <DatePicker
+                      // wrapperClassName=""
+                      // calendarClassName=""
+                      // dayClassName="green-background"
+                      showIcon
+                      selected={this.state.check_in} 
+                      onChange={this.handleCheckIn}
+                      startDate={this.state.check_in}
+                      endDate={this.state.check_out}
+                      selectsRange
+                      monthsShown={2}
+                    /> 
                 </div>
 
-                {/* <div className="col capacity"> */}
-                  <div className="label booking-border ">
-                    <p>Add guests</p>
-                    {/* <div className="SingleDatePicker SingleDatePicker_1">
-                      <div className="SingleDatePickerInput SingleDatePickerInput_1"> */}
-                        {/* <div className=""> */}
-                          <input
-                            type="number"
-                            name="capacity"
-                            // className="DateInput_input DateInput_input_1"
-                            placeholder="1"
-                            id="capacity_input"
-                            min="1"
-                            max={this.props.list.capacity}
-                            onChange={() => this.handleCapacity}
-                          />
-                        {/* </div> */}
-                      {/* </div>
-                    </div> */}
+                  <div className=" label booking-border ">
+                    <p className=" mgn-top">Add guests</p>
+                      <input
+                        type="number"
+                        name="capacity"
+                        // className="DateInput_input DateInput_input_1"
+                        placeholder="1"
+                        id="capacity_input"
+                        min="1"
+                        max={this.props.list.capacity}
+                        onChange={() => this.handleCapacity}
+                      />
                   </div>
-                {/* </div> */}
 
               </div>
               
