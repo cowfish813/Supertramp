@@ -12,5 +12,5 @@ json.set! @booking.id  do
     json.extract! @booking, :listing_id, :user_id, 
     :listing_name, :check_in, :check_out, :price, 
     :host_id, :capacity, :id
-    json.photoUrls url_for(@booking.listing.photo)
+    json.photoUrls booking.listing.photos.map { |photo| url_for(photo) }
 end
