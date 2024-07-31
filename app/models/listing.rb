@@ -44,24 +44,31 @@ class Listing < ApplicationRecord
 
 
     def self.in_bounds(bounds)
-        if bounds[:northEast][:lng] < bounds[:southWest][:lng]
-        # Bounding box crosses the International Date Line
-            listings_in_bounds_1 = self.where("lat < ?", bounds[:northEast][:lat])
-                .where("lat > ?", bounds[:southWest][:lat])
-                .where("lng > ?", bounds[:southWest][:lng])
-                .where("lng < ?", 180)
-            listings_in_bounds_2 = self.where("lat < ?", bounds[:northEast][:lat])
-                .where("lat > ?", bounds[:southWest][:lat])
-                .where("lng > ?", -180)
-                .where("lng < ?", bounds[:northEast][:lng])
-            listings_in_bounds_1.or(listings_in_bounds_2)
-        else
-      # Bounding box does not cross the International Date Line
-            self.where("lat < ?", bounds[:northEast][:lat])
-                .where("lat > ?", bounds[:southWest][:lat])
-                .where("lng > ?", bounds[:southWest][:lng])
-                .where("lng < ?", bounds[:northEast][:lng])
-        end  
+        self.where("lat < ?", bounds[:northEast][:lat])
+        .where("lat > ?", bounds[:southWest][:lat])
+        .where("lng > ?", bounds[:southWest][:lng])
+        .where("lng < ?", bounds[:northEast][:lng])   
+        # NoMethodError - undefined method `[]' for nil:NilClass
+        # if bounds[:northEast][:lng] < bounds[:southWest][:lng]
+            
+    #     if bounds[:northEast][:lng] < bounds[:southWest][:lng]
+    #     # Bounding box crosses the International Date Line
+    #         listings_in_bounds_1 = self.where("lat < ?", bounds[:northEast][:lat])
+    #             .where("lat > ?", bounds[:southWest][:lat])
+    #             .where("lng > ?", bounds[:southWest][:lng])
+    #             .where("lng < ?", 180)
+    #         listings_in_bounds_2 = self.where("lat < ?", bounds[:northEast][:lat])
+    #             .where("lat > ?", bounds[:southWest][:lat])
+    #             .where("lng > ?", -180)
+    #             .where("lng < ?", bounds[:northEast][:lng])
+    #         listings_in_bounds_1.or(listings_in_bounds_2)
+    #     else
+    #   # Bounding box does not cross the International Date Line
+    #         self.where("lat < ?", bounds[:northEast][:lat])
+    #             .where("lat > ?", bounds[:southWest][:lat])
+    #             .where("lng > ?", bounds[:southWest][:lng])
+    #             .where("lng < ?", bounds[:northEast][:lng])
+    #     end  
     end
 
     has_many :reviews,
