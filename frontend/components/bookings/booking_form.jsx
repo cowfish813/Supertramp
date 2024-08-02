@@ -21,6 +21,7 @@ class BookingForm extends React.Component {
             focusedStart: false,
             focusedEnd: false,
             errors: "",
+            bookings: {}
         }
         this.myref = React.createRef(null);
 
@@ -37,6 +38,7 @@ class BookingForm extends React.Component {
     };
 
     componentDidMount() {
+      this.setState({bookings: this.props.fetchBookings(this.props.match.params.userId)});
       this.props.removeBookingErrors([]);
     }
 
@@ -108,6 +110,9 @@ class BookingForm extends React.Component {
     }
 
     render () {
+      console.log(this.state.bookings, "hello");
+        //i want bookings, where are they?
+
       const yesterday = new Date(new Date().setDate(new Date().getDate()-1));
       let BookingError = null
       if (this.state.errors) {
@@ -138,6 +143,7 @@ class BookingForm extends React.Component {
                       selectsRange
                       monthsShown={2}
                       placeholderText="Select Date"
+                      toggleCalendarOnIconClick
                       excludeDateIntervals={[{ start: "1968/01/01", end: yesterday}]}
                     /> 
                 </div>
