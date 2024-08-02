@@ -21,14 +21,18 @@ class BookingForm extends React.Component {
             focusedStart: false,
             focusedEnd: false,
             errors: "",
-
         }
+        this.myref = React.createRef(null);
 
-        this.highlighted = this.highlighted.bind(this);
+        // this.highlighted = this.highlighted.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCapacity = this.handleCapacity.bind(this);
         this.handlePrice = this.handlePrice.bind(this);
         this.handleCheckIn = this.handleCheckIn.bind(this);
+        this.handleExclusions = this.handleExclusions.bind(this);
+
+        this.handleFocusCapacity = this.handleFocusCapacity.bind(this);
+        this.handleFocusDate = this.handleFocusDate.bind(this);
 
     };
 
@@ -42,6 +46,21 @@ class BookingForm extends React.Component {
           errors: this.props.errors[0]
         });
       };
+    }
+    
+    handleExclusions() {
+      // return array of objects eg => 
+        // excludeDateIntervals={[{ start: "1968/01/01", end: yesterday}]}
+    }
+
+    handleFocusCapacity() {
+      const capInput = document.getElementById('capacity_input');
+      capInput.focus();
+    }
+    
+    handleFocusDate() {
+      const dateInput = document.getElementById('datePicker');
+      dateInput.focus();
     }
 
     handlePrice(date) {
@@ -59,16 +78,11 @@ class BookingForm extends React.Component {
       });
     }
 
-    highlighted(day) {
-        return day.isSame(this.state.check_in);
-    }
-    
     handleCheckIn (dates) {
       const [start, end] = dates;
       this.setState({ check_in: start });
       this.setState({ check_out: end });
     }
-    
 
     handleSubmit(e) {
         e.preventDefault();
@@ -94,15 +108,15 @@ class BookingForm extends React.Component {
     }
 
     render () {
+      const yesterday = new Date(new Date().setDate(new Date().getDate()-1));
       let BookingError = null
       if (this.state.errors) {
         BookingError = this.state.errors
       };
-
         return (
           <div className="widget-container">
             <form className="w100 flex flex-col" onSubmit={this.handleSubmit}>
-              <div className="price-wrapper booking-border-bot">
+              <div className="price-wrapper">
                 <div className="price">
                   {`$${this.props.list.price}`}
                   <p>per night</p>
@@ -110,14 +124,12 @@ class BookingForm extends React.Component {
                 </div>
               </div>
 
-              <div className="dates-and-guest-content booking-border-bot">
+              <div className="dates-and-guest-content">
                 
-                <div id="datePicker" className="col booking-border margin7" >
+                <div onClick={this.handleFocusDate} id="" className="col booking-border margin7" >
                     <p className="flex-col-center">Add dates</p>
                     <DatePicker
-                      // wrapperClassName=""
-                      // calendarClassName=""
-                      // dayClassName="green-background"
+                      id="datePicker"
                       showIcon
                       selected={this.state.check_in} 
                       onChange={this.handleCheckIn}
@@ -125,19 +137,16 @@ class BookingForm extends React.Component {
                       endDate={this.state.check_out}
                       selectsRange
                       monthsShown={2}
-                      excludeDateIntervals={[
-                        { start: "2021/01/01", end: new Date(new Date().setDate(new Date().getDate()-1))},
-                        
-                        ]}
+                      placeholderText="Select Date"
+                      excludeDateIntervals={[{ start: "1968/01/01", end: yesterday}]}
                     /> 
                 </div>
 
-                  <div className=" label booking-border ">
+                  <div onClick={this.handleFocusCapacity} className="col booking-border margin 7" >
                     <p className=" mgn-top">Add guests</p>
                       <input
                         type="number"
                         name="capacity"
-                        // className="DateInput_input DateInput_input_1"
                         placeholder="1"
                         id="capacity_input"
                         min="1"
@@ -150,6 +159,12 @@ class BookingForm extends React.Component {
               
               <button className="booking-button">Request to Book</button>
             </form>
+            {/* shows up on the right side. 
+            needs adjustment. also MUST update */}
+            {/* <p>
+              adf;glhsd;klfjghsdfkjghfsd
+              {this.state.price}
+            </p> */}
           </div>
         );
     }
