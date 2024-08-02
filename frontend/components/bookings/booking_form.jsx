@@ -68,6 +68,7 @@ class BookingForm extends React.Component {
       this.setState({ check_in: start });
       this.setState({ check_out: end });
     }
+    
 
     handleSubmit(e) {
         e.preventDefault();
@@ -97,7 +98,7 @@ class BookingForm extends React.Component {
       if (this.state.errors) {
         BookingError = this.state.errors
       };
-      
+
         return (
           <div className="widget-container">
             <form className="w100 flex flex-col" onSubmit={this.handleSubmit}>
@@ -111,7 +112,7 @@ class BookingForm extends React.Component {
 
               <div className="dates-and-guest-content booking-border-bot">
                 
-                <div className="col booking-border margin7" >
+                <div id="datePicker" className="col booking-border margin7" >
                     <p className="flex-col-center">Add dates</p>
                     <DatePicker
                       // wrapperClassName=""
@@ -124,6 +125,10 @@ class BookingForm extends React.Component {
                       endDate={this.state.check_out}
                       selectsRange
                       monthsShown={2}
+                      excludeDateIntervals={[
+                        { start: "2021/01/01", end: new Date(new Date().setDate(new Date().getDate()-1))},
+                        
+                        ]}
                     /> 
                 </div>
 
