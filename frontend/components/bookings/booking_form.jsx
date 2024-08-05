@@ -21,7 +21,8 @@ class BookingForm extends React.Component {
             focusedStart: false,
             focusedEnd: false,
             errors: "",
-            bookings: this.props.bookings
+            bookings: this.props.bookings,
+            excludedDates: []
         }
         this.myref = React.createRef(null);
         // this.highlighted = this.highlighted.bind(this);
@@ -37,15 +38,15 @@ class BookingForm extends React.Component {
     };
 
     componentDidMount() {
-      // this.props.fetchListings(this.props.match.params.userId);
-      // this.setState({bookings: this.props.fetchBookings(this.props.match.params.userId)});
       this.props.removeBookingErrors([]);
       this.props.fetchBookings(this.props.currentUser.id);
     }
 
     static getDerivedStateFromProps(nextProps, prevProps) {
       if (nextProps.bookings !== prevProps.bookings) {
+        // debugger;
           return { bookings: nextProps.bookings }
+          // this.setState({bookings: nextProps.bookings})
       } else {
           return null
       };
@@ -57,9 +58,25 @@ class BookingForm extends React.Component {
           errors: this.props.errors[0]
         });
       };
+
+      // if (this.props.bookings.length) {
+      //   this.setState({bookings: this.props.bookings})
+      // }
     }
     
     handleExclusions() {
+      const excludedDatesforListingUnderUser = [];
+      if (this.state.bookings.length) {
+        this.state.bookings.forEach(booking => {
+          if (booking.listing_id === this.state.listing_id) {
+            excludedDatesforListingUnderUser.push({start: booking.check_in, end: booking.check_out})
+          }
+        })
+      }
+      const yesterday = new Date(new Date().setDate(new Date().getDate()-1));
+      excludedDatesforListingUnderUser.push({ start: "1968/01/01", end: yesterday});
+      this.setState({excludedDates: excludedDatesforListingUnderUser})
+      // return excludedDatesforListingUnderUser;
       // return array of objects eg => 
         // excludeDateIntervals={[{ start: "1968/01/01", end: yesterday}]}
     }
@@ -119,12 +136,12 @@ class BookingForm extends React.Component {
     }
 
     render () {
-      const yesterday = new Date(new Date().setDate(new Date().getDate()-1));
 
       let BookingError = null
-      if (this.state.errors) {
-        BookingError = this.state.errors
-      };
+      if (this.state.errors) BookingError = this.state.errors
+      // if (this.state.bookings.length) this.handleExclusions();
+      
+
         return (
           <div className="widget-container">
             <form className="w100 flex flex-col" onSubmit={this.handleSubmit}>
@@ -151,7 +168,7 @@ class BookingForm extends React.Component {
                       monthsShown={2}
                       placeholderText="Select Date"
                       toggleCalendarOnIconClick
-                      excludeDateIntervals={[{ start: "1968/01/01", end: yesterday}]}
+                      excludeDateIntervals={this.state.excludedDates}
                     /> 
                 </div>
 
