@@ -21,10 +21,9 @@ class BookingForm extends React.Component {
             focusedStart: false,
             focusedEnd: false,
             errors: "",
-            bookings: {}
+            bookings: this.props.bookings
         }
         this.myref = React.createRef(null);
-
         // this.highlighted = this.highlighted.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCapacity = this.handleCapacity.bind(this);
@@ -38,8 +37,18 @@ class BookingForm extends React.Component {
     };
 
     componentDidMount() {
-      this.setState({bookings: this.props.fetchBookings(this.props.match.params.userId)});
+      // this.props.fetchListings(this.props.match.params.userId);
+      // this.setState({bookings: this.props.fetchBookings(this.props.match.params.userId)});
       this.props.removeBookingErrors([]);
+      this.props.fetchBookings(this.props.currentUser.id);
+    }
+
+    static getDerivedStateFromProps(nextProps, prevProps) {
+      if (nextProps.bookings !== prevProps.bookings) {
+          return { bookings: nextProps.bookings }
+      } else {
+          return null
+      };
     }
 
     componentDidUpdate() {
@@ -110,10 +119,8 @@ class BookingForm extends React.Component {
     }
 
     render () {
-      console.log(this.state.bookings, "hello");
-        //i want bookings, where are they?
-
       const yesterday = new Date(new Date().setDate(new Date().getDate()-1));
+
       let BookingError = null
       if (this.state.errors) {
         BookingError = this.state.errors
