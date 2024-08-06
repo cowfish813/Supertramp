@@ -104,7 +104,7 @@ class BookingForm extends React.Component {
                 user_id: this.props.currentUser.id,
                 host_id: this.props.list.host_id,
                 listing_name: this.props.list.name,
-                price: this.state.price
+                price: this.props.list.price
             };
 
             this.props.createBooking(booking)
