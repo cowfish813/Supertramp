@@ -16,8 +16,6 @@ class BookingForm extends React.Component {
             listing_name: this.props.list.name,
             check_in: new Date(),
             check_out: new Date(),
-            focusedStart: false,
-            focusedEnd: false,
             errors: "",
             bookings: this.props.bookings,
             excludedDates: []
