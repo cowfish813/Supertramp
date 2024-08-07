@@ -1,11 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-// import "react-dates/initialize";
-// import "react-dates/lib/css/_datepicker.css";
-// import { SingleDatePicker } from "react-dates";
-// import moment from 'moment'
-// import DefaultTheme from 'react-dates/lib/theme/DefaultTheme';
-// import "moment/locale/en-gb"
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 class BookingUpdateForm extends React.Component {
   constructor(props) {
