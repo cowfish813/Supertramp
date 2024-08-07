@@ -8,9 +8,8 @@ class BookingForm extends React.Component {
         super(props);
 
         this.state = {
-            // user_id: this.props.currentUserId,
-            // host_id: this.props.host_id,
-            // listing_id: this.props.list.id,
+            days: 1,
+            nights: "night",
             price: this.props.list.price,
             capacity: 1,
             listing_name: this.props.list.name,
@@ -73,11 +72,14 @@ class BookingForm extends React.Component {
 
     handlePrice(date) {
         const mseconds = Date.parse(date) - Date.parse(this.state.check_in);
-        const days = mseconds / (1000 * 60 * 60 * 24) * this.props.list.price;
+        const days = mseconds / (1000 * 60 * 60 * 24)
         this.setState({
-            price: days,
-            check_out: date
+            price: days * this.props.list.price,
+            check_out: date,
+            days: days
         });
+
+        if (days > 1) this.setState({nights: "nights"})
     }
 
     handleCapacity(event) {
@@ -87,6 +89,7 @@ class BookingForm extends React.Component {
     handleCheckIn(dates) {
         const [start, end] = dates;
         this.setState({ check_in: start, check_out: end });
+        this.handlePrice(end);
     }
 
     handleSubmit(e) {
@@ -161,6 +164,11 @@ class BookingForm extends React.Component {
                         </div>
                     </div>
 
+                    <div id="price_estimate" className="flex flex-wrap flex-row f-between">
+                        <p id="estimate_price" className="mrgn-10">{this.props.list.price} x {this.state.days} {this.state.nights} </p>
+                        <p id="total_price" className="mrgn-10">Total: ${this.state.price || this.props.list.price}</p>
+                    </div>
+
                     <button className="booking-button">Request to Book</button>
                 </form>
             </div>
@@ -169,3 +177,11 @@ class BookingForm extends React.Component {
 }
 
 export default withRouter(BookingForm);
+
+//todo
+//open calendar on clicking input
+//only works on parent div atm.
+    //calendar css edit
+  //css - height
+  //booking update
+  
