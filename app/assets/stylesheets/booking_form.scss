@@ -30,7 +30,7 @@
 
 
 .booking-label {
-    width: 300px;
+    width: 85%;
 }
 .h100 {
     height: 100%;
@@ -87,7 +87,6 @@
     justify-content: space-evenly;
     align-items: stretch;
     flex-direction: column;
-    // width: 100%;
 }
 
 .datePicker {
@@ -237,7 +236,16 @@
 .react-datepicker__year-text--in-range {
     background-color: #40d9ac !important;
     border-radius: 0% !important;
+    border: none;
 }
+
+
+// .react-datepicker__day--keyboard-selected,
+// .react-datepicker__month-text--keyboard-selected,
+// .react-datepicker__quarter-text--keyboard-selected,
+// .react-datepicker__year-text--keyboard-selected {
+//     background-color: none !important;
+// }
 
 .react-datepicker__day-name,
 .react-datepicker__day,
@@ -246,4 +254,16 @@
 }
 .react-datepicker {
     width: 203px;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.f-between {
+    justify-content: space-between;
+}
+
+.mrgn-10 {
+    margin: 20px;
 }

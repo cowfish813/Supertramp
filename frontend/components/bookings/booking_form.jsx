@@ -10,6 +10,7 @@ class BookingForm extends React.Component {
         this.state = {
             days: 1,
             nights: "night",
+            guest: "guest",
             price: this.props.list.price,
             capacity: 1,
             listing_name: this.props.list.name,
@@ -72,18 +73,20 @@ class BookingForm extends React.Component {
 
     handlePrice(date) {
         const mseconds = Date.parse(date) - Date.parse(this.state.check_in);
-        const days = mseconds / (1000 * 60 * 60 * 24)
+        const days = mseconds / (1000 * 60 * 60 * 24);
         this.setState({
             price: days * this.props.list.price,
             check_out: date,
-            days: days
+            days: days || this.state.days
         });
 
-        if (days > 1) this.setState({nights: "nights"})
+        days > 1 ? this.setState({nights: "nights"}) : this.setState({nights: "night"});
     }
 
     handleCapacity(event) {
         this.setState({ capacity: event.currentTarget.value });
+        event.currentTarget.value > 1 ? 
+            this.setState({guest: "guests"}) : this.setState({guest: "guest"});
     }
 
     handleCheckIn(dates) {
@@ -117,9 +120,8 @@ class BookingForm extends React.Component {
 
     render() {
         let BookingError = null;
-        if (this.state.errors) {
-            BookingError = this.state.errors;
-        }
+        if (this.state.errors) BookingError = this.state.errors;
+        
 
         return (
             <div className="widget-container">
@@ -133,12 +135,12 @@ class BookingForm extends React.Component {
                     </div>
 
                     <div className="dates-and-guest-content">
-                        <div onClick={this.handleFocusDate} className="col booking-border margin7">
-                            <p className="flex-col-center">Add dates</p>
+                        <div onClick={this.handleFocusDate} className="booking-label col booking-border margin7">
+                            <p className="flex">Add dates</p>
                             <DatePicker
                                 id="datePicker"
                                 showIcon
-                                selected={this.state.check_in}
+                                // selected={this.state.check_in}
                                 onChange={this.handleCheckIn}
                                 startDate={this.state.check_in}
                                 endDate={this.state.check_out}
@@ -150,17 +152,21 @@ class BookingForm extends React.Component {
                             />
                         </div>
 
-                        <div onClick={this.handleFocusCapacity} className="col booking-border margin7">
+                        <div onClick={this.handleFocusCapacity} className="booking-label col booking-border margin7">
                             <p className="mgn-top">Add guests</p>
-                            <input
-                                type="number"
-                                name="capacity"
-                                placeholder="1"
-                                id="capacity_input"
-                                min="1"
-                                max={this.props.list.capacity}
-                                onChange={this.handleCapacity}
-                            />
+
+                            <div className="flex flex-wrap">
+                                <input
+                                    type="number"
+                                    name="capacity"
+                                    placeholder="1"
+                                    id="capacity_input"
+                                    min="1"
+                                    max={this.props.list.capacity}
+                                    onChange={this.handleCapacity}
+                                />
+                                <p>{this.state.guest}</p>
+                            </div>
                         </div>
                     </div>
 
