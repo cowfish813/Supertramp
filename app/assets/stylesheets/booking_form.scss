@@ -236,9 +236,12 @@
 .react-datepicker__year-text--in-range {
     background-color: #40d9ac !important;
     border-radius: 0% !important;
-    border: none;
 }
 
+// input inside date div
+.react-datepicker__input-container input{
+    border: none;
+}
 
 // .react-datepicker__day--keyboard-selected,
 // .react-datepicker__month-text--keyboard-selected,
