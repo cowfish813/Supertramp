@@ -15,7 +15,9 @@ class BookingUpdateForm extends React.Component {
       id: this.props.booking.id,
       user_id: this.props.booking.user_id,
       listing_name: this.props.booking.listing_name,
-      max_capacity: "0"
+      max_capacity: "0",
+      listing_id: this.props.booking.listing_id,
+      min_stay: 0
     };
 
     this.highlighted = this.highlighted.bind(this);
@@ -25,16 +27,13 @@ class BookingUpdateForm extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchListing(this.props.booking.listing_id)
-    this.setState({max_capacity: this.props.listings})
-  }
-
-  static getDerivedStateFromProps(nextProps, prevProps) {
-    if (nextProps.listings !== prevProps.listings) {
-      return { listings: nextProps.listings }
-    } else {
-      return null
-    };
+    this.props.fetchListing(this.state.listing_id)
+      .then(res => {
+        this.setState({
+          max_capacity: res.listing.capacity,
+          min_stay: res.minimum_nights
+        })
+      })
   }
 
   handlePrice(date) {
@@ -116,8 +115,7 @@ class BookingUpdateForm extends React.Component {
                           type="number"
                           name="capacity"
                           className="DateInput_input DateInput_input_1"
-                          placeholder="1"
-                          value={this.state.capacity}
+                          placeholder={this.state.capacity}
                           id="capacity_input"
                           min="1"
                           max={this.state.max_capacity}
