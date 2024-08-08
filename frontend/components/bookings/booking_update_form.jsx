@@ -6,17 +6,16 @@ import "react-datepicker/dist/react-datepicker.css";
 class BookingUpdateForm extends React.Component {
   constructor(props) {
     super(props);
-
+    console.log(this.props.booking)
+    debugger;
     this.state = {
-      price: this.props.listings[this.props.booking.listing_id].price,
-      check_in: null,
-      check_out: null,
-      capacity: this.props.listings[this.props.booking.listing_id].capacity,
+      price: this.props.booking.price || "error",
+      check_in: this.props.booking.check_in.substring(0, 10),
+      check_out: this.props.booking.check_out.substring(0, 10),
+      capacity: this.props.booking.capacity,
       id: this.props.booking.id,
-      listing_name: this.props.listings[this.props.booking.listing_id].name,
+      listing_name: this.props.booking.name,
       user_id: this.props.booking.user_id,
-      focusedStart: null,
-      focusedEnd: null,
     };
 
     this.highlighted = this.highlighted.bind(this);
@@ -26,9 +25,9 @@ class BookingUpdateForm extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({
-      price: this.props.listings[this.props.booking.listing_id].price,
-    });
+    // this.setState({
+    //   price: this.props.booking.price,
+    // });
   }
 
   handlePrice(date) {
@@ -76,8 +75,8 @@ class BookingUpdateForm extends React.Component {
   }
 
   render() {
-    let listprice = this.props.listings[this.props.booking.listing_id] ? this.props.listings[this.props.booking.listing_id].price : ""
-    let capacity = this.props.listings[this.props.booking.listing_id] ? this.props.listings[this.props.booking.listing_id].capacity : ""
+    // let listprice = 
+    // let capacity = 
 
     return (
       <div className="widget-update-container">
@@ -85,7 +84,7 @@ class BookingUpdateForm extends React.Component {
           <form className="wrapper" onSubmit={this.handleSubmit}>
             <div className="price-wrapper">
               <div className="price">
-                ${listprice}
+                ${this.state.price}
                 <p>per night</p>
               </div>
             </div>
@@ -145,7 +144,7 @@ class BookingUpdateForm extends React.Component {
                           value={this.state.capacity}
                           id="capacity_input"
                           min="1"
-                          max={capacity}
+                          max={this.state.capacity}
                           onChange={() => this.handleCapacity}
                         />
                       </div>
