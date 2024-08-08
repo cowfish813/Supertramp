@@ -6,15 +6,16 @@ import "react-datepicker/dist/react-datepicker.css";
 class BookingUpdateForm extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       price: this.props.booking.price || "error",
-      check_in: this.props.booking.check_in.substring(0, 10),
-      check_out: this.props.booking.check_out.substring(0, 10),
+      check_in: this.props.booking.check_in,
+      check_out: this.props.booking.check_out,
       capacity: this.props.booking.capacity,
       id: this.props.booking.id,
-      listing_name: this.props.booking.name,
       user_id: this.props.booking.user_id,
-      max_capacity: ""
+      listing_name: this.props.booking.listing_name,
+      max_capacity: "0"
     };
 
     this.highlighted = this.highlighted.bind(this);
@@ -24,12 +25,20 @@ class BookingUpdateForm extends React.Component {
   }
 
   componentDidMount() {
-    //fetch listing and mount max cap
+    this.props.fetchListing(this.props.booking.listing_id)
+    this.setState({max_capacity: this.props.listings})
+  }
+
+  static getDerivedStateFromProps(nextProps, prevProps) {
+    if (nextProps.listings !== prevProps.listings) {
+      return { listings: nextProps.listings }
+    } else {
+      return null
+    };
   }
 
   handlePrice(date) {
-    const mseconds =
-      Date.parse(date) - Date.parse(this.state.check_in);
+    const mseconds = Date.parse(date) - Date.parse(this.state.check_in);
     const days = (mseconds / (1000 * 60 * 60 * 24)) * this.props.listings[this.props.booking.listing_id].price;
     this.setState({
       price: days,
@@ -57,26 +66,23 @@ class BookingUpdateForm extends React.Component {
       
     } else {
       const booking = {
-        check_in: this.state.check_in.format("DD-MM-YYYY"),
-        check_out: this.state.check_out.format("DD-MM-YYYY"),
+        check_in: this.state.check_in.toISOString(),
+        check_out: this.state.check_out.toISOString(),
         capacity: this.state.capacity,
         price: this.state.price,
         id: this.props.booking.id,
-        listing_name: this.props.listings[this.props.booking.listing_id].name,
+        listing_name: this.state.name,
         user_id: this.props.booking.user_id,
       };
+
       this.props.patchBooking(booking)
-      .then(() => this.props.closeModal())
-      .then(() => this.props.fxn(booking))
+        .then(() => this.props.closeModal())
+        .then(() => this.props.fxn(booking))
     }
   }
 
   render() {
-    // let listprice = 
-    // let capacity = 
-
     return (
-      <div className="widget-update-container">
         <div className="widget-container">
           <form className="wrapper" onSubmit={this.handleSubmit}>
             <div className="price-wrapper">
@@ -87,69 +93,25 @@ class BookingUpdateForm extends React.Component {
             </div>
             <div className="dates-and-guest-content">
 
-            <div className="booking-label col booking-border margin7">
-                <p className="flex">Add dates</p>
-                <DatePicker
-                    id="datePicker"
-                    showIcon
-                    onChange={this.handleCheckIn}
-                    startDate={this.state.check_in}
-                    endDate={this.state.check_out}
-                    selectsRange
-                    monthsShown={2}
-                    placeholderText="Select Date"
-                    toggleCalendarOnIconClick
-                    excludeDateIntervals={this.state.excludedDates}
-                />
-            </div>
+              <div className="booking-label col booking-border margin7">
+                  <p className="flex">Add dates</p>
+                  <DatePicker
+                      id="datePicker"
+                      showIcon
+                      onChange={this.handleCheckIn}
+                      startDate={this.state.check_in}
+                      endDate={this.state.check_out}
+                      selectsRange
+                      monthsShown={2}
+                      placeholderText="Select Date"
+                      toggleCalendarOnIconClick
+                      excludeDateIntervals={this.state.excludedDates}
+                  />
+              </div>
 
-              {/* <div className="col checkin">
-                <div className="label">
-                  Check in
-                    <SingleDatePicker
-                    displayFormat={() => ("MM/DD/YYYY")}
-                    placeholder="Select Start"
-                    date={this.state.check_in} // momentPropTypes.momentObj or null
-                    onDateChange={(date) => this.setState({ check_in: date })} // PropTypes.func.isRequired
-                    focused={this.state.focusedStart} // PropTypes.bool
-                    onFocusChange={({ focused }) => this.setState({ focusedStart: focused })} // PropTypes.func.isRequired
-                    id="start" // PropTypes.string.isRequired,
-                    verticalSpacing={0}
-                    isDayHighlighted={(day) => this.highlighted(day)}
-                    numberOfMonths={1}
-                    daySize={36}
-                    noBorder={true}
-                    hideKeyboardShortcutsPanel={true}
-                  />
-                </div>
-              </div> */}
-              {/* <div className="col checkout">
-                <div className="label">
-                  Check out
-                    <SingleDatePicker locale="en-gb"
-                    displayFormat={() => ("MM/DD/YYYY")}
-                    placeholder="Select End"
-                    date={this.state.check_out} // momentPropTypes.momentObj or null
-                    onDateChange={(date) => this.setState({ check_out: date })} // PropTypes.func.isRequired
-                    focused={this.state.focusedEnd} // PropTypes.bool
-                    onFocusChange={({ focused }) => this.setState({ focusedEnd: focused })} // PropTypes.func.isRequired
-                    id="end" // PropTypes.string.isRequired,
-                    verticalSpacing={0}
-                    isDayHighlighted={(day) => this.highlighted(day)}
-                    numberOfMonths={1}
-                    daySize={36}
-                    noBorder={true}
-                    hideKeyboardShortcutsPanel={true}
-                    onDateChange={date => this.handlePrice(date)}
-                  />
-                </div>
-              </div> */}
               <div className="col capacity">
                 <div className="label">
                   Guests
-                    <div className="SingleDatePicker SingleDatePicker_1">
-                    <div className="SingleDatePickerInput SingleDatePickerInput_1">
-                      <div className="DateInput DateInput_1">
                         <input
                           type="number"
                           name="capacity"
@@ -161,15 +123,12 @@ class BookingUpdateForm extends React.Component {
                           max={this.state.max_capacity}
                           onChange={() => this.handleCapacity}
                         />
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
+
             </div>
             <button className="booking-button">Update Booking</button>
           </form>
-        </div>
       </div>
     );
   }
