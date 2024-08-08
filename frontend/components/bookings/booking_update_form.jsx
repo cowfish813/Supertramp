@@ -19,10 +19,10 @@ class BookingUpdateForm extends React.Component {
       min_stay: 0
     };
 
-    this.highlighted = this.highlighted.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCapacity = this.handleCapacity.bind(this);
     this.handlePrice = this.handlePrice.bind(this);
+    this.handleCheckIn = this.handleCheckIn.bind(this);
   }
 
   componentDidMount() {
@@ -50,8 +50,10 @@ class BookingUpdateForm extends React.Component {
     });
   }
 
-  highlighted(day) {
-    return day.isSame(this.state.check_in);
+  handleCheckIn(dates) {
+      const [start, end] = dates;
+      this.setState({ check_in: start, check_out: end });
+      this.handlePrice(end);
   }
 
   handleSubmit(e) {
