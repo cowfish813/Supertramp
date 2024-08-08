@@ -6,8 +6,6 @@ import "react-datepicker/dist/react-datepicker.css";
 class BookingUpdateForm extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props.booking)
-    debugger;
     this.state = {
       price: this.props.booking.price || "error",
       check_in: this.props.booking.check_in.substring(0, 10),
@@ -16,6 +14,7 @@ class BookingUpdateForm extends React.Component {
       id: this.props.booking.id,
       listing_name: this.props.booking.name,
       user_id: this.props.booking.user_id,
+      max_capacity: ""
     };
 
     this.highlighted = this.highlighted.bind(this);
@@ -25,9 +24,7 @@ class BookingUpdateForm extends React.Component {
   }
 
   componentDidMount() {
-    // this.setState({
-    //   price: this.props.booking.price,
-    // });
+    //fetch listing and mount max cap
   }
 
   handlePrice(date) {
@@ -89,10 +86,27 @@ class BookingUpdateForm extends React.Component {
               </div>
             </div>
             <div className="dates-and-guest-content">
-              <div className="col checkin">
+
+            <div className="booking-label col booking-border margin7">
+                <p className="flex">Add dates</p>
+                <DatePicker
+                    id="datePicker"
+                    showIcon
+                    onChange={this.handleCheckIn}
+                    startDate={this.state.check_in}
+                    endDate={this.state.check_out}
+                    selectsRange
+                    monthsShown={2}
+                    placeholderText="Select Date"
+                    toggleCalendarOnIconClick
+                    excludeDateIntervals={this.state.excludedDates}
+                />
+            </div>
+
+              {/* <div className="col checkin">
                 <div className="label">
                   Check in
-                    {/* <SingleDatePicker
+                    <SingleDatePicker
                     displayFormat={() => ("MM/DD/YYYY")}
                     placeholder="Select Start"
                     date={this.state.check_in} // momentPropTypes.momentObj or null
@@ -106,13 +120,13 @@ class BookingUpdateForm extends React.Component {
                     daySize={36}
                     noBorder={true}
                     hideKeyboardShortcutsPanel={true}
-                  /> */}
+                  />
                 </div>
-              </div>
-              <div className="col checkout">
+              </div> */}
+              {/* <div className="col checkout">
                 <div className="label">
                   Check out
-                    {/* <SingleDatePicker locale="en-gb"
+                    <SingleDatePicker locale="en-gb"
                     displayFormat={() => ("MM/DD/YYYY")}
                     placeholder="Select End"
                     date={this.state.check_out} // momentPropTypes.momentObj or null
@@ -127,9 +141,9 @@ class BookingUpdateForm extends React.Component {
                     noBorder={true}
                     hideKeyboardShortcutsPanel={true}
                     onDateChange={date => this.handlePrice(date)}
-                  /> */}
+                  />
                 </div>
-              </div>
+              </div> */}
               <div className="col capacity">
                 <div className="label">
                   Guests
@@ -144,7 +158,7 @@ class BookingUpdateForm extends React.Component {
                           value={this.state.capacity}
                           id="capacity_input"
                           min="1"
-                          max={this.state.capacity}
+                          max={this.state.max_capacity}
                           onChange={() => this.handleCapacity}
                         />
                       </div>
