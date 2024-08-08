@@ -2,7 +2,6 @@ import BookingUpdateForm from './booking_update_form'
 import { connect } from "react-redux";
 import { closeModal } from "../../actions/modal_actions/modal_actions";
 import { patchBooking } from "../../actions/booking_actions/booking_action";
-import { withRouter } from "react-router-dom";
 import { fetchListing } from "../../actions/listing_actions/listing_actions";
 
 
