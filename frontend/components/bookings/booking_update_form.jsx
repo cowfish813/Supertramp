@@ -120,7 +120,7 @@ class BookingUpdateForm extends React.Component {
                           id="capacity_input"
                           min="1"
                           max={this.state.max_capacity}
-                          onChange={() => this.handleCapacity}
+                          onChange={this.handleCapacity}
                         />
                 </div>
               </div>
