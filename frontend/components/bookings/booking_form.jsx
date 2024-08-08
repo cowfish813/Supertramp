@@ -186,6 +186,5 @@ export default withRouter(BookingForm);
 
 //only works on parent div atm.
     //calendar css edit
-  //css - height
   //booking update
   
