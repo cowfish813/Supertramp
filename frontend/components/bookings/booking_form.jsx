@@ -140,7 +140,6 @@ class BookingForm extends React.Component {
                             <DatePicker
                                 id="datePicker"
                                 showIcon
-                                // selected={this.state.check_in}
                                 onChange={this.handleCheckIn}
                                 startDate={this.state.check_in}
                                 endDate={this.state.check_out}
@@ -154,7 +153,6 @@ class BookingForm extends React.Component {
 
                         <div onClick={this.handleFocusCapacity} className="booking-label col booking-border margin7">
                             <p className="mgn-top">Add guests</p>
-
                             <div className="flex flex-wrap">
                                 <input
                                     type="number"
@@ -165,7 +163,7 @@ class BookingForm extends React.Component {
                                     max={this.props.list.capacity}
                                     onChange={this.handleCapacity}
                                 />
-                                <p>{this.state.guest}</p>
+                                <p id="guest-grammar">{this.state.guest}</p>
                             </div>
                         </div>
                     </div>
@@ -185,7 +183,7 @@ class BookingForm extends React.Component {
 export default withRouter(BookingForm);
 
 //todo
-//open calendar on clicking input
+
 //only works on parent div atm.
     //calendar css edit
   //css - height

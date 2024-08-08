@@ -82,11 +82,11 @@
     
 .col {
     padding: .625rem;
-    height: 4.375rem;
     display: flex;
     justify-content: space-evenly;
     align-items: stretch;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .datePicker {
@@ -269,4 +269,12 @@
 
 .mrgn-10 {
     margin: 20px;
+}
+
+.block {
+    display: block;
+}
+
+.wrap {
+    flex-wrap: wrap;
 }
