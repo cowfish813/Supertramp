@@ -16,7 +16,8 @@ class BookingUpdateForm extends React.Component {
       listing_name: this.props.booking.listing_name,
       max_capacity: "0",
       listing_id: this.props.booking.listing_id,
-      min_stay: 0
+      min_stay: 0,
+      guest: this.props.booking.capacity > 1 ? "Guests" : "Guest"
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -48,6 +49,8 @@ class BookingUpdateForm extends React.Component {
     this.setState({
       capacity: event.currentTarget.value,
     });
+    event.currentTarget.value > 1 ? 
+      this.setState({guest: "Guests"}) : this.setState({guest: "Guest"});
   }
 
   handleCheckIn(dates) {
@@ -111,17 +114,17 @@ class BookingUpdateForm extends React.Component {
 
               <div className="col capacity">
                 <div className="label">
-                  Guests
-                        <input
-                          type="number"
-                          name="capacity"
-                          className="DateInput_input DateInput_input_1"
-                          placeholder={this.state.capacity}
-                          id="capacity_input"
-                          min="1"
-                          max={this.state.max_capacity}
-                          onChange={this.handleCapacity}
-                        />
+                  <p>{this.state.guest}</p>
+                  <input
+                    type="number"
+                    name="capacity"
+                    className="DateInput_input DateInput_input_1"
+                    placeholder={this.state.capacity}
+                    id="capacity_input"
+                    min="1"
+                    max={this.state.max_capacity}
+                    onChange={this.handleCapacity}
+                  />
                 </div>
               </div>
 
