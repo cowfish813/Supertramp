@@ -43,6 +43,13 @@ class Listing < ApplicationRecord
     # end
 
 
+    # def self.in_bounds(bounds)
+    #     self.where("lat < ?", bounds[:northEast][:lat])
+    #         .where("lat > ?", bounds[:southWest][:lat])
+    #         .where("lng > ?", bounds[:southWest][:lng])
+    #         .where("lng < ?", bounds[:northEast][:lng])
+    # end
+
     def self.in_bounds(bounds)
         if bounds[:northEast][:lng] < bounds[:southWest][:lng]
         # Bounding box crosses the International Date Line

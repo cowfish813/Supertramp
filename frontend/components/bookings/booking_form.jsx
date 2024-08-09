@@ -1,179 +1,186 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import "react-dates/initialize";
-import "react-dates/lib/css/_datepicker.css";
-import { SingleDatePicker } from "react-dates";
-import moment from 'moment';
-import DefaultTheme from 'react-dates/lib/theme/DefaultTheme';
-import "moment/locale/en-gb";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 class BookingForm extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            user_id: this.props.currentUserId,
-            host_id: this.props.host_id,
-            listing_id: this.props.list.id,
+            days: 1,
+            nights: "night",
+            guest: "guest",
             price: this.props.list.price,
             capacity: 1,
             listing_name: this.props.list.name,
-            check_in: null,
-            check_out: null,
-            focusedStart: null,
-            focusedEnd: null,
-            errors: ""
-        }
+            check_in: new Date(),
+            check_out: new Date(),
+            errors: "",
+            bookings: this.props.bookings,
+            excludedDates: []
+        };
 
-        this.highlighted = this.highlighted.bind(this);
+        this.myref = React.createRef(null);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCapacity = this.handleCapacity.bind(this);
         this.handlePrice = this.handlePrice.bind(this);
-    };
-
-    componentDidMount() {
-      this.props.removeBookingErrors([])
+        this.handleCheckIn = this.handleCheckIn.bind(this);
+        this.handleFocusCapacity = this.handleFocusCapacity.bind(this);
+        this.handleFocusDate = this.handleFocusDate.bind(this);
+        this.handleExclusions = this.handleExclusions.bind(this);
     }
 
-    componentDidUpdate() {
-      if (this.state.errors !== this.props.errors[0]) {
-        this.setState({
-          errors: this.props.errors[0]
-        });
-      };
+    componentDidMount() {
+        this.props.removeBookingErrors([]);
+        this.props.fetchBookings(this.props.currentUser.id);
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.bookings !== prevProps.bookings) {
+            this.setState({ bookings: this.props.bookings }, this.handleExclusions);
+        }
+
+        if (this.state.errors !== this.props.errors[0]) {
+            this.setState({ errors: this.props.errors[0] });
+        }
+    }
+
+    handleExclusions() {
+        const excludedDatesforListingUnderUser = [];
+        if (this.state.bookings.length) {
+            this.state.bookings.forEach((booking) => {
+                if (booking.listing_id === this.props.list.id) {
+                    excludedDatesforListingUnderUser.push({ start: booking.check_in.substring(0, 10), end: booking.check_out.substring(0, 10) });
+                }
+            });
+        }
+
+        const yesterday = new Date(new Date().setDate(new Date().getDate() - 1));
+        excludedDatesforListingUnderUser.push({ start: "1968/01/01", end: yesterday });
+        this.setState({ excludedDates: excludedDatesforListingUnderUser });
+    }
+
+    handleFocusCapacity() {
+        const capInput = document.getElementById('capacity_input');
+        capInput.focus();
+    }
+
+    handleFocusDate() {
+        const dateInput = document.getElementById('datePicker');
+        dateInput.focus();
     }
 
     handlePrice(date) {
         const mseconds = Date.parse(date) - Date.parse(this.state.check_in);
-        const days = mseconds / (1000 * 60 * 60 * 24) * this.props.list.price;
+        const days = mseconds / (1000 * 60 * 60 * 24);
         this.setState({
-          price: days,
-          check_out: date
+            price: days * this.props.list.price,
+            check_out: date,
+            days: days || this.state.days
         });
+
+        days > 1 ? this.setState({nights: "nights"}) : this.setState({nights: "night"});
     }
 
     handleCapacity(event) {
-      this.setState({
-        capacity: event.currentTarget.value
-      });
+        this.setState({ capacity: event.currentTarget.value });
+        event.currentTarget.value > 1 ? 
+        this.setState({guest: "guests"}) : this.setState({guest: "guest"});
     }
 
-    highlighted(day) {
-        return day.isSame(this.state.check_in);
+    handleCheckIn(dates) {
+        const [start, end] = dates;
+        this.setState({ check_in: start, check_out: end });
+        this.handlePrice(end);
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        if (!(this.props.currentUser)) { 
+        if (!this.props.currentUser) { 
             this.props.openModal('Login');
-
         } else if (this.state.price <= 0) {
-            this.setState({
-              price: null
-            });
-
-        } else {  
-          
-          const booking = {
-              check_in: this.state.check_in.format("YYYY-MM-DD"),
-              check_out: this.state.check_out.format("YYYY-MM-DD"),
-              capacity: this.state.capacity,
-              listing_id: this.props.list.id,
-              user_id: this.props.currentUser.id,
-              host_id: this.props.list.host_id,
-              listing_name: this.props.list.name,
-              price: this.state.price
-          };
-          
-          this.props.createBooking(booking)
-              .then(() => (this.props.history.push(`/users/${this.props.currentUser.id}`)));
-        };
+            this.setState({ price: null });
+        } else {
+            const booking = {
+                check_in: this.state.check_in.toISOString(),
+                check_out: this.state.check_out.toISOString(),
+                capacity: this.state.capacity,
+                listing_id: this.props.list.id,
+                user_id: this.props.currentUser.id,
+                host_id: this.props.list.host_id,
+                listing_name: this.props.list.name,
+                price: this.state.price
+            };
+            
+            this.props.createBooking(booking)
+                .then(() => this.props.history.push(`/users/${this.props.currentUser.id}`));
+        }
     }
 
-    render () {
-      let BookingError = null
-      if (this.state.errors) {
-        BookingError = this.state.errors
-      };
-      
+    render() {
+        let BookingError = null;
+        if (this.state.errors) BookingError = this.state.errors;
+        
+
         return (
-          <div className="widget-container">
-            <form className="wrapper" onSubmit={this.handleSubmit}>
-              <div className="price-wrapper">
-                <div className="price">
-                  {`$${this.props.list.price}`}
-                  <p>per night</p>
-                  <span className="booking_errors">{BookingError}</span>
-                </div>
-              </div>
-              <div className="dates-and-guest-content">
-                <div className="col checkin">
-                  <div className="label">
-                    Check in
-                    <SingleDatePicker
-                      displayFormat={"MM/DD/YYYY"} 
-                      placeholder="Select Start"
-                      date={this.state.check_in} // momentPropTypes.momentObj or null
-                      onDateChange={(date) => this.setState({ check_in: date })} // PropTypes.func.isRequired
-                      focused={this.state.focusedStart} // PropTypes.bool
-                      onFocusChange={ ({ focused }) => this.setState({ focusedStart: focused }) } // PropTypes.func.isRequired
-                      id="start" // PropTypes.string.isRequired,
-                      verticalSpacing={0}
-                      isDayHighlighted={(day) => this.highlighted(day)}
-                      numberOfMonths={1}
-                      daySize={36}
-                      noBorder={true}
-                      hideKeyboardShortcutsPanel={true}
-                    />
-                  </div>
-                </div>
-                <div className="col checkout">
-                  <div className="label">
-                    Check out
-                    <SingleDatePicker locale="en-gb"
-                      displayFormat={"MM/DD/YYYY"}
-                      placeholder="Select End"
-                      date={this.state.check_out} // momentPropTypes.momentObj or null
-                      focused={this.state.focusedEnd} // PropTypes.bool
-                      onFocusChange={({ focused }) => this.setState({ focusedEnd: focused }) } // PropTypes.func.isRequired
-                      id="end" // PropTypes.string.isRequired,
-                      verticalSpacing={0}
-                      isDayHighlighted={(day) => this.highlighted(day)}
-                      numberOfMonths={1}
-                      daySize={36}
-                      noBorder={true}
-                      hideKeyboardShortcutsPanel={true}
-                      onDateChange={date => this.handlePrice(date)}
-                    />
-                  </div>
-                </div>
-                <div className="col capacity">
-                  <div className="label">
-                    Guests
-                    <div className="SingleDatePicker SingleDatePicker_1">
-                      <div className="SingleDatePickerInput SingleDatePickerInput_1">
-                        <div className="DateInput DateInput_1">
-                          <input
-                            type="number"
-                            name="capacity"
-                            className="DateInput_input DateInput_input_1"
-                            placeholder="1"
-                            id="capacity_input"
-                            min="1"
-                            max={this.props.list.capacity}
-                            onChange={() => this.handleCapacity}
-                          />
+            <div className="widget-container">
+                <form className="w100 flex flex-col" onSubmit={this.handleSubmit}>
+                    <div className="price-wrapper">
+                        <div className="price">
+                            {`$${this.props.list.price}`}
+                            <p>per night</p>
+                            <span className="booking_errors">{BookingError}</span>
                         </div>
-                      </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <button className="booking-button">Request to Book</button>
-            </form>
-          </div>
+
+                    <div className="dates-and-guest-content">
+                        <div onClick={this.handleFocusDate} className="booking-label col booking-border margin7">
+                            <p className="flex">Add dates</p>
+                            <DatePicker
+                                id="datePicker"
+                                showIcon
+                                onChange={this.handleCheckIn}
+                                startDate={this.state.check_in}
+                                endDate={this.state.check_out}
+                                selectsRange
+                                monthsShown={2}
+                                placeholderText="Select Date"
+                                toggleCalendarOnIconClick
+                                excludeDateIntervals={this.state.excludedDates}
+                            />
+                        </div>
+
+                        <div onClick={this.handleFocusCapacity} className="booking-label col booking-border margin7">
+                            <p className="mgn-top">Add guests</p>
+                            <div className="flex flex-wrap">
+                                <input
+                                    type="number"
+                                    name="capacity"
+                                    placeholder="1"
+                                    id="capacity_input"
+                                    min="1"
+                                    max={this.props.list.capacity}
+                                    onChange={this.handleCapacity}
+                                />
+                                <p id="guest-grammar">{this.state.guest}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="price_estimate" className="flex flex-wrap flex-row f-between">
+                        <p id="estimate_price" className="mrgn-10">{this.props.list.price} x {this.state.days} {this.state.nights} </p>
+                        <p id="total_price" className="mrgn-10">Total: ${this.state.price || this.props.list.price}</p>
+                    </div>
+
+                    <button className="booking-button">Request to Book</button>
+                </form>
+            </div>
         );
     }
 }
 
 export default withRouter(BookingForm);
+
+// todo
+  //calendar css edit

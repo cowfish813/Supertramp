@@ -52,7 +52,7 @@ class Booking < ApplicationRecord
         is_overlapping = other_bookings.any? do |booking|
             self.check_in < booking.check_out && booking.check_in < self.check_out
         end
-        errors.add(:booking, "error, you already booked!") if is_overlapping
+        errors.add(:booking, "error, you already booked! Please update pre-existing booking") if is_overlapping
     end
     # def capacity_met
     #     other_bookings = Booking.where("listing_id = ?", self.listing_id)
