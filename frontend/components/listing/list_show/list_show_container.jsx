@@ -11,8 +11,8 @@ const ListShowContainer = () => {
 
     const currentUser = useSelector((state) => state.entities.users[state.session.currentUser]);
     const list = useSelector((state) => state.entities.listings[listingsId]);
-    const hostUser = useSelector((state) => state.entities.users[usersId]);
-
+    const hostUser = useSelector((state) =>state.entities.listings[listingsId]);
+    
     useEffect(() => {
         dispatch(fetchListing(listingsId));
         dispatch(requestUser(usersId));
