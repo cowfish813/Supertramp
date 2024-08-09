@@ -33,7 +33,7 @@ class BookingForm extends React.Component {
 
     componentDidMount() {
         this.props.removeBookingErrors([]);
-        this.props.fetchBookings(this.props.currentUser.id);
+        if (this.props.currentUser) this.props.fetchBookings(this.props.currentUser.id);
     }
 
     componentDidUpdate(prevProps) {
@@ -181,6 +181,3 @@ class BookingForm extends React.Component {
 }
 
 export default withRouter(BookingForm);
-
-// todo
-  //calendar css edit
