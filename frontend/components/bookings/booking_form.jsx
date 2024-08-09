@@ -86,7 +86,7 @@ class BookingForm extends React.Component {
     handleCapacity(event) {
         this.setState({ capacity: event.currentTarget.value });
         event.currentTarget.value > 1 ? 
-            this.setState({guest: "guests"}) : this.setState({guest: "guest"});
+        this.setState({guest: "guests"}) : this.setState({guest: "guest"});
     }
 
     handleCheckIn(dates) {
@@ -112,7 +112,7 @@ class BookingForm extends React.Component {
                 listing_name: this.props.list.name,
                 price: this.state.price
             };
-
+            
             this.props.createBooking(booking)
                 .then(() => this.props.history.push(`/users/${this.props.currentUser.id}`));
         }
@@ -182,9 +182,5 @@ class BookingForm extends React.Component {
 
 export default withRouter(BookingForm);
 
-//todo
-
-//only works on parent div atm.
-    //calendar css edit
-  //booking update
-  
+// todo
+  //calendar css edit

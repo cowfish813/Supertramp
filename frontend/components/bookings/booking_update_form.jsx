@@ -87,7 +87,7 @@ class BookingUpdateForm extends React.Component {
   render() {
     return (
         <div className="widget-container">
-          <form className="wrapper" onSubmit={this.handleSubmit}>
+          <form className="w100" onSubmit={this.handleSubmit}>
             <div className="price-wrapper">
               <div className="price">
                 ${this.state.price}
@@ -97,7 +97,7 @@ class BookingUpdateForm extends React.Component {
             <div className="dates-and-guest-content">
 
               <div className="booking-label col booking-border margin7">
-                  <p className="flex">Add dates</p>
+                  <p className="flex">Change Dates</p>
                   <DatePicker
                       id="datePicker"
                       showIcon
@@ -118,7 +118,7 @@ class BookingUpdateForm extends React.Component {
                   <input
                     type="number"
                     name="capacity"
-                    className="DateInput_input DateInput_input_1"
+                    // className="DateInput_input DateInput_input_1"
                     placeholder={this.state.capacity}
                     id="capacity_input"
                     min="1"
