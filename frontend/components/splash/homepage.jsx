@@ -53,7 +53,7 @@ class Homepage extends React.Component {
         //yosemite
         e.preventDefault();
         this.props.history.push({
-            pathname: `/search/37.8032783,-119.5393594`,
+            pathname: `/search/37.74557009999999,-119.5936038`,
             state: { 
                 lat: 37.8032783,
                 lng: -119.5393594
@@ -111,16 +111,16 @@ class Homepage extends React.Component {
                 <div className="vagueLocationsContainer">
                     <h1 className="title_listing">Our top listings</h1>
                     <div className="vague_tile_list">
-                        <Link to="/listings/46"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg" alt=""/> </Link>
-                        <Link to="/listings/47"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg" alt=""/> </Link>
-                        <Link to="/listings/48"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/55937490_10107418126272313_2116183051628183552_n.jpg" alt=""/> </Link>
+                        <Link to="/listings/174"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg" alt=""/> </Link>
+                        <Link to="/listings/175"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg" alt=""/> </Link>
+                        <Link to="/listings/176"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/55937490_10107418126272313_2116183051628183552_n.jpg" alt=""/> </Link>
                     </div>
 
                     <div className="vague_tile_list">
 
-                        <Link to="/listings/49"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg" alt=""/> </Link>
-                        <Link to="/listings/53"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg" alt=""/> </Link>
-                        <Link to="/listings/52"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg" alt=""/> </Link>
+                        <Link to="/listings/177"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg" alt=""/> </Link>
+                        <Link to="/listings/204"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg" alt=""/> </Link>
+                        <Link to="/listings/203"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg" alt=""/> </Link>
                     </div>
                 </div>
 
