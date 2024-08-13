@@ -85,6 +85,7 @@ class BookingUpdateForm extends React.Component {
   }
 
   render() {
+      const yesterday = new Date(new Date().setDate(new Date().getDate() - 1));
     return (
         <div className="widget-container">
           <form className="w100" onSubmit={this.handleSubmit}>
@@ -108,7 +109,7 @@ class BookingUpdateForm extends React.Component {
                       monthsShown={2}
                       placeholderText="Select Date"
                       toggleCalendarOnIconClick
-                      excludeDateIntervals={this.state.excludedDates}
+                      excludeDateIntervals={[{ start: "1968/01/01", end: yesterday }]}
                   />
               </div>
 
@@ -118,7 +119,6 @@ class BookingUpdateForm extends React.Component {
                   <input
                     type="number"
                     name="capacity"
-                    // className="DateInput_input DateInput_input_1"
                     placeholder={this.state.capacity}
                     id="capacity_input"
                     min="1"

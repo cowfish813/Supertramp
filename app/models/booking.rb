@@ -22,7 +22,7 @@
 class Booking < ApplicationRecord
     # status = %w(PENDING APPROVED DENIED)
     validates :check_in, :check_out, :listing_id, :user_id, :capacity ,presence: true
-    validate :validate_other_booking_overlap
+    validate :validate_other_booking_overlap, on: :create
     # validates :status, inclusion: {in: STATUS}
 
 
