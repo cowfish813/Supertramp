@@ -79,7 +79,7 @@ class BookingIndex extends React.Component {
             return (
                     <div className="bookings">
                         <div id="active"> 
-                            <p>{active.length ? "Current Trips" : ""}</p>
+                            <p className="divider-label">{active.length ? "Current Trips" : ""}</p>
                             {this.state.active.map((booking, i) => (
                                 <BookingIndexItem
                                     deleteBooking={false}
@@ -91,12 +91,13 @@ class BookingIndex extends React.Component {
                                     deleteItemComponent={this.deleteItemComponent}
                                     openModal={this.props.openModal}
                                     fetchBookings={this.props.fetchBookings}
+                                    status={false}
                                 />
                             ))}
                         </div>
 
                         <div id="upcoming">
-                            <p>{upcoming.length ? "Upcoming Trips" : ""}</p>
+                            <p className="divider-label">{upcoming.length ? "Upcoming Trips" : ""}</p>
                             {this.state.upcoming.length > 1 ? 
                                 <button 
                                     className="bookingCancel" 
@@ -115,14 +116,14 @@ class BookingIndex extends React.Component {
                                     deleteItemComponent={this.deleteItemComponent}
                                     openModal={this.props.openModal}
                                     fetchBookings={this.props.fetchBookings}
-                                    
+                                    status={true}
                                 />
                             ))}
                         </div>
 
                         {/* only show if there are previous bookings */}
                         <div id="completed">
-                            <p>{completed.length ? "Previous Trips" : ""}</p>
+                            <p className="divider-label">{completed.length ? "Previous Trips" : ""}</p>
                                 {/* order by most recent, disable delete/update */}
                             {this.state.completed.map((booking, i) => (
                                 <BookingIndexItem
@@ -135,7 +136,7 @@ class BookingIndex extends React.Component {
                                     deleteItemComponent={this.deleteItemComponent}
                                     openModal={this.props.openModal}
                                     fetchBookings={this.props.fetchBookings}
-                                    
+                                    status={false}
                                 />
                             ))}
                         </div>
