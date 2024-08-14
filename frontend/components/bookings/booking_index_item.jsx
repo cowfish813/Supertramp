@@ -66,11 +66,13 @@ class BookingIndexItem extends React.Component {
                     <div className="bookings_item">
                         <strong>Total Price: </strong>
                         ${this.state.price}</div>
-                    <div className="bookings_item_cancel">
-
-                        <button onClick={this.handleClick} className="bookingCancel usershowbutton">Cancel</button>
-                        <button onClick={() => this.handleModal(this.props.booking, this.bookingDidUpdate)} className="bookingChange usershowbutton">Change Booking</button>
-                    </div>
+                    {this.props.status ? 
+                        <div className="bookings_item_cancel">
+                            <button onClick={this.handleClick} className="bookingCancel usershowbutton">Cancel</button>
+                            <button onClick={() => this.handleModal(this.props.booking, this.bookingDidUpdate)} className="bookingChange usershowbutton">Change Booking</button>
+                        </div>
+                        : <></>
+                    }
                 </div>
             </div>
             );
