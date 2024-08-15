@@ -21,20 +21,23 @@ class BookingIndex extends React.Component {
     }
 
     componentDidMount() {
-        //start sorting active, upcoming, completed
         const current = [];
         const past = [];
         const future = [];
+        
         const currentDate = new Date();
         this.state.bookings.forEach(booking => {
             const checkout = new Date(booking.check_out);
             const checkin = new Date(booking.check_in);
 
-            if (currentDate > checkin && currentDate < checkout) { //check for current trip
+            if (currentDate > checkin && currentDate < checkout) { 
+                //check for current trip
                 current.push(booking);
-            } else if (currentDate > checkout) { //check if we are past checkout
+            } else if (currentDate > checkout) { 
+                //check if we are past checkout
                 past.push(booking)
             } else {
+                //upcoming
                 future.push(booking);
             }
         })

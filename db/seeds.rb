@@ -936,3 +936,23 @@ l35.photos.attach(io: f15_2, filename: '28828057_10106502756296083_3917095514831
 l35.photos.attach(io: f15_3, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
 l35.photos.attach(io: f15_4, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
 l35.photos.attach(io: f15_5, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+
+b1 = Booking.create!(
+  listing_id: l1.id,
+  host_id: l1.host_id,
+  user_id: u2.id,
+  capacity: 1,
+  check_in: Date.new(2024, 5, 20),
+  check_out: Date.new(2024, 5, 29),
+  price: 1000
+)
+
+b2 = Booking.create!(
+  listing_id: l2.id,
+  host_id: l2.host_id,
+  user_id: u2.id,
+  capacity: 1,
+  check_in: Date.new(2024, 3, 2),
+  check_out: Date.new(2024, 3, 9),
+  price: 1000
+)
