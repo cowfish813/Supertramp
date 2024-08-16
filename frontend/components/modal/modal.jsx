@@ -8,9 +8,9 @@ import BookingUpdateForm from '../bookings/booking_update_form_container'
 function Modal({ errors, modal, closeModal }) {
     if (!modal) return null
 
-    let errorModal = <div></div>
+    let errorModal = <div id="error-empty"></div>
     if (errors.length > 0) {
-        errorModal = (<div className="feedback-indicator">
+        errorModal = (<div id="error-content" className="feedback-indicator">
             {errors.map((error, i) => {
                 return  <li key={i}>{error}</li>
             })}
@@ -47,7 +47,7 @@ function Modal({ errors, modal, closeModal }) {
                 <div className="modal-child" onClick={e => e.stopPropagation()}>
                     { component } 
                 </div>
-                <div >
+                <div id="error-parent">
                 { errorModal }
                 </div>
             </div>
