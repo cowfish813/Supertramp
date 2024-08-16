@@ -1,16 +1,14 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {closeModal} from '../../actions/modal_actions/modal_actions';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
 import BookingUpdateForm from '../bookings/booking_update_form_container';
 import { useSelector, useDispatch } from 'react-redux';
-// import {connect} from 'react-redux'
 
 function Modal() {
     const dispatch = useDispatch();
     const modal = useSelector(state => state.ui.modal);
     const errors = useSelector(state => state.errors.session);
-    // const [errorModal, setErrorModal] = useState(<div id="error-empty"></div>);
 
     const handleCloseModal = () => {
         dispatch(closeModal());
