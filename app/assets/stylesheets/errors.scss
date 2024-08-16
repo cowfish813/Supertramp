@@ -13,7 +13,7 @@
 }
 .animate {
   /* webkit is chrome animation code */
-    -webkit-animation: seconds 10.0s forwards;
+    -webkit-animation: myAnimation 10.0s forwards;
     -webkit-animation-iteration-count: 1;
     -webkit-animation-delay: 3s;
 
@@ -23,7 +23,7 @@
     animation-delay: 3s; */
 }
 
-@-webkit-keyframes seconds {
+@-webkit-keyframes myAnimation {
   /* 0% {
     opacity: 1;
   } */
