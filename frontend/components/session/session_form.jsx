@@ -14,8 +14,6 @@ class Session extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleDemoUser = this.handleDemoUser.bind(this)
-        this.renderErrors = this.renderErrors.bind(this)
-        // this.handleDemoUser = this.handleDemoUser.bind(this)
     };
 
     handleSubmit(e) {
@@ -30,7 +28,6 @@ class Session extends React.Component {
         this.props.clearErrors()
     }
 
-    
     handleDemoUser(e) {
         e.preventDefault()
             const demo = {
@@ -38,26 +35,7 @@ class Session extends React.Component {
                 password: "123456",
             }
         this.props.demoUser(demo).then(this.props.closeModal())
-        // this.props.history.push("/")//redirects user to "/"
     }
-
-    renderErrors() {
-        if (this.props.errors.length > 0) {
-            
-            return (
-                <div className="feedback-indicator">
-                    {this.props.errors.map( error => {
-                    <li>{error}</li>
-                })}
-                </div>
-                
-            )
-        } else {
-            return null
-        };
-    }
-
-
 
     handleInput(type) {
         return e => {
@@ -168,19 +146,15 @@ class Session extends React.Component {
                                     value={this.state.password}
                                     onChange={this.handleInput('password')}
                                     />
-                                {/* <button className="loginButton" >{this.props.formType}</button> */}
                                 <input type="submit" className="loginButton" value={this.props.formType} />
                             </div>
-                                {/* <div className="login-body"> */}
 
                                 <button className="demoButton" type="button" onClick={this.handleDemoUser}>Demo User</button>
-                                {/* </div> */}
                                 
                         </form>
                         
                         <div className="login-footer">
                             <p>Not a SuperTramper? <a className="modal_swap" onClick={() => this.props.openModal('Signup')}>Sign up!</a></p>
-                            {/* link to sign up. change formType? */}
                         </div>
                     </div>
                 </div>
