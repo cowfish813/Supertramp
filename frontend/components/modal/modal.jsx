@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {closeModal} from '../../actions/modal_actions/modal_actions';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
@@ -10,27 +10,13 @@ function Modal() {
     const dispatch = useDispatch();
     const modal = useSelector(state => state.ui.modal);
     const errors = useSelector(state => state.errors.session);
-    const [errorModal, setErrorModal] = useState(<div id="error-empty"></div>);
+    // const [errorModal, setErrorModal] = useState(<div id="error-empty"></div>);
 
     const handleCloseModal = () => {
         dispatch(closeModal());
     };
 
     if (!modal) return null
-
-    useEffect(() => {
-        if (errors.length > 0) {
-            setErrorModal(<div id="error-content" className="feedback-indicator">
-                {errors.map((error, i) => {
-                    return  <li key={i}>{error}</li>
-                })}
-            </div>)
-            // const parent = document.getElementById('error-parent')
-        } else {
-            setErrorModal(<div id="error-empty"></div>)
-        }
-    }, [errors])
-    
 
     let component
     switch (modal.modal) { 
@@ -57,9 +43,15 @@ function Modal() {
                 <div className="modal-child" onClick={e => e.stopPropagation()}>
                     { component } 
                 </div>
-                <div id="error-parent">
-                    { errorModal }
-                </div>
+                {errors.length > 0 && (
+                    <div id="error-parent">
+                        <div id="error-content" className="feedback-indicator">
+                            {errors.map((error, i) => (
+                            <li key={i}>{error}</li>
+                            ))}
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     );
