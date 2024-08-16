@@ -12,15 +12,10 @@
     box-shadow: 0px 3px 9px  lightgray;
 }
 .animate {
-  /* webkit is chrome animation code */
-    -webkit-animation: myAnimation 10.0s forwards;
+    -webkit-animation: myAnimation 5.0s forwards;
     -webkit-animation-iteration-count: 1;
     -webkit-animation-delay: 3s;
 
-  /* not chrome */
-  /* animation: seconds 1.0s forwards;
-    animation-iteration-count: 1;
-    animation-delay: 3s; */
 }
 
 @-webkit-keyframes myAnimation {
@@ -31,16 +26,6 @@
     opacity: 0;
     left: -100%; 
   }
-  /* chrome browser support only...keep both i guess */
 }
-/* @keyframes seconds {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    left: -9999px; 
-  }
-} */
 
 
