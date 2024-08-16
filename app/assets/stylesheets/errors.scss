@@ -10,17 +10,19 @@
     left: 3%;
     border-radius: 8px;
     box-shadow: 0px 3px 9px  lightgray;
-    /* webkit is chrome animation code */
+}
+.animate {
+  /* webkit is chrome animation code */
     -webkit-animation: seconds 10.0s forwards;
     -webkit-animation-iteration-count: 1;
     -webkit-animation-delay: 3s;
 
-
-    /* not chrome */
-    /* animation: seconds 1.0s forwards;
+  /* not chrome */
+  /* animation: seconds 1.0s forwards;
     animation-iteration-count: 1;
     animation-delay: 3s; */
 }
+
 @-webkit-keyframes seconds {
   /* 0% {
     opacity: 1;
