@@ -83,7 +83,7 @@ class Homepage extends React.Component {
                 </div>
                     < SearchBar />
 
-                <div className="containerBanner">
+                {/* <div className="containerBanner">
                     <img src="https://hipcamp-res.cloudinary.com/f_auto,c_limit,w_1120,q_auto/campground-photos/gyqfoddi8knyfberfznf.jpg" alt="bannerbar"
                     className="bannerImg"
                     id="bannerImg"
@@ -97,7 +97,7 @@ class Homepage extends React.Component {
                             <button onClick={this.handleInput} className="intro_button">I'm feeling Lucky!</button>
                         </div>
                     </div>                  
-                </div>
+                </div> */}
 
                 <div className="tilesContainer">
                     <h1 className="title_listing">Check Out These Areas!</h1>
