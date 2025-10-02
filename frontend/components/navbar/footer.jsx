@@ -2,8 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { openModal } from '../../actions/modal_actions/modal_actions'
 import { connect } from 'react-redux'
-
-
 class Footer extends React.Component {
 
     render () {
@@ -23,10 +21,9 @@ class Footer extends React.Component {
     }
 }
 
-
-const mSTP = state => ({
+// const mSTP = state => ({
     
-})
+// })
 
 export default connect(null)(Footer)
 

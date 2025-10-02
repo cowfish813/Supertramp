@@ -6,58 +6,40 @@
     justify-content: flex-end;
     object-position: right;
     top: 15rem;
-    // height: -400rem;
-    // height: 80%;
 }
-
-
-// ::-webkit-input-placeholder {
-//    text-align: center;
-// }
-
-// :-moz-placeholder { /* Firefox 18- */
-//    text-align: center;  
-// }
-
-// ::-moz-placeholder {  /* Firefox 19+ */
-//    text-align: center;  
-// }
-
-// :-ms-input-placeholder {  
-//    text-align: center; 
-// }
 
 .widget-container {
     position: absolute;
-    // height: fit-content;
-    // height: 80%;
     background-color: white;
-    height: 14rem;
-    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    width: 23vw;
+    max-width: 392px;
+    padding: 8px 24px 24px;
+    box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.05);
     border: 1px solid #ebebeb;
-    z-index: 9001;
+    z-index: 90001;
     display: flex;
     justify-content: center;
-    // bottom: -13rem;
-    margin-top: -15rem;
+    margin-top: -16rem;
     margin-bottom: 20rem;
-
-}
-.wrapper {
-    height: 5.75rem;
-    align-items: center;
-    justify-content: center;
+    border-radius: 12%;
 }
 
+
+.booking-label {
+    width: 85%;
+}
+.h100 {
+    height: 100%;
+}
+.w100 {
+    width: 100%;
+}
 .price-wrapper {
     margin-left: 1.5rem;
     font-size: 1.25rem;
-    // width: 100%;
     height: 3rem;
     display: flex;
-    // align-items: center;
     justify-content: flex-start;
-    // border: solid 1px green;
     font-weight: bold;
 }
 .price {
@@ -68,7 +50,6 @@
 }
 .price p {
     margin-left: .5rem;
-    // margin: .15em; 
     color: #757575;
     font-size: .75em;
     margin-right: 2rem;
@@ -78,35 +59,51 @@
     background-color: #ffffff;
     align-items: center;
     justify-content: center;
-    // border: 1px solid #ebebeb;
+    flex-direction: column;
+}
 
+.margin7 {
+    margin: 7%;
+}
+.booking-border {
+    border: 1px solid #ebebeb;
+    border-radius: 10%;
+}
+.booking-border-top {
+    border-top: 1px solid #ebebeb;
+}
+.booking-border-bot {
+    border-bottom: 1px solid #ebebeb;;
 }
     
 .col {
     padding: .625rem;
-    // width: 319px;
-    height: 4.375rem;
     display: flex;
     justify-content: space-evenly;
     align-items: stretch;
-    border: 1px solid #ebebeb;
-    // border-right: red 1px solid;
-    // justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.datePicker {
+    border: solid red 3px;
 }
 
 .capacityHeight{
     display: flex;
     justify-content: center;
     align-items: center;
-    // height: 4600px;
 }
+
 #capacity_input {
     width: 69px;
-    // height: 44px;
-    // color: #484848;
     text-align: center;
-
+    border: none;
 }
+.no-Border {
+    border: none;
+}
+
 //react dates
 .SingleDatePickerInput {
     width: 100%;
@@ -118,16 +115,12 @@
     width: 70%;
     
 }
-#start.DateInput_input_1 {
-    font-size: 10px;
-    // width: 100%;;
-}
-#end.DateInput_input_1 {
-    font-size: 10px;
-    // width: 100%
-    
-}
 
+.flex-col-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .label {
     color: #333333;
@@ -135,11 +128,7 @@
     font-size: 18px;
     height: 23.39px;
     width: 93.11px;
-    display: flex;
-    flex-direction: column;
-    // justify-content: center;
-    align-items: center;
-    
+    margin-top: 15%;
 }
 
 .booking-button {
@@ -155,8 +144,8 @@
     cursor: pointer;
     transition: .4s;
     margin-top: .9rem;
-
 }
+
 .booking-button:hover {
     background: #ffffff;
     color: #40d9ac;
@@ -166,4 +155,85 @@
 .booking_errors {
     color: red;
     font-size: .6rem;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative
+}
+
+.fixed {
+    position: fixed;
+}
+
+.datePicker {
+    width: 100%;
+}
+
+.react-datepicker__input-container input {
+    width: 85%;
+}
+
+.react-datepicker__day {
+    background-color: white;
+}
+
+.react-datepicker__day--selected .react-datepicker__day--in-selecting-range .react-datepicker__day--in-range .react-datepicker__month-text--selected .react-datepicker__month-text--in-selecting-range .react-datepicker__month-text--in-range .react-datepicker__quarter-text--selected .react-datepicker__quarter-text--in-selecting-range .react-datepicker__quarter-text--in-range .react-datepicker__year-text--selected .react-datepicker__year-text--in-selecting-range .react-datepicker__year-text--in-range {
+    background-color: #40d9ac;
+}
+
+.react-datepicker {
+    width: 203px;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.f-between {
+    justify-content: space-between;
+}
+
+.mrgn-10 {
+    margin: 20px;
+}
+
+.block {
+    display: block;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+
+//remedy !important
+.react-datepicker__day--selected,
+.react-datepicker__day--in-selecting-range,
+.react-datepicker__day--in-range,
+.react-datepicker__month-text--selected,
+.react-datepicker__month-text--in-selecting-range,
+.react-datepicker__month-text--in-range,
+.react-datepicker__quarter-text--selected,
+.react-datepicker__quarter-text--in-selecting-range,
+.react-datepicker__quarter-text--in-range,
+.react-datepicker__year-text--selected,
+.react-datepicker__year-text--in-selecting-range,
+.react-datepicker__year-text--in-range {
+    background-color: #40d9ac !important;
+    border-radius: 0% !important;
+}
+
+// input inside date div
+.react-datepicker__input-container input {
+    border: none;
+}
+
+.react-datepicker__day-name,
+.react-datepicker__day,
+.react-datepicker__time-name {
+    margin: 0px !important;
 }

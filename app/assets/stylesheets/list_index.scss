@@ -8,16 +8,15 @@
     // flex-wrap: wrap;
     margin-top: 3vh;
     margin: 5rem;
+    height: 100vh;
 }
 .list-index {
     width: 50vw;
     min-height: 10vh;
-    max-height: 100vh;
-    overflow-y: scroll;
+    // max-height: 100vh;
+    overflow-y: auto;
     display: flex;
 }
-
-
 
 .list_index_items {
     display: flex;
@@ -25,22 +24,22 @@
     margin-left: 5rem;
     // width: 20vw;
     // margin-top: 5vh;
-
 }
+
 .index_container {
-    margin-top: 3vh;
+    // margin-top: 3vh;
     margin: 1rem;
     display: flex;
     flex-direction: column;
-    height: 32%;
-    width: 43%;
+    height: 400px;
+    width: 300px;
     border: lightgray solid 1px;
     box-shadow: .2rem .6rem 1rem lightgrey;
 
 }
 .index_box {
     margin-bottom: 3vh;
-    overflow: hidden;
+    // overflow: hidden;
     height: 70%;
 }
 .indexPhotos {
@@ -58,7 +57,7 @@
 }
 .listing_index_desc {
     display: flex;
-    align-items: flex-start;
+    // align-items: flex-start;
     justify-content: space-between;
 }
 
@@ -75,4 +74,9 @@
     display: flex;
     // justify-content: flex-end;
     align-self: flex-end;
+}
+
+.bold {
+    font-weight: bold;
+    margin-left: .3rem;
 }

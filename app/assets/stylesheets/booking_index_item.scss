@@ -1,7 +1,4 @@
 .bookings {
-    // border: lightgray 1px solid;
-    // display: flex;
-    // flex-direction: row;
     margin-left: 25%;
     margin-top: 5%;
     width: 60vw;
@@ -12,9 +9,11 @@
     border-bottom: lightgray 1px solid;
     display: flex;
     margin: 1rem;
-    // padding: 2rem;
-    // flex-direction: column;
 }
+.booking_item_box:hover {
+    box-shadow: .2rem .6rem 1rem lightgrey;
+}
+
 .booking_list_name {
     padding-bottom: .5rem;
 }
@@ -75,4 +74,9 @@
     border: solid 1px black;
     color: black;
     background-color: white;
+}
+
+.divider-label {
+    font-weight: bolder;
+    margin-bottom: 15px;
 }

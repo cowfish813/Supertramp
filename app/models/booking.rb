@@ -22,7 +22,7 @@
 class Booking < ApplicationRecord
     # status = %w(PENDING APPROVED DENIED)
     validates :check_in, :check_out, :listing_id, :user_id, :capacity ,presence: true
-    validate :validate_other_booking_overlap
+    validate :validate_other_booking_overlap, on: :create
     # validates :status, inclusion: {in: STATUS}
 
 
@@ -52,7 +52,7 @@ class Booking < ApplicationRecord
         is_overlapping = other_bookings.any? do |booking|
             self.check_in < booking.check_out && booking.check_in < self.check_out
         end
-        errors.add(:booking, "error, you already booked!") if is_overlapping
+        errors.add(:booking, "error, you already booked! Please update pre-existing booking") if is_overlapping
     end
     # def capacity_met
     #     other_bookings = Booking.where("listing_id = ?", self.listing_id)

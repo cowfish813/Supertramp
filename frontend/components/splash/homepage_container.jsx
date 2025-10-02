@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { openModal, closeModal  } from '../../actions/modal_actions/modal_actions'
 import Homepage from './homepage'
-import {fetchListings, fetchListing} from '../../actions/listing_actions/listing_actions'
+import {fetchListings} from '../../actions/listing_actions/listing_actions'
 
 const mSTP = state => ({
     errors: state.errors.session,

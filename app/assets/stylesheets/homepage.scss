@@ -7,13 +7,51 @@
     justify-content: center;
     flex-direction: column;
 }
+.margin-left-5 {
+    margin-left: 5px;
+}
+
+.margin-right-15 {
+    margin-right: 24px;
+}
 
 .home {
-    // margin-top: 8vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.relative {
+    position: relative;
+}
+
+.pow {
+    width: 125px;
+    margin-bottom: 15px;
+}
+.sp_text {
+    line-height: 25px;
+}
+.sp_div {
+    border-radius: 8px;
+    padding: 20px 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #0F3806;
+}
+
+.sp_img {
+    height: 330px;
+    width: 260px;
+    margin-bottom: 30px;
+}
+
+.sp_header {
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    line-height: 34px;
 }
 
 .homeCol {
@@ -44,7 +82,12 @@
     width: 55%;
     
 }
-
+.form_search {
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
 .searchWrapper {
     // min-width: 400px;
     display: flex;
@@ -70,23 +113,32 @@
 
 }
 .searchBar {
-    
+    border: black 1px solid;
     background: #ffffff;
     display: flex;
     align-items: center;
-    // flex-direction: row;  
+    height: 44px
+
 }
+
+.searchBar:hover {
+    cursor: pointer;
+}
+
 .fasearch { 
-  position: absolute;
-  left: 2rem;
-//   top: 10px;
-//   left: 10px;
+    left: 20rem;
+    display: flex;
+    justify-content: center;
+    // width: 50px;
+    margin: 1rem;
+    border-radius: .3rem;
 }
+
 .search {
-    padding: 0 3.3rem;
     width: 42vw;
     height: 2.5rem;
     font-size: 1.5rem;
+    border: 0;
 }
 
 .searchButton {
@@ -103,6 +155,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: .3rem;
 }
 .searchButton:hover {
     background: #ffffff;
@@ -113,6 +166,26 @@
 
 .container_container_banner {
 }
+
+.green_background {
+    background: #E6F0D9;
+}
+.learn_more:hover {
+    color: white;
+    background: #0F3806;
+    cursor: pointer;
+}
+
+.learn_more {
+    color: #0F3806;
+    background: #E6F0D9;
+    border: 1px solid #0F3806;
+    // padding: 46px 350px;
+    width: 350px;
+    height: 46px;
+    border-radius: 50px;
+}
+
 
 .containerBanner {
     position: relative; //very necessary
@@ -134,6 +207,7 @@
     height: auto;
     // margin: auto;
 }
+
 .banner_message {
     display: flex;
     flex-direction: column;
@@ -226,6 +300,25 @@
     100% { transform: translateY(1.3%)}
 }
 
+.title_listing {
+    font-size: 30px;
+    font-weight: bold;
+
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.align_center {
+    align-items: center;
+    justify-content: center;
+}
+
 .vagueLocationsContainer {
     margin-top: 12vh;
     margin-bottom: 5rem;
@@ -239,6 +332,12 @@
     // width: 1100px;
     
 }
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+
 .vague_tile_list {
     // max-width: 90vw;
     // width: 60%;
