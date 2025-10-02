@@ -134,7 +134,7 @@ GEM
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
     crass (1.0.6)
-    date (3.3.3)
+    date (3.4.1)
     debug_inspector (1.1.0)
     drb (2.1.1)
       ruby2_keywords
@@ -180,12 +180,12 @@ GEM
     minitest (5.20.0)
     msgpack (1.7.2)
     mutex_m (0.1.2)
-    net-imap (0.4.0)
+    net-imap (0.4.20)
       date
       net-protocol
     net-pop (0.1.2)
       net-protocol
-    net-protocol (0.2.1)
+    net-protocol (0.2.2)
       timeout
     net-smtp (0.4.0)
       net-protocol
@@ -292,7 +292,7 @@ GEM
     stringio (3.0.8)
     thor (1.2.2)
     tilt (2.3.0)
-    timeout (0.4.0)
+    timeout (0.4.3)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     uglifier (4.2.0)
