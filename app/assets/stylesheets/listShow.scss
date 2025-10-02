@@ -8,21 +8,35 @@
     flex-direction: column;
     align-items: center;
 }
-.photo_square {
+.photo_container {
     display: flex;
     justify-content: center;
     align-items: center;
+    max-height: 600px;
+
 }
+
 .list-show-photo{
     object-position: center;
     width: 50rem;
 }
+
+.photo-container {
+    height: 300px;
+}
+
+.carousel_item {
+    max-height: 600px;
+    object-fit: cover;
+    display: block;
+    aspect-ratio: 16/9;
+}
+
 .photo_title {
     margin-top: 2rem;
     font-size: 2rem;
     font-weight: bolder;
     margin-bottom: 2rem;
-    // border-bottom: solid 1px ;
 }
 
 
@@ -34,10 +48,6 @@
     width: 70vw;
 }
 
-.section-overview{
-
-    // border: red 1px solid;
-}
 .list_overview {
     display: flex;
     width: 80vw;
@@ -71,10 +81,6 @@
 
 }
 
-.details-container {
-    // margin-left: 20rem;
-    // border-top: lightgrey solid 1px;
-}
 .area_essentials_ammenities {
     display: flex;
     flex-direction: row;
@@ -93,7 +99,6 @@
     flex-direction: column;
     align-items: left;
     margin-top: 2rem;
-    // align-items: center;
 }
 .aea_title {
     display: flex;
@@ -107,7 +112,6 @@
     flex-direction: row;
     font-size: .8rem;
     height: 28px;
-    // height: 50vh;
 }
 .aea_info p {
     margin-top: .5rem;
@@ -130,24 +134,19 @@
 
 .detail_list {
     width: 59vw;
-    // height: 95vh;
     border-top: lightgrey solid 1px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
         margin-bottom: 2rem;
-
-    // padding: 5%;
 }
 .detail_sum_list {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    // padding: 5%;
     margin-right: 9rem;
-    // margin-left: 2rem;
     font-weight: bolder;
 }
 
@@ -170,8 +169,6 @@
     font-weight: bolder;
     margin-right: 7rem;
     margin-bottom: 15rem;
-    // display: flex;
-    // justif
 }
 .details_text {
     margin-top: 4rem;
@@ -197,17 +194,6 @@
     margin-right: 6rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 .description {
     width: 480px;
     height: 190px;
@@ -219,20 +205,15 @@
     min-width: auto;
     height: auto;
     min-height: 200px;
-    // margin: 0px 0px 11px;
     font-size: 18px;
     color: #333333;
-    // border: red 1px solid;
 }
-// .onboarding {
-//     border: solid 1px lightgrey;
-// }
+
 .details-container {
     display: flex;
 }
 .features-container {
     width: 700px;
-    // height: 542px;
 }
 
 
@@ -241,31 +222,21 @@
     width: 720px;
     height: 190px;
     margin: 0px -10px;
-    // border: black solid 1px;
 }
 .info-cards-wrapper {
     width: 720px;
-    // height: 360px;
-    // margin: 0 10px;
-    // border: red 1px solid;
     display: flex;
-    // position: absolute;
 }
 .info-cards {
     width: 220px;
-    // height: 340px;
     margin: 0px 10px 20px;
     padding: 15px 5px 15px 15px;
     background: #ffffff;
     border: red 1px solid;
 }
-// .col_box {
-//     height: 50px;
-//     width: 70px;
-// }
+
 
 .map {
-
     width: 100%;
     height: 31.25rem;
 }

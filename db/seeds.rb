@@ -59,7 +59,11 @@ l1 = Listing.create!(
     host_id: u1.id
 )
 f1 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
-l1.photo.attach(io: f1, filename: '57056162_10107436356788213_4281326518522609664_o.jpg' )
+f2 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+f3 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/55937490_10107418126272313_2116183051628183552_n.jpg')
+l1.photos.attach(io: f1, filename: '57056162_10107436356788213_4281326518522609664_o.jpg' )
+l1.photos.attach(io: f2, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l1.photos.attach(io: f3, filename: '55937490_10107418126272313_2116183051628183552_n.jpg')
 
 l2 = Listing.create!(
     name: 'Wild tent',
@@ -74,8 +78,13 @@ l2 = Listing.create!(
     lng: -119.5862533,
     host_id: u1.id
     )
-f2 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
-l2.photo.attach(io: f2, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+
+f22 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+f21 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f23 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/55937490_10107418126272313_2116183051628183552_n.jpg')
+l2.photos.attach(io: f22, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l2.photos.attach(io: f21, filename: '57056162_10107436356788213_4281326518522609664_o.jpg' )
+l2.photos.attach(io: f23, filename: '55937490_10107418126272313_2116183051628183552_n.jpg')
 
 
 
@@ -92,8 +101,13 @@ l3 = Listing.create!(
     lng: -119.6007142,
     host_id: u1.id
 )
-f3 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/55937490_10107418126272313_2116183051628183552_n.jpg')
-l3.photo.attach(io: f3, filename: '55937490_10107418126272313_2116183051628183552_n.jpg')
+f33 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/55937490_10107418126272313_2116183051628183552_n.jpg')
+f31 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f32 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l3.photos.attach(io: f33, filename: '55937490_10107418126272313_2116183051628183552_n.jpg')
+l3.photos.attach(io: f32, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l3.photos.attach(io: f31, filename: '57056162_10107436356788213_4281326518522609664_o.jpg' )
+
 
 l4 = Listing.create!(
     name: 'Wild place',
@@ -110,8 +124,11 @@ l4 = Listing.create!(
 )
 
 f4 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
-l4.photo.attach(io: f4, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
-
+f41 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f42 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l4.photos.attach(io: f4, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l4.photos.attach(io: f42, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l4.photos.attach(io: f41, filename: '57056162_10107436356788213_4281326518522609664_o.jpg' )
 
 
 l5 = Listing.create!(
@@ -129,7 +146,14 @@ l5 = Listing.create!(
 )
 
 f5 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
-l5.photo.attach(io: f5, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+f54 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f51 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f52 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l5.photos.attach(io: f5, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l5.photos.attach(io: f54, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l5.photos.attach(io: f52, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l5.photos.attach(io: f51, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
+
 
 l6 = Listing.create!(
     name: 'Skyrim',
@@ -145,8 +169,15 @@ l6 = Listing.create!(
     host_id: u1.id
 )
 f6 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
-l6.photo.attach(io: f6, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
-
+f65 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f64 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f61 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f62 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l6.photos.attach(io: f6, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l6.photos.attach(io: f65, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l6.photos.attach(io: f64, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l6.photos.attach(io: f62, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l6.photos.attach(io: f61, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
 
 l7 = Listing.create!(
     name: 'Sovngarde',
@@ -162,8 +193,17 @@ l7 = Listing.create!(
     host_id: u1.id
 )
 f7 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
-l7.photo.attach(io: f7, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
-
+l7.photos.attach(io: f7, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+f76 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f75 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f74 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f71 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f72 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l7.photos.attach(io: f76, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l7.photos.attach(io: f75, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l7.photos.attach(io: f74, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l7.photos.attach(io: f72, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l7.photos.attach(io: f71, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
 
 l8 = Listing.create!(
     name: 'Utapau',
@@ -180,8 +220,17 @@ l8 = Listing.create!(
 )
 
 f8 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
-l8.photo.attach(io: f8, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
-
+l8.photos.attach(io: f8, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+f86 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f85 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f84 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f81 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f82 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l8.photos.attach(io: f86, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l8.photos.attach(io: f85, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l8.photos.attach(io: f84, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l8.photos.attach(io: f82, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l8.photos.attach(io: f81, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
 
 l9 = Listing.create!(
     name: 'Mustafar',
@@ -198,7 +247,17 @@ l9 = Listing.create!(
 )
 
 f9 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n4.jpg')
-l9.photo.attach(io: f9, filename: 'n4.jpg')
+l9.photos.attach(io: f9, filename: 'n4.jpg')
+f96 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f95 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f94 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f91 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f92 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l9.photos.attach(io: f96, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l9.photos.attach(io: f95, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l9.photos.attach(io: f94, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l9.photos.attach(io: f92, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l9.photos.attach(io: f91, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
 
 
 l10 = Listing.create!(
@@ -216,7 +275,17 @@ l10 = Listing.create!(
 )
 
 f10 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n3.jpg')
-l10.photo.attach(io: f10, filename: 'n3.jpg')
+l10.photos.attach(io: f10, filename: 'n3.jpg')
+f106 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f105 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f104 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f101 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f102 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l10.photos.attach(io: f106, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l10.photos.attach(io: f105, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l10.photos.attach(io: f104, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l10.photos.attach(io: f102, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l10.photos.attach(io: f101, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
 
 l11 = Listing.create!(
     name: 'Kamino',
@@ -232,7 +301,17 @@ l11 = Listing.create!(
     host_id: u4.id
     )
 f11 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n2.jpg')
-l11.photo.attach(io: f11, filename: 'n2.jpg')
+l11.photos.attach(io: f11, filename: 'n2.jpg')
+f116 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f115 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f114 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f111 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f112 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l11.photos.attach(io: f116, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l11.photos.attach(io: f115, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l11.photos.attach(io: f114, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l11.photos.attach(io: f112, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l11.photos.attach(io: f111, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
 
 l12 = Listing.create!(
     name: 'Felucia',
@@ -248,8 +327,17 @@ l12 = Listing.create!(
     host_id: u4.id
 )
 f12 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
-l12.photo.attach(io: f12, filename: 'n1.jpg')
-
+l12.photos.attach(io: f12, filename: 'n1.jpg')
+f126 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f125 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f124 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f121 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f122 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l12.photos.attach(io: f126, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l12.photos.attach(io: f125, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l12.photos.attach(io: f124, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l12.photos.attach(io: f122, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l12.photos.attach(io: f121, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
 
 l13 = Listing.create!(
   name: 'Rivendell Retreat',
@@ -266,7 +354,18 @@ l13 = Listing.create!(
 )
 
 f13 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
-l13.photo.attach(io: f13, filename: 'photo.jpg')
+l13.photos.attach(io: f13, filename: 'photos.jpg')
+f136 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f135 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f134 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f131 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f132 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l13.photos.attach(io: f136, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l13.photos.attach(io: f135, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l13.photos.attach(io: f134, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l13.photos.attach(io: f132, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l13.photos.attach(io: f131, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
+
 
 l14 = Listing.create!(
   name: 'Aurora Glamping',
@@ -283,7 +382,17 @@ l14 = Listing.create!(
 )
 
 f14 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
-l14.photo.attach(io: f14, filename: 'photo14.jpg')
+l14.photos.attach(io: f14, filename: 'photo14.jpg')
+f146 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f145 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f144 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f141 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f142 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l14.photos.attach(io: f146, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l14.photos.attach(io: f145, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l14.photos.attach(io: f144, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l14.photos.attach(io: f142, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l14.photos.attach(io: f141, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
 
 l15 = Listing.create!(
   name: 'Atlantis Underwater Retreat',
@@ -300,8 +409,17 @@ l15 = Listing.create!(
 )
 
 f15 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
-l15.photo.attach(io: f15, filename: 'photo15.jpg')
-
+l15.photos.attach(io: f15, filename: 'photo15.jpg')
+f156 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f155 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f154 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f151 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f152 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l15.photos.attach(io: f156, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l15.photos.attach(io: f155, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l15.photos.attach(io: f154, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l15.photos.attach(io: f152, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l15.photos.attach(io: f151, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
 
 l16 = Listing.create!(
   name: 'Mystic Forest Treehouse',
@@ -318,7 +436,17 @@ l16 = Listing.create!(
 )
 
 f16 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
-l16.photo.attach(io: f16, filename: 'photo16.jpg')
+l16.photos.attach(io: f16, filename: 'photo16.jpg')
+f166 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f165 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f164 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f161 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f162 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l16.photos.attach(io: f166, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l16.photos.attach(io: f165, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l16.photos.attach(io: f164, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l16.photos.attach(io: f162, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l16.photos.attach(io: f161, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
 
 l17 = Listing.create!(
   name: 'Skyline Penthouse Retreat',
@@ -335,7 +463,17 @@ l17 = Listing.create!(
 )
 
 f17 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
-l17.photo.attach(io: f17, filename: 'photo17.jpg')
+l17.photos.attach(io: f17, filename: 'photo17.jpg')
+f176 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f175 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f174 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f171 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f172 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l17.photos.attach(io: f176, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l17.photos.attach(io: f175, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l17.photos.attach(io: f174, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l17.photos.attach(io: f172, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l17.photos.attach(io: f171, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
 
 l19 = Listing.create!(
   name: 'Enchanted Castle Retreat',
@@ -352,7 +490,17 @@ l19 = Listing.create!(
 )
 
 f19 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
-l19.photo.attach(io: f19, filename: 'photo19.jpg')
+l19.photos.attach(io: f19, filename: 'photo19.jpg')
+f196 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f195 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f194 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f191 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f192 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l19.photos.attach(io: f196, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l19.photos.attach(io: f195, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l19.photos.attach(io: f194, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l19.photos.attach(io: f192, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l19.photos.attach(io: f191, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
 
 l20 = Listing.create!(
   name: 'Serenity Cabin by the Lake',
@@ -369,7 +517,17 @@ l20 = Listing.create!(
 )
 
 f20 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
-l20.photo.attach(io: f20, filename: 'photo20.jpg')
+l20.photos.attach(io: f20, filename: 'photo20.jpg')
+f206 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f205 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f204 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f201 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f202 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l20.photos.attach(io: f206, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l20.photos.attach(io: f205, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l20.photos.attach(io: f204, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l20.photos.attach(io: f202, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l20.photos.attach(io: f201, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
 
 l21 = Listing.create!(
   name: 'Galactic Space Station Adventure',
@@ -386,7 +544,17 @@ l21 = Listing.create!(
 )
 
 f21 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
-l21.photo.attach(io: f21, filename: 'photo21.jpg')
+l21.photos.attach(io: f21, filename: 'photo21.jpg')
+f216 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f215 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f214 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f211 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f212 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l21.photos.attach(io: f216, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l21.photos.attach(io: f215, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l21.photos.attach(io: f214, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l21.photos.attach(io: f212, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l21.photos.attach(io: f211, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
 
 l22 = Listing.create!(
   name: 'Tropical Beach Bungalow',
@@ -403,7 +571,17 @@ l22 = Listing.create!(
 )
 
 f22 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
-l22.photo.attach(io: f22, filename: 'photo22.jpg')
+l22.photos.attach(io: f22, filename: 'photo22.jpg')
+f226 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f225 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f224 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f221 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f222 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l22.photos.attach(io: f226, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l22.photos.attach(io: f225, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l22.photos.attach(io: f224, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l22.photos.attach(io: f222, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l22.photos.attach(io: f221, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
 
 l23 = Listing.create!(
   name: 'Arctic Wilderness Lodge',
@@ -420,4 +598,361 @@ l23 = Listing.create!(
 )
 
 f23 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
-l23.photo.attach(io: f23, filename: 'photo23.jpg')
+l23.photos.attach(io: f23, filename: 'photo23.jpg')
+f236 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f235 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f234 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f231 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f232 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l23.photos.attach(io: f236, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l23.photos.attach(io: f235, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l23.photos.attach(io: f234, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l23.photos.attach(io: f232, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l23.photos.attach(io: f231, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
+
+l24 = Listing.create!(
+  name: 'Yosemite Valley Retreat',
+  on_arrival: 'Check in at our cozy retreat nestled in the heart of Yosemite Valley.',
+  description: 'Escape to the tranquility of Yosemite Valley in our charming retreat. Enjoy breathtaking views of iconic landmarks such as El Capitan and Half Dome. Hike through ancient sequoia groves, explore cascading waterfalls, and spot diverse wildlife.',
+  cancellation_policy: 'Moderate',
+  capacity: 4,
+  country: 'United States',
+  minimum_nights: 2,
+  price: 300,
+  lat: 37.7456,
+  lng: -119.5936,
+  host_id: u1.id
+)
+
+f24 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
+l24.photos.attach(io: f24, filename: 'photo24.jpg')
+
+f246 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f245 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f244 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f241 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f242 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l24.photos.attach(io: f246, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l24.photos.attach(io: f245, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l24.photos.attach(io: f244, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l24.photos.attach(io: f242, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l24.photos.attach(io: f241, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
+
+
+l25 = Listing.create!(
+  name: 'Sierra Cabin Oasis',
+  on_arrival: 'Arrive at our rustic cabin oasis and immerse yourself in the tranquility of the Sierra Nevada mountains.',
+  description: 'Experience the ultimate mountain getaway in our charming cabin oasis. Nestled amidst towering pine trees, our cabin offers a peaceful retreat with stunning views of Yosemite Valley. Enjoy hiking, rock climbing, and wildlife spotting during the day, and cozy up by the fireplace under the starry night sky.',
+  cancellation_policy: 'Flexible',
+  capacity: 5,
+  country: 'United States',
+  minimum_nights: 3,
+  price: 250,
+  lat: 37.7338,
+  lng: -119.5664,
+  host_id: u1.id
+)
+
+f25 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
+l25.photos.attach(io: f25, filename: 'photo25.jpg')
+
+f256 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f255 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f254 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f251 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f252 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l25.photos.attach(io: f256, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l25.photos.attach(io: f255, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l25.photos.attach(io: f254, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l25.photos.attach(io: f252, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l25.photos.attach(io: f251, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
+
+l26 = Listing.create!(
+  name: 'Yosemite Meadow Lodge',
+  on_arrival: 'Check in at our charming lodge nestled in the picturesque Yosemite meadows.',
+  description: 'Experience the beauty of Yosemite National Park from our cozy lodge in the meadows. Surrounded by wildflowers and majestic peaks, our lodge offers a peaceful retreat with access to hiking trails, fishing streams, and star-gazing opportunities. Unwind in nature and create unforgettable memories with your loved ones.',
+  cancellation_policy: 'Moderate',
+  capacity: 6,
+  country: 'United States',
+  minimum_nights: 2,
+  price: 350,
+  lat: 37.7272,
+  lng: -119.5886,
+  host_id: u1.id
+)
+
+f26 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
+l26.photos.attach(io: f26, filename: 'photo26.jpg')
+
+f266 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f265 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f264 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f261 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f262 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l26.photos.attach(io: f266, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l26.photos.attach(io: f265, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l26.photos.attach(io: f264, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l26.photos.attach(io: f262, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l26.photos.attach(io: f261, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
+
+
+l27 = Listing.create!(
+  name: 'El Capitan Hideaway',
+  on_arrival: 'Discover our secluded hideaway nestled beneath the iconic El Capitan.',
+  description: 'Escape the hustle and bustle of everyday life and retreat to our hidden gem beneath El Capitan. Our cozy cabin offers a peaceful sanctuary with breathtaking views of the granite cliffs. Explore nearby hiking trails, picnic by the Merced River, and witness stunning sunsets over the valley. Experience the magic of Yosemite in comfort and style.',
+  cancellation_policy: 'Strict',
+  capacity: 4,
+  country: 'United States',
+  minimum_nights: 4,
+  price: 400,
+  lat: 37.7322,
+  lng: -119.6372,
+  host_id: u1.id
+)
+
+f27 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
+l27.photos.attach(io: f27, filename: 'photo27.jpg')
+
+f276 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f275 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f274 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f271 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f272 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l27.photos.attach(io: f276, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l27.photos.attach(io: f275, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l27.photos.attach(io: f274, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l27.photos.attach(io: f272, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l27.photos.attach(io: f271, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
+
+
+
+l28 = Listing.create!(
+  name: 'Half Dome Haven',
+  on_arrival: 'Arrive at our tranquil haven beneath the towering Half Dome.',
+  description: 'Experience the awe-inspiring beauty of Half Dome from our peaceful haven in Yosemite Valley. Our comfortable cabin offers panoramic views of the granite monolith and easy access to hiking trails, rock climbing routes, and scenic viewpoints. Relax on the deck, soak in the beauty of nature, and create lasting memories with family and friends.',
+  cancellation_policy: 'Flexible',
+  capacity: 3,
+  country: 'United States',
+  minimum_nights: 2,
+  price: 280,
+  lat: 37.7320,
+  lng: -119.5589,
+  host_id: u1.id
+)
+
+f28 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
+l28.photos.attach(io: f28, filename: 'photo28.jpg')
+
+f286 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f285 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f284 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f281 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f282 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l28.photos.attach(io: f286, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l28.photos.attach(io: f285, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l28.photos.attach(io: f284, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l28.photos.attach(io: f282, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l28.photos.attach(io: f281, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
+
+
+l29 = Listing.create!(
+  name: 'Yosemite Falls Retreat',
+  on_arrival: 'Check in at our charming retreat overlooking the majestic Yosemite Falls.',
+  description: 'Indulge in the beauty of Yosemite National Park from our idyllic retreat near Yosemite Falls. Wake up to the soothing sounds of cascading water and enjoy panoramic views of the valley from your private balcony. Explore nearby hiking trails, marvel at the beauty of the falls, and unwind in the serenity of nature. Your perfect Yosemite getaway awaits!',
+  cancellation_policy: 'Moderate',
+  capacity: 2,
+  country: 'United States',
+  minimum_nights: 2,
+  price: 320,
+  lat: 37.7555,
+  lng: -119.5974,
+  host_id: u1.id
+)
+
+f29 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/n1.jpg')
+l29.photos.attach(io: f29, filename: 'photo29.jpg')
+
+f296 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f295 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f294 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f291 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f292 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l29.photos.attach(io: f296, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l29.photos.attach(io: f295, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l29.photos.attach(io: f294, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l29.photos.attach(io: f292, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+l29.photos.attach(io: f291, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
+
+l30 = Listing.create!(
+    name: 'Tatooine',
+    on_arrival: 'Visit the Lars Homestead and watch the twin sunset',
+    description: 'A desert planet in the Outer Rim Territories, Tatooine is known for its harsh climate and twin suns. It is the homeworld of Anakin and Luke Skywalker. The planet features vast stretches of desert, bustling spaceports, and dangerous Tusken Raider territories.',
+    cancellation_policy: 'Moderate',
+    capacity: 6,
+    country: "Outer Rim",
+    minimum_nights: 3,
+    price: 400,
+    lat: 32.000000,
+    lng: 10.000000,
+    host_id: u3.id
+)
+
+f10_1 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f10_2 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f10_3 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f10_4 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f10_5 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+
+l30.photos.attach(io: f10_1, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l30.photos.attach(io: f10_2, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l30.photos.attach(io: f10_3, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l30.photos.attach(io: f10_4, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l30.photos.attach(io: f10_5, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
+
+l31 = Listing.create!(
+    name: 'Endor',
+    on_arrival: 'Explore the Ewok Village and visit the Imperial bunker',
+    description: 'Endor, also known as the Forest Moon of Endor, is covered in dense woodlands, tall trees, and a variety of wildlife. The Ewoks inhabit this lush moon, which was the site of the pivotal Battle of Endor during the Galactic Civil War.',
+    cancellation_policy: 'Strict',
+    capacity: 8,
+    country: "Endor System",
+    minimum_nights: 2,
+    price: 600,
+    lat: 30.000000,
+    lng: 30.000000,
+    host_id: u4.id
+)
+
+f11_1 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f11_2 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f11_3 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f11_4 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f11_5 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l31.photos.attach(io: f11_1, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l31.photos.attach(io: f11_2, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l31.photos.attach(io: f11_3, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l31.photos.attach(io: f11_4, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
+l31.photos.attach(io: f11_5, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+
+l32 = Listing.create!(
+    name: 'Mustafar',
+    on_arrival: 'Tour the volcanic landscapes and visit Vader’s castle',
+    description: 'Mustafar is a volcanic planet known for its lava rivers and fiery terrain. It was the site of a major battle between Obi-Wan Kenobi and Anakin Skywalker. The planet later housed Darth Vader’s personal fortress.',
+    cancellation_policy: 'Generous',
+    capacity: 4,
+    country: "Outer Rim",
+    minimum_nights: 1,
+    price: 450,
+    lat: 28.000000,
+    lng: 15.000000,
+    host_id: u4.id
+)
+
+f12_1 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f12_2 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f12_3 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f12_4 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f12_5 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+l32.photos.attach(io: f12_1, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l32.photos.attach(io: f12_2, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l32.photos.attach(io: f12_3, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l32.photos.attach(io: f12_4, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
+l32.photos.attach(io: f12_5, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+
+l33 = Listing.create!(
+    name: 'Asgard',
+    on_arrival: 'Witness the majesty of the Bifrost and the Hall of Valhalla',
+    description: 'Asgard, the realm of the gods, is a place of incredible beauty and power. It is home to the Aesir, including Odin and Thor. Visitors can explore the grandeur of the Hall of Valhalla and experience the wonders of the Bifrost bridge.',
+    cancellation_policy: 'None',
+    capacity: 15,
+    country: "Midgard",
+    minimum_nights: 1,
+    price: 1200,
+    lat: 35.6895,
+    lng: 139.6917,
+    host_id: u2.id
+)
+
+f13_1 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f13_2 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f13_3 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f13_4 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f13_5 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+
+l33.photos.attach(io: f13_1, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l33.photos.attach(io: f13_2, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l33.photos.attach(io: f13_3, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l33.photos.attach(io: f13_4, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
+l33.photos.attach(io: f13_5, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+
+l34 = Listing.create!(
+    name: 'Rivendell',
+    on_arrival: 'Meet Elrond and enjoy the tranquility of the Last Homely House',
+    description: 'Rivendell, the hidden valley of the Elves, is a sanctuary of peace and learning. It is ruled by Elrond and serves as a safe haven for travelers. The beauty of its waterfalls and the serenity of its environment make it a perfect retreat.',
+    cancellation_policy: 'Flexible',
+    capacity: 10,
+    country: "Middle-earth",
+    minimum_nights: 2,
+    price: 800,
+    lat: 45.0000,
+    lng: 169.0000,
+    host_id: u3.id
+)
+
+f14_1 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f14_2 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f14_3 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f14_4 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f14_5 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+
+l34.photos.attach(io: f14_1, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l34.photos.attach(io: f14_2, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l34.photos.attach(io: f14_3, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l34.photos.attach(io: f14_4, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
+l34.photos.attach(io: f14_5, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+
+l35 = Listing.create!(
+    name: 'Hogwarts',
+    on_arrival: 'Join the sorting ceremony and explore the castle',
+    description: 'Hogwarts School of Witchcraft and Wizardry is a magical castle filled with secrets, enchantments, and history. Students and visitors can explore the Great Hall, the Forbidden Forest, and numerous hidden passages. The castle is a place of learning, magic, and wonder.',
+    cancellation_policy: 'No Muggles',
+    capacity: 50,
+    country: "Scotland",
+    minimum_nights: 1,
+    price: 1500,
+    lat: 56.4907,
+    lng: -4.2026,
+    host_id: u4.id
+)
+
+f15_1 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg')
+f15_2 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg')
+f15_3 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg')
+f15_4 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg')
+f15_5 = URI.open('https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg')
+
+l35.photos.attach(io: f15_1, filename: '56312133_10107420712439613_2489365651806748672_n.jpg')
+l35.photos.attach(io: f15_2, filename: '28828057_10106502756296083_3917095514831156302_o.jpg')
+l35.photos.attach(io: f15_3, filename: '17855640_10105438859618553_1862219686291433231_o.jpg')
+l35.photos.attach(io: f15_4, filename: '57056162_10107436356788213_4281326518522609664_o.jpg')
+l35.photos.attach(io: f15_5, filename: '17545579_10105436252223793_1168540811776764446_o.jpg')
+
+b1 = Booking.create!(
+  listing_id: l1.id,
+  host_id: l1.host_id,
+  user_id: u2.id,
+  capacity: 1,
+  check_in: Date.new(2024, 5, 20),
+  check_out: Date.new(2024, 5, 29),
+  price: 1000
+)
+
+b2 = Booking.create!(
+  listing_id: l2.id,
+  host_id: l2.host_id,
+  user_id: u2.id,
+  capacity: 1,
+  check_in: Date.new(2024, 3, 2),
+  check_out: Date.new(2024, 3, 9),
+  price: 1000
+)

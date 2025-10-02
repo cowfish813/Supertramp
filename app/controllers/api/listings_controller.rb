@@ -3,7 +3,7 @@ class Api::ListingsController < ApplicationController
     def index
         # @listings = Listing.all
         @listings = Listing.in_bounds(bounds)
-
+        # debugger
         # if params[:price]
         #     @listings = @listings.where('price < ?', price)
         # end
@@ -35,6 +35,7 @@ class Api::ListingsController < ApplicationController
 
     def show
         @listing = Listing.find(params[:id])
+        @host = User.find(@listing.host_id)
         render :show
     end
 
@@ -42,7 +43,7 @@ class Api::ListingsController < ApplicationController
 
 private
     def listing_params
-        params.require(:listing).permit(:photo, :cancellation_policy, :capacity, :country, :description, :minimum_nights, :on_arrival, :price, :checkin, :checkout, :lat, :lng, :name)
+        params.require(:listing).permit(:photos, :cancellation_policy, :capacity, :country, :description, :minimum_nights, :on_arrival, :price, :checkin, :checkout, :lat, :lng, :name)
     end
 
     def bounds

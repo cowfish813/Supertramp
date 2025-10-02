@@ -26,15 +26,15 @@
 class Listing < ApplicationRecord
     validates :cancellation_policy, :capacity, :description, :minimum_nights, :name, :on_arrival, :price, presence: true
 
-    belongs_to :user,
+    belongs_to :host,
+    class_name: :User,
     foreign_key: :host_id
 
     has_many :bookings,
     foreign_key: :listing_id,
     dependent: :destroy
 
-    # has_many_attached :photos
-    has_one_attached :photo
+    has_many_attached :photos
 
     # def ensure_photo
     #     unless self.photo.attached?
@@ -43,11 +43,32 @@ class Listing < ApplicationRecord
     # end
 
 
+    # def self.in_bounds(bounds)
+    #     self.where("lat < ?", bounds[:northEast][:lat])
+    #         .where("lat > ?", bounds[:southWest][:lat])
+    #         .where("lng > ?", bounds[:southWest][:lng])
+    #         .where("lng < ?", bounds[:northEast][:lng])
+    # end
+
     def self.in_bounds(bounds)
-        self.where("lat < ?", bounds[:northEast][:lat])
-        .where("lat > ?", bounds[:southWest][:lat])
-        .where("lng > ?", bounds[:southWest][:lng])
-        .where("lng < ?", bounds[:northEast][:lng])   
+        if bounds[:northEast][:lng] < bounds[:southWest][:lng]
+        # Bounding box crosses the International Date Line
+            listings_in_bounds_1 = self.where("lat < ?", bounds[:northEast][:lat])
+                .where("lat > ?", bounds[:southWest][:lat])
+                .where("lng > ?", bounds[:southWest][:lng])
+                .where("lng < ?", 180)
+            listings_in_bounds_2 = self.where("lat < ?", bounds[:northEast][:lat])
+                .where("lat > ?", bounds[:southWest][:lat])
+                .where("lng > ?", -180)
+                .where("lng < ?", bounds[:northEast][:lng])
+            listings_in_bounds_1.or(listings_in_bounds_2)
+        else
+      # Bounding box does not cross the International Date Line
+            self.where("lat < ?", bounds[:northEast][:lat])
+                .where("lat > ?", bounds[:southWest][:lat])
+                .where("lng > ?", bounds[:southWest][:lng])
+                .where("lng < ?", bounds[:northEast][:lng])
+        end  
     end
 
     has_many :reviews,

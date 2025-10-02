@@ -1,5 +1,4 @@
 import React from 'react';
-// import BookingItem from '../bookings/booking_index_item';
 import BookingItem from '../bookings/booking_index_container';
 
 class User extends React.Component {

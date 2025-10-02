@@ -8,7 +8,6 @@ const BookingErrorsReducer = (state = [], action) => {
         case RECEIVE_BOOKING_ERRORS:
             return action.errors
         case REMOVE_BOOKING_ERRORS:
-                debugger
                 return []
         case RECEIVE_ERRORS:
             return action.errors
