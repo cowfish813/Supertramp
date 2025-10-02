@@ -34,7 +34,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.2",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.0.4"
+    "webpack-dev-server": "^5.2.1"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
