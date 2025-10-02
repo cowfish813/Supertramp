@@ -37,7 +37,7 @@ class NavBar extends React.Component {
                 <div className="superNav">
                     <div className="nav-left">
                         <Link to="/" className="logo">
-                          <img className="logo-pic" src="https://djqvcbmmgpti5.cloudfront.net/assets/favicon/hipcamp-apple-icon-77c3a7c86c7373902fa3b80081c977e7c66ea40c2e535b1918a8c6299aac1abe.png" alt=""/>
+                          <img className="logo-pic" src="https://cdn.brandfetch.io/ideYhXxoTB/w/500/h/500/theme/dark/symbol.png?c=1bxid64Mup7aczewSAYMX&t=1746385682160" alt=""/>
                         </Link>
                         {searchInput}
                     </div>
