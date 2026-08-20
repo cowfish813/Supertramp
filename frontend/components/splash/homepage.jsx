@@ -139,7 +139,7 @@ class Homepage extends React.Component {
 
                         <div className='margin-right-15 sp_div green_background flex flex-col'>
                             <div className='sp_img'>
-                                <img className='pow' src="https://raw.githubusercontent.com/cowfish813/Supertramp/splash/app/assets/images/protect-our-winters-vector-logo-cropped.svg"></img>
+                                <img className='pow' src="https://raw.githubusercontent.com/cowfish813/Supertramp/4961499139ba21c198549464e604f50f0e7db6d9/app/assets/images/protect-our-winters-vector-logo.svg"></img>
                                 <h1 className="sp_header">Protect Our Winters</h1>
                                 <p className='flex flex-wrap sp_text'>We help passionate outdoor people protect the places and experiences they love from climate change.</p>
                             </div>
