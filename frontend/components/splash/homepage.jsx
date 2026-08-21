@@ -139,7 +139,7 @@ class Homepage extends React.Component {
                         <div className='margin-right-15 sp_div green_background flex flex-col'>
                             <div className='sp_img'>
                                 <div className='sp_img_wrapper'>
-                                    <img className='rr' alt='Recreate Responsibly' src='/recreate-responsibly.png'></img>
+                                    <img className='' alt='Recreate Responsibly' src='/recreate-responsibly.png'></img>
                                 </div>
                                 <h1 className="sp_header no-wrap-ellipsis">Recreate Responsibly</h1>
                                 <ol className='flex flex-col '>
@@ -158,10 +158,10 @@ class Homepage extends React.Component {
                         <div className='margin-right-15 sp_div green_background flex flex-col'>
                             <div className='sp_img'>
                                 <div className='sp_img_wrapper'>
-                                    <img className='lnt' alt='Leave No Trace' src='/leave-no-trace.png'></img>
+                                    <img className='' alt='Leave No Trace' src='/leave-no-trace.png'></img>
                                 </div>
                                 <h1 className="sp_header flex">Leave No Trace</h1>
-                                <ol>
+                                <ol className='flex flex-col'>
                                     <li className='safety_bullets'>1. Plan ahead and prepare</li>
                                     <li className='safety_bullets'>2. Travel and camp on durable surfaces</li>
                                     <li className='safety_bullets'>3. Dispose of waste properly</li>
