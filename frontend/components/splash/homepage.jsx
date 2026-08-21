@@ -127,15 +127,6 @@ class Homepage extends React.Component {
                 <div className=""> 
                     <h3 className="sp_header">Safety Partners</h3>
                     <div className='flex'>
-                        {/* <div className='margin-right-15 sp_div green_background flex flex-col'>
-                            <img className='sp_img' src="https://hipcamp-res.cloudinary.com/f_auto,c_limit,w_384,q_auto/internal/recreate_responsibly_text.png"></img>
-                            <a href='https://www.recreateresponsibly.org/' className='flex align_center learn_more'>Learn More</a>
-                        </div> */}
-
-                        {/* <div className='margin-right-15 sp_div green_background flex flex-col'>
-                            <img className='sp_img' src="https://hipcamp-res.cloudinary.com/f_auto,c_limit,w_384,q_auto/internal/leave_no_trace_text.png"></img>
-                            <a href="https://lnt.org/why/7-principles/" className='flex align_center learn_more'>Learn More</a>
-                        </div> */}
                         <div className='margin-right-15 sp_div green_background flex flex-col'>
                             <div className='sp_img'>
                                 <div className='sp_img_wrapper'>

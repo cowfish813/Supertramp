@@ -122,7 +122,6 @@
     height: 5vh;
     padding: 1rem;
     box-shadow: 0px 3px 6px lightgray;
-    /* margin: 0 auto; */
     position: relative;
     display: flex;
     justify-content: space-around;
@@ -149,7 +148,6 @@
     left: 20rem;
     display: flex;
     justify-content: center;
-    // width: 50px;
     margin: 1rem;
     border-radius: .3rem;
 }
@@ -182,9 +180,6 @@
     color: #40d9ac;
     transition: 0.5s;
     cursor: pointer;
-}
-
-.container_container_banner {
 }
 
 .green_background {
@@ -242,14 +237,13 @@
 .banner_font{
     flex-wrap: wrap;
     display: flex;
-    // margin-left: 10%;
-    // margin-bottom: 10%;
     width: 112%;
     font-size: 175%;
     opacity: 100;
     color: white;
     margin-bottom: 10%;
 }
+
 .banner_sub_message{
     font-size: 1rem;
     color: white;
@@ -259,14 +253,15 @@
     margin-bottom: 10%;
 
 }
+
 .intro_button_container {
     margin-top: 10%;
-    // margin-bottom: 10%;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .intro_button {
     white-space: nowrap;
     border-radius: .5rem;
@@ -281,8 +276,8 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    // position: relative;
 }
+
 .tiles_tile {
     display: flex;
     flex-direction: row;
@@ -293,11 +288,7 @@
 .poppingRectangle {
     display: flex;
     height: 39.7rem;
-    // width: 28%;
     width: 22.75rem;
-    // max-width: 22rem;
-    // min-width: 10vw;
-    // max-width: 28%;
     margin: .7rem;
     object-fit: cover;
     animation: unpop .2s ease forwards;
@@ -344,12 +335,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
-    // max-width: 80vw;
     flex-direction: column;
-    // width: 80%;
-    // width: 1100px;
-    
 }
 
 .flex-wrap {
@@ -358,15 +344,6 @@
 
 
 .vague_tile_list {
-    // max-width: 90vw;
-    // width: 60%;
-    // max-width: 90%;
-
-    // column-width: 100rem;
-    // -webkit-column-width: 100rem;
-    // -moz-column-width: 100rem;
-    // max-width: 1140px;
-
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -374,8 +351,6 @@
 }
 .vague_picture {
     height: 22.75rem;
-    // min-width: 300px;
-    // max-width: 350px;
     max-width: 22rem;
     margin: .7rem;
     background: #ebebeb;
@@ -387,12 +362,3 @@
     animation: pop .2s ease forwards;
     box-shadow: 0px 3px 4px  grey;
 }
-
-
-
-
-
-
-
-
-
