@@ -26,14 +26,23 @@
     position: relative;
 }
 
-.pow {
-    width: 100px;
-    margin-top: -25px;
-    margin-bottom: -15px;
+
+
+.safety_bullets {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
+
+.no-wrap-ellipsis {
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+}
+
 .sp_text {
     line-height: 25px;
 }
+
 .sp_div {
     border-radius: 8px;
     padding: 20px 30px;
@@ -43,9 +52,20 @@
 }
 
 .sp_img {
-    height: 330px;
-    width: 260px;
     margin-bottom: 30px;
+}
+
+.sp_img_wrapper {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.sp_img_wrapper img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
 }
 
 .sp_header {
@@ -91,11 +111,9 @@
     align-content: center;
 }
 .searchWrapper {
-    // min-width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
-    // margin-top: 8vh;
 }
 
 .superSearch {
@@ -182,10 +200,11 @@
     color: #0F3806;
     background: #E6F0D9;
     border: 1px solid #0F3806;
-    // padding: 46px 350px;
     width: 350px;
     height: 46px;
     border-radius: 50px;
+    flex-direction: column;
+    margin-top: auto;
 }
 
 
@@ -194,20 +213,15 @@
     object-fit: stretch;
     margin-top: 10vh;
     margin-bottom: 10vh;
-    // width: 85%;
     display: flex;
     overflow: hidden;
     justify-content: center;
-    // justify-content: left;
-    // align-items: center;
 }
+
 .bannerImg {
-    // overflow: hidden;
     display: flex;
     width: 83%;
-    // max-width: 85%;
     height: auto;
-    // margin: auto;
 }
 
 .banner_message {
@@ -314,6 +328,9 @@
 
 .flex-col {
     flex-direction: column;
+}
+.flex-row {
+    flex-direction: row;
 }
 
 .align_center {
