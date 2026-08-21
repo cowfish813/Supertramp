@@ -2,7 +2,9 @@ import React from 'react';
 import SearchBar from '../search/search_container';
 import { Link } from "react-router-dom";
 import { withRouter } from 'react-router-dom';
-
+// import leaveNoTrace from '../../../app/assets/images/leave-no-trace.svg'
+// import leaveNoTrace from '../../../public/leave-no-trace.svg'
+// import { ReactComponent as LeaveNoTrace } from './leave-no-trace.svg';
 class Homepage extends React.Component {
     constructor(props) {
         super(props)
@@ -132,14 +134,30 @@ class Homepage extends React.Component {
                             <a href='https://www.recreateresponsibly.org/' className='flex align_center learn_more'>Learn More</a>
                         </div>
 
-                        <div className='margin-right-15 sp_div green_background flex flex-col'>
+                        {/* <div className='margin-right-15 sp_div green_background flex flex-col'>
                             <img className='sp_img' src="https://hipcamp-res.cloudinary.com/f_auto,c_limit,w_384,q_auto/internal/leave_no_trace_text.png"></img>
+                            <a href="https://lnt.org/why/7-principles/" className='flex align_center learn_more'>Learn More</a>
+                        </div> */}
+                        <div className='margin-right-15 sp_div green_background flex flex-col'>
+                            <div className='sp_img'>
+                                <img className='pow' alt='Leave No Trace' src='/leave-no-trace.png'></img>
+                                <h1 className="sp_header">Leave No Trace</h1>
+                                <ol>
+                                    <li>1. Plan ahead and prepare</li>
+                                    <li>2. Travel and camp on durable surfaces</li>
+                                    <li>3. Dispose of waste properly</li>
+                                    <li>4. Leave what you find</li>
+                                    <li>5. Minimize campfire impact</li>
+                                    <li>6. Respect wildlife</li>
+                                    <li>7. Be considerate of others</li>
+                                </ol>
+                            </div>
                             <a href="https://lnt.org/why/7-principles/" className='flex align_center learn_more'>Learn More</a>
                         </div>
 
                         <div className='margin-right-15 sp_div green_background flex flex-col'>
                             <div className='sp_img'>
-                                <img className='pow' src="https://raw.githubusercontent.com/cowfish813/Supertramp/4961499139ba21c198549464e604f50f0e7db6d9/app/assets/images/protect-our-winters-vector-logo.svg"></img>
+                                <img className='pow' alt='Protect Our Winters' src="https://raw.githubusercontent.com/cowfish813/Supertramp/4961499139ba21c198549464e604f50f0e7db6d9/app/assets/images/protect-our-winters-vector-logo.svg"></img>
                                 <h1 className="sp_header">Protect Our Winters</h1>
                                 <p className='flex flex-wrap sp_text'>We help passionate outdoor people protect the places and experiences they love from climate change.</p>
                             </div>
