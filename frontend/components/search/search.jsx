@@ -3,6 +3,19 @@ import { withRouter, useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot, faSearch } from '@fortawesome/free-solid-svg-icons';
 
+const SearchIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="10" cy="10" r="9" stroke="white" strokeWidth="3"/>
+    <line x1="16.5" y1="16.5" x2="25" y2="25" stroke="white" strokeWidth="3.25" fill='currentColor' strokeLinecap="round"/>
+  </svg>);
+
+const LocationDot = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 21s7-7.5 7-12a7 7 0 10-14 0c0 4.5 7 12 7 12z" stroke="black" strokeWidth="2"/>
+    <circle cx="12" cy="9" r="2.5" stroke="black" strokeWidth="2"/>
+  </svg>
+);
+
 const Search = (props) => {
     const inputRef = useRef(); //sets focus on search bar
     const [mapLocation, setMapLocation] = useState("");
@@ -77,7 +90,8 @@ const Search = (props) => {
 
                 <div className="searchBar">
                     <span className="fasearch">
-                        <FontAwesomeIcon icon={faLocationDot} />
+                        <LocationDot/>
+                        {/* <FontAwesomeIcon icon={faLocationDot} /> */}
                     </span>
 
                     <input 
@@ -93,7 +107,7 @@ const Search = (props) => {
                 </div>
                 
                 <button className="searchButton" onClick={handleSubmit}>
-                    <FontAwesomeIcon icon={faSearch} />
+                    <SearchIcon/>
                     <p className='margin-left-5'>Search</p>
                 </button>
             </div>

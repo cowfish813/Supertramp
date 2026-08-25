@@ -151,6 +151,11 @@
     margin: 1rem;
     border-radius: .3rem;
 }
+.fasearch svg {
+    width: 20px;
+    height: 20px;
+    color: black;
+}
 
 .search {
     width: 42vw;
@@ -180,6 +185,12 @@
     color: #40d9ac;
     transition: 0.5s;
     cursor: pointer;
+}
+.searchButton svg {
+    width: 20px;
+    height: 20px;
+    color: white;
+    flex-shrink: 0;
 }
 
 .green_background {
