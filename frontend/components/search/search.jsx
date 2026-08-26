@@ -78,7 +78,7 @@ const Search = (props) => {
 
                 <div className="searchBar">
                     <span className="fasearch">
-                        <LocationDot/>
+                        <LocationDot color="black" />
                         {/* <FontAwesomeIcon icon={faLocationDot} /> */}
                     </span>
 
@@ -95,7 +95,7 @@ const Search = (props) => {
                 </div>
                 
                 <button className="searchButton" onClick={handleSubmit}>
-                    <SearchIcon/>
+                    <SearchIcon color="white" />
                     <p className='margin-left-5'>Search</p>
                 </button>
             </div>
