@@ -5,8 +5,7 @@ import React from 'react';
 import autoComplete from "react-google-autocomplete";
 import { Link } from 'react-router-dom';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import SearchIcon from '../icons/SearchIcon';
 
 class NavSearch extends React.Component {
     constructor(props) {
@@ -61,7 +60,9 @@ class NavSearch extends React.Component {
     render() {
         return (
             <form className="NavSearchContainer" onSubmit={this.handleSubmit}>
-                <span className="nav-fa-search"><FontAwesomeIcon icon={faSearch} /></span>
+                <span className="nav-fa-search">
+                    <SearchIcon color='black'/>
+                </span>
                 <input type="search"
                 id="nav-Search"
                 className="navSearch"
