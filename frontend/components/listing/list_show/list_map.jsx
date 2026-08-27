@@ -62,7 +62,7 @@ class ListMap extends React.Component {
         };
 
         const circle = new google.maps.Circle({
-            strokeColor: '51D9AC',
+            strokeColor: '#51D9AC',
             strokeOpacity: 0.8,
             strokeWeight: 2,
             fillColor: "#71DBB4",

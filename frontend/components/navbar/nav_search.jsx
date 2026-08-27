@@ -61,7 +61,7 @@ class NavSearch extends React.Component {
         return (
             <form className="NavSearchContainer" onSubmit={this.handleSubmit}>
                 <span className="nav-fa-search">
-                    <SearchIcon color='black'/>
+                    <SearchIcon className="small-icon-box" color='black'/>
                 </span>
                 <input type="search"
                 id="nav-Search"

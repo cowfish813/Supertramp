@@ -2,10 +2,6 @@ import React, {component} from 'react';
 import { Link } from 'react-router-dom';
 import NavSearch from './nav_search'
 
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faGithub, faLinkedin, faAngellist } from '@fortawesome/free-brands-svg-icons';
-
-
 class NavBar extends React.Component {
     constructor(props) {
         super(props)
@@ -26,7 +22,7 @@ class NavBar extends React.Component {
         //     searchInput = null
         // }
             //remove on homepage AND search result index
-
+        
         if (location.hash === "#/" || location.hash.includes("search")){ //|| location.pathname === "/search") {
             searchInput = null
         };
