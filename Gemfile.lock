@@ -197,7 +197,7 @@ GEM
       timeout
     net-smtp (0.4.0)
       net-protocol
-    nio4r (2.7.4)
+    nio4r (2.7.5)
     nokogiri (1.19.4-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.19.4-x86_64-darwin)
@@ -214,7 +214,7 @@ GEM
       date
       stringio
     public_suffix (5.0.3)
-    puma (5.6.9)
+    puma (7.2.1)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (2.2.20)
@@ -349,7 +349,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
   pry-rails
-  puma (~> 5.6)
+  puma (~> 7.2)
   rack-cache
   rails (~> 7.0)
   rails_12factor
