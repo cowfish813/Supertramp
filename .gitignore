@@ -47,3 +47,6 @@ yarn-debug.log*
 .yarn-integrity
 app/assets/javascripts/bundle.js
 yarn.lock
+
+.DS_Store
+frontend/.DS_Store
