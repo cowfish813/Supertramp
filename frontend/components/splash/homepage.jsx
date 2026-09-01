@@ -127,6 +127,7 @@ class Homepage extends React.Component {
                 <div className=""> 
                     <h3 className="sp_header">Safety Partners</h3>
                     <div className='flex'>
+                        
                         <div className='margin-right-15 sp_div green_background flex flex-col'>
                             <div className='sp_img'>
                                 <div className='sp_img_wrapper'>
