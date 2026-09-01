@@ -50,3 +50,5 @@ yarn.lock
 
 .DS_Store
 frontend/.DS_Store
+app/.DS_Store
+app/assets/.DS_Store
