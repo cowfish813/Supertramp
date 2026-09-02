@@ -84,7 +84,7 @@ class Homepage extends React.Component {
                     < SearchBar />
 
                 <div className="containerBanner">
-                    <img src="https://hipcamp-res.cloudinary.com/f_auto,c_limit,w_1120,q_auto/campground-photos/gyqfoddi8knyfberfznf.jpg" alt="bannerbar"
+                    <img src="/banner.webp" alt="bannerbar"
                     className="bannerImg"
                     id="bannerImg"
                     />
@@ -111,22 +111,23 @@ class Homepage extends React.Component {
                 <div className="vagueLocationsContainer">
                     <h1 className="title_listing">Our top listings</h1>
                     <div className="vague_tile_list">
-                        <Link to="/listings/174"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg" alt=""/> </Link>
-                        <Link to="/listings/175"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg" alt=""/> </Link>
-                        <Link to="/listings/176"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/55937490_10107418126272313_2116183051628183552_n.jpg" alt=""/> </Link>
+                        <Link to="/listings/174"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg" alt="Cherry Blossoms"/> </Link>
+                        <Link to="/listings/175"><img className="vague_picture" src="/17545579_10105436252223793_1168540811776764446_o.webp" alt="Yosemite Winter"/> </Link>
+                        <Link to="/listings/176"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/55937490_10107418126272313_2116183051628183552_n.jpg" alt="Japanese temple"/> </Link>
                     </div>
 
                     <div className="vague_tile_list">
 
-                        <Link to="/listings/177"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/17855640_10105438859618553_1862219686291433231_o.jpg" alt=""/> </Link>
-                        <Link to="/listings/204"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/28828057_10106502756296083_3917095514831156302_o.jpg" alt=""/> </Link>
-                        <Link to="/listings/203"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg" alt=""/> </Link>
+                        <Link to="/listings/177"><img className="vague_picture" src="/17855640_10105438859618553_1862219686291433231_o.webp" alt="Half Dome"/> </Link>
+                        <Link to="/listings/204"><img className="vague_picture" src="/28828057_10106502756296083_3917095514831156302_o.webp" alt="NZ"/> </Link>
+                        <Link to="/listings/203"><img className="vague_picture" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/56312133_10107420712439613_2489365651806748672_n.jpg" alt="Bamboo forest"/> </Link>
                     </div>
                 </div>
 
                 <div className=""> 
                     <h3 className="sp_header">Safety Partners</h3>
                     <div className='flex'>
+                        
                         <div className='margin-right-15 sp_div green_background flex flex-col'>
                             <div className='sp_img'>
                                 <div className='sp_img_wrapper'>
@@ -171,7 +172,7 @@ class Homepage extends React.Component {
                                     <img className='' alt='Protect Our Winters' src="https://raw.githubusercontent.com/cowfish813/Supertramp/4961499139ba21c198549464e604f50f0e7db6d9/app/assets/images/protect-our-winters-vector-logo.svg"></img>
                                 </div>
                                 <h1 className="sp_header">Protect Our Winters</h1>
-                                <p className='flex flex-wrap sp_text'>We help passionate outdoor people protect the places and experiences they love from climate change.</p>
+                                <p className='sp_text'>We help passionate outdoor people protect the places and experiences they love from climate change.</p>
                             </div>
                             <a href="https://protectourwinters.org/about-pow/" className='flex align_center learn_more'>Learn More</a>
                         </div>
