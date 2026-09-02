@@ -49,6 +49,8 @@
     margin-top: 10px;
     margin-bottom: 20px;
     color: #0F3806;
+    width: 300px;
+    flex-shrink: 0;
 }
 
 .sp_img {
@@ -210,7 +212,7 @@
     color: #0F3806;
     background: #E6F0D9;
     border: 1px solid #0F3806;
-    width: 350px;
+    width: 270px;
     height: 46px;
     border-radius: 50px;
     flex-direction: column;
