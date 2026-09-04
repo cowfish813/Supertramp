@@ -6,7 +6,6 @@ class Footer extends React.Component {
 
     render () {
         return (
-            // <div className="ultraFooter">
                 <div className="superFooter">
 
                     <div className="subFooter">
@@ -16,7 +15,6 @@ class Footer extends React.Component {
                             <div className="subMessage">Powered by AWS, PostgreSQL, and Heroku</div> 
                     </div>
                 </div>
-            // </div>
         )
     }
 }
