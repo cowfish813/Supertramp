@@ -11,9 +11,9 @@ class Footer extends React.Component {
 
                     <div className="subFooter">
                         <div className="messageContainer">
-                            SuperTramp is created with hours of blood, swearing, and the hope for a New Dawn
+                            Designed and developed by Nick Cheung using React & Rails
                         </div>
-                            <div className="subMessage">All pictures in each Listing were shot by yours truly</div> 
+                            <div className="subMessage">Powered by AWS, PostgreSQL, and Heroku</div> 
                     </div>
                 </div>
             // </div>
