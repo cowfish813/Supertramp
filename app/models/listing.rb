@@ -39,39 +39,26 @@ class Listing < ApplicationRecord
     has_many_attached :photos
     after_commit :convert_photos_to_webp, on: [:create, :update]
 
-    # def ensure_photo
-    #     unless self.photo.attached?
-    #         errors[:photo] << "Must have photo attachment"
-    #     end
-    # end
-
-
-    # def self.in_bounds(bounds)
-    #     self.where("lat < ?", bounds[:northEast][:lat])
-    #         .where("lat > ?", bounds[:southWest][:lat])
-    #         .where("lng > ?", bounds[:southWest][:lng])
-    #         .where("lng < ?", bounds[:northEast][:lng])
-    # end
-
     def self.in_bounds(bounds)
-        if bounds[:northEast][:lng] < bounds[:southWest][:lng]
-        # Bounding box crosses the International Date Line
-            listings_in_bounds_1 = self.where("lat < ?", bounds[:northEast][:lat])
-                .where("lat > ?", bounds[:southWest][:lat])
-                .where("lng > ?", bounds[:southWest][:lng])
-                .where("lng < ?", 180)
-            listings_in_bounds_2 = self.where("lat < ?", bounds[:northEast][:lat])
-                .where("lat > ?", bounds[:southWest][:lat])
-                .where("lng > ?", -180)
-                .where("lng < ?", bounds[:northEast][:lng])
-            listings_in_bounds_1.or(listings_in_bounds_2)
+        ne = bounds[:northEast]
+        sw = bounds[:southWest]
+
+        ne_lat = ne[:lat].to_f
+        ne_lng = ne[:lng].to_f
+        sw_lat = sw[:lat].to_f
+        sw_lng = sw[:lng].to_f
+
+        if ne_lng < sw_lng
+            # Crosses the International Date Line
+            self.where("lat < ?", ne_lat)
+                .where("lat > ?", sw_lat)
+                .where("lng > ? OR lng < ?", sw_lng, ne_lng)
         else
-      # Bounding box does not cross the International Date Line
-            self.where("lat < ?", bounds[:northEast][:lat])
-                .where("lat > ?", bounds[:southWest][:lat])
-                .where("lng > ?", bounds[:southWest][:lng])
-                .where("lng < ?", bounds[:northEast][:lng])
-        end  
+            self.where("lat < ?", ne_lat)
+                .where("lat > ?", sw_lat)
+                .where("lng > ?", sw_lng)
+                .where("lng < ?", ne_lng)
+        end
     end
 
     has_many :reviews,
@@ -80,6 +67,74 @@ class Listing < ApplicationRecord
 
     private
 
+    # def convert_photos_to_webp
+    #     return if Rails.env.test? || ENV['SKIP_WEBP_CONVERSION']
+
+    #     # Thread-local guard — survives re-entrant callbacks on the same thread
+    #     key = :"converting_webp_listing_#{id}"
+    #     return if Thread.current[key]
+
+    #     Thread.current[key] = true
+    #     begin
+    #         jpeg_attachments = ActiveStorage::Attachment
+    #         .joins(:blob)
+    #         .where(record_type: 'Listing', record_id: id, name: 'photos')
+    #         .where(active_storage_blobs: { content_type: 'image/jpeg' })
+
+    #         jpeg_attachments.each do |attachment|
+    #         photo = photos.find { |p| p.id == attachment.id } || attachment
+    #             begin
+    #                 convert_single_photo(photo)
+    #             rescue => e
+    #                 Rails.logger.error("WebP conversion failed for photo #{attachment.id}: #{e.message}")
+    #             end
+    #         end
+    #     ensure
+    #         Thread.current[key] = nil
+    #     end
+    # end
+
+    # def convert_single_photo(photo)
+    #     return if photo.content_type == 'image/webp' || photo.filename.to_s.end_with?('.webp')
+
+    #     new_filename = "#{File.basename(photo.filename.to_s, '.*')}.webp"
+
+    #     # Query the DB directly — do NOT rely on the cached `photos` association
+    #     already_exists = ActiveStorage::Attachment
+    #         .joins(:blob)
+    #         .where(record_type: 'Listing', record_id: id, name: 'photos')
+    #         .where(active_storage_blobs: { filename: new_filename })
+    #         .exists?
+
+    #     if already_exists
+    #         Rails.logger.info("WebP twin already exists for photo #{photo.id}, skipping")
+    #         photo.purge_later
+    #         return
+    #     end
+
+    #     photo.blob.open do |source_file|
+    #         converted = ImageProcessing::Vips
+    #         .source(source_file)
+    #         .convert('webp')
+    #         .saver(quality: 85)
+    #         .call
+
+    #         begin
+    #         new_blob = ActiveStorage::Blob.create_and_upload!(
+    #             io: File.open(converted.path, 'rb'),
+    #             filename: new_filename,
+    #             content_type: 'image/webp'
+    #         )
+
+    #         photos.attach(new_blob)
+    #         ensure
+    #         converted&.close!
+    #         end
+    #     end
+
+    #     photo.purge_later
+    # end
+    
     def convert_photos_to_webp
         return if Rails.env.test? || ENV['SKIP_WEBP_CONVERSION']
         photos_to_convert = photos.select{ |p| p.content_type.in?(%w[image/jpeg])}
@@ -119,3 +174,10 @@ class Listing < ApplicationRecord
     end
 
 end
+
+# [ActiveJob] [ActiveStorage::AnalyzeJob] [b18d8c99-c335-4849-a52e-3145a2e45b0f]   ActiveStorage::Blob Load (0.1ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2  [["id", 3465], ["LIMIT", 1]]
+# [ActiveJob] [ActiveStorage::AnalyzeJob] [b18d8c99-c335-4849-a52e-3145a2e45b0f] Performing ActiveStorage::AnalyzeJob (Job ID: b18d8c99-c335-4849-a52e-3145a2e45b0f) from Async(default) enqueued at 2026-09-09T21:01:27.192800000Z with arguments: #<GlobalID:0x000000010de8c4f8 @uri=#<URI::GID gid://supertrampapp/ActiveStorage::Blob/3465>>
+#   S3 Storage (33.7ms) Downloaded file from key: pffv2arcxa5yct2d0bsgi5j09f6w
+# WebP conversion failed for photo 3464: string contains null byte
+#   S3 Storage (19.7ms) Downloaded file from key: 1bt1p7vo2asmyzpe5b0d71x2wjrl
+# WebP conversion failed for photo 3465: ActiveStorage::FileNotFoundError
