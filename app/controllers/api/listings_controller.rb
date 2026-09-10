@@ -47,7 +47,10 @@ private
     end
 
     def bounds
-        params[:bounds]
+        params.require(:bounds).permit(
+            northEast: [:lat, :lng],
+            southWest: [:lat, :lng]
+        ).to_h.deep_symbolize_keys
     end
 
     def capacity

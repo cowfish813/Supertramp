@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[6.1].define(version: 2023_10_02_191526) do
-
+ActiveRecord::Schema[7.1].define(version: 2023_10_02_191526) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,7 +19,7 @@ ActiveRecord::Schema[6.1].define(version: 2023_10_02_191526) do
     t.string "record_type", null: false
     t.bigint "record_id", null: false
     t.bigint "blob_id", null: false
-    t.datetime "created_at", null: false
+    t.datetime "created_at", precision: nil, null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
@@ -32,7 +31,7 @@ ActiveRecord::Schema[6.1].define(version: 2023_10_02_191526) do
     t.text "metadata"
     t.bigint "byte_size", null: false
     t.string "checksum"
-    t.datetime "created_at", null: false
+    t.datetime "created_at", precision: nil, null: false
     t.string "service_name", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
@@ -48,8 +47,8 @@ ActiveRecord::Schema[6.1].define(version: 2023_10_02_191526) do
     t.integer "host_id", null: false
     t.integer "user_id"
     t.integer "capacity", null: false
-    t.datetime "check_in", null: false
-    t.datetime "check_out", null: false
+    t.datetime "check_in", precision: nil, null: false
+    t.datetime "check_out", precision: nil, null: false
     t.string "listing_name"
     t.integer "price"
     t.index ["host_id"], name: "index_bookings_on_host_id"
@@ -66,13 +65,13 @@ ActiveRecord::Schema[6.1].define(version: 2023_10_02_191526) do
     t.string "country", null: false
     t.integer "price", null: false
     t.integer "capacity", null: false
-    t.datetime "checkin"
-    t.datetime "checkout"
+    t.datetime "checkin", precision: nil
+    t.datetime "checkout", precision: nil
     t.string "cancellation_policy", null: false
     t.string "on_arrival", null: false
     t.integer "minimum_nights", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.index ["host_id"], name: "index_listings_on_host_id"
   end
 
@@ -82,8 +81,8 @@ ActiveRecord::Schema[6.1].define(version: 2023_10_02_191526) do
     t.string "title"
     t.text "body"
     t.boolean "recommended", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.index ["listing_id"], name: "index_reviews_on_listing_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
