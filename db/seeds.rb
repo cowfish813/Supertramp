@@ -9,6 +9,10 @@
 # file = URI.open('https://supertrampapp.?region=us-west-1.amazonaws.com/<some_file>.jpg')
 require 'open-uri'
 
+ENV['SKIP_WEBP_CONVERSION'] = '1'
+
+Listing.find_each { |l| l.photos.purge }
+
 User.delete_all
 Listing.delete_all
 Booking.delete_all

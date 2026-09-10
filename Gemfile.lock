@@ -354,6 +354,7 @@ DEPENDENCIES
   rack-cache
   rails (~> 7.0)
   rails_12factor
+  ruby-vips
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
