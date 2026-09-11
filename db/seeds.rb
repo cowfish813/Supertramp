@@ -8,14 +8,44 @@
 
 # file = URI.open('https://supertrampapp.?region=us-west-1.amazonaws.com/<some_file>.jpg')
 require 'open-uri'
-
-ENV['SKIP_WEBP_CONVERSION'] = '1'
+return if Rails.env.test? || ENV['SKIP_WEBP_CONVERSION']
 
 Listing.find_each { |l| l.photos.purge }
 
 User.delete_all
 Listing.delete_all
 Booking.delete_all
+
+def attach_webp(listing, url, filename_base)
+  source_path = nil
+  converted = nil
+
+  begin
+    # Stream the source file to a tempfile on disk (not into memory)
+    source = URI.open(url)
+    source_path = Tempfile.new(['source', '.jpg'])
+    source_path.binmode
+    IO.copy_stream(source, source_path)
+    source_path.rewind
+
+    # Convert to WebP via Vips — writes to its own tempfile
+    converted = ImageProcessing::Vips
+      .source(source_path.path)
+      .convert('webp')
+      .saver(quality: 85)
+      .call
+
+    # Attach the WebP directly — no JPEG is ever stored in ActiveStorage
+    listing.photos.attach(
+      io: File.open(converted.path, 'rb'),
+      filename: "#{filename_base}.webp",
+      content_type: 'image/webp'
+    )
+  ensure
+    source_path&.close!
+    converted&.close!
+  end
+end
 
 u2 = User.create!(
     username: 'demo',
