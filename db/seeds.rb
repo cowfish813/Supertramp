@@ -7,18 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # file = URI.open('https://supertrampapp.?region=us-west-1.amazonaws.com/<some_file>.jpg')
-# db/seeds.rb
 require 'open-uri'
 require 'tempfile'
 
 ENV['SKIP_WEBP_CONVERSION'] = '1'
 
-# Disable the WebP conversion callback — we attach WebP directly below
+# Disables the WebP conversion callback — webp attached below
 if Listing.respond_to?(:skip_callback)
   Listing.skip_callback(:commit, :after, :convert_photos_to_webp)
 end
 
-# Photo URLs (source JPEGs from the external S3 bucket; never stored in our app)
 PHOTOS = {
   'a' => 'https://supertramp-mast.s3-us-west-1.amazonaws.com/57056162_10107436356788213_4281326518522609664_o.jpg',
   'b' => 'https://supertramp-mast.s3-us-west-1.amazonaws.com/17545579_10105436252223793_1168540811776764446_o.jpg',
@@ -34,8 +32,7 @@ PHOTOS = {
 
 # Helpers
 
-# Download a JPEG from `url`, convert it to WebP locally, and attach the WebP
-# directly to the listing. No JPEG ever hits our ActiveStorage.
+# Download a JPEG from `url`, convert it to WebP locally, and attach the WebP to listing
 def attach_webp(listing, url, filename_base)
   source_path = nil
   converted = nil
@@ -70,9 +67,6 @@ def attach_photo(listing, key)
   attach_webp(listing, url, filename_base)
 end
 
-# Cleanup (order matters: attachments/bookings before listings, listings before users)
-# ActiveStorage::Attachment.delete_all
-# ActiveStorage::Blob.delete_all
 Booking.delete_all
 Listing.delete_all
 User.delete_all
