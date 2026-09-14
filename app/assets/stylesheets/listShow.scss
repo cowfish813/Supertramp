@@ -167,19 +167,19 @@
 }
 
 .description {
-    width: 480px;
+    max-width: 60%;
     height: 190px;
     font-size: 18px;
     color: black;
 }
-.desc-wrapper p {
-    max-width: 480px;
-    min-width: auto;
-    height: auto;
-    min-height: 200px;
-    font-size: 18px;
-    color: #333333;
-}
+// .desc-wrapper p {
+//     max-width: 480px;
+//     min-width: auto;
+//     height: auto;
+//     min-height: 200px;
+//     font-size: 18px;
+//     color: #333333;
+// }
 
 .details-container {
     display: flex;
