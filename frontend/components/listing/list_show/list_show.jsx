@@ -54,55 +54,10 @@ const ListShow = ({ match, fetchListing, hostUser, list = {photoUrls: [],host: {
               <div className="host_by">
                 Hosted By:
                 <div className="host_name">{list && list.host ? list.host.firstName + " " + list.host.lastName : ""}</div>
-                {/* <div className="host_name">Email: <a href={"mailto:" + list.host.email}>{list.host.email}</a></div> */}
               </div>
 
               <div className="details-container">
                 <p className="description">{list.description}</p>
-              </div>
-            </div>
-            {/*  */}
-            <div className="area_essentials_ammenities">
-              <div className="camp_area_list condition_list">
-                <div className="aea_title">Camp Area</div>
-                <div className="aea_info">
-                  <img className="aea_conditions" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/tent2.png" alt="" />
-                  <p>Bring your own Tent</p>
-                </div>
-                <div className="aea_info">
-                  <img className="aea_conditions" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/parking1-512.png" alt="" />
-                  <p>Parking at or near listing</p>
-                </div>
-              </div>
-              <div className="essentials_list condition_list">
-                <div className="aea_title">Essentials</div>
-                <div className="aea_info">
-                  <img className="aea_conditions" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/toilet.png" alt="" />
-                  <p>Available</p>
-                </div>
-                <div className="aea_info">
-                  <img className="aea_conditions" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/bonfire.png" alt="" />
-                  <p>Allowed</p>
-                </div>
-              </div>
-              <div className="amenities_list condition_list">
-                <div className="aea_title">Ammenities</div>
-                <div className="aea_info">
-                  <img className="aea_conditions" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/water.png" alt="" />
-                  <p>Potable Water</p>
-                </div>
-                <div className="aea_info">
-                  <img className="aea_conditions" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/5593_-_No_Wifi-512.png" alt="" />
-                  <p>No WiFi</p>
-                </div>
-                <div className="aea_info">
-                  <img className="aea_conditions" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/nowater.png" alt="" />
-                  <p>No Showers</p>
-                </div>
-                <div className="aea_info">
-                  <img className="aea_conditions" src="https://supertramp-mast.s3-us-west-1.amazonaws.com/pacout.png" alt="" />
-                  <p>Pack out Waste</p>
-                </div>
               </div>
             </div>
 
@@ -134,28 +89,6 @@ const ListShow = ({ match, fetchListing, hostUser, list = {photoUrls: [],host: {
               </div>
             </div>
 
-            <div className="detail_list" id="list-offset">
-              <div className="details_title">Terrain</div>
-              <div className="img_Detail">
-                <img
-                  className="detail_img"
-                  src="https://supertramp-mast.s3-us-west-1.amazonaws.com/Screen+Shot+2020-05-08+at+1.05.38+AM.png"
-                  alt=""
-                />
-              </div>
-            </div>
-
-            <div className="detail_list">
-              <div className="details_title" id="img_offset">Activities</div>
-
-              <div className="img_Detail">
-                <img
-                  className="detail_img"
-                  src="https://supertramp-mast.s3-us-west-1.amazonaws.com/Screen+Shot+2020-05-08+at+1.03.40+AM.png"
-                  alt=""
-                />
-              </div>
-            </div>
 
             <div className="reviews_container">
               {/* review index item */}
