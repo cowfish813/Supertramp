@@ -81,7 +81,8 @@ class Homepage extends React.Component {
                         </div>
                     </div>
                 </div>
-                    < SearchBar />
+                
+                < SearchBar />
 
                 <div className="containerBanner">
                     <img src="/banner.webp" alt="bannerbar"
