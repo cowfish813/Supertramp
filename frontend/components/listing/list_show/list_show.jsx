@@ -61,7 +61,7 @@ const ListShow = ({ match, fetchListing, hostUser, list = {photoUrls: [],host: {
               </div>
             </div>
 
-            <div className="detail_list">
+            <div className="detail_list list-overview">
               <div className=" details_title">Details</div>
               <div className="details_text">
                 <div>
