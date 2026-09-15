@@ -6,7 +6,8 @@ import { fetchListings, fetchRandomListings } from '../../actions/listing_action
 
 const mSTP = state => ({
     errors: state.errors.session,
-    user: state.entities.user
+    user: state.entities.user,
+    randomListings: state.entities.listings
 })
 
 const mDTP = dispatch => ({

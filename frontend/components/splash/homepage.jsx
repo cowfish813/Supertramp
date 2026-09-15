@@ -111,18 +111,17 @@ class Homepage extends React.Component {
                 </div>
                 
                 <div className="vagueLocationsContainer">
-                    <h1 className="title_listing">Our top listings</h1>
+                    <h1 className="title_listing">A few of our favorites, shuffled</h1>
                     <div className="vague_tile_list">
-                        <Link to="/listings/1"><img className="vague_picture" src="/57056162_10107436356788213_4281326518522609664_o.jpg" alt="Cherry Blossoms"/> </Link>
-                        <Link to="/listings/2"><img className="vague_picture" src="/17545579_10105436252223793_1168540811776764446_o.webp" alt="Yosemite Winter"/> </Link>
-                        <Link to="/listings/3"><img className="vague_picture" src="/55937490_10107418126272313_2116183051628183552_n.jpg" alt="Japanese temple"/> </Link>
-                    </div>
-
-                    <div className="vague_tile_list">
-
-                        <Link to="/listings/4"><img className="vague_picture" src="/17855640_10105438859618553_1862219686291433231_o.webp" alt="Half Dome"/> </Link>
-                        <Link to="/listings/8"><img className="vague_picture" src="/28828057_10106502756296083_3917095514831156302_o.webp" alt="NZ"/> </Link>
-                        <Link to="/listings/34"><img className="vague_picture" src="/56312133_10107420712439613_2489365651806748672_n.jpg" alt="Bamboo forest"/> </Link>
+                        {Object.values(this.props.randomListings || {}).map(listing => (
+                            <Link key={listing.id} to={`/listings/${listing.id}`}>
+                                <img
+                                    className="vague_picture"
+                                    src={listing.photoUrls?.[0]}
+                                    alt={listing.name}
+                                />
+                            </Link>
+                        ))}
                     </div>
                 </div>
 
