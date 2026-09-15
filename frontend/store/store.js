@@ -7,6 +7,7 @@ import logger from 'redux-logger';
 const configureStore = (preloadedState ={}) =>
     rtkConfigureStore ({
         reducer: rootReducer,
+        preloadedState,
         middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
     })
 
