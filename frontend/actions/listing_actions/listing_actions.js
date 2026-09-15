@@ -18,7 +18,7 @@ const receiveListings = (listings) => ({
     type: RECEIVE_LISTINGS,
     listings
 });
-const receiveRandomListings = () => ({
+const receiveRandomListings = (listings) => ({
     type: RECEIVE_RANDOM_LISTINGS,
     listings
 });
@@ -57,7 +57,7 @@ export const fetchListing = (listingId) => dispatch => {
     .then( (listing) => dispatch(receiveListing(listing)))
 };
 export const fetchRandomListings = (count=3) => dispatch => {
-    return ApiUtilUtil.fetchRandomListings(count)
+    return ApiUtil.fetchRandomListings(count)
         .then(listings => dispatch(receiveRandomListings(listings)))
 };
 
