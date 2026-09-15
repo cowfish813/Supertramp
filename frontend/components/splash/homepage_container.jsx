@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { openModal, closeModal  } from '../../actions/modal_actions/modal_actions'
 import Homepage from './homepage'
-import {fetchListings} from '../../actions/listing_actions/listing_actions'
+import { fetchListings, fetchRandomListings } from '../../actions/listing_actions/listing_actions'
 
 const mSTP = state => ({
     errors: state.errors.session,
@@ -12,7 +12,8 @@ const mSTP = state => ({
 const mDTP = dispatch => ({
     openModal: (modal) => dispatch(openModal(modal)),
     closeModal: () => dispatch(closeModal()),
-    fetchListings: () => dispatch(fetchListings())
+    fetchListings: () => dispatch(fetchListings()),
+    fetchRandomListings: (count) => dispatch(fetchRandomListings(count)),
 })
 
 export default connect(mSTP, mDTP)(Homepage)

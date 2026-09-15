@@ -7,6 +7,7 @@ export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
 export const DESTROY_REVIEW = 'DESTROY_REVIEW';
 export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
+export const RECEIVE_RANDOM_LISTINGS = "RECEIVE_RANDOM_LISTINGS";
 
 
 const receiveListing = (listing) => ({
@@ -15,6 +16,10 @@ const receiveListing = (listing) => ({
 });
 const receiveListings = (listings) => ({
     type: RECEIVE_LISTINGS,
+    listings
+});
+const receiveRandomListings = () => ({
+    type: RECEIVE_RANDOM_LISTINGS,
     listings
 });
 
@@ -46,25 +51,29 @@ const deleteReview = (review) => ({
 export const fetchListings = (filter) => dispatch => {
     return ApiUtil.fetchListings(filter)
     .then( (listings) => dispatch(receiveListings(listings)))
-}
+};
 export const fetchListing = (listingId) => dispatch => {
     return ApiUtil.fetchListing(listingId)
     .then( (listing) => dispatch(receiveListing(listing)))
-}
+};
+export const fetchRandomListings = (count=3) => dispatch => {
+    return ApiUtilUtil.fetchRandomListings(count)
+        .then(listings => dispatch(receiveRandomListings(listings)))
+};
 
 export const createListing = listing => dispatch =>  {
     return ApiUtil.createListing(listing)
     .then( (listing) => dispatch(receiveListing(listing)))
-}
+};
 export const updateListing = listing => dispatch => {
     return ApiUtil.updateListing(listing)
     .then( (listing) => dispatch(receiveListing(listing)))
-}
+};
 
 export const deleteListing = listingId => dispatch => {
     return ApiUtil.deleteListing(listingId)
         .then(() => dispatch(removeListing(listingId)))
-}
+};
 
 export const createReview = (review) => dispatch => {
     return ApiUtil.createReview(review)
