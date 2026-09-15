@@ -4,10 +4,13 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json} do
       resources :users, only:[:create, :show, :update]
       resource :session, only:[:create, :destroy]
-      resources :listings, only:[:create, :destroy, :update, :show, :index]
-      resources :reviews, only:[:create, :destroy, :update]
-      resources :bookings, only:[:create, :destroy, :update, :show, :index]
-  end
+      resources :listings, only:[:create, :destroy, :update, :show, :index] do
+        collection do
+          get :random
+        end
+    end
+    resources :reviews, only:[:create, :destroy, :update]
+    resources :bookings, only:[:create, :destroy, :update, :show, :index]
 
   
 

@@ -16,7 +16,6 @@ class Api::ListingsController < ApplicationController
     end
 
 
-
     def new
         @listing = Listing.new
         render :new
@@ -40,6 +39,14 @@ class Api::ListingsController < ApplicationController
     end
 
 
+    def random
+        params.fetch(:count, 6).to_i.clamp(1,12)
+        scope = Listing.all
+        scopt = scope.in_bounds(bounds) if params[:bounds].present?
+
+        @listings = scope.order(Arel.sql("RANDOM()")).limit(count)
+        render :index
+    end
 
 private
     def listing_params
@@ -57,5 +64,5 @@ private
         params[:capacity]
     end
 
-    
+
 end
