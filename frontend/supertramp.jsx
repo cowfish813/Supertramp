@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from './components/root'
 import { createRoot } from 'react-dom/client'; // Import createRoot
-import {fetchListings} from './actions/listing_actions/listing_actions'
+// import {fetchListings} from './actions/listing_actions/listing_actions'
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
