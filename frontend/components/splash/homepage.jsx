@@ -81,7 +81,7 @@ class Homepage extends React.Component {
                         </div>
                     </div>
                 </div>
-                
+
                 < SearchBar />
 
                 <div className="containerBanner">
@@ -100,7 +100,7 @@ class Homepage extends React.Component {
                     </div>                  
                 </div>
 
-                <div className="tilesContainer">
+                <div className="tiles-container">
                     <h1 className="title_listing">Check Out These Areas!</h1>
                     <div className="tiles_tile">
                         <img onClick={this.handleTile1} className="poppingRectangle" src="/camel.webp" alt="camel"/>
