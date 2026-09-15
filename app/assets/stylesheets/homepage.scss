@@ -289,7 +289,7 @@
     font-weight: bolder;
 }
 
-.tilesContainer {
+.tiles-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -302,10 +302,16 @@
     flex-wrap: wrap;
     width: 90vw;
 }
+
 .poppingRectangle {
-    display: flex;
-    height: 39.7rem;
-    width: 22.75rem;
+    flex: 1 1 12rem;
+    /* grow/shrink equally; wrap below ~192px each */
+    min-width: 0;
+    /* required — flex items won't shrink past their intrinsic size otherwise */
+    max-width: 22.75rem;
+    /* your old fixed width is now the ceiling */
+    height: auto;
+    /* scales proportionally with width */
     margin: .7rem;
     object-fit: cover;
     animation: unpop .2s ease forwards;
