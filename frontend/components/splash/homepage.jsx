@@ -14,9 +14,10 @@ class Homepage extends React.Component {
 
     componentDidMount() {
         window.scrollTo(0, 0);
-        this.props.fetchRandomListings(6);
+        this.props.fetchRandomListings(9);
     }
 
+    // should bring to map of yosemite.
     handleInput() {
         window.scrollTo({
             left: 0, 
@@ -83,7 +84,7 @@ class Homepage extends React.Component {
                 </div>
 
                 < SearchBar />
-
+{/* max width on banner. too big. */}
                 <div className="containerBanner">
                     <img src="/banner.webp" alt="bannerbar"
                     className="bannerImg"
@@ -91,7 +92,7 @@ class Homepage extends React.Component {
                     />
                     <div className="banner_message">
                         <div >
-                                <span className="banner_font">Explore Dozens of Locations!</span>
+                            <span className="banner_font">Explore Dozens of Locations!</span>
                         </div>
                         <span className="banner_sub_message">Run a search or scroll down below and start exploring!</span>
                         <div className="intro_button_container">
@@ -101,17 +102,17 @@ class Homepage extends React.Component {
                 </div>
 
                 <div className="tiles-container">
-                    <h1 className="title_listing">Check Out These Areas!</h1>
-                    <div className="tiles_tile">
+                    <h1 className="title-listing">Check Out These Areas!</h1>
+                    <div className="tiles-tile margin-left-7-9-15pc">
                         <img onClick={this.handleTile1} className="poppingRectangle" src="/camel.webp" alt="camel"/>
                         <img onClick={this.handleTile2} className="poppingRectangle" src="/cy19txhitis6xwltkdhu.webp" alt="family camp"/>
                         <img onClick={this.handleTile3} className="poppingRectangle" src="/hamwjtqwsdqffioglcvq.webp" alt="cabin"/>
                     </div>
                 </div>
                 
-                <div className="vagueLocationsContainer">
-                    <h1 className="title_listing">A few of our favorites, shuffled</h1>
-                    <div className="vague_tile_list">
+                <div className="vague-locations-container">
+                    <h1 className="title_listing margin-left-7-9-15pc">A few of our favorites, shuffled</h1>
+                    <div className="flex flex-row vague-tile-list margin-left-7-9-15pc">
                         {Object.values(this.props.randomListings || {}).map(listing => (
                             <Link key={listing.id} to={`/listings/${listing.id}`}>
                                 <img
@@ -119,6 +120,7 @@ class Homepage extends React.Component {
                                     src={listing.photoUrls?.[0]}
                                     alt={listing.name}
                                 />
+                                <div className='text-descriptor'>${listing.price} for {listing.minimum_nights} night(s)</div>
                             </Link>
                         ))}
                     </div>
@@ -128,7 +130,7 @@ class Homepage extends React.Component {
                     <h3 className="sp_header">Safety Partners</h3>
                     <div className='flex'>
                         
-                        <div className='margin-right-15 sp_div green_background flex flex-col'>
+                        <div className='margin-right-24 sp_div green_background flex flex-col'>
                             <div className='sp_img'>
                                 <div className='sp_img_wrapper'>
                                     <img className='' alt='Recreate Responsibly' src='/recreate-responsibly.png'></img>
@@ -147,7 +149,7 @@ class Homepage extends React.Component {
                             <a href="https://lnt.org/why/7-principles/" className='flex align_center learn_more'>Learn More</a>
                         </div>
 
-                        <div className='margin-right-15 sp_div green_background flex flex-col'>
+                        <div className='margin-right-24 sp_div green_background flex flex-col'>
                             <div className='sp_img'>
                                 <div className='sp_img_wrapper'>
                                     <img className='' alt='Leave No Trace' src='/leave-no-trace.png'></img>
@@ -166,7 +168,7 @@ class Homepage extends React.Component {
                             <a href="https://lnt.org/why/7-principles/" className='flex align_center learn_more'>Learn More</a>
                         </div>
 
-                        <div className='margin-right-15 sp_div green_background flex flex-col'>
+                        <div className='margin-right-24 sp_div green_background flex flex-col'>
                             <div className='sp_img'>
                                 <div className='sp_img_wrapper'>
                                     <img className='' alt='Protect Our Winters' src="/protect-our-winters-vector-logo.svg"></img>
