@@ -10,6 +10,7 @@ class Homepage extends React.Component {
         this.handleTile3 = this.handleTile3.bind(this);
         this.handleTile2 = this.handleTile2.bind(this);
         this.handleTile1 = this.handleTile1.bind(this);
+        this.handleInput = this.handleInput.bind(this);
     }
 
     componentDidMount() {
@@ -17,13 +18,14 @@ class Homepage extends React.Component {
         this.props.fetchRandomListings(9);
     }
 
-    // should bring to map of yosemite.
     handleInput() {
-        window.scrollTo({
-            left: 0, 
-            top: 1450, 
-            behavior: 'smooth'
-        });
+        this.props.history.push({
+            pathname: `/search/37.74557009999999,-119.5936038`,
+            state: { 
+                lat: 37.8032783,
+                lng: -119.5393594
+            }
+        }); 
     }
 
     handleTile3(e) {
