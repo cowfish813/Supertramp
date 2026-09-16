@@ -122,7 +122,7 @@ class Homepage extends React.Component {
                                     src={listing.photoUrls?.[0]}
                                     alt={listing.name}
                                 />
-                                <div className='text-descriptor'>${listing.price} for {listing.minimum_nights} night(s)</div>
+                                <div className='text-descriptor'>${listing.price} for {listing.minimum_nights} {listing.minimum_nights > 1 ? "nights" : "night"}</div>
                             </Link>
                         ))}
                     </div>
