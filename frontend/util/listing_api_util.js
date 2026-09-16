@@ -1,5 +1,4 @@
 export const fetchListings = (data) => (
-
     $.ajax({
         url: '/api/listings',
         data
@@ -11,6 +10,13 @@ export const fetchListing = (listingId) => (
         url: `api/listings/${listingId}`
     })
 );
+
+export const fetchRandomListings = (count=3) => (
+    $.ajax({
+        url: `api/listings/random`,
+        data: {count}
+    })
+)
 
 export const deleteListing = (listingId) => (
     $.ajax({

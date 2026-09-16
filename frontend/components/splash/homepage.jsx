@@ -10,19 +10,22 @@ class Homepage extends React.Component {
         this.handleTile3 = this.handleTile3.bind(this);
         this.handleTile2 = this.handleTile2.bind(this);
         this.handleTile1 = this.handleTile1.bind(this);
+        this.handleInput = this.handleInput.bind(this);
     }
 
     componentDidMount() {
         window.scrollTo(0, 0);
-        this.props.fetchListings();
+        this.props.fetchRandomListings(9);
     }
 
     handleInput() {
-        window.scrollTo({
-            left: 0, 
-            top: 1450, 
-            behavior: 'smooth'
-        });
+        this.props.history.push({
+            pathname: `/search/37.74557009999999,-119.5936038`,
+            state: { 
+                lat: 37.8032783,
+                lng: -119.5393594
+            }
+        }); 
     }
 
     handleTile3(e) {
@@ -81,8 +84,9 @@ class Homepage extends React.Component {
                         </div>
                     </div>
                 </div>
-                    < SearchBar />
 
+                < SearchBar />
+{/* max width on banner. too big. */}
                 <div className="containerBanner">
                     <img src="/banner.webp" alt="bannerbar"
                     className="bannerImg"
@@ -90,7 +94,7 @@ class Homepage extends React.Component {
                     />
                     <div className="banner_message">
                         <div >
-                                <span className="banner_font">Explore Dozens of Locations!</span>
+                            <span className="banner_font">Explore Dozens of Locations!</span>
                         </div>
                         <span className="banner_sub_message">Run a search or scroll down below and start exploring!</span>
                         <div className="intro_button_container">
@@ -99,28 +103,28 @@ class Homepage extends React.Component {
                     </div>                  
                 </div>
 
-                <div className="tilesContainer">
-                    <h1 className="title_listing">Check Out These Areas!</h1>
-                    <div className="tiles_tile">
+                <div className="tiles-container">
+                    <h1 className="title-listing">Check Out These Areas!</h1>
+                    <div className="tiles-tile margin-left-7-9-15pc">
                         <img onClick={this.handleTile1} className="poppingRectangle" src="/camel.webp" alt="camel"/>
                         <img onClick={this.handleTile2} className="poppingRectangle" src="/cy19txhitis6xwltkdhu.webp" alt="family camp"/>
                         <img onClick={this.handleTile3} className="poppingRectangle" src="/hamwjtqwsdqffioglcvq.webp" alt="cabin"/>
                     </div>
                 </div>
                 
-                <div className="vagueLocationsContainer">
-                    <h1 className="title_listing">Our top listings</h1>
-                    <div className="vague_tile_list">
-                        <Link to="/listings/1"><img className="vague_picture" src="/57056162_10107436356788213_4281326518522609664_o.jpg" alt="Cherry Blossoms"/> </Link>
-                        <Link to="/listings/2"><img className="vague_picture" src="/17545579_10105436252223793_1168540811776764446_o.webp" alt="Yosemite Winter"/> </Link>
-                        <Link to="/listings/3"><img className="vague_picture" src="/55937490_10107418126272313_2116183051628183552_n.jpg" alt="Japanese temple"/> </Link>
-                    </div>
-
-                    <div className="vague_tile_list">
-
-                        <Link to="/listings/4"><img className="vague_picture" src="/17855640_10105438859618553_1862219686291433231_o.webp" alt="Half Dome"/> </Link>
-                        <Link to="/listings/8"><img className="vague_picture" src="/28828057_10106502756296083_3917095514831156302_o.webp" alt="NZ"/> </Link>
-                        <Link to="/listings/34"><img className="vague_picture" src="/56312133_10107420712439613_2489365651806748672_n.jpg" alt="Bamboo forest"/> </Link>
+                <div className="vague-locations-container">
+                    <h1 className="title_listing margin-left-7-9-15pc">A few of our favorites, shuffled</h1>
+                    <div className="flex flex-row vague-tile-list margin-left-7-9-15pc">
+                        {Object.values(this.props.randomListings || {}).map(listing => (
+                            <Link key={listing.id} to={`/listings/${listing.id}`}>
+                                <img
+                                    className="vague_picture"
+                                    src={listing.photoUrls?.[0]}
+                                    alt={listing.name}
+                                />
+                                <div className='text-descriptor'>${listing.price} for {listing.minimum_nights} night(s)</div>
+                            </Link>
+                        ))}
                     </div>
                 </div>
 
@@ -128,7 +132,7 @@ class Homepage extends React.Component {
                     <h3 className="sp_header">Safety Partners</h3>
                     <div className='flex'>
                         
-                        <div className='margin-right-15 sp_div green_background flex flex-col'>
+                        <div className='margin-right-24 sp_div green_background flex flex-col'>
                             <div className='sp_img'>
                                 <div className='sp_img_wrapper'>
                                     <img className='' alt='Recreate Responsibly' src='/recreate-responsibly.png'></img>
@@ -147,7 +151,7 @@ class Homepage extends React.Component {
                             <a href="https://lnt.org/why/7-principles/" className='flex align_center learn_more'>Learn More</a>
                         </div>
 
-                        <div className='margin-right-15 sp_div green_background flex flex-col'>
+                        <div className='margin-right-24 sp_div green_background flex flex-col'>
                             <div className='sp_img'>
                                 <div className='sp_img_wrapper'>
                                     <img className='' alt='Leave No Trace' src='/leave-no-trace.png'></img>
@@ -166,7 +170,7 @@ class Homepage extends React.Component {
                             <a href="https://lnt.org/why/7-principles/" className='flex align_center learn_more'>Learn More</a>
                         </div>
 
-                        <div className='margin-right-15 sp_div green_background flex flex-col'>
+                        <div className='margin-right-24 sp_div green_background flex flex-col'>
                             <div className='sp_img'>
                                 <div className='sp_img_wrapper'>
                                     <img className='' alt='Protect Our Winters' src="/protect-our-winters-vector-logo.svg"></img>

@@ -1,4 +1,6 @@
-import { combineReducers } from 'redux';
+// import { combineReducers } from 'redux';
+import { combineReducers } from '@reduxjs/toolkit';
+
 import sessionErrorsReducer from './session_errors_reducer';
 import BookingErrorsReducer from './bookings/booking_errors_reducer';
 
