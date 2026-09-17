@@ -111,14 +111,16 @@ class Homepage extends React.Component {
                         <img onClick={this.handleTile3} className="poppingRectangle" src="/hamwjtqwsdqffioglcvq.webp" alt="cabin"/>
                     </div>
                 </div>
+                {/* seasonal(?) 4 of them? 1 of them? */}
                 
+                {/* shuffled favorites */}
                 <div className="vague-locations-container">
                     <h1 className="title_listing margin-left-7-9-15pc">A few of our favorites, shuffled</h1>
                     <div className="flex flex-row vague-tile-list margin-left-7-9-15pc">
                         {Object.values(this.props.randomListings || {}).map(listing => (
                             <Link key={listing.id} to={`/listings/${listing.id}`}>
                                 <img
-                                    className="vague_picture"
+                                    className="vague-picture"
                                     src={listing.photoUrls?.[0]}
                                     alt={listing.name}
                                 />

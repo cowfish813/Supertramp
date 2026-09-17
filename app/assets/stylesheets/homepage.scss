@@ -378,8 +378,8 @@
     padding-bottom: 12px;
     max-width: 100%;
 }
-.vague_picture {
-    height: 22.75rem;
+.vague-picture {
+    max-height: 22.75rem;
     max-width: 22rem;
     flex: 0 0 auto;
     margin-right: .7rem;
@@ -387,6 +387,7 @@
     background: #ebebeb;
     object-fit: cover;
     animation: unpop .8s ease forwards;
+    border-radius: 5%;
 }
 .vague_picture:hover {
     cursor: pointer;
