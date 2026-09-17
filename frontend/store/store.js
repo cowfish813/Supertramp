@@ -8,7 +8,10 @@ const configureStore = (preloadedState ={}) =>
     rtkConfigureStore ({
         reducer: rootReducer,
         preloadedState,
-        middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+        devTools: process.env.NODE_ENV !== 'production',
+        middleware: (getDefaultMiddleware) => 
+            process.env.NODE_ENV === 'production' ? getDefaultMiddleware() :
+            getDefaultMiddleware().concat(logger),
     })
 
 
