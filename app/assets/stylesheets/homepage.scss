@@ -360,17 +360,10 @@
 
 }
 
-// .vague-locations-container .tiles-container {
-//     width: 100%;
-//     max-width: 1200px;
-//     margin-left: 15%;
-//     min-width: 0;
-// }
 
 .flex-wrap {
     flex-wrap: wrap;
 }
-
 
 .vague-tile-list {
     overflow-x: auto;
@@ -378,6 +371,7 @@
     padding-bottom: 12px;
     max-width: 100%;
 }
+
 .vague-picture {
     max-height: 22.75rem;
     max-width: 22rem;
@@ -389,7 +383,8 @@
     animation: unpop .8s ease forwards;
     border-radius: 5%;
 }
-.vague_picture:hover {
+
+.vague-picture:hover {
     cursor: pointer;
     animation: pop .2s ease forwards;
     box-shadow: 0px 3px 4px  grey;

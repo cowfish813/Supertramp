@@ -115,7 +115,7 @@ class Homepage extends React.Component {
                 
                 {/* shuffled favorites */}
                 <div className="vague-locations-container">
-                    <h1 className="title_listing margin-left-7-9-15pc">A few of our favorites, shuffled</h1>
+                    <h1 className="title-listing margin-left-7-9-15pc">A few of our favorites, shuffled</h1>
                     <div className="flex flex-row vague-tile-list margin-left-7-9-15pc">
                         {Object.values(this.props.randomListings || {}).map(listing => (
                             <Link key={listing.id} to={`/listings/${listing.id}`}>
