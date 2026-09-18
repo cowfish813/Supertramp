@@ -49,8 +49,8 @@ class Api::ListingsController < ApplicationController
     end
 
     def nearby
-        lat = params.require(:lat)
-        lng = params.require(:lng)
+        lat = params.require(:lat).to_f
+        lng = params.require(:lng).to_f
         radius = params.fetch(:radius, 50).to_f
 
         @listings = Listing.nearby(lat: lat, lng: lng, radius_miles: radius)

@@ -73,13 +73,13 @@ class Listing < ApplicationRecord
             .where(
                 "3959 * acos(
                     cos(radians(?)) * cos(radians(lat)) *
-                    cos(radians(lng) - radians(?) +
+                    cos(radians(lng) - radians(?)) +
                     sin(radians(?)) * sin(radians(lat))
                 ) <= ?", lat.to_f, lng.to_f, lat.to_f, radius_miles
             )
             .order("distance ASC")
-        end
     end
+    
 
     has_many :reviews,
     foreign_key: :listing_id,

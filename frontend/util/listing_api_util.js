@@ -43,6 +43,13 @@ export const createListing = (listForm) => (
     })
 );
 
+export const fetchNearbyListings = (filter) => (
+    $.ajax({
+        url:'/api/listings/nearby',
+        data: filter // {lat, lng, radius}
+    })
+)
+
 export const updateListing = (listingId) => (
     $.ajax({
         url: `api/listings/${listingId}`,

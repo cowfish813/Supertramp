@@ -8,7 +8,7 @@ export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
 export const DESTROY_REVIEW = 'DESTROY_REVIEW';
 export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
 export const RECEIVE_RANDOM_LISTINGS = "RECEIVE_RANDOM_LISTINGS";
-
+export const RECEIVE_NEARBY_LISTINGS = "RECEIVE_NEARBY_LISTINGS";
 
 const receiveListing = (listing) => ({
     type: RECEIVE_LISTING,
@@ -22,6 +22,10 @@ const receiveRandomListings = (listings) => ({
     type: RECEIVE_RANDOM_LISTINGS,
     listings
 });
+const receiveNearbyListings = (listings) => ({
+    type: RECEIVE_NEARBY_LISTINGS.
+    listings
+})
 
 const removeListing = () => ({
     type: REMOVE_LISTING
@@ -59,6 +63,10 @@ export const fetchListing = (listingId) => dispatch => {
 export const fetchRandomListings = (count=3) => dispatch => {
     return ApiUtil.fetchRandomListings(count)
         .then(listings => dispatch(receiveRandomListings(listings)))
+};
+export const fetchNearbyListings = (filter) => dispatch => {
+    return ApiUtil.fetchNearbyListings(filter)
+        .then( (listings) => dispatch(receiveNearbyListings(listings)))
 };
 
 export const createListing = listing => dispatch =>  {
