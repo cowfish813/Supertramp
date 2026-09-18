@@ -77,8 +77,7 @@ class Homepage extends React.Component {
                         </div>
                         <div className="homeDesc">
                             <h2>
-                                Book unique camping experiences on
-                                <strong> Hella </strong>
+                                Book unique camping experiences on many
                                 campsites, cabins, parks, and road sides!
                             </h2>
                         </div>
