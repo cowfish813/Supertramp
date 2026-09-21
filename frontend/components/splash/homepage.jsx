@@ -16,6 +16,7 @@ class Homepage extends React.Component {
     componentDidMount() {
         window.scrollTo(0, 0);
         this.props.fetchRandomListings(9);
+        this.props.fetchNearbyListings();
     }
 
     handleInput() {
@@ -111,6 +112,22 @@ class Homepage extends React.Component {
                     </div>
                 </div>
                 {/* seasonal(?) 4 of them? 1 of them? */}
+                {/* nearby */}
+                <div className="vague-locations-container">
+                    <h1 className="title-listing margin-left-7-9-15pc">Listings Near You!</h1>
+                    <div className="flex flex-row vague-tile-list margin-left-7-9-15pc">
+                        {Object.values(this.props.nearbyListings || {}).map(listing => (
+                            <Link key={listing.id} to={`/listings/${listing.id}`}>
+                                <img
+                                    className="vague-picture"
+                                    src={listing.photoUrls?.[0]}
+                                    alt={listing.name}
+                                />
+                                <div className='text-descriptor'>${listing.price} for {listing.minimum_nights} {listing.minimum_nights > 1 ? "nights" : "night"}</div>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
                 
                 {/* shuffled favorites */}
                 <div className="vague-locations-container">
