@@ -7,17 +7,10 @@ import { Link } from 'react-router-dom';
 const Nearby = ({scope, title, coords}) => {
     const nearbyListings = useSelector((state) => state.entities.nearbyListings[scope] || {});
     const dispatch = useDispatch();
-    const [loading, setLoading] = useState(false);
     const [fetched, setFetched] = useState(false);
-
-    const DEFAULT_COORDS = { 
-        latitude: coords?.lat, 
-        longitude: coords?.lng 
-    };
 
     useEffect(() => {
         let cancelled = false;
-        setLoading(true);
         const resolveCoords = coords ? Promise.resolve(coords) : getUserLocation()
 
         resolveCoords   
@@ -29,13 +22,11 @@ const Nearby = ({scope, title, coords}) => {
             })
             .then(() => {
                 if (!cancelled) {
-                    setLoading(false); 
                     setFetched(true);
                 }
             })
             .catch(() => {
                 if (!cancelled) {
-                    setLoading(false);
                     setFetched(true);
                 }
             })

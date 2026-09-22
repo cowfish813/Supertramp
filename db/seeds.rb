@@ -30,9 +30,7 @@ PHOTOS = {
   'n4' => 'https://supertramp-mast.s3-us-west-1.amazonaws.com/n4.jpg',
 }.freeze
 
-# Helpers
-
-# Download a JPEG from `url`, convert it to WebP locally, and attach the WebP to listing
+# Download a JPEG from `url`, convert to WebP locally, and attach the WebP to listing
 def attach_webp(listing, url, filename_base)
   source_path = nil
   converted = nil
