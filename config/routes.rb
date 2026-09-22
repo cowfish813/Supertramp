@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :listings, only:[:create, :destroy, :update, :show, :index] do
       collection do
         get :random
+        get :nearby
       end
     end
     resources :reviews, only:[:create, :destroy, :update]

@@ -350,14 +350,13 @@
 
 .vague-locations-container {
     margin-top: 12vh;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
     display: flex;
-    // align-items: center;
-    // justify-content: center;
+    align-items: flex-start;
     flex-direction: column;
     min-width: 0;
     max-width: 100%;
-
+    width: 100%;
 }
 
 
@@ -368,8 +367,12 @@
 .vague-tile-list {
     overflow-x: auto;
     justify-content: flex-start;
-    padding-bottom: 12px;
+    // padding-bottom: 12px;
     max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 1rem;
 }
 
 .vague-picture {

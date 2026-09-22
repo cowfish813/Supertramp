@@ -2,7 +2,16 @@ import React from 'react';
 import SearchBar from '../search/search_container';
 import { Link } from "react-router-dom";
 import { withRouter } from 'react-router-dom';
+import Nearby from './nearby';
 
+const AREAS = [
+    { scope: "Yosemite", title: "Near Yosemite", coords: { lat: 37.7456, lng: -119.5936 }},
+    { scope: "SF", title: "Near San Francisco", coords: { lat: 37.7749, lng: -122.4194 }},
+    { scope: "NY",  title: "Near New York", coords: { lat: 40.7128, lng: -74.0060 }},
+    { scope: "Seattle",  title: "Near Seattle", coords: { lat: 47.6062, lng: -122.3321 }},
+    { scope: "Austin",  title: "Near Austin", coords: { lat: 30.2672, lng: -97.7431 }}
+    //add filters in the
+];
 class Homepage extends React.Component {
     constructor(props) {
         super(props)
@@ -77,8 +86,7 @@ class Homepage extends React.Component {
                         </div>
                         <div className="homeDesc">
                             <h2>
-                                Book unique camping experiences on
-                                <strong> Hella </strong>
+                                Book unique camping experiences on many
                                 campsites, cabins, parks, and road sides!
                             </h2>
                         </div>
@@ -86,7 +94,7 @@ class Homepage extends React.Component {
                 </div>
 
                 < SearchBar />
-{/* max width on banner. too big. */}
+
                 <div className="containerBanner">
                     <img src="/banner.webp" alt="bannerbar"
                     className="bannerImg"
@@ -111,8 +119,15 @@ class Homepage extends React.Component {
                         <img onClick={this.handleTile3} className="poppingRectangle" src="/hamwjtqwsdqffioglcvq.webp" alt="cabin"/>
                     </div>
                 </div>
-                {/* seasonal(?) 4 of them? 1 of them? */}
-                
+
+
+                {/* nearby user or not rendered if rejected */}
+                <Nearby/>
+
+                {AREAS.map((area) => (
+                    <Nearby key={area.scope} {...area} />
+                ))}
+
                 {/* shuffled favorites */}
                 <div className="vague-locations-container">
                     <h1 className="title-listing margin-left-7-9-15pc">A few of our favorites, shuffled</h1>

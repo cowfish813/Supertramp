@@ -61,6 +61,26 @@ class Listing < ApplicationRecord
         end
     end
 
+    def self.nearby(lat:, lng:, radius_miles:50)
+        where.not(lat:nil, lng:nil)
+            .select("listings.*, (
+                3959 * acos(
+                    cos(radians(#{lat.to_f})) * cos(radians(lat)) *
+                    cos(radians(lng) - radians(#{lng.to_f})) + 
+                    sin(radians(#{lat.to_f})) * sin(radians(lat))
+                )
+            ) AS distance")
+            .where(
+                "3959 * acos(
+                    cos(radians(?)) * cos(radians(lat)) *
+                    cos(radians(lng) - radians(?)) +
+                    sin(radians(?)) * sin(radians(lat))
+                ) <= ?", lat.to_f, lng.to_f, lat.to_f, radius_miles
+            )
+            .order("distance ASC")
+    end
+    
+
     has_many :reviews,
     foreign_key: :listing_id,
     dependent: :destroy
