@@ -1,45 +1,58 @@
 import React, { useEffect, useState } from "react";
 import { getUserLocation } from '../util/geolocation';
 import { useSelector, useDispatch } from "react-redux";
-// import { fetchNearbyListings } from "../../util/listing_api_util";
 import { fetchNearbyListings } from "../../actions/listing_actions/listing_actions";
 
 import { Link } from 'react-router-dom';
 
-const Nearby = () => {
-    const nearbyListings = useSelector((state) => state.entities.nearbyListings);
+const Nearby = ({scope, title, coords}) => {
+    const nearbyListings = useSelector((state) => state.entities.nearbyListings[scope] || {});
     const dispatch = useDispatch();
 
     const [loading, setLoading] = useState(false);
+    const [fetched, setFetched] = useState(false);
     const [err, setErr] = useState(null);
-    const DEFAULT_COORDS = { latitude: 37.7456, longitude: -119.5936 };
+
+    const DEFAULT_COORDS = { 
+        latitude: coords?.lat, 
+        longitude: coords?.lng 
+    };
 
     useEffect(() => {
+        // console.log("Nearby props:", { scope, title, coords });
         let cancelled = false;
         setLoading(true);
-        if (fetchNearbyListings) {
-            getUserLocation()
-                .then((coords) => {
-                    // dispatch(fetchNearbyListings(coords.lat, coords.lng, 50))
-                    dispatch(fetchNearbyListings(DEFAULT_COORDS.latitude, DEFAULT_COORDS.longitude, 50))
-                })
-                .then(() => {
-                    if (!cancelled) setLoading(false)
-                })
-                .catch(err => {
-                    if (!cancelled) {
-                        setErr(err.mesage || "Could not load nearby listings");
-                        setLoading(false);
-                    }
-                });
-        }
-        console.log(nearbyListings, "nearby")
+
+        const resolveCoords = coords ? Promise.resolve(coords) : getUserLocation()
+
+        resolveCoords   
+            .then((c) => {
+                if (cancelled) return;
+                const lat = c.lat ?? c.latitude;
+                const lng = c.lng ?? c.longitude;
+                return dispatch(fetchNearbyListings(lat, lng, 50, scope));
+            })
+            .then(() => {
+                if (!cancelled) {
+                    setLoading(false); 
+                    setFetched(true);
+                }
+            })
+            .catch(() => {
+                if (!cancelled) {
+                    setLoading(false);
+                    setFetched(true);
+                }
+            })
         return () => { cancelled = true }
-    }, [dispatch])
+    }, [dispatch, scope, coords])
+
+    const hasListings = Object.keys(nearbyListings).length > 0;
+    if (fetched && !hasListings) return null;
 
     return (
         <div className="vague-locations-container">
-            <h1 className="title-listing margin-left-7-9-15pc">Listings Near You</h1>
+            <h1 className="title-listing margin-left-7-9-15pc">{ title || "Listings Near You"}</h1>
             <div className="flex flex-row vague-tile-list margin-left-7-9-15pc">
                 {Object.values(nearbyListings || {}).map(listing => (
                     <Link key={listing.id} to={`/listings/${listing.id}`}>

@@ -3,7 +3,8 @@ import { RECEIVE_NEARBY_LISTINGS } from "../../actions/listing_actions/listing_a
 const nearbyListingsReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_NEARBY_LISTINGS:
-            return Object.assign({}, state, action.listings);
+            // return Object.assign({}, ...state, [action.scope]:action.listings);
+            return { ...state, [action.scope]: action.listings };
         default:
             return state;
     }

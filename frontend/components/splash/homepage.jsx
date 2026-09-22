@@ -7,7 +7,7 @@ import Nearby from './nearby';
 const AREAS = [
     { scope: "Yosemite", title: "Near Yosemite", coords: { lat: 37.7456, lng: -119.5936 }},
     { scope: "SF", title: "Near San Francisco", coords: { lat: 35.6762, lng: 139.6503 }},
-     { scope: "NY",  title: "Near New York", coords: { lat: 40.7128, lng: -74.0060 }}
+    { scope: "NY",  title: "Near New York", coords: { lat: 40.7128, lng: -74.0060 }}
 ];
 class Homepage extends React.Component {
     constructor(props) {
