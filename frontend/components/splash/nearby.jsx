@@ -31,7 +31,6 @@ const Nearby = () => {
                         setErr(err.mesage || "Could not load nearby listings");
                         setLoading(false);
                     }
-                    // console.warn("Location denied or unavailable:", err)
                 });
         }
         console.log(nearbyListings, "nearby")

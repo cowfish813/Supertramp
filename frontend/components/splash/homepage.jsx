@@ -2,8 +2,13 @@ import React from 'react';
 import SearchBar from '../search/search_container';
 import { Link } from "react-router-dom";
 import { withRouter } from 'react-router-dom';
-// import { getUserLocation } from '../util/geolocation';
 import Nearby from './nearby';
+
+const AREAS = [
+    { scope: "Yosemite", title: "Near Yosemite", coords: { lat: 37.7456, lng: -119.5936 }},
+    { scope: "SF", title: "Near San Francisco", coords: { lat: 35.6762, lng: 139.6503 }},
+     { scope: "NY",  title: "Near New York", coords: { lat: 40.7128, lng: -74.0060 }}
+];
 class Homepage extends React.Component {
     constructor(props) {
         super(props)
@@ -111,10 +116,14 @@ class Homepage extends React.Component {
                         <img onClick={this.handleTile3} className="poppingRectangle" src="/hamwjtqwsdqffioglcvq.webp" alt="cabin"/>
                     </div>
                 </div>
-                {/* seasonal(?) 4 of them? 1 of them? */}
+
 
                 {/* nearby */}
                 <Nearby/>
+
+                {AREAS.map((area) => (
+                    <Nearby key={area.scope} {...area} />
+                ))}
 
                 {/* shuffled favorites */}
                 <div className="vague-locations-container">
