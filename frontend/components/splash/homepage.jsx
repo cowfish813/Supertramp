@@ -10,6 +10,7 @@ const AREAS = [
     { scope: "NY",  title: "Near New York", coords: { lat: 40.7128, lng: -74.0060 }},
     { scope: "Seattle",  title: "Near Seattle", coords: { lat: 47.6062, lng: -122.3321 }},
     { scope: "Austin",  title: "Near Austin", coords: { lat: 30.2672, lng: -97.7431 }}
+    //add filters in the
 ];
 class Homepage extends React.Component {
     constructor(props) {
