@@ -2,16 +2,13 @@ import React, { useEffect, useState } from "react";
 import { getUserLocation } from '../util/geolocation';
 import { useSelector, useDispatch } from "react-redux";
 import { fetchNearbyListings } from "../../actions/listing_actions/listing_actions";
-
 import { Link } from 'react-router-dom';
 
 const Nearby = ({scope, title, coords}) => {
     const nearbyListings = useSelector((state) => state.entities.nearbyListings[scope] || {});
     const dispatch = useDispatch();
-
     const [loading, setLoading] = useState(false);
     const [fetched, setFetched] = useState(false);
-    const [err, setErr] = useState(null);
 
     const DEFAULT_COORDS = { 
         latitude: coords?.lat, 
@@ -19,10 +16,8 @@ const Nearby = ({scope, title, coords}) => {
     };
 
     useEffect(() => {
-        // console.log("Nearby props:", { scope, title, coords });
         let cancelled = false;
         setLoading(true);
-
         const resolveCoords = coords ? Promise.resolve(coords) : getUserLocation()
 
         resolveCoords   

@@ -762,6 +762,350 @@ attach_photo(l35, 'd')
 attach_photo(l35, 'a')
 attach_photo(l35, 'b')
 
+l36 = Listing.create!(
+  name: 'Golden Gate Glamping',
+  on_arrival: 'Check in at the welcome tent near the marina',
+  description: 'Wake up to views of the Golden Gate Bridge from your luxury tent. Explore the Marin Headlands, bike across the bridge, and enjoy fresh seafood at Fisherman\'s Wharf. Perfect for city explorers who want a taste of the outdoors without leaving the Bay.',
+  cancellation_policy: 'Moderate',
+  capacity: 4,
+  country: 'United States',
+  minimum_nights: 2,
+  price: 350,
+  lat: 37.8199,
+  lng: -122.4783,
+  host_id: u1.id
+)
+attach_photo(l36, 'a')
+attach_photo(l36, 'c')
+attach_photo(l36, 'e')
+
+l37 = Listing.create!(
+  name: 'Redwood Retreat',
+  on_arrival: 'Follow the gravel path to the ranger station',
+  description: 'Nestled among ancient redwoods just north of the city, this quiet retreat offers peace and privacy. Hike the nearby trails, spot wildlife at dawn, and fall asleep to the sound of the forest. A short drive from downtown San Francisco.',
+  cancellation_policy: 'Flexible',
+  capacity: 3,
+  country: 'United States',
+  minimum_nights: 1,
+  price: 220,
+  lat: 37.8651,
+  lng: -122.5755,
+  host_id: u2.id
+)
+attach_photo(l37, 'd')
+attach_photo(l37, 'n1')
+attach_photo(l37, 'b')
+
+l38 = Listing.create!(
+  name: 'Brooklyn Bridge Loft',
+  on_arrival: 'Buzz apartment 4B at the front door',
+  description: 'A sunlit loft in DUMBO with skyline views and easy access to the Brooklyn Bridge. Walk to Brooklyn Bridge Park, grab coffee at a local roaster, and take the ferry to Manhattan in ten minutes. Ideal for a weekend in the city.',
+  cancellation_policy: 'Strict',
+  capacity: 4,
+  country: 'United States',
+  minimum_nights: 2,
+  price: 400,
+  lat: 40.7033,
+  lng: -73.9881,
+  host_id: u3.id
+)
+attach_photo(l38, 'n2')
+attach_photo(l38, 'f')
+attach_photo(l38, 'c')
+
+l39 = Listing.create!(
+  name: 'Catskills Cabin Escape',
+  on_arrival: 'Key is in the lockbox; code sent after booking',
+  description: 'A quiet log cabin in the Catskills, two hours from NYC. Wood-burning stove, a wraparound porch, and a trail that leads to a swimming hole. Perfect for a digital detox or a writing retreat.',
+  cancellation_policy: 'Moderate',
+  capacity: 6,
+  country: 'United States',
+  minimum_nights: 3,
+  price: 275,
+  lat: 42.0884,
+  lng: -74.4010,
+  host_id: u1.id
+)
+attach_photo(l39, 'n3')
+attach_photo(l39, 'e')
+attach_photo(l39, 'd')
+
+l40 = Listing.create!(
+  name: 'Pike Place Hideaway',
+  on_arrival: 'Check in at the front desk of the market building',
+  description: 'A cozy studio steps from Pike Place Market and the waterfront. Watch the ferries cross Puget Sound, browse the market at sunrise, and take the monorail to the Space Needle. Everything Seattle has to offer, right outside your door.',
+  cancellation_policy: 'Flexible',
+  capacity: 2,
+  country: 'United States',
+  minimum_nights: 2,
+  price: 300,
+  lat: 47.6097,
+  lng: -122.3422,
+  host_id: u2.id
+)
+attach_photo(l40, 'n4')
+attach_photo(l40, 'a')
+attach_photo(l40, 'f')
+
+l41 = Listing.create!(
+  name: 'Rainier Basecamp Lodge',
+  on_arrival: 'Stop at the ranger station for a parking pass',
+  description: 'A rustic lodge at the base of Mount Rainier, surrounded by old-growth forest and alpine meadows. Hike to waterfalls, spot marmots on the trails, and watch the sunset paint the mountain pink. A short drive from Seattle.',
+  cancellation_policy: 'Moderate',
+  capacity: 5,
+  country: 'United States',
+  minimum_nights: 2,
+  price: 240,
+  lat: 46.8523,
+  lng: -121.7603,
+  host_id: u3.id
+)
+attach_photo(l41, 'b')
+attach_photo(l41, 'c')
+attach_photo(l41, 'n1')
+
+l42 = Listing.create!(
+  name: 'South Congress Bungalow',
+  on_arrival: 'Knock on the blue door; someone will let you in',
+  description: 'A bright bungalow in the heart of South Congress. Walk to live music venues, food trucks, and vintage shops. Sit on the porch with a cold drink and watch the bats fly out from the Congress Avenue Bridge at dusk.',
+  cancellation_policy: 'Flexible',
+  capacity: 4,
+  country: 'United States',
+  minimum_nights: 1,
+  price: 200,
+  lat: 30.2500,
+  lng: -97.7494,
+  host_id: u4.id
+)
+attach_photo(l42, 'n2')
+attach_photo(l42, 'd')
+attach_photo(l42, 'e')
+
+l43 = Listing.create!(
+  name: 'Hill Country Star Deck',
+  on_arrival: 'Park by the windmill and follow the string lights',
+  description: 'A private cabin on a working ranch in the Texas Hill Country, thirty minutes from Austin. Swim in the spring-fed creek, grill under the stars, and wake up to the sound of cattle in the distance. No neighbors in sight.',
+  cancellation_policy: 'Moderate',
+  capacity: 6,
+  country: 'United States',
+  minimum_nights: 2,
+  price: 260,
+  lat: 30.2672,
+  lng: -98.0950,
+  host_id: u1.id
+)
+attach_photo(l43, 'n4')
+attach_photo(l43, 'f')
+attach_photo(l43, 'a')
+
+l44 = Listing.create!(
+  name: 'Lake Travis Overlook',
+  on_arrival: 'Take the private road to the overlook gate',
+  description: 'A hillside retreat above Lake Travis with a wraparound deck and sunset views. Swim, paddleboard, or just watch the boats go by. Ten minutes from Austin\'s best barbecue and a short drive to downtown.',
+  cancellation_policy: 'Strict',
+  capacity: 4,
+  country: 'United States',
+  minimum_nights: 2,
+  price: 320,
+  lat: 30.3925,
+  lng: -97.9200,
+  host_id: u2.id
+)
+attach_photo(l44, 'n1')
+attach_photo(l44, 'e')
+attach_photo(l44, 'b')
+
+l45 = Listing.create!(
+  name: 'Barton Springs Treehouse',
+  on_arrival: 'Follow the wooden path behind the main house',
+  description: 'A modern treehouse perched above Barton Creek, minutes from Barton Springs Pool and Zilker Park. Fall asleep to the sound of the creek and wake up to birdsong. A hidden gem in the middle of Austin.',
+  cancellation_policy: 'Flexible',
+  capacity: 2,
+  country: 'United States',
+  minimum_nights: 1,
+  price: 280,
+  lat: 30.2640,
+  lng: -97.7713,
+  host_id: u3.id
+)
+attach_photo(l45, 'c')
+attach_photo(l45, 'n3')
+attach_photo(l45, 'd')
+
+# San Francisco
+l36 = Listing.create!(
+  name: 'Mission District Flat',
+  on_arrival: 'Buzz 2A at the intercom; key is under the mat',
+  description: 'A sunny one-bedroom in the heart of the Mission. Steps from taquerias, murals, and the best coffee in the city. Walk to Dolores Park, take BART downtown in ten minutes, or just stay in and watch the fog roll over Twin Peaks.',
+  cancellation_policy: 'Flexible',
+  capacity: 3,
+  country: 'United States',
+  minimum_nights: 2,
+  price: 240,
+  lat: 37.7599,
+  lng: -122.4148,
+  host_id: u1.id
+)
+attach_photo(l36, 'a')
+attach_photo(l36, 'c')
+attach_photo(l36, 'e')
+
+l37 = Listing.create!(
+  name: 'Sausalito Houseboat',
+  on_arrival: 'Dock 3, blue door — knock twice',
+  description: 'A floating cabin in Sausalito with views back to the city skyline. Watch the ferries go by, paddle a kayak at sunrise, and take the ferry to SF in twenty minutes. Quiet, sunny, and completely unlike staying in a hotel.',
+  cancellation_policy: 'Moderate',
+  capacity: 2,
+  country: 'United States',
+  minimum_nights: 2,
+  price: 320,
+  lat: 37.8591,
+  lng: -122.4853,
+  host_id: u2.id
+)
+attach_photo(l37, 'd')
+attach_photo(l37, 'n1')
+attach_photo(l37, 'b')
+
+# New York
+l38 = Listing.create!(
+  name: 'West Village Brownstone',
+  on_arrival: 'Ring the top buzzer; someone will let you in',
+  description: 'A classic brownstone apartment in the West Village. Tree-lined streets, a corner bodega, and Washington Square Park a short walk away. The kind of place you picture when you think of New York.',
+  cancellation_policy: 'Strict',
+  capacity: 3,
+  country: 'United States',
+  minimum_nights: 2,
+  price: 380,
+  lat: 40.7359,
+  lng: -74.0036,
+  host_id: u3.id
+)
+attach_photo(l38, 'n2')
+attach_photo(l38, 'f')
+attach_photo(l38, 'c')
+
+l39 = Listing.create!(
+  name: 'Hudson Valley Cabin',
+  on_arrival: 'Key in the lockbox; code sent after booking',
+  description: 'A quiet log cabin in the lower Hudson Valley, forty miles north of the city. Wood stove, a wraparound porch, and a trail to a swimming hole. Perfect for a weekend away from the noise.',
+  cancellation_policy: 'Moderate',
+  capacity: 5,
+  country: 'United States',
+  minimum_nights: 2,
+  price: 260,
+  lat: 41.2000,
+  lng: -73.9500,
+  host_id: u1.id
+)
+attach_photo(l39, 'n3')
+attach_photo(l39, 'e')
+attach_photo(l39, 'd')
+
+# Seattle
+l40 = Listing.create!(
+  name: 'Ballard Fisherman\'s Loft',
+  on_arrival: 'Check in at the cafe downstairs; they have the key',
+  description: 'A loft above a working marina in Ballard. Watch the fishing boats come in, walk to the Sunday farmers market, and take the locks to the waterfront. Ten minutes from downtown, a world away from the tourist crowds.',
+  cancellation_policy: 'Flexible',
+  capacity: 3,
+  country: 'United States',
+  minimum_nights: 2,
+  price: 275,
+  lat: 47.6686,
+  lng: -122.3862,
+  host_id: u2.id
+)
+attach_photo(l40, 'n4')
+attach_photo(l40, 'a')
+attach_photo(l40, 'f')
+
+l41 = Listing.create!(
+  name: 'Cascade Foothills Lodge',
+  on_arrival: 'Stop at the ranger station for a parking pass',
+  description: 'A rustic lodge in the Cascade foothills, thirty-five miles east of Seattle. Hike to waterfalls, spot elk on the trails, and watch the sunset paint the mountains pink. A short drive from the city but a world away.',
+  cancellation_policy: 'Moderate',
+  capacity: 6,
+  country: 'United States',
+  minimum_nights: 2,
+  price: 230,
+  lat: 47.4800,
+  lng: -121.7500,
+  host_id: u3.id
+)
+attach_photo(l41, 'b')
+attach_photo(l41, 'c')
+attach_photo(l41, 'n1')
+
+# Austin
+l42 = Listing.create!(
+  name: 'East Austin Bungalow',
+  on_arrival: 'Knock on the turquoise door; someone will let you in',
+  description: 'A bright bungalow in East Austin, walkable to breweries, food trucks, and live music. Sit on the porch with a cold drink and watch the neighborhood go by. The best of Austin, right outside your door.',
+  cancellation_policy: 'Flexible',
+  capacity: 4,
+  country: 'United States',
+  minimum_nights: 1,
+  price: 210,
+  lat: 30.2620,
+  lng: -97.7200,
+  host_id: u4.id
+)
+attach_photo(l42, 'n2')
+attach_photo(l42, 'd')
+attach_photo(l42, 'e')
+
+l43 = Listing.create!(
+  name: 'Hamilton Pool Retreat',
+  on_arrival: 'Park at the gate and follow the trail down',
+  description: 'A private cabin near Hamilton Pool, thirty miles west of Austin. Swim in the spring-fed pool, hike the canyon trails, and grill under the stars. No neighbors in sight.',
+  cancellation_policy: 'Moderate',
+  capacity: 5,
+  country: 'United States',
+  minimum_nights: 2,
+  price: 250,
+  lat: 30.3425,
+  lng: -98.1270,
+  host_id: u1.id
+)
+attach_photo(l43, 'n4')
+attach_photo(l43, 'f')
+attach_photo(l43, 'a')
+
+l44 = Listing.create!(
+  name: 'Mount Bonnell Overlook',
+  on_arrival: 'Take the private road to the overlook gate',
+  description: 'A hillside retreat above the Colorado River with a wraparound deck and sunset views. Swim, paddleboard, or just watch the boats go by. Ten minutes from downtown Austin and the best barbecue in the city.',
+  cancellation_policy: 'Strict',
+  capacity: 4,
+  country: 'United States',
+  minimum_nights: 2,
+  price: 300,
+  lat: 30.3225,
+  lng: -97.7760,
+  host_id: u2.id
+)
+attach_photo(l44, 'n1')
+attach_photo(l44, 'e')
+attach_photo(l44, 'b')
+
+l45 = Listing.create!(
+  name: 'Zilker Park Treehouse',
+  on_arrival: 'Follow the wooden path behind the main house',
+  description: 'A modern treehouse perched above Barton Creek, minutes from Zilker Park and Barton Springs Pool. Fall asleep to the sound of the creek, wake up to birdsong. A hidden gem in the middle of Austin.',
+  cancellation_policy: 'Flexible',
+  capacity: 2,
+  country: 'United States',
+  minimum_nights: 1,
+  price: 270,
+  lat: 30.2660,
+  lng: -97.7780,
+  host_id: u3.id
+)
+attach_photo(l45, 'c')
+attach_photo(l45, 'n3')
+attach_photo(l45, 'd')
+
 # Bookings
 Booking.create!(
   listing_id: l1.id,
