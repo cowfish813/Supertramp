@@ -6,10 +6,10 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'application', defer:true  %>
     <%= favicon_link_tag 'favicon.ico' %>
     
-    <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key='+Rails.application.credentials.PLACES_API_KEY %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.credentials.PLACES_API_KEY}", defer:true %>
     <meta property="og:title" content="Super Tramp"/>
     <meta property="og:image" content="<%= image_url('/supertrampapp/app/assets/images/featured.png') %>"/>
     
