@@ -8,7 +8,7 @@ const mSTP = state => ({
     errors: state.errors.session,
     user: state.entities.user,
     randomListings: state.entities.randomListings,
-    nearbyListings: state.entities.nearbyListings
+    // nearbyListings: state.entities.nearbyListings
 })
 
 const mDTP = dispatch => ({
@@ -16,7 +16,7 @@ const mDTP = dispatch => ({
     closeModal: () => dispatch(closeModal()),
     fetchListings: () => dispatch(fetchListings()),
     fetchRandomListings: (count) => dispatch(fetchRandomListings(count)),
-    fetchNearbyListings: filter => dispatch(fetchNearbyListings(filter))
+    // fetchNearbyListings: filter => dispatch(fetchNearbyListings(filter))
 })  
 
 export default connect(mSTP, mDTP)(Homepage)

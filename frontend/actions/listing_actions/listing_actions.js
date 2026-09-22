@@ -23,7 +23,7 @@ const receiveRandomListings = (listings) => ({
     listings
 });
 const receiveNearbyListings = (listings) => ({
-    type: RECEIVE_NEARBY_LISTINGS.
+    type: RECEIVE_NEARBY_LISTINGS,
     listings
 })
 
@@ -64,8 +64,8 @@ export const fetchRandomListings = (count=3) => dispatch => {
     return ApiUtil.fetchRandomListings(count)
         .then(listings => dispatch(receiveRandomListings(listings)))
 };
-export const fetchNearbyListings = (filter) => dispatch => {
-    return ApiUtil.fetchNearbyListings(filter)
+export const fetchNearbyListings = (lat, lng, radius=100) => dispatch => {
+    return ApiUtil.fetchNearbyListings({lat, lng, radius})
         .then( (listings) => dispatch(receiveNearbyListings(listings)))
 };
 
