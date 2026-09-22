@@ -6,8 +6,10 @@ import Nearby from './nearby';
 
 const AREAS = [
     { scope: "Yosemite", title: "Near Yosemite", coords: { lat: 37.7456, lng: -119.5936 }},
-    { scope: "SF", title: "Near San Francisco", coords: { lat: 35.6762, lng: 139.6503 }},
-    { scope: "NY",  title: "Near New York", coords: { lat: 40.7128, lng: -74.0060 }}
+    { scope: "SF", title: "Near San Francisco", coords: { lat: 37.7749, lng: -122.4194 }},
+    { scope: "NY",  title: "Near New York", coords: { lat: 40.7128, lng: -74.0060 }},
+    { scope: "Seattle",  title: "Near Seattle", coords: { lat: 47.6062, lng: -122.3321 }},
+    { scope: "Austin",  title: "Near Austin", coords: { lat: 30.2672, lng: -97.7431 }}
 ];
 class Homepage extends React.Component {
     constructor(props) {
@@ -91,7 +93,7 @@ class Homepage extends React.Component {
                 </div>
 
                 < SearchBar />
-{/* max width on banner. too big. */}
+
                 <div className="containerBanner">
                     <img src="/banner.webp" alt="bannerbar"
                     className="bannerImg"
@@ -118,7 +120,7 @@ class Homepage extends React.Component {
                 </div>
 
 
-                {/* nearby */}
+                {/* nearby user or not rendered if rejected */}
                 <Nearby/>
 
                 {AREAS.map((area) => (
@@ -141,23 +143,6 @@ class Homepage extends React.Component {
                         ))}
                     </div>
                 </div>
-
-                {/* yosemite */}
-                {/* <div className="vague-locations-container">
-                    <h1 className="title-listing margin-left-7-9-15pc">A few of our favorites, shuffled</h1>
-                    <div className="flex flex-row vague-tile-list margin-left-7-9-15pc">
-                        {Object.values(this.props.randomListings || {}).map(listing => (
-                            <Link key={listing.id} to={`/listings/${listing.id}`}>
-                                <img
-                                    className="vague-picture"
-                                    src={listing.photoUrls?.[0]}
-                                    alt={listing.name}
-                                />
-                                <div className='text-descriptor'>${listing.price} for {listing.minimum_nights} {listing.minimum_nights > 1 ? "nights" : "night"}</div>
-                            </Link>
-                        ))}
-                    </div>
-                </div> */}
 
                 <div className=""> 
                     <h3 className="sp_header">Safety Partners</h3>
