@@ -1,7 +1,7 @@
 import React from 'react';
-import SearchBar from '../search/search_container';
 import { Link } from "react-router-dom";
 import { withRouter } from 'react-router-dom';
+import SearchBar from '../search/search_container';
 import Nearby from './nearby';
 import SafetyPartners from './safety_partners';
 
@@ -11,7 +11,6 @@ const AREAS = [
     { scope: "NY",  title: "Near New York", coords: { lat: 40.7128, lng: -74.0060 }},
     { scope: "Seattle",  title: "Near Seattle", coords: { lat: 47.6062, lng: -122.3321 }},
     { scope: "Austin",  title: "Near Austin", coords: { lat: 30.2672, lng: -97.7431 }}
-    //add filters in the
 ];
 class Homepage extends React.Component {
     constructor(props) {
@@ -123,8 +122,9 @@ class Homepage extends React.Component {
 
 
                 {/* nearby user or not rendered if rejected */}
-                <Nearby/>
+                <Nearby scope="user" title="Listings Near You" />
 
+                {/* scoped above */}
                 {AREAS.map((area) => (
                     <Nearby key={area.scope} {...area} />
                 ))}
@@ -145,6 +145,7 @@ class Homepage extends React.Component {
                         ))}
                     </div>
                 </div>
+
                 <SafetyPartners/>                
             </div>
         )
