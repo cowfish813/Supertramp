@@ -31,7 +31,7 @@ const Search = (props) => {
             setMapLat(lat);
             setMapLng(lng);
 
-            // //searches when selection made
+            // //searches when selection made. do i keep this?
             // const state = {mapLocation: label, lat, lng}; 
             // props.receiveLocation(state);
             // history.push({
@@ -61,7 +61,9 @@ const Search = (props) => {
             
             history.push({
                 pathname: `/search/${mapLat},${mapLng}`,
-                state
+                state: {mapLocation, mapLat, mapLng},
+                search: `?label${encodeURIComponent(mapLocation)}` 
+                    //adds extra info to search bar
             })
         } 
     }
