@@ -95,7 +95,7 @@ class Homepage extends React.Component {
 
                 < SearchBar />
 
-                <div className="containerBanner">
+                {/* <div className="containerBanner">
                     <img src="/banner.webp" alt="bannerbar"
                     className="bannerImg"
                     id="bannerImg"
@@ -109,7 +109,7 @@ class Homepage extends React.Component {
                             <button onClick={this.handleInput} className="intro_button">I'm feeling Lucky!</button>
                         </div>
                     </div>                  
-                </div>
+                </div> */}
 
                 <div className="tiles-container">
                     <h1 className="title-listing">Check Out These Areas!</h1>
