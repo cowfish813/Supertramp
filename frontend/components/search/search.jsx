@@ -73,7 +73,6 @@ const Search = (props) => {
                 <div className="searchBar">
                     <span className="fasearch">
                         <LocationDot color="black" />
-                        {/* <FontAwesomeIcon icon={faLocationDot} /> */}
                     </span>
 
                     <input 
