@@ -1,8 +1,9 @@
 import React from 'react';
-import SearchBar from '../search/search_container';
 import { Link } from "react-router-dom";
 import { withRouter } from 'react-router-dom';
+import SearchBar from '../search/search_container';
 import Nearby from './nearby';
+import SafetyPartners from './safety_partners';
 
 const AREAS = [
     { scope: "Yosemite", title: "Near Yosemite", coords: { lat: 37.7456, lng: -119.5936 }},
@@ -10,7 +11,6 @@ const AREAS = [
     { scope: "NY",  title: "Near New York", coords: { lat: 40.7128, lng: -74.0060 }},
     { scope: "Seattle",  title: "Near Seattle", coords: { lat: 47.6062, lng: -122.3321 }},
     { scope: "Austin",  title: "Near Austin", coords: { lat: 30.2672, lng: -97.7431 }}
-    //add filters in the
 ];
 class Homepage extends React.Component {
     constructor(props) {
@@ -75,7 +75,7 @@ class Homepage extends React.Component {
 
     render() {
         return (
-            <div className="superHomePage">
+            <div className="super-homepage">
 
                 <div className="home">
                     <div className="homeCol">
@@ -95,7 +95,7 @@ class Homepage extends React.Component {
 
                 < SearchBar />
 
-                <div className="containerBanner">
+                {/* <div className="containerBanner">
                     <img src="/banner.webp" alt="bannerbar"
                     className="bannerImg"
                     id="bannerImg"
@@ -109,7 +109,7 @@ class Homepage extends React.Component {
                             <button onClick={this.handleInput} className="intro_button">I'm feeling Lucky!</button>
                         </div>
                     </div>                  
-                </div>
+                </div> */}
 
                 <div className="tiles-container">
                     <h1 className="title-listing">Check Out These Areas!</h1>
@@ -122,8 +122,9 @@ class Homepage extends React.Component {
 
 
                 {/* nearby user or not rendered if rejected */}
-                <Nearby/>
+                <Nearby scope="user" title="Listings Near You" />
 
+                {/* scoped above */}
                 {AREAS.map((area) => (
                     <Nearby key={area.scope} {...area} />
                 ))}
@@ -145,61 +146,7 @@ class Homepage extends React.Component {
                     </div>
                 </div>
 
-                <div className=""> 
-                    <h3 className="sp_header">Safety Partners</h3>
-                    <div className='flex'>
-                        
-                        <div className='margin-right-24 sp_div green_background flex flex-col'>
-                            <div className='sp_img'>
-                                <div className='sp_img_wrapper'>
-                                    <img className='' alt='Recreate Responsibly' src='/recreate-responsibly.png'></img>
-                                </div>
-                                <h1 className="sp_header no-wrap-ellipsis">Recreate Responsibly</h1>
-                                <ol className='flex flex-col '>
-                                    <li className='safety_bullets'>1. Know before you go</li>
-                                    <li className='safety_bullets'>2. Practice physical distancing</li>
-                                    <li className='safety_bullets'>3. Plan ahead</li>
-                                    <li className='safety_bullets'>4. Play it safe</li>
-                                    <li className='safety_bullets'>5. Explore locally</li>
-                                    <li className='safety_bullets'>6. Leave no trace</li>
-                                    <li className='safety_bullets'>7. Build an inclusive outdoors</li>
-                                </ol>
-                            </div>
-                            <a href="https://lnt.org/why/7-principles/" className='flex align_center learn_more'>Learn More</a>
-                        </div>
-
-                        <div className='margin-right-24 sp_div green_background flex flex-col'>
-                            <div className='sp_img'>
-                                <div className='sp_img_wrapper'>
-                                    <img className='' alt='Leave No Trace' src='/leave-no-trace.png'></img>
-                                </div>
-                                <h1 className="sp_header flex">Leave No Trace</h1>
-                                <ol className='flex flex-col'>
-                                    <li className='safety_bullets'>1. Plan ahead and prepare</li>
-                                    <li className='safety_bullets'>2. Travel and camp on durable surfaces</li>
-                                    <li className='safety_bullets'>3. Dispose of waste properly</li>
-                                    <li className='safety_bullets'>4. Leave what you find</li>
-                                    <li className='safety_bullets'>5. Minimize campfire impact</li>
-                                    <li className='safety_bullets'>6. Respect wildlife</li>
-                                    <li className='safety_bullets'>7. Be considerate of others</li>
-                                </ol>
-                            </div>
-                            <a href="https://lnt.org/why/7-principles/" className='flex align_center learn_more'>Learn More</a>
-                        </div>
-
-                        <div className='margin-right-24 sp_div green_background flex flex-col'>
-                            <div className='sp_img'>
-                                <div className='sp_img_wrapper'>
-                                    <img className='' alt='Protect Our Winters' src="/protect-our-winters-vector-logo.svg"></img>
-                                </div>
-                                <h1 className="sp_header">Protect Our Winters</h1>
-                                <p className='sp_text'>We help passionate outdoor people protect the places and experiences they love from climate change.</p>
-                            </div>
-                            <a href="https://protectourwinters.org/about-pow/" className='flex align_center learn_more'>Learn More</a>
-                        </div>
-
-                    </div>
-                </div>
+                <SafetyPartners/>                
             </div>
         )
     }

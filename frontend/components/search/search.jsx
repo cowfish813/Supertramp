@@ -7,24 +7,41 @@ import LocationDot from '../icons/LocationDot';
 const Search = (props) => {
     const inputRef = useRef(); //sets focus on search bar
     const [mapLocation, setMapLocation] = useState("");
-    const [mapLat, setMapLat] = useState();
-    const [mapLng, setMapLng] = useState();
+    const [mapLat, setMapLat] = useState(null);
+    const [mapLng, setMapLng] = useState(null);
     const history = useHistory();
 
     useEffect(() => {
         inputRef.current.focus();
     }, [])
 
-    
-    const simulateArrowDown = () => {
-        const event = new KeyboardEvent('keydown', { keyCode: 40 });
-        inputRef.current.dispatchEvent(event);
-    };
+    useEffect(() => {
+        if (!inputRef.current || !window.google) return;
+        const autocomplete = new google.maps.places.Autocomplete(inputRef.current);
 
-    const simulateEnter = () => {
-        const event = new KeyboardEvent('keydown', { keyCode: 13 });  
-        inputRef.current.dispatchEvent(event);
-    }
+        autocomplete.addListener('place_changed', () => {
+            const place = autocomplete.getPlace();
+            if (!place.geometry) return;
+    
+            const lat = place.geometry.location.lat()
+            const lng = place.geometry.location.lng()
+            const label = place.formatted_address || place.name;
+    
+            setMapLocation(label);
+            setMapLat(lat);
+            setMapLng(lng);
+
+            // //searches when selection made. do i keep this?
+            // const state = {mapLocation: label, lat, lng}; 
+            // props.receiveLocation(state);
+            // history.push({
+            //     pathname: `/search/${lat},${lng}`,
+            //     state
+            // })
+        })
+    }, [history, props])
+
+    
 
     const handleInput = (e) => {
         e.preventDefault();
@@ -44,42 +61,20 @@ const Search = (props) => {
             
             history.push({
                 pathname: `/search/${mapLat},${mapLng}`,
-                state
+                state: {mapLocation, mapLat, mapLng},
+                search: `?label${encodeURIComponent(mapLocation)}` 
+                    //adds extra info to search bar
             })
-        } else {
-            simulateArrowDown()
-            simulateEnter()
-            simulateEnter()            
-        }
+        } 
     }
-
-    const autoCompletePlace = () => {
-        const res = (new google.maps.places.Autocomplete(inputRef.current));
-        res.addListener('place_changed', async () => {
-            const address = await res.getPlace().formatted_address;
-            const place = await res.getPlace();
-            const lat = await place.geometry.location.lat();
-            const lng = await place.geometry.location.lng();
-            const mapRes = address ? address : place.name;
-            setMapLocation(mapRes);
-            setMapLat(lat);
-            setMapLng(lng);
-        });
-    }
-
-    useEffect(() => {
-        autoCompletePlace();
-    }, [])
-    
 
     return (
-        <form className="form_search" autocomplete="on">
-            <div className="superSearch">
+        <form className="form-search margin-bottom-5" autocomplete="on" onSubmit={handleSubmit}>
+            <div className="super-search margin-top-3">
 
-                <div className="searchBar">
+                <div className="search-bar">
                     <span className="fasearch">
                         <LocationDot color="black" />
-                        {/* <FontAwesomeIcon icon={faLocationDot} /> */}
                     </span>
 
                     <input 
@@ -94,8 +89,8 @@ const Search = (props) => {
 
                 </div>
                 
-                <button className="searchButton" onClick={handleSubmit}>
-                    <SearchIcon color="white" />
+                <button className="search-button" type='submit'>
+                    <SearchIcon />
                     <p className='margin-left-5'>Search</p>
                 </button>
             </div>
