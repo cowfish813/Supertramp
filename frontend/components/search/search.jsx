@@ -69,8 +69,8 @@ const Search = (props) => {
     }
 
     return (
-        <form className="form_search" autocomplete="on" onSubmit={handleSubmit}>
-            <div className="super-search">
+        <form className="form-search margin-bottom-5" autocomplete="on" onSubmit={handleSubmit}>
+            <div className="super-search margin-top-3">
 
                 <div className="search-bar">
                     <span className="fasearch">
