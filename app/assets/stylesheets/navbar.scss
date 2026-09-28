@@ -21,9 +21,9 @@ strong {
 
 
 
- .superNav {
+.super-nav {
     font-size: 1em;
-    // position: fixed; //unnecessary, real site doesnt do this anyway
+    position: sticky;
     width: 100%;
     height: 70px;
     top: 0;
@@ -31,7 +31,9 @@ strong {
     z-index: 10;
     background-color: #ffffff;
     margin-bottom: 2%;
-    }
+    align-items: center;
+    justify-content: space-between;
+}
     
     .nav-left {
         width: 50%;
