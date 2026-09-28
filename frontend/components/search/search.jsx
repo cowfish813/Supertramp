@@ -90,7 +90,7 @@ const Search = (props) => {
                 </div>
                 
                 <button className="search-button" type='submit'>
-                    <SearchIcon />
+                    <SearchIcon className="search-icon"/>
                     <p className='margin-left-5'>Search</p>
                 </button>
             </div>

@@ -183,7 +183,7 @@
     color: #ffffff;
     background: #40d9ac;   
     border: .2rem solid #40d9ac;
-    font-size: 1.5rem;
+    font-size: 1.5vw;
     font-weight: normal;
     transition: 0.5s;
     text-align: center;
@@ -209,6 +209,14 @@
     height: 20px;
     color: white;
     flex-shrink: 0;
+    transition: 0.5s;
+}
+
+.search-icon {
+    width: 1.2em;
+        height: 1.2em;
+        color: white;
+        flex-shrink: 0;
 }
 
 .green_background {
