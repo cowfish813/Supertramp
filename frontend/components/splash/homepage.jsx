@@ -91,29 +91,13 @@ class Homepage extends React.Component {
                             </h2>
                         </div>
                     </div>
+                    < SearchBar />
                 </div>
 
-                < SearchBar />
-
-                {/* <div className="containerBanner">
-                    <img src="/banner.webp" alt="bannerbar"
-                    className="bannerImg"
-                    id="bannerImg"
-                    />
-                    <div className="banner_message">
-                        <div >
-                            <span className="banner_font">Explore Dozens of Locations!</span>
-                        </div>
-                        <span className="banner_sub_message">Run a search or scroll down below and start exploring!</span>
-                        <div className="intro_button_container">
-                            <button onClick={this.handleInput} className="intro_button">I'm feeling Lucky!</button>
-                        </div>
-                    </div>                  
-                </div> */}
 
                 <div className="tiles-container">
                     <h1 className="title-listing">Check Out These Areas!</h1>
-                    <div className="tiles-tile margin-left-7-9-15pc">
+                    <div className="tiles-tile">
                         <img onClick={this.handleTile1} className="poppingRectangle" src="/camel.webp" alt="camel"/>
                         <img onClick={this.handleTile2} className="poppingRectangle" src="/cy19txhitis6xwltkdhu.webp" alt="family camp"/>
                         <img onClick={this.handleTile3} className="poppingRectangle" src="/hamwjtqwsdqffioglcvq.webp" alt="cabin"/>
@@ -145,8 +129,10 @@ class Homepage extends React.Component {
                         ))}
                     </div>
                 </div>
-
-                <SafetyPartners/>                
+                
+                <div className='home'>
+                    <SafetyPartners/>                
+                </div>
             </div>
         )
     }
