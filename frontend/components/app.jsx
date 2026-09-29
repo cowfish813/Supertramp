@@ -4,7 +4,8 @@ import Modal from './modal/modal';
 import { AuthRoute, ProtectedRoute }from '../util/route_util';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
-import NavbarContainer from './navbar/navbar_container';
+import NavBar from './navbar/navbar';
+// import NavbarContainer from './navbar/navbar_container';
 import UserShow from './users/user_show_container';
 import Footer from './navbar/footer' 
 import Homepage from './splash/homepage_container';
@@ -18,7 +19,7 @@ import ListForm from './listing/list_form/list_form_container';
 const App = () => (
     <div className="super-body">
         < Modal />
-        < NavbarContainer />
+        < NavBar />
         < Switch>
             < ProtectedRoute exact path="/users/:userId" component={UserShow} />
             < ProtectedRoute exact path="/users/:userId/update" component={UserUpdate} />
