@@ -17,6 +17,8 @@ class NavSearch extends React.Component {
             lng: ""
         };
 
+        this.inputRef = React.createRef();
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
     }
@@ -29,6 +31,9 @@ class NavSearch extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+
+        if (!this.state.lat || !this.state.lng) return;
+
         this.props.receiveLocation(this.state);
         this.props.history.push({
             pathname: `/search/${this.state.lat},${this.state.lng}`,
@@ -37,18 +42,24 @@ class NavSearch extends React.Component {
     }
 
     componentDidMount() {
+        if (this.inputRef.current) {
+            this.inputRef.current.focus();
+        }
+
         let input = document.getElementById('nav-Search');
         let autocomplete = new google.maps.places.Autocomplete(input);
 
         let mapLocation;
         let that = this;
         autocomplete.addListener('place_changed', () => {
-            let address = autocomplete.getPlace().formatted_address;
             let place = autocomplete.getPlace();
+            if (!place.geometry) return;
 
+            let address = autocomplete.getPlace().formatted_address;
             let lat = place.geometry.location.lat();
             let lng = place.geometry.location.lng();
             mapLocation = address ? address : autocomplete.getPlace().name;
+
             that.setState({
                 mapLocation: autocomplete.getPlace().name,
                 lat: lat,
@@ -69,6 +80,7 @@ class NavSearch extends React.Component {
                 value={this.state.mapLocation}
                 onChange={this.handleInput}
                 placeholder="Lets start with Yosemite Valley!"
+                ref={this.inputRef}
                 />
                 <button type="submit" className="navSearchBtn"></button>
             </form>
