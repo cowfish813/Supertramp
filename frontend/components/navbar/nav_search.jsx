@@ -1,96 +1,30 @@
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import { receiveLocation } from '../../actions/map_action';
-import React from 'react';
-import autoComplete from "react-google-autocomplete";
-import { Link } from 'react-router-dom';
-
+import React, { useEffect } from 'react';
+import { useSearchBar } from '../search/useSearchBar';
 import SearchIcon from '../icons/SearchIcon';
 
-class NavSearch extends React.Component {
-    constructor(props) {
-        super(props)
+const NavSearch = () => {
+    const { inputRef, mapLocation, handleInput, handleSubmit } = useSearchBar();
+    
+    useEffect(() => {
+        inputRef.current?.focus();
+    }, [inputRef])
 
-        this.state = {
-            mapLocation: "",
-            lat: "",
-            lng: ""
-        };
-
-        this.inputRef = React.createRef();
-
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleInput = this.handleInput.bind(this);
-    }
-
-    handleInput(e) {
-        this.setState({
-            mapLocation: e.target.value
-        });
-    }
-
-    handleSubmit(e) {
-        e.preventDefault();
-
-        if (!this.state.lat || !this.state.lng) return;
-
-        this.props.receiveLocation(this.state);
-        this.props.history.push({
-            pathname: `/search/${this.state.lat},${this.state.lng}`,
-            state: this.state
-        });
-    }
-
-    componentDidMount() {
-        if (this.inputRef.current) {
-            this.inputRef.current.focus();
-        }
-
-        let input = document.getElementById('nav-Search');
-        let autocomplete = new google.maps.places.Autocomplete(input);
-
-        let mapLocation;
-        let that = this;
-        autocomplete.addListener('place_changed', () => {
-            let place = autocomplete.getPlace();
-            if (!place.geometry) return;
-
-            let address = autocomplete.getPlace().formatted_address;
-            let lat = place.geometry.location.lat();
-            let lng = place.geometry.location.lng();
-            mapLocation = address ? address : autocomplete.getPlace().name;
-
-            that.setState({
-                mapLocation: autocomplete.getPlace().name,
-                lat: lat,
-                lng: lng
-            });
-        });
-    }
-
-    render() {
-        return (
-            <form className="NavSearchContainer" onSubmit={this.handleSubmit}>
-                <span className="nav-fa-search">
-                    <SearchIcon className="small-icon-box" color='black'/>
-                </span>
-                <input type="search"
-                id="nav-Search"
-                className="navSearch"
-                value={this.state.mapLocation}
-                onChange={this.handleInput}
-                placeholder="Lets start with Yosemite Valley!"
-                ref={this.inputRef}
-                />
-                <button type="submit" className="navSearchBtn"></button>
-            </form>
-        )
-    }
-
+    return (
+        <form className="NavSearchContainer" onSubmit={handleSubmit}>
+            <span className="nav-fa-search">
+                <SearchIcon className="small-icon-box" color='black'/>
+            </span>
+            <input type="search"
+            id="nav-Search"
+            className="navSearch"
+            value={mapLocation}
+            onChange={handleInput}
+            placeholder="Lets start with Yosemite Valley!"
+            ref={inputRef}
+            />
+            <button type="submit" className="navSearchBtn"></button>
+        </form>
+    )
 }
 
-const mDTP = dispatch => ({
-    receiveLocation: (location) => dispatch(receiveLocation(location))
-});
-
-export default withRouter(connect(null, mDTP)(NavSearch));
+export default NavSearch;
