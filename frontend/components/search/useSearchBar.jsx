@@ -1,7 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-// import { receiveLocation } from '../actions/map_action';
 import { receiveLocation } from '../../actions/map_action';
 
 export const useSearchBar = () => {
