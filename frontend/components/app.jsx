@@ -5,7 +5,6 @@ import { AuthRoute, ProtectedRoute }from '../util/route_util';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import NavBar from './navbar/navbar';
-// import NavbarContainer from './navbar/navbar_container';
 import UserShow from './users/user_show_container';
 import Footer from './navbar/footer' 
 import Homepage from './splash/homepage_container';

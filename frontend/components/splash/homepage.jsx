@@ -94,6 +94,8 @@ class Homepage extends React.Component {
                     < SearchBar />
                 </div>
 
+                {/* nearby user or not rendered if rejected */}
+                <Nearby scope="user" title="Listings Near You" />
 
                 <div className="tiles-container">
                     <h1 className="title-listing">Check Out These Areas!</h1>
@@ -103,10 +105,6 @@ class Homepage extends React.Component {
                         <img onClick={this.handleTile3} className="poppingRectangle" src="/hamwjtqwsdqffioglcvq.webp" alt="cabin"/>
                     </div>
                 </div>
-
-
-                {/* nearby user or not rendered if rejected */}
-                <Nearby scope="user" title="Listings Near You" />
 
                 {/* scoped above */}
                 {AREAS.map((area) => (
