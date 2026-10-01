@@ -55,7 +55,7 @@ const NavBar = () => {
                 <Link to="/" className="logo">
                     <img
                         className="logo-pic"
-                        src="/assets/favicon.ico"
+                        src="/7789930-middle.png"
                     />
                 </Link>
                 {searchInput}
