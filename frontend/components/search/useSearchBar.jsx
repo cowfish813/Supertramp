@@ -13,16 +13,27 @@ export const useSearchBar = () => {
 
     useEffect(() => {
         if (!inputRef.current || !window.google) return;
-        const autocomplete = new google.maps.places.Autocomplete(inputRef.current);
 
-        autocomplete.addListener('place_changed', () => {
-            const place = autocomplete.getPlace();
-            if (!place.geometry) return;
+        const setup = () => {
+            const autocomplete = new google.maps.places.Autocomplete(inputRef.current);
+    
+            const listener = autocomplete.addListener('place_changed', () => {
+                const place = autocomplete.getPlace();
+                if (!place.geometry) return;
+                setMapLocation(place.formatted_address || place.name);
+                setMapLat(place.geometry.location.lat());
+                setMapLng(place.geometry.location.lng());
+            });
+            return () => google.maps.event.removeListener(listener)
+        };
 
-            setMapLocation(place.formatted_address || place.name);
-            setMapLat(place.geometry.location.lat);
-            setMapLng(place.geometry.location.lng);
-        });
+        if (window.googleMapsReady) {
+            return setup();
+        } else {
+            const handler = () => setup();
+            window.addEventListener('google-maps-ready', handler, { once: true });
+            return () => window.removeEventListener('google-maps-ready', handler);
+        }
     },[]);
 
     const handleSubmit = e => {
