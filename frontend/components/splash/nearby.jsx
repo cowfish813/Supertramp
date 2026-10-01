@@ -5,7 +5,8 @@ import { fetchNearbyListings } from "../../actions/listing_actions/listing_actio
 import { Link } from 'react-router-dom';
 
 const Nearby = ({scope, title, coords}) => {
-    const nearbyListings = useSelector((state) => state.entities.nearbyListings[scope] || {});
+    const EMPTY_LISTINGS = {};
+    const nearbyListings = useSelector((state) => state.entities.nearbyListings[scope] || EMPTY_LISTINGS);
     const dispatch = useDispatch();
     const [fetched, setFetched] = useState(false);
 

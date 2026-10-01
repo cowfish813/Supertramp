@@ -2,7 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const ErrorModal = () => {
-    const errors = useSelector(state => state.errors.session || []);
+    const EMPTY_ERRORS = [];
+    const errors = useSelector(state => state.errors.session ?? EMPTY_ERRORS);
 
     return (
         errors.length ? 

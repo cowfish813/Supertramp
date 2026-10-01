@@ -12,7 +12,7 @@ const Search = () => {
     }, [])
 
     return (
-        <form id="origin-search" className="form-search margin-bottom-5" autocomplete="on" onSubmit={handleSubmit}>
+        <form id="origin-search" className="form-search margin-bottom-5" autoComplete="on" onSubmit={handleSubmit}>
             <div className="super-search margin-top-3">
 
                 <div className="search-bar">
