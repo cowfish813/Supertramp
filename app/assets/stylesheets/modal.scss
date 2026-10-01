@@ -5,7 +5,7 @@
     left: 0;
     right: 0;
     background: rgba(0, 0, 0, 0.7);
-    z-index: 9000;
+    z-index: 1;
 }
 
 .modal-child {
@@ -15,7 +15,6 @@
     transform: translate(-50%, -50%);
 }
 
-/* with gratitude to alex */
 .modal {
     display: none;
     position: fixed; /* Stay in place */
@@ -31,18 +30,18 @@
     display: block;
 }
 /* Modal Content */
-.modal-content {
-    top: -60px;
-    right: -50px;
-    position: absolute;
-    z-index: 1;
-    background-color: #FEFEFE;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 15vw;
-    background-color: #EFEFEF;
-    height: 100vh;
-    overflow-y: auto;
-}
+// .modal-content {
+//     top: -60px;
+//     right: -50px;
+//     position: absolute;
+//     z-index: 1;
+//     background-color: #FEFEFE;
+//     margin: auto;
+//     padding: 20px;
+//     border: 1px solid #888;
+//     width: 15vw;
+//     background-color: #EFEFEF;
+//     height: 100vh;
+//     overflow-y: auto;
+// }
 

@@ -8,14 +8,11 @@ import BookingUpdateForm from '../bookings/booking_update_form_container'
 function Modal({ errors, modal, closeModal }) {
     if (!modal) return null
 
-    let errorModal = <div></div>
-    if (errors.length > 0) {
-        errorModal = (<div className="feedback-indicator">
-            {errors.map((error, i) => {
-                return  <li key={i}>{error}</li>
-            })}
-        </div>)
-    }
+    // {errors.length > 0 && (
+    // <ul key={errors.join('|')} className="feedback-indicator">
+    //     {errors.map((error, i) => <li key={i}>{error}</li>)}
+    // </ul>
+    // )}
 
     let component
     switch (modal.modal) { 
@@ -42,16 +39,13 @@ function Modal({ errors, modal, closeModal }) {
 
 
     return (
-        <div>
+
             <div className="modal-background" onClick={ closeModal }>
                 <div className="modal-child" onClick={e => e.stopPropagation()}>
                     { component } 
                 </div>
-                <div >
-                { errorModal }
-                </div>
             </div>
-        </div>
+
     );
 }
 

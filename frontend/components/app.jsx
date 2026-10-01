@@ -11,13 +11,14 @@ import Homepage from './splash/homepage_container';
 import ListShow from './listing/list_show/list_show_container';
 import ListSearchResults from './listing/list_index/list_search_results_container';
 import NoContent from './no_content';
-
+import ErrorModal from './modal/error_modal';
 import UserUpdate from './users/user_update_container';
 import ListForm from './listing/list_form/list_form_container';
 
 const App = () => (
     <div className="super-body">
         < Modal />
+        < ErrorModal />
         < NavBar />
         < Switch>
             < ProtectedRoute exact path="/users/:userId" component={UserShow} />

@@ -26,9 +26,9 @@ class Session extends React.Component {
         
     };
 
-    componentDidMount() {
-        this.props.clearErrors()
-    }
+    // componentDidMount() {
+    //     this.props.clearErrors()
+    // }
 
     
     handleDemoUser(e) {
@@ -189,4 +189,4 @@ class Session extends React.Component {
     };
 };
 
-export default Session
+export default Session;
