@@ -1,5 +1,4 @@
-import React, { useRef } from "react";
-import { useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import { useSelector } from "react-redux";
 
 const EMPTY_ERRORS = [];
@@ -21,8 +20,12 @@ const ErrorModal = () => {
 
     return (
         errors.length ? 
-        <ul ref={ulRef} key={errors.join('|')} className="feedback-indicator">
-            {errors.map((error, i) => <li key={i}>{error}</li>)}
+        < ul 
+            ref={ulRef} 
+            key={errors.join('|')} 
+            className="feedback-indicator">
+            {errors.map((error, i) => 
+                <li key={i}>{error}</li>)}
         </ul>
             :
         null
