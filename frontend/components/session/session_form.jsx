@@ -26,10 +26,6 @@ class Session extends React.Component {
         
     };
 
-    // componentDidMount() {
-    //     this.props.clearErrors()
-    // }
-
     
     handleDemoUser(e) {
         e.preventDefault()
@@ -38,7 +34,6 @@ class Session extends React.Component {
                 password: "123456",
             }
         this.props.demoUser(demo).then(this.props.closeModal())
-        // this.props.history.push("/")//redirects user to "/"
     }
 
     renderErrors() {
