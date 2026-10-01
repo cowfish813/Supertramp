@@ -20,15 +20,15 @@ const ErrorModal = () => {
 
     return (
         errors.length ? 
-        < ul 
-            ref={ulRef} 
-            key={errors.join('|')} 
-            className="feedback-indicator">
-            {errors.map((error, i) => 
-                <li key={i}>{error}</li>)}
-        </ul>
-            :
-        null
+            < ul 
+                ref={ulRef} 
+                key={errors.join('|')} 
+                className="feedback-indicator">
+                {errors.map((error, i) => 
+                    <li key={i}>{error}</li>)}
+            </ul>
+                :
+            null
     )
 };
 
