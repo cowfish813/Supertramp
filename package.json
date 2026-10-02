@@ -22,6 +22,7 @@
     "react-geocode": "^0.2.3",
     "react-google-autocomplete": "^2.7.3",
     "react-hook-form": "^7.46.2",
+    "react-indiana-drag-scroll": "^2.2.1",
     "react-places-autocomplete": "^7.3.0",
     "react-redux": "^8.1.2",
     "react-responsive-carousel": "^3.2.23",

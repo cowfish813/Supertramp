@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import SearchBar from '../search/search_container';
 import Nearby from './nearby';
 import SafetyPartners from './safety_partners';
+import ListingRow from './listing_row';
 
 const AREAS = [
     { scope: "Yosemite", title: "Near Yosemite", coords: { lat: 37.7456, lng: -119.5936 }},
@@ -112,21 +113,10 @@ class Homepage extends React.Component {
                 ))}
 
                 {/* shuffled favorites */}
-                <div className="vague-locations-container">
-                    <h1 className="title-listing margin-left-7-9-15pc">A few of our favorites, shuffled</h1>
-                    <div className="flex flex-row vague-tile-list margin-left-7-9-15pc">
-                        {Object.values(this.props.randomListings || {}).map(listing => (
-                            <Link key={listing.id} to={`/listings/${listing.id}`}>
-                                <img
-                                    className="vague-picture"
-                                    src={listing.photoUrls?.[0]}
-                                    alt={listing.name}
-                                />
-                                <div className='text-descriptor'>${listing.price} for {listing.minimum_nights} {listing.minimum_nights > 1 ? "nights" : "night"}</div>
-                            </Link>
-                        ))}
-                    </div>
-                </div>
+                <ListingRow 
+                    title='A few of our favorites, shuffled'
+                    listings={this.props.randomListings}
+                />
                 
                 <div className='home'>
                     <SafetyPartners/>                

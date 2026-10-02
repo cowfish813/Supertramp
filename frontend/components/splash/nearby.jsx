@@ -43,21 +43,6 @@ const Nearby = ({scope, title, coords}) => {
             title={title || 'Listings Near You'}
             listings={nearbyListings}
         />
-        // <div className="vague-locations-container">
-        //     <h1 className="title-listing margin-left-7-9-15pc">{ title || "Listings Near You"}</h1>
-        //     <div className="flex flex-row vague-tile-list margin-left-7-9-15pc">
-        //         {Object.values(nearbyListings || {}).map(listing => (
-        //             <Link key={listing.id} to={`/listings/${listing.id}`}>
-        //                 <img
-        //                     className="vague-picture"
-        //                     src={listing.photoUrls?.[0]}
-        //                     alt={listing.name}
-        //                 />
-        //                 <div className='text-descriptor'>${listing.price} for {listing.minimum_nights} {listing.minimum_nights > 1 ? "nights" : "night"}</div>
-        //             </Link>
-        //         ))}
-        //     </div>
-        // </div>
     )
 }
 
