@@ -13,12 +13,16 @@ class IndexItem extends React.Component {
     };
 
     render() {
+        const thumb = this.props.listing.photoUrls.filter(photo => {
+            return photo.endsWith('_thumb.webp')
+        })
+
         return ( 
             <div className="index_container">
 
                 <div className="index_box">
                     <Link to={`/listings/${this.props.listing.id}`}>
-                        <img className="indexPhotos" src={this.props.listing.photoUrls[0]} alt=""/>
+                        <img className="indexPhotos" src={thumb[0]} alt=""/>
                     </Link>
                 </div>
 
