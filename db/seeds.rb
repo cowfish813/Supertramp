@@ -33,7 +33,9 @@ PHOTOS = {
 # Download a JPEG from `url`, convert to WebP locally, and attach the WebP to listing
 def attach_webp(listing, url, filename_base)
   source_path = nil
-  converted = nil
+  converted_hq = nil
+  converted_lq = nil
+
   begin
     source = URI.open(url)
     source_path = Tempfile.new(['source', '.jpg'])
@@ -41,20 +43,37 @@ def attach_webp(listing, url, filename_base)
     IO.copy_stream(source, source_path)
     source_path.rewind
 
-    converted = ImageProcessing::Vips
+    # high quality
+    converted_hq = ImageProcessing::Vips
       .source(source_path.path)
       .convert('webp')
       .saver(quality: 85)
       .call
 
     listing.photos.attach(
-      io: File.open(converted.path, 'rb'),
+      io: File.open(converted_hq.path, 'rb'),
       filename: "#{filename_base}.webp",
+      content_type: 'image/webp'
+    )
+
+    # low quality
+    converted_lq = ImageProcessing::Vips
+      .source(source_path.path)
+      .convert('webp')
+      .resize_to_limit(400, 400)
+      .saver(quality: 40)
+      .call
+
+    listing.photos.attach(
+      io: File.open(converted_lq.path, 'rb'),
+      filename: "#{filename_base}_thumb.webp",
       content_type: 'image/webp'
     )
   ensure
     source_path&.close!
-    converted&.close!
+    converted_lq&.close!
+    converted_hq.close!
+
   end
 end
 

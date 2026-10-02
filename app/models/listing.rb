@@ -37,6 +37,8 @@ class Listing < ApplicationRecord
     dependent: :destroy
 
     has_many_attached :photos
+    has_many_attached :photo_thumbnails
+    
     after_commit :convert_photos_to_webp, on: [:create, :update]
 
     def self.in_bounds(bounds)
