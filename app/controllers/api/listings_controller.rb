@@ -57,17 +57,6 @@ class Api::ListingsController < ApplicationController
         render :index
     end
 
-
-    # SEASON_MONTHS = {
-    #     'spring' => [3, 4, 5],
-    #     'summer' => [6, 7, 8],
-    #     'autumn' => [9, 10, 11],
-    #     'winter' => [12, 1, 2]
-    # }.freeze
-
-    # def winter 
-    # end
-
 private
     def listing_params
         params.require(:listing).permit(:photos, :cancellation_policy, :capacity, :country, :description, :minimum_nights, :on_arrival, :price, :checkin, :checkout, :lat, :lng, :name)
