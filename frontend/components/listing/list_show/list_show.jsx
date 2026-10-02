@@ -8,6 +8,10 @@ import { Carousel } from 'react-responsive-carousel';
 
 const ListShow = ({ match, fetchListing, hostUser, list = {photoUrls: [],host: {firstName:"",lastName:""}} }) => {
 
+  const photos = list.photoUrls.filter(photo => {
+    return !photo.endsWith('_thumb.webp')
+  })
+
   useEffect(() => {
     window.scrollTo(0, 0);
     fetchListing(match.params.listingsId);
@@ -24,7 +28,7 @@ const ListShow = ({ match, fetchListing, hostUser, list = {photoUrls: [],host: {
             showThumbs={false}
             centerSlidePercentage={45}
             >
-            {list.photoUrls.map((photo) => 
+            {photos.map((photo) => 
               <img className="carousel_item" src={photo} key={photo} alt=""/>
               )}
           </Carousel>
