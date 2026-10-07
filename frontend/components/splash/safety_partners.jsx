@@ -23,7 +23,7 @@ const SafetyPartners = () => {
                             <li className='safety_bullets'>7. Build an inclusive outdoors</li>
                         </ol>
                     </div>
-                    <a target="_blank" href="https://lnt.org/why/7-principles/" className='flex align_center learn_more'>Learn More</a>
+                    <a target="_blank" href="https://www.recreateresponsibly.org/mission" className='flex align_center learn_more'>Learn More</a>
                 </div>
 
                 <div className='margin-right-24 sp_div green_background flex flex-col'>
