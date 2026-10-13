@@ -8,12 +8,6 @@ import BookingUpdateForm from '../bookings/booking_update_form_container'
 function Modal({ errors, modal, closeModal }) {
     if (!modal) return null
 
-    // {errors.length > 0 && (
-    // <ul key={errors.join('|')} className="feedback-indicator">
-    //     {errors.map((error, i) => <li key={i}>{error}</li>)}
-    // </ul>
-    // )}
-
     let component
     switch (modal.modal) { 
         case 'Login':
@@ -32,20 +26,13 @@ function Modal({ errors, modal, closeModal }) {
         default:
             return null
     };
-    //currently passing in a string that opens up forms
-    //find a way to pass in listing ID
-    //
-
-
 
     return (
-
             <div className="modal-background" onClick={ closeModal }>
                 <div className="modal-child" onClick={e => e.stopPropagation()}>
                     { component } 
                 </div>
             </div>
-
     );
 }
 

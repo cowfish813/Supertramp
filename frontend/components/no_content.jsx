@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
 const NoContent = (props) => {
 
@@ -17,4 +18,4 @@ function handleClick(props) {
     props.history.goBack();
 };
 
-export default NoContent;
+export default withRouter(NoContent);
