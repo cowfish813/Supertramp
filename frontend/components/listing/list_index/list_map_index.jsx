@@ -1,7 +1,6 @@
 import React from 'react';
 import MarkerManager from '../../../util/map_marker';
 import { withRouter } from 'react-router-dom';
-import ReactDOMServer from "react-dom";
 
 class ListMapIndex extends React.Component {
     constructor(props) {
@@ -17,14 +16,14 @@ class ListMapIndex extends React.Component {
         };
         
 
-        this.mapOptions = {
-        center: {
-            lat: this.state.lat,
-            lng: this.state.lng
-        },
-        zoom: 13,
-        mapTypeId: "terrain",
-        };
+        // this.mapOptions = {
+        // center: {
+        //     lat: this.state.lat,
+        //     lng: this.state.lng
+        // },
+        // zoom: 13,
+        // mapTypeId: "terrain",
+        // };
 
     }
 
@@ -47,7 +46,7 @@ class ListMapIndex extends React.Component {
 
     
     componentDidUpdate(prevProps) {
-        const prev = prevProps.mapLocation?. state || prevProps.mapLocation;
+        const prev = prevProps.mapLocation?.state || prevProps.mapLocation;
         const next = this.props.mapLocation?.state || this.props.mapLocation;
 
         if (prev.lat !== next.lat || prev.lng !== next.lng) {
