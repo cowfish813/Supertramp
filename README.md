@@ -3,7 +3,7 @@
 SuperTramp is a HipCamp clone web app that allows users to rent out various available locations and share their experiences
 
 [Live Link](https://supertrampapp.herokuapp.com/)
-![Intro](https://supertramp-mast.s3-us-west-1.amazonaws.com/intro.png)
+![Intro](./public/homepage.png)
 
 Technologies
 --------------
@@ -72,6 +72,7 @@ User Auth was created using BCrypt on rails backend
     }
 ``````````````````````
 ## Identify locations nearby geocoordiantes and the user
+![Nearby Listings](./public/nearbyListings.png)
 ```
     def self.nearby(lat:, lng:, radius_miles:50)
         where.not(lat:nil, lng:nil)
