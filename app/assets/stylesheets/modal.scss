@@ -17,31 +17,14 @@
 
 .modal {
     display: none;
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0%; 
 }
-.modal-container {
-    position: fixed; /* Stay in place */
-}.hidden {
+
+.hidden {
     display: none;
 }.show {
     display: block;
 }
-/* Modal Content */
-// .modal-content {
-//     top: -60px;
-//     right: -50px;
-//     position: absolute;
-//     z-index: 1;
-//     background-color: #FEFEFE;
-//     margin: auto;
-//     padding: 20px;
-//     border: 1px solid #888;
-//     width: 15vw;
-//     background-color: #EFEFEF;
-//     height: 100vh;
-//     overflow-y: auto;
-// }
-
