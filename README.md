@@ -77,7 +77,7 @@ User Auth was created using BCrypt on rails backend
         });   
     }
 ```
-## Identify locations nearby geocoordiantes and the user
+## Identify locations nearby geocoordinates and the user
 ![Nearby Listings](./public/nearbyListings.png)
 ```
     def self.nearby(lat:, lng:, radius_miles:50)
