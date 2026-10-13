@@ -101,16 +101,14 @@ strong {
 
 .signupButton {
     background: white;
-    // background-color: white;
     color:  #40d9ac ;
     border: 3px solid #40d9ac ;
+    transition: 0.6s;
 }
 .signupButton:hover {
     background: #40d9ac  ;
     color: white;
     transition: 0.6s;
-    
-    // display: inline-block;
 }
 
 .logoutButton {
