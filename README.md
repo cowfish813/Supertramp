@@ -13,7 +13,7 @@ Technologies
 * AWS
 * Google Maps
 * Google Places Autocomplete
-* HTML/5
+* HTML5
 * CSS3/SCSS
 
 ### Features
