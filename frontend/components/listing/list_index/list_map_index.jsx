@@ -14,16 +14,6 @@ class ListMapIndex extends React.Component {
         } else {
             this.state = props.mapLocation;
         };
-        
-
-        // this.mapOptions = {
-        // center: {
-        //     lat: this.state.lat,
-        //     lng: this.state.lng
-        // },
-        // zoom: 13,
-        // mapTypeId: "terrain",
-        // };
 
     }
 
