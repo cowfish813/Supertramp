@@ -44,7 +44,6 @@ class MarkerManager  {
             position,
             map: this.map,
             listingId: listing.id,
-            // icon: mapIcon
             icon: {
                 url: './mapmarker.png',
                 scaledSize: new google.maps.Size(40, 40)
