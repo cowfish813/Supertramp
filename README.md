@@ -101,7 +101,7 @@ User Auth was created using BCrypt on rails backend
     end
 ```
 ## Rerendering Error animation
-![Error Slide](./public/errorRecording.mov)
+![Error Slide](./public/ErrorGif.gif)
 ```
     useEffect(() => {
         if (prevErrorRef.current !== errors && errors.length && ulRef.current) {
