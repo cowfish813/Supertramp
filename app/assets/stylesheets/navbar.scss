@@ -15,7 +15,6 @@ strong {
  }
 
 .logo-pic {
-    // object-fit: cover;
     width: 4rem;
 }
 
@@ -38,13 +37,10 @@ strong {
     .nav-left {
         width: 50%;
         display: flex;
-        // align-items: center;
-        // justify-content: center;
         flex-direction: row;
     }
     
 .nav-right {
-    // margin-top: 1rem;
     margin-right: 1%;
     width: 50%;
     display: flex;
@@ -52,9 +48,7 @@ strong {
 }
 .NavSearchContainer {
     margin-left: 5%;
-    // margin-top: 1%;
     display: flex;
-    // justify-content: center;
     align-items: center;
 
 }
@@ -62,9 +56,6 @@ strong {
 .nav-fa-search {
     position: absolute;
     margin-left: 1rem;
-    // bottom: 50%;
-    // top: 50%;
-    // left: 50%;
 }
 .navSearch {
     padding: 0 3rem;
@@ -86,7 +77,6 @@ strong {
     display: flex;
     justify-content: space-between;
     align-self: center;  
-    // border 1px solid transparent;  
     border: 1px solid transparent;  
     white-space: nowrap;
 
@@ -114,9 +104,4 @@ strong {
 .logoutButton {
     background-color: white;
     border: 1px solid transparent;  
-
 }
-
-
-
-
