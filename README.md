@@ -117,7 +117,7 @@ User Auth was created using BCrypt on rails backend
 ## Google Maps
 * A short description, via mouse hover, on each map Marker
 
-![list desc hover](https://supertramp-mast.s3-us-west-1.amazonaws.com/map+hover.png)
+![list desc hover](./public/maplistingmarkers.png)
 
 ## Custom Map Markers
 ![Map Marker](./public/mapmarker.png)
