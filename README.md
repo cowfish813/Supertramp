@@ -71,8 +71,28 @@ User Auth was created using BCrypt on rails backend
         });   
     }
 ``````````````````````
-
-
+## Identify locations nearby geocoordiantes and the user
+```
+    def self.nearby(lat:, lng:, radius_miles:50)
+        where.not(lat:nil, lng:nil)
+        #3959 is earth radius in miles
+            .select("listings.*, (
+                3959 * acos(
+                    cos(radians(#{lat.to_f})) * cos(radians(listings.lat)) *
+                    cos(radians(listings.lng) - radians(#{lng.to_f})) + 
+                    sin(radians(#{lat.to_f})) * sin(radians(listings.lat))
+                )
+            ) AS distance") #  compute distance from user to each listing
+            .where(
+                "3959 * acos(
+                    cos(radians(?)) * cos(radians(listings.lat)) *
+                    cos(radians(listings.lng) - radians(?)) +
+                    sin(radians(?)) * sin(radians(listings.lat))
+                ) <= ?", lat.to_f, lng.to_f, lat.to_f, radius_miles
+            ) # keep listings that are within the radius
+            .order("distance ASC") #
+    end
+```
 ## Google Maps
 * A short description, via mouse hover, on each map Marker
 
