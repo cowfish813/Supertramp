@@ -31,6 +31,7 @@ class ListSearchResults extends React.Component {
                 listings={this.props.listings}
               />
               <ListMapIndex
+                history={this.props.history}
                 updateFilter={this.props.updateFilter}
                 listings={this.props.listings}
                 mapLocation={this.props.mapLocation}

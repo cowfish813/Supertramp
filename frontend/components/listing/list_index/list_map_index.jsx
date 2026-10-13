@@ -1,6 +1,5 @@
 import React from 'react';
 import MarkerManager from '../../../util/map_marker';
-import { withRouter } from 'react-router-dom';
 
 class ListMapIndex extends React.Component {
     constructor(props) {
@@ -74,4 +73,4 @@ class ListMapIndex extends React.Component {
     };
 }
 
-export default withRouter(ListMapIndex);
+export default ListMapIndex;
