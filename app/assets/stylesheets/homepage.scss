@@ -118,7 +118,6 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    // align-content: center;
 }
 
 
@@ -248,64 +247,6 @@
     display: flex;
     overflow: hidden;
     justify-content: center;
-}
-
-.bannerImg {
-    display: flex;
-    width: 83%;
-    height: auto;
-}
-
-.banner_message {
-    display: flex;
-    flex-direction: column;
-    min-width: 12.5rem;
-    width: 12%;
-    height: 14.1rem;
-    background-color: #333333;
-    position: absolute;
-    color: white;
-    justify-content: flex-start;
-    padding: 3rem;
-    right: 55%;
-    top: 20%;
-}
-.banner_font{
-    flex-wrap: wrap;
-    display: flex;
-    width: 112%;
-    font-size: 175%;
-    opacity: 100;
-    color: white;
-    margin-bottom: 10%;
-}
-
-.banner_sub_message{
-    font-size: 1rem;
-    color: white;
-    margin-top: .5rem;
-    flex-wrap: wrap;
-    margin-left: 15%;
-    margin-bottom: 10%;
-
-}
-
-.intro_button_container {
-    margin-top: 10%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.intro_button {
-    white-space: nowrap;
-    border-radius: .5rem;
-    color: #484848;
-    background-color: white;
-    width: 12rem;
-    height: 3rem;
-    font-weight: bolder;
 }
 
 .tiles-container {

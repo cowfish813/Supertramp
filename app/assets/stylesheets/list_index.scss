@@ -5,7 +5,6 @@
 .search_results {
     display: flex;
     flex-direction: row;
-    // flex-wrap: wrap;
     margin-top: 3vh;
     margin: 5rem;
     height: 100vh;
@@ -13,7 +12,6 @@
 .list-index {
     width: 50vw;
     min-height: 10vh;
-    // max-height: 100vh;
     overflow-y: auto;
     display: flex;
 }
@@ -22,12 +20,10 @@
     display: flex;
     flex-wrap: wrap;
     margin-left: 5rem;
-    // width: 20vw;
-    // margin-top: 5vh;
+
 }
 
 .index_container {
-    // margin-top: 3vh;
     margin: 1rem;
     display: flex;
     flex-direction: column;
@@ -39,7 +35,6 @@
 }
 .index_box {
     margin-bottom: 3vh;
-    // overflow: hidden;
     height: 70%;
 }
 .indexPhotos {
@@ -51,18 +46,15 @@
 
 .mapIndex {
     right: 0%;
-    // border: darkblue solid 5px;
     width: 48vw;
     height: 100vh;
 }
 .listing_index_desc {
     display: flex;
-    // align-items: flex-start;
     justify-content: space-between;
 }
 
 .list_index_name{
-    // font-size: 2rem;
     margin-left: 2rem;
     font-size: 140%;
     font-weight: bold;
@@ -72,7 +64,6 @@
     margin-right: 2rem;
     font-size: 90%;
     display: flex;
-    // justify-content: flex-end;
     align-self: flex-end;
 }
 
