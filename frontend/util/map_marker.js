@@ -1,14 +1,6 @@
 import React from 'react'
 import ReactDOMServer from "react-dom/server";
 
-// const mapIcon = new google.maps.MarkerImage(
-//   "https://supertramp-mast.s3-us-west-1.amazonaws.com/hipcamp%2Bgoogle%2Bmap%2Bmarker.png",
-//   null /* size is determined at runtime */,
-//   null /* origin is 0,0 */,
-//   null /* anchor is bottom center of the scaled image */,
-//   new google.maps.Size(50, 50)
-// );
-
 class MarkerManager  {
     constructor(map, handleClick) {
         this.map = map;
@@ -53,7 +45,12 @@ class MarkerManager  {
             map: this.map,
             listingId: listing.id,
             // icon: mapIcon
+            icon: {
+                url: './mapmarker.png',
+                scaledSize: new google.maps.Size(40, 40)
+            }
         });
+
         marker.addListener('click', () => this.handleClick(listing));
         this.markers[marker.listingId] = marker;
 
