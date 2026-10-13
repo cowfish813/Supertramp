@@ -45,7 +45,7 @@ User Auth was created using BCrypt on rails backend
 <!-- ![long bar](https://supertramp-mast.s3-us-west-1.amazonaws.com/full+search+bar.png) -->
 
 * Passes props to next component on unique URLs
-``````````````````````
+```
     handleSubmit(e) {
         e.preventDefault();
 
@@ -76,7 +76,7 @@ User Auth was created using BCrypt on rails backend
             });
         });   
     }
-``````````````````````
+```
 ## Identify locations nearby geocoordiantes and the user
 ![Nearby Listings](./public/nearbyListings.png)
 ```
@@ -112,7 +112,7 @@ User Auth was created using BCrypt on rails backend
 ![Calendar entries](https://supertramp-mast.s3-us-west-1.amazonaws.com/reactdates+calendar.png)
 
 * Custom Algorithm allows for component to calculate total price due and pass information to Rails backend
-`````````````````````````````````
+```
     handlePrice(date) {
         const mseconds = Date.parse(date) - Date.parse(this.state.check_in);
         const days = mseconds / (1000 * 60 * 60 * 24) * this.props.list.price;
@@ -120,9 +120,7 @@ User Auth was created using BCrypt on rails backend
           price: days
         });
     }
-`````````````````````````````````
-
-
+```
 
 
 ### Future Direction
@@ -131,6 +129,3 @@ User Auth was created using BCrypt on rails backend
 * Users can message host
 * Users can Host Listings
 * additional filtering options on search results page
-
-
-
