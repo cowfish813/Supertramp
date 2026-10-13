@@ -119,6 +119,19 @@ User Auth was created using BCrypt on rails backend
 
 ![list desc hover](https://supertramp-mast.s3-us-west-1.amazonaws.com/map+hover.png)
 
+## Custom Map Markers
+![Map Marker](./public/mapmarker.png)
+```
+    const marker = new google.maps.Marker({
+        position,
+        map: this.map,
+        listingId: listing.id,
+        icon: {
+            url: './mapmarker.png',
+            scaledSize: new google.maps.Size(40, 40)
+        }
+    });
+```
 
 ## Dates
 * Easy to use calender entries
