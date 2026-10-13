@@ -29,7 +29,6 @@ class ListMapIndex extends React.Component {
     }
 
     componentDidMount() {
-
         window.scrollTo(0, 0);
         this.mapOptions = {
             center: {
@@ -46,36 +45,21 @@ class ListMapIndex extends React.Component {
         this.MarkerManager.updateMarkers(this.props.listings);
     };
 
+    
+    componentDidUpdate(prevProps) {
+        const prev = prevProps.mapLocation?. state || prevProps.mapLocation;
+        const next = this.props.mapLocation?.state || this.props.mapLocation;
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.mapLocation.lat !== this.props.mapLocation.lat || nextProps.mapLocation.lng !== this.props.mapLocation.lng ) {
-            this.setState({
-                lat: nextProps.mapLocation.lat,
-                lng: nextProps.mapLocation.lng,
-            }, () => {
-                this.mapOptions = {
-                    center: {
-                        lat: this.state.lat,
-                        lng: this.state.lng
-                    },
-                    zoom: 13,
-                    mapTypeId: "terrain",
-                };
-                this.map = new google.maps.Map(this.mapNode, this.mapOptions);
-                this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
-                this.registerListeners();
-                this.MarkerManager.updateMarkers(this.props.listings);
-            });
+        if (prev.lat !== next.lat || prev.lng !== next.lng) {
+            this.map.setCenter({lat: next.lat, lng: next.lng});
+            this.MarkerManager.updateMarkers(this.props.listings);
+        } else if (prevProps.listings !== this.props.listings) {
+            this.MarkerManager.updateMarkers(this.props.listings);
         }
     }
 
-    componentDidUpdate(prevProps) {
-        if (prevProps.listings !== this.props.listings) {
-            this.MarkerManager.updateMarkers(this.props.listings);
-        };
-    }
-
     registerListeners() {
+        google.maps.event.clearListeners(this.map, 'idle');
         google.maps.event.addListener(this.map, 'idle', () => {
             const {north, south, east, west } = this.map.getBounds().toJSON();
             const bounds = {
