@@ -100,6 +100,20 @@ User Auth was created using BCrypt on rails backend
             .order("distance ASC") #
     end
 ```
+## Rerendering Error animation
+![Error Slide](./public/errorRecording.mov)
+```
+    useEffect(() => {
+        if (prevErrorRef.current !== errors && errors.length && ulRef.current) {
+            const el = ulRef.current;
+            el.classList.remove('feedback-indicator--animate');
+            void el.offsetWidth;
+            el.classList.add('feedback-indicator--animate')
+        }
+        prevErrorRef.current = errors;
+    }, [errors])
+```
+
 ## Google Maps
 * A short description, via mouse hover, on each map Marker
 
