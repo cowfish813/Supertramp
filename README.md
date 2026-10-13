@@ -8,13 +8,19 @@ SuperTramp is a HipCamp clone web app that allows users to rent out various avai
 Technologies
 --------------
 * Ruby on Rails
-* React and Redux
+* Active Storage
+* React
+* Redux
+* WebP
+* AJAX
 * PostgreSQL
 * AWS
 * Google Maps
 * Google Places Autocomplete
 * HTML5
 * CSS3/SCSS
+* GitHub
+* Heroku
 
 ### Features
 --------------
