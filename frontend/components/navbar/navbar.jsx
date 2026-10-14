@@ -64,7 +64,7 @@ const NavBar = () => {
             <div className="nav-right">
                 <div className="navItem"><a target="_blank" href="https://www.linkedin.com/in/nicholas-cheung-6a72999">Linkedin</a></div>
                 <div className="navItem"><a target="_blank" href="https://github.com/cowfish813">GitHub</a></div>
-                <div className="navItem"><a target="_blank" href="https://www.instagram.com/probablynotnick/">Instagram</a></div>
+                <div className="navItem"><a target="_blank" href="https://cowfish813.github.io/Portfolio">Portfolio</a></div>
 
                 {currentUser ? (
                 <>
