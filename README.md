@@ -22,15 +22,15 @@ Technologies
 * GitHub
 * Heroku
 
-### Features
+## Features
 --------------
-## User Authentication
+### User Authentication
 User Auth was created using BCrypt on rails backend
 * User can Sign Up/Sign In/ Sign Out
 * Users may Demo the application
 * Certain features are available specifically to User including reservations and reviews.
 
-## Animations
+### Animations
 * Sign In/Sign Up Modals slide into place
 <!-- ![Login](https://supertramp-mast.s3-us-west-1.amazonaws.com/login+animation.gif) -->
 
@@ -77,7 +77,7 @@ User Auth was created using BCrypt on rails backend
         });   
     }
 ```
-## Identify locations nearby geocoordinates and the user
+### Identify locations nearby geocoordinates and the user
 ![Nearby Listings](./public/nearbyListings.png)
 ```
     def self.nearby(lat:, lng:, radius_miles:50)
@@ -100,7 +100,7 @@ User Auth was created using BCrypt on rails backend
             .order("distance ASC") #
     end
 ```
-## Rerendering Error animation
+### Rerendering Error animation
 ![Error Slide](./public/ErrorGif.gif)
 ```
     useEffect(() => {
@@ -127,12 +127,12 @@ User Auth was created using BCrypt on rails backend
     }
 ```
 
-## Google Maps
+### Google Maps
 * A short description, via mouse hover, on each map Marker
 
 ![list desc hover](./public/maplistingmarkers.png)
 
-## Custom Map Markers
+### Custom Map Markers
 ![Map Marker](./public/mapmarker.png)
 ```
     const marker = new google.maps.Marker({
@@ -146,7 +146,7 @@ User Auth was created using BCrypt on rails backend
     });
 ```
 
-## Search Bar Integration with NavBar
+### Search Bar Integration with NavBar
 ![Map Marker](./public/searchbar.gif)
 ```
     const [hasOriginSearch, setHasOriginSearch] = useState(false);
@@ -178,7 +178,7 @@ User Auth was created using BCrypt on rails backend
         < NavSearch/> : null;
 ```
 
-## Dates
+### Dates
 * Easy to use calender entries
 
 ![Calendar entries](https://supertramp-mast.s3-us-west-1.amazonaws.com/reactdates+calendar.png)
@@ -195,7 +195,7 @@ User Auth was created using BCrypt on rails backend
 ```
 
 
-### Future Direction
+#### Future Direction
 ---------
 * Full CRUD operations on Reviews feature
 * Users can message host
