@@ -14,7 +14,7 @@
 }
 
 .feedback-indicator--animate {
-    animation: seconds 10.0s forwards;
+    animation: seconds .8s forwards;
     animation-iteration-count: 1;
     animation-delay: 3s;
 }
@@ -22,6 +22,6 @@
 @keyframes seconds {
   100% {
     opacity: 0;
-    left: -9999px;
+    transform: translateX(-120%)
   }
 }
