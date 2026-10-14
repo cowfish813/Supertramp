@@ -133,6 +133,38 @@ User Auth was created using BCrypt on rails backend
     });
 ```
 
+## Search Bar Integration with NavBar
+![Map Marker](./public/searchbar.gif)
+```
+    const [hasOriginSearch, setHasOriginSearch] = useState(false);
+    const [isOriginSearchVisible, setIsOriginSearchVisible] = useState(true);
+
+    const checkOriginSearch = () => {
+        const el = document.getElementById('origin-search');
+        const has = !!el;
+        const visible = el ? el.getBoundingClientRect().top > 0 : false;
+        setHasOriginSearch(has);
+        setIsOriginSearchVisible(visible);
+    }
+
+    useEffect(() => {
+        checkOriginSearch();
+    }, [location]);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const el = document.getElementById('origin-search');
+            if (!el) return;
+            setIsOriginSearchVisible(el.getBoundingClientRect().top > 0);
+        }
+        window.addEventListener('scroll', handleScroll, {passive: true});
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, []);
+
+    const searchInput = (!hasOriginSearch || !isOriginSearchVisible) ? 
+        < NavSearch/> : null;
+```
+
 ## Dates
 * Easy to use calender entries
 
