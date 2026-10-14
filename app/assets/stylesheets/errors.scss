@@ -14,23 +14,11 @@
 }
 
 .feedback-indicator--animate {
-  /* webkit is chrome animation code */
-    -webkit-animation: seconds 10.0s forwards;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-delay: 3s;
-    // firefox
     animation: seconds 10.0s forwards;
     animation-iteration-count: 1;
     animation-delay: 3s;
 }
-// chromium based
-@-webkit-keyframes seconds {
-  100% {
-    opacity: 0;
-    left: -9999px; 
-  }
-}
-// firefox
+
 @keyframes seconds {
   100% {
     opacity: 0;
