@@ -112,6 +112,19 @@ User Auth was created using BCrypt on rails backend
         }
         prevErrorRef.current = errors;
     }, [errors])
+
+    .feedback-indicator--animate {
+        animation: seconds .8s forwards;
+        animation-iteration-count: 1;
+        animation-delay: 3s;
+    }
+
+    @keyframes seconds {
+        100% {
+            opacity: 0;
+            transform: translateX(-120%)
+        }
+    }
 ```
 
 ## Google Maps
