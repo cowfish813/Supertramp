@@ -34,7 +34,13 @@ class BookingUpdateForm extends React.Component {
       if (!listing) return null;
       const yesterday = new Date();
       yesterday.setDate(yesterday.getDate() - 1);
-      const excludedDates = [{start: new Date("1968-01-01"), end: yesterday}];
+
+      const excludedDates = [
+        ...Object.values(this.props.bookings || {})
+          .filter((b) => b.listing_id === booking.listing_id && b.id !== booking.id)
+          .map((b) => ({ start: new Date(b.check_in), end: new Date(b.check_out) })),
+        { start: new Date("1968-01-01"), end: yesterday },
+      ];
 
       return (
       <BookingFormFields
