@@ -1,6 +1,5 @@
 import React from "react";
-import BookingFormFields from "./booking_shared_form";
-
+import BookingFormFields from "./booking_form_fields";
 
 class BookingUpdateForm extends React.Component {
   constructor(props) {
