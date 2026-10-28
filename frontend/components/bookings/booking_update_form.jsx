@@ -14,7 +14,7 @@ class BookingUpdateForm extends React.Component {
 
 
   handleSubmit(fields) {
-    const { booking, listings, patchBooking, closeModal, fxn } = this.props;
+    const { booking, listings, patchBooking, closeModal } = this.props;
     const listing = listings[booking.listing_id];
 
     return patchBooking({
@@ -24,7 +24,6 @@ class BookingUpdateForm extends React.Component {
       listing_name: listing.name
     })
       .then(() => closeModal())
-      .then(() => fxn({ ...booking, ...fields}));
   }
 
   render() {

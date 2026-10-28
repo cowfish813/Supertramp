@@ -6,16 +6,9 @@ import { Link } from 'react-router-dom';
 class BookingIndexItem extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            check_out: this.props.booking.check_out,
-            check_in: this.props.booking.check_in,
-            price: this.props.booking.price,
-            capacity: this.props.booking.capacity,
-        }
-        
+
         this.handleClick = this.handleClick.bind(this);
         this.handleModal = this.handleModal.bind(this);
-        this.bookingDidUpdate = this.bookingDidUpdate.bind(this);
     }
 
     handleClick(e) {
@@ -23,34 +16,24 @@ class BookingIndexItem extends React.Component {
         this.props.deleteBooking(this.props.booking.id)
     }
 
-
-    handleModal(bookingId, renderFxn) {
-        this.props.openModal('Booking', bookingId, renderFxn)
-    }
-
-    bookingDidUpdate(newState) {
-        this.setState({
-            check_in: newState.check_in,
-            check_out: newState.check_out,
-            price: newState.price,
-            capacity: newState.capacity
-        });
+    handleModal() {
+        this.props.openModal('Booking', this.props.booking)
     }
 
     render () {
-        let checkin = new Date(this.state.check_in).toGMTString();
-        let checkout = new Date(this.state.check_out).toGMTString();
+        const { booking } = this.props;
+        let checkin = new Date(booking.check_in).toGMTString();
+        let checkout = new Date(booking.check_out).toGMTString();
         checkin = checkin.split(' ').slice(0, 4).join(' ');
         checkout = checkout.split(' ').slice(0, 4).join(' ');
-
 
         if (this.props.current_user === this.props.booking.user_id) {
             return (
             <div className="booking_item_box" id="booking_item">
                 <div className="booking_img_container">
-                    <Link to={`/listings/${this.props.booking.listing_id}`}>
-                    <div className="booking_list_name">{this.props.booking.listing_name}</div>
-                    <img className="booking_img" src={this.props.booking.photoUrls} alt=""/>
+                    <Link to={`/listings/${booking.listing_id}`}>
+                    <div className="booking_list_name">{booking.listing_name}</div>
+                    <img className="booking_img" src={booking.photoUrls} alt=""/>
                     </Link>
                 </div>
                 <div className="booking_item_content">
@@ -62,14 +45,14 @@ class BookingIndexItem extends React.Component {
                         {checkout}</div>
                     <div className="bookings_item">
                         <strong> Number of Guests: </strong>
-                        {this.state.capacity}</div>
+                        {booking.capacity}</div>
                     <div className="bookings_item">
                         <strong>Total Price: </strong>
-                        ${this.state.price}</div>
+                        ${booking.price}</div>
                     {this.props.status ? 
                         <div className="bookings_item_cancel">
                             <button onClick={this.handleClick} className="bookingCancel usershowbutton">Cancel</button>
-                            <button onClick={() => this.handleModal(this.props.booking, this.bookingDidUpdate)} className="bookingChange usershowbutton">Change Booking</button>
+                            <button onClick={this.handleModal} className="bookingChange usershowbutton">Change Booking</button>
                         </div>
                         : <></>
                     }

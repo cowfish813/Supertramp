@@ -19,7 +19,6 @@ function Modal({ errors, modal, closeModal }) {
         case 'Booking':
             component = <BookingUpdateForm  
             booking={modal.data}
-            fxn={modal.fxn}
             />
 
             break;
