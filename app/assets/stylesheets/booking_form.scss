@@ -184,10 +184,6 @@
     background-color: #40d9ac;
 }
 
-.react-datepicker {
-    width: 203px;
-}
-
 .flex-row {
     flex-direction: row;
 }
@@ -235,4 +231,15 @@
 .react-datepicker__day,
 .react-datepicker__time-name {
     margin: 0px !important;
+}
+
+.react-datepicker-popper {
+    width: max-content;
+    max-width: none;
+    z-index: 10;
+}
+
+.react-datepicker {
+    display: flex;
+    font-size: 1rem;
 }

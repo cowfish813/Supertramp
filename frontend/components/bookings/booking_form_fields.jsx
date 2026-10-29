@@ -34,7 +34,8 @@ const BookingFormFields = ({
     setCapacity(value === "" ? "" : Number(value));
   };
 
-  const focusById = (id) => () => {
+  const focusById = (id) => (e) => {
+    if(e.target.closest(".react-datepicker, .react-datepicker-popper")) return; //eliminates first click issue on calendar/calendar jump
     const el = document.getElementById(id);
     if (el) el.focus();
   };
