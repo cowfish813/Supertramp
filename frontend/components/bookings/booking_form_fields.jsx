@@ -21,18 +21,16 @@ const BookingFormFields = ({
     const [capacity, setCapacity] = 
       useState(initialBooking?.capacity ?? 1);
 
-  // Derived, not stored in state, so it can never go stale
     const nights = checkIn && checkOut ? Math.round((checkOut - checkIn) / MS_PER_DAY) : 0;
     const total = nights * listing.price;
 
     const handleDates = ([start, end]) => {
-    setCheckIn(start);
-    setCheckOut(end);
+      setCheckIn(start);
+      setCheckOut(end);
     };
 
   const handleCapacity = (e) => {
     const value = e.target.value;
-    // allow the field to be cleared while typing
     setCapacity(value === "" ? "" : Number(value));
   };
 
