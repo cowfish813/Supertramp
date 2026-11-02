@@ -204,8 +204,8 @@
 }
 
 .search-button svg {
-    width: 20px;
-    height: 20px;
+    width: 1em; // scales with the button's font-size (1.5vw)
+    height: .85em;
     color: white;
     flex-shrink: 0;
     transition: 0.5s;
