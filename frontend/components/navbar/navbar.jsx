@@ -99,7 +99,9 @@ const NavBar = () => {
                 {compact ? (
                     <button
                         className="nav-burger"
-                        onClick={() => setMenuOpen(e => !e)}
+                        onClick={() => 
+                            setMenuOpen(e => !e)
+                        }
                         aria-label='Toggle Menu'
                         aria-expanded={menuOpen}
                     >
@@ -112,6 +114,11 @@ const NavBar = () => {
                 )}
 
             </div>
+                    {compact && menuOpen && (
+            <div className="nav-drawer">
+                {navLinks}
+            </div>
+        )}
         </div>
     )
 }

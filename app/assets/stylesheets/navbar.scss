@@ -106,15 +106,10 @@ strong {
     justify-content: space-between;
     align-items: center;
 }
-// 
-// .super-nav {
-//     position: relative;
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-// }
 
 .nav-burger {
+        position: relative;
+            /* new — safety for future absolute children */
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -144,6 +139,9 @@ strong {
     display: flex;
     flex-direction: column;
     z-index: 1000;
+    max-width: calc(100vw - 16px);
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
 }
 
 .nav-drawer .navItem {
