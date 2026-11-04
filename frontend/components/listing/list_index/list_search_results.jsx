@@ -1,8 +1,7 @@
 import React from 'react';
-// import ListIndex from './list_index_container'
 import ListMapIndex from './list_map_index';
 import SearchBar from '../../search/search_container';
-import ListIndex from './list_index'
+import ListIndex from './list_index';
 import { withRouter } from "react-router-dom";
 
 
@@ -11,13 +10,12 @@ class ListSearchResults extends React.Component {
         super(props)
 
         this.state = this.props.filters;
-    }
+    };
 
     componentDidMount(e) {
         window.scrollTo(0, 0);
         this.props.updateFilter(e);
-    }
-
+    };
 
     render () {
         return (
@@ -30,18 +28,19 @@ class ListSearchResults extends React.Component {
                 updateFilter={this.props.updateFilter}
                 listings={this.props.listings}
               />
+
               <ListMapIndex
                 history={this.props.history}
                 updateFilter={this.props.updateFilter}
                 listings={this.props.listings}
                 mapLocation={this.props.mapLocation}
                 resetLocation={this.props.resetLocation}
-
               />
+
             </div>
           </div>
         )
     }
 };
 
-export default withRouter(ListSearchResults)
+export default withRouter(ListSearchResults);
