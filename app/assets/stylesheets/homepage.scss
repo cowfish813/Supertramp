@@ -356,3 +356,13 @@
 .text-descriptor {
     color: #6C6C6C;
 }
+
+@media (hover: hover) and (pointer: fine) {
+
+    .poppingRectangle:hover,
+    .vague-picture:hover {
+        cursor: pointer;
+        animation: pop .2s ease forwards;
+        box-shadow: 0px 3px 4px grey;
+    }
+}
