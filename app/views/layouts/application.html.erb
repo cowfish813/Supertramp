@@ -10,7 +10,13 @@
     <%= favicon_link_tag 'favicon.ico' %>
 
     <script>
-      window.mapsReady = new Promise(function (resolve) { window.initMap = resolve; });
+    window.mapsReady = new Promise(function (resolve) {
+      window.initMap = function () {
+        window.googleMapsReady = true;
+        window.dispatchEvent(new Event('google-maps-ready'));
+        resolve();
+      };
+    });
     </script>
 
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.credentials.PLACES_API_KEY}&libraries=places&loading=async&callback=initMap", async: true, defer: true %>
