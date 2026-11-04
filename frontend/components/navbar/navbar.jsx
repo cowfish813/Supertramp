@@ -9,6 +9,9 @@ const NavBar = () => {
     const [hasOriginSearch, setHasOriginSearch] = useState(false);
     const [isOriginSearchVisible, setIsOriginSearchVisible] = useState(true);
 
+    const [compact, setCompact] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
+
     const currentUser = useSelector(state => state.entities.users[state.session.currentUser]);
     const ID = useSelector(state => state.session.currentUser);
     
@@ -41,13 +44,43 @@ const NavBar = () => {
         return () => window.removeEventListener('scroll', handleScroll)
     }, []);
 
+    useEffect(() => {
+        const mediaQuery = window.matchMedia('(max-width: 767px)');
+        const onChange = e => {
+            setCompact(e.matches);
+            if (!e.matches) setMenuOpen(false); //close when back to desktop...what about sizing?
+        }
+        setCompact(mediaQuery.matches) //
+        mediaQuery.addEventListener('change', onChange);
+        return () => mediaQuery.removeEventListener('change', onChange);
+    }, []);
+
     const handleLogout = e => {
         e.preventDefault();
         logout().then(() => history.push('/'));
-    }
+    };
 
     const searchInput = (!hasOriginSearch || !isOriginSearchVisible) ? 
         < NavSearch/> : null;
+
+    const navLinks = (
+        <>
+            <div className="navItem"><a target="_blank" href="https://www.linkedin.com/in/nicholas-cheung-6a72999">Linkedin</a></div>
+            <div className="navItem"><a target="_blank" href="https://github.com/cowfish813">GitHub</a></div>
+            <div className="navItem"><a target="_blank" href="https://cowfish813.github.io/Portfolio">Portfolio</a></div>
+            {currentUser ? (
+                <>
+                    <div className="navItem"><Link to={`/users/${ID}`}>Self</Link></div>
+                    <button className="navItem logoutButton" onClick={handleLogout}>Log Out</button>
+                </>
+                ) : (
+                <>
+                    <div className="navItem"><a onClick={() => openModal('Login')}>Log In</a></div>
+                    <button className="navItem signupButton" onClick={() => openModal('Signup')}>Sign Up</button>
+                </>
+                )}
+        </>
+    );
     
     return (
         <div className="super-nav">
@@ -61,25 +94,35 @@ const NavBar = () => {
                 {searchInput}
             </div>
 
-            <div className="nav-right">
-                <div className="navItem"><a target="_blank" href="https://www.linkedin.com/in/nicholas-cheung-6a72999">Linkedin</a></div>
-                <div className="navItem"><a target="_blank" href="https://github.com/cowfish813">GitHub</a></div>
-                <div className="navItem"><a target="_blank" href="https://cowfish813.github.io/Portfolio">Portfolio</a></div>
+            {compact ? (
+                <button
+                    className="nav-burger"
+                    onClick={() => 
+                        setMenuOpen(e => !e)
+                    }
+                    aria-label='Toggle Menu'
+                    aria-expanded={menuOpen}
+                >
+                    <span/>
+                    <span/>
+                    <span/>
+                </button>
+            ): (
+                <div className="nav-right">{navLinks}</div>
+            )}
 
-                {currentUser ? (
-                <>
-                    <div className="navItem"><Link to={`/users/${ID}`}>Self</Link></div>
-                    <button className="navItem logoutButton" onClick={handleLogout}>Log Out</button>
-                </>
-                ) : (
-                <>
-                    <div className="navItem"><a onClick={() => openModal('Login')}>Log In</a></div>
-                    <button className="navItem signupButton" onClick={() => openModal('Signup')}>Sign Up</button>
-                </>
-                )}
-            </div>
+            {compact && (
+                <div
+                    className={`nav-drawer ${menuOpen ? 'open' : ''}`}
+                    aria-hidden={!menuOpen}
+                    onClick={() => setMenuOpen(false)}
+                >
+                    {navLinks}
+                </div>
+            )}
+
         </div>
     )
-}
+};
 
 export default NavBar;
