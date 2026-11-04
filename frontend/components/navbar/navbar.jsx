@@ -48,7 +48,7 @@ const NavBar = () => {
         const mediaQuery = window.matchMedia('(max-width: 767px)');
         const onChange = e => {
             setCompact(e.matches);
-            if (e.matches) setMenuOpen(false); //close when back to desktop...what about sizing?
+            if (!e.matches) setMenuOpen(false); //close when back to desktop...what about sizing?
         }
         setCompact(mediaQuery.matches) //
         mediaQuery.addEventListener('change', onChange);
@@ -58,7 +58,7 @@ const NavBar = () => {
     const handleLogout = e => {
         e.preventDefault();
         logout().then(() => history.push('/'));
-    }
+    };
 
     const searchInput = (!hasOriginSearch || !isOriginSearchVisible) ? 
         < NavSearch/> : null;
@@ -80,7 +80,7 @@ const NavBar = () => {
                 </>
                 )}
         </>
-    )
+    );
     
     return (
         <div className="super-nav">
@@ -94,33 +94,31 @@ const NavBar = () => {
                 {searchInput}
             </div>
 
-            <div className="nav-right">
+            {compact ? (
+                <button
+                    className="nav-burger"
+                    onClick={() => 
+                        setMenuOpen(e => !e)
+                    }
+                    aria-label='Toggle Menu'
+                    aria-expanded={menuOpen}
+                >
+                    <span/>
+                    <span/>
+                    <span/>
+                </button>
+            ): (
+                <div className="nav-right">{navLinks}</div>
+            )}
 
-                {compact ? (
-                    <button
-                        className="nav-burger"
-                        onClick={() => 
-                            setMenuOpen(e => !e)
-                        }
-                        aria-label='Toggle Menu'
-                        aria-expanded={menuOpen}
-                    >
-                        <span/>
-                        <span/>
-                        <span/>
-                    </button>
-                ): (
-                    <div className="nav-right">{navLinks}</div>
-                )}
+            {compact && menuOpen && (
+                <div className="nav-drawer">
+                    {navLinks}
+                </div>
+            )}
 
-            </div>
-                    {compact && menuOpen && (
-            <div className="nav-drawer">
-                {navLinks}
-            </div>
-        )}
         </div>
     )
-}
+};
 
 export default NavBar;
