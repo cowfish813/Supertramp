@@ -8,10 +8,13 @@ import { withRouter } from "react-router-dom";
 class ListSearchResults extends React.Component {
     constructor(props) {
         super(props)
+
+        // this.state = this.props.filters;
     };
 
-    componentDidMount() {
+    componentDidMount(e) {
         window.scrollTo(0, 0);
+        // this.props.updateFilter(e);
     };
 
     render () {
