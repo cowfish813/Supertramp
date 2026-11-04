@@ -133,7 +133,6 @@ strong {
     left: 0;
     background: #fff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-    border-radius: 6px;
     padding: 0.5rem 0;
     display: flex;
     flex-direction: column;
@@ -144,18 +143,18 @@ strong {
     opacity: 0;
     visibility: hidden;
     transition:
-    clip-path 0.25s ease,
-    opacity 0.25s ease,
-    visibility 0s linear 0.25s;
-        &.open {
-            clip-path: inset(0 -20px -20px -20px);
-            opacity: 1;
-            visibility: visible;
-            transition:
-                clip-path 0.25s ease,
-                opacity 0.25s ease,
-                visibility 0s;
-        }
+        clip-path 0.25s ease,
+        opacity 0.25s ease,
+        visibility 0s linear 0.25s;
+            &.open {
+                clip-path: inset(0 -20px -20px -20px);
+                opacity: 1;
+                visibility: visible;
+                transition:
+                    clip-path 0.25s ease,
+                    opacity 0.25s ease,
+                    visibility 0s;
+            }
 }
 
 .nav-drawer .navItem {
