@@ -19,7 +19,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1.5rem;
-    padding: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     align-content: start;
 }
 
@@ -38,9 +39,8 @@
 }
 
 .mapIndex {
-    right: 0%;
-    width: 48vw;
-    height: 100vh;
+    flex: 1 1 48%;          // takes its share of the row and shrinks or grows with the window
+    min-width: 0;           // lets flex shrink it below its content width
 }
 
 .listing_index_desc {
