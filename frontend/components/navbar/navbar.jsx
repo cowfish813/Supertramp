@@ -111,8 +111,12 @@ const NavBar = () => {
                 <div className="nav-right">{navLinks}</div>
             )}
 
-            {compact && menuOpen && (
-                <div className="nav-drawer">
+            {compact && (
+                <div
+                    className={`nav-drawer ${menuOpen ? 'open' : ''}`}
+                    aria-hidden={!menuOpen}
+                    onClick={() => setMenuOpen(false)}
+                >
                     {navLinks}
                 </div>
             )}
