@@ -1,13 +1,12 @@
 .list_search_result {
-    width: 99vw;
+    width: 98vw;
 }
 
 .search_results {
     display: flex;
     flex-direction: row;
-    margin-top: 3vh;
-    margin: 5rem;
     height: 100vh;
+    gap: clamp(0.25rem, 1.5vw, 1.5rem);;
 }
 .list-index {
     width: 50vw;
@@ -17,26 +16,22 @@
 }
 
 .list_index_items {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: 5rem;
-
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: .5rem;
+    padding-left: .3rem;
+    padding-right: .5rem;
+    align-content: start;
 }
 
 .index_container {
-    margin: 1rem;
     display: flex;
     flex-direction: column;
-    height: 400px;
-    width: 300px;
     border: lightgray solid 1px;
     box-shadow: .2rem .6rem 1rem lightgrey;
+}
 
-}
-.index_box {
-    margin-bottom: 3vh;
-    height: 70%;
-}
 .indexPhotos {
 
     object-fit: cover;
@@ -45,26 +40,28 @@
 }
 
 .mapIndex {
-    right: 0%;
-    width: 48vw;
-    height: 100vh;
+    flex: 1 1 48%;          // takes its share of the row and shrinks or grows with the window
+    min-width: 0;           // lets flex shrink it below its content width
 }
+
 .listing_index_desc {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
+    gap: 0.75rem; 
+    padding: 0.75rem 1rem;
 }
 
 .list_index_name{
-    margin-left: 2rem;
-    font-size: 140%;
+    flex: 1 1 auto;
     font-weight: bold;
-    margin-right: 1.5rem;
+font-size: clamp(0.95rem, calc(0.6rem + 1vw), 1.35rem);
+
 }
 .listing_index_price {
-    margin-right: 2rem;
-    font-size: 90%;
     display: flex;
     align-self: flex-end;
+        font-size: clamp(0.8rem, calc(0.5rem + 0.8vw), 1rem);
 }
 
 .bold {

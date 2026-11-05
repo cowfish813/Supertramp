@@ -1,5 +1,6 @@
 import React from 'react';
 import MarkerManager from '../../../util/map_marker';
+import { loadGoogleMaps } from '../../../util/google_maps';
 
 class ListMapIndex extends React.Component {
     constructor(props) {
@@ -27,14 +28,20 @@ class ListMapIndex extends React.Component {
             mapTypeId: "terrain",
         };
 
-        this.map = new google.maps.Map(this.mapNode, this.mapOptions);
-        this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
-        this.registerListeners();
-        this.MarkerManager.updateMarkers(this.props.listings);
+
+        loadGoogleMaps().then(() => {
+            if (!this.mapNode) return; 
+
+            this.map = new google.maps.Map(this.mapNode, this.mapOptions);
+            this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
+            this.registerListeners();
+            this.MarkerManager.updateMarkers(this.props.listings);
+        })
     };
 
     
     componentDidUpdate(prevProps) {
+        if (!this.map) return; //for loading
         const prev = prevProps.mapLocation?.state || prevProps.mapLocation;
         const next = this.props.mapLocation?.state || this.props.mapLocation;
 
@@ -56,6 +63,10 @@ class ListMapIndex extends React.Component {
             };
             this.props.updateFilter(bounds);
         });
+    }
+
+    componentWillUnmount() {
+        if (this.map) google.maps.event.clearInstanceListeners(this.map);
     }
 
     handleMarkerClick(listing) {
