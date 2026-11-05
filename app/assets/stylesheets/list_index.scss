@@ -1,11 +1,12 @@
 .list_search_result {
-    width: 99vw;
+    width: 98vw;
 }
 
 .search_results {
     display: flex;
     flex-direction: row;
     height: 100vh;
+    gap: clamp(0.25rem, 1.5vw, 1.5rem);;
 }
 .list-index {
     width: 50vw;
@@ -18,9 +19,9 @@
     flex: 1;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    gap: .5rem;
+    padding-left: .3rem;
+    padding-right: .5rem;
     align-content: start;
 }
 
@@ -54,10 +55,13 @@
 .list_index_name{
     flex: 1 1 auto;
     font-weight: bold;
+font-size: clamp(0.95rem, calc(0.6rem + 1vw), 1.35rem);
+
 }
 .listing_index_price {
     display: flex;
     align-self: flex-end;
+        font-size: clamp(0.8rem, calc(0.5rem + 0.8vw), 1rem);
 }
 
 .bold {
