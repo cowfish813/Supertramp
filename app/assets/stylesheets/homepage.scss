@@ -367,7 +367,6 @@
     }
 }
 
-html,
-body {
+html, body {
     touch-action: manipulation;
-}
+} //prevents inadvertent zoom on phone

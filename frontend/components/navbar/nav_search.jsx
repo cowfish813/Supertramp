@@ -1,13 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSearchBar } from '../search/useSearchBar';
 import SearchIcon from '../icons/SearchIcon';
 
 const NavSearch = () => {
-    const { inputRef, mapLocation, handleInput, handleSubmit } = useSearchBar();
-    
-    useEffect(() => {
-        inputRef.current?.focus();
-    }, [inputRef])
+    const { mapLocation, handleInput, handleSubmit } = useSearchBar();
 
     return (
         <form className="NavSearchContainer" onSubmit={handleSubmit}>
@@ -15,16 +11,15 @@ const NavSearch = () => {
                 <SearchIcon className="small-icon-box" color='black'/>
             </span>
             <input type="search"
-            id="nav-Search"
-            className="navSearch"
-            value={mapLocation}
-            onChange={handleInput}
-            placeholder="Lets start with Yosemite Valley!"
-            ref={inputRef}
+                id="nav-Search"
+                className="navSearch"
+                value={mapLocation}
+                onChange={handleInput}
+                placeholder="Lets start with Yosemite Valley!"
             />
             <button type="submit" className="navSearchBtn"></button>
         </form>
     )
-}
+};
 
 export default NavSearch;
