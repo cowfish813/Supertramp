@@ -1,4 +1,3 @@
-// import { combineReducers } from 'redux';
 import { combineReducers } from '@reduxjs/toolkit';
 import usersReducer from './users_reducer';
 import listingsReducer from './listing_reducers/listings_reducer';

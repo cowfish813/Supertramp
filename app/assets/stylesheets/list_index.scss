@@ -42,8 +42,8 @@
 }
 
 .mapIndex {
-    flex: 1 1 48%;          // takes its share of the row and shrinks or grows with the window
-    min-width: 0;           // lets flex shrink it below its content width
+    flex: 1 1 48%;
+    min-width: 0;
 }
 
 .listing_index_desc {
@@ -57,13 +57,13 @@
 .list_index_name{
     flex: 1 1 auto;
     font-weight: bold;
-font-size: clamp(0.95rem, calc(0.6rem + 1vw), 1.35rem);
+    font-size: clamp(0.95rem, calc(0.6rem + 1vw), 1.35rem);
 
 }
 .listing_index_price {
     display: flex;
     align-self: flex-end;
-        font-size: clamp(0.8rem, calc(0.5rem + 0.8vw), 1rem);
+    font-size: clamp(0.8rem, calc(0.5rem + 0.8vw), 1rem);
 }
 
 .bold {

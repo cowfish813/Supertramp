@@ -8,8 +8,6 @@ const usersReducer = (state = {}, action) => {
         case RECEIVE_USER:
             newState = Object.assign({}, state, { [action.user.id]: action.user })
             return newState;
-        // case UPDATE_USER:
-
         default:
             return state;
     }

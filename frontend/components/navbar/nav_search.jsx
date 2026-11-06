@@ -1,14 +1,15 @@
 import React from 'react';
 import { useSearchBar } from '../search/useSearchBar';
 import SearchIcon from '../icons/SearchIcon';
+import LocationDot from '../icons/LocationDot';
 
 const NavSearch = () => {
-    const { mapLocation, handleInput, handleSubmit } = useSearchBar();
+    const { mapLocation, handleInput, handleSubmit, inputRef } = useSearchBar();
 
     return (
         <form className="NavSearchContainer" onSubmit={handleSubmit}>
             <span className="nav-fa-search">
-                <SearchIcon className="small-icon-box" color='black'/>
+                <LocationDot color="black" />
             </span>
             <input type="search"
                 id="nav-Search"
@@ -16,8 +17,11 @@ const NavSearch = () => {
                 value={mapLocation}
                 onChange={handleInput}
                 placeholder="Lets start with Yosemite Valley!"
+                ref={inputRef}
             />
-            <button type="submit" className="navSearchBtn"></button>
+            <button type="submit" className="navSearchBtn">
+                <SearchIcon className="small-icon-box" color='white'/>
+            </button>
         </form>
     )
 };

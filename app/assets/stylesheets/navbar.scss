@@ -9,65 +9,101 @@
 strong {
     font-weight: bolder;
 }
- a {
-     color: inherit;
-     text-decoration: inherit;
- }
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
 
 .logo-pic {
     width: 4rem;
 }
 
-
-
-
-    
-    .nav-left {
-        width: 50%;
-        display: flex;
-        flex-direction: row;
-    }
+.nav-left {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
     
 .nav-right {
     margin-right: 1%;
+    align-items: center;
+    gap: clamp(0.25rem, 1.5vw, 2rem);
     width: 50%;
     display: flex;
     justify-content: flex-end; 
 }
 .NavSearchContainer {
-    margin-left: 5%;
     display: flex;
     align-items: center;
-
+    width: 100%;
+        min-width: 0;
+            margin-left: 0;
 }
 
 .nav-fa-search {
     position: absolute;
     margin-left: 1rem;
 }
+
 .navSearch {
     padding: 0 3rem;
     height: 2.25rem;
-    width: 20vw;
     border: lightgray solid 1px;
+    padding: 0 clamp(1.5rem, 3vw, 3rem);
     border-radius: 3px;
+    flex: 1 1 0;
+    min-width: 0;
+    width: 100%;
+}
+
+.nav-search-slot {
+    width: 0;
+    overflow: hidden; 
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        width 0.3s ease,
+        opacity 0.3s ease,
+        visibility 0s linear 0.3s;
+
+    &.is-visible {
+        width: clamp(12rem, 50vw, 28rem);
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0s;
+    }
+}
+
+@media (max-width: 767px) {
+    .nav-search-slot.is-visible {
+        width: min(60vw, 20rem);
+    }
 }
 
 .navSearchBtn {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    height: 2.25rem;
+    padding: 0 clamp(0.5rem, 1.5vw, 1.25rem);
+    margin-left: clamp(0.25rem, 1vw, 0.5rem);
+    font-size: clamp(0.75rem, calc(0.55rem + 0.6vw), 1rem);
+    color: #fff;
+    background: #40d9ac;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
 }
-
-
 
 .navItem {
     padding: .5rem;
-    margin-left: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-self: center;  
     border: 1px solid transparent;  
     white-space: nowrap;
-
 }
 
 .navItem:hover {
@@ -108,6 +144,8 @@ strong {
 }
 
 .nav-burger {
+    margin-left: auto;
+    flex: 0 1 auto;
     position: relative;
     display: flex;
     flex-direction: column;

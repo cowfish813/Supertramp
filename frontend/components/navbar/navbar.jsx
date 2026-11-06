@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { openModal as openModalAction } from '../../actions/modal_actions/modal_actions';
@@ -30,7 +30,7 @@ const NavBar = () => {
         setIsOriginSearchVisible(visible);
     }
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         checkOriginSearch();
     }, [location]);
 
@@ -59,9 +59,7 @@ const NavBar = () => {
         e.preventDefault();
         logout().then(() => history.push('/'));
     };
-
-    const searchInput = (!hasOriginSearch || !isOriginSearchVisible) ? 
-        < NavSearch/> : null;
+const showNavSearch = !hasOriginSearch || !isOriginSearchVisible;
 
     const navLinks = (
         <>
@@ -91,7 +89,12 @@ const NavBar = () => {
                         src="/7789930-middle.png"
                     />
                 </Link>
-                {searchInput}
+                <div
+                    className={`nav-search-slot ${showNavSearch ? ' is-visible' : ''}`}
+                    aria-hidden={!showNavSearch}
+                >
+                    <NavSearch />
+                </div>
             </div>
 
             {compact ? (
