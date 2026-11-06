@@ -101,17 +101,20 @@
 
 .homeTitle h1{
     font-weight: bolder;
-    font-size: 2.33rem;
+    font-size: clamp(1.75rem, calc(1rem + 3vw), 2.75rem);
+    line-height: 1.15;
     display: inline;
-    
+
 }
 
 .homeDesc h2{
     font-weight: lighter;
-    font-size: 1.3rem;
-    width: 55%;
-    
+    font-size: clamp(1rem, calc(0.8rem + 1.2vw), 1.5rem);
+    line-height: 1.4;
+    width: 100%;
+    max-width: 40rem;
 }
+
 .form-search {
     width: 75%;
     display: flex;
