@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { openModal as openModalAction } from '../../actions/modal_actions/modal_actions';
@@ -30,7 +30,7 @@ const NavBar = () => {
         setIsOriginSearchVisible(visible);
     }
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         checkOriginSearch();
     }, [location]);
 

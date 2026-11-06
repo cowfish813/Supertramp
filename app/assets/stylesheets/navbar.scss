@@ -36,10 +36,12 @@ strong {
     justify-content: flex-end; 
 }
 .NavSearchContainer {
-    margin-left: 5%;
+    // margin-left: 5%;
     display: flex;
     align-items: center;
-    width: 40vw;
+    width: 100%;
+        min-width: 0;
+            margin-left: 0;
 }
 
 .nav-fa-search {
@@ -51,27 +53,28 @@ strong {
     padding: 0 3rem;
     height: 2.25rem;
     border: lightgray solid 1px;
+    padding: 0 clamp(1.5rem, 3vw, 3rem);
     border-radius: 3px;
-
-        box-sizing: border-box;
-            width: 100%; // fills the wrapper instead of its own 20vw
+    flex: 1 1 0;
+    min-width: 0;
+    width: 100%;
 }
 
 .nav-search-slot {
     width: 0;
-    overflow: hidden; // clips the input and the icon while collapsed
+    overflow: hidden; 
     opacity: 0;
-    visibility: hidden; // removes it from the Tab order once closed
+    visibility: hidden;
     transition:
         width 0.3s ease,
         opacity 0.3s ease,
-        visibility 0s linear 0.3s; // hide only after the close animation finishes
+        visibility 0s linear 0.3s;
 
     &.is-visible {
-    width: clamp(12rem, 50vw, 28rem);   // was 9rem; the button needs room beside the input
+        width: clamp(12rem, 50vw, 28rem);
         opacity: 1;
         visibility: visible;
-        transition-delay: 0s; // show immediately on open
+        transition-delay: 0s;
     }
 }
 
