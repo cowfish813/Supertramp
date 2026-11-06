@@ -66,11 +66,23 @@ a {
     overflow: hidden; 
     opacity: 0;
     visibility: hidden;
+    transition:
+        width 0.3s ease,
+        opacity 0.3s ease,
+        visibility 0s linear 0.3s;
+
+    &:not(.is-ready) { // no animation on load
+        transition: none; 
+    }
 
     &.is-visible {
         width: clamp(12rem, 50vw, 28rem);
         opacity: 1;
         visibility: visible;
+        transition-delay: 0s;
+    }
+
+    &.is-visible.is-ready {
         transition-delay: 0s;
     }
 }

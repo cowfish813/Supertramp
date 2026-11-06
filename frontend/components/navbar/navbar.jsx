@@ -8,8 +8,8 @@ import NavSearch from './nav_search';
 const NavBar = () => {
     const [hasOriginSearch, setHasOriginSearch] = useState(false);
     const [isOriginSearchVisible, setIsOriginSearchVisible] = useState(true);
-
-    const [compact, setCompact] = useState(false);
+    const [ready, setReady] = useState(false);
+    const [compact, setCompact] = useState(() => window.matchMedia('(max-width: 767px)').matches);
     const [menuOpen, setMenuOpen] = useState(false);
 
     const currentUser = useSelector(state => state.entities.users[state.session.currentUser]);
@@ -33,6 +33,14 @@ const NavBar = () => {
     useLayoutEffect(() => {
         checkOriginSearch();
     }, [location]);
+
+    useEffect(() => {
+    let id2;
+    const id1 = requestAnimationFrame(() => {
+        id2 = requestAnimationFrame(() => setReady(true));
+    });
+    return () => { cancelAnimationFrame(id1); cancelAnimationFrame(id2); };
+}, []);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -90,7 +98,7 @@ const showNavSearch = !hasOriginSearch || !isOriginSearchVisible;
                     />
                 </Link>
                 <div
-                    className={`nav-search-slot ${showNavSearch ? ' is-visible' : ''}`}
+                    className={`nav-search-slot ${showNavSearch ? ' is-visible' : ''}${ready ? ' is-ready' : ''}`}
                     aria-hidden={!showNavSearch}
                 >
                     <NavSearch />
