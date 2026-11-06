@@ -15,7 +15,6 @@ class Session extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleDemoUser = this.handleDemoUser.bind(this)
         this.renderErrors = this.renderErrors.bind(this)
-        // this.handleDemoUser = this.handleDemoUser.bind(this)
     };
 
     handleSubmit(e) {
@@ -120,7 +119,6 @@ class Session extends React.Component {
                                 placeholder="Zip code..."
                                 className="logging_input"
                                 type="text"
-                                // value={soon zipcode}
                                 onChange={this.handleInput('zipcode')}
                                 />
 

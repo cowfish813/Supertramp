@@ -36,8 +36,7 @@ export const signup = user => dispatch => (
 export const login = user => dispatch => (
    ApiUtil.login(user)
   .then(user => dispatch(receiveUser(user)), 
-  err=>(dispatch(receiveErrors(err.responseJSON))))
-  // .fail(errors => dispatch(receiveErrors(errors)))
+    err=>(dispatch(receiveErrors(err.responseJSON))))
 )
 
 export const logout = () => dispatch => (

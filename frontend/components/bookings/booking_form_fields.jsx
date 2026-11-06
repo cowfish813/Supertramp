@@ -5,13 +5,13 @@ import "react-datepicker/dist/react-datepicker.css";
 const MS_PER_DAY = 1000 * 60 * 60 * 24;
 
 const BookingFormFields = ({
-    listing,                       // { id, name, price, capacity, host_id }
-    initialBooking = null,         // pass when editing an existing booking
-    excludedDates = [],            // [{ start: Date, end: Date }]
+    listing, // { id, name, price, capacity, host_id }
+    initialBooking = null,         
+    excludedDates = [], // [{ start: Date, end: Date }]
     submitLabel = "Request to Book",
     dateLabel = "Add dates",
     errors = null,
-    onSubmit,                      // receives { check_in, check_out, capacity, price }
+    onSubmit, // receives { check_in, check_out, capacity, price }
     }) => {
       
     const [checkIn, setCheckIn] = 

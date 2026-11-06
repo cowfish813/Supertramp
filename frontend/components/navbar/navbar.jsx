@@ -60,8 +60,6 @@ const NavBar = () => {
         logout().then(() => history.push('/'));
     };
 const showNavSearch = !hasOriginSearch || !isOriginSearchVisible;
-    // const searchInput = (!hasOriginSearch || !isOriginSearchVisible) ? 
-        // < NavSearch/> : null;
 
     const navLinks = (
         <>

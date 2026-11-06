@@ -23,14 +23,12 @@ class ListingForm extends React.Component {
         
         }
         this.handleSubmit = this.handleSubmit.bind(this)
-        //this.handleInput = this.handleInput.bind(this)
         this.handlepost = this.handlepost.bind(this)
         this.handleFile = this.handleFile.bind(this)
     }
 
 
     handlepost(e) {
-        // event.preventDefault()
         this.setState({name: e.currentTarget.value})
     }
 
@@ -48,7 +46,6 @@ class ListingForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        // this.props.createListing(this.state)
         const formData = new FormData()
         
         formData.append('listing[name]', this.state.name);
@@ -64,7 +61,6 @@ class ListingForm extends React.Component {
         formData.append('listing[lng]', this.state.lng);
         formData.append('listing[country]', this.state.country);
         formData.append('listing[photo]', this.state.photoFile);
-        // formData.append('listing[photos]', this.state.photoFile);
         $.ajax({
             url: '/api/listings',
             method: 'POST',
@@ -84,18 +80,14 @@ class ListingForm extends React.Component {
         }
 
         const mapOptions = {
-            // replace lat and lng with this.props stuff
-            // center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
             zoom: 13
         };
 
-        // wrap this.mapNode in a Google Map
         this.map = new google.maps.Map(this.mapNode, mapOptions);
     }
 
 
     render () {
-        // const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
         return (
             <div className="ListCreate" >
 

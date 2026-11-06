@@ -1,4 +1,3 @@
-// import { combineReducers } from 'redux';
 import { combineReducers } from '@reduxjs/toolkit';
 import errorsReducer from './errors_reducer';
 import entitiesReducer from './entities_reducer';

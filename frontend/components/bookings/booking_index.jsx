@@ -6,56 +6,12 @@ class BookingIndex extends React.Component {
     constructor(props) {
         super(props)
 
-        // const sortedBookings = this.props.bookings.sort((booking1, booking2) => 
-        //     (new Date(booking1.check_in) - new Date(booking2.check_in)))
-
         this.state = {
-            // bookings: sortedBookings,
             sort: "Soonest",
-            // active: [],
-            // upcoming: [],
-            // completed: []
         };
 
         this.handleSort = this.handleSort.bind(this);
     }
-
-    // componentDidMount() {
-    //     const current = [];
-    //     const past = [];
-    //     const future = [];
-        
-    //     const currentDate = new Date();
-    //     this.state.bookings.forEach(booking => {
-    //         const checkout = new Date(booking.check_out);
-    //         const checkin = new Date(booking.check_in);
-
-    //         if (currentDate > checkin && currentDate < checkout) { 
-    //             //check for current trip
-    //             current.push(booking);
-    //         } else if (currentDate > checkout) { 
-    //             //check if we are past checkout
-    //             past.push(booking)
-    //         } else {
-    //             //upcoming
-    //             future.push(booking);
-    //         }
-    //     })
-
-    //     this.setState({
-    //         active: current,
-    //         upcoming : future,
-    //         completed: past
-    //     })
-    // }
-
-    // componentDidUpdate(prevProps) {
-    //     if (this.props.bookings !== prevProps.bookings) {
-    //         this.setState({
-    //             bookings: this.props.bookings
-    //         });
-    //     };
-    // }
 
     handleSort(e) {
         e.preventDefault();

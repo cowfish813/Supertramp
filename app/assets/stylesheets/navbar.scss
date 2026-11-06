@@ -9,18 +9,19 @@
 strong {
     font-weight: bolder;
 }
- a {
-     color: inherit;
-     text-decoration: inherit;
- }
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
 
 .logo-pic {
     width: 4rem;
 }
 
 .nav-left {
-        flex: 1 1 auto; // grows into any free space; replaces width: 50%
-            min-width: 0;
+    flex: 1 1 auto;
+    min-width: 0;
     width: 50%;
     display: flex;
     flex-direction: row;
@@ -30,13 +31,12 @@ strong {
 .nav-right {
     margin-right: 1%;
     align-items: center;
-    gap: clamp(0.25rem, 1.5vw, 2rem); // shrinks as the window narrows, never below 4px
+    gap: clamp(0.25rem, 1.5vw, 2rem);
     width: 50%;
     display: flex;
     justify-content: flex-end; 
 }
 .NavSearchContainer {
-    // margin-left: 5%;
     display: flex;
     align-items: center;
     width: 100%;
@@ -88,7 +88,7 @@ strong {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 0 0 auto; // the button keeps its size instead of squashing the input    color: #fff;
+    flex: 0 0 auto;
     height: 2.25rem;
     padding: 0 clamp(0.5rem, 1.5vw, 1.25rem);
     margin-left: clamp(0.25rem, 1vw, 0.5rem);
