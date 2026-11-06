@@ -59,9 +59,9 @@ const NavBar = () => {
         e.preventDefault();
         logout().then(() => history.push('/'));
     };
-
-    const searchInput = (!hasOriginSearch || !isOriginSearchVisible) ? 
-        < NavSearch/> : null;
+const showNavSearch = !hasOriginSearch || !isOriginSearchVisible;
+    // const searchInput = (!hasOriginSearch || !isOriginSearchVisible) ? 
+        // < NavSearch/> : null;
 
     const navLinks = (
         <>
@@ -91,7 +91,12 @@ const NavBar = () => {
                         src="/7789930-middle.png"
                     />
                 </Link>
-                {searchInput}
+                <div
+                    className={`nav-search-slot ${showNavSearch ? ' is-visible' : ''}`}
+                    aria-hidden={!showNavSearch}
+                >
+                    <NavSearch />
+                </div>
             </div>
 
             {compact ? (

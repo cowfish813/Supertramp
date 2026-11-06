@@ -3,7 +3,7 @@ import { useSearchBar } from '../search/useSearchBar';
 import SearchIcon from '../icons/SearchIcon';
 
 const NavSearch = () => {
-    const { mapLocation, handleInput, handleSubmit } = useSearchBar();
+    const { mapLocation, handleInput, handleSubmit, inputRef } = useSearchBar();
 
     return (
         <form className="NavSearchContainer" onSubmit={handleSubmit}>
@@ -16,8 +16,9 @@ const NavSearch = () => {
                 value={mapLocation}
                 onChange={handleInput}
                 placeholder="Lets start with Yosemite Valley!"
+                ref={inputRef}
             />
-            <button type="submit" className="navSearchBtn"></button>
+            <button type="submit" className="navSearchBtn">Search</button>
         </form>
     )
 };
