@@ -48,9 +48,9 @@ const NavBar = () => {
         const mediaQuery = window.matchMedia('(max-width: 767px)');
         const onChange = e => {
             setCompact(e.matches);
-            if (!e.matches) setMenuOpen(false); //close when back to desktop...what about sizing?
+            if (!e.matches) setMenuOpen(false);
         }
-        setCompact(mediaQuery.matches) //
+        setCompact(mediaQuery.matches)
         mediaQuery.addEventListener('change', onChange);
         return () => mediaQuery.removeEventListener('change', onChange);
     }, []);
