@@ -61,37 +61,75 @@ a {
 }
 
 .nav-search-slot {
+    position: relative;
+    width: clamp(12rem, 50vw, 28rem);
     margin-left: 1rem;
-    width: 0;
-    overflow: hidden; 
-    opacity: 0;
-    visibility: hidden;
-    transition:
-        width 0.3s ease,
-        opacity 0.3s ease,
-        visibility 0s linear 0.3s;
+    overflow: hidden;
+    animation: nav-search-in 0.3s ease;
+}
 
-    &:not(.is-ready) { // no animation on load
-        transition: none; 
-    }
-
-    &.is-visible {
-        width: clamp(12rem, 50vw, 28rem);
-        opacity: 1;
-        visibility: visible;
-        transition-delay: 0s;
-    }
-
-    &.is-visible.is-ready {
-        transition-delay: 0s;
+@keyframes nav-search-in {
+    from {
+        width: 0;
+        margin-left: 0;
+        opacity: 0;
     }
 }
 
 @media (max-width: 767px) {
-    .nav-search-slot.is-visible {
+    .nav-search-slot {
         width: min(60vw, 20rem);
     }
 }
+
+// @keyframes nav-search-in {
+//     from {
+//         width: 0;
+//         margin-left: 0;
+//         opacity: 0;
+//     }
+
+//     // the `to` state is the element's normal styles
+// }
+
+// @media (max-width: 767px) {
+//     .nav-search-slot {
+//         width: min(60vw, 20rem);
+//     }
+// }
+
+// .nav-search-slot {
+//     margin-left: 1rem;
+//     width: 0;
+//     overflow: hidden; 
+//     opacity: 0;
+//     visibility: hidden;
+//     transition:
+//         width 0.3s ease,
+//         opacity 0.3s ease,
+//         visibility 0s linear 0.3s;
+
+//     &:not(.is-ready) { // no animation on load
+//         transition: none; 
+//     }
+
+//     &.is-visible {
+//         width: clamp(12rem, 50vw, 28rem);
+//         opacity: 1;
+//         visibility: visible;
+//         transition-delay: 0s;
+//     }
+
+//     &.is-visible.is-ready {
+//         transition-delay: 0s;
+//     }
+// }
+
+// @media (max-width: 767px) {
+//     .nav-search-slot.is-visible {
+//         width: min(60vw, 20rem);
+//     }
+// }
 
 .navSearchBtn {
     display: flex;

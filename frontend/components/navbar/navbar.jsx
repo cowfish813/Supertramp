@@ -8,7 +8,7 @@ import NavSearch from './nav_search';
 const NavBar = () => {
     const [hasOriginSearch, setHasOriginSearch] = useState(false);
     const [isOriginSearchVisible, setIsOriginSearchVisible] = useState(true);
-    const [ready, setReady] = useState(false);
+    // const [ready, setReady] = useState(false);
     const [compact, setCompact] = useState(() => window.matchMedia('(max-width: 767px)').matches);
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -67,7 +67,8 @@ const NavBar = () => {
         e.preventDefault();
         logout().then(() => history.push('/'));
     };
-const showNavSearch = !hasOriginSearch || !isOriginSearchVisible;
+
+    const showNavSearch = !hasOriginSearch || !isOriginSearchVisible;
 
     const navLinks = (
         <>
@@ -92,17 +93,17 @@ const showNavSearch = !hasOriginSearch || !isOriginSearchVisible;
         <div className="super-nav">
             <div className="nav-left">
                 <Link to="/" className="logo">
-                    <img
-                        className="logo-pic"
-                        src="/7789930-middle.png"
-                    />
+                    <img className="logo-pic" src="/7789930-middle.png" />
                 </Link>
-                <div
-                    className={`nav-search-slot ${showNavSearch ? ' is-visible' : ''}${ready ? ' is-ready' : ''}`}
-                    aria-hidden={!showNavSearch}
-                >
+                {showNavSearch &&(
+
+                    <div
+                    className={`nav-search-slot`}
+                    // aria-hidden={!showNavSearch}
+                    >
                     <NavSearch />
                 </div>
+                )}
             </div>
 
             {compact ? (
