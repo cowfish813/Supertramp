@@ -8,7 +8,6 @@ import NavSearch from './nav_search';
 const NavBar = () => {
     const [hasOriginSearch, setHasOriginSearch] = useState(false);
     const [isOriginSearchVisible, setIsOriginSearchVisible] = useState(true);
-    // const [ready, setReady] = useState(false);
     const [compact, setCompact] = useState(() => window.matchMedia('(max-width: 767px)').matches);
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -33,14 +32,6 @@ const NavBar = () => {
     useLayoutEffect(() => {
         checkOriginSearch();
     }, [location]);
-
-    useEffect(() => {
-    let id2;
-    const id1 = requestAnimationFrame(() => {
-        id2 = requestAnimationFrame(() => setReady(true));
-    });
-    return () => { cancelAnimationFrame(id1); cancelAnimationFrame(id2); };
-}, []);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -96,13 +87,9 @@ const NavBar = () => {
                     <img className="logo-pic" src="/7789930-middle.png" />
                 </Link>
                 {showNavSearch &&(
-
-                    <div
-                    className={`nav-search-slot`}
-                    // aria-hidden={!showNavSearch}
-                    >
-                    <NavSearch />
-                </div>
+                    <div className={`nav-search-slot`} >
+                        <NavSearch />
+                    </div>
                 )}
             </div>
 
